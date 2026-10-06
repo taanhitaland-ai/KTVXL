@@ -1008,3 +1008,219 @@ code, pre, .mono {
 .badge-chap5 { background: #DDD6FE; color: #5B21B6; }
 .badge-chap6 { background: #FBCFE8; color: #9D174D; }
 
+
+/* ==========================================================================
+   PHYSICS VISUALIZATION LAB (MÔ PHỎNG VẬT LÝ TRỰC QUAN NEOBRUTALISM)
+   ========================================================================== */
+.sim-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.sim-nav-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 10px 2px;
+}
+
+.sim-nav-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border: 2.5px solid #000;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0px #000;
+  background: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.1s ease;
+}
+
+.sim-nav-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #000;
+}
+
+.sim-nav-btn.active {
+  background: var(--neo-yellow);
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+.sim-view-pane {
+  display: none;
+}
+
+.sim-view-pane.active {
+  display: block;
+}
+
+.sim-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 20px;
+}
+
+@media (max-width: 960px) {
+  .sim-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sim-canvas-card {
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: 5px 5px 0px #000;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sim-card-header {
+  background: #F1F5F9;
+  border-bottom: 2.5px solid #000;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sim-card-title {
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.sim-canvas-wrapper {
+  background: #F8FAFC;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sim-canvas {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px #000;
+}
+
+.sim-controls-card {
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: 5px 5px 0px #000;
+  background: #fff;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sim-section-title {
+  font-weight: 900;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sim-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.sim-slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.sim-val-badge {
+  background: #FEF08A;
+  border: 1.5px solid #000;
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: monospace;
+  font-weight: 800;
+}
+
+.sim-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #E2E8F0;
+  border: 1.5px solid #000;
+  border-radius: 4px;
+  outline: none;
+}
+
+.sim-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--neo-yellow);
+  border: 2px solid #000;
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 0px #000;
+}
+
+.sim-readout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.sim-readout-card {
+  border: 2px solid #000;
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: #F0FDF4;
+  box-shadow: 2px 2px 0px #000;
+}
+
+.sim-readout-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4B5563;
+  margin-bottom: 2px;
+}
+
+.sim-readout-val {
+  font-family: monospace;
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #166534;
+}
+
+.sim-explain-card {
+  border: 2px solid #000;
+  border-radius: 8px;
+  background: #EFF6FF;
+  padding: 12px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  box-shadow: 2px 2px 0px #000;
+}
+
+.sim-explain-card strong {
+  color: #1E40AF;
+}
+

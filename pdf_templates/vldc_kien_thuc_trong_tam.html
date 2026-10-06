@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>VẬT LÝ ĐẠI CƯƠNG 2 • KIẾN THỨC TRỌNG TÂM & SỔ TAY CÔNG THỨC</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm 12mm 14mm 12mm;
+      @bottom-right {
+        content: counter(page);
+        font-weight: bold;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      color: #000;
+      line-height: 1.45;
+      font-size: 13px;
+      background: #fff;
+    }
+    .header {
+      border: 3px solid #000;
+      box-shadow: 5px 5px 0px #000;
+      padding: 16px;
+      background: #FFE600;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header p {
+      margin: 4px 0 0 0;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .chapter-card {
+      border: 2.5px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      background: #FFF;
+      padding: 14px;
+      margin-bottom: 20px;
+      page-break-inside: avoid;
+    }
+    .chapter-title {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      background: #00E599;
+      display: inline-block;
+      padding: 4px 10px;
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0px #000;
+    }
+    .chapter-summary {
+      margin: 0 0 12px 0;
+      font-style: italic;
+      color: #333;
+    }
+    .sub-heading {
+      font-weight: 900;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      color: #111;
+    }
+    .formula-box {
+      border: 1.5px solid #000;
+      background: #F9FAFB;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+    }
+    .formula-name {
+      font-weight: bold;
+      color: #000;
+    }
+    .formula-code {
+      font-family: "Courier New", monospace;
+      font-weight: bold;
+      font-size: 13px;
+      color: #B91C1C;
+      margin: 3px 0;
+      background: #FEF3C7;
+      display: inline-block;
+      padding: 2px 6px;
+      border: 1px solid #000;
+    }
+    .formula-desc {
+      font-size: 11.5px;
+      color: #4B5563;
+    }
+    .kw-container {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .kw-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+    }
+    .kw-badge {
+      background: #D0A2FE;
+      border: 1.5px solid #000;
+      padding: 2px 8px;
+      font-weight: bold;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+    .kw-meaning {
+      color: #111;
+      font-weight: 600;
+    }
+    .casio-card {
+      border: 2px solid #000;
+      box-shadow: 3px 3px 0px #000;
+      background: #EFF6FF;
+      padding: 10px;
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+    }
+    .casio-title {
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    .casio-steps {
+      font-family: inherit;
+      margin: 0;
+      white-space: pre-wrap;
+      font-size: 11.5px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>VẬT LÝ ĐẠI CƯƠNG 2 (VẬT LÝ A3)</h1>
+    <p>TỔNG HỢP KIẾN THỨC TRỌNG TÂM • CÔNG THỨC VÀNG • SỔ TAY CASIO FX-580VNX</p>
+    <p style="font-weight: normal; margin-top: 4px;">Quang học sóng • Quang lượng tử • Cơ học lượng tử • Vật lý nguyên tử & Hạt nhân</p>
+  </div>
+
+  
+        <div class="chapter-card">
+          <h2 class="chapter-title">Chương 1: Quang Học Sóng - Giao Thoa Ánh Sáng</h2>
+          <p class="chapter-summary">Nghiên cứu hiện tượng giao thoa của hai hay nhiều sóng ánh sáng kết hợp, sự phân bố cực đại (vân sáng) và cực tiểu (vân tối), giao thoa khe Young, giao thoa bản mỏng nêm không khí và vân tròn Newton.</p>
+          <div class="sub-heading">⚡ CÔNG THỨC VÀNG CỐT LÕI</div>
+          
+            <div class="formula-box">
+              <div class="formula-name">📐 Hiệu quang lộ khe Young</div>
+              <div class="formula-code">ΔL = L2 - L1 = (a * x) / D</div>
+              <div class="formula-desc">Trong đó a là khoảng cách 2 khe, D là khoảng cách từ 2 khe đến màn, x là tọa độ điểm trên màn.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Vị trí vân sáng & vân tối</div>
+              <div class="formula-code">Vân sáng: xs = k * (λ * D / a); Vân tối: xt = (k + 0.5) * (λ * D / a)</div>
+              <div class="formula-desc">k là bậc giao thoa (k = 0, ±1, ±2...).</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Khoảng vân giao thoa</div>
+              <div class="formula-code">i = (λ * D) / a</div>
+              <div class="formula-desc">Khoảng cách giữa hai vân sáng liên tiếp hoặc hai vân tối liên tiếp.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Độ dịch vân khi đặt bản mỏng</div>
+              <div class="formula-code">Δx = (D / a) * (n - 1) * e</div>
+              <div class="formula-desc">Đặt bản mỏng bề dày e, chiết suất n trước một trong hai khe. Hệ vân dịch về phía khe có đặt bản mỏng.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Độ dịch vân khi dịch chuyển nguồn S</div>
+              <div class="formula-code">Δx = (D / d) * y0</div>
+              <div class="formula-desc">Nguồn S dịch một đoạn y0 vuông góc với trục đối xứng, khoảng cách nguồn đến khe là d. Hệ vân dịch ngược chiều y0.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Giao thoa nêm không khí</div>
+              <div class="formula-code">Khoảng vân: i = λ / (2 * α); Vân tối: dk = k * λ / 2</div>
+              <div class="formula-desc">α là góc nghiêng của nêm (rad). Cạnh nêm (d = 0) luôn là vân tối do phản xạ trên môi trường chiết quang hơn bị mất nửa bước sóng (λ/2).</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Vân tròn Newton (ánh sáng phản xạ)</div>
+              <div class="formula-code">Vân tối: rk = √(k * R * λ); Vân sáng: rk = √((k - 0.5) * R * λ)</div>
+              <div class="formula-desc">R là bán kính cong của thấu kính phẳng - lồi. Tâm hệ vân (k = 0) là một điểm tối.</div>
+            </div>
+            
+          <div class="sub-heading" style="margin-top: 15px;">💡 TỪ KHÓA BẢN CHẤT & NHẬN DIỆN 3 GIÂY</div>
+          <div class="kw-container">
+            
+            <div class="kw-row">
+              <span class="kw-badge">Nguồn S dịch chuyển</span>
+              <span class="kw-meaning">👉 Hệ vân dịch ngược chiều: Δx = (D/d)*y0</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Bản mặt song song</span>
+              <span class="kw-meaning">👉 Hệ vân dịch về phía khe có bản: Δx = (D/a)*(n-1)*e</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Mất nửa bước sóng (λ/2)</span>
+              <span class="kw-meaning">👉 Xảy ra khi phản xạ trên môi trường chiết quang hơn (n2 > n1)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Cạnh nêm không khí</span>
+              <span class="kw-meaning">👉 Luôn là VÂN TỐI vì hiệu quang lộ ΔL = 2*d + λ/2 = λ/2</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Tâm vân tròn Newton phản xạ</span>
+              <span class="kw-meaning">👉 Luôn là ĐIỂM TỐI (do phản xạ tại lớp không khí tiếp xúc bị cộng thêm λ/2)</span>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="chapter-card">
+          <h2 class="chapter-title">Chương 2: Quang Học Sóng - Nhiễu Xạ Ánh Sáng</h2>
+          <p class="chapter-summary">Hiện tượng tia sáng bị lệch khỏi phương truyền thẳng khi đi qua các vật chướng ngại có kích thước cỡ bước sóng. Phương pháp đới cầu Fresnel, nhiễu xạ qua lỗ tròn, đĩa tròn Arago, nhiễu xạ sóng phẳng qua một khe hẹp và cách mạng nhiễu xạ.</p>
+          <div class="sub-heading">⚡ CÔNG THỨC VÀNG CỐT LÕI</div>
+          
+            <div class="formula-box">
+              <div class="formula-name">📐 Bán kính đới cầu Fresnel thứ k</div>
+              <div class="formula-code">rk = √((k * a * b * λ) / (a + b))</div>
+              <div class="formula-desc">a là khoảng cách từ nguồn điểm đến mặt cầu, b là khoảng cách từ mặt cầu đến điểm quan sát M. Sóng phẳng (a → ∞): rk = √(k * b * λ).</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Diện tích đới cầu Fresnel</div>
+              <div class="formula-code">ΔS ≈ (π * a * b * λ) / (a + b)</div>
+              <div class="formula-desc">Diện tích các đới cầu xấp xỉ bằng nhau và không phụ thuộc vào số thứ tự đới k.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Nhiễu xạ qua lỗ tròn</div>
+              <div class="formula-code">m = R0² * (a + b) / (a * b * λ)</div>
+              <div class="formula-desc">m là số đới cầu mở ra. Nếu m lẻ: tâm M sáng cực đại (I = 4*I1 với m=1). Nếu m chẵn: tâm M tối (I ≈ 0 với m=2).</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Nhiễu xạ qua đĩa tròn (Điểm Arago)</div>
+              <div class="formula-code">Tâm hình học luôn là ĐIỂM SÁNG</div>
+              <div class="formula-desc">Dao động tại M do các đới cầu còn lại (bắt đầu từ đới k+1) tạo ra: A ≈ Ak+1 / 2 > 0.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Nhiễu xạ sóng phẳng qua 1 khe hẹp (Fraunhofer)</div>
+              <div class="formula-code">Cực tiểu: b * sin(φ) = k * λ; Cực đại: b * sin(φ) = (2k + 1) * (λ / 2)</div>
+              <div class="formula-desc">b là bề rộng khe hẹp, φ là góc nhiễu xạ, k = ±1, ±2... Bề rộng cực đại giữa bằng 2 lần cực đại phụ.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Cách tử nhiễu xạ (Diffraction Grating)</div>
+              <div class="formula-code">d * sin(φ) = k * λ (với d = a + b là chu kỳ cách tử)</div>
+              <div class="formula-desc">Số cực đại chính quan sát được: |k| ≤ d / λ. Tổng số cực đại chính: N = 2 * [d/λ] + 1.</div>
+            </div>
+            
+          <div class="sub-heading" style="margin-top: 15px;">💡 TỪ KHÓA BẢN CHẤT & NHẬN DIỆN 3 GIÂY</div>
+          <div class="kw-container">
+            
+            <div class="kw-row">
+              <span class="kw-badge">Lỗ tròn chứa số đới LẺ</span>
+              <span class="kw-meaning">👉 Tâm là VÂN SÁNG (m=1 sáng gấp 4 lần khi không có màn)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Lỗ tròn chứa số đới CHẴN</span>
+              <span class="kw-meaning">👉 Tâm là VÂN TỐI (m=2 cường độ xấp xỉ 0)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Đĩa tròn chắn sáng</span>
+              <span class="kw-meaning">👉 Tâm bóng tối luôn có ĐIỂM SÁNG ARAGO (Poisson spot)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Số cực đại cách tử</span>
+              <span class="kw-meaning">👉 k_max = phần nguyên của d/λ; Tổng cực đại = 2*k_max + 1</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Bề rộng cực đại giữa khe hẹp</span>
+              <span class="kw-meaning">👉 Δx0 = 2 * (λ * f / b)</span>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="chapter-card">
+          <h2 class="chapter-title">Chương 3: Quang Học Sóng - Phân Cực Ánh Sáng</h2>
+          <p class="chapter-summary">Bản chất sóng ngang của ánh sáng. Sự khác biệt giữa ánh sáng tự nhiên và ánh sáng phân cực. Phân cực do phản xạ, khúc xạ và lưỡng chiết. Định luật Malus và định luật Brewster.</p>
+          <div class="sub-heading">⚡ CÔNG THỨC VÀNG CỐT LÕI</div>
+          
+            <div class="formula-box">
+              <div class="formula-name">📐 Định luật Malus (Maluyt)</div>
+              <div class="formula-code">I = I0 * cos²(α)</div>
+              <div class="formula-desc">I0 là cường độ ánh sáng phân cực tới kính phân tích, α là góc giữa quang trục của kính phân cực và kính phân tích. Khi α = 0°: I = I0; khi α = 90°: I = 0 (tắt sáng).</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Định luật Brewster</div>
+              <div class="formula-code">tan(iB) = n2 / n1 = n21</div>
+              <div class="formula-desc">Khi góc tới bằng góc Brewster iB, tia phản xạ là ánh sáng phân cực thẳng hoàn toàn (vector E vuông góc mặt phẳng tới). Tia phản xạ vuông góc tia khúc xạ: iB + r = 90°.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Ánh sáng tự nhiên qua kính phân cực lý tưởng</div>
+              <div class="formula-code">I1 = I_tn / 2</div>
+              <div class="formula-desc">Cường độ ánh sáng giảm một nửa khi biến thành ánh sáng phân cực phẳng.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Hệ 2 kính phân cực quay góc α</div>
+              <div class="formula-code">I = (I_tn / 2) * cos²(α)</div>
+              <div class="formula-desc">Cường độ chùm sáng thoát ra khỏi kính thứ 2 khi chiếu ánh sáng tự nhiên ban đầu.</div>
+            </div>
+            
+          <div class="sub-heading" style="margin-top: 15px;">💡 TỪ KHÓA BẢN CHẤT & NHẬN DIỆN 3 GIÂY</div>
+          <div class="kw-container">
+            
+            <div class="kw-row">
+              <span class="kw-badge">Góc Brewster iB</span>
+              <span class="kw-meaning">👉 tan(iB) = n2/n1; Tia phản xạ vuông góc tia khúc xạ (iB + r = 90°)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Tia phản xạ ở góc Brewster</span>
+              <span class="kw-meaning">👉 Phân cực thẳng HOÀN TOÀN (vector dao động vuông góc mặt phẳng tới)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Kính phân cực & Kính phân tích bắt chéo (α = 90°)</span>
+              <span class="kw-meaning">👉 Cường độ I = 0 (không có ánh sáng lọt qua)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Lưỡng chiết</span>
+              <span class="kw-meaning">👉 Tách thành 2 tia: tia thường (o - tuân theo định luật khúc xạ) và tia bất thường (e)</span>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="chapter-card">
+          <h2 class="chapter-title">Chương 4: Quang Lượng Tử - Bức Xạ Nhiệt & Lượng Tử Ánh Sáng</h2>
+          <p class="chapter-summary">Bức xạ nhiệt cân bằng, vật đen tuyệt đối, định luật Stefan-Boltzmann, định luật dịch chuyển Wien. Thuyết lượng tử Planck, thuyết photon Einstein, hiện tượng quang điện ngoài và hiệu ứng tán xạ Compton.</p>
+          <div class="sub-heading">⚡ CÔNG THỨC VÀNG CỐT LÕI</div>
+          
+            <div class="formula-box">
+              <div class="formula-name">📐 Định luật Stefan - Boltzmann</div>
+              <div class="formula-code">R = σ * T⁴</div>
+              <div class="formula-desc">Năng suất phát xạ toàn phần của vật đen tuyệt đối tỉ lệ với lũy thừa 4 của nhiệt độ tuyệt đối. Hằng số Stefan-Boltzmann σ = 5.67 * 10⁻⁸ W/(m²·K⁴).</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Định luật dịch chuyển Wien</div>
+              <div class="formula-code">λm * T = b</div>
+              <div class="formula-desc">Bước sóng ứng với năng suất phát xạ cực đại tỉ lệ nghịch với nhiệt độ. Hằng số Wien b = 2.898 * 10⁻³ m·K.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Năng lượng photon & Động lượng photon</div>
+              <div class="formula-code">ε = h * ν = (h * c) / λ; p = h / λ = ε / c</div>
+              <div class="formula-desc">Hằng số Planck h = 6.625 * 10⁻³⁴ J·s, c = 3 * 10⁸ m/s. 1 eV = 1.6 * 10⁻¹⁹ J.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Phương trình quang điện Einstein</div>
+              <div class="formula-code">h * ν = A + 0.5 * m * v0max² = A + e * Uh</div>
+              <div class="formula-desc">A = hc / λ0 là công thoát của electron, λ0 là giới hạn quang điện, Uh là hiệu điện thế hãm.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Độ tăng bước sóng Compton</div>
+              <div class="formula-code">Δλ = λ' - λ = 2 * λc * sin²(θ / 2) = λc * (1 - cos θ)</div>
+              <div class="formula-desc">λc = h / (m0 * c) = 2.426 * 10⁻¹² m = 0.02426 Å là bước sóng Compton của electron. θ là góc tán xạ của photon.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Động năng electron giật lùi trong Compton</div>
+              <div class="formula-code">Ke = h * c * (1 / λ - 1 / λ')</div>
+              <div class="formula-desc">Được xác định theo định luật bảo toàn năng lượng toàn phần.</div>
+            </div>
+            
+          <div class="sub-heading" style="margin-top: 15px;">💡 TỪ KHÓA BẢN CHẤT & NHẬN DIỆN 3 GIÂY</div>
+          <div class="kw-container">
+            
+            <div class="kw-row">
+              <span class="kw-badge">Nhiệt độ T tăng k lần</span>
+              <span class="kw-meaning">👉 Năng suất phát xạ R tăng k⁴ lần; λm giảm k lần</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Điều kiện quang điện ngoài</span>
+              <span class="kw-meaning">👉 λ ≤ λ0 hoặc hν ≥ A; không phụ thuộc cường độ chùm sáng</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Hiệu điện thế hãm Uh</span>
+              <span class="kw-meaning">👉 e*Uh = 0.5*m*v0max² = hν - A (chỉ phụ thuộc tần số ánh sáng và bản chất kim loại)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Tán xạ Compton góc θ = 180°</span>
+              <span class="kw-meaning">👉 Δλ đạt cực đại: Δλmax = 2*λc ≈ 0.0485 Å; động năng electron giật lùi cực đại</span>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="chapter-card">
+          <h2 class="chapter-title">Chương 5: Cơ Học Lượng Tử - Sóng De Broglie & Giếng Thế</h2>
+          <p class="chapter-summary">Giả thuyết De Broglie về lưỡng tính sóng - hạt của vật chất vi mô. Hệ thức bất định Heisenberg. Hàm sóng Schrödinger và ý nghĩa thống kê Born. Khảo sát hạt trong giếng thế thế năng một chiều sâu vô hạn.</p>
+          <div class="sub-heading">⚡ CÔNG THỨC VÀNG CỐT LÕI</div>
+          
+            <div class="formula-box">
+              <div class="formula-name">📐 Bước sóng De Broglie</div>
+              <div class="formula-code">λ = h / p = h / (m * v) = h / √(2 * m * Wđ)</div>
+              <div class="formula-desc">Với electron phi tương đối tính được gia tốc bởi U: λ = h / √(2 * m * e * U) = 12.27 / √U (Å).</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Hệ thức bất định Heisenberg</div>
+              <div class="formula-code">Δx * Δpx ≥ ħ / 2 ≈ ħ; ΔE * Δt ≥ ħ</div>
+              <div class="formula-desc">ħ = h / (2π) = 1.055 * 10⁻³⁴ J·s. Không thể đồng thời xác định chính xác vị trí và xung lượng của vi hạt.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Hạt trong giếng thế 1 chiều sâu vô hạn (bề rộng a)</div>
+              <div class="formula-code">Mức năng lượng: En = (n² * π² * ħ²) / (2 * m * a²) = (n² * h²) / (8 * m * a²)</div>
+              <div class="formula-desc">n = 1, 2, 3... là số lượng tử. Năng lượng hạt bị lượng tử hóa (gián đoạn). Năng lượng trạng thái cơ bản E1 = h² / (8*m*a²).</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Hàm sóng dừng trong giếng thế</div>
+              <div class="formula-code">ψn(x) = √(2 / a) * sin((n * π * x) / a)</div>
+              <div class="formula-desc">Với 0 ≤ x ≤ a. Ngoài giếng (x < 0 hoặc x > a): ψ(x) = 0.</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Xác suất tìm hạt</div>
+              <div class="formula-code">dw = |ψ(x)|² * dx; w = ∫ |ψ(x)|² dx</div>
+              <div class="formula-desc">|ψ(x)|² là mật độ xác suất tìm hạt tại tọa độ x.</div>
+            </div>
+            
+          <div class="sub-heading" style="margin-top: 15px;">💡 TỪ KHÓA BẢN CHẤT & NHẬN DIỆN 3 GIÂY</div>
+          <div class="kw-container">
+            
+            <div class="kw-row">
+              <span class="kw-badge">Electron gia tốc bởi U (Vôn)</span>
+              <span class="kw-meaning">👉 Bấm nhanh Casio: λ = 12.27 / √U (Å)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Năng lượng kích thích giếng thế</span>
+              <span class="kw-meaning">👉 ΔE = E2 - E1 = (2² - 1²)*E1 = 3*E1; E3 - E1 = 8*E1</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Điểm nút xác suất trong giếng</span>
+              <span class="kw-meaning">👉 Ở mức n, có n - 1 nút xác suất bằng 0 bên trong giếng</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Trạng thái cơ bản giếng thế (n = 1)</span>
+              <span class="kw-meaning">👉 Xác suất cực đại tại chính giữa giếng x = a/2</span>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="chapter-card">
+          <h2 class="chapter-title">Chương 6: Vật Lý Nguyên Tử & Hạt Nhân</h2>
+          <p class="chapter-summary">Tiên đề Bo về nguyên tử Hydro, các mức năng lượng và dãy quang phổ. Cấu tạo hạt nhân, độ hụt khối, năng lượng liên kết và định luật phóng xạ.</p>
+          <div class="sub-heading">⚡ CÔNG THỨC VÀNG CỐT LÕI</div>
+          
+            <div class="formula-box">
+              <div class="formula-name">📐 Mức năng lượng nguyên tử Hydro (Mẫu Bo)</div>
+              <div class="formula-code">En = -13.6 / n² (eV)</div>
+              <div class="formula-desc">Bán kính quỹ đạo dừng: rn = n² * r0 (với r0 = 0.53 Å là bán kính Bo).</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Bước sóng quang phổ Hydro</div>
+              <div class="formula-code">1 / λ = R_H * (1 / m² - 1 / n²)</div>
+              <div class="formula-desc">Dãy Lyman (về m=1, vùng tử ngoại); Dãy Balmer (về m=2, vùng khả kiến); Dãy Paschen (về m=3, vùng hồng ngoại).</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Độ hụt khối & Năng lượng liên kết hạt nhân</div>
+              <div class="formula-code">Δm = [Z * mp + (A - Z) * mn] - mX; Elk = Δm * c²</div>
+              <div class="formula-desc">Năng lượng liên kết riêng: ε = Elk / A (đặc trưng cho độ bền vững của hạt nhân).</div>
+            </div>
+            
+            <div class="formula-box">
+              <div class="formula-name">📐 Định luật phân rã phóng xạ</div>
+              <div class="formula-code">N(t) = N0 * e^(-λ * t) = N0 * 2^(-t / T)</div>
+              <div class="formula-desc">Chu kỳ bán rã: T = ln(2) / λ ≈ 0.693 / λ. Độ phóng xạ: H(t) = λ * N(t).</div>
+            </div>
+            
+          <div class="sub-heading" style="margin-top: 15px;">💡 TỪ KHÓA BẢN CHẤT & NHẬN DIỆN 3 GIÂY</div>
+          <div class="kw-container">
+            
+            <div class="kw-row">
+              <span class="kw-badge">Dãy Lyman</span>
+              <span class="kw-meaning">👉 Chuyển về n = 1 (Vùng TỬ NGOẠI)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Dãy Balmer</span>
+              <span class="kw-meaning">👉 Chuyển về n = 2 (Vùng KHẢ KIẾN - Ánh sáng nhìn thấy: Hα, Hβ, Hγ, Hδ)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Dãy Paschen</span>
+              <span class="kw-meaning">👉 Chuyển về n = 3 (Vùng HỒNG NGOẠI)</span>
+            </div>
+            
+            <div class="kw-row">
+              <span class="kw-badge">Độ bền vững hạt nhân</span>
+              <span class="kw-meaning">👉 Phụ thuộc vào NĂNG LƯỢNG LIÊN KẾT RIÊNG (Elk / A), bền nhất cỡ A = 50 - 70</span>
+            </div>
+            
+          </div>
+        </div>
+        
+
+  <div class="chapter-card" style="background: #FDF4FF;">
+    <h2 class="chapter-title" style="background: #FF5C5C; color: #FFF;">SỔ TAY BẤM MÁY CASIO FX-580VNX PHÒNG THI</h2>
+    <p class="chapter-summary">Tuyệt kỹ tra cứu hằng số vật lý tự động (CONST) và đổi đơn vị (CONV) không bao giờ nhớ nhầm số mũ 10⁻³⁴ hay 10⁻¹⁹.</p>
+    
+        <div class="casio-card">
+          <div class="casio-title">📟 Bấm Hằng Số Vật Lý (CONST) trên Casio fx-580VNX</div>
+          <pre class="casio-steps">Bấm [SHIFT] -> [7] (CONST) -> Chọn danh mục:
+- Universal: h = 6.626*10⁻³⁴ [1], c = 2.998*10⁸ [2]
+- Electromagnetic: e = 1.602*10⁻¹⁹ [1]
+- Atomic & Nuclear: me = 9.109*10⁻³¹ [1], mp = 1.673*10⁻²⁷ [2], mn = 1.675*10⁻²⁷ [3]
+- Physico-Chem: k = 1.381*10⁻²³ [1], σ = 5.670*10⁻⁸ [3]</pre>
+        </div>
+        
+        <div class="casio-card">
+          <div class="casio-title">📟 Chuyển Đổi Đơn Vị (CONV) trên fx-580VNX</div>
+          <pre class="casio-steps">Bấm [SHIFT] -> [8] (CONV) -> Chọn nhóm:
+- Length: Ångström (Å) sang mét (m)
+- Energy: Joule (J) sang electron-Volt (eV): Bấm giá trị J chia cho [SHIFT 7 2 1] (e) -> ra eV!</pre>
+        </div>
+        
+        <div class="casio-card">
+          <div class="casio-title">📟 Mẹo Tính Nhanh Bước Sóng De Broglie</div>
+          <pre class="casio-steps">Electron gia tốc qua hiệu điện thế U: Gõ 12.27 / √(U) -> Kết quả ngay đơn vị Ångström (1 Å = 10⁻¹⁰ m).</pre>
+        </div>
+        
+        <div class="casio-card">
+          <div class="casio-title">📟 Mẹo Tính Tán Xạ Compton</div>
+          <pre class="casio-steps">Δλ = 0.02426 * (1 - cos(θ)) (Å). Bấm máy đặt góc DEG (Độ). Góc 60°: cos = 0.5 -> Δλ = 0.01213 Å. Góc 90°: Δλ = 0.02426 Å. Góc 180°: Δλ = 0.04852 Å.</pre>
+        </div>
+        
+  </div>
+</body>
+</html>

@@ -1,0 +1,3308 @@
+{
+  "cursor": {
+    "stack": []
+  },
+  "recordMap": {
+    "__version__": 3,
+    "block": {
+      "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1": {
+        "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "version": 54,
+            "type": "page",
+            "properties": {
+              "title": [
+                [
+                  "Vật lý đại cương 2"
+                ]
+              ]
+            },
+            "content": [
+              "26ffd98e-1f09-817b-a477-ccb1b92a234b",
+              "26ffd98e-1f09-810a-8a74-d6890ed37910",
+              "26ffd98e-1f09-81c4-b25b-f9e9d17a6eac",
+              "26ffd98e-1f09-81d5-acd4-fd666590d0f2",
+              "26ffd98e-1f09-819f-b733-c90ed00b4aa5",
+              "26ffd98e-1f09-8143-97ae-e5e30854b803",
+              "26ffd98e-1f09-81be-b422-eb4c034c4ab9",
+              "26ffd98e-1f09-8189-9fe6-eb6f5ccd09c4",
+              "26ffd98e-1f09-81e3-ace3-f9335cd4fc88",
+              "286fd98e-1f09-8059-ba91-fdbf37bc3ceb"
+            ],
+            "format": {
+              "page_icon": "😡",
+              "copied_from_pointer": {
+                "id": "22ffd98e-1f09-80e2-9b5b-ef7ba19707ba",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "permissions": [
+              {
+                "role": "reader",
+                "type": "public_permission",
+                "added_timestamp": 1759158243654,
+                "is_public_share_link": true
+              }
+            ],
+            "created_time": 1757926541376,
+            "last_edited_time": 1760666601274,
+            "parent_id": "26ffd98e-1f09-8062-afef-e69fd7a4d50d",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "22ffd98e-1f09-80e2-9b5b-ef7ba19707ba",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "51h9WYc4Bg48Yl9Hla7fSg,\"start\",\"end\"",
+                "n": {
+                  "51h9WYc4Bg48Yl9Hla7fSg,\"start\",\"end\"": {
+                    "s": {
+                      "x": "51h9WYc4Bg48Yl9Hla7fSg",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "iN4FO4K1y9UG",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 18,
+                          "c": "Vật lý đại cương 2"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-8062-afef-e69fd7a4d50d": {
+        "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-8062-afef-e69fd7a4d50d",
+            "version": 106,
+            "type": "page",
+            "properties": {
+              "title": [
+                [
+                  "Đợt 1 "
+                ]
+              ]
+            },
+            "content": [
+              "26ffd98e-1f09-8121-a6c5-e1f3771918bb",
+              "26ffd98e-1f09-8125-bf79-f0abba789661",
+              "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+              "26ffd98e-1f09-811a-9ab5-e0fb6db3ef7f"
+            ],
+            "format": {
+              "page_icon": "📚",
+              "block_locked": false,
+              "block_locked_by": "1ecd872b-594c-8137-9876-0002be18ad57",
+              "copied_from_pointer": {
+                "id": "22ffd98e-1f09-8026-aead-eec218f07e8f",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "permissions": [
+              {
+                "role": "editor",
+                "type": "user_permission",
+                "user_id": "887e4d1a-993e-4926-b874-f0a407c89706",
+                "invite_id": "27dfd98e-1f09-80d5-89e6-004cdf470701"
+              },
+              {
+                "role": "reader",
+                "type": "public_permission",
+                "added_timestamp": 1767951935997,
+                "is_public_share_link": true
+              }
+            ],
+            "created_time": 1757926550232,
+            "last_edited_time": 1786526235583,
+            "parent_id": "22ffd98e-1f09-8060-a84e-d8d5a52d037e",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "22ffd98e-1f09-8026-aead-eec218f07e8f",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "uS5alYTgXEUfohJlv_4gZA,\"start\",\"end\"",
+                "n": {
+                  "uS5alYTgXEUfohJlv_4gZA,\"start\",\"end\"": {
+                    "s": {
+                      "x": "uS5alYTgXEUfohJlv_4gZA",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "1tZfhoui7h7X",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 6,
+                          "c": "Đợt 1 "
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "El9J8t7bNP9D",
+                            19
+                          ],
+                          "o": [
+                            "1tZfhoui7h7X",
+                            6
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "W6qy0-LSRJsz",
+                            10
+                          ],
+                          "o": [
+                            "1tZfhoui7h7X",
+                            6
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "W6qy0-LSRJsz",
+                            13
+                          ],
+                          "o": [
+                            "W6qy0-LSRJsz",
+                            11
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "W6qy0-LSRJsz",
+                            17
+                          ],
+                          "o": [
+                            "W6qy0-LSRJsz",
+                            13
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "W6qy0-LSRJsz",
+                            14
+                          ],
+                          "o": [
+                            "W6qy0-LSRJsz",
+                            13
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "W6qy0-LSRJsz",
+                            12
+                          ],
+                          "o": [
+                            "W6qy0-LSRJsz",
+                            11
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "1tZfhoui7h7X",
+                            7
+                          ],
+                          "o": [
+                            "1tZfhoui7h7X",
+                            6
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": [
+                      "I0GxHOQjoJtaVQtPMNwpWQ,[\"W6qy0-LSRJsz\",21],\"end\""
+                    ]
+                  },
+                  "I0GxHOQjoJtaVQtPMNwpWQ,[\"W6qy0-LSRJsz\",21],\"end\"": {
+                    "s": {
+                      "x": "I0GxHOQjoJtaVQtPMNwpWQ",
+                      "i": [
+                        {
+                          "t": "p",
+                          "i": [
+                            "W6qy0-LSRJsz",
+                            21
+                          ],
+                          "o": "start"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": "l"
+                    },
+                    "c": [
+                      "49znD1L5Kr27q-QECqpbVw,[\"W6qy0-LSRJsz\",21],\"end\""
+                    ]
+                  },
+                  "49znD1L5Kr27q-QECqpbVw,[\"W6qy0-LSRJsz\",21],\"end\"": {
+                    "s": {
+                      "x": "49znD1L5Kr27q-QECqpbVw",
+                      "i": [
+                        {
+                          "t": "p",
+                          "i": [
+                            "W6qy0-LSRJsz",
+                            21
+                          ],
+                          "o": "start"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": "l"
+                    },
+                    "c": [
+                      "voitzHDwF0sKV0FL9YyD3A,[\"oPImdVox4JcF\",21],\"end\""
+                    ]
+                  },
+                  "voitzHDwF0sKV0FL9YyD3A,[\"oPImdVox4JcF\",21],\"end\"": {
+                    "s": {
+                      "x": "voitzHDwF0sKV0FL9YyD3A",
+                      "i": [
+                        {
+                          "t": "p",
+                          "i": [
+                            "oPImdVox4JcF",
+                            21
+                          ],
+                          "o": "start"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": "l"
+                    },
+                    "c": [
+                      "LbspppDrdFp-DLvGh9zDIQ,[\"El9J8t7bNP9D\",21],\"end\""
+                    ]
+                  },
+                  "LbspppDrdFp-DLvGh9zDIQ,[\"El9J8t7bNP9D\",21],\"end\"": {
+                    "s": {
+                      "x": "LbspppDrdFp-DLvGh9zDIQ",
+                      "i": [
+                        {
+                          "t": "p",
+                          "i": [
+                            "El9J8t7bNP9D",
+                            21
+                          ],
+                          "o": "start"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": "l"
+                    },
+                    "c": [
+                      "FNaMpNPqRckHH_eZ-P9MaA,[\"0l1H98ejFz3m\",21],\"end\""
+                    ]
+                  },
+                  "FNaMpNPqRckHH_eZ-P9MaA,[\"0l1H98ejFz3m\",21],\"end\"": {
+                    "s": {
+                      "x": "FNaMpNPqRckHH_eZ-P9MaA",
+                      "i": [
+                        {
+                          "t": "p",
+                          "i": [
+                            "0l1H98ejFz3m",
+                            21
+                          ],
+                          "o": "start"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": "l"
+                    },
+                    "c": [
+                      "dRJqqGly9Mu4pIS4BUMhOg,[\"-608SRSMVJPs\",21],\"end\""
+                    ]
+                  },
+                  "dRJqqGly9Mu4pIS4BUMhOg,[\"-608SRSMVJPs\",21],\"end\"": {
+                    "s": {
+                      "x": "dRJqqGly9Mu4pIS4BUMhOg",
+                      "i": [
+                        {
+                          "t": "p",
+                          "i": [
+                            "-608SRSMVJPs",
+                            21
+                          ],
+                          "o": "start"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": "l"
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "22ffd98e-1f09-8060-a84e-d8d5a52d037e": {
+        "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+        "value": {
+          "value": {
+            "id": "22ffd98e-1f09-8060-a84e-d8d5a52d037e",
+            "version": 260,
+            "type": "page",
+            "properties": {
+              "title": [
+                [
+                  "Học kì 1 năm II (đợt 1)"
+                ]
+              ]
+            },
+            "content": [
+              "22ffd98e-1f09-8034-913f-d9870ac0ad97",
+              "26ffd98e-1f09-8062-afef-e69fd7a4d50d",
+              "22ffd98e-1f09-807f-a36d-c1b284ef41b3"
+            ],
+            "format": {
+              "page_icon": "1️⃣"
+            },
+            "permissions": [
+              {
+                "role": "reader",
+                "type": "public_permission",
+                "added_timestamp": 1767952265538,
+                "is_public_share_link": true
+              }
+            ],
+            "created_time": 1752376687295,
+            "last_edited_time": 1775627209404,
+            "parent_id": "33cfd98e-1f09-8071-9779-cdd6b747bfc3",
+            "parent_table": "block",
+            "alive": true,
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "SSnj0ZhM0kLWV7btVgwOKw,\"start\",\"end\"",
+                "n": {
+                  "SSnj0ZhM0kLWV7btVgwOKw,\"start\",\"end\"": {
+                    "s": {
+                      "x": "SSnj0ZhM0kLWV7btVgwOKw",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "iIdy-NWh_nUy",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 19,
+                          "c": "Học kì 1 năm II (đợ"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "El9J8t7bNP9D",
+                            34
+                          ],
+                          "o": [
+                            "iIdy-NWh_nUy",
+                            19
+                          ],
+                          "l": 3,
+                          "c": "t 1"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "El9J8t7bNP9D",
+                            32
+                          ],
+                          "o": [
+                            "iIdy-NWh_nUy",
+                            19
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "iIdy-NWh_nUy",
+                            20
+                          ],
+                          "o": [
+                            "iIdy-NWh_nUy",
+                            19
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "W--ymwn7fh4h",
+                            24
+                          ],
+                          "o": [
+                            "iIdy-NWh_nUy",
+                            22
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "W--ymwn7fh4h",
+                            27
+                          ],
+                          "o": [
+                            "W--ymwn7fh4h",
+                            25
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "W--ymwn7fh4h",
+                            30
+                          ],
+                          "o": [
+                            "W--ymwn7fh4h",
+                            28
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "W--ymwn7fh4h",
+                            31
+                          ],
+                          "o": [
+                            "W--ymwn7fh4h",
+                            30
+                          ],
+                          "l": 1,
+                          "c": ")"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "W--ymwn7fh4h",
+                            29
+                          ],
+                          "o": [
+                            "W--ymwn7fh4h",
+                            28
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "W--ymwn7fh4h",
+                            26
+                          ],
+                          "o": [
+                            "W--ymwn7fh4h",
+                            25
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "iIdy-NWh_nUy",
+                            23
+                          ],
+                          "o": [
+                            "iIdy-NWh_nUy",
+                            22
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "33cfd98e-1f09-8071-9779-cdd6b747bfc3": {
+        "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+        "value": {
+          "role": "none"
+        }
+      },
+      "22ffd98e-1f09-80c4-8d1c-f41533c1806f": {
+        "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+        "value": {
+          "role": "none"
+        }
+      },
+      "2f6fd98e-1f09-8040-82aa-fca8afae0c0a": {
+        "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+        "value": {
+          "role": "none"
+        }
+      },
+      "2f6fd98e-1f09-804a-8a05-e2960387da6d": {
+        "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+        "value": {
+          "role": "none"
+        }
+      },
+      "1f6fd98e-1f09-803a-b603-d69af4e09ec0": {
+        "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+        "value": {
+          "role": "none"
+        }
+      },
+      "1f6fd98e-1f09-809b-8989-d9c6ffad5f84": {
+        "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+        "value": {
+          "role": "none"
+        }
+      },
+      "26ffd98e-1f09-817b-a477-ccb1b92a234b": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-817b-a477-ccb1b92a234b",
+            "version": 4,
+            "type": "callout",
+            "content": [
+              "26ffd98e-1f09-81bf-a9ff-c66db1e4d093",
+              "26ffd98e-1f09-811b-88a6-e8754c578402",
+              "26ffd98e-1f09-8133-bfee-f9a2ffb1245f"
+            ],
+            "format": {
+              "page_icon": "💡",
+              "block_color": "gray_background",
+              "callout_version": 2,
+              "copied_from_pointer": {
+                "id": "231fd98e-1f09-805f-8563-e658767fb261",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "created_time": 1757926541378,
+            "last_edited_time": 1757926541378,
+            "parent_id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "231fd98e-1f09-805f-8563-e658767fb261",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "sr18zbm6kCsL2606cnewqQ,\"start\",\"end\"",
+                "n": {
+                  "sr18zbm6kCsL2606cnewqQ,\"start\",\"end\"": {
+                    "s": {
+                      "x": "sr18zbm6kCsL2606cnewqQ",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-810a-8a74-d6890ed37910": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-810a-8a74-d6890ed37910",
+            "version": 145,
+            "type": "page",
+            "properties": {
+              "title": [
+                [
+                  "Chương 1: Quang học sóng "
+                ]
+              ]
+            },
+            "content": [
+              "26ffd98e-1f09-81b3-8550-d1a5ec02f9d0",
+              "26ffd98e-1f09-81b9-9ee2-f0e8afa7cf41",
+              "273fd98e-1f09-808e-80e4-d2f91f018bb4",
+              "28dfd98e-1f09-8041-a214-c4f260bbdcff"
+            ],
+            "format": {
+              "page_icon": "🙂",
+              "copied_from_pointer": {
+                "id": "22ffd98e-1f09-80be-8a93-c62e41f9eddc",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              },
+              "social_media_image_preview_url": "attachment:4b426812-d84d-4dd6-abdb-9897f3d1a77a:SocialMediaPreviewImage.png"
+            },
+            "permissions": [
+              {
+                "role": "reader",
+                "type": "public_permission",
+                "added_timestamp": 1759126948827,
+                "is_public_share_link": true
+              }
+            ],
+            "created_time": 1757926541378,
+            "last_edited_time": 1791166530719,
+            "parent_id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "22ffd98e-1f09-80be-8a93-c62e41f9eddc",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "nav_parent_table": "block",
+            "nav_parent_id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "crdt_data": {
+              "title": {
+                "r": "VxcxPILP-Ccp-ivRDxXJ-w,\"start\",\"end\"",
+                "n": {
+                  "VxcxPILP-Ccp-ivRDxXJ-w,\"start\",\"end\"": {
+                    "s": {
+                      "x": "VxcxPILP-Ccp-ivRDxXJ-w",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "jPeKc8Wg0xEw",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 7,
+                          "c": "Chương "
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "FKdVDAmJhQmY",
+                            27
+                          ],
+                          "o": [
+                            "jPeKc8Wg0xEw",
+                            7
+                          ],
+                          "l": 1,
+                          "c": "1"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "PRPnDM5QFomD",
+                            26
+                          ],
+                          "o": [
+                            "jPeKc8Wg0xEw",
+                            7
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "jPeKc8Wg0xEw",
+                            8
+                          ],
+                          "o": [
+                            "jPeKc8Wg0xEw",
+                            7
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "jPeKc8Wg0xEw",
+                            9
+                          ],
+                          "o": [
+                            "jPeKc8Wg0xEw",
+                            8
+                          ],
+                          "l": 17,
+                          "c": ": Quang học sóng "
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-81c4-b25b-f9e9d17a6eac": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-81c4-b25b-f9e9d17a6eac",
+            "version": 261,
+            "type": "page",
+            "properties": {
+              "title": [
+                [
+                  "Chương 2: Quang lượng tử"
+                ]
+              ]
+            },
+            "content": [
+              "26ffd98e-1f09-816f-8255-cf90e10d293a",
+              "27cfd98e-1f09-80bf-8251-e267e2c0901c",
+              "27cfd98e-1f09-80f9-93b7-d0973556f05d",
+              "27cfd98e-1f09-8020-a404-c24928240cdd",
+              "27cfd98e-1f09-807b-882f-c4baadf276ff",
+              "27cfd98e-1f09-8058-8c0c-ea3aad4a7b30",
+              "28efd98e-1f09-80af-9410-c334d64ac411"
+            ],
+            "format": {
+              "page_icon": "🤕",
+              "block_locked": false,
+              "block_locked_by": "1ecd872b-594c-8137-9876-0002be18ad57",
+              "copied_from_pointer": {
+                "id": "230fd98e-1f09-80e7-8873-cb08e6252630",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "permissions": [
+              {
+                "role": "reader",
+                "type": "public_permission",
+                "added_timestamp": 1759134313772,
+                "is_public_share_link": true
+              }
+            ],
+            "created_time": 1757926541378,
+            "last_edited_time": 1760657440894,
+            "parent_id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "230fd98e-1f09-80e7-8873-cb08e6252630",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "ju8xKtRfpd3xqNzu0PI2ZA,\"start\",\"end\"",
+                "n": {
+                  "ju8xKtRfpd3xqNzu0PI2ZA,\"start\",\"end\"": {
+                    "s": {
+                      "x": "ju8xKtRfpd3xqNzu0PI2ZA",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "y0EC4INtCTfa",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 7,
+                          "c": "Chương "
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "FKdVDAmJhQmY",
+                            25
+                          ],
+                          "o": [
+                            "y0EC4INtCTfa",
+                            7
+                          ],
+                          "l": 1,
+                          "c": "2"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "y0EC4INtCTfa",
+                            8
+                          ],
+                          "o": [
+                            "y0EC4INtCTfa",
+                            7
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "y0EC4INtCTfa",
+                            9
+                          ],
+                          "o": [
+                            "y0EC4INtCTfa",
+                            8
+                          ],
+                          "l": 16,
+                          "c": ": Quang lượng tử"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-81d5-acd4-fd666590d0f2": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-81d5-acd4-fd666590d0f2",
+            "version": 169,
+            "type": "page",
+            "properties": {
+              "title": [
+                [
+                  "Chương 3: Cơ học lượng tử"
+                ]
+              ]
+            },
+            "content": [
+              "26ffd98e-1f09-8155-960d-c55004492553",
+              "28cfd98e-1f09-80fb-ab4b-ea458226d0b9",
+              "28cfd98e-1f09-8011-a18a-e1a883c2ca22",
+              "28cfd98e-1f09-80d7-8849-f59535e3e9a2",
+              "28cfd98e-1f09-80ea-9883-d84874628f50"
+            ],
+            "format": {
+              "page_icon": "😒",
+              "block_locked": true,
+              "block_locked_by": "1ecd872b-594c-8137-9876-0002be18ad57",
+              "copied_from_pointer": {
+                "id": "22ffd98e-1f09-80bb-9de0-cf4f7466ef4e",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              },
+              "social_media_image_preview_url": "attachment:dc554ea9-2d9c-4a26-a888-8d894b498a04:SocialMediaPreviewImage.png"
+            },
+            "created_time": 1757926541378,
+            "last_edited_time": 1760665024530,
+            "parent_id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "22ffd98e-1f09-80bb-9de0-cf4f7466ef4e",
+            "file_ids": [
+              "79e377e0-3a67-471a-a958-57ff415952e0",
+              "76ef58bb-3a64-44cc-bd85-cac2f3a67db2",
+              "dc554ea9-2d9c-4a26-a888-8d894b498a04"
+            ],
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "nx0QKlk1ZB7-X4GlY_VbiQ,\"start\",\"end\"",
+                "n": {
+                  "nx0QKlk1ZB7-X4GlY_VbiQ,\"start\",\"end\"": {
+                    "s": {
+                      "x": "nx0QKlk1ZB7-X4GlY_VbiQ",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "miUd36hbd-E-",
+                            27
+                          ],
+                          "o": "start",
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "miUd36hbd-E-",
+                            30
+                          ],
+                          "o": [
+                            "miUd36hbd-E-",
+                            27
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "miUd36hbd-E-",
+                            33
+                          ],
+                          "o": [
+                            "miUd36hbd-E-",
+                            30
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "miUd36hbd-E-",
+                            36
+                          ],
+                          "o": [
+                            "miUd36hbd-E-",
+                            33
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "miUd36hbd-E-",
+                            39
+                          ],
+                          "o": [
+                            "miUd36hbd-E-",
+                            36
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "miUd36hbd-E-",
+                            42
+                          ],
+                          "o": [
+                            "miUd36hbd-E-",
+                            39
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "miUd36hbd-E-",
+                            40
+                          ],
+                          "o": [
+                            "miUd36hbd-E-",
+                            39
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "miUd36hbd-E-",
+                            37
+                          ],
+                          "o": [
+                            "miUd36hbd-E-",
+                            36
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "miUd36hbd-E-",
+                            34
+                          ],
+                          "o": [
+                            "miUd36hbd-E-",
+                            33
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "miUd36hbd-E-",
+                            31
+                          ],
+                          "o": [
+                            "miUd36hbd-E-",
+                            30
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "miUd36hbd-E-",
+                            28
+                          ],
+                          "o": [
+                            "miUd36hbd-E-",
+                            27
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "WIo6nSSY4LDq",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 7,
+                          "c": "Chương "
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "FKdVDAmJhQmY",
+                            26
+                          ],
+                          "o": [
+                            "WIo6nSSY4LDq",
+                            7
+                          ],
+                          "l": 1,
+                          "c": "3"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "WIo6nSSY4LDq",
+                            8
+                          ],
+                          "o": [
+                            "WIo6nSSY4LDq",
+                            7
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "WIo6nSSY4LDq",
+                            9
+                          ],
+                          "o": [
+                            "WIo6nSSY4LDq",
+                            8
+                          ],
+                          "l": 17,
+                          "c": ": Cơ học lượng tử"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-819f-b733-c90ed00b4aa5": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-819f-b733-c90ed00b4aa5",
+            "version": 6,
+            "type": "page",
+            "properties": {
+              "title": [
+                [
+                  "Chương 4: Vật lý nguyên tử"
+                ]
+              ]
+            },
+            "content": [
+              "26ffd98e-1f09-81cb-a979-f578e155c361"
+            ],
+            "format": {
+              "page_icon": "😯",
+              "copied_from_pointer": {
+                "id": "22ffd98e-1f09-8058-8dc6-c39e75ba4cc5",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "created_time": 1757926541378,
+            "last_edited_time": 1759160162913,
+            "parent_id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "22ffd98e-1f09-8058-8dc6-c39e75ba4cc5",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "Pv6EQSww9NvxJ9MPYPrZlg,\"start\",\"end\"",
+                "n": {
+                  "Pv6EQSww9NvxJ9MPYPrZlg,\"start\",\"end\"": {
+                    "s": {
+                      "x": "Pv6EQSww9NvxJ9MPYPrZlg",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "k-tyJMLvN9Dv",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 7,
+                          "c": "Chương "
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "FKdVDAmJhQmY",
+                            27
+                          ],
+                          "o": [
+                            "k-tyJMLvN9Dv",
+                            7
+                          ],
+                          "l": 1,
+                          "c": "4"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "k-tyJMLvN9Dv",
+                            8
+                          ],
+                          "o": [
+                            "k-tyJMLvN9Dv",
+                            7
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "k-tyJMLvN9Dv",
+                            9
+                          ],
+                          "o": [
+                            "k-tyJMLvN9Dv",
+                            8
+                          ],
+                          "l": 18,
+                          "c": ": Vật lý nguyên tử"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-8143-97ae-e5e30854b803": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-8143-97ae-e5e30854b803",
+            "version": 14,
+            "type": "page",
+            "properties": {
+              "title": [
+                [
+                  "Chương 5: Vật lý hạt nhân"
+                ]
+              ]
+            },
+            "content": [
+              "26ffd98e-1f09-8174-bde2-f9923801312d"
+            ],
+            "format": {
+              "page_icon": "🫠",
+              "copied_from_pointer": {
+                "id": "22ffd98e-1f09-804e-bfe0-d44b77ed0499",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "created_time": 1757926541378,
+            "last_edited_time": 1759160190814,
+            "parent_id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "22ffd98e-1f09-804e-bfe0-d44b77ed0499",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "S1dMx4k08FwrZrP2ViS-hA,\"start\",\"end\"",
+                "n": {
+                  "S1dMx4k08FwrZrP2ViS-hA,\"start\",\"end\"": {
+                    "s": {
+                      "x": "S1dMx4k08FwrZrP2ViS-hA",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "bmKyQo3UpuTN",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 7,
+                          "c": "Chương "
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "FKdVDAmJhQmY",
+                            27
+                          ],
+                          "o": [
+                            "bmKyQo3UpuTN",
+                            7
+                          ],
+                          "l": 2,
+                          "c": "5:"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "bmKyQo3UpuTN",
+                            8
+                          ],
+                          "o": [
+                            "bmKyQo3UpuTN",
+                            7
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "FKdVDAmJhQmY",
+                            26
+                          ],
+                          "o": [
+                            "bmKyQo3UpuTN",
+                            8
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "bmKyQo3UpuTN",
+                            9
+                          ],
+                          "o": [
+                            "bmKyQo3UpuTN",
+                            8
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "bmKyQo3UpuTN",
+                            10
+                          ],
+                          "o": [
+                            "bmKyQo3UpuTN",
+                            9
+                          ],
+                          "l": 16,
+                          "c": " Vật lý hạt nhân"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-81be-b422-eb4c034c4ab9": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-81be-b422-eb4c034c4ab9",
+            "version": 2,
+            "type": "page",
+            "properties": {
+              "title": [
+                [
+                  "Bài giảng và slide của thầy"
+                ]
+              ]
+            },
+            "content": [
+              "26ffd98e-1f09-8151-9a18-cd999de9014c",
+              "26ffd98e-1f09-810e-aeb0-ca6ab1ca562b"
+            ],
+            "format": {
+              "page_icon": "🫂",
+              "copied_from_pointer": {
+                "id": "231fd98e-1f09-80cc-981a-c1442e49a83b",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "created_time": 1757926541378,
+            "last_edited_time": 1757926541378,
+            "parent_id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "231fd98e-1f09-80cc-981a-c1442e49a83b",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "2Pva-y-bqhXL0obVYdf_mA,\"start\",\"end\"",
+                "n": {
+                  "2Pva-y-bqhXL0obVYdf_mA,\"start\",\"end\"": {
+                    "s": {
+                      "x": "2Pva-y-bqhXL0obVYdf_mA",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "DK-bnESgdcmP",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 27,
+                          "c": "Bài giảng và slide của thầy"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-8189-9fe6-eb6f5ccd09c4": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-8189-9fe6-eb6f5ccd09c4",
+            "version": 41,
+            "type": "page",
+            "properties": {
+              "title": [
+                [
+                  "Đề thi"
+                ]
+              ]
+            },
+            "content": [
+              "28dfd98e-1f09-80da-9bc9-fce9fb9f546b",
+              "26ffd98e-1f09-8121-b18b-cd1d3bc17f0d",
+              "26ffd98e-1f09-8117-9319-da2253a16690",
+              "276fd98e-1f09-8008-bdf3-fdea6cd35d41",
+              "28cfd98e-1f09-8086-bfab-d20c9fb6ec9c"
+            ],
+            "format": {
+              "page_icon": "📚",
+              "copied_from_pointer": {
+                "id": "22ffd98e-1f09-8078-8e60-dfe113bcd094",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "created_time": 1757926541378,
+            "last_edited_time": 1786498781564,
+            "parent_id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "22ffd98e-1f09-8078-8e60-dfe113bcd094",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "R9VsZOYVzLsz-4EmfaghjA,\"start\",\"end\"",
+                "n": {
+                  "R9VsZOYVzLsz-4EmfaghjA,\"start\",\"end\"": {
+                    "s": {
+                      "x": "R9VsZOYVzLsz-4EmfaghjA",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "ODJx4MKDhep-",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 6,
+                          "c": "Đề thi"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-81e3-ace3-f9335cd4fc88": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-81e3-ace3-f9335cd4fc88",
+            "version": 46,
+            "type": "page",
+            "properties": {
+              "title": [
+                [
+                  "Đề cương"
+                ]
+              ]
+            },
+            "content": [
+              "26ffd98e-1f09-81c3-8bba-f15f3abf6f48",
+              "26ffd98e-1f09-81c3-a752-fb03e39c8345",
+              "26ffd98e-1f09-81d9-b8d2-caa29d634d3d",
+              "28dfd98e-1f09-80a8-a600-eb709e1d42de",
+              "26ffd98e-1f09-81a4-96cc-ef4828f5d0d7",
+              "26ffd98e-1f09-8186-a461-d9b8b1a05182",
+              "28bfd98e-1f09-8046-88a5-f116aa11ed60"
+            ],
+            "format": {
+              "page_icon": "📖",
+              "copied_from_pointer": {
+                "id": "230fd98e-1f09-80a3-9547-c4c504f80d01",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "created_time": 1757926541378,
+            "last_edited_time": 1760658806262,
+            "parent_id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "230fd98e-1f09-80a3-9547-c4c504f80d01",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "OUkdPgYpKcEE-uaHlQAm9Q,\"start\",\"end\"",
+                "n": {
+                  "OUkdPgYpKcEE-uaHlQAm9Q,\"start\",\"end\"": {
+                    "s": {
+                      "x": "OUkdPgYpKcEE-uaHlQAm9Q",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "SOse6018A_Hr",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 8,
+                          "c": "Đề cương"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "286fd98e-1f09-8059-ba91-fdbf37bc3ceb": {
+        "value": {
+          "value": {
+            "id": "286fd98e-1f09-8059-ba91-fdbf37bc3ceb",
+            "version": 16,
+            "type": "image",
+            "properties": {
+              "size": [
+                [
+                  "148.9 KB"
+                ]
+              ],
+              "title": [
+                [
+                  "Screenshot 2025-10-06 151656.png"
+                ]
+              ],
+              "source": [
+                [
+                  "attachment:cd318931-3b88-4ef6-a488-1aa0bb9ef90f:Screenshot_2025-10-06_151656.png"
+                ]
+              ]
+            },
+            "format": {
+              "block_width": 562.7875366210938,
+              "display_source": "attachment:cd318931-3b88-4ef6-a488-1aa0bb9ef90f:Screenshot_2025-10-06_151656.png",
+              "block_full_width": false,
+              "block_page_width": true,
+              "block_aspect_ratio": 0.4632963988919668,
+              "block_preserve_scale": true
+            },
+            "created_time": 1759911168658,
+            "last_edited_time": 1760648678039,
+            "parent_id": "26ffd98e-1f09-818a-8a1e-cb0d91c7afb1",
+            "parent_table": "block",
+            "alive": true,
+            "file_ids": [
+              "cd318931-3b88-4ef6-a488-1aa0bb9ef90f"
+            ],
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "-DLwXJXJH9eXKN7my9VBTg,\"start\",\"end\"",
+                "n": {
+                  "-DLwXJXJH9eXKN7my9VBTg,\"start\",\"end\"": {
+                    "s": {
+                      "x": "-DLwXJXJH9eXKN7my9VBTg",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 32,
+                          "c": "Screenshot 2025-10-06 151656.png"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-81bf-a9ff-c66db1e4d093": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-81bf-a9ff-c66db1e4d093",
+            "version": 2,
+            "type": "bulleted_list",
+            "properties": {
+              "title": [
+                [
+                  "Môn này mình nghĩ chỉ cần thuộc công thức từng dạng bài + áp vô bài tập là xong"
+                ]
+              ]
+            },
+            "format": {
+              "copied_from_pointer": {
+                "id": "231fd98e-1f09-8013-ad7e-c5fc4e959869",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "created_time": 1757926541381,
+            "last_edited_time": 1757926541381,
+            "parent_id": "26ffd98e-1f09-817b-a477-ccb1b92a234b",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "231fd98e-1f09-8013-ad7e-c5fc4e959869",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "-za2r2G_IfyrE7xT54f0bA,\"start\",\"end\"",
+                "n": {
+                  "-za2r2G_IfyrE7xT54f0bA,\"start\",\"end\"": {
+                    "s": {
+                      "x": "-za2r2G_IfyrE7xT54f0bA",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "KCA6CQUmPvmk",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 79,
+                          "c": "Môn này mình nghĩ chỉ cần thuộc công thức từng dạng bài + áp vô bài tập là xong"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-811b-88a6-e8754c578402": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-811b-88a6-e8754c578402",
+            "version": 2,
+            "type": "bulleted_list",
+            "properties": {
+              "title": [
+                [
+                  "Cách học: "
+                ]
+              ]
+            },
+            "content": [
+              "26ffd98e-1f09-818a-99a4-c461ad675a74",
+              "26ffd98e-1f09-81fe-8959-d1464318fa0d"
+            ],
+            "format": {
+              "copied_from_pointer": {
+                "id": "231fd98e-1f09-803f-a9f4-cc1719fc6ba3",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "created_time": 1757926541381,
+            "last_edited_time": 1757926541381,
+            "parent_id": "26ffd98e-1f09-817b-a477-ccb1b92a234b",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "231fd98e-1f09-803f-a9f4-cc1719fc6ba3",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "U8k6akKlwFyKNQ5ydhTVPg,\"start\",\"end\"",
+                "n": {
+                  "U8k6akKlwFyKNQ5ydhTVPg,\"start\",\"end\"": {
+                    "s": {
+                      "x": "U8k6akKlwFyKNQ5ydhTVPg",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "wRFV7nTsA5L7",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 10,
+                          "c": "Cách học: "
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-8133-bfee-f9a2ffb1245f": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-8133-bfee-f9a2ffb1245f",
+            "version": 12,
+            "type": "text",
+            "properties": {
+              "title": [
+                [
+                  "⚠️: Cái môn này đi thi dạng bài tập chỉ loanh quanh bài thầy cho với dạng trong sách \nbài tập tập 3 "
+                ]
+              ]
+            },
+            "format": {
+              "copied_from_pointer": {
+                "id": "231fd98e-1f09-80a4-bc37-f6e724ba5cbf",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "created_time": 1757926541381,
+            "last_edited_time": 1760492791233,
+            "parent_id": "26ffd98e-1f09-817b-a477-ccb1b92a234b",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "231fd98e-1f09-80a4-bc37-f6e724ba5cbf",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "fPf7bX4FdySD261YIM3UyQ,\"start\",\"end\"",
+                "n": {
+                  "fPf7bX4FdySD261YIM3UyQ,\"start\",\"end\"": {
+                    "s": {
+                      "x": "fPf7bX4FdySD261YIM3UyQ",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "r6HgI7TiFC2M",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 100,
+                          "c": "⚠️: Cái môn này đi thi dạng bài tập chỉ loanh quanh bài thầy cho với dạng trong sách \nbài tập tập 3 "
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "r6HgI7TiFC2M",
+                            101
+                          ],
+                          "o": [
+                            "r6HgI7TiFC2M",
+                            100
+                          ],
+                          "l": -17,
+                          "b": [
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                205
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  101
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": "end",
+                                "a": "b"
+                              },
+                              "a": [
+                                "b"
+                              ]
+                            },
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                206
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  101
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  173
+                                ],
+                                "a": "b"
+                              },
+                              "a": [
+                                "h",
+                                "red"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "r6HgI7TiFC2M",
+                            118
+                          ],
+                          "o": [
+                            "r6HgI7TiFC2M",
+                            117
+                          ],
+                          "l": -7,
+                          "b": [
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                205
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  101
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": "end",
+                                "a": "b"
+                              },
+                              "a": [
+                                "b"
+                              ]
+                            },
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                206
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  101
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  173
+                                ],
+                                "a": "b"
+                              },
+                              "a": [
+                                "h",
+                                "red"
+                              ]
+                            },
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                208
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  118
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  125
+                                ],
+                                "a": "b"
+                              },
+                              "a": [
+                                "i"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "r6HgI7TiFC2M",
+                            125
+                          ],
+                          "o": [
+                            "r6HgI7TiFC2M",
+                            124
+                          ],
+                          "l": -38,
+                          "b": [
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                205
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  101
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": "end",
+                                "a": "b"
+                              },
+                              "a": [
+                                "b"
+                              ]
+                            },
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                206
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  101
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  173
+                                ],
+                                "a": "b"
+                              },
+                              "a": [
+                                "h",
+                                "red"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "r6HgI7TiFC2M",
+                            163
+                          ],
+                          "o": [
+                            "r6HgI7TiFC2M",
+                            162
+                          ],
+                          "l": -10,
+                          "b": [
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                205
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  101
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": "end",
+                                "a": "b"
+                              },
+                              "a": [
+                                "b"
+                              ]
+                            },
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                206
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  101
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  173
+                                ],
+                                "a": "b"
+                              },
+                              "a": [
+                                "h",
+                                "red"
+                              ]
+                            },
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                209
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  163
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": "end",
+                                "a": "b"
+                              },
+                              "a": [
+                                "i"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "r6HgI7TiFC2M",
+                            173
+                          ],
+                          "o": [
+                            "r6HgI7TiFC2M",
+                            172
+                          ],
+                          "l": -32,
+                          "b": [
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                205
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  101
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": "end",
+                                "a": "b"
+                              },
+                              "a": [
+                                "b"
+                              ]
+                            },
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                207
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  173
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": "end",
+                                "a": "b"
+                              },
+                              "a": [
+                                "h",
+                                "default"
+                              ]
+                            },
+                            {
+                              "t": "a",
+                              "x": "fPf7bX4FdySD261YIM3UyQ",
+                              "l": "",
+                              "i": [
+                                "r6HgI7TiFC2M",
+                                209
+                              ],
+                              "s": {
+                                "i": [
+                                  "r6HgI7TiFC2M",
+                                  163
+                                ],
+                                "a": "b"
+                              },
+                              "e": {
+                                "i": "end",
+                                "a": "b"
+                              },
+                              "a": [
+                                "i"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "t": "e",
+                          "b": []
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": [
+                      "7CwfY_xjTMwrDWKpWNZUQA,[\"BrRvpO6hBngQ\",21],\"end\""
+                    ]
+                  },
+                  "7CwfY_xjTMwrDWKpWNZUQA,[\"BrRvpO6hBngQ\",21],\"end\"": {
+                    "s": {
+                      "x": "7CwfY_xjTMwrDWKpWNZUQA",
+                      "i": [
+                        {
+                          "t": "p",
+                          "i": [
+                            "BrRvpO6hBngQ",
+                            21
+                          ],
+                          "o": "start"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": "l"
+                    },
+                    "c": [
+                      "YAwm9cZk0YSya9paDs7SFg,[\"c-SokgX33Cbg\",224],\"end\""
+                    ]
+                  },
+                  "YAwm9cZk0YSya9paDs7SFg,[\"c-SokgX33Cbg\",224],\"end\"": {
+                    "s": {
+                      "x": "YAwm9cZk0YSya9paDs7SFg",
+                      "i": [
+                        {
+                          "t": "p",
+                          "i": [
+                            "c-SokgX33Cbg",
+                            224
+                          ],
+                          "o": "start"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            1
+                          ],
+                          "o": "start",
+                          "l": -4
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            8
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            4
+                          ],
+                          "l": -7
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            50
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            14
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            54
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            50
+                          ],
+                          "l": -11
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            69
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            64
+                          ],
+                          "l": -6
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            77
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            74
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            81
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            79
+                          ],
+                          "l": -5
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            92
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            85
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            97
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            93
+                          ],
+                          "l": -6
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            108
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            102
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            111
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            108
+                          ],
+                          "l": -4
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            116
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            114
+                          ],
+                          "l": -5
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            123
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            120
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            126
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            123
+                          ],
+                          "l": -6
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            134
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            131
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            167
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            136
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            172
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            168
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            181
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            174
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            189
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            181
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            193
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            189
+                          ],
+                          "l": -5
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            201
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            197
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            199
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            197
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            198
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            197
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            191
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            189
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            190
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            189
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            182
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            181
+                          ],
+                          "l": -7
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            175
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            174
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            178
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            176
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            177
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            176
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            170
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            168
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            169
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            168
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            152
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            136
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            157
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            153
+                          ],
+                          "l": -5
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            165
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            161
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            163
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            161
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            162
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            161
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            155
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            153
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            154
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            153
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            137
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            136
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            142
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            138
+                          ],
+                          "l": -5
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            150
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            146
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            148
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            146
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            147
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            146
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            140
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            138
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            139
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            138
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            132
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            131
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            124
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            123
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            121
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            120
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            115
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            114
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            109
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            108
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            103
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            102
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            106
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            103
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            104
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            103
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            95
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            93
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            94
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            93
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            86
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            85
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            89
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            87
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            88
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            87
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            80
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            79
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            76
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            74
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            75
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            74
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            66
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            64
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            65
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            64
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            52
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            50
+                          ],
+                          "l": -2
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            51
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            50
+                          ],
+                          "l": -1
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            45
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            14
+                          ],
+                          "l": -5
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            15
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            14
+                          ],
+                          "l": -30
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "IjU-0wSG9K3j",
+                            5
+                          ],
+                          "o": [
+                            "IjU-0wSG9K3j",
+                            4
+                          ],
+                          "l": -3
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": "l"
+                    },
+                    "c": [
+                      "_F2NTPH8RYXsGJcwc06ATg,[\"miUd36hbd-E-\",21],\"end\""
+                    ]
+                  },
+                  "_F2NTPH8RYXsGJcwc06ATg,[\"miUd36hbd-E-\",21],\"end\"": {
+                    "s": {
+                      "x": "_F2NTPH8RYXsGJcwc06ATg",
+                      "i": [
+                        {
+                          "t": "p",
+                          "i": [
+                            "miUd36hbd-E-",
+                            21
+                          ],
+                          "o": "start"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": "l"
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-818a-99a4-c461ad675a74": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-818a-99a4-c461ad675a74",
+            "version": 2,
+            "type": "bulleted_list",
+            "properties": {
+              "title": [
+                [
+                  " thì cứ học từng chương một, thích thì xem bài giảng của thầy (mục tiêu là biết công thức dùng từng dạng bài)"
+                ]
+              ]
+            },
+            "format": {
+              "copied_from_pointer": {
+                "id": "231fd98e-1f09-80ff-8468-e5155b2e9b49",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "created_time": 1757926541386,
+            "last_edited_time": 1757926541386,
+            "parent_id": "26ffd98e-1f09-811b-88a6-e8754c578402",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "231fd98e-1f09-80ff-8468-e5155b2e9b49",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "yzvekCYbghWRIBA4ulAgLQ,\"start\",\"end\"",
+                "n": {
+                  "yzvekCYbghWRIBA4ulAgLQ,\"start\",\"end\"": {
+                    "s": {
+                      "x": "yzvekCYbghWRIBA4ulAgLQ",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "dPP-CLOluR9n",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 109,
+                          "c": " thì cứ học từng chương một, thích thì xem bài giảng của thầy (mục tiêu là biết công thức dùng từng dạng bài)"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      },
+      "26ffd98e-1f09-81fe-8959-d1464318fa0d": {
+        "value": {
+          "value": {
+            "id": "26ffd98e-1f09-81fe-8959-d1464318fa0d",
+            "version": 2,
+            "type": "bulleted_list",
+            "properties": {
+              "title": [
+                [
+                  " xong vào mục đề cương làm được hết các dạng bài tập của chương đó là okie"
+                ]
+              ]
+            },
+            "format": {
+              "copied_from_pointer": {
+                "id": "231fd98e-1f09-8070-a6d9-f08a7b3ffb2c",
+                "table": "block",
+                "spaceId": "acb9daef-e631-452b-a28f-3cd60ea8d85c"
+              }
+            },
+            "created_time": 1757926541386,
+            "last_edited_time": 1757926541386,
+            "parent_id": "26ffd98e-1f09-811b-88a6-e8754c578402",
+            "parent_table": "block",
+            "alive": true,
+            "copied_from": "231fd98e-1f09-8070-a6d9-f08a7b3ffb2c",
+            "space_id": "acb9daef-e631-452b-a28f-3cd60ea8d85c",
+            "crdt_format_version": 1,
+            "crdt_data": {
+              "title": {
+                "r": "vkMLFleUQhWkY4Yf2LFX6Q,\"start\",\"end\"",
+                "n": {
+                  "vkMLFleUQhWkY4Yf2LFX6Q,\"start\",\"end\"": {
+                    "s": {
+                      "x": "vkMLFleUQhWkY4Yf2LFX6Q",
+                      "i": [
+                        {
+                          "t": "s"
+                        },
+                        {
+                          "t": "t",
+                          "i": [
+                            "_DRv1RFEZNCE",
+                            1
+                          ],
+                          "o": "start",
+                          "l": 74,
+                          "c": " xong vào mục đề cương làm được hết các dạng bài tập của chương đó là okie"
+                        },
+                        {
+                          "t": "e"
+                        }
+                      ],
+                      "l": ""
+                    },
+                    "c": []
+                  }
+                }
+              }
+            }
+          },
+          "role": "reader"
+        }
+      }
+    }
+  }
+}

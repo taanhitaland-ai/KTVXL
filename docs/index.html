@@ -25,6 +25,9 @@
         <button class="subject-toggle-btn" data-subject="tthcm" id="btn-subj-tthcm">
           📕 TƯ TƯỞNG HCM (885 câu)
         </button>
+        <button class="subject-toggle-btn" data-subject="vldc" id="btn-subj-vldc">
+          ⚛️ VẬT LÝ ĐẠI CƯƠNG (62 câu)
+        </button>
       </div>
 
       <nav class="nav-tabs" role="tablist">
@@ -33,6 +36,9 @@
         </button>
         <button class="nav-tab-btn" data-tab="tab-exam" id="btn-tab-exam">
           ⏱️ Thi Thử 60 Phút
+        </button>
+        <button class="nav-tab-btn" data-tab="tab-visualize" id="btn-tab-visualize">
+          🔬 Mô Phỏng Vật Lý (Lab)
         </button>
         <button class="nav-tab-btn" data-tab="tab-knowledge" id="btn-tab-knowledge">
           📖 Kiến Thức Trọng Tâm
@@ -324,7 +330,457 @@
             ⬇️ TẢI PDF 885 CÂU TTHCM
           </a>
         </div>
+
+        <!-- PDF 5 Card: VLDC Ly thuyet -->
+        <div class="download-card">
+          <div>
+            <div class="download-icon">⚛️</div>
+            <span class="neo-badge badge-clo1" style="margin-bottom: 10px; background: #93C5FD; color: #1E3A8A;">VLDC • LÝ THUYẾT TRỌNG TÂM</span>
+            <h2 class="download-title">Kiến Thức Trọng Tâm Vật Lý Đại Cương</h2>
+            <p class="download-desc">
+              Tổng hợp 6 chương lý thuyết cốt lõi (Giao thoa, Nhiễu xạ, Phân cực, Thuyết tương đối, Quang lượng tử, Cơ học lượng tử) + Sổ tay hằng số Casio fx-580VNX.
+            </p>
+          </div>
+          <a href="VLDC_Kien_Thuc_Trong_Tam.pdf" download="VLDC_Kien_Thuc_Trong_Tam.pdf" class="neo-btn neo-btn-yellow" style="width: 100%; background: #BAE6FD;">
+            ⬇️ TẢI PDF VLDC LÝ THUYẾT
+          </a>
+        </div>
+
+        <!-- PDF 6 Card: VLDC Ngan hang cau hoi -->
+        <div class="download-card">
+          <div>
+            <div class="download-icon">🔬</div>
+            <span class="neo-badge badge-exam" style="margin-bottom: 10px; background: #6EE7B7; color: #064E3B;">VLDC • 62 CÂU HỎI & LỜI GIẢI</span>
+            <h2 class="download-title">Ngân Hàng Câu Hỏi & Lời Giải & Casio VLDC</h2>
+            <p class="download-desc">
+              Toàn bộ 62 câu hỏi trắc nghiệm & tự luận điển hình có lời giải từng bước, công thức áp dụng, phương pháp giải chuẩn và phím bấm Casio fx-580VNX.
+            </p>
+          </div>
+          <a href="VLDC_Ngan_Hang_Cau_Hoi_Loi_Giai_Meo_Casio.pdf" download="VLDC_Ngan_Hang_Cau_Hoi_Loi_Giai_Meo_Casio.pdf" class="neo-btn neo-btn-green" style="width: 100%;">
+            ⬇️ TẢI PDF 62 CÂU VLDC + CASIO
+          </a>
+        </div>
       </div>
+    </section>
+
+    <!-- TAB 5: MÔ PHỎNG VẬT LÝ TRỰC QUAN (INTERACTIVE PHYSICS LAB) -->
+    <section id="tab-visualize" class="tab-pane">
+      <div class="knowledge-hero" style="background: #93C5FD;">
+        <div>
+          <span class="neo-badge badge-exam" style="background: #1D4ED8; color: #FFF; font-size: 0.85rem; margin-bottom: 8px;">🔬 INTERACTIVE PHYSICS LAB (60 FPS)</span>
+          <h1 style="color: #000;">PHÒNG THÍ NGHIỆM MÔ PHỎNG VẬT LÝ TRỰC QUAN</h1>
+          <p style="font-size: 1.05rem; font-weight: 700; color: #1E293B;">
+            Trực quan hóa bản chất các hiện tượng Quang học sóng & Vật lý lượng tử bằng đồ họa chuyển động thời gian thực 60 FPS.
+          </p>
+        </div>
+      </div>
+
+      <!-- Module Selector Bar -->
+      <div class="sim-nav-bar">
+        <button class="sim-nav-btn active" data-sim="young">1. Giao Thoa Khe Young & Bản Mỏng</button>
+        <button class="sim-nav-btn" data-sim="diffraction">2. Nhiễu Xạ Khe Hẹp & Cách Mạng</button>
+        <button class="sim-nav-btn" data-sim="photoelectric">3. Hiệu Ứng Quang Điện Ngoài</button>
+        <button class="sim-nav-btn" data-sim="compton">4. Tán Xạ Compton (Đo bước sóng)</button>
+        <button class="sim-nav-btn" data-sim="quantum">5. Hạt Trong Giếng Thế 1D</button>
+        <button class="sim-nav-btn" data-sim="polarization">6. Phân Cực Ánh Sáng & Malus</button>
+      </div>
+
+      <!-- Module 1: Young -->
+      <div id="sim-pane-young" class="sim-view-pane active">
+        <div class="sim-grid">
+          <div class="sim-canvas-card">
+            <div class="sim-card-header">
+              <span class="sim-card-title">🔬 Mô Phỏng Giao Thoa 2 Khe Young & Bản Mỏng Chắn Khe</span>
+              <span class="neo-badge badge-clo1">Quang Học Sóng</span>
+            </div>
+            <div class="sim-canvas-wrapper">
+              <canvas id="cv-young" class="sim-canvas" width="680" height="380"></canvas>
+            </div>
+          </div>
+          <div class="sim-controls-card">
+            <div>
+              <div class="sim-section-title">⚙️ Thông Số Thí Nghiệm</div>
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Bước sóng ánh sáng (λ):</span>
+                  <span id="val-young-lambda" class="sim-val-badge">550 nm</span>
+                </div>
+                <input type="range" id="sl-young-lambda" class="sim-slider" min="380" max="750" value="550" step="5">
+              </div>
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Khoảng cách 2 khe (a):</span>
+                  <span id="val-young-a" class="sim-val-badge">0.8 mm</span>
+                </div>
+                <input type="range" id="sl-young-a" class="sim-slider" min="0.2" max="3.0" value="0.8" step="0.1">
+              </div>
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Khoảng cách đến màn (D):</span>
+                  <span id="val-young-d" class="sim-val-badge">2.0 m</span>
+                </div>
+                <input type="range" id="sl-young-d" class="sim-slider" min="0.5" max="4.0" value="2.0" step="0.1">
+              </div>
+              <div style="margin: 12px 0 8px 0;">
+                <label style="font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox" id="chk-young-plate" style="width: 18px; height: 18px;">
+                  <span>Đặt bản mỏng (chiết suất n, dày e) chắn khe S₁</span>
+                </label>
+              </div>
+              <div id="young-plate-controls" style="display: none; background: #F8FAFC; padding: 10px; border: 1.5px solid #000; border-radius: 6px; margin-bottom: 10px;">
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Bề dày bản mỏng (e):</span>
+                    <span id="val-young-e" class="sim-val-badge">4.0 µm</span>
+                  </div>
+                  <input type="range" id="sl-young-e" class="sim-slider" min="1.0" max="15.0" value="4.0" step="0.5">
+                </div>
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Chiết suất bản mỏng (n):</span>
+                    <span id="val-young-n" class="sim-val-badge">1.50</span>
+                  </div>
+                  <input type="range" id="sl-young-n" class="sim-slider" min="1.10" max="1.80" value="1.50" step="0.05">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="sim-section-title">📊 Kết Quả Đo Lường</div>
+              <div class="sim-readout-grid">
+                <div class="sim-readout-card">
+                  <div class="sim-readout-label">Khoảng vân i = λD/a</div>
+                  <div id="out-young-i" class="sim-readout-val">1.375 mm</div>
+                </div>
+                <div class="sim-readout-card">
+                  <div class="sim-readout-label">Độ dịch vân x₀ = D/a·(n-1)e</div>
+                  <div id="out-young-shift" class="sim-readout-val">0.000 mm</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sim-explain-card">
+              <strong>💡 Bản chất vật lý:</strong> Hiệu quang lộ giữa 2 chùm sóng kết hợp là ΔL = ax/D. Khi chắn khe S₁ bằng bản mỏng chiết suất n, quang lộ tia 1 tăng thêm (n - 1)e. Điểm chính giữa O không còn thỏa mãn hiệu quang lộ = 0, toàn bộ hệ vân giao thoa <em>bị dịch chuyển về phía khe có bản mỏng</em> một khoảng x₀ = (D/a)(n - 1)e.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 2: Diffraction -->
+      <div id="sim-pane-diffraction" class="sim-view-pane">
+        <div class="sim-grid">
+          <div class="sim-canvas-card">
+            <div class="sim-card-header">
+              <span class="sim-card-title">🔬 Mô Phỏng Nhiễu Xạ Fraunhofer Qua Khe Hẹp & Cách Mạng</span>
+              <span class="neo-badge badge-clo2">Nhiễu Xạ Sóng</span>
+            </div>
+            <div class="sim-canvas-wrapper">
+              <canvas id="cv-diffraction" class="sim-canvas" width="680" height="380"></canvas>
+            </div>
+          </div>
+          <div class="sim-controls-card">
+            <div>
+              <div class="sim-section-title">⚙️ Chế Độ & Thông Số</div>
+              <div style="display: flex; gap: 16px; margin-bottom: 12px; font-weight: 800;">
+                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                  <input type="radio" name="diff-mode" value="single" checked> 1 Khe hẹp (Single Slit)
+                </label>
+                <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                  <input type="radio" name="diff-mode" value="grating"> Cách mạng (Grating)
+                </label>
+              </div>
+
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Bước sóng (λ):</span>
+                  <span id="val-diff-lambda" class="sim-val-badge">500 nm</span>
+                </div>
+                <input type="range" id="sl-diff-lambda" class="sim-slider" min="380" max="750" value="500" step="10">
+              </div>
+
+              <div id="diff-single-ctrl">
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Bề rộng khe hẹp (b):</span>
+                    <span id="val-diff-b" class="sim-val-badge">0.08 mm</span>
+                  </div>
+                  <input type="range" id="sl-diff-b" class="sim-slider" min="0.02" max="0.30" value="0.08" step="0.01">
+                </div>
+              </div>
+
+              <div id="diff-grating-ctrl" style="display: none;">
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Chu kỳ cách mạng (d):</span>
+                    <span id="val-diff-d" class="sim-val-badge">2.5 µm</span>
+                  </div>
+                  <input type="range" id="sl-diff-d" class="sim-slider" min="1.0" max="10.0" value="2.5" step="0.2">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="sim-section-title">📊 Kết Quả Đo Lường</div>
+              <div class="sim-readout-grid">
+                <div class="sim-readout-card">
+                  <div class="sim-readout-label">Bề rộng cực đại giữa Δx₀</div>
+                  <div id="out-diff-w0" class="sim-readout-val">18.75 mm</div>
+                </div>
+                <div class="sim-readout-card">
+                  <div class="sim-readout-label">Góc cực tiểu 1 / Bậc k_max</div>
+                  <div id="out-diff-phi" class="sim-readout-val">0.358°</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sim-explain-card">
+              <strong>💡 Bản chất vật lý:</strong> Theo nguyên lý Huygens-Fresnel, mỗi điểm trên khe hẹp trở thành một nguồn sóng thứ cấp kết hợp. Cực tiểu nhiễu xạ xảy ra khi b·sinφ = kλ (k = ±1, ±2,...). Bề rộng của cực đại trung tâm gấp đôi bề rộng các cực đại phụ: Δx₀ = 2λD/b.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 3: Photoelectric -->
+      <div id="sim-pane-photoelectric" class="sim-view-pane">
+        <div class="sim-grid">
+          <div class="sim-canvas-card">
+            <div class="sim-card-header">
+              <span class="sim-card-title">🔬 Mô Phỏng Hiện Tượng Quang Điện Ngoài (Thí Nghiệm Hertz-Hallwachs)</span>
+              <span class="neo-badge badge-clo3">Quang Lượng Tử</span>
+            </div>
+            <div class="sim-canvas-wrapper">
+              <canvas id="cv-photoelectric" class="sim-canvas" width="680" height="380"></canvas>
+            </div>
+          </div>
+          <div class="sim-controls-card">
+            <div>
+              <div class="sim-section-title">⚙️ Thông Số Thí Nghiệm</div>
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Vật liệu Katốt:</span>
+                </div>
+                <select id="sel-photo-mat" class="neo-select" style="width: 100%; margin-top: 4px;">
+                  <option value="Cs">Xesi (Cs) • A = 1.90 eV • λ₀ = 653 nm</option>
+                  <option value="Na" selected>Natri (Na) • A = 2.48 eV • λ₀ = 500 nm</option>
+                  <option value="Zn">Kẽm (Zn) • A = 4.30 eV • λ₀ = 289 nm</option>
+                  <option value="Cu">Đồng (Cu) • A = 4.70 eV • λ₀ = 264 nm</option>
+                </select>
+              </div>
+
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Bước sóng chùm sáng (λ):</span>
+                  <span id="val-photo-lambda" class="sim-val-badge">280 nm</span>
+                </div>
+                <input type="range" id="sl-photo-lambda" class="sim-slider" min="150" max="700" value="280" step="5">
+              </div>
+
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Cường độ chùm sáng (Số photon):</span>
+                  <span id="val-photo-int" class="sim-val-badge">80%</span>
+                </div>
+                <input type="range" id="sl-photo-int" class="sim-slider" min="10" max="100" value="80" step="5">
+              </div>
+
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Hiệu điện thế U_AK (Anốt - Katốt):</span>
+                  <span id="val-photo-u" class="sim-val-badge">+0.5 V</span>
+                </div>
+                <input type="range" id="sl-photo-u" class="sim-slider" min="-5.0" max="5.0" value="0.5" step="0.1">
+              </div>
+            </div>
+
+            <div>
+              <div class="sim-section-title">📊 Năng Lượng & Trạng Thái</div>
+              <div class="sim-readout-grid">
+                <div class="sim-readout-card">
+                  <div class="sim-readout-label">Năng lượng Photon (ε = hc/λ)</div>
+                  <div id="out-photo-e" class="sim-readout-val">4.44 eV</div>
+                </div>
+                <div class="sim-readout-card">
+                  <div class="sim-readout-label">Giới hạn quang điện (λ₀)</div>
+                  <div id="out-photo-l0" class="sim-readout-val">500 nm (2.48 eV)</div>
+                </div>
+                <div class="sim-readout-card">
+                  <div class="sim-readout-label">Hiệu điện thế hãm |U_h|</div>
+                  <div id="out-photo-uh" class="sim-readout-val">1.96 V</div>
+                </div>
+                <div class="sim-readout-card" style="grid-column: span 2;">
+                  <div class="sim-readout-label">Trạng thái dòng quang điện:</div>
+                  <div id="out-photo-status" class="sim-readout-val" style="font-size: 0.85rem;">✅ Đang có dòng quang điện</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sim-explain-card">
+              <strong>💡 Phương trình Einstein:</strong> $\varepsilon = hf = A + \frac{1}{2}mv_{0max}^2$. Hiện tượng quang điện xảy ra khi $\lambda \le \lambda_0$ (tức $\varepsilon \ge A$). Khi đặt điện áp âm $U_{AK} \le -U_h$, công của điện trường hãm $e|U_h| = \frac{1}{2}mv_{0max}^2$ giữ toàn bộ electron lại, làm dòng quang điện triệt tiêu hoàn toàn.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 4: Compton -->
+      <div id="sim-pane-compton" class="sim-view-pane">
+        <div class="sim-grid">
+          <div class="sim-canvas-card">
+            <div class="sim-card-header">
+              <span class="sim-card-title">🔬 Mô Phỏng Tán Xạ Compton (Va Chạm Đàn Hồi Lượng Tử)</span>
+              <span class="neo-badge badge-clo3">Quang Lượng Tử</span>
+            </div>
+            <div class="sim-canvas-wrapper">
+              <canvas id="cv-compton" class="sim-canvas" width="680" height="380"></canvas>
+            </div>
+          </div>
+          <div class="sim-controls-card">
+            <div>
+              <div class="sim-section-title">⚙️ Góc Tán Xạ & Thao Tác</div>
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Góc tán xạ photon (θ):</span>
+                  <span id="val-compton-theta" class="sim-val-badge">90°</span>
+                </div>
+                <input type="range" id="sl-compton-theta" class="sim-slider" min="0" max="180" value="90" step="5">
+              </div>
+
+              <div style="margin-top: 12px;">
+                <button id="btn-compton-fire" class="neo-btn neo-btn-green" style="width: 100%; padding: 10px;">
+                  🚀 Bắn Photon Tia X (Tái Hiện Va Chạm)
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <div class="sim-section-title">📊 Độ Dịch Sóng & Động Năng Electron</div>
+              <div class="sim-readout-grid">
+                <div class="sim-readout-card">
+                  <div class="sim-readout-label">Độ dịch bước sóng Δλ</div>
+                  <div id="out-compton-deltal" class="sim-readout-val">0.02426 Å</div>
+                </div>
+                <div class="sim-readout-card">
+                  <div class="sim-readout-label">Bước sóng tán xạ λ'</div>
+                  <div id="out-compton-prime" class="sim-readout-val">0.04426 Å</div>
+                </div>
+                <div class="sim-readout-card" style="grid-column: span 2;">
+                  <div class="sim-readout-label">Động năng truyền cho electron (K_e = E - E')</div>
+                  <div id="out-compton-ke" class="sim-readout-val">340.45 keV</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sim-explain-card">
+              <strong>💡 Công thức Compton:</strong> $\Delta \lambda = \lambda' - \lambda = \Lambda_c (1 - \cos\theta)$ với $\Lambda_c = \frac{h}{m_0 c} \approx 0.02426\ \text{Å}$. Tán xạ Compton chứng minh tính chất <em>hạt</em> rõ nét của ánh sáng: photon mang động lượng $p = \frac{h}{\lambda}$, va chạm đàn hồi với electron tự do như 2 quả cầu bida.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 5: Quantum Box -->
+      <div id="sim-pane-quantum" class="sim-view-pane">
+        <div class="sim-grid">
+          <div class="sim-canvas-card">
+            <div class="sim-card-header">
+              <span class="sim-card-title">🔬 Mô Phỏng Sóng De Broglie Của Hạt Trong Giếng Thế 1D Sâu Vô Hạn</span>
+              <span class="neo-badge badge-clo3">Cơ Học Lượng Tử</span>
+            </div>
+            <div class="sim-canvas-wrapper">
+              <canvas id="cv-quantum" class="sim-canvas" width="680" height="380"></canvas>
+            </div>
+          </div>
+          <div class="sim-controls-card">
+            <div>
+              <div class="sim-section-title">⚙️ Trạng Thái Lượng Tử & Bề Rộng Giếng</div>
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Số lượng tử chính (n):</span>
+                  <span id="val-quantum-n" class="sim-val-badge">n = 2</span>
+                </div>
+                <input type="range" id="sl-quantum-n" class="sim-slider" min="1" max="5" value="2" step="1">
+              </div>
+
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Bề rộng giếng thế (a):</span>
+                  <span id="val-quantum-a" class="sim-val-badge">1.0 nm</span>
+                </div>
+                <input type="range" id="sl-quantum-a" class="sim-slider" min="0.5" max="3.0" value="1.0" step="0.1">
+              </div>
+            </div>
+
+            <div>
+              <div class="sim-section-title">📊 Mức Năng Lượng & Mật Độ Xác Suất</div>
+              <div class="sim-readout-grid">
+                <div class="sim-readout-card">
+                  <div class="sim-readout-label">Năng lượng E_n (electron)</div>
+                  <div id="out-quantum-en" class="sim-readout-val">1.504 eV</div>
+                </div>
+                <div class="sim-readout-card">
+                  <div class="sim-readout-label">Bước sóng de Broglie λ</div>
+                  <div id="out-quantum-db" class="sim-readout-val">1.000 nm</div>
+                </div>
+                <div class="sim-readout-card" style="grid-column: span 2;">
+                  <div class="sim-readout-label">Số điểm nút xác suất bằng 0:</div>
+                  <div id="out-quantum-nodes" class="sim-readout-val">1 nút xác suất = 0 bên trong</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sim-explain-card">
+              <strong>💡 Ý nghĩa hàm sóng:</strong> Sóng de Broglie của hạt bị giam cầm trong giếng thế tạo thành hệ <em>sóng dừng</em>. Hàm sóng trạng thái $\psi_n(x) = \sqrt{\frac{2}{a}}\sin\left(\frac{n\pi x}{a}\right)$. Mật độ xác suất tìm hạt $|\psi_n(x)|^2$ biến thiên dạng hình sin bình phương, chứng minh hạt không chuyển động theo quỹ đạo cổ điển mà mang tính chất xác suất lượng tử.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Module 6: Polarization -->
+      <div id="sim-pane-polarization" class="sim-view-pane">
+        <div class="sim-grid">
+          <div class="sim-canvas-card">
+            <div class="sim-card-header">
+              <span class="sim-card-title">🔬 Mô Phỏng Hiện Tượng Phân Cực & Định Luật Malus</span>
+              <span class="neo-badge badge-clo1">Quang Học Sóng</span>
+            </div>
+            <div class="sim-canvas-wrapper">
+              <canvas id="cv-polarization" class="sim-canvas" width="680" height="380"></canvas>
+            </div>
+          </div>
+          <div class="sim-controls-card">
+            <div>
+              <div class="sim-section-title">⚙️ Góc Phân Cực Của Kính P₂</div>
+              <div class="sim-slider-row">
+                <div class="sim-slider-label-row">
+                  <span>Góc xoay kính phân tích (α):</span>
+                  <span id="val-polar-alpha" class="sim-val-badge">45°</span>
+                </div>
+                <input type="range" id="sl-polar-alpha" class="sim-slider" min="0" max="90" value="45" step="5">
+              </div>
+
+              <div style="margin: 12px 0 8px 0;">
+                <label style="font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                  <input type="checkbox" id="chk-polar-mid" style="width: 18px; height: 18px;">
+                  <span>Chèn thêm kính P_giữa ở góc 45° (Nghịch lý lượng tử)</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <div class="sim-section-title">📊 Cường Độ Sáng Sau Kính Phân Tích</div>
+              <div class="sim-readout-grid">
+                <div class="sim-readout-card" style="grid-column: span 2;">
+                  <div class="sim-readout-label">Cường độ truyền qua I (Định luật Malus: I = I₁·cos²α)</div>
+                  <div id="out-polar-ratio" class="sim-readout-val">25.0% I₀</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sim-explain-card">
+              <strong>💡 Định luật Malus:</strong> Ánh sáng tự nhiên qua kính phân cực $P_1$ trở thành ánh sáng phân cực thẳng với $I_1 = \frac{1}{2}I_0$. Khi qua kính phân tích $P_2$ có trục quang học lệch góc $\alpha$, cường độ ánh sáng còn lại là $I = I_1 \cos^2\alpha$. Khi $\alpha = 90^\circ$ (hai kính vuông góc), ánh sáng bị triệt tiêu hoàn toàn ($I = 0$).
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
   </main>
@@ -400,6 +856,9 @@
   <script src="data.js"></script>
   <script src="tthcm_data.js"></script>
   <script src="tthcm_knowledge_data.js"></script>
+  <script src="vldc_data.js"></script>
+  <script src="vldc_knowledge_data.js"></script>
+  <script src="vldc_simulations.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
