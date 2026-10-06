@@ -955,3 +955,56 @@ code, pre, .mono {
     grid-template-columns: 1fr;
   }
 }
+
+/* Multi-Subject Switcher */
+.subject-toggle-group {
+  display: flex;
+  align-items: center;
+  background: #E5E7EB;
+  border: 2.5px solid #000;
+  box-shadow: 3px 3px 0px #000;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 4px;
+}
+
+.subject-toggle-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #4B5563;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.subject-toggle-btn:hover {
+  color: #000;
+}
+
+.subject-toggle-btn.active[data-subject="ktvxl"] {
+  background: var(--neo-yellow);
+  color: #000;
+  border-color: #000;
+  box-shadow: 2px 2px 0px #000;
+}
+
+.subject-toggle-btn.active[data-subject="tthcm"] {
+  background: #EF4444;
+  color: #fff;
+  border-color: #000;
+  box-shadow: 2px 2px 0px #000;
+}
+
+.badge-chap1 { background: #FEF08A; color: #854D0E; }
+.badge-chap2 { background: #FED7AA; color: #9A3412; }
+.badge-chap3 { background: #BBF7D0; color: #166534; }
+.badge-chap4 { background: #BFDBFE; color: #1E40AF; }
+.badge-chap5 { background: #DDD6FE; color: #5B21B6; }
+.badge-chap6 { background: #FBCFE8; color: #9D174D; }
+

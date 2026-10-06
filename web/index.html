@@ -13,8 +13,18 @@
   <header class="app-header">
     <div class="header-container">
       <div class="logo-area">
-        <span class="brand-badge">⚡ KTVXL</span>
-        <span class="brand-title">VI XỬ LÝ </span>
+        <span class="brand-badge" id="app-brand-badge">⚡ KTVXL</span>
+        <span class="brand-title" id="app-brand-title">VI XỬ LÝ</span>
+      </div>
+
+      <!-- Subject Switcher -->
+      <div class="subject-toggle-group" id="subject-switcher">
+        <button class="subject-toggle-btn active" data-subject="ktvxl" id="btn-subj-ktvxl">
+          ⚡ VI XỬ LÝ (984 câu)
+        </button>
+        <button class="subject-toggle-btn" data-subject="tthcm" id="btn-subj-tthcm">
+          📕 TƯ TƯỞNG HCM (885 câu)
+        </button>
       </div>
 
       <nav class="nav-tabs" role="tablist">
@@ -255,45 +265,78 @@
       </div>
 
       <div class="download-grid">
-        <!-- PDF 1 Card -->
+        <!-- PDF 1 Card: KTVXL Ly thuyet -->
         <div class="download-card">
           <div>
-            <div class="download-icon">📘</div>
-            <span class="neo-badge badge-clo1" style="margin-bottom: 10px;">TÀI LIỆU 1 • LÝ THUYẾT</span>
-            <h2 class="download-title">Tổng Hợp Kiến Thức Trọng Tâm Môn Học</h2>
+            <div class="download-icon">⚡</div>
+            <span class="neo-badge badge-clo1" style="margin-bottom: 10px;">VI XỬ LÝ • LÝ THUYẾT</span>
+            <h2 class="download-title">Kiến Thức Trọng Tâm Vi Xử Lý</h2>
             <p class="download-desc">
-              Bao gồm đầy đủ 6 chương lý thuyết cốt lõi (Kiến trúc MPU/MCU & ARM, Phần cứng 89C51 & Mạch mở rộng bộ nhớ, Tập lệnh ASM, Timer/Counter, Truyền thông UART, Hệ thống ngắt) cùng Sổ tay mẹo bấm máy Casio fx-580VNX chuẩn xác.
+              Bao gồm đầy đủ 6 chương lý thuyết cốt lõi (Kiến trúc MPU/MCU & ARM, Phần cứng 89C51 & Mạch mở rộng bộ nhớ, Tập lệnh ASM, Timer/Counter, UART, Ngắt) cùng mẹo Casio fx-580VNX.
             </p>
-            <ul style="margin-left: 20px; margin-bottom: 20px; font-weight: 700; font-size: 0.9rem; line-height: 1.8;">
-              <li>Bảng tra cứu thanh ghi SFR đầy đủ địa chỉ bit</li>
-              <li>Bảng Vector ngắt & Thanh ghi IE/IP</li>
-              <li>Bảng tính tốc độ Baud UART & Timer 1 Mode 2</li>
-              <li>Sơ đồ giải mã mạch nhớ 74LS138 & 74LS373</li>
-            </ul>
           </div>
-          <a href="../KTVXL_Kien_Thuc_Trong_Tam.pdf" download="KTVXL_Kien_Thuc_Trong_Tam.pdf" class="neo-btn neo-btn-yellow" style="width: 100%;">
-            ⬇️ TẢI FILE PDF KIẾN THỨC (PDF)
+          <a href="KTVXL_Kien_Thuc_Trong_Tam.pdf" download="KTVXL_Kien_Thuc_Trong_Tam.pdf" class="neo-btn neo-btn-yellow" style="width: 100%;">
+            ⬇️ TẢI PDF VI XỬ LÝ LÝ THUYẾT
           </a>
         </div>
 
-        <!-- PDF 2 Card -->
+        <!-- PDF 2 Card: KTVXL Ngan hang cau hoi -->
+        <div class="download-card">
+          <div>
+            <div class="download-icon">📝</div>
+            <span class="neo-badge badge-exam" style="margin-bottom: 10px;">VI XỬ LÝ • 984 CÂU HỎI</span>
+            <h2 class="download-title">Ngân Hàng Câu Hỏi & Lời Giải Vi Xử Lý</h2>
+            <p class="download-desc">
+              Tổng hợp 100% câu hỏi (5 Đề thi 001 - 005 + Toàn bộ chuyên đề Part 1 đến Part 18). Đầy đủ sơ đồ mạch, lời giải chi tiết và mẹo Casio.
+            </p>
+          </div>
+          <a href="KTVXL_Ngan_Hang_Cau_Hoi_Loi_Giai_Meo_Casio.pdf" download="KTVXL_Ngan_Hang_Cau_Hoi_Loi_Giai_Meo_Casio.pdf" class="neo-btn neo-btn-green" style="width: 100%;">
+            ⬇️ TẢI PDF 984 CÂU HỎI VXL
+          </a>
+        </div>
+
+        <!-- PDF 3 Card: TTHCM Ly thuyet -->
         <div class="download-card">
           <div>
             <div class="download-icon">📕</div>
-            <span class="neo-badge badge-exam" style="margin-bottom: 10px;">TÀI LIỆU 2 • BÀI TẬP & LỜI GIẢI</span>
-            <h2 class="download-title">Ngân Hàng Câu Hỏi, Lời Giải Chuẩn & Mẹo Casio</h2>
+            <span class="neo-badge badge-chap2" style="margin-bottom: 10px;">TTHCM • LÝ THUYẾT CHUẨN</span>
+            <h2 class="download-title">Kiến Thức Trọng Tâm Tư Tưởng HCM</h2>
             <p class="download-desc">
-              Tổng hợp 100% câu hỏi (5 Đề thi 001 - 005 + Toàn bộ chuyên đề Part 1 đến Part 18). Mỗi câu đều có lời giải chi tiết từng bước, phương pháp tổng quát và mẹo bấm máy Casio siêu tốc.
+              Hệ thống hóa toàn bộ 6 chương giáo trình chuẩn Bộ GD&ĐT & Học viện KMA, kèm Bảng biên niên sử (1890-1969) và Bảng "Từ khóa vàng" trắc nghiệm.
             </p>
-            <ul style="margin-left: 20px; margin-bottom: 20px; font-weight: 700; font-size: 0.9rem; line-height: 1.8;">
-              <li>Không bỏ sót bất kỳ câu hỏi nào trong thư mục</li>
-              <li>Bảo toàn nguyên vẹn sơ đồ mạch và ảnh mã lệnh</li>
-              <li>100% lời giải chuẩn xác kèm phương pháp dạng bài</li>
-              <li>Mẹo bấm máy Casio Mode Base-N, tính trễ, bù 2</li>
-            </ul>
           </div>
-          <a href="../KTVXL_Ngan_Hang_Cau_Hoi_Loi_Giai_Meo_Casio.pdf" download="KTVXL_Ngan_Hang_Cau_Hoi_Loi_Giai_Meo_Casio.pdf" class="neo-btn neo-btn-green" style="width: 100%;">
-            ⬇️ TẢI FILE PDF NGÂN HÀNG CÂU HỎI & LỜI GIẢI
+          <a href="TTHCM_Kien_Thuc_Trong_Tam.pdf" download="TTHCM_Kien_Thuc_Trong_Tam.pdf" class="neo-btn neo-btn-yellow" style="width: 100%; background: #FED7AA;">
+            ⬇️ TẢI PDF TTHCM LÝ THUYẾT
+          </a>
+        </div>
+
+        <!-- PDF 4 Card: TTHCM Ngan hang cau hoi -->
+        <div class="download-card">
+          <div>
+            <div class="download-icon">🎯</div>
+            <span class="neo-badge badge-chap4" style="margin-bottom: 10px;">TTHCM • 885 CÂU HỎI</span>
+            <h2 class="download-title">Ngân Hàng 885 Câu Hỏi & Lời Giải TTHCM</h2>
+            <p class="download-desc">
+              Trọn bộ 4 nguồn đề (Đề cuối kỳ Full A, Đề 132, Đề mẫu 651, Đề cương ATTT). 100% có đáp án chuẩn, lời giải học thuật và mẹo nhớ mốc năm.
+            </p>
+          </div>
+          <a href="TTHCM_Ngan_Hang_Cau_Hoi_Loi_Giai_Meo_Nho.pdf" download="TTHCM_Ngan_Hang_Cau_Hoi_Loi_Giai_Meo_Nho.pdf" class="neo-btn neo-btn-green" style="width: 100%;">
+            ⬇️ TẢI PDF 885 CÂU TTHCM
+          </a>
+        </div>
+
+        <!-- ZIP Card: Tai lieu goc VXL -->
+        <div class="download-card" style="grid-column: 1 / -1;">
+          <div>
+            <div class="download-icon">📦</div>
+            <span class="neo-badge" style="background: #E5E7EB; margin-bottom: 10px;">FILE GOM TỔNG HỢP</span>
+            <h2 class="download-title">File Nén Toàn Bộ Tài Liệu Gốc Vi Xử Lý (.ZIP)</h2>
+            <p class="download-desc">
+              Gom trọn vẹn toàn bộ các slide bài giảng, giáo trình, ma trận đề thi, 5 đề kiểm tra .docx và 18 file bài tập PDF gốc vào 1 file duy nhất (20.1 MB).
+            </p>
+          </div>
+          <a href="../Tai_Lieu_Goc_Vi_Xu_Ly.zip" download="Tai_Lieu_Goc_Vi_Xu_Ly.zip" class="neo-btn neo-btn-white" style="width: 100%;">
+            ⬇️ TẢI TRỌN BỘ TÀI LIỆU GỐC VXL (.ZIP)
           </a>
         </div>
       </div>
@@ -370,6 +413,8 @@
 
   <!-- Scripts -->
   <script src="data.js"></script>
+  <script src="tthcm_data.js"></script>
+  <script src="tthcm_knowledge_data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

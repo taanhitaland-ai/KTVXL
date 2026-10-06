@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Hệ Thống Kiến Thức Trọng Tâm Tư Tưởng Hồ Chí Minh</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap');
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        color: #111;
+        line-height: 1.55;
+        font-size: 13px;
+        background: #fff;
+    }
+    
+    .cover-page {
+        page-break-after: always;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 4px solid #111;
+        box-shadow: 10px 10px 0px #111;
+        background: #FFFDF9;
+        padding: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .badge {
+        display: inline-block;
+        background: #FFE600;
+        color: #111;
+        font-weight: 800;
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 8px 18px;
+        border: 2px solid #111;
+        box-shadow: 3px 3px 0px #111;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+    
+    .cover-title {
+        font-size: 32px;
+        font-weight: 900;
+        line-height: 1.25;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        color: #111;
+    }
+    
+    .cover-sub {
+        font-size: 16px;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 35px;
+    }
+    
+    .meta-box {
+        border: 2px solid #111;
+        background: #F3F0E6;
+        padding: 16px 28px;
+        box-shadow: 4px 4px 0px #111;
+        font-size: 13px;
+        text-align: left;
+        display: inline-block;
+    }
+    
+    .meta-box p {
+        margin-bottom: 6px;
+    }
+    .meta-box p:last-child {
+        margin-bottom: 0;
+    }
+    
+    .chapter-card {
+        border: 2.5px solid #111;
+        box-shadow: 5px 5px 0px #111;
+        background: #FFFDF9;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+        padding: 18px 22px;
+    }
+    
+    .chapter-title {
+        font-size: 18px;
+        font-weight: 900;
+        text-transform: uppercase;
+        border-bottom: 2.5px solid #111;
+        padding-bottom: 8px;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .section-title {
+        font-size: 14px;
+        font-weight: 800;
+        color: #A31D1D;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+    
+    .section-p {
+        margin-bottom: 8px;
+        text-align: justify;
+    }
+    
+    .table-custom {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 14px 0;
+        font-size: 12px;
+    }
+    
+    .table-custom th, .table-custom td {
+        border: 1.5px solid #111;
+        padding: 8px 10px;
+        text-align: left;
+    }
+    
+    .table-custom th {
+        background: #FFE600;
+        font-weight: 800;
+    }
+    
+    .table-custom tr:nth-child(even) {
+        background: #FDF9F1;
+    }
+
+    /* Question Bank Styles */
+    .question-card {
+        border: 2px solid #111;
+        box-shadow: 4px 4px 0px #111;
+        background: #FFFDF9;
+        margin-bottom: 16px;
+        padding: 14px 18px;
+        page-break-inside: avoid;
+    }
+    
+    .q-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        font-weight: 800;
+        font-size: 12px;
+    }
+    
+    .q-badge {
+        background: #E0E7FF;
+        border: 1.5px solid #111;
+        padding: 2px 8px;
+        border-radius: 4px;
+    }
+    
+    .q-prompt {
+        font-weight: 700;
+        font-size: 13.5px;
+        margin-bottom: 10px;
+        line-height: 1.45;
+    }
+    
+    .q-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 10px;
+        font-size: 12.5px;
+    }
+    
+    .q-opt {
+        padding: 6px 10px;
+        border: 1.5px solid #111;
+        background: #FAFAFA;
+        border-radius: 3px;
+    }
+    
+    .q-opt.correct {
+        background: #D1FAE5;
+        border-color: #065F46;
+        font-weight: 700;
+    }
+    
+    .q-solution {
+        background: #F3F4F6;
+        border-left: 3.5px solid #111;
+        padding: 8px 12px;
+        margin-top: 8px;
+        font-size: 12px;
+    }
+    
+    .sol-row {
+        margin-bottom: 4px;
+    }
+    
+    .sol-label {
+        font-weight: 800;
+        color: #111;
+    }
+    
+    .sol-tip {
+        background: #FEF3C7;
+        padding: 4px 8px;
+        border: 1px dashed #B45309;
+        margin-top: 4px;
+        font-weight: 600;
+        color: #92400E;
+    }
+    </style>
+</head>
+<body>
+
+<div class="cover-page">
+    <div class="badge">Học Viện Kỹ Thuật Mật Mã • Khoa Lý Luận Chính Trị</div>
+    <div class="cover-title">TỔNG HỢP KIẾN THỨC TRỌNG TÂM<br>TƯ TƯỞNG HỒ CHÍ MINH</div>
+    <div class="cover-sub">Tóm Tắt 6 Chương Giáo Trình Chuẩn • Biên Niên Sử • Tác Phẩm Kinh Điển • Bảng Từ Khóa Vàng</div>
+    <div class="meta-box">
+        <p><strong>Đối tượng phục vụ:</strong> Sinh viên ôn thi kết thúc học phần & Chuẩn đầu ra KMA</p>
+        <p><strong>Cơ sở tài liệu:</strong> Giáo trình Tư tưởng Hồ Chí Minh (Bộ GD&ĐT) & Đề cương Học viện KTMM</p>
+        <p><strong>Phương pháp:</strong> Sơ đồ hóa, bảng biểu đối sánh, từ khóa trọng điểm thi trắc nghiệm</p>
+        <p><strong>Ngày phát hành:</strong> Tháng 10/2026 • Phiên bản Pro Master</p>
+    </div>
+</div>
+
+<div class="chapter-card">
+    <div class="chapter-title">
+        <span>Chương 1: Khái Niệm, Đối Tượng, Phương Pháp Nghiên Cứu &amp; Ý Nghĩa Học Tập</span>
+    </div>
+    <p style="font-style: italic; color: #555; margin-bottom: 12px;">Định nghĩa Tư tưởng Hồ Chí Minh qua các kỳ Đại hội Đảng (VII, IX, XI); đối tượng nghiên cứu; các nguyên tắc phương pháp luận khoa học và ý nghĩa đối với sinh viên.</p>
+
+    <div class="section-title">1. Khái niệm Tư tưởng Hồ Chí Minh qua các kỳ Đại hội Đảng</div>
+    <p class="section-p"><strong>Đại hội VII (Tháng 6/1991)</strong>: Mốc lịch sử đầu tiên Đảng khẳng định trong Cương lĩnh: &quot;Đảng lấy chủ nghĩa Mác - Lênin và tư tưởng Hồ Chí Minh làm nền tảng tư tưởng, kim chỉ nam cho hành động&quot;.</p>
+    <p class="section-p"><strong>Đại hội IX (Tháng 4/2001)</strong>: Làm rõ nguồn gốc, nội hàm và cốt lõi: &quot;Tư tưởng Hồ Chí Minh là một hệ thống quan điểm toàn diện và sâu sắc về những vấn đề cơ bản của cách mạng Việt Nam, là kết quả của sự vận dụng và phát triển sáng tạo chủ nghĩa Mác - Lênin vào điều kiện cụ thể của nước ta, kế thừa và phát triển các giá trị truyền thống tốt đẹp của dân tộc, tiếp thu tinh hoa văn hóa nhân loại...&quot;.</p>
+    <p class="section-p"><strong>Đại hội XI (Tháng 1/2011)</strong>: Tiếp tục hoàn thiện và khẳng định: Tư tưởng Hồ Chí Minh là tài sản tinh thần vô cùng to lớn và quý giá của Đảng và dân tộc ta, mãi mãi soi đường cho sự nghiệp cách mạng của nhân dân ta giành thắng lợi.</p>
+
+    <div class="section-title">2. Đối tượng &amp; Nhiệm vụ nghiên cứu môn học</div>
+    <p class="section-p"><strong>Đối tượng nghiên cứu</strong>: Toàn bộ hệ thống các quan điểm, luận điểm của Hồ Chí Minh về cách mạng Việt Nam trong dòng chảy thời đại, cùng quá trình hiện thực hóa sinh động các quan điểm đó vào thực tiễn đấu tranh giải phóng dân tộc và xây dựng đất nước.</p>
+    <p class="section-p"><strong>Nhiệm vụ nghiên cứu</strong>: Làm rõ cơ sở hình thành, các giai đoạn phát triển, nội dung các luận điểm cơ bản, vai trò chỉ đạo thực tiễn và sự phát triển sáng tạo của Đảng trong thời kỳ đổi mới.</p>
+
+    <div class="section-title">3. Phương pháp luận nghiên cứu</div>
+    <p class="section-p"><strong>Thống nhất tính Đảng và tính khoa học</strong>: Bảo đảm lập trường giai cấp công nhân đồng thời phản ánh khách quan, chính xác sự thật lịch sử.</p>
+    <p class="section-p"><strong>Thống nhất giữa lý luận và thực tiễn</strong>: Lý luận bắt nguồn từ thực tiễn cách mạng Việt Nam và quay trở lại chỉ đạo, dẫn dắt thực tiễn.</p>
+    <p class="section-p"><strong>Quan điểm lịch sử - cụ thể</strong>: Đặt từng tư tưởng, phát biểu trong hoàn cảnh, không gian và thời gian lịch sử cụ thể khi tư tưởng đó ra đời.</p>
+    <p class="section-p"><strong>Quan điểm toàn diện và hệ thống</strong>: Xem xét các luận điểm của Người trong một chỉnh thể thống nhất, có mối quan hệ biện chứng hữu cơ với nhau.</p>
+</div>
+
+<div class="chapter-card">
+    <div class="chapter-title">
+        <span>Chương 2: Cơ Sở, Quá Trình Hình Thành &amp; Phát Triển Tư Tưởng Hồ Chí Minh</span>
+    </div>
+    <p style="font-style: italic; color: #555; margin-bottom: 12px;">Cơ sở thực tiễn (trong nước &amp; thế giới); cơ sở lý luận (truyền thống dân tộc, văn hóa nhân loại, Chủ nghĩa Mác - Lênin); nhân tố chủ quan và 5 thời kỳ lịch sử.</p>
+
+    <div class="section-title">1. Cơ sở thực tiễn</div>
+    <p class="section-p"><strong>Thực tiễn Việt Nam cuối TK XIX - đầu TK XX</strong>: Đất nước bị thực dân Pháp đô hộ; xã hội biến đổi thành thuộc địa nửa phong kiến; các phong trào yêu nước theo khuynh hướng phong kiến (Cần Vương) và dân chủ tư sản (Phan Bội Châu, Phan Châu Trinh) đều lần lượt thất bại vì thiếu đường lối đúng đắn.</p>
+    <p class="section-p"><strong>Thực tiễn thế giới</strong>: Chủ nghĩa tư bản chuyển sang giai đoạn đế quốc chủ nghĩa, tăng cường xâm lược thuộc địa; <strong>Cách mạng Tháng Mười Nga (1917)</strong> mở ra thời đại mới - thời đại quá độ từ CNTB lên CNXH; Quốc tế Cộng sản (Quốc tế III) ra đời năm 1919.</p>
+
+    <div class="section-title">2. Cơ sở lý luận &amp; Tinh hoa văn hóa</div>
+    <p class="section-p"><strong>Giá trị truyền thống dân tộc</strong>: Chủ nghĩa yêu nước truyền thống là dòng chủ lưu, là động lực tinh thần lớn nhất thôi thúc Bác ra đi cứu nước; cùng với tinh thần đoàn kết, nhân ái, tự lực tự cường.</p>
+    <p class="section-p"><strong>Tinh hoa văn hóa nhân loại</strong>:<br>- <em>Phương Đông</em>: Nho giáo (tiếp thu mặt tích cực: triết lý hành động, tu thân, đề cao nhân nghĩa, đạo đức); Phật giáo (tinh thần từ bi, bác ái, cứu khổ cứu nạn, bình đẳng); Lão giáo (sống hòa đồng với thiên nhiên, không màng danh lợi).<br>- <em>Phương Tây</em>: Tư tưởng tự do, bình đẳng, bác ái của Cách mạng Pháp 1789; Tuyên ngôn Độc lập Mỹ 1776; tư tưởng nhân văn, dân chủ tiến bộ.</p>
+    <p class="section-p"><strong>Chủ nghĩa Mác - Lênin</strong>: Là <strong>cơ sở thế giới quan và phương pháp luận quyết định</strong>, đóng vai trò bước ngoặt căn bản trong tư duy lý luận của Hồ Chí Minh.</p>
+
+    <div class="section-title">3. Năm thời kỳ hình thành &amp; phát triển của Tư tưởng Hồ Chí Minh</div>
+    <p class="section-p"><strong>1890 - 1911 (Thời kỳ hình thành tư tưởng yêu nước và chí hướng cách mạng)</strong>: Sinh ra trong gia đình nhà nho yêu nước tại Nghệ An; tiếp thu văn hóa quê hương, dân tộc; ngày 5/6/1911 rời bến cảng Nhà Rồng trên tàu Latouche-Tréville ra đi tìm đường cứu nước.</p>
+    <p class="section-p"><strong>1911 - 1920 (Thời kỳ tìm tòi, khảo sát và đến với chủ nghĩa Mác - Lênin)</strong>: Bôn ba qua nhiều nước ở châu Âu, châu Phi, châu Mỹ; năm 1919 gửi &#x27;Bản Yêu sách của nhân dân An Nam&#x27; (ký tên Nguyễn Ái Quốc) tới Hội nghị Véc-xây; <strong>Tháng 7/1920</strong> đọc Sơ thảo Luận cương Lênin; <strong>Tháng 12/1920</strong> bỏ phiếu tán thành Quốc tế III và sáng lập Đảng CS Pháp tại Đại hội Tours (đánh dấu bước chuyển từ người yêu nước thành người cộng sản).</p>
+    <p class="section-p"><strong>1920 - 1930 (Thời kỳ hình thành cơ bản tư tưởng về cách mạng Việt Nam)</strong>: Hoạt động sôi nổi tại Pháp, Liên Xô, Trung Quốc; viết &#x27;Bản án chế độ thực dân Pháp&#x27; (1925); thành lập Hội VN Cách mạng Thanh niên (1925); xuất bản &#x27;Đường Kách mệnh&#x27; (1927); chủ trì hợp nhất và soạn thảo Cương lĩnh chính trị đầu tiên thành lập Đảng Cộng sản Việt Nam (Đầu năm 1930).</p>
+    <p class="section-p"><strong>1930 - 1941 (Thời kỳ vượt qua thử thách, kiên trì giữ vững đường lối cách mạng đúng đắn)</strong>: Giữ vững quan điểm giải phóng dân tộc trước sự hiểu lầm của Quốc tế Cộng sản; đầu năm 1941 trở về Pác Bó (Cao Bằng) trực tiếp lãnh đạo cách mạng, đặt nhiệm vụ giải phóng dân tộc lên hàng đầu tại Hội nghị Trung ương 8 (tháng 5/1941).</p>
+    <p class="section-p"><strong>1941 - 1969 (Thời kỳ phát triển đỉnh cao, soi đường cho cách mạng VN)</strong>: Lãnh đạo Cách mạng Tháng Tám 1945 thành công; đọc Tuyên ngôn Độc lập (2/9/1945); lãnh đạo kháng chiến chống Pháp (1946-1954) thắng lợi ở Điện Biên Phủ; lãnh đạo kháng chiến chống Mỹ và xây dựng CNXH ở miền Bắc; để lại bản &#x27;Di chúc&#x27; thiêng liêng (1969).</p>
+</div>
+
+<div class="chapter-card">
+    <div class="chapter-title">
+        <span>Chương 3: Tư Tưởng Về Độc Lập Dân Tộc &amp; Chủ Nghĩa Xã Hội</span>
+    </div>
+    <p style="font-style: italic; color: #555; margin-bottom: 12px;">Vấn đề độc lập dân tộc (hoàn toàn, triệt để, gắn liền với tự do, cơm no áo ấm); mối quan hệ cách mạng thuộc địa và chính quốc; bản chất, động lực và thời kỳ quá độ lên CNXH.</p>
+
+    <div class="section-title">1. Tư tưởng Hồ Chí Minh về Độc lập dân tộc</div>
+    <p class="section-p">Độc lập dân tộc là quyền thiêng liêng, bất khả xâm phạm của mọi dân tộc (&quot;Không có gì quý hơn độc lập, tự do&quot;).</p>
+    <p class="section-p">Độc lập dân tộc phải là <strong>độc lập thật sự, hoàn toàn và triệt để</strong> trên tất cả các mặt chính trị, quân sự, kinh tế, ngoại giao.</p>
+    <p class="section-p">Độc lập dân tộc phải gắn liền với <strong>tự do, cơm no, áo ấm và hạnh phúc của nhân dân</strong> (&quot;Nếu nước độc lập mà dân không hưởng hạnh phúc tự do, thì độc lập cũng chẳng có nghĩa lý gì&quot;).</p>
+    <p class="section-p">Độc lập dân tộc gắn liền với thống nhất và toàn vẹn lãnh thổ (&quot;Nước Việt Nam là một, dân tộc Việt Nam là một. Sông có thể cạn, núi có thể mòn, song chân lý ấy không bao giờ thay đổi&quot;).</p>
+
+    <div class="section-title">2. Con đường cách mạng giải phóng dân tộc</div>
+    <p class="section-p">Cách mạng giải phóng dân tộc muốn thắng lợi phải đi theo <strong>con đường cách mạng vô sản</strong>.</p>
+    <p class="section-p">Phải do Đảng của giai cấp công nhân lãnh đạo, lấy liên minh công nông làm nền tảng.</p>
+    <p class="section-p">Cách mạng giải phóng dân tộc cần chủ động, sáng tạo, <strong>có thể nổ ra và giành thắng lợi trước cách mạng vô sản ở chính quốc</strong> (luận điểm sáng tạo lớn của Bác so với Quốc tế Cộng sản).</p>
+    <p class="section-p">Bạo lực cách mạng: Kết hợp đấu tranh chính trị với đấu tranh vũ trang.</p>
+
+    <div class="section-title">3. Chủ nghĩa xã hội &amp; Thời kỳ quá độ ở Việt Nam</div>
+    <p class="section-p"><strong>Bản chất CNXH</strong>: Xã hội do nhân dân lao động làm chủ; có nền kinh tế phát triển cao gắn liền với khoa học kỹ thuật; không còn áp bức bóc lột; có nền văn hóa tiên tiến đậm đà bản sắc dân tộc.</p>
+    <p class="section-p"><strong>Mục tiêu của CNXH</strong>: Không ngừng nâng cao đời sống vật chất và tinh thần của nhân dân.</p>
+    <p class="section-p"><strong>Động lực của CNXH</strong>: Động lực con người (vật chất và tinh thần), đoàn kết toàn dân, kinh tế, văn hóa. Chống lại các lực cản (chủ nghĩa cá nhân, giặc nội xâm tham ô, lãng phí, quan liêu).</p>
+    <p class="section-p"><strong>Đặc điểm thời kỳ quá độ</strong>: Đặc điểm to nhất là từ một nước nông nghiệp lạc hậu tiến thẳng lên CNXH <strong>không kinh qua giai đoạn phát triển tư bản chủ nghĩa</strong>.</p>
+</div>
+
+<div class="chapter-card">
+    <div class="chapter-title">
+        <span>Chương 4: Tư Tưởng Về Đảng Cộng Sản &amp; Nhà Nước Của Dân, Do Dân, Vì Dân</span>
+    </div>
+    <p style="font-style: italic; color: #555; margin-bottom: 12px;">Quy luật ra đời của Đảng; nguyên tắc tổ chức sinh hoạt Đảng; bản chất giai cấp công nhân và tính nhân dân của Nhà nước; Nhà nước pháp quyền và phòng chống tiêu cực.</p>
+
+    <div class="section-title">1. Đảng Cộng sản Việt Nam</div>
+    <p class="section-p"><strong>Quy luật ra đời của Đảng</strong>: Đảng Cộng sản Việt Nam ra đời là sản phẩm của sự kết hợp giữa <strong>Chủ nghĩa Mác - Lênin + Phong trào công nhân + Phong trào yêu nước</strong> (điểm sáng tạo của Bác so với học thuyết Mác - Lênin chỉ gồm 2 yếu tố).</p>
+    <p class="section-p"><strong>Bản chất của Đảng</strong>: Đảng mang bản chất giai cấp công nhân, đại biểu trung thành cho lợi ích của giai cấp công nhân, nhân dân lao động và của toàn thể dân tộc.</p>
+    <p class="section-p"><strong>Nguyên tắc tổ chức và sinh hoạt Đảng</strong>:<br>- Tập trung dân chủ (nguyên tắc tổ chức cơ bản nhất).<br>- Tập thể lãnh đạo, cá nhân phụ trách.<br>- Tự phê bình và phê bình (quy luật phát triển của Đảng, như rửa mặt hằng ngày).<br>- Kỷ luật nghiêm minh, tự giác.<br>- Đoàn kết thống nhất trong Đảng (giữ gìn như giữ gìn con ngươi của mắt mình).</p>
+    <p class="section-p"><strong>Công tác cán bộ</strong>: &quot;Cán bộ là cái gốc của mọi công việc&quot;, &quot;Muôn việc thành công hoặc thất bại, đều do cán bộ tốt hoặc kém&quot; -&gt; Công tác cán bộ là công tác gốc của Đảng.</p>
+
+    <div class="section-title">2. Nhà nước của nhân dân, do nhân dân, vì nhân dân</div>
+    <p class="section-p"><strong>Nhà nước của dân</strong>: Mọi quyền lực trong nhà nước và trong xã hội đều thuộc về nhân dân. Dân là chủ và dân làm chủ.</p>
+    <p class="section-p"><strong>Nhà nước do dân</strong>: Nhà nước do nhân dân bầu ra, nuôi dưỡng, ủng hộ, giám sát và bãi miễn khi không hoàn thành trọng trách.</p>
+    <p class="section-p"><strong>Nhà nước vì dân</strong>: Nhà nước phục vụ lợi ích và nguyện vọng chính đáng của nhân dân, không có đặc quyền đặc lợi. &quot;Việc gì lợi cho dân, ta phải hết sức làm. Việc gì hại đến dân, ta phải hết sức tránh&quot;.</p>
+    <p class="section-p"><strong>Bản chất Nhà nước</strong>: Thống nhất giữa bản chất giai cấp công nhân với tính nhân dân và tính dân tộc sâu sắc.</p>
+    <p class="section-p"><strong>Nhà nước pháp quyền có hiệu lực pháp lý mạnh mẽ</strong>: Quản lý xã hội bằng Hiến pháp và pháp luật. Hồ Chí Minh trực tiếp chỉ đạo soạn thảo 2 bản Hiến pháp: <strong>Hiến pháp 1946</strong> và <strong>Hiến pháp 1959</strong>.</p>
+    <p class="section-p"><strong>Phòng chống tiêu cực trong bộ máy Nhà nước</strong>: Chống ba thứ &#x27;giặc nội xâm&#x27; nguy hiểm: <strong>Tham ô, lãng phí, quan liêu</strong>.</p>
+</div>
+
+<div class="chapter-card">
+    <div class="chapter-title">
+        <span>Chương 5: Tư Tưởng Về Đại Đoàn Kết Toàn Dân Tộc &amp; Đoàn Kết Quốc Tế</span>
+    </div>
+    <p style="font-style: italic; color: #555; margin-bottom: 12px;">Vai trò, lực lượng, hình thức của khối Đại đoàn kết dân tộc; Mặt trận Dân tộc Thống nhất; nguyên tắc kết hợp sức mạnh dân tộc với sức mạnh thời đại.</p>
+
+    <div class="section-title">1. Đại đoàn kết toàn dân tộc</div>
+    <p class="section-p"><strong>Vai trò</strong>: Đại đoàn kết dân tộc là vấn đề có ý nghĩa <strong>chiến lược cơ bản, nhất quán và lâu dài</strong>, quyết định thành bại của cách mạng; là mục tiêu và nhiệm vụ hàng đầu của cách mạng.</p>
+    <p class="section-p"><strong>Lực lượng</strong>: Toàn thể nhân dân, không phân biệt tôn giáo, dân tộc, giai tầng, hễ là người Việt Nam có lòng yêu nước, thương nòi đều tập hợp.</p>
+    <p class="section-p"><strong>Nền tảng của khối đại đoàn kết</strong>: Khối liên minh giữa <strong>giai cấp công nhân, giai cấp nông dân và đội ngũ trí thức</strong>, đặt dưới sự lãnh đạo của Đảng.</p>
+    <p class="section-p"><strong>Hình thức tổ chức</strong>: <strong>Mặt trận Dân tộc Thống nhất</strong> (tên gọi qua các thời kỳ: Hội Phản đế Đồng minh 1930, Mặt trận Việt Minh 1941, Mặt trận Liên Việt 1951, Mặt trận Tổ quốc Việt Nam 1955 đến nay).</p>
+    <p class="section-p"><strong>Nguyên tắc hoạt động của Mặt trận</strong>: Hiệp thương dân chủ; đoàn kết chân thành, thân ái, giúp đỡ nhau cùng tiến bộ; tôn trọng lợi ích chính đáng của các thành viên.</p>
+
+    <div class="section-title">2. Đoàn kết quốc tế</div>
+    <p class="section-p"><strong>Mục đích</strong>: Nhằm kết hợp <strong>sức mạnh dân tộc với sức mạnh thời đại</strong>, tạo nên sức mạnh tổng hợp to lớn để đánh thắng kẻ thù.</p>
+    <p class="section-p"><strong>Lực lượng đoàn kết</strong>:<br>- Phong trào cộng sản và công nhân quốc tế.<br>- Phong trào đấu tranh giải phóng dân tộc ở các nước thuộc địa và phụ thuộc.<br>- Phong trào hòa bình, dân chủ và tiến bộ xã hội trên toàn thế giới.</p>
+    <p class="section-p"><strong>Nguyên tắc đoàn kết quốc tế</strong>: Đoàn kết trên cơ sở thống nhất mục tiêu và lợi ích, có lý có tình; độc lập, tự chủ, tự lực tự cường (&quot;Muốn người ta giúp cho thì trước hết mình phải tự giúp lấy mình&quot;); nguyên tắc ngoại giao: &quot;Dĩ bất biến, ứng vạn biến&quot;.</p>
+</div>
+
+<div class="chapter-card">
+    <div class="chapter-title">
+        <span>Chương 6: Tư Tưởng Về Văn Hóa, Đạo Đức &amp; Xây Dựng Con Người Mới</span>
+    </div>
+    <p style="font-style: italic; color: #555; margin-bottom: 12px;">Định nghĩa văn hóa (1943); tính chất nền văn hóa mới; đạo đức là &#x27;gốc&#x27; của người cách mạng; 4 chuẩn mực và 3 nguyên tắc xây dựng đạo đức; chiến lược &#x27;trồng người&#x27;.</p>
+
+    <div class="section-title">1. Tư tưởng Hồ Chí Minh về Văn hóa</div>
+    <p class="section-p"><strong>Định nghĩa Văn hóa</strong>: Tháng 8/1943, trong nhà tù của Tưởng Giới Thạch ở Quảng Tây, Hồ Chí Minh lần đầu tiên đưa ra định nghĩa văn hóa: Văn hóa là sự tổng hợp của mọi phương thức sinh hoạt cùng với biểu hiện của nó mà loài người đã sản sinh ra nhằm thích ứng những nhu cầu đời sống và đòi hỏi của sự sinh tồn.</p>
+    <p class="section-p"><strong>Vị trí của văn hóa</strong>: Văn hóa là một mặt trận; văn hóa soi đường cho quốc dân đi; văn hóa không thể đứng ngoài mà phải ở trong kinh tế và chính trị.</p>
+    <p class="section-p"><strong>Tính chất nền văn hóa mới</strong>: Nền văn hóa có tính chất <strong>Dân tộc, Khoa học, Đại chúng</strong>.</p>
+    <p class="section-p"><strong>Chức năng của văn hóa</strong>: Bồi dưỡng tư tưởng đúng đắn và tình cảm cao đẹp; mở rộng hiểu biết, nâng cao dân trí; bồi dưỡng những phẩm chất, phong cách và lối sống tốt đẹp.</p>
+
+    <div class="section-title">2. Tư tưởng Hồ Chí Minh về Đạo đức cách mạng</div>
+    <p class="section-p"><strong>Vai trò của đạo đức</strong>: Đạo đức là <strong>cái gốc, là nền tảng</strong> của người cách mạng. &quot;Cũng như sông thì có nguồn mới có nước, không có nguồn thì sông cạn. Cây phải có gốc, không có gốc thì cây héo. Người cách mạng phải có đạo đức, không có đạo đức thì dù tài giỏi mấy cũng không lãnh đạo được nhân dân&quot;.</p>
+    <p class="section-p"><strong>Bốn chuẩn mực đạo đức cách mạng cơ bản</strong>:<br>1. <em>Trung với nước, hiếu với dân</em> (phẩm chất quan trọng nhất, bao trùm nhất).<br>2. <em>Cần, kiệm, liêm, chính, chí công vô tư</em> (cốt lõi đạo đức hàng ngày, như 4 mùa của trời, 4 phương của đất).<br>3. <em>Yêu thương con người, sống có tình có nghĩa</em> (tình cảm nhân đạo sâu sắc, vị tha).<br>4. <em>Tinh thần quốc tế trong sáng</em> (đoàn kết vô sản, hòa bình, hữu nghị).</p>
+    <p class="section-p"><strong>Ba nguyên tắc xây dựng đạo đức cách mạng</strong>:<br>1. Nói đi đôi với làm, phải nêu gương về đạo đức.<br>2. Xây đi đôi với chống (xây dựng các giá trị đạo đức mới, chống chủ nghĩa cá nhân).<br>3. Tu dưỡng đạo đức suốt đời (ngọc càng mài càng sáng, vàng càng luyện càng trong).</p>
+
+    <div class="section-title">3. Xây dựng Con người mới</div>
+    <p class="section-p"><strong>Quan niệm về con người</strong>: Con người là một chỉnh thể đa dạng; con người vừa là <strong>mục tiêu</strong>, vừa là <strong>động lực</strong> của cách mạng.</p>
+    <p class="section-p"><strong>Chiến lược &#x27;trồng người&#x27;</strong>: &quot;Vì lợi ích mười năm thì phải trồng cây, vì lợi ích trăm năm thì phải trồng người&quot;.</p>
+    <p class="section-p">Trọng tâm là đào tạo thế hệ cách mạng cho đời sau, giáo dục toàn diện cả đức và tài, trong đó <strong>đức là gốc</strong>.</p>
+</div>
+
+<div class="chapter-card">
+    <div class="chapter-title">BIÊN NIÊN SỬ HOẠT ĐỘNG CÁCH MẠNG CỦA CHỦ TỊCH HỒ CHÍ MINH (1890 - 1969)</div>
+    <table class="table-custom">
+        <thead>
+            <tr>
+                <th style="width: 15%;">Mốc Năm</th>
+                <th>Sự Kiện Lịch Sử Trọng Đại & Ý Nghĩa Quyết Định</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><strong>1890</strong></td>
+                <td>Ngày 19/5/1890, sinh ra tại làng Hoàng Trù (quê ngoại), lớn lên ở làng Kim Liên (quê nội), Nam Đàn, Nghệ An.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1911</strong></td>
+                <td>Ngày 5/6/1911, lấy tên Văn Ba, rời bến cảng Nhà Rồng trên tàu Latouche-Tréville ra đi tìm đường cứu nước.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1919</strong></td>
+                <td>Ngày 18/6/1919, gửi &#x27;Bản Yêu sách của nhân dân An Nam&#x27; ký tên Nguyễn Ái Quốc tới Hội nghị Véc-xây.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1920</strong></td>
+                <td>Tháng 7/1920 đọc Sơ thảo Luận cương Lênin; Tháng 12/1920 bỏ phiếu tán thành Quốc tế III và sáng lập Đảng CS Pháp tại Đại hội Tours.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1925</strong></td>
+                <td>Xuất bản tác phẩm &#x27;Bản án chế độ thực dân Pháp&#x27; tại Paris; Thành lập Hội Việt Nam Cách mạng Thanh niên tại Quảng Châu.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1927</strong></td>
+                <td>Xuất bản tác phẩm &#x27;Đường Kách mệnh&#x27; tại Quảng Châu (Trung Quốc).</td>
+            </tr>
+
+            <tr>
+                <td><strong>1930</strong></td>
+                <td>Đầu năm 1930 chủ trì Hội nghị thành lập Đảng Cộng sản Việt Nam tại Hương Cảng; soạn thảo Cương lĩnh chính trị đầu tiên.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1941</strong></td>
+                <td>Ngày 28/1/1941 về nước tại Pác Bó (Cao Bằng); tháng 5/1941 chủ trì Hội nghị Trung ương 8 thành lập Mặt trận Việt Minh.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1945</strong></td>
+                <td>Tháng 8/1945 lãnh đạo Tổng khởi nghĩa thắng lợi; ngày 2/9/1945 đọc Tuyên ngôn Độc lập khai sinh nước VNDCCH.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1946</strong></td>
+                <td>Chỉ đạo soạn thảo bản Hiến pháp đầu tiên (Hiến pháp 1946); ngày 19/12/1946 ra &#x27;Lời kêu gọi toàn quốc kháng chiến&#x27;.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1954</strong></td>
+                <td>Chiến thắng Điện Biên Phủ &#x27;lừng lẫy năm châu, chấn động địa cầu&#x27;, ký Hiệp định Giơ-ne-vơ lập lại hòa bình ở Đông Dương.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1959</strong></td>
+                <td>Chỉ đạo soạn thảo Hiến pháp năm 1959.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1960</strong></td>
+                <td>Tại Đại hội III của Đảng, khởi xướng phong trào Tết trồng cây; tiếp tục khẳng định con đường cách mạng hai miền.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1966</strong></td>
+                <td>Ngày 17/7/1966 ra lời kêu gọi chống Mỹ cứu nước với chân lý bất hủ: &#x27;Không có gì quý hơn độc lập, tự do&#x27;.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1969</strong></td>
+                <td>Ngày 2/9/1969, Chủ tịch Hồ Chí Minh qua đời, để lại bản Di chúc lịch sử cho toàn Đảng, toàn dân.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1987</strong></td>
+                <td>Đại hội đồng UNESCO ra Nghị quyết 24C/18.65 vinh danh Hồ Chí Minh là Anh hùng giải phóng dân tộc &amp; Nhà văn hóa kiệt xuất.</td>
+            </tr>
+
+            <tr>
+                <td><strong>1991</strong></td>
+                <td>Đại hội VII của Đảng chính thức xác định: Chủ nghĩa Mác - Lênin và Tư tưởng Hồ Chí Minh là nền tảng tư tưởng, kim chỉ nam cho hành động.</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div class="chapter-card">
+    <div class="chapter-title">BẢNG "TỪ KHÓA VÀNG" LÀM NHANH BÀI THI TRẮC NGHIỆM TƯ TƯỞNG HỒ CHÍ MINH</div>
+    <table class="table-custom">
+        <thead>
+            <tr>
+                <th style="width: 50%;">Cụm Từ Khóa Xuất Hiện Trong Câu Hỏi</th>
+                <th>Đáp Án Khớp Trực Tiếp (Chọn Ngay)</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><strong>Nền tảng tư tưởng, kim chỉ nam</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Đại hội VII (1991)</td>
+            </tr>
+
+            <tr>
+                <td><strong>Định nghĩa toàn diện về TTHCM</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Đại hội IX (2001)</td>
+            </tr>
+
+            <tr>
+                <td><strong>Con đỉa hai vòi</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Bản án chế độ thực dân Pháp (1925)</td>
+            </tr>
+
+            <tr>
+                <td><strong>Tư cách một người cách mệnh</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Đường Kách mệnh (1927)</td>
+            </tr>
+
+            <tr>
+                <td><strong>Giữ gìn con ngươi của mắt mình</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Di chúc (1969)</td>
+            </tr>
+
+            <tr>
+                <td><strong>Không có gì quý hơn độc lập tự do</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Lời kêu gọi chống Mỹ (17/7/1966)</td>
+            </tr>
+
+            <tr>
+                <td><strong>Công tác gốc của Đảng</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Công tác cán bộ</td>
+            </tr>
+
+            <tr>
+                <td><strong>Gốc của người cách mạng</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Đạo đức cách mạng</td>
+            </tr>
+
+            <tr>
+                <td><strong>Quy luật ra đời của Đảng CS Việt Nam</strong></td>
+                <td style="color: #065F46; font-weight: 700;">CN Mác-Lênin + Phong trào công nhân + Phong trào yêu nước</td>
+            </tr>
+
+            <tr>
+                <td><strong>Bản chất Nhà nước</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Bản chất giai cấp công nhân + Tính nhân dân + Tính dân tộc</td>
+            </tr>
+
+            <tr>
+                <td><strong>Nền tảng khối đại đoàn kết</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Liên minh Công nhân - Nông dân - Trí thức</td>
+            </tr>
+
+            <tr>
+                <td><strong>Tính chất nền văn hóa mới</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Dân tộc, Khoa học, Đại chúng</td>
+            </tr>
+
+            <tr>
+                <td><strong>Bốn đức tính của con người</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Cần, Kiệm, Liêm, Chính (như 4 mùa của trời, 4 phương của đất)</td>
+            </tr>
+
+            <tr>
+                <td><strong>Nghị quyết UNESCO vinh danh</strong></td>
+                <td style="color: #065F46; font-weight: 700;">Năm 1987 (Nghị quyết 24C/18.65)</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

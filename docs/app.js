@@ -1,6 +1,9 @@
-// KTVXL PRO MASTER APPLICATION LOGIC
+// KTVXL & TTHCM PRO MASTER MULTI-SUBJECT APPLICATION LOGIC
 (function() {
   'use strict';
+
+  // Active Subject: 'ktvxl' or 'tthcm'
+  let currentSubject = localStorage.getItem('kma_active_subject') || 'ktvxl';
 
   // State Management
   let questions = [];
@@ -9,7 +12,7 @@
   let starredQuestions = new Set();
   
   // Filter state
-  let currentSource = 'ALL_EXAMS';
+  let currentSource = 'ALL';
   let currentClo = 'ALL';
   let currentStatus = 'ALL';
   let searchKeyword = '';
@@ -17,47 +20,35 @@
   // Exam simulator state
   let examActive = false;
   let examQuestions = [];
-  let examTimeRemaining = 60 * 60; // 60 minutes in seconds
+  let examTimeRemaining = 60 * 60; // seconds
   let examTimerInterval = null;
   let examUserAnswers = {};
-  let currentExamCode = '1';
-
-  // Storage Keys
-  const STORAGE_KEY_ANSWERS = 'ktvxl_user_answers_v1';
-  const STORAGE_KEY_STARS = 'ktvxl_starred_questions_v1';
+  let currentExamCode = 'RANDOM';
 
   let practiceDisplayLimit = 100;
 
   // Initialize App
   function init() {
-    loadSavedState();
-    
-    // Check if data is already loaded in window
-    const loadedQuestions = window.KTVXL_QUESTIONS || window.QUESTIONS_DATABASE;
-    if (loadedQuestions && window.KTVXL_KNOWLEDGE) {
-      questions = loadedQuestions;
-      knowledge = window.KTVXL_KNOWLEDGE;
-      setupApp();
-    } else {
-      // Fallback: fetch JSON files
-      Promise.all([
-        fetch('data/questions_db.json').then(r => r.json()),
-        fetch('data/knowledge_base.json').then(r => r.json())
-      ]).then(([qData, kData]) => {
-        questions = qData;
-        knowledge = kData;
-        setupApp();
-      }).catch(err => {
-        console.error('Failed to load data:', err);
-      });
-    }
+    setupSubjectSwitcher();
+    loadSubjectData(currentSubject);
+    setupApp();
+  }
+
+  function getStorageKeyAnswers() {
+    return `kma_user_answers_${currentSubject}_v2`;
+  }
+
+  function getStorageKeyStars() {
+    return `kma_starred_questions_${currentSubject}_v2`;
   }
 
   function loadSavedState() {
     try {
-      const savedAns = localStorage.getItem(STORAGE_KEY_ANSWERS);
+      userAnswers = {};
+      starredQuestions = new Set();
+      const savedAns = localStorage.getItem(getStorageKeyAnswers());
       if (savedAns) userAnswers = JSON.parse(savedAns);
-      const savedStars = localStorage.getItem(STORAGE_KEY_STARS);
+      const savedStars = localStorage.getItem(getStorageKeyStars());
       if (savedStars) starredQuestions = new Set(JSON.parse(savedStars));
     } catch (e) {
       console.warn('LocalStorage error:', e);
@@ -66,12 +57,295 @@
 
   function saveState() {
     try {
-      localStorage.setItem(STORAGE_KEY_ANSWERS, JSON.stringify(userAnswers));
-      localStorage.setItem(STORAGE_KEY_STARS, JSON.stringify([...starredQuestions]));
+      localStorage.setItem(getStorageKeyAnswers(), JSON.stringify(userAnswers));
+      localStorage.setItem(getStorageKeyStars(), JSON.stringify([...starredQuestions]));
     } catch (e) {
       console.warn('Failed to save to localStorage:', e);
     }
     updateStatsBar();
+  }
+
+  function loadSubjectData(subject) {
+    currentSubject = subject;
+    localStorage.setItem('kma_active_subject', subject);
+    loadSavedState();
+
+    if (subject === 'tthcm') {
+      questions = window.TTHCM_QUESTIONS_DATA || [];
+      knowledge = window.TTHCM_KNOWLEDGE_DATA || null;
+      currentSource = 'ALL';
+      currentExamCode = 'RANDOM';
+    } else {
+      questions = window.KTVXL_QUESTIONS || window.QUESTIONS_DATABASE || [];
+      knowledge = window.KTVXL_KNOWLEDGE || null;
+      currentSource = 'ALL_EXAMS';
+      currentExamCode = '1';
+    }
+
+    // Update Header Brand
+    const brandBadge = document.getElementById('app-brand-badge');
+    const brandTitle = document.getElementById('app-brand-title');
+    if (brandBadge && brandTitle) {
+      if (subject === 'tthcm') {
+        brandBadge.textContent = '📕 TTHCM';
+        brandBadge.style.background = '#EF4444';
+        brandBadge.style.color = '#FFF';
+        brandTitle.textContent = 'TƯ TƯỞNG HCM';
+      } else {
+        brandBadge.textContent = '⚡ KTVXL';
+        brandBadge.style.background = '#000';
+        brandBadge.style.color = 'var(--neo-yellow)';
+        brandTitle.textContent = 'VI XỬ LÝ';
+      }
+    }
+
+    // Update Subject Toggle Buttons
+    const btnKtvxl = document.getElementById('btn-subj-ktvxl');
+    const btnTthcm = document.getElementById('btn-subj-tthcm');
+    if (btnKtvxl && btnTthcm) {
+      btnKtvxl.classList.toggle('active', subject === 'ktvxl');
+      btnTthcm.classList.toggle('active', subject === 'tthcm');
+    }
+
+    updateFilterUI();
+    updateExamSetupUI();
+  }
+
+  function setupSubjectSwitcher() {
+    const btnKtvxl = document.getElementById('btn-subj-ktvxl');
+    const btnTthcm = document.getElementById('btn-subj-tthcm');
+
+    if (btnKtvxl) {
+      btnKtvxl.addEventListener('click', () => {
+        if (currentSubject !== 'ktvxl') {
+          switchSubject('ktvxl');
+        }
+      });
+    }
+
+    if (btnTthcm) {
+      btnTthcm.addEventListener('click', () => {
+        if (currentSubject !== 'tthcm') {
+          switchSubject('tthcm');
+        }
+      });
+    }
+  }
+
+  function switchSubject(subject) {
+    if (examActive) {
+      if (!confirm('Bạn đang trong bài thi. Chuyển môn học sẽ hủy bài thi hiện tại. Tiếp tục?')) {
+        return;
+      }
+      clearInterval(examTimerInterval);
+      examActive = false;
+      const actView = document.getElementById('exam-active-view');
+      const setView = document.getElementById('exam-setup-view');
+      if (actView && setView) {
+        actView.style.display = 'none';
+        setView.style.display = 'block';
+      }
+    }
+
+    loadSubjectData(subject);
+    practiceDisplayLimit = 100;
+    renderPracticeQuestions();
+    setupKnowledgeHub();
+    updateStatsBar();
+
+    // Reset side panel
+    const panelTitle = document.getElementById('panel-q-title');
+    const panelContent = document.getElementById('panel-content');
+    if (panelTitle && panelContent) {
+      panelTitle.textContent = '💡 CHỌN CÂU HỎI ĐỂ XEM LỜI GIẢI';
+      panelContent.innerHTML = `
+        <div class="panel-placeholder">
+          <p style="font-size: 2.2rem; margin-bottom: 12px;">📚</p>
+          <p style="font-weight: 800; font-size: 1rem;">Đã chuyển sang môn ${subject === 'tthcm' ? 'Tư Tưởng Hồ Chí Minh' : 'Kỹ Thuật Vi Xử Lý'}</p>
+          <p style="font-size: 0.85rem; color: #666; margin-top: 6px;">
+            Bấm vào bất kỳ câu hỏi nào để xem phân tích chi tiết, phương pháp làm bài và mẹo nhớ!
+          </p>
+        </div>
+      `;
+    }
+  }
+
+  function updateFilterUI() {
+    const sourceSelect = document.getElementById('filter-source');
+    if (!sourceSelect) return;
+
+    if (currentSubject === 'tthcm') {
+      sourceSelect.innerHTML = `
+        <optgroup label="Tất Cả">
+          <option value="ALL">🌟 Toàn Bộ Ngân Hàng TTHCM (885 câu)</option>
+        </optgroup>
+        <optgroup label="4 Nguồn Đề Thi & Đề Cương">
+          <option value="TTHCM_FULL_A">⭐ Ngân Hàng Đề Gốc Full ĐA A (281 câu)</option>
+          <option value="TTHCM_DE_132">📝 Mã Đề Thi 132 (298 câu)</option>
+          <option value="TTHCM_DE_651">🎯 Đề Thi Mẫu 651 (48 câu)</option>
+          <option value="TTHCM_DE_CUONG">📑 Đề Cương ATTT KMA 2019 (258 câu)</option>
+        </optgroup>
+        <optgroup label="Lọc Theo 6 Chương Giáo Trình">
+          <option value="CHAP_1">Chương 1: Khái niệm & Đối tượng nghiên cứu</option>
+          <option value="CHAP_2">Chương 2: Cơ sở, quá trình hình thành & phát triển</option>
+          <option value="CHAP_3">Chương 3: Độc lập dân tộc & CNXH</option>
+          <option value="CHAP_4">Chương 4: Đảng & Nhà nước của nhân dân</option>
+          <option value="CHAP_5">Chương 5: Đại đoàn kết dân tộc & Quốc tế</option>
+          <option value="CHAP_6">Chương 6: Văn hóa, đạo đức & Con người</option>
+        </optgroup>
+      `;
+      currentSource = 'ALL';
+    } else {
+      sourceSelect.innerHTML = `
+        <optgroup label="5 Đề Thi Chính Thức KMA (Chuẩn 40 câu)">
+          <option value="ALL_EXAMS">⭐ Tất cả 5 Đề Thi (Đề 001 - 005)</option>
+          <option value="DE_001">Đề Kiểm Tra 001 (40 câu)</option>
+          <option value="DE_002">Đề Kiểm Tra 002 (40 câu)</option>
+          <option value="DE_003">Đề Kiểm Tra 003 (40 câu)</option>
+          <option value="DE_004">Đề Kiểm Tra 004 (40 câu)</option>
+          <option value="DE_005">Đề Kiểm Tra 005 (40 câu)</option>
+        </optgroup>
+        <optgroup label="Toàn Bộ Ngân Hàng">
+          <option value="ALL">🌟 Toàn Bộ Ngân Hàng (984 câu)</option>
+        </optgroup>
+        <optgroup label="Chuyên Đề Bài Tập (Part 1 - Part 18)">
+          <option value="PART_01">Part 1: Tổng quan Vi xử lý & ARM</option>
+          <option value="PART_02">Part 2: Kiến trúc CPU, ALU, Bus</option>
+          <option value="PART_03">Part 3: Giải mã lệnh & Bộ nhớ</option>
+          <option value="PART_04">Part 4: Hệ thống Bus vi điều khiển</option>
+          <option value="PART_05">Part 5: Cấu trúc chân & Cổng P0-P3</option>
+          <option value="PART_06">Part 6: Các thanh ghi SFR 89C51</option>
+          <option value="PART_07">Part 7: Không gian bộ nhớ RAM/ROM</option>
+          <option value="PART_09">Part 9: Tập lệnh ASM & Khai báo</option>
+          <option value="PART_10">Part 10: Chức năng lệnh 8051</option>
+          <option value="PART_11">Part 11: Thanh ghi & Cờ trạng thái</option>
+          <option value="PART_12">Part 12: Đọc hiểu đoạn lệnh</option>
+          <option value="PART_13">Part 13: Chương trình con & Tra bảng</option>
+          <option value="PART_14">Part 14: Lập trình Timer & Chức năng</option>
+          <option value="PART_15">Part 15: Chế độ đếm & Định thời TMOD</option>
+          <option value="PART_16">Part 16: Lập trình Timer tạo trễ</option>
+          <option value="PART_17">Part 17: Truyền thông nối tiếp UART</option>
+          <option value="PART_18">Part 18: Tốc độ Baud & SCON</option>
+        </optgroup>
+      `;
+      currentSource = 'ALL_EXAMS';
+    }
+
+    // Sub-filter button group (CLO vs Chương)
+    const btnGroup = document.querySelector('.filter-btn-group');
+    const filterLabel = btnGroup ? btnGroup.previousElementSibling : null;
+    if (btnGroup) {
+      if (currentSubject === 'tthcm') {
+        if (filterLabel) filterLabel.textContent = 'Chương:';
+        btnGroup.innerHTML = `
+          <button class="neo-filter-btn active" data-clo="ALL">Tất cả</button>
+          <button class="neo-filter-btn" data-clo="1">Chương 1</button>
+          <button class="neo-filter-btn" data-clo="2">Chương 2</button>
+          <button class="neo-filter-btn" data-clo="3">Chương 3</button>
+          <button class="neo-filter-btn" data-clo="4">Chương 4</button>
+          <button class="neo-filter-btn" data-clo="5">Chương 5</button>
+          <button class="neo-filter-btn" data-clo="6">Chương 6</button>
+        `;
+      } else {
+        if (filterLabel) filterLabel.textContent = 'Chuẩn đầu ra:';
+        btnGroup.innerHTML = `
+          <button class="neo-filter-btn active" data-clo="ALL">Tất cả</button>
+          <button class="neo-filter-btn" data-clo="CLO1">CLO1: Tổng quan</button>
+          <button class="neo-filter-btn" data-clo="CLO2">CLO2: Phần cứng & Tập lệnh</button>
+          <button class="neo-filter-btn" data-clo="CLO3">CLO3: Lập trình & Ứng dụng</button>
+        `;
+      }
+      currentClo = 'ALL';
+
+      btnGroup.querySelectorAll('[data-clo]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          btnGroup.querySelectorAll('[data-clo]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentClo = btn.getAttribute('data-clo');
+          practiceDisplayLimit = 100;
+          renderPracticeQuestions();
+        });
+      });
+    }
+  }
+
+  function updateExamSetupUI() {
+    const examGrid = document.querySelector('.exam-grid-choices');
+    if (!examGrid) return;
+
+    if (currentSubject === 'tthcm') {
+      examGrid.innerHTML = `
+        <div class="exam-card-choice selected neo-box" data-exam-code="RANDOM">
+          <div class="exam-code-badge">TRỘN ĐỀ</div>
+          <h3 class="exam-title-choice">Đề Thi Ngẫu Nhiên 40 Câu</h3>
+          <p class="exam-desc-choice">Trộn chuẩn từ ngân hàng 885 câu, phân bổ đều 6 chương giáo trình TTHCM.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="TTHCM_FULL_A">
+          <div class="exam-code-badge">ĐỀ GỐC</div>
+          <h3 class="exam-title-choice">Bộ Đề Cuối Kỳ (Full A)</h3>
+          <p class="exam-desc-choice">40 câu trích xuất từ đề thi chuẩn cuối kỳ học viện KMA.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="TTHCM_DE_132">
+          <div class="exam-code-badge">MÃ ĐỀ 132</div>
+          <h3 class="exam-title-choice">Mã Đề Thi 132 Chính Thức</h3>
+          <p class="exam-desc-choice">40 câu trắc nghiệm thực chiến theo mã đề 132.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="TTHCM_DE_651">
+          <div class="exam-code-badge">MÃ ĐỀ 651</div>
+          <h3 class="exam-title-choice">Đề Thi Mẫu 651 KTMM</h3>
+          <p class="exam-desc-choice">Bộ đề thi trắc nghiệm mẫu 48 câu của Phòng KT&ĐBCLĐT Học viện.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="TTHCM_DE_CUONG">
+          <div class="exam-code-badge">ĐỀ CƯƠNG</div>
+          <h3 class="exam-title-choice">Đề Cương ATTT KMA</h3>
+          <p class="exam-desc-choice">40 câu tuyển chọn từ đề cương ôn thi hệ An toàn thông tin.</p>
+        </div>
+      `;
+      currentExamCode = 'RANDOM';
+    } else {
+      examGrid.innerHTML = `
+        <div class="exam-card-choice selected neo-box" data-exam-code="1">
+          <div class="exam-code-badge">MÃ ĐỀ 001</div>
+          <h3 class="exam-title-choice">Đề Kiểm Tra 001</h3>
+          <p class="exam-desc-choice">Chuẩn 40 câu: 6 CLO1, 9 CLO2, 25 CLO3 (Có câu hỏi điền kết quả FIB).</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="2">
+          <div class="exam-code-badge">MÃ ĐỀ 002</div>
+          <h3 class="exam-title-choice">Đề Kiểm Tra 002</h3>
+          <p class="exam-desc-choice">Chuẩn 40 câu: 6 CLO1, 9 CLO2, 25 CLO3 bám sát ma trận đề.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="3">
+          <div class="exam-code-badge">MÃ ĐỀ 003</div>
+          <h3 class="exam-title-choice">Đề Kiểm Tra 003</h3>
+          <p class="exam-desc-choice">Chuẩn 40 câu: Trọng tâm lập trình Timer, UART và giải mã địa chỉ.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="4">
+          <div class="exam-code-badge">MÃ ĐỀ 004</div>
+          <h3 class="exam-title-choice">Đề Kiểm Tra 004</h3>
+          <p class="exam-desc-choice">Chuẩn 40 câu: Cấu trúc bộ nhớ, thanh ghi SFR và mạch ngoại vi.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="5">
+          <div class="exam-code-badge">MÃ ĐỀ 005</div>
+          <h3 class="exam-title-choice">Đề Kiểm Tra 005</h3>
+          <p class="exam-desc-choice">Chuẩn 40 câu: Chuyên đề tính toán Baud rate, Timer Mode 2, cờ ALU.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="RANDOM">
+          <div class="exam-code-badge">NGẪU NHIÊN</div>
+          <h3 class="exam-title-choice">Đề Thi Tổng Hợp (Random)</h3>
+          <p class="exam-desc-choice">Hệ thống tự động bốc ngẫu nhiên 40 câu từ toàn bộ ngân hàng 984 câu.</p>
+        </div>
+      `;
+      currentExamCode = '1';
+    }
+
+    const cards = examGrid.querySelectorAll('.exam-card-choice');
+    cards.forEach(c => {
+      c.addEventListener('click', () => {
+        cards.forEach(x => x.classList.remove('selected'));
+        c.classList.add('selected');
+        currentExamCode = c.getAttribute('data-exam-code');
+      });
+    });
   }
 
   function setupApp() {
@@ -167,17 +441,6 @@
       });
     }
 
-    const cloBtns = document.querySelectorAll('[data-clo]');
-    cloBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        cloBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentClo = btn.getAttribute('data-clo');
-        practiceDisplayLimit = 100;
-        renderPracticeQuestions();
-      });
-    });
-
     const statusBtns = document.querySelectorAll('[data-status]');
     statusBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -204,7 +467,7 @@
     const btnReset = document.getElementById('btn-reset-progress');
     if (btnReset) {
       btnReset.addEventListener('click', () => {
-        if (confirm('Bạn có chắc muốn xóa lịch sử bài làm để luyện tập lại từ đầu không?')) {
+        if (confirm(`Bạn có chắc muốn xóa lịch sử làm bài môn ${currentSubject === 'tthcm' ? 'Tư Tưởng Hồ Chí Minh' : 'Vi Xử Lý'} không?`)) {
           userAnswers = {};
           saveState();
           renderPracticeQuestions();
@@ -217,15 +480,30 @@
   function getFilteredQuestions() {
     return questions.filter(q => {
       // Source filter
-      if (currentSource === 'ALL_EXAMS') {
-        if (!q.exam_id || !q.exam_id.startsWith('DE_')) return false;
-      } else if (currentSource !== 'ALL') {
-        if (q.exam_id !== currentSource) return false;
+      if (currentSubject === 'tthcm') {
+        if (currentSource !== 'ALL') {
+          if (currentSource.startsWith('CHAP_')) {
+            const chapNum = parseInt(currentSource.replace('CHAP_', ''), 10);
+            if (q.chapter !== chapNum) return false;
+          } else {
+            if (q.source !== currentSource) return false;
+          }
+        }
+      } else {
+        if (currentSource === 'ALL_EXAMS') {
+          if (!q.exam_id || !q.exam_id.startsWith('DE_')) return false;
+        } else if (currentSource !== 'ALL') {
+          if (q.exam_id !== currentSource) return false;
+        }
       }
 
-      // CLO filter
+      // CLO / Chapter filter
       if (currentClo !== 'ALL') {
-        if (q.clo !== currentClo) return false;
+        if (currentSubject === 'tthcm') {
+          if (String(q.chapter) !== currentClo) return false;
+        } else {
+          if (q.clo !== currentClo) return false;
+        }
       }
 
       // Status filter
@@ -242,7 +520,7 @@
 
       // Keyword search
       if (searchKeyword) {
-        const fullContent = (q.prompt + ' ' + (q.extra_lines || []).join(' ') + ' ' + (q.options || []).join(' ') + ' ' + (q.topic_name || '')).toLowerCase();
+        const fullContent = (q.prompt + ' ' + (q.extra_lines || []).join(' ') + ' ' + (q.options || []).join(' ') + ' ' + (q.topic_name || '') + ' ' + (q.chapter_title || '')).toLowerCase();
         if (!fullContent.includes(searchKeyword)) return false;
       }
 
@@ -268,55 +546,44 @@
       return;
     }
 
+    let sourceLabel = currentSource;
+    if (currentSource === 'ALL') sourceLabel = currentSubject === 'tthcm' ? 'Toàn Bộ Ngân Hàng TTHCM' : 'Toàn Bộ Ngân Hàng VXL';
+    else if (currentSource === 'ALL_EXAMS') sourceLabel = '5 Đề Thi Chính Thức KMA';
+
     container.innerHTML = `
       <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
-        <span>Hiển thị <strong>${filtered.length}</strong> câu hỏi</span>
-        <span class="neo-badge badge-exam">${currentSource === 'ALL_EXAMS' ? '5 Đề Thi Chính Thức' : currentSource}</span>
+        <span>Hiển thị <strong>${filtered.length}</strong> câu hỏi (${currentSubject === 'tthcm' ? 'Tư Tưởng HCM' : 'Vi Xử Lý'})</span>
+        <span class="neo-badge badge-exam">${sourceLabel}</span>
       </div>
     `;
 
-    // Limit initial DOM render to practiceDisplayLimit for optimal performance
     const displayList = filtered.slice(0, practiceDisplayLimit);
 
     displayList.forEach((q, idx) => {
-      const card = createQuestionCard(q, idx + 1);
+      const card = createQuestionCard(q, idx + 1, false);
       container.appendChild(card);
     });
 
     if (filtered.length > practiceDisplayLimit) {
-      const moreBox = document.createElement('div');
-      moreBox.className = 'neo-box';
-      moreBox.style.cssText = 'padding: 16px; text-align: center; font-weight: 800; background: var(--neo-yellow); margin-top: 16px;';
-      moreBox.innerHTML = `
-        <div style="margin-bottom: 12px; font-size: 1.05rem;">
-          Đang hiển thị <strong>${displayList.length}</strong> / <strong>${filtered.length}</strong> câu hỏi.
-        </div>
-        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-          <button id="btn-load-more" class="neo-btn neo-btn-white" style="padding: 8px 16px;">➕ Hiển thị thêm 50 câu</button>
-          <button id="btn-load-all" class="neo-btn neo-btn-green" style="padding: 8px 16px;">⚡ Hiển thị toàn bộ (${filtered.length} câu)</button>
-        </div>
-      `;
-      container.appendChild(moreBox);
+      const loadMoreBox = document.createElement('div');
+      loadMoreBox.style.cssText = 'text-align: center; margin: 24px 0 32px 0;';
 
-      const btnMore = moreBox.querySelector('#btn-load-more');
-      if (btnMore) {
-        btnMore.onclick = () => {
-          practiceDisplayLimit += 50;
-          renderPracticeQuestions();
-        };
-      }
-      const btnAll = moreBox.querySelector('#btn-load-all');
-      if (btnAll) {
-        btnAll.onclick = () => {
-          practiceDisplayLimit = filtered.length;
-          renderPracticeQuestions();
-        };
-      }
+      const loadMoreBtn = document.createElement('button');
+      loadMoreBtn.className = 'neo-btn neo-btn-yellow';
+      loadMoreBtn.style.padding = '12px 28px';
+      loadMoreBtn.innerHTML = `⏬ Xem thêm 100 câu tiếp theo (Còn ${filtered.length - practiceDisplayLimit} câu)`;
+      loadMoreBtn.addEventListener('click', () => {
+        practiceDisplayLimit += 100;
+        renderPracticeQuestions();
+      });
+
+      loadMoreBox.appendChild(loadMoreBtn);
+      container.appendChild(loadMoreBox);
     }
   }
 
-  // Question Card Factory
-  function createQuestionCard(q, displayIndex, isExamMode = false) {
+  // Create Question Card DOM
+  function createQuestionCard(q, displayIndex, isExamMode) {
     const card = document.createElement('div');
     card.className = 'question-card neo-box';
     card.id = `q-card-${q.id}`;
@@ -333,20 +600,27 @@
 
     const sourceBadge = document.createElement('span');
     sourceBadge.className = 'neo-badge badge-exam';
-    sourceBadge.textContent = q.exam_title ? `${q.exam_title} • Câu ${q.num}` : `${q.source} • Câu ${q.num}`;
+    sourceBadge.textContent = q.source_title ? `${q.source_title} • Câu ${q.num}` : (q.exam_title ? `${q.exam_title} • Câu ${q.num}` : `${q.source} • Câu ${q.num}`);
     badges.appendChild(sourceBadge);
 
-    const cloBadge = document.createElement('span');
-    cloBadge.className = `neo-badge badge-${q.clo ? q.clo.toLowerCase() : 'clo2'}`;
-    cloBadge.textContent = `${q.clo || 'CLO2'} • ${q.level || 'TH'}`;
-    badges.appendChild(cloBadge);
+    if (currentSubject === 'tthcm') {
+      const chapBadge = document.createElement('span');
+      chapBadge.className = `neo-badge badge-chap${q.chapter || 1}`;
+      chapBadge.textContent = `Chương ${q.chapter || 1}`;
+      badges.appendChild(chapBadge);
+    } else {
+      const cloBadge = document.createElement('span');
+      cloBadge.className = `neo-badge badge-${q.clo ? q.clo.toLowerCase() : 'clo2'}`;
+      cloBadge.textContent = `${q.clo || 'CLO2'} • ${q.level || 'TH'}`;
+      badges.appendChild(cloBadge);
 
-    if (q.topic_name) {
-      const topicBadge = document.createElement('span');
-      topicBadge.className = 'neo-badge';
-      topicBadge.style.background = 'var(--neo-gray)';
-      topicBadge.textContent = q.topic_name;
-      badges.appendChild(topicBadge);
+      if (q.topic_name) {
+        const topicBadge = document.createElement('span');
+        topicBadge.className = 'neo-badge';
+        topicBadge.style.background = 'var(--neo-gray)';
+        topicBadge.textContent = q.topic_name;
+        badges.appendChild(topicBadge);
+      }
     }
 
     metaHeader.appendChild(badges);
@@ -383,7 +657,7 @@
     promptTitle.innerHTML = `<strong>Câu ${displayIndex}.</strong> ${escapeHtml(q.prompt)}`;
     promptBox.appendChild(promptTitle);
 
-    // Extra lines / Assembly Code
+    // Extra lines / Code
     if (q.extra_lines && q.extra_lines.length > 0) {
       const hasCode = q.extra_lines.some(l => /^(ORG|MOV|ADD|SUBB|INC|DEC|CPL|SETB|JMP|LJMP|SJMP|AJMP|DJNZ|CJNE|JNZ|JZ|CLR|RET|RETI|DB|DW|EQU|END|TIMER|UART|START|LAP|LOOP|DL|TAB)/i.test(l.trim()));
       
@@ -407,11 +681,10 @@
         imgWrap.className = 'q-image-container';
         const imgEl = document.createElement('img');
         imgEl.src = imgSrc;
-        imgEl.alt = 'Sơ đồ mạch / Mã lệnh minh họa';
+        imgEl.alt = 'Sơ đồ mạch minh họa';
         imgEl.loading = 'eager';
-        imgEl.decoding = 'sync';
         imgEl.style.cursor = 'zoom-in';
-        imgEl.title = 'Click để xem phóng to sơ đồ / hình ảnh';
+        imgEl.title = 'Click để xem phóng to sơ đồ';
         imgEl.onclick = () => openImageLightbox(imgSrc);
         imgWrap.appendChild(imgEl);
         promptBox.appendChild(imgWrap);
@@ -420,7 +693,7 @@
 
     card.appendChild(promptBox);
 
-    // MCQ vs FIB Answering Area
+    // Options Grid
     if (q.type === 'mcq' && q.options && q.options.length > 0) {
       const optsGrid = document.createElement('div');
       optsGrid.className = 'options-grid';
@@ -509,7 +782,7 @@
 
       const showExpBtn = document.createElement('button');
       showExpBtn.className = 'neo-btn neo-btn-white neo-btn-sm';
-      showExpBtn.innerHTML = '💡 Xem Lời Giải & Mẹo Casio';
+      showExpBtn.innerHTML = currentSubject === 'tthcm' ? '💡 Xem Lời Giải & Mẹo Nhớ' : '💡 Xem Lời Giải & Mẹo Casio';
       showExpBtn.addEventListener('click', () => {
         openSideDetails(q);
         highlightActiveCard(card);
@@ -542,42 +815,40 @@
 
     if (isExamMode) {
       examUserAnswers[q.id] = { answer: letter, isCorrect };
-      // Update UI in exam mode
       optsGrid.querySelectorAll('.option-btn').forEach(btn => {
         btn.classList.remove('selected-correct', 'selected-wrong');
         if (btn.getAttribute('data-letter') === letter) {
-          btn.classList.add('selected-correct'); // In exam just mark selected
+          btn.classList.add('selected-correct');
         }
       });
       updateExamProgress();
       return;
     }
 
-    // Practice Mode: Instant evaluation
+    // Practice Mode
     userAnswers[q.id] = { answer: letter, isCorrect };
     saveState();
 
     optsGrid.querySelectorAll('.option-btn').forEach(btn => {
       btn.classList.remove('selected-correct', 'selected-wrong', 'highlight-correct');
-      const btnLetter = btn.getAttribute('data-letter');
-      if (btnLetter === letter) {
+      const bLetter = btn.getAttribute('data-letter');
+      if (bLetter === letter) {
         btn.classList.add(isCorrect ? 'selected-correct' : 'selected-wrong');
-      } else if (!isCorrect && btnLetter === q.answer) {
+      }
+      if (!isCorrect && bLetter === q.answer) {
         btn.classList.add('highlight-correct');
       }
     });
 
-    // Auto-open side drawer with explanation & Casio
     openSideDetails(q);
     highlightActiveCard(card);
   }
 
-  // Handle FIB checking
+  // Handle FIB input
   function handleCheckFIB(q, val, feedbackEl, card, isExamMode) {
     const norm = val.trim().toUpperCase().replace(/H$/, '');
     let isCorrect = false;
 
-    // Check against accepted variants
     if (q.acceptable_answers && q.acceptable_answers.length > 0) {
       isCorrect = q.acceptable_answers.some(ans => {
         const aNorm = ans.trim().toUpperCase().replace(/H$/, '');
@@ -595,7 +866,6 @@
       return;
     }
 
-    // Practice Mode: Instant evaluation
     userAnswers[q.id] = { inputVal: val, isCorrect };
     saveState();
 
@@ -615,7 +885,7 @@
     if (!titleEl || !contentEl) return;
 
     titleEl.textContent = `💡 LỜI GIẢI • CÂU ${q.num}`;
-    badgeEl.textContent = q.exam_title || q.source || 'Chi Tiết';
+    badgeEl.textContent = q.source_title || q.exam_title || q.source || 'Chi Tiết';
 
     let html = `
       <div class="panel-section sec-exp">
@@ -642,14 +912,15 @@
       `;
     }
 
-    if (q.tips_casio) {
+    const tipContent = q.tips_casio || q.tips;
+    if (tipContent) {
       html += `
         <div class="panel-section sec-casio">
           <div class="panel-section-title">
-            <span>⚡ Mẹo Nhớ & Mẹo Bấm Máy Casio fx-580VNX</span>
+            <span>⚡ ${currentSubject === 'tthcm' ? 'Mẹo Nhớ Nhanh & Mốc Năm' : 'Mẹo Nhớ & Mẹo Bấm Máy Casio fx-580VNX'}</span>
           </div>
           <div class="panel-text">
-            <p>${escapeHtml(q.tips_casio)}</p>
+            <p>${escapeHtml(tipContent)}</p>
           </div>
         </div>
       `;
@@ -673,7 +944,7 @@
       header.className = `chapter-header ${chap.id}`;
       header.innerHTML = `
         <div>
-          <span class="neo-badge" style="background:#000; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">${chap.clo}</span>
+          <span class="neo-badge" style="background:#000; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">${chap.clo || `CHƯƠNG ${chap.num}`}</span>
           <h3 class="chapter-title">${escapeHtml(chap.title)}</h3>
         </div>
         <span style="font-size: 1.2rem;">▼</span>
@@ -721,19 +992,75 @@
       card.appendChild(body);
       container.appendChild(card);
     });
+
+    // If TTHCM, add Timeline & Magic Keywords table cards
+    if (currentSubject === 'tthcm' && knowledge.timeline) {
+      const timelineCard = document.createElement('div');
+      timelineCard.className = 'chapter-card';
+      timelineCard.innerHTML = `
+        <div class="chapter-header tthcm-timeline">
+          <div>
+            <span class="neo-badge" style="background:#EF4444; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">BIÊN NIÊN SỬ</span>
+            <h3 class="chapter-title">Biên Niên Sử Hoạt Động Cách Mạng (1890 - 1969)</h3>
+          </div>
+          <span style="font-size: 1.2rem;">▼</span>
+        </div>
+        <div class="chapter-body">
+          <table class="table-custom" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #FFE600; font-weight: 800;">
+                <th style="padding: 8px 10px; border: 2px solid #000; width: 15%;">Mốc Năm</th>
+                <th style="padding: 8px 10px; border: 2px solid #000;">Sự Kiện Lịch Sử Trọng Đại</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${knowledge.timeline.map(t => `
+                <tr>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 800;">${escapeHtml(t.year)}</td>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000;">${escapeHtml(t.event)}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+      container.appendChild(timelineCard);
+
+      const kwCard = document.createElement('div');
+      kwCard.className = 'chapter-card';
+      kwCard.innerHTML = `
+        <div class="chapter-header tthcm-keywords">
+          <div>
+            <span class="neo-badge" style="background:#10B981; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">MẸO THI TRẮC NGHIỆM</span>
+            <h3 class="chapter-title">Bảng "Từ Khóa Vàng" Làm Trắc Nghiệm Nhanh</h3>
+          </div>
+          <span style="font-size: 1.2rem;">▼</span>
+        </div>
+        <div class="chapter-body">
+          <table class="table-custom" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #FFE600; font-weight: 800;">
+                <th style="padding: 8px 10px; border: 2px solid #000; width: 50%;">Cụm Từ Khóa Xuất Hiện</th>
+                <th style="padding: 8px 10px; border: 2px solid #000;">Đáp Án Khớp Trực Tiếp</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${(knowledge.magic_keywords || []).map(mk => `
+                <tr>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(mk.keyword)}</td>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; color: #065F46; font-weight: 800;">${escapeHtml(mk.match)}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+      container.appendChild(kwCard);
+    }
   }
 
   // Exam Simulator Logic
   function setupExamSimulator() {
-    const examCards = document.querySelectorAll('.exam-card-choice');
-    examCards.forEach(card => {
-      card.addEventListener('click', () => {
-        examCards.forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-        currentExamCode = card.getAttribute('data-exam-code');
-      });
-    });
-
     const btnStart = document.getElementById('btn-start-exam');
     if (btnStart) {
       btnStart.addEventListener('click', startExam);
@@ -765,7 +1092,6 @@
     if (btnReviewExam) {
       btnReviewExam.addEventListener('click', () => {
         document.getElementById('exam-result-modal').classList.remove('active');
-        // Stay in active view and reveal correct answers
         reviewExamQuestions();
       });
     }
@@ -774,18 +1100,26 @@
   function startExam() {
     examUserAnswers = {};
     examActive = true;
-    examTimeRemaining = 60 * 60; // 60 minutes
+    examTimeRemaining = (currentSubject === 'tthcm' ? 40 : 60) * 60; // 40 mins for TTHCM, 60 mins for KTVXL
 
-    // Select questions
-    if (currentExamCode === 'RANDOM') {
-      // Pick 40 random questions from database
-      const shuffled = [...questions].sort(() => 0.5 - Math.random());
-      examQuestions = shuffled.slice(0, 40);
+    if (currentSubject === 'tthcm') {
+      if (currentExamCode === 'RANDOM') {
+        const shuffled = [...questions].sort(() => 0.5 - Math.random());
+        examQuestions = shuffled.slice(0, 40);
+      } else {
+        const matched = questions.filter(q => q.source === currentExamCode);
+        examQuestions = matched.length >= 40 ? matched.slice(0, 40) : questions.slice(0, 40);
+      }
     } else {
-      const deNum = parseInt(currentExamCode, 10);
-      examQuestions = questions.filter(q => q.de_num === deNum && q.exam_id && q.exam_id.startsWith('DE_'));
-      if (examQuestions.length === 0) {
-        examQuestions = questions.slice(0, 40);
+      if (currentExamCode === 'RANDOM') {
+        const shuffled = [...questions].sort(() => 0.5 - Math.random());
+        examQuestions = shuffled.slice(0, 40);
+      } else {
+        const deNum = parseInt(currentExamCode, 10);
+        examQuestions = questions.filter(q => q.de_num === deNum && q.exam_id && q.exam_id.startsWith('DE_'));
+        if (examQuestions.length === 0) {
+          examQuestions = questions.slice(0, 40);
+        }
       }
     }
 
@@ -794,7 +1128,9 @@
 
     const examTitleEl = document.getElementById('exam-current-name');
     if (examTitleEl) {
-      examTitleEl.textContent = currentExamCode === 'RANDOM' ? 'ĐỀ THI NGẪU NHIÊN' : `ĐỀ KIỂM TRA 00${currentExamCode}`;
+      examTitleEl.textContent = currentExamCode === 'RANDOM' ? 
+        `ĐỀ THI NGẪU NHIÊN (${currentSubject === 'tthcm' ? 'TTHCM' : 'KTVXL'})` : 
+        `BÀI THI: ${currentExamCode}`;
     }
 
     renderExamQuestions();
@@ -851,38 +1187,30 @@
       btn.className = 'palette-btn';
       btn.id = `palette-btn-${q.id}`;
       btn.textContent = idx + 1;
-
       btn.addEventListener('click', () => {
-        const card = document.getElementById(`q-card-${q.id}`);
-        if (card) {
-          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          grid.querySelectorAll('.palette-btn').forEach(b => b.classList.remove('current'));
-          btn.classList.add('current');
+        const targetCard = document.getElementById(`q-card-${q.id}`);
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          highlightActiveCard(targetCard);
         }
       });
-
       grid.appendChild(btn);
     });
   }
 
   function updateExamProgress() {
-    const answeredCount = Object.keys(examUserAnswers).length;
-    const progressText = document.getElementById('exam-progress-text');
-    if (progressText) {
-      progressText.textContent = `${answeredCount}/${examQuestions.length}`;
-    }
+    const total = examQuestions.length;
+    const answered = Object.keys(examUserAnswers).length;
+    const statEl = document.getElementById('exam-answered-stat');
+    const barEl = document.getElementById('exam-progress-bar');
 
-    // Update palette button colors
-    examQuestions.forEach(q => {
-      const btn = document.getElementById(`palette-btn-${q.id}`);
-      if (btn) {
-        if (examUserAnswers[q.id]) {
-          btn.classList.add('answered');
-        } else {
-          btn.classList.remove('answered');
-        }
-      }
-    });
+    if (statEl) statEl.textContent = `${answered} / ${total}`;
+    if (barEl) barEl.style.width = `${Math.round((answered / total) * 100)}%`;
+
+    for (const qId in examUserAnswers) {
+      const pBtn = document.getElementById(`palette-btn-${qId}`);
+      if (pBtn) pBtn.classList.add('answered');
+    }
   }
 
   function finishExam() {
@@ -890,81 +1218,147 @@
     examActive = false;
 
     let correctCount = 0;
-    let cloCounts = {
-      CLO1: { total: 0, correct: 0 },
-      CLO2: { total: 0, correct: 0 },
-      CLO3: { total: 0, correct: 0 }
-    };
+    const total = examQuestions.length;
 
     examQuestions.forEach(q => {
-      const clo = q.clo || 'CLO2';
-      if (!cloCounts[clo]) cloCounts[clo] = { total: 0, correct: 0 };
-      cloCounts[clo].total++;
-
-      const uAns = examUserAnswers[q.id];
-      if (uAns && uAns.isCorrect) {
+      const userAns = examUserAnswers[q.id];
+      if (userAns && userAns.isCorrect) {
         correctCount++;
-        cloCounts[clo].correct++;
       }
     });
 
-    const score = ((correctCount / examQuestions.length) * 10).toFixed(2);
-    const timeSpent = (60 * 60) - examTimeRemaining;
-    const timeSpentStr = `${Math.floor(timeSpent / 60)} phút ${timeSpent % 60} giây`;
+    const score = total > 0 ? (correctCount / total) * 10 : 0;
+    const scoreFormatted = (Math.round(score * 10) / 10).toFixed(1);
 
-    // Populate modal
-    document.getElementById('modal-score-val').textContent = score;
-    document.getElementById('modal-score-detail').textContent = `Đúng ${correctCount} / ${examQuestions.length} câu • Thời gian: ${timeSpentStr}`;
+    const modalScore = document.getElementById('modal-score-val');
+    const modalDetail = document.getElementById('modal-score-detail');
+    if (modalScore) modalScore.textContent = scoreFormatted;
+    if (modalDetail) {
+      const minsSpent = Math.floor(((currentSubject === 'tthcm' ? 40 : 60) * 60 - examTimeRemaining) / 60);
+      const secsSpent = ((currentSubject === 'tthcm' ? 40 : 60) * 60 - examTimeRemaining) % 60;
+      modalDetail.textContent = `Đúng ${correctCount} / ${total} câu • Thời gian làm bài: ${minsSpent.toString().padStart(2, '0')}:${secsSpent.toString().padStart(2, '0')}`;
+    }
 
-    // CLO Stats
-    ['CLO1', 'CLO2', 'CLO3'].forEach(cloKey => {
-      const c = cloCounts[cloKey] || { total: 1, correct: 0 };
-      const percent = c.total > 0 ? Math.round((c.correct / c.total) * 100) : 0;
-      const statEl = document.getElementById(`${cloKey.toLowerCase()}-result-stat`);
-      const barEl = document.getElementById(`${cloKey.toLowerCase()}-progress-bar`);
-      if (statEl) statEl.textContent = `${c.correct}/${c.total} câu (${percent}%)`;
-      if (barEl) barEl.style.width = `${percent}%`;
-    });
+    // Modal breakdown
+    const clo1Stat = document.getElementById('clo1-result-stat');
+    const clo1Bar = document.getElementById('clo1-progress-bar');
+    const clo2Stat = document.getElementById('clo2-result-stat');
+    const clo2Bar = document.getElementById('clo2-progress-bar');
+    const clo3Stat = document.getElementById('clo3-result-stat');
+    const clo3Bar = document.getElementById('clo3-progress-bar');
 
-    document.getElementById('exam-result-modal').classList.add('active');
+    if (clo1Stat && clo1Bar && clo2Stat && clo2Bar && clo3Stat && clo3Bar) {
+      if (currentSubject === 'tthcm') {
+        const c12 = examQuestions.filter(q => q.chapter === 1 || q.chapter === 2);
+        const c34 = examQuestions.filter(q => q.chapter === 3 || q.chapter === 4);
+        const c56 = examQuestions.filter(q => q.chapter === 5 || q.chapter === 6);
+        
+        const corr12 = c12.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+        const corr34 = c34.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+        const corr56 = c56.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+
+        clo1Stat.previousElementSibling.textContent = 'Chương 1 & 2: Khái niệm & Cơ sở hình thành';
+        clo1Stat.textContent = `${corr12}/${c12.length} câu`;
+        clo1Bar.style.width = c12.length > 0 ? `${(corr12/c12.length)*100}%` : '0%';
+
+        clo2Stat.previousElementSibling.textContent = 'Chương 3 & 4: Độc lập dân tộc, Đảng & Nhà nước';
+        clo2Stat.textContent = `${corr34}/${c34.length} câu`;
+        clo2Bar.style.width = c34.length > 0 ? `${(corr34/c34.length)*100}%` : '0%';
+
+        clo3Stat.previousElementSibling.textContent = 'Chương 5 & 6: Đại đoàn kết, Văn hóa & Đạo đức';
+        clo3Stat.textContent = `${corr56}/${c56.length} câu`;
+        clo3Bar.style.width = c56.length > 0 ? `${(corr56/c56.length)*100}%` : '0%';
+      } else {
+        const qClo1 = examQuestions.filter(q => q.clo === 'CLO1');
+        const qClo2 = examQuestions.filter(q => q.clo === 'CLO2');
+        const qClo3 = examQuestions.filter(q => q.clo === 'CLO3');
+
+        const corrClo1 = qClo1.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+        const corrClo2 = qClo2.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+        const corrClo3 = qClo3.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+
+        clo1Stat.previousElementSibling.textContent = 'CLO1: Khái niệm & Kiến trúc tổng quan';
+        clo1Stat.textContent = `${corrClo1}/${qClo1.length} câu`;
+        clo1Bar.style.width = qClo1.length > 0 ? `${(corrClo1/qClo1.length)*100}%` : '0%';
+
+        clo2Stat.previousElementSibling.textContent = 'CLO2: Phần cứng 89C51 & Tập lệnh';
+        clo2Stat.textContent = `${corrClo2}/${qClo2.length} câu`;
+        clo2Bar.style.width = qClo2.length > 0 ? `${(corrClo2/qClo2.length)*100}%` : '0%';
+
+        clo3Stat.previousElementSibling.textContent = 'CLO3: Lập trình, Timer, UART & Ngắt';
+        clo3Stat.textContent = `${corrClo3}/${qClo3.length} câu`;
+        clo3Bar.style.width = qClo3.length > 0 ? `${(corrClo3/qClo3.length)*100}%` : '0%';
+      }
+    }
+
+    const modal = document.getElementById('exam-result-modal');
+    if (modal) modal.classList.add('active');
   }
 
   function reviewExamQuestions() {
-    // Re-render questions in review mode with answers and explanations revealed
-    const list = document.getElementById('exam-questions-list');
-    if (!list) return;
-    list.innerHTML = '';
+    examQuestions.forEach(q => {
+      const card = document.getElementById(`q-card-${q.id}`);
+      if (!card) return;
 
-    examQuestions.forEach((q, idx) => {
-      const card = createQuestionCard(q, idx + 1, false); // use normal practice mode rendering
-      list.appendChild(card);
+      const userAns = examUserAnswers[q.id];
+
+      if (q.type === 'mcq') {
+        const optBtns = card.querySelectorAll('.option-btn');
+        optBtns.forEach(btn => {
+          btn.classList.remove('selected-correct', 'selected-wrong', 'highlight-correct');
+          const letter = btn.getAttribute('data-letter');
+          if (userAns && userAns.answer === letter) {
+            btn.classList.add(userAns.isCorrect ? 'selected-correct' : 'selected-wrong');
+          }
+          if (q.answer === letter) {
+            btn.classList.add('highlight-correct');
+          }
+        });
+      }
+
+      // Add review explanation row
+      let revRow = card.querySelector('.exam-review-row');
+      if (!revRow) {
+        revRow = document.createElement('div');
+        revRow.className = 'exam-review-row';
+        revRow.style.cssText = 'margin-top: 12px; padding: 12px; background: #FFFDF9; border: 2px solid #000; border-radius: 6px;';
+        revRow.innerHTML = `
+          <div style="font-weight: 800; color: #065F46; margin-bottom: 4px;">✅ Đáp án đúng: ${escapeHtml(q.answer)}</div>
+          <div style="font-size: 0.9rem; margin-bottom: 6px;"><strong>💡 Lời giải:</strong> ${escapeHtml(q.explanation)}</div>
+          ${(q.tips_casio || q.tips) ? `<div style="font-size: 0.85rem; color: #92400E; background: #FEF3C7; padding: 4px 8px; border: 1px dashed #B45309;">⚡ Mẹo: ${escapeHtml(q.tips_casio || q.tips)}</div>` : ''}
+        `;
+        card.appendChild(revRow);
+      }
     });
+
+    const firstCard = document.getElementById(`q-card-${examQuestions[0].id}`);
+    if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth' });
   }
 
-  // Helpers
   function escapeHtml(str) {
     if (!str) return '';
-    return str.replace(/&/g, '&amp;')
-              .replace(/</g, '&lt;')
-              .replace(/>/g, '&gt;')
-              .replace(/"/g, '&quot;')
-              .replace(/'/g, '&#039;');
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
   }
 
-  function formatMarkdownText(text) {
-    if (!text) return '';
-    return escapeHtml(text)
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      .replace(/`(.*?)`/g, '<code class="mono">$1</code>')
-      .replace(/\n/g, '<br/>');
+  function formatMarkdownText(str) {
+    if (!str) return '';
+    let res = escapeHtml(str);
+    res = res.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    res = res.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    res = res.replace(/`([^`]+)`/g, '<code>$1</code>');
+    res = res.replace(/\n/g, '<br/>');
+    return res;
   }
 
-  // Bootstrap when DOM is ready
+  // Start app on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
-
 })();
