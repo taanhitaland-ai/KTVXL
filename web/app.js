@@ -26,13 +26,16 @@
   const STORAGE_KEY_ANSWERS = 'ktvxl_user_answers_v1';
   const STORAGE_KEY_STARS = 'ktvxl_starred_questions_v1';
 
+  let practiceDisplayLimit = 100;
+
   // Initialize App
   function init() {
     loadSavedState();
     
     // Check if data is already loaded in window
-    if (window.KTVXL_QUESTIONS && window.KTVXL_KNOWLEDGE) {
-      questions = window.KTVXL_QUESTIONS;
+    const loadedQuestions = window.KTVXL_QUESTIONS || window.QUESTIONS_DATABASE;
+    if (loadedQuestions && window.KTVXL_KNOWLEDGE) {
+      questions = loadedQuestions;
       knowledge = window.KTVXL_KNOWLEDGE;
       setupApp();
     } else {
@@ -76,8 +79,41 @@
     setupFilters();
     setupKnowledgeHub();
     setupExamSimulator();
+    setupImageLightbox();
     renderPracticeQuestions();
     updateStatsBar();
+  }
+
+  function openImageLightbox(src) {
+    const modal = document.getElementById('image-lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    if (modal && img) {
+      img.src = src;
+      modal.style.display = 'flex';
+    }
+  }
+
+  function closeImageLightbox() {
+    const modal = document.getElementById('image-lightbox-modal');
+    if (modal) {
+      modal.style.display = 'none';
+    }
+  }
+
+  function setupImageLightbox() {
+    const btnClose = document.getElementById('btn-close-lightbox');
+    if (btnClose) {
+      btnClose.addEventListener('click', closeImageLightbox);
+    }
+    const modal = document.getElementById('image-lightbox-modal');
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeImageLightbox();
+      });
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeImageLightbox();
+    });
   }
 
   // Stats Bar
@@ -126,6 +162,7 @@
     if (sourceSelect) {
       sourceSelect.addEventListener('change', (e) => {
         currentSource = e.target.value;
+        practiceDisplayLimit = 100;
         renderPracticeQuestions();
       });
     }
@@ -136,6 +173,7 @@
         cloBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentClo = btn.getAttribute('data-clo');
+        practiceDisplayLimit = 100;
         renderPracticeQuestions();
       });
     });
@@ -146,6 +184,7 @@
         statusBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentStatus = btn.getAttribute('data-status');
+        practiceDisplayLimit = 100;
         renderPracticeQuestions();
       });
     });
@@ -236,20 +275,43 @@
       </div>
     `;
 
-    // Limit initial DOM render to first 100 for optimal performance if large
-    const displayList = filtered.slice(0, 100);
+    // Limit initial DOM render to practiceDisplayLimit for optimal performance
+    const displayList = filtered.slice(0, practiceDisplayLimit);
 
     displayList.forEach((q, idx) => {
       const card = createQuestionCard(q, idx + 1);
       container.appendChild(card);
     });
 
-    if (filtered.length > 100) {
-      const moreNotice = document.createElement('div');
-      moreNotice.className = 'neo-box';
-      moreNotice.style.cssText = 'padding: 16px; text-align: center; font-weight: 800; background: var(--neo-yellow);';
-      moreNotice.innerHTML = `Đang hiển thị 100 / ${filtered.length} câu. Hãy lọc theo Đề hoặc Chuyên đề để làm từng phần chuyên sâu!`;
-      container.appendChild(moreNotice);
+    if (filtered.length > practiceDisplayLimit) {
+      const moreBox = document.createElement('div');
+      moreBox.className = 'neo-box';
+      moreBox.style.cssText = 'padding: 16px; text-align: center; font-weight: 800; background: var(--neo-yellow); margin-top: 16px;';
+      moreBox.innerHTML = `
+        <div style="margin-bottom: 12px; font-size: 1.05rem;">
+          Đang hiển thị <strong>${displayList.length}</strong> / <strong>${filtered.length}</strong> câu hỏi.
+        </div>
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <button id="btn-load-more" class="neo-btn neo-btn-white" style="padding: 8px 16px;">➕ Hiển thị thêm 50 câu</button>
+          <button id="btn-load-all" class="neo-btn neo-btn-green" style="padding: 8px 16px;">⚡ Hiển thị toàn bộ (${filtered.length} câu)</button>
+        </div>
+      `;
+      container.appendChild(moreBox);
+
+      const btnMore = moreBox.querySelector('#btn-load-more');
+      if (btnMore) {
+        btnMore.onclick = () => {
+          practiceDisplayLimit += 50;
+          renderPracticeQuestions();
+        };
+      }
+      const btnAll = moreBox.querySelector('#btn-load-all');
+      if (btnAll) {
+        btnAll.onclick = () => {
+          practiceDisplayLimit = filtered.length;
+          renderPracticeQuestions();
+        };
+      }
     }
   }
 
@@ -346,7 +408,11 @@
         const imgEl = document.createElement('img');
         imgEl.src = imgSrc;
         imgEl.alt = 'Sơ đồ mạch / Mã lệnh minh họa';
-        imgEl.loading = 'lazy';
+        imgEl.loading = 'eager';
+        imgEl.decoding = 'sync';
+        imgEl.style.cursor = 'zoom-in';
+        imgEl.title = 'Click để xem phóng to sơ đồ / hình ảnh';
+        imgEl.onclick = () => openImageLightbox(imgSrc);
         imgWrap.appendChild(imgEl);
         promptBox.appendChild(imgWrap);
       });
