@@ -1,0 +1,3980 @@
+{
+  "De_1": [
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 1,
+      "id": "DE001_Q01",
+      "title": "Câu 1",
+      "prompt": "Trạng thái ARM của ARM7TDMI các lệnh thực hiện với dữ liệu bao nhiêu bit?",
+      "extra_lines": [],
+      "options": [
+        "A. 32",
+        "B. 8",
+        "C. 16",
+        "D. 64"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 2,
+      "id": "DE001_Q02",
+      "title": "Câu 2",
+      "prompt": "Trong hệ thống vi xử lý trước khi thực hiện chương trình được chứa ______",
+      "extra_lines": [],
+      "options": [
+        "A. Trong bộ nhớ chính.",
+        "B. Trên Bus dữ liệu.",
+        "C. Các thanh ghi trên CPU.",
+        "D. Trong cổng vào ra."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 3,
+      "id": "DE001_Q03",
+      "title": "Câu 3",
+      "prompt": "Đâu là nguyên tắc làm việc của CPU?",
+      "extra_lines": [],
+      "options": [
+        "A. Thực hiện các lệnh liên tục và tuần tự",
+        "B. Mỗi lệnh được biểu diễn bằng mã máy (opcode)",
+        "C. Kết nối với hệ thống thông qua hệ thống bus.",
+        "D. Cả ba đáp án trên."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 4,
+      "id": "DE001_Q04",
+      "title": "Câu 4",
+      "prompt": "Một bộ vi xử lý có đường địa chỉ từ A24 – A0. Cho biết không gian địa chỉ của bộ vi xử lý là bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. 32 MB",
+        "B. 64 MB",
+        "C. 16 MB",
+        "D. 8 MB"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 5,
+      "id": "DE001_Q05",
+      "title": "Câu 5",
+      "prompt": "Dung lượng bộ nhớ chương trình ngoài tối đa mà chip 89C51 có khả năng truy xuất là:",
+      "extra_lines": [],
+      "options": [
+        "A. 64 KB",
+        "B. 32 KB",
+        "C. 128 KB",
+        "D. 256 KB"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 6,
+      "id": "DE001_Q06",
+      "title": "Câu 6",
+      "prompt": "Khi chân tín hiệu ____ của 89C51 ở mức điện thế cao, CPU sẽ giao tiếp với ROM nội và ngoại.",
+      "extra_lines": [],
+      "options": [
+        "A. EA",
+        "B. RST",
+        "C. VSS",
+        "D. ALE"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 7,
+      "id": "DE001_Q07",
+      "title": "Câu 7",
+      "prompt": "Nhóm các thanh ghi nào dưới đây có thể định địa chỉ theo bit?",
+      "extra_lines": [],
+      "options": [
+        "A. ACC, B, PSW",
+        "B. SP, DPH, DPL",
+        "C. TMOD, TL0, TH0",
+        "D. PCON, SBUF, TH1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 8,
+      "id": "DE001_Q08",
+      "title": "Câu 8",
+      "prompt": "Trên vi điều khiển 89C51, cờ chẵn lẻ P tương ứng với bit thứ mấy trong PSW?",
+      "extra_lines": [],
+      "options": [
+        "A. PSW.0",
+        "B. PSW.1",
+        "C. PSW.5",
+        "D. PSW.7"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 9,
+      "id": "DE001_Q09",
+      "title": "Câu 9",
+      "prompt": "Cho sơ đồ mở rộng của 89C51 với bộ nhớ RAM như hình vẽ dưới đây, không gian địa chỉ RAM mở rộng là_______ KB",
+      "extra_lines": [
+        "Ghi chú đáp án viết giá trị hệ thập phân, ví dụ kết quả là 10 ghi: 10."
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 10,
+      "id": "DE001_Q10",
+      "title": "Câu 10",
+      "prompt": "Dung lượng bộ nhớ ROM mở rộng của vi điều khiển 89C51 trong mạch vẽ dưới đây là:",
+      "extra_lines": [],
+      "options": [
+        "A. 8Kx8bit",
+        "B. 16Kx8bit",
+        "C. 4Kx8bit",
+        "D. 2Kx8bit"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 11,
+      "id": "DE001_Q11",
+      "title": "Câu 11",
+      "prompt": "Khi mở rộng bộ nhớ RAM dữ liệu của vi điều khiển 89C51 lên tới 4Kx8bit, thì các chân địa chỉ của vi điều khiển sẽ là:",
+      "extra_lines": [],
+      "options": [
+        "A. P0.0 – P0.7 và P2.0 – P2.3",
+        "B. P0.0 – P0.7 và P2.0 – P2.4",
+        "C. P0.0 – P0.4 và P2.0 – P2.7",
+        "D. P0.0 – P0.3 và P2.0 – P2.7"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 12,
+      "id": "DE001_Q12",
+      "title": "Câu 12",
+      "prompt": "Cho sơ đồ mở rộng bộ nhớ chương trình ROM và bộ nhớ dữ liệu RAM của vi điều khiển 89C51 như hình vẽ dưới đây:",
+      "extra_lines": [
+        "Nếu P2.7=0 thì địa chỉ cao nhất của IC2 là____H?",
+        "Ghi chú: Biểu diễn kết quả dạng hexa, ví dụ kết quả là 7AF0H thì ghi 7AF0"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 13,
+      "id": "DE001_Q13",
+      "title": "Câu 13",
+      "prompt": "Trong chế độ địa chỉ tức thời trên vi điều khiển 89C51 có toán hạng là giá trị dữ liệu nằm ở:",
+      "extra_lines": [],
+      "options": [
+        "A. Toán hạng thứ nguồn",
+        "B. Toán hạng thứ đích",
+        "C. Mã lệnh",
+        "D. Cả ba đáp án A, B, C đều đúng"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 14,
+      "id": "DE001_Q14",
+      "title": "Câu 14",
+      "prompt": "Để khai báo một nhãn (label) trong Assembly, ký tự nào thường được sử dụng?",
+      "extra_lines": [],
+      "options": [
+        "A. :",
+        "B. ;",
+        "C. #",
+        "D. $"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 15,
+      "id": "DE001_Q15",
+      "title": "Câu 15",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh XRL là thuộc nhóm lệnh gì?",
+      "extra_lines": [],
+      "options": [
+        "A. Lệnh tính toán logic và dịch bit",
+        "B. Lệnh số học",
+        "C. Lệnh xử lý bit",
+        "D. Lệnh điều khiển chương trình"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 16,
+      "id": "DE001_Q16",
+      "title": "Câu 16",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào trong số các lệnh sau đây là lệnh SAI:",
+      "extra_lines": [],
+      "options": [
+        "A. MOV #0B0H, A",
+        "B. MOV A, #0B0H",
+        "C. MOV B0H, A",
+        "D. MOV A, B0H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 17,
+      "id": "DE001_Q17",
+      "title": "Câu 17",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh giảm nội dung trong thanh ghi R0 và nhảy đến địa chỉ rel nếu nội dung của thanh ghi R0 khác 0 (ở chế độ mặc định):",
+      "extra_lines": [],
+      "options": [
+        "A. DJNZ R0, rel",
+        "B. CJNE R0, #00H, rel",
+        "C. CJNE R0, 00H, rel",
+        "D. DJNZ rel, R0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 18,
+      "id": "DE001_Q18",
+      "title": "Câu 18",
+      "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: XCH A, R1 thì nội dung trong thanh ghi A sẽ là_________H.",
+      "extra_lines": [
+        "Viết nội dung dưới dạng số hexa, ví dụ nội dung là 0AH thì viết 0A"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 19,
+      "id": "DE001_Q19",
+      "title": "Câu 19",
+      "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:",
+      "extra_lines": [
+        "MOV A, #89H",
+        "MOV R0, #FEH",
+        "SETB C",
+        "SUBB A, R0"
+      ],
+      "options": [
+        "A. CY=1, OV=0",
+        "B. CY=0, OV=0",
+        "C. CY=0, OV=1",
+        "D. CY=1, OV=1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 20,
+      "id": "DE001_Q20",
+      "title": "Câu 20",
+      "prompt": "Cho đoạn mã Assembly trên 89C51 sau:",
+      "extra_lines": [
+        "MOV R0, #7FH",
+        "MOV 7EH, #00H",
+        "MOV 7FH, #40H",
+        "DEC @R0",
+        "DEC R0",
+        "DEC @R0",
+        "Nội dung trong thanh ghi R0 sau khi thực hiện đoạn mã trên là: ________H.",
+        "Ghi chú: Ghi kết quả dưới dạng mã Hecxa, ví dụ kết quả là 0FH viết 0F."
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 21,
+      "id": "DE001_Q21",
+      "title": "Câu 21",
+      "prompt": "Cho đoạn mã Assembly trên 89C51 sau:",
+      "extra_lines": [
+        "MOV A, #0FFH",
+        "ADD A, #1",
+        "JNZ SKIP",
+        "ADDC A, #02H",
+        "SJMP EXIT",
+        "SKIP: ADDC A, #01H",
+        "EXIT: SJMP $",
+        "Nội dung thanh ghi A sau khi thực hiện đoạn chương trình trên:"
+      ],
+      "options": [
+        "A. 03H",
+        "B. 0FFH",
+        "C. 02H",
+        "D. 01H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 22,
+      "id": "DE001_Q22",
+      "title": "Câu 22",
+      "prompt": "Xác định chức năng của chương trình con dưới đây:",
+      "extra_lines": [
+        "ORG 1000H",
+        "DL: MOV R6, #02",
+        "DL1: MOV R1, #250",
+        "DJNZ R1, DL1",
+        "DJNZ R7, DL",
+        "RET"
+      ],
+      "options": [
+        "A. Tạo trễ thời gian 2ms",
+        "B. Tạo trễ thời gian 200ms",
+        "C. Tạo trễ thời gian 20ms",
+        "D. Tạo trễ thời gian 2s"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 23,
+      "id": "DE001_Q23",
+      "title": "Câu 23",
+      "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi A là 91H",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV A, #15H",
+        "SETB AC_____",
+        "ANL A, #9BH",
+        "END"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 24,
+      "id": "DE001_Q24",
+      "title": "Câu 24",
+      "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV R1, #5",
+        "MOV A, #3BH",
+        "LAP: RR A",
+        "DJNZ R1, LAP",
+        "END",
+        "Nội dung trong thanh ghi A là:"
+      ],
+      "options": [
+        "A. D9H",
+        "B. 3BH",
+        "C. B3H",
+        "D. CEH"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 25,
+      "id": "DE001_Q25",
+      "title": "Câu 25",
+      "prompt": "Chương trình Assembly trên vi điều khiển 89C51, sau khi thực hiện xong các câu lệnh dưới dây, chương trình sẽ thực hiện tới đâu?",
+      "extra_lines": [
+        "MOV P1, #0CAH",
+        "MOV A, #56H",
+        "JB P1.2, L1",
+        "JNB AC3, L2",
+        "….",
+        "L1: ⸽",
+        "L2: ⸽"
+      ],
+      "options": [
+        "A. Đưa chương trình tới nhãn L2",
+        "B. Đưa chương trình tới nhãn L1",
+        "C. Kết thúc chương trình",
+        "D. Thực hiện lệnh tiếp theo JNB AC3 , L2"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 26,
+      "id": "DE001_Q26",
+      "title": "Câu 26",
+      "prompt": "Trên vi điều khiển 89C51, để xóa cờ tràn của Timer 0, cần làm gì?",
+      "extra_lines": [],
+      "options": [
+        "A. Xóa bit TF0 trong thanh ghi TCON",
+        "B. Xóa bit TF1 trong thanh ghi TCON",
+        "C. Xóa bit TR0 trong thanh ghi TCON",
+        "D. Xóa bit TR1 trong thanh ghi TCON"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 27,
+      "id": "DE001_Q27",
+      "title": "Câu 27",
+      "prompt": "Trên vi điều khiển 89C51, khi lập trình định thời với khoảng thời gian nhỏ hơn 10µs (giả sử dùng thạch anh là 12Mhz) ta dùng kỹ thuật:",
+      "extra_lines": [],
+      "options": [
+        "A. Điều chỉnh bằng phần mềm",
+        "B. Timer 8 bit tự động nạp lại giá trị đầu",
+        "C. Timer 16 bit",
+        "D. Timer 16 bit kết hợp với các vòng lặp"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 28,
+      "id": "DE001_Q28",
+      "title": "Câu 28",
+      "prompt": "Trên vi điều khiển 89C51, trong chế độ 1 của bộ đếm/định thời, với tần số thạch anh là 12MHz thì thời gian tối đa mà chế độ 0 có thể định thời đến là:",
+      "extra_lines": [],
+      "options": [
+        "A. 65536ms",
+        "B. 256ms",
+        "C. 8192ms",
+        "D. 1000ms"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 29,
+      "id": "DE001_Q29",
+      "title": "Câu 29",
+      "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 2 cần tạo độ trễ 100 µs với tần số thạch anh 6 MHz. Giá trị của TH1 là bao nhiêu?Nguyên lý hoạt động của bộ đếm/ bộ định thời",
+      "extra_lines": [],
+      "options": [
+        "A. TH1 = CEH",
+        "B. TH1 = C5H",
+        "C. TH1 = B4H",
+        "D. TH1 = D0H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 30,
+      "id": "DE001_Q30",
+      "title": "Câu 30",
+      "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau, biết tần số thạch anh là 12MHz:",
+      "extra_lines": [
+        "DELAY:",
+        "MOV TMOD, #01H",
+        "LOOP:",
+        "MOV TH0, # 0FEH",
+        "MOV TL0, #0CH",
+        "SETB TR0",
+        "JNB TF0, $",
+        "CLR TR0",
+        "CLR TF0",
+        "CPL P1.0",
+        "SJMP LOOP",
+        "END",
+        "Chương trình này dùng để:"
+      ],
+      "options": [
+        "A. Tạo dạng sóng vuông có chu kỳ 1000µS trên chân P1.0",
+        "B. Tạo dạng sóng vuông có chu kỳ 65036µS trên chân P1.0",
+        "C. Tạo dạng sóng vuông có chu kỳ 32518µS trên chân P1.0",
+        "D. Tạo dạng sóng vuông có chu kỳ 500µS trên chân P1.0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 31,
+      "id": "DE001_Q31",
+      "title": "Câu 31",
+      "prompt": "Làm thế nào để kiểm tra xem dữ liệu đã được nhận qua cổng nối tiếp trên vi điều khiển 89C51?",
+      "extra_lines": [],
+      "options": [
+        "A. Kiểm tra bit RI trong thanh ghi SCON",
+        "B. Kiểm tra bit TI trong thanh ghi SCON",
+        "C. Kiểm tra bit SM0 trong thanh ghi SCON",
+        "D. Kiểm tra bit SM1 trong thanh ghi SCON"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 32,
+      "id": "DE001_Q32",
+      "title": "Câu 32",
+      "prompt": "Để cấu hình cổng nối tiếp ở chế độ 0 (8-bit đồng bộ) trên vi điều khiển 89C51, giá trị của thanh ghi SCON cần là gì?",
+      "extra_lines": [],
+      "options": [
+        "A. 10H",
+        "B. 20H",
+        "C. 30H",
+        "D. 40H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 33,
+      "id": "DE001_Q33",
+      "title": "Câu 33",
+      "prompt": "Nếu tần số thạch anh trên vi điều khiển 89C51 là 11.0592 MHz và giá trị nạp vào thanh ghi TH1 là -3, tốc độ truyền là bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. 9600 bps",
+        "B. 4800 bps",
+        "C. 2400 bps",
+        "D. 1200 bps"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 34,
+      "id": "DE001_Q34",
+      "title": "Câu 34",
+      "prompt": "Cho các chương trình truyền thông nối tiếp thực hiện trên vi điều khiển 89C51 dưới đây, đâu là chương trình truyền chữ “KMA” nối tiếp liên tục với tốc độ 4800 baud (8bit dữ liệu, 1 bit stop), biết tần số tạo dao động XTAL1 là 11.0592MHz.",
+      "extra_lines": [],
+      "options": [
+        "A.",
+        "B.",
+        "C.",
+        "D."
+      ],
+      "type": "mcq",
+      "images": [
+        "assets/images/de001_rId12.png",
+        "assets/images/de001_rId13.png",
+        "assets/images/de001_rId14.png",
+        "assets/images/de001_rId15.png"
+      ]
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 35,
+      "id": "DE001_Q35",
+      "title": "Câu 35",
+      "prompt": "Ngắt Timer 0 của vi điều khiển 89C51 sẽ xảy ra khi nào?",
+      "extra_lines": [],
+      "options": [
+        "A. Cờ TF0 được set và bit ET0 được bật",
+        "B. Cờ TF1 được set và bit ET1 được bật",
+        "C. Cờ IE0 được set và bit EX0 được bật",
+        "D. Cờ IE1 được set và bit EX1 được bật"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 36,
+      "id": "DE001_Q36",
+      "title": "Câu 36",
+      "prompt": "Vecto ngắt cho Ngắt ngoại vi 0 trên vi điều khiển 89C51 nằm ở địa chỉ nào?",
+      "extra_lines": [],
+      "options": [
+        "A. 0003H",
+        "B. 0000H",
+        "C. 000BH",
+        "D. 0013H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 37,
+      "id": "DE001_Q37",
+      "title": "Câu 37",
+      "prompt": "Với giá trị IP là 0AH, ngắt nào trên vi điều khiển 89C51 sẽ có mức ưu tiên cao nhất?",
+      "extra_lines": [],
+      "options": [
+        "A. Ngắt Timer 1",
+        "B. Ngắt Timer 0",
+        "C. Ngắt ngoại vi 0",
+        "D. Ngắt truyền thông nối tiếp"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 38,
+      "id": "DE001_Q38",
+      "title": "Câu 38",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "LJMP START",
+        "ORG 000BH",
+        "TIMER0_ISR: CPL P1.0",
+        "MOV TH0, #0FEH",
+        "MOV TL0, #0CH",
+        "RETI",
+        "START: MOV TMOD, #01H",
+        "MOV TH0, #0FEH",
+        "MOV TL0, #0CH",
+        "SETB TR0",
+        "MOV IE, #82H",
+        "SETB ET0",
+        "LOOP: SJMP LOOP",
+        "END",
+        "Chương trình thực hiện chức năng gì?"
+      ],
+      "options": [
+        "A. Sử dụng ngắt timer 0 để tạo xung vuông có chu kỳ 1s tại cổng P1.0",
+        "B. Sử dụng ngắt timer 1 để tạo xung vuông có chu kỳ 1s tại cổng P1.0",
+        "C. Sử dụng ngắt timer 0 để tạo xung vuông có chu kỳ 1ms tại cổng P1.0",
+        "D. Sử dụng ngắt timer 1 để tạo xung vuông có chu kỳ 1ms tại cổng P1.0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 39,
+      "id": "DE001_Q39",
+      "title": "Câu 39",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "AJMP MAIN",
+        "ORG 0013H",
+        "SETB P1.3",
+        "MOV R7, #250",
+        "HERE: DJNZ R7, HERE",
+        "CLR P1.3",
+        "0RG 0030H",
+        "MAIN: MOV IE, #84H",
+        "SJMP $",
+        "END",
+        "Chương trình thực hiện chức năng gì?"
+      ],
+      "options": [
+        "A. Sử dụng ngắt ngoài 1 để bật tắt đèn tại chân P1.3, khi công tắc ở mức thấp đèn sáng liên tục",
+        "B. Sử dụng ngắt ngoài 0 để bật tắt đèn tại chân P1.3, khi công tắc ở mức thấp đèn sáng liên tục",
+        "C. Sử dụng ngắt ngoài 1 để bật tắt đèn tại chân P1.3, khi công tắc ở mức thấp đèn tắt",
+        "D. Sử dụng ngắt ngoài 0 để bật tắt đèn tại chân P1.3, khi công tắc ở mức thấp đèn tắt"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_001",
+      "de_num": 1,
+      "num": 40,
+      "id": "DE001_Q40",
+      "title": "Câu 40",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H LJMP MAIN",
+        "ORG 0023H LJMP UART_ISR",
+        "MAIN: MOV TMOD, #20H",
+        "MOV TH1, #-3",
+        "MOV SCON, #50H",
+        "SETB TR1",
+        "MOV IE, #90H",
+        "MOV A, #64H",
+        "MOV SBUF, A",
+        "JNB TI, $",
+        "CLR TI",
+        "MOV C, A.4",
+        "MOV P1.4, C",
+        "LOOP: SJMP LOOP",
+        "UART_ISR: JNB TI, UART_EXIT",
+        "CLR TI",
+        "MOV C, A.4",
+        "MOV P1.4, C",
+        "UART_EXIT: RETI",
+        "END",
+        "Chương trình thực hiện chức năng gì?",
+        "— HẾT —"
+      ],
+      "options": [
+        "A. Chương trình truyền thông nối tiếp để truyền ký tự “B” và đưa ký tự đó ra cổng P1.4 hiển thị",
+        "B. Chương trình ngắt truyền thông để nhận ký tự “B” và đưa ký tự đó ra cổng P2.0 hiển thị",
+        "C. Chương trình truyền thông nối tiếp để truyền ký tự “d” và đưa ký tự đó ra cổng P2.0 hiển thị",
+        "D. Chương trình truyền thông nối tiếp để nhận ký tự “b” và đưa ký tự đó ra cổng P1.4 hiển thị"
+      ],
+      "type": "mcq",
+      "images": []
+    }
+  ],
+  "De_2": [
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 1,
+      "id": "DE002_Q01",
+      "title": "Câu 1",
+      "prompt": "Để đọc dữ liệu từ vào ra, CPU cần thực hiện các công việc nào?",
+      "extra_lines": [],
+      "options": [
+        "A. CPU cấp địa chỉ, cấp tín hiệu điều khiển chọn vào ra, cấp tín hiệu yêu cầu đọc vào ra và nhận dữ liệu từ data bus vào.",
+        "B. CPU nhận địa chỉ từ vào ra, cấp tín hiệu điều khiển chọn vào ra, cấp tín hiệu yêu cầu đọc vào ra và nhận dữ liệu từ data bus vào.",
+        "C. CPU cấp địa chỉ, cấp tín hiệu điều khiển chọn vào ra, nhận tín hiệu cho phép đọc từ vào ra và nhận dữ liệu từ data bus vào.",
+        "D. CPU cấp địa chỉ, cấp tín hiệu điều khiển chọn vào ra, cấp tín hiệu yêu cầu đọc vào ra và cấp dữ liệu ra data bus."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 2,
+      "id": "DE002_Q02",
+      "title": "Câu 2",
+      "prompt": "Để đọc dữ liệu từ bộ nhớ, CPU cần thực hiện các công việc nào?",
+      "extra_lines": [],
+      "options": [
+        "A. CPU cấp địa chỉ, cấp tín hiệu điều khiển chọn bộ nhớ, cấp tín hiệu yêu cầu đọc bộ nhớ và nhận dữ liệu từ data bus vào",
+        "B. CPU nhận địa chỉ từ bộ nhớ, cấp tín hiệu điều khiển chọn bộ nhớ, cấp tín hiệu yêu cầu đọc bộ nhớ và nhận dữ liệu từ data bus vào",
+        "C. CPU cấp địa chỉ, cấp tín hiệu điều khiển chọn bộ nhớ, cấp tín hiệu yêu cầu đọc bộ nhớ và cấp dữ liệu ra data bus vào",
+        "D. CPU cấp địa chỉ, cấp tín hiệu điều khiển chọn bộ nhớ, nhận tín hiệu cho phép đọc bộ nhớ và nhận dữ liệu từ data bus vào"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 3,
+      "id": "DE002_Q03",
+      "title": "Câu 3",
+      "prompt": "Thành phần nào trong hệ vi xử lý lưu trữ dữ liệu và lệnh đang được xử lý?",
+      "extra_lines": [],
+      "options": [
+        "A. Bộ nhớ RAM",
+        "B. ALU (Khối xử lý số học và logic)",
+        "C. Bộ nhớ đếm Cache",
+        "D. Thanh ghi"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 4,
+      "id": "DE002_Q04",
+      "title": "Câu 4",
+      "prompt": "Một bộ vi xử lý có 36 đường địa chỉ sẽ quản lý được bộ nhớ có kích thước tối đa bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. 64 GB",
+        "B. 64 B",
+        "C. 64 KB",
+        "D. 64 MB"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 5,
+      "id": "DE002_Q05",
+      "title": "Câu 5",
+      "prompt": "Số lượng bộ đếm/định thời có trong chip vi điều khiển 89C51 là:",
+      "extra_lines": [],
+      "options": [
+        "A. 2",
+        "B. 1",
+        "C. 3",
+        "D. 4"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 6,
+      "id": "DE002_Q06",
+      "title": "Câu 6",
+      "prompt": "Hai chân XTAL1 và XTAL2 của 89C51 là hai chân dùng để____",
+      "extra_lines": [],
+      "options": [
+        "A. Nối với bộ dao động ngoài",
+        "B. Nối với bộ định thời ngoài",
+        "C. Nối với bộ ngắt bên ngoài",
+        "D. Nối với cổng truyền thông ngoài"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 7,
+      "id": "DE002_Q07",
+      "title": "Câu 7",
+      "prompt": "Nhóm các thanh ghi nào dưới đây có thể định địa chỉ theo bit?",
+      "extra_lines": [],
+      "options": [
+        "A. P0~P3, IP, TCON",
+        "B. SP, DPH, DPL",
+        "C. TMOD, TL0, TH0",
+        "D. PCON, SBUF, TH1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 8,
+      "id": "DE002_Q08",
+      "title": "Câu 8",
+      "prompt": "Trên vi điều khiển 89C51, cờ nhớ CY được đặt tại đâu?",
+      "extra_lines": [],
+      "options": [
+        "A. Thanh ghi trạng thái chương trình PSW",
+        "B. Trong PC",
+        "C. Bộ tính toán logic và số học ALU",
+        "D. Mạch cộng tích lũy"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 9,
+      "id": "DE002_Q09",
+      "title": "Câu 9",
+      "prompt": "Cho sơ đồ mở rộng của 89C51 như hình vẽ dưới đây, không gian địa chỉ RAM mở rộng là_______ KB",
+      "extra_lines": [
+        "Ghi chú đáp án viết giá trị hệ thập phân, ví dụ kết quả là 10 ghi: 10"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 10,
+      "id": "DE002_Q10",
+      "title": "Câu 10",
+      "prompt": "Cho mạch mở rộng bộ nhớ ROM như hình vẽ dưới đây:",
+      "extra_lines": [
+        "Biết P2.7=0, P2.6=1, P2.5=0, P2.4=1, P2.3=1, vậy phạm vi không gian của địa chỉ bộ nhớ mở rộng là:"
+      ],
+      "options": [
+        "A. 5800H – 5FFFH",
+        "B. 5C00H – 5FFFH",
+        "C. AC00H – AFFFH",
+        "D. A800H – AFFFH"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 11,
+      "id": "DE002_Q11",
+      "title": "Câu 11",
+      "prompt": "Khi mở rộng bộ nhớ RAM dữ liệu của vi điều khiển 89C51 lên tới 2Kx8bit, thì các chân địa chỉ của vi điều khiển sẽ là:",
+      "extra_lines": [],
+      "options": [
+        "A. P0.0 – P0.7 và P2.0 – P2.2",
+        "B. P0.0 – P0.7 và P2.0 – P2.3",
+        "C. P0.0 – P0.4 và P2.0 – P2.7",
+        "D. P0.0 – P0.2 và P2.0 – P2.7"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 12,
+      "id": "DE002_Q12",
+      "title": "Câu 12",
+      "prompt": "Cho sơ đồ mở rộng bộ nhớ chương trình ROM và bộ nhớ dữ liệu RAM của vi điều khiển 89C51 như hình vẽ dưới đây:",
+      "extra_lines": [
+        "Địa chỉ cao nhất của IC4 là____H?",
+        "Ghi chú: Biểu diễn kết quả dạng hexa, ví dụ kết quả là 7AF0H thì ghi 7AF0"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 13,
+      "id": "DE002_Q13",
+      "title": "Câu 13",
+      "prompt": "Hãy cho biết chế độ định địa chỉ trên vi điều khiển 89C51 trong vi điều khiển 89C51 toán hạng nguồn trong câu lệnh: MOV A, #3AH",
+      "extra_lines": [],
+      "options": [
+        "A. Chế độ định địa chỉ tức thời",
+        "B. Chế độ định đia chỉ trực tiếp",
+        "C. Chế độ định địa chỉ gián tiếp",
+        "D. Chế độ định địa chỉ thanh ghi"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 14,
+      "id": "DE002_Q14",
+      "title": "Câu 14",
+      "prompt": "Một lệnh đầy đủ của ngôn ngữ assembly gồm các phần (xếp theo thứ tự):",
+      "extra_lines": [],
+      "options": [
+        "A. Nhãn lệnh, mã lệnh, toán hạng và ghi chú.",
+        "B. Mã lệnh, nhãn lệnh, toán hạng và ghi chú.",
+        "C. Nhãn lệnh, toán hạng, mã lệnh và ghi chu.",
+        "D. Toán hạng, mã lệnh, nhãn lệnh và ghi chú."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 15,
+      "id": "DE002_Q15",
+      "title": "Câu 15",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DIV thuộc nhóm lệnh gì?",
+      "extra_lines": [],
+      "options": [
+        "A. Lệnh số học",
+        "B. Lệnh tính toán logic và dịch bit",
+        "C. Lệnh truyền dữ liệu",
+        "D. Lệnh điều khiển chương trình"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 16,
+      "id": "DE002_Q16",
+      "title": "Câu 16",
+      "prompt": "Lệnh assembly của 89C51 “MOV A, B” sẽ:",
+      "extra_lines": [],
+      "options": [
+        "A. Sao chép nội dung trong thanh ghi B vào thanh ghi A",
+        "B. Nạp giá trị 0AH vào thanh ghi B",
+        "C. Nạp giá trị 0BH vào thanh ghi A",
+        "D. Sao chép nội dung trong thanh ghi A vào thanh ghi B"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 17,
+      "id": "DE002_Q17",
+      "title": "Câu 17",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh nào thực hiện kiểm tra vùng địa chỉ theo bit tại ô nhớ 30H, nếu (30H) ≠ 0, thực hiện xóa nội dung ô nhớ 30H và nhảy tới thực hiện chương trình PROM1:",
+      "extra_lines": [],
+      "options": [
+        "A. JBC PROM1",
+        "B. JC PROM1",
+        "C. JNZ PROM1",
+        "D. JZ PROM1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 18,
+      "id": "DE002_Q18",
+      "title": "Câu 18",
+      "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: SUBB A, 40H thì nội dung trong thanh ghi PSW sẽ là_________H.",
+      "extra_lines": [
+        "Viết nội dung dưới dạng số hexa, ví dụ nội dung là 0AH thì viết 0A"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 19,
+      "id": "DE002_Q19",
+      "title": "Câu 19",
+      "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:",
+      "extra_lines": [
+        "MOV A, #027H",
+        "MOV R1, #0C5H",
+        "CLR C",
+        "ADDC A, R1"
+      ],
+      "options": [
+        "A. OV=0, CY=0",
+        "B. OV=0, CY=1",
+        "C. OV=1, CY=0",
+        "D. OV=1, CY=1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 20,
+      "id": "DE002_Q20",
+      "title": "Câu 20",
+      "prompt": "Cho đoạn mã Assembly trên 89C51 sau:",
+      "extra_lines": [
+        "MOV A, #52H",
+        "ADD A, #7BH",
+        "RLC A",
+        "Nội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ________H.",
+        "Ghi chú: Ghi kết quả dưới dạng mã Hecxa, ví dụ kết quả là 0FH viết 0F."
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 21,
+      "id": "DE002_Q21",
+      "title": "Câu 21",
+      "prompt": "Cho đoạn mã Assembly trên 89C51 sau:",
+      "extra_lines": [
+        "MOV R1, #3",
+        "MOV A, #17",
+        "SETB C",
+        "LOOP: SUBB A, #2",
+        "DJNZ R1, LOOP",
+        "Nội dung trong thanh ghi A sau khi thực hiện đoạn chương trình trên:"
+      ],
+      "options": [
+        "A. 10",
+        "B. 11",
+        "C. 12",
+        "D. 17"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 22,
+      "id": "DE002_Q22",
+      "title": "Câu 22",
+      "prompt": "Xác định chức năng của chương trình con dưới đây:",
+      "extra_lines": [
+        "ORG 1000H",
+        "DL: MOV R6, #02",
+        "DL1: MOV R1, #250",
+        "DJNZ R1, DL1",
+        "DJNZ R7, DL",
+        "RET"
+      ],
+      "options": [
+        "A. Tạo trễ thời gian 2ms",
+        "B. Tạo trễ thời gian 200ms",
+        "C. Tạo trễ thời gian 20ms",
+        "D. Tạo trễ thời gian 2s"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 23,
+      "id": "DE002_Q23",
+      "title": "Câu 23",
+      "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi A là 2CH",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV A, #18",
+        "MOV R1, #48",
+        "MOV 30H, #_______H",
+        "XRL A, @R1",
+        "END"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 24,
+      "id": "DE002_Q24",
+      "title": "Câu 24",
+      "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV R1, #30H",
+        "CJNE R1, #30, NHAN",
+        "MOV A, #45H",
+        "SJMP KETTHUC",
+        "NHAN: MOV A, #54H",
+        "KETTHUC: END",
+        "Nội dung trong thanh ghi A là:"
+      ],
+      "options": [
+        "A. 54H",
+        "B. 45H",
+        "C. 30H",
+        "D. 35H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 25,
+      "id": "DE002_Q25",
+      "title": "Câu 25",
+      "prompt": "Chương trình Assembly trên vi điều khiển 89C51, sau khi thực hiện xong các câu lệnh dưới dây, chương trình sẽ thực hiện tới đâu?",
+      "extra_lines": [
+        "MOV P1, #0CAH",
+        "MOV A, #56H",
+        "JB P1.2, L1",
+        "JNB AC3, L2",
+        "….",
+        "L1: ⸽",
+        "L2: ⸽"
+      ],
+      "options": [
+        "A. Đưa chương trình tới nhãn L2",
+        "B. Đưa chương trình tới nhãn L1",
+        "C. Kết thúc chương trình",
+        "D. Thực hiện lệnh tiếp theo JNB AC3 , L2"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 26,
+      "id": "DE002_Q26",
+      "title": "Câu 26",
+      "prompt": "Trên vi điều khiển 89C51, Timer 0 và Timer 1 của 89C51 có bao nhiêu bit?",
+      "extra_lines": [],
+      "options": [
+        "A. 8 bit",
+        "B. 16 bit",
+        "C. 32 bit",
+        "D. 64 bit"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 27,
+      "id": "DE002_Q27",
+      "title": "Câu 27",
+      "prompt": "Trên vi điều khiển 89C51, chế độ Timer tự động nạp lại là chế độ:",
+      "extra_lines": [],
+      "options": [
+        "A. Chế độ 2",
+        "B. Chế độ 1",
+        "C. Chế độ 0",
+        "D. Chế độ 3"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 28,
+      "id": "DE002_Q28",
+      "title": "Câu 28",
+      "prompt": "Cho fosc = 12MHz, TMOD = 21H, TH1 = 35H, TL1 = 35H, TH0 = C5H, TL0=35H. Hãy xác định thời gian của bộ đếm/định thời 0 của vi điều khiển 89C51?",
+      "extra_lines": [],
+      "options": [
+        "A. Thời gian định thời Timer 0 là 15ms",
+        "B. Thời gian của bộ đếm Timer 0 là 15ms",
+        "C. Thời gian định thời Timer 1 là 10ms",
+        "D. Thời gian của bộ đếm Timer 1 là 10ms"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 29,
+      "id": "DE002_Q29",
+      "title": "Câu 29",
+      "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 1 cần tạo độ trễ 20 ms với tần số thạch anh 12 MHz. Giá trị của TH1 và TL1 là bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. TH1 = B2H, TL1 = A0H",
+        "B. TH1 = C2H, TL1 = B0H",
+        "C. TH1 = D0H, TL1 = 50H",
+        "D. TH1 = A0H, TL1 = 30H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 30,
+      "id": "DE002_Q30",
+      "title": "Câu 30",
+      "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau, biết tần số thạch anh là 12MHz:",
+      "extra_lines": [
+        "DELAY:",
+        "MOV TMOD, #01H",
+        "LOOP:",
+        "MOV TH0, #3CH",
+        "MOV TL0, #0B0H",
+        "SETB TR0",
+        "JNB TF0, $",
+        "CLR TR0",
+        "CLR TF0",
+        "CPL P1.1",
+        "SJMP LOOP",
+        "END",
+        "Chương trình này dùng để:"
+      ],
+      "options": [
+        "A. Tạo dạng sóng vuông có chu kỳ 100mS trên chân P1.1",
+        "B. Tạo dạng sóng vuông có chu kỳ 50µS trên chân P1.1",
+        "C. Tạo dạng sóng vuông có chu kỳ 50mS trên chân P1.1",
+        "D. Tạo dạng sóng vuông có chu kỳ 100µS trên chân P1.1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 31,
+      "id": "DE002_Q31",
+      "title": "Câu 31",
+      "prompt": "Cổng truyền thông nối tiếp trên vi điều khiển 89C51 là gì?",
+      "extra_lines": [],
+      "options": [
+        "A. Một phương thức truyền dữ liệu từng bit một",
+        "B. Một phương thức truyền dữ liệu từng byte một",
+        "C. Một phương thức truyền dữ liệu song song",
+        "D. Một phương thức truyền dữ liệu không dây"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 32,
+      "id": "DE002_Q32",
+      "title": "Câu 32",
+      "prompt": "Để cấu hình cổng nối tiếp ở chế độ 1 (8-bit UART) trên vi điều khiển 89C51, giá trị của thanh ghi SCON cần là gì?",
+      "extra_lines": [],
+      "options": [
+        "A. 50H",
+        "B. 40H",
+        "C. 30H",
+        "D. 20H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 33,
+      "id": "DE002_Q33",
+      "title": "Câu 33",
+      "prompt": "Nếu tần số thạch anh là 11.0592 MHz và tốc độ truyền là 1200 bps trên vi điều khiển 89C51, giá trị nạp vào thanh ghi TH1 là bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. -24",
+        "B. -6",
+        "C. -3",
+        "D. -2"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 34,
+      "id": "DE002_Q34",
+      "title": "Câu 34",
+      "prompt": "Đọc chương trình truyền thông nối tiếp thực hiện trên 89C51 sau:",
+      "extra_lines": [
+        "MOV TMOD, #20H",
+        "MOV TH1, #-6",
+        "MOV SCON, #50H",
+        "SETB TR1",
+        "HERE: MOV SBUF, # “A”",
+        "AGAIN: JNB TI, AGAIN",
+        "CLR TI",
+        "SJMP HERE",
+        "Hãy cho biết chức năng của chương trình? Biết tần số tạo dao động XTAL1 là 11.0592MHz."
+      ],
+      "options": [
+        "A. Truyền ký tự A với tốc độ 4800 baud liên tục",
+        "B. Truyền ký tự A liên tục với tốc độ 4800",
+        "C. Nhân ký tự A tại cổng nối tiếp",
+        "D. Nhận các byte ký tự nối tiếp và đưa tới cổng ngoại vi"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 35,
+      "id": "DE002_Q35",
+      "title": "Câu 35",
+      "prompt": "Chân nào trên vi điều khiển 89C51 được sử dụng để kích hoạt ngắt ngoài 0?",
+      "extra_lines": [],
+      "options": [
+        "A. INT0",
+        "B. INT1",
+        "C. TXD",
+        "D. RXD"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 36,
+      "id": "DE002_Q36",
+      "title": "Câu 36",
+      "prompt": "Vecto ngắt cho ngắt ngoại vi 1 trên vi điều khiển 89C51 nằm ở địa chỉ nào?",
+      "extra_lines": [],
+      "options": [
+        "A. 0013H",
+        "B. 0000H",
+        "C. 0003H",
+        "D. 000BH"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 37,
+      "id": "DE002_Q37",
+      "title": "Câu 37",
+      "prompt": "Những dòng lệnh trên vi điều khiển 89C51 sau tương đương với dòng lệnh nào dưới đây?",
+      "extra_lines": [
+        "SETB EA",
+        "SETB EX1"
+      ],
+      "options": [
+        "A. MOV IE, #90H",
+        "B. MOV IE, #95H",
+        "C. MOV IE, #80H",
+        "D. MOV IE, #82H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 38,
+      "id": "DE002_Q38",
+      "title": "Câu 38",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "LJMP START",
+        "ORG 000BH",
+        "TIMER0_ISR: CPL P1.0",
+        "MOV TH0, #0FEH",
+        "MOV TL0, #0CH",
+        "RETI",
+        "START: MOV TMOD, #01H",
+        "MOV TH0, #0FEH",
+        "MOV TL0, #0CH",
+        "SETB TR0",
+        "MOV IE, #82H",
+        "SETB ET0",
+        "LOOP: SJMP LOOP",
+        "END",
+        "Chương trình thực hiện chức năng gì?"
+      ],
+      "options": [
+        "A. Sử dụng ngắt timer 0 để tạo xung vuông có chu kỳ 1s tại cổng P1.0",
+        "B. Sử dụng ngắt timer 1 để tạo xung vuông có chu kỳ 1s tại cổng P1.0",
+        "C. Sử dụng ngắt timer 0 để tạo xung vuông có chu kỳ 1ms tại cổng P1.0",
+        "D. Sử dụng ngắt timer 1 để tạo xung vuông có chu kỳ 1ms tại cổng P1.0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 39,
+      "id": "DE002_Q39",
+      "title": "Câu 39",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "LJMP MAIN",
+        "ORG 0013H",
+        "SETB P1.3",
+        "MOV R3, #255",
+        "BACK: DJNZ R3, BACK",
+        "CLR P1.3",
+        "RETI",
+        "ORG 0030H",
+        "MAIN: MOV IE, #84H",
+        "HERE: SJMP HERE",
+        "END",
+        "Chương trình thực hiện chức năng gì?"
+      ],
+      "options": [
+        "A. Bật tắt led tại cổng P1.3 thông qua công tắc tại ngắt ngoài 1",
+        "B. Bật tắt led tại cổng P1.4 thông qua công tắc tại ngắt ngoài 0",
+        "C. Bật tắt led tại cổng P1.4 thông qua công tắc tại ngắt ngoài 1",
+        "D. Bật tắt led tại cổng P1.3 thông qua công tắc tại ngắt ngoài 0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_002",
+      "de_num": 2,
+      "num": 40,
+      "id": "DE002_Q40",
+      "title": "Câu 40",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "LJMP MAIN",
+        "ORG 0023H",
+        "LJMP UART_ISR",
+        "MAIN: MOV TMOD, #20H",
+        "MOV TH1, #-3",
+        "MOV SCON, #50H",
+        "SETB TR1",
+        "MOV IE, #90H",
+        "CLR P2.0",
+        "LOOP: SJMP LOOP",
+        "UART_ISR: JNB RI, UART_EXIT",
+        "CLR RI",
+        "MOV A, SBUF",
+        "CJNE A, #'1', CHECK_0",
+        "SETB P2.0",
+        "SJMP UART_EXIT",
+        "CHECK_0: CJNE A, #'0', UART_EXIT",
+        "CLR P2.0",
+        "UART_EXIT: RETI",
+        "END",
+        "Chương trình thực hiện chức năng gì?",
+        "— HẾT —"
+      ],
+      "options": [
+        "A. Chương trình truyền thông nối tiếp để nhận một ký tự và đưa ký tự đó ra cổng P2.0 hiển thị",
+        "B. Chương trình ngắt truyền thông để nhận một ký tự và đưa ký tự đó ra cổng P1.0 hiển thị",
+        "C. Chương trình ngắt truyền thông để truyền một ký tự và đưa ký tự đó ra cổng P1.2 hiển thị",
+        "D. Chương trình truyền thông nối tiếp để truyền một ký tự và đưa ký tự đó ra cổng P2.0 hiển thị"
+      ],
+      "type": "mcq",
+      "images": []
+    }
+  ],
+  "De_3": [
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 1,
+      "id": "DE003_Q01",
+      "title": "Câu 1",
+      "prompt": "Vi xử lý là:",
+      "extra_lines": [],
+      "options": [
+        "A. Một vi mạch số hoạt động theo chương trình.",
+        "B. Hệ thống các vi mạch số hoạt động theo chương trình.",
+        "C. Hệ thống vi mạch tương tự hoạt động theo chương trình.",
+        "D. Một vi mạch tương tự hoạt động theo chương trình."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 2,
+      "id": "DE003_Q02",
+      "title": "Câu 2",
+      "prompt": "Trong hệ thống bus của máy tính, bus địa chỉ có chiều di chuyển thông tin địa chỉ đi từ?",
+      "extra_lines": [],
+      "options": [
+        "A. CPU đến bộ nhớ và thiết bị ngoại vi.",
+        "B. Bộ nhớ và thiết bị ngoại vi đến CPU.",
+        "C. CPU đến bộ nhớ.",
+        "D. Bộ nhớ đến CPU."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 3,
+      "id": "DE003_Q03",
+      "title": "Câu 3",
+      "prompt": "Trong bộ vi xử lý, bộ phận nào thực hiện giải mã lệnh?",
+      "extra_lines": [],
+      "options": [
+        "A. Khối EU",
+        "B. Khối ALU",
+        "C. Khối điều khiển BUS",
+        "D. Bộ đệm lệnh"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 4,
+      "id": "DE003_Q04",
+      "title": "Câu 4",
+      "prompt": "Chương trình ứng dụng của vi điều khiển thường được lưu trữ tại________",
+      "extra_lines": [],
+      "options": [
+        "A. ROM",
+        "B. RAM",
+        "C. CPU",
+        "D. Thanh ghi"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 5,
+      "id": "DE003_Q05",
+      "title": "Câu 5",
+      "prompt": "Cấu tạo vi điều khiển 89C51 gồm có:",
+      "extra_lines": [],
+      "options": [
+        "A. 128 byte Ram, 4K byte Rom, hai bộ định thời, một cổng nối tiếp và 4 cổng (độ rộng 8 bit) vào ra",
+        "B. 128 Kbyte Ram, 4K byte Rom, hai bộ định thời, một cổng nối tiếp và 4 cổng (độ rộng 8 bit) vào ra",
+        "C. 128 byte Ram, 4K byte Rom, hai bộ định thời, một cổng nối tiếp và 2 cổng (độ rộng 8 bit) vào ra",
+        "D. 128 byte Ram, 4K byte Rom, hai bộ định thời, một cổng nối tiếp và 4 cổng (độ rộng 16 bit) vào ra"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 6,
+      "id": "DE003_Q06",
+      "title": "Câu 6",
+      "prompt": "Trong 8051, khi chân tín hiệu EA= ‘1’, có thể mở rộng bộ nhớ chương trình bên ngoài dung lượng là:",
+      "extra_lines": [],
+      "options": [
+        "A. 60KB",
+        "B. 64KB",
+        "C. 56KB",
+        "D. 58KB"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 7,
+      "id": "DE003_Q07",
+      "title": "Câu 7",
+      "prompt": "Nhóm các thanh ghi nào dưới đây có thể định địa chỉ theo bit?",
+      "extra_lines": [],
+      "options": [
+        "A. P0~P3, IP, TCON",
+        "B. SP, DPH, DPL",
+        "C. TMOD, TL0, TH0",
+        "D. PCON, SBUF, TH1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 8,
+      "id": "DE003_Q08",
+      "title": "Câu 8",
+      "prompt": "Trên vi điều khiển 89C51, cờ được dùng để báo tình trạng tràn của thanh ghi A là:",
+      "extra_lines": [],
+      "options": [
+        "A. Cờ tràn OV",
+        "B. Cờ nhớ CY",
+        "C. Cờ chiều IF",
+        "D. Cờ TF0, TF1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 9,
+      "id": "DE003_Q09",
+      "title": "Câu 9",
+      "prompt": "Cho sơ đồ mở rộng của 89C51 với bộ nhớ ROM trên vi điều khiển 89C51, như hình vẽ dưới đây, không gian địa chỉ bộ nhớ ROM mở rộng là_______ KB.",
+      "extra_lines": [
+        "Ghi chú đáp án viết giá trị hệ thập phân, ví dụ kết quả là 10 ghi: 10."
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 10,
+      "id": "DE003_Q10",
+      "title": "Câu 10",
+      "prompt": "Cho mạch mở rộng bộ nhớ RAM như hình vẽ dưới đây:",
+      "extra_lines": [
+        "Biết P2.5=1, P2.6=1, P2.7=1, vậy phạm vi không gian địa chỉ của bộ nhớ mở rộng là:"
+      ],
+      "options": [
+        "A. E000H – FFFFH",
+        "B. F000H – FFFFH",
+        "C. D000H – EFFFH",
+        "D. C000H – EFFFH"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 11,
+      "id": "DE003_Q11",
+      "title": "Câu 11",
+      "prompt": "Bộ nhớ RAM trên chip 89C51 gồm có:",
+      "extra_lines": [],
+      "options": [
+        "A. RAM đa chức năng",
+        "B. Các băng thanh ghi",
+        "C. RAM định địa chỉ bit",
+        "D. Cả ba đáp án A, B, C đều đúng."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 12,
+      "id": "DE003_Q12",
+      "title": "Câu 12",
+      "prompt": "Cho sơ đồ mở rộng bộ nhớ chương trình ROM và bộ nhớ dữ liệu RAM của vi điều khiển 89C51 như hình vẽ dưới đây:",
+      "extra_lines": [
+        "Nếu P2.7=1 thì địa chỉ cao nhất của IC1 là____H?",
+        "Ghi chú: Biểu diễn kết quả dạng hexa, ví dụ kết quả là 7AF0H thì ghi 7AF0"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 13,
+      "id": "DE003_Q13",
+      "title": "Câu 13",
+      "prompt": "Chế độ định địa chỉ toán hạng nguồn nào trên vi điều khiển 89C51 dưới đây là chế độ định địa chỉ thanh ghi:",
+      "extra_lines": [],
+      "options": [
+        "A. MOV R0, A",
+        "B. MOV A, 0AFH",
+        "C. MOV R1, #0AFH",
+        "D. MOV A, @R0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 14,
+      "id": "DE003_Q14",
+      "title": "Câu 14",
+      "prompt": "Trong tập lệnh của hệ thống 89C51, những thanh ghi nào có thể được sử dụng làm thanh ghi con trỏ lệnh:",
+      "extra_lines": [],
+      "options": [
+        "A. R0, R1",
+        "B. R1, R2",
+        "C. R3, R4",
+        "D. R0, R2"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 15,
+      "id": "DE003_Q15",
+      "title": "Câu 15",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MUL thuộc nhóm lệnh gì?",
+      "extra_lines": [],
+      "options": [
+        "A. Lệnh số học",
+        "B. Lệnh tính toán logic và dịch bit",
+        "C. Lệnh xử lý bit",
+        "D. Lệnh điều khiển chương trình"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 16,
+      "id": "DE003_Q16",
+      "title": "Câu 16",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào trong số các lệnh sau đây là lệnh SAI:",
+      "extra_lines": [],
+      "options": [
+        "A. MOV A, ACC",
+        "B. MOV A, PSW",
+        "C. MOV A, TH0",
+        "D. MOV A, SBUF"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 17,
+      "id": "DE003_Q17",
+      "title": "Câu 17",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh giảm nội dung trong thanh ghi R0 và nhảy đến địa chỉ rel nếu nội dung của thanh ghi R0 khác 0 (ở chế độ mặc định):",
+      "extra_lines": [],
+      "options": [
+        "A. DJNZ R0, rel",
+        "B. CJNE R0, #00H, rel",
+        "C. CJNE R0, 00H, rel",
+        "D. DJNZ rel, R0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 18,
+      "id": "DE003_Q18",
+      "title": "Câu 18",
+      "prompt": "Trên vi điều khiển 89C51 biết (A)=94H, (30H)=8DH, PSW=41H sau khi thực hiện lệnh SUBB A, 30H thì nội dung trong thanh ghi PSW sẽ là_________H.",
+      "extra_lines": [
+        "Viết nội dung dưới dạng số hexa, ví dụ nội dung là 0AH thì viết 0A"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 19,
+      "id": "DE003_Q19",
+      "title": "Câu 19",
+      "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:",
+      "extra_lines": [
+        "MOV A, #8BH",
+        "MOV R0, #0B4H",
+        "ADD A, R0"
+      ],
+      "options": [
+        "A. AC=0, OV=1",
+        "B. AC=0, OV=0",
+        "C. AC=1, OV=0",
+        "D. AC=1, OV=1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 20,
+      "id": "DE003_Q20",
+      "title": "Câu 20",
+      "prompt": "Cho đoạn mã Assembly trên 89C51 sau:",
+      "extra_lines": [
+        "MOV R0, #7EH",
+        "MOV 7EH, #55H",
+        "MOV 7FH, #4FH",
+        "INC R0",
+        "MOV A, 7EH",
+        "ORL A, @R0",
+        "MOV R0, A",
+        "ORL A, 7EH",
+        "Nội dung của ô nhớ 7EH sau khi thực hiện đoạn mã trên là: ________H.",
+        "Ghi chú: Ghi kết quả dưới dạng mã Hecxa, ví dụ kết quả là 0FH viết 0F."
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 21,
+      "id": "DE003_Q21",
+      "title": "Câu 21",
+      "prompt": "Cho đoạn mã Assembly trên 89C51 sau:",
+      "extra_lines": [
+        "MOV R1, #3",
+        "MOV A, #17",
+        "SETB C",
+        "LOOP: SUBB A, #2",
+        "DJNZ R1, LOOP",
+        "Nội dung trong thanh ghi A sau khi thực hiện đoạn chương trình trên:"
+      ],
+      "options": [
+        "A. 10",
+        "B. 11",
+        "C. 12",
+        "D. 17"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 22,
+      "id": "DE003_Q22",
+      "title": "Câu 22",
+      "prompt": "Cho chương trình con thực hiện bởi vi điều khiển 89C51, biết tần số thạch anh là 6MHz, hãy xác định chức năng của chương trình:",
+      "extra_lines": [
+        "MOV TMOD, #10H",
+        "SETB TR1",
+        "LOP: MOV TH1, #0B1H",
+        "MOV TL1, #0E0H",
+        "JNB TF1, $",
+        "CLR TF1",
+        "CPL P1.5",
+        "SJMP LOP"
+      ],
+      "options": [
+        "A. Tạo xung vuông có tần số 25Hz, xuất từ cổng P1.5",
+        "B. Tạo trễ thời gian 5ms từ cổng P1.5",
+        "C. Tạo trễ thời gian 50Hz, cổng P1.5",
+        "D. Tạo trễ thời gian 2.5ms từ cổng P1.5"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 23,
+      "id": "DE003_Q23",
+      "title": "Câu 23",
+      "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới đây set bit thứ 3, 4, 7 của P1 lên 1, các bit còn lại giữ nguyên giá trị:",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV P3, #0A7H",
+        "ORL P3 , #______H",
+        "END"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 24,
+      "id": "DE003_Q24",
+      "title": "Câu 24",
+      "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV A, #3BH",
+        "MOV R0, #0B3H",
+        "ADD A, R0",
+        "CJNE A, #EEH, NHAN",
+        "MOV 30H, #23",
+        "SJMP KETTHUC",
+        "NHAN: MOV 30H, #32",
+        "KETTHUC: END",
+        "Nội dung ô nhớ có địa chỉ 30H là:"
+      ],
+      "options": [
+        "A. 17H",
+        "B. 23H",
+        "C. 32H",
+        "D. EEH"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 25,
+      "id": "DE003_Q25",
+      "title": "Câu 25",
+      "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây, thực hiện chức năng gì?",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOVX A, R0",
+        "CPL A",
+        "ADD A, 01H",
+        "MOV R2, A",
+        "MOV A, @R1",
+        "CPL A",
+        "ADD A, #00H",
+        "MOV R3, A",
+        "END"
+      ],
+      "options": [
+        "A. Tính đảo các số nhị phân 16 bit đặt tại R1, R0 và lưu tại R3, R2",
+        "B. Tính đảo các số nhị phân 16 bit đặt tại R3, R2 và lưu tại R1, R0",
+        "C. Tính đảo các số nhị phân 8 bit đặt tại R1, R0 và lưu tại R3, R2",
+        "D. Tính đảo các số nhị phân 8bit đặt tại R3, R2 và lưu tại R1, R0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 26,
+      "id": "DE003_Q26",
+      "title": "Câu 26",
+      "prompt": "Trên vi điều khiển 89C51, bit TF0 trong thanh ghi TCON có chức năng gì?",
+      "extra_lines": [],
+      "options": [
+        "A. Cờ tràn của Timer 0",
+        "B. Cờ tràn của Timer 1",
+        "C. Cờ ngắt ngoài 0",
+        "D. Cờ ngắt ngoài 1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 27,
+      "id": "DE003_Q27",
+      "title": "Câu 27",
+      "prompt": "Trên vi điều khiển 89C51, khi lập trình định thời với khoảng thời gian từ 10 _ 256µs (giả sử dùng thạch anh là12Mhz) ta dùng kỹ thuật:",
+      "extra_lines": [],
+      "options": [
+        "A. Timer 8 bit tự động nạp lại giá trị đầu",
+        "B. Timer 16 bit",
+        "C. Điều chỉnh bằng phần mềm",
+        "D. Timer 16 bit kết hợp với các vòng lặp"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 28,
+      "id": "DE003_Q28",
+      "title": "Câu 28",
+      "prompt": "Cho fosc = 12MHz, TMOD = 00H, TH0 = 63H, TL0 = 18H. Hãy xác định giá trị khởi tạo ban đầu của bộ đếm/định thời timer 0 của vi điều khiển 89C51?",
+      "extra_lines": [],
+      "options": [
+        "A. X = 3192",
+        "B. X = 6243",
+        "C. X = 25368",
+        "D. X = 6318"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 29,
+      "id": "DE003_Q29",
+      "title": "Câu 29",
+      "prompt": "Trên vi điều khiển 89C51, Khi Timer 1 ở chế độ 2 cần tạo độ trễ 750 µs với tần số thạch anh 12 MHz, giá trị của TH1 là bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. TH1 = 12H",
+        "B. TH1 = 24H",
+        "C. TH1 = 36H",
+        "D. TH1 = 48H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 30,
+      "id": "DE003_Q30",
+      "title": "Câu 30",
+      "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau, biết tần số thạch anh là 12MHz:",
+      "extra_lines": [
+        "DELAY:",
+        "MOV TMOD, #02H",
+        "MOV TH0, #0CEH",
+        "SETB TR0",
+        "LOOP:",
+        "JNB TF0, LOOP",
+        "CLR TF0",
+        "CPL P1.0",
+        "SJMP LOOP",
+        "END",
+        "Chương trình này dùng để:"
+      ],
+      "options": [
+        "A. Tạo dạng sóng vuông có chu kỳ 100µS trên chân P1.0",
+        "B. Tạo dạng sóng vuông có chu kỳ 50µS trên chân P1.0",
+        "C. Tạo dạng sóng vuông có chu kỳ 206µS trên chân P1.0",
+        "D. Tạo dạng sóng vuông có chu kỳ 103µS trên chân P1.0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 31,
+      "id": "DE003_Q31",
+      "title": "Câu 31",
+      "prompt": "Số bit dữ liệu truyền trong chế độ 1 của cổng nối tiếp 89C51 là bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. 8 bit dữ liệu và 1 bit stop",
+        "B. 7 bit dữ liệu và 1 bit stop",
+        "C. 9 bit dữ liệu và 1 bit stop",
+        "D. 10 bit dữ liệu và 2 bit stop"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 32,
+      "id": "DE003_Q32",
+      "title": "Câu 32",
+      "prompt": "Nếu giá trị của thanh ghi SBUF tương ứng với ký tự cần truyền là ‘<’ và thanh ghi SCON là 0x00 trên vi điều khiển 89C51, dữ liệu nhận được qua cổng nối tiếp là gì?",
+      "extra_lines": [],
+      "options": [
+        "A. 3CH",
+        "B. C3H",
+        "C. FFH",
+        "D. 00H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 33,
+      "id": "DE003_Q33",
+      "title": "Câu 33",
+      "prompt": "Nếu tần số thạch anh trên vi điều khiển 89C51 là 11.0592 MHz và giá trị nạp vào thanh ghi TH1 là F4H, tốc độ truyền là bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. 2400 bps",
+        "B. 4800 bps",
+        "C. 9600 bps",
+        "D. 1200 bps"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 34,
+      "id": "DE003_Q34",
+      "title": "Câu 34",
+      "prompt": "Đọc chương trình truyền thông nối tiếp thực hiện trên 89C51 sau:",
+      "extra_lines": [
+        "MOV TMOD, #20H",
+        "MOV TH1, #-6",
+        "MOV SCON, #50H",
+        "SETB TR1",
+        "HERE: JNB R1, HERE",
+        "MOV A, SBUF",
+        "MOV P1, A",
+        "CLR RI",
+        "SJMP HERE",
+        "Hãy cho biết chức năng của chương trình? Biết tần số tạo dao động XTAL1 là 11.0592MHz."
+      ],
+      "options": [
+        "A. Nhận các byte dữ liệu nối tiếp và đưa tới cổng P1",
+        "B. Truyền ký tự A tới cổng P1",
+        "C. Truyền ký tự A và nhận ký tự A tại cổng P1",
+        "D. Truyền các byte ký tự nối tiếp và đưa tới cổng P1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 35,
+      "id": "DE003_Q35",
+      "title": "Câu 35",
+      "prompt": "Khi bit EX0 của vi điều khiển 89C51 trong thanh ghi IE được bật, điều gì sẽ xảy ra?",
+      "extra_lines": [],
+      "options": [
+        "A. Ngắt ngoài 0 được cho phép",
+        "B. Ngắt ngoài 1 được cho phép",
+        "C. Ngắt Timer 0 được cho phép",
+        "D. Ngắt Timer 1 được cho phép"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 36,
+      "id": "DE003_Q36",
+      "title": "Câu 36",
+      "prompt": "Khi ngắt xảy ra, CPU 89C51 sẽ thực hiện điều gì đầu tiên?",
+      "extra_lines": [],
+      "options": [
+        "A. Lưu giá trị của thanh ghi PC",
+        "B. Lưu giá trị của thanh ghi A",
+        "C. Chuyển đến vecto ngắt",
+        "D. Dừng mọi hoạt động"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 37,
+      "id": "DE003_Q37",
+      "title": "Câu 37",
+      "prompt": "Muốn thực hiện ngắt theo thứ tự ưu tiên sau ngắt truyền thông nối tiếp→ ngắt ngoại vi 1 trên vi điều khiển 89C51 thì phải cấu hình thanh ghi IP như thế nào?",
+      "extra_lines": [],
+      "options": [
+        "A. MOV IP, #14H",
+        "B. MOV IP, #0A4H",
+        "C. MOV IP, #41H",
+        "D. MOV IP, #01H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 38,
+      "id": "DE003_Q38",
+      "title": "Câu 38",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "LJMP START",
+        "ORG 000BH",
+        "TIMER0_ISR: CPL P1.0",
+        "MOV TH0, #0FEH",
+        "MOV TL0, #0CH",
+        "RETI",
+        "START: MOV TMOD, #01H",
+        "MOV TH0, #0FEH",
+        "MOV TL0, #0CH",
+        "SETB TR0",
+        "MOV IE, #82H",
+        "SETB ET0",
+        "LOOP: SJMP LOOP",
+        "END",
+        "Chương trình thực hiện chức năng gì?"
+      ],
+      "options": [
+        "A. Sử dụng ngắt timer 0 để tạo xung vuông có chu kỳ 1s tại cổng P1.0",
+        "B. Sử dụng ngắt timer 1 để tạo xung vuông có chu kỳ 1s tại cổng P1.0",
+        "C. Sử dụng ngắt timer 0 để tạo xung vuông có chu kỳ 1ms tại cổng P1.0",
+        "D. Sử dụng ngắt timer 1 để tạo xung vuông có chu kỳ 1ms tại cổng P1.0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 39,
+      "id": "DE003_Q39",
+      "title": "Câu 39",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "AJMP MAIN",
+        "ORG 0003H",
+        "AJMP PINT0",
+        "ORG 0100H",
+        "MAIN: MOV SP, #40H",
+        "SETB EA",
+        "SETB EX0",
+        "SETB IT0",
+        "H: SJMP H",
+        "ORG 0200H",
+        "PINT0: CPL P1.0",
+        "RETI",
+        "Chương trình thực hiện chức năng gì?"
+      ],
+      "options": [
+        "A. Nháy led tại cổng P1.0 thông qua công tắc tại ngắt ngoài 0",
+        "B. Nháy led tại cổng P1.4 thông qua công tắc tại ngắt ngoài 1",
+        "C. Nháy led tại cổng P1.0 thông qua công tắc tại ngắt ngoài 1",
+        "D. Nháy led tại cổng P1.4 thông qua công tắc tại ngắt ngoài 0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_003",
+      "de_num": 3,
+      "num": 40,
+      "id": "DE003_Q40",
+      "title": "Câu 40",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "LJMP MAIN",
+        "ORG 0023H",
+        "LJMP UART_ISR",
+        "MAIN: MOV TMOD, #20H",
+        "MOV TH1, #-3",
+        "MOV SCON, #50H",
+        "SETB TR1",
+        "MOV IE, #90H",
+        "CLR P2.0",
+        "LOOP: SJMP LOOP",
+        "UART_ISR: JNB RI, UART_EXIT",
+        "CLR RI",
+        "MOV A, SBUF",
+        "CJNE A, #'1', CHECK_0",
+        "SETB P2.0",
+        "SJMP UART_EXIT",
+        "CHECK_0: CJNE A, #'0', UART_EXIT",
+        "CLR P2.0",
+        "UART_EXIT: RETI",
+        "END",
+        "Chương trình thực hiện chức năng gì?",
+        "— HẾT —"
+      ],
+      "options": [
+        "A. Chương trình truyền thông nối tiếp để nhận một ký tự và đưa ký tự đó ra cổng P2.0 hiển thị",
+        "B. Chương trình ngắt truyền thông để nhận một ký tự và đưa ký tự đó ra cổng P1.0 hiển thị",
+        "C. Chương trình ngắt truyền thông để truyền một ký tự và đưa ký tự đó ra cổng P1.2 hiển thị",
+        "D. Chương trình truyền thông nối tiếp để truyền một ký tự và đưa ký tự đó ra cổng P2.0 hiển thị"
+      ],
+      "type": "mcq",
+      "images": []
+    }
+  ],
+  "De_4": [
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 1,
+      "id": "DE004_Q01",
+      "title": "Câu 1",
+      "prompt": "Vi xử lý là:",
+      "extra_lines": [],
+      "options": [
+        "A. Một vi mạch số hoạt động theo chương trình.",
+        "B. Hệ thống các vi mạch số hoạt động theo chương trình.",
+        "C. Hệ thống vi mạch tương tự hoạt động theo chương trình.",
+        "D. Một vi mạch tương tự hoạt động theo chương trình."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 2,
+      "id": "DE004_Q02",
+      "title": "Câu 2",
+      "prompt": "Nơi chứa dữ liệu tạm thời trong quá trình thực hiện lệnh?",
+      "extra_lines": [],
+      "options": [
+        "A. Thanh ghi.",
+        "B. ALU (Khối xử lý số học và logic).",
+        "C. CU (Khối điều khiển).",
+        "D. EU."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 3,
+      "id": "DE004_Q03",
+      "title": "Câu 3",
+      "prompt": "Bộ đếm chương trình của máy tính KHÔNG phải là:",
+      "extra_lines": [],
+      "options": [
+        "A. Thanh ghi chứa lệnh sắp thực hiện",
+        "B. Thanh ghi chứa địa chỉ lệnh",
+        "C. Thanh ghi chứa địa chỉ lệnh sắp thực hiện",
+        "D. Thanh ghi"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 4,
+      "id": "DE004_Q04",
+      "title": "Câu 4",
+      "prompt": "Quá trình làm tươi dữ liệu là quá trình cần thiết đối với loại bộ nhớ bán dẫn:",
+      "extra_lines": [],
+      "options": [
+        "A. DRAM",
+        "B. SRAM",
+        "C. EEPROM",
+        "D. Flash ROM"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 5,
+      "id": "DE004_Q05",
+      "title": "Câu 5",
+      "prompt": "Số lượng bộ đếm/định thời có trong chip vi điều khiển 89C51 là:",
+      "extra_lines": [],
+      "options": [
+        "A. 2",
+        "B. 1",
+        "C. 3",
+        "D. 4"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 6,
+      "id": "DE004_Q06",
+      "title": "Câu 6",
+      "prompt": "Khi chân tín hiệu _______của 89C51 duy trì trạng thái điện thế cao trong ít nhất 2 chu kỳ máy, vi điều khiển được đặt lại vào trạng thái ban đầu của chương trình.",
+      "extra_lines": [],
+      "options": [
+        "A. RST",
+        "B. EA",
+        "C. VSS",
+        "D. ALE"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 7,
+      "id": "DE004_Q07",
+      "title": "Câu 7",
+      "prompt": "Nếu thanh ghi SP có giá trị là 59H thì vùng nhớ của ngăn xếp (stack) có địa chỉ bắt đầu:",
+      "extra_lines": [],
+      "options": [
+        "A. 5AH",
+        "B. 58H",
+        "C. 5BH",
+        "D. 59H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 8,
+      "id": "DE004_Q08",
+      "title": "Câu 8",
+      "prompt": "PSW.0 tương ứng với cờ trạng thái nào trên vi điều khiển 89C51?",
+      "extra_lines": [],
+      "options": [
+        "A. Cờ P_ cờ chẵn lẻ",
+        "B. OV_cờ tràn",
+        "C. CY_cờ nhớ",
+        "D. AC_cờ nhớ phụ"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 9,
+      "id": "DE004_Q09",
+      "title": "Câu 9",
+      "prompt": "Cho sơ đồ mở rộng của 89C51 như hình vẽ dưới đây, không gian địa chỉ RAM mở rộng là_______ KB",
+      "extra_lines": [
+        "Ghi chú đáp án viết giá trị hệ thập phân, ví dụ kết quả là 10 ghi: 10"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 10,
+      "id": "DE004_Q10",
+      "title": "Câu 10",
+      "prompt": "Cho sơ đồ mở rộng của 89C51 với bộ nhớ RAM như hình vẽ dưới đây:",
+      "extra_lines": [
+        "Biết P2.5=0, P2.6=0, P2.7=0, vậy phạm vi không gian địa chỉ của bộ nhớ U3 là:"
+      ],
+      "options": [
+        "A. 0000H – 0FFFH",
+        "B. 0001H – 1FFFH",
+        "C. 0000H – 7FFFH",
+        "D. 0001H – 07FFH"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 11,
+      "id": "DE004_Q11",
+      "title": "Câu 11",
+      "prompt": "Khi mở rộng bộ nhớ RAM dữ liệu của vi điều khiển 89C51 lên tới 8Kx8bit, thì các chân địa chỉ của vi điều khiển sẽ là:",
+      "extra_lines": [],
+      "options": [
+        "A. P0.0 – P0.7 và P2.0 – P2.4",
+        "B. P0.0 – P0.7 và P2.0 – P2.5",
+        "C. P0.0 – P0.4 và P2.0 – P2.7",
+        "D. P0.0 – P0.5 và P2.0 – P2.7"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 12,
+      "id": "DE004_Q12",
+      "title": "Câu 12",
+      "prompt": "Cho sơ đồ mở rộng bộ nhớ dữ liệu RAM của vi điều khiển 89C51 như hình vẽ dưới đây:",
+      "extra_lines": [
+        "Địa chỉ cao nhất của IC1 là____H?",
+        "Ghi chú: Biểu diễn kết quả dạng hexa, ví dụ kết quả là 7FA0H thì ghi 7FA0"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 13,
+      "id": "DE004_Q13",
+      "title": "Câu 13",
+      "prompt": "Câu lệnh nào trên vi điều khiển 89C51 dưới đây sử dụng chế độ định địa chỉ theo chỉ số:",
+      "extra_lines": [],
+      "options": [
+        "A. MOVC A, @A+DPTR",
+        "B. SJMP BACK",
+        "C. MOV DPTR, #300H",
+        "D. MOV A, P1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 14,
+      "id": "DE004_Q14",
+      "title": "Câu 14",
+      "prompt": "Từ khóa nào dùng để gán một giá trị cho một tên trong assembly của 89C51?",
+      "extra_lines": [],
+      "options": [
+        "A. EQU",
+        "B. DB",
+        "C. DW",
+        "D. ORG"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 15,
+      "id": "DE004_Q15",
+      "title": "Câu 15",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh LJMP thuộc nhóm lệnh gì?",
+      "extra_lines": [],
+      "options": [
+        "A. Lệnh điều khiển chương trình",
+        "B. Lệnh số học",
+        "C. Lệnh xử lý bit",
+        "D. Lệnh tính toán logic và dịch bit"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 16,
+      "id": "DE004_Q16",
+      "title": "Câu 16",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào trong số các lệnh sau đây là lệnh SAI:",
+      "extra_lines": [],
+      "options": [
+        "A. MOV A, #FF0H",
+        "B. MOV A, #05H",
+        "C. MOV A, #0FFH",
+        "D. MOV A, #35"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 17,
+      "id": "DE004_Q17",
+      "title": "Câu 17",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nhảy đến địa chỉ rel nếu nội dung cờ 0 (cờ zero) bằng 1:",
+      "extra_lines": [],
+      "options": [
+        "A. JC rel",
+        "B. JNZ rel",
+        "C. JZ rel",
+        "D. JNC rel"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 18,
+      "id": "DE004_Q18",
+      "title": "Câu 18",
+      "prompt": "Trên vi điều khiển 89C51 biết (A) =AEH, (R1)=81H, PSW=81H, (81H)=C3H sau khi thực hiện lệnh ADDC A, @R1 thì nội dung trong thanh ghi A sẽ là_________H.",
+      "extra_lines": [
+        "Viết kết quả dưới dạng số hexa, ví dụ kết quả là 0AH thì viết 0A"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 19,
+      "id": "DE004_Q19",
+      "title": "Câu 19",
+      "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:",
+      "extra_lines": [
+        "MOV A, #56H",
+        "MOV R0, #0DAH",
+        "SETB C",
+        "SUBB A, R0"
+      ],
+      "options": [
+        "A. CY=1, P=0",
+        "B. CY=1, P=1",
+        "C. CY=0, P=0",
+        "D. CY=0, P=1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 20,
+      "id": "DE004_Q20",
+      "title": "Câu 20",
+      "prompt": "Cho đoạn mã Assembly trên 89C51 sau:",
+      "extra_lines": [
+        "MOV R0, #7EH",
+        "MOV 7EH, #55H",
+        "MOV 7FH, #4FH",
+        "INC R0",
+        "MOV A, 7EH",
+        "ANL A, @R0",
+        "MOV R0, A",
+        "ANL A, 7EH",
+        "Nội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ________H.",
+        "Ghi chú: Ghi kết quả dưới dạng mã Hecxa, ví dụ kết quả là 0FH viết 0F."
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 21,
+      "id": "DE004_Q21",
+      "title": "Câu 21",
+      "prompt": "Cho đoạn mã Assembly trên 89C51 sau:",
+      "extra_lines": [
+        "MOV A, #0FFH",
+        "ADD A, #1",
+        "JZ SKIP",
+        "ADDC A, #03H",
+        "SJMP EXIT",
+        "SKIP: ADDC, #03H",
+        "EXIT: SJMP $",
+        "Nội dung thanh ghi A sau khi thực hiện đoạn chương trình trên:"
+      ],
+      "options": [
+        "A. 05H",
+        "B. 0FFH",
+        "C. 04H",
+        "D. 02H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 22,
+      "id": "DE004_Q22",
+      "title": "Câu 22",
+      "prompt": "Xác định chức năng của chương trình con dưới đây:",
+      "extra_lines": [
+        "ORG 1000H",
+        "DL: MOV R7, #05",
+        "DL1: MOV R6, #0C8H",
+        "DL2: MOV R5, #0FAH",
+        "DJNZ R5, $",
+        "DJNZ R6, DL2",
+        "DJNZ R7, DL1",
+        "RET"
+      ],
+      "options": [
+        "A. Tạo trễ thời gian 500ms",
+        "B. Tạo trễ thời gian 5ms",
+        "C. Tạo trễ thời gian 50ms",
+        "D. Tạo trễ thời gian 5s"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 23,
+      "id": "DE004_Q23",
+      "title": "Câu 23",
+      "prompt": "Hoàn thiện giá trị vào chỗ trống của chương trình dưới đây để nội dung trong thanh ghi A là 3CH",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV A, #_________H",
+        "CPL A",
+        "END",
+        "Nội dung trong thanh ghi A là:"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 24,
+      "id": "DE004_Q24",
+      "title": "Câu 24",
+      "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV R1, #5",
+        "MOV A, #3BH",
+        "LAP: RL A",
+        "DJNZ R1, LAP",
+        "END",
+        "Nội dung trong thanh ghi A là:"
+      ],
+      "options": [
+        "A. 67H",
+        "B. D9H",
+        "C. 76H",
+        "D. B3H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 25,
+      "id": "DE004_Q25",
+      "title": "Câu 25",
+      "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây thực hiện chức năng gì?",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV R0, #DATA",
+        "MOV R7, #0AH",
+        "CLR A",
+        "LOOP: ADD A, @R0",
+        "INC R0",
+        "DJNZ R7, LOOP",
+        "MOV SUM, A",
+        "END"
+      ],
+      "options": [
+        "A. Tính tổng của các số đặt trong 10 ô nhớ có địa chỉ đầu đoạn tại DATA, lưu nội dung trong SUM",
+        "B. Tính tích của các số đặt trong 10 ô nhớ có địa chỉ đầu đoạn tại DATA, lưu nội dung trong SUM",
+        "C. Tìm giá trị nhỏ nhất của các số đặt trong 10 ô nhớ có địa chỉ đầu đoạn tại DATA, lưu nội dung trong SUM",
+        "D. Tìm giá trị lớn nhất của các số đặt trong 10 ô nhớ có địa chỉ đầu đoạn tại DATA, lưu nội dung trong SUM"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 26,
+      "id": "DE004_Q26",
+      "title": "Câu 26",
+      "prompt": "Trên vi điều khiển 89C51, bit nào trong thanh ghi TCON được sử dụng để khởi động Timer 0?",
+      "extra_lines": [],
+      "options": [
+        "A. TR0",
+        "B. TR1",
+        "C. TF0",
+        "D. TF1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 27,
+      "id": "DE004_Q27",
+      "title": "Câu 27",
+      "prompt": "Trên vi điều khiển 89C51, chế độ 3 của Timer 0 được thiết lập như thế nào trong thanh ghi TMOD?",
+      "extra_lines": [],
+      "options": [
+        "A. Thiết lập cả hai bit M0 và M1",
+        "B. Thiết lập bit M1 và xóa bit M0",
+        "C. Thiết lập bit M0 và xóa bit M1",
+        "D. Xóa cả hai bit M0 và M1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 28,
+      "id": "DE004_Q28",
+      "title": "Câu 28",
+      "prompt": "Cho fosc = 6MHz, TMOD = 00H, TH0 = E0H, TL0 = 18H. Hãy xác định giá trị khởi tạo ban đầu của bộ đếm/định thời 0 của vi điều khiển 89C51?",
+      "extra_lines": [],
+      "options": [
+        "A. X = 7192",
+        "B. X = 6243",
+        "C. X = 25368",
+        "D. X = 6318"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 29,
+      "id": "DE004_Q29",
+      "title": "Câu 29",
+      "prompt": "Trên vi điều khiển 89C51, Timer 0 ở chế độ 2 cần tạo độ trễ 200 µs với tần số thạch anh 6 MHz. Giá trị của TH0 là bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. TH0 = 9CH",
+        "B. TH0 = A3H",
+        "C. TH0 = B1H",
+        "D. TH0 = C5H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 30,
+      "id": "DE004_Q30",
+      "title": "Câu 30",
+      "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau, biết tần số thạch anh là 12MHz:",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV TMOD, #01H",
+        "MAIN: SETB P3.1",
+        "ACALL DL",
+        "CLR P3.1",
+        "ACALL DL",
+        "SJMP MAIN",
+        "DL: MOV TH0, #0B2H",
+        "MOV TL0, #0A0H",
+        "SETB TR0",
+        "WAIT: JNB TF0, WAIT",
+        "CLR TR0",
+        "CLR TF0",
+        "END",
+        "Chương trình này dùng để:"
+      ],
+      "options": [
+        "A. Tạo dạng sóng vuông có tần số 25Hz trên chân P3.1",
+        "B. Tạo dạng sóng vuông có tần số 50Hz trên chân P3.1",
+        "C. Tạo dạng sóng vuông có tần số 20Hz trên chân P3.1",
+        "D. Tạo dạng sóng vuông có tần số 10Hz trên chân P3.1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 31,
+      "id": "DE004_Q31",
+      "title": "Câu 31",
+      "prompt": "Khi bit TI trong thanh ghi SCON được đặt lên mức 1, điều này có nghĩa là gì?",
+      "extra_lines": [],
+      "options": [
+        "A. Quá trình truyền dữ liệu đã hoàn thành",
+        "B. Bắt đầu quá trình truyền dữ liệu",
+        "C. Lỗi trong quá trình truyền",
+        "D. Cần thiết lập lại cổng truyền thông"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 32,
+      "id": "DE004_Q32",
+      "title": "Câu 32",
+      "prompt": "Nếu giá trị của thanh ghi SBUF là 0x7E và thanh ghi SCON là 0x50 trên vi điều khiển 89C51, dữ liệu nhận được qua cổng nối tiếp là gì?",
+      "extra_lines": [],
+      "options": [
+        "A. 7EH",
+        "B. E7H",
+        "C. FFH",
+        "D. 00H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 33,
+      "id": "DE004_Q33",
+      "title": "Câu 33",
+      "prompt": "Nếu tần số thạch anh trên vi điều khiển 89C51 là 11.0592MHz và giá trị nạp vào thanh ghi TH1 là FAH, tốc độ truyền là bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. 4800 bps",
+        "B. 9600 bps",
+        "C. 2400 bps",
+        "D. 1200 bps"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 34,
+      "id": "DE004_Q34",
+      "title": "Câu 34",
+      "prompt": "Đọc chương trình truyền thông nối tiếp thực hiện trên 89C51 sau:",
+      "extra_lines": [
+        "MOV TMOD, #20H",
+        "MOV TH1, #-6",
+        "MOV SCON, #50H",
+        "SETB TR1",
+        "HERE: MOV SBUF, # “A”",
+        "AGAIN: JNB TI, AGAIN",
+        "CLR TI",
+        "SJMP HERE",
+        "Hãy cho biết chức năng của chương trình?"
+      ],
+      "options": [
+        "A. Truyền ký tự A với tốc độ 4800 baud liên tục",
+        "B. Truyền ký tự A liên tu với tốc độ 4800",
+        "C. Truyền ký tự A và nhận ký tự A tại cổng P1",
+        "D. Truyền các byte ký tự nối tiếp và đưa tới cổng P1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 35,
+      "id": "DE004_Q35",
+      "title": "Câu 35",
+      "prompt": "Cờ IE của vi điều khiển 89C51 được set khi nào?",
+      "extra_lines": [],
+      "options": [
+        "A. Có sự kiện ngắt ngoài 1",
+        "B. Timer 0 tràn",
+        "C. Timer 1 tràn",
+        "D. Quá trình nhận dữ liệu hoàn tất"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 36,
+      "id": "DE004_Q36",
+      "title": "Câu 36",
+      "prompt": "Vecto ngắt cho ngắt ngoại vi 1 trên vi điều khiển 89C51 nằm ở địa chỉ nào?",
+      "extra_lines": [],
+      "options": [
+        "A. 0013H",
+        "B. 0000H",
+        "C. 0003H",
+        "D. 000BH"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 37,
+      "id": "DE004_Q37",
+      "title": "Câu 37",
+      "prompt": "Câu lệnh nào trên vi điều khiển 89C51 dưới đây KHÔNG cho phép mở ngắt?",
+      "extra_lines": [],
+      "options": [
+        "A. MOV IE, #08H",
+        "B. SETB IE.7",
+        "C. SETB EA",
+        "D. MOV IE, #80H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 38,
+      "id": "DE004_Q38",
+      "title": "Câu 38",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "LJMP START",
+        "ORG 000BH",
+        "TIMER0_ISR: CPL P1.0",
+        "MOV TH0, #0FEH",
+        "MOV TL0, #0CH",
+        "RETI",
+        "START: MOV TMOD, #01H",
+        "MOV TH0, #0FEH",
+        "MOV TL0, #0CH",
+        "SETB TR0",
+        "MOV IE, #82H",
+        "SETB ET0",
+        "LOOP: SJMP LOOP",
+        "END",
+        "Chương trình thực hiện chức năng gì?"
+      ],
+      "options": [
+        "A. Sử dụng ngắt timer 0 để tạo xung vuông có chu kỳ 1s tại cổng P1.0",
+        "B. Sử dụng ngắt timer 1 để tạo xung vuông có chu kỳ 1s tại cổng P1.0",
+        "C. Sử dụng ngắt timer 0 để tạo xung vuông có chu kỳ 1ms tại cổng P1.0",
+        "D. Sử dụng ngắt timer 1 để tạo xung vuông có chu kỳ 1ms tại cổng P1.0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 39,
+      "id": "DE004_Q39",
+      "title": "Câu 39",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "LJMP MAIN",
+        "ORG 0013H",
+        "SETB P1.6",
+        "MOV R3, #255",
+        "BACK: DJNZ R3, BACK",
+        "CLR P1.6",
+        "RETI",
+        "ORG 0030H",
+        "MAIN: MOV IE, #84H",
+        "HERE: SJMP HERE",
+        "END",
+        "Chương trình thực hiện chức năng gì?"
+      ],
+      "options": [
+        "A. Bật tắt led tại cổng P1.6 thông qua công tắc tại ngắt ngoài 1",
+        "B. Bật tắt led tại cổng P1.4 thông qua công tắc tại ngắt ngoài 0",
+        "C. Bật tắt led tại cổng P1.4 thông qua công tắc tại ngắt ngoài 1",
+        "D. Bật tắt led tại cổng P1.6 thông qua công tắc tại ngắt ngoài 0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_004",
+      "de_num": 4,
+      "num": 40,
+      "id": "DE004_Q40",
+      "title": "Câu 40",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H LJMP MAIN",
+        "ORG 0023H LJMP UART_ISR",
+        "MAIN: MOV TMOD, #20H",
+        "MOV TH1, #-3",
+        "MOV SCON, #50H",
+        "SETB TR1",
+        "MOV IE, #90H",
+        "MOV A, #64H",
+        "MOV SBUF, A",
+        "JNB TI, $",
+        "CLR TI",
+        "MOV C, A.4",
+        "MOV P1.4, C",
+        "LOOP: SJMP LOOP",
+        "UART_ISR: JNB TI, UART_EXIT",
+        "CLR TI",
+        "MOV C, A.4",
+        "MOV P1.4, C",
+        "UART_EXIT: RETI",
+        "END",
+        "Chương trình thực hiện chức năng gì?",
+        "— HẾT —"
+      ],
+      "options": [
+        "A. Chương trình truyền thông nối tiếp để truyền ký tự “B” và đưa ký tự đó ra cổng P1.4 hiển thị",
+        "B. Chương trình ngắt truyền thông để nhận ký tự “B” và đưa ký tự đó ra cổng P2.0 hiển thị",
+        "C. Chương trình truyền thông nối tiếp để truyền ký tự “d” và đưa ký tự đó ra cổng P2.0 hiển thị",
+        "D. Chương trình truyền thông nối tiếp để nhận ký tự “b” và đưa ký tự đó ra cổng P1.4 hiển thị"
+      ],
+      "type": "mcq",
+      "images": []
+    }
+  ],
+  "De_5": [
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 1,
+      "id": "DE005_Q01",
+      "title": "Câu 1",
+      "prompt": "Trong kiến trúc ARM, pipeline được sử dụng để làm gì?",
+      "extra_lines": [],
+      "options": [
+        "A. Tăng tốc độ thực thi lệnh.",
+        "B. Giảm số lượng lõi cần thiết.",
+        "C. Tiết kiệm bộ nhớ.",
+        "D. Tích hợp thêm GPU."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 2,
+      "id": "DE005_Q02",
+      "title": "Câu 2",
+      "prompt": "Trong hệ thống bus của vi xử lý, loại bus nào là bus 2 chiều?",
+      "extra_lines": [],
+      "options": [
+        "A. Bus dữ liệu.",
+        "B. Bus địa chỉ.",
+        "C. Bus địa chỉ và bus điều khiển.",
+        "D. Bus điều khiển."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 3,
+      "id": "DE005_Q03",
+      "title": "Câu 3",
+      "prompt": "Để ghi dữ liệu ra bộ nhớ, CPU cần thực hiện các công việc nào?",
+      "extra_lines": [],
+      "options": [
+        "A. CPU cấp địa chỉ, cấp tín hiệu điều khiển chọn bộ nhớ, cấp tín hiệu yêu cầu ghi bộ nhớ và cấp dữ liệu ra data bus",
+        "B. CPU cấp địa chỉ, cấp tín hiệu điều khiển chọn bộ nhớ, cấp tín hiệu yêu cầu ghi bộ nhớ và nhận dữ liệu từ data bus vào",
+        "C. CPU cấp địa chỉ, cấp tín hiệu điều khiển chọn bộ nhớ, nhận tín hiệu cho phép ghi bộ nhớ và cấp dữ liệu ra data bus",
+        "D. CPU nhận địa chỉ từ bộ nhớ, cấp tín hiệu điều khiển chọn bộ nhớ, cấp tín hiệu yêu cầu ghi bộ nhớ và nhận dữ liệu từ data bus vào"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 4,
+      "id": "DE005_Q04",
+      "title": "Câu 4",
+      "prompt": "Nếu dùng một thiết bị ngoại vi có dung lượng là 8 KB thì cần phải truy xuất bao nhiêu đường địa chỉ:",
+      "extra_lines": [],
+      "options": [
+        "A. A0… A12",
+        "B. A0… A10",
+        "C. A0… A11",
+        "D. A0… A13"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 5,
+      "id": "DE005_Q05",
+      "title": "Câu 5",
+      "prompt": "Dung lượng bộ nhớ dữ liệu ngoài tối đa mà chip 89C51 có khả năng truy xuất là:",
+      "extra_lines": [],
+      "options": [
+        "A. 64 KB",
+        "B. 32 KB",
+        "C. 128 KB",
+        "D. 256 KB"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 6,
+      "id": "DE005_Q06",
+      "title": "Câu 6",
+      "prompt": "EA là tín hiệu điều khiển:",
+      "extra_lines": [],
+      "options": [
+        "A. Cho phép truy xuất (sử dụng) bộ nhớ chương trình bên ngoài.",
+        "B. Cho phép truy xuất (đọc) bộ nhớ chương trình bên ngoài.",
+        "C. Cho phép chốt địa chỉ để thực hiện việc giải đa hợp.",
+        "D. Cho phép thiết lập lại chế độ hoạt động cuả chip 89C51."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 7,
+      "id": "DE005_Q07",
+      "title": "Câu 7",
+      "prompt": "Khi tiến hành reset cho vi điều kiển, không gian của vùng ngăn xếp là bao nhiêu ô nhớ?",
+      "extra_lines": [],
+      "options": [
+        "A. 120",
+        "B. 64",
+        "C. 128",
+        "D. 256"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 8,
+      "id": "DE005_Q08",
+      "title": "Câu 8",
+      "prompt": "Trên vi điều khiển 89C51, cờ tràn OV tương ứng với bit thứ mấy trong PSW?",
+      "extra_lines": [],
+      "options": [
+        "A. PSW.2",
+        "B. PSW.3",
+        "C. PSW.0",
+        "D. PSW.6"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 9,
+      "id": "DE005_Q09",
+      "title": "Câu 9",
+      "prompt": "Cho sơ đồ mở rộng của 89C51 như hình vẽ dưới đây, không gian địa chỉ ROM mở rộng là_______ KB.",
+      "extra_lines": [
+        "Ghi chú đáp án viết giá trị hệ thập phân, ví dụ kết quả là 10 ghi: 10."
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 10,
+      "id": "DE005_Q10",
+      "title": "Câu 10",
+      "prompt": "Dung lượng bộ nhớ ROM mở rộng của vi điều khiển 89C51 trong mạch vẽ dưới đây là:",
+      "extra_lines": [],
+      "options": [
+        "A. 8Kx8bit",
+        "B. 16Kx8bit",
+        "C. 4Kx8bit",
+        "D. 2Kx8bit"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 11,
+      "id": "DE005_Q11",
+      "title": "Câu 11",
+      "prompt": "Dung lượng bộ nhớ chương trình tích hợp trên chip 89C51 là:",
+      "extra_lines": [],
+      "options": [
+        "A. 4KB",
+        "B. 128 byte",
+        "C. 256 byte",
+        "D. 8KB"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 12,
+      "id": "DE005_Q12",
+      "title": "Câu 12",
+      "prompt": "Cho sơ đồ mở rộng bộ nhớ chương trình ROM và bộ nhớ dữ liệu RAM của vi điều khiển 89C51 như hình vẽ dưới đây:",
+      "extra_lines": [
+        "Địa chỉ cao nhất của IC1 là____H?",
+        "Ghi chú: Biểu diễn kết quả dạng hexa, ví dụ kết quả là 7AF0H thì ghi 7AF0"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 13,
+      "id": "DE005_Q13",
+      "title": "Câu 13",
+      "prompt": "Hãy cho biết chế độ định địa chỉ trên vi điều khiển 89C51 trong vi điều khiển 89C51 toán hạng nguồn trong câu lệnh: MOV A, #3AH",
+      "extra_lines": [],
+      "options": [
+        "A. Chế độ định địa chỉ tức thời",
+        "B. Chế độ định đia chỉ trực tiếp",
+        "C. Chế độ định địa chỉ gián tiếp",
+        "D. Chế độ định địa chỉ thanh ghi"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 14,
+      "id": "DE005_Q14",
+      "title": "Câu 14",
+      "prompt": "Trong Assembly trên 89C51, ký tự nào được sử dụng để biểu thị một hằng số thập lục phân?",
+      "extra_lines": [],
+      "options": [
+        "A. 0x",
+        "B. $",
+        "C. #",
+        "D. %"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 15,
+      "id": "DE005_Q15",
+      "title": "Câu 15",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RRC thuộc nhóm lệnh gì?",
+      "extra_lines": [],
+      "options": [
+        "A. Lệnh tính toán logic và dịch bit",
+        "B. Lệnh số học",
+        "C. Lệnh xử lý bit",
+        "D. Lệnh điều khiển chương trình"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 16,
+      "id": "DE005_Q16",
+      "title": "Câu 16",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh để thực hiện lệnh chuyển dữ liệu trong ô nhớ của RAM nội tới thanh ghi A",
+      "extra_lines": [],
+      "options": [
+        "A. MOV A, @R0",
+        "B. MOVX A,@DPTR",
+        "C. MOVX A, @R0",
+        "D. MOV A, #data"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 17,
+      "id": "DE005_Q17",
+      "title": "Câu 17",
+      "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh so sánh nội dung trong ô nhớ 3FH với nội dung trong thanh ghi A và nhảy đến địa chỉ rel nếu nội dung của chúng không bằng nhau:",
+      "extra_lines": [],
+      "options": [
+        "A. CJNE 3FH, A, rel",
+        "B. CJNE A, #3FH, rel",
+        "C. CJNE #3FH, A, rel",
+        "D. CJNE A,3FH, rel"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 18,
+      "id": "DE005_Q18",
+      "title": "Câu 18",
+      "prompt": "Trên vi điều khiển 89C51 biết (A)=94H, (90H)=6DH, PSW=55H sau khi thực hiện lệnh ADD A, 90H thì nội dung trong thanh ghi PSW sẽ là_________H.",
+      "extra_lines": [
+        "Viết nội dung dưới dạng số hexa, ví dụ nội dung là 0AH thì viết 0A"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 19,
+      "id": "DE005_Q19",
+      "title": "Câu 19",
+      "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:",
+      "extra_lines": [
+        "MOV A, #45H",
+        "MOV R0, #0ADH",
+        "SETB C",
+        "SUBB A, R0"
+      ],
+      "options": [
+        "A. CY=1, P=1",
+        "B. CY=0, P=0",
+        "C. CY=0, P=1",
+        "D. CY=1, P=0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 20,
+      "id": "DE005_Q20",
+      "title": "Câu 20",
+      "prompt": "Cho đoạn mã Assembly trên 89C51 sau:",
+      "extra_lines": [
+        "MOV P2, #5BH",
+        "CPL P2.0",
+        "SETB P2.7",
+        "Nội dung trong thanh ghi P3 sau khi thực hiện đoạn mã trên là: ________H.",
+        "Ghi chú: Ghi kết quả dưới dạng mã Hecxa, ví dụ kết quả là 0FH viết 0F."
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 21,
+      "id": "DE005_Q21",
+      "title": "Câu 21",
+      "prompt": "Cho đoạn mã Assembly trên 89C51 sau:",
+      "extra_lines": [
+        "MOV A, #25H",
+        "LOOP: DEC A",
+        "JNZ LOOP",
+        "END",
+        "Nội dung trong thanh ghi A sau khi thực hiện đoạn chương trình trên:"
+      ],
+      "options": [
+        "A. 00H",
+        "B. 25H",
+        "C. 26H",
+        "D. 24H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 22,
+      "id": "DE005_Q22",
+      "title": "Câu 22",
+      "prompt": "Xác định chức năng của chương trình con được thực hiện bởi vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0900H",
+        "SQR: ADD A, #01H",
+        "MOVC A, @A+PC",
+        "RET",
+        "TAB: DB 0, 1, 4, 9,16, 25",
+        "DB 36, 49, 64,81"
+      ],
+      "options": [
+        "A. Tìm giá trị đặt tại bảng tra tương ứng",
+        "B. Tìm giá trị lớn nhất của một các số trong bảng tra",
+        "C. Cất giá trị tìm được vào bảng tra",
+        "D. Tìm giá trị nhỏ nhất của một các số trong bảng tra"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 23,
+      "id": "DE005_Q23",
+      "title": "Câu 23",
+      "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi A là 40H",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV A, #_________H",
+        "SWAP A",
+        "END"
+      ],
+      "options": [],
+      "type": "fib",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 24,
+      "id": "DE005_Q24",
+      "title": "Câu 24",
+      "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV R1, #10",
+        "MOV A, #20",
+        "LAP: ADD A, #2",
+        "DJNZ R1, LAP",
+        "END",
+        "Nội dung trong thanh ghi A là:"
+      ],
+      "options": [
+        "A. 28H",
+        "B. 20H",
+        "C. 40H",
+        "D. 30H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 25,
+      "id": "DE005_Q25",
+      "title": "Câu 25",
+      "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây, thực hiện chức năng gì?",
+      "extra_lines": [
+        "ORG 0000H",
+        "MOV A, 20H",
+        "MOV B, 100",
+        "DIV AB",
+        "MOV @22H, A",
+        "MOV A, B",
+        "MOV B, #10H",
+        "DIV BA",
+        "SWAP A",
+        "ORL A, B",
+        "MOVC 21H, A",
+        "END"
+      ],
+      "options": [
+        "A. Chuyển số 8 bit không dấu đặt tại ô nhớ 20H thành số BCD 3 bit",
+        "B. Chuyển số BCD 3 bit thành số 8 bit không dấu đặt tại ô nhớ 20H",
+        "C. Thực hiện phép chia hai số không dấu, nội dung đặt trong ô nhớ 22H",
+        "D. Thực hiện phép cộng BCD hai số không dấu, nội dung đặt tại ô nhớ 21H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 26,
+      "id": "DE005_Q26",
+      "title": "Câu 26",
+      "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer và để điều khiển Timer dừng, ta cần thiết lập bit:",
+      "extra_lines": [],
+      "options": [
+        "A. TR=0",
+        "B. C/T=0",
+        "C. C/T=1",
+        "D. TR=1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 27,
+      "id": "DE005_Q27",
+      "title": "Câu 27",
+      "prompt": "Trên vi điều khiển 89C51 chế độ 2 của Timer 1 được thiết lập như thế nào trong thanh ghi TMOD?",
+      "extra_lines": [],
+      "options": [
+        "A. Thiết lập bit M1 và xóa bit M0",
+        "B. Thiết lập bit M0 và xóa bit M1",
+        "C. Thiết lập cả hai bit M0 và M1",
+        "D. Xóa cả hai bit M0 và M1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 28,
+      "id": "DE005_Q28",
+      "title": "Câu 28",
+      "prompt": "Trên vi điều khiển 89C51, trong chế độ 1 của bộ đếm/định thời, với tần số thạch anh là 12MHz thì thời gian tối đa mà chế độ 0 có thể định thời đến là:",
+      "extra_lines": [],
+      "options": [
+        "A. 65536ms",
+        "B. 256ms",
+        "C. 8192ms",
+        "D. 1000ms"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 29,
+      "id": "DE005_Q29",
+      "title": "Câu 29",
+      "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 0 cần tạo độ trễ 1 ms với tần số thạch anh 6 MHz. Giá trị của TH1 và TL1 là bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. TH1 = 1EH, TL1 = 0CH",
+        "B. TH1 = 1DH, TL1 = C5H",
+        "C. TH1 = 18H, TL1 = A4H",
+        "D. TH1 = 20H, TL1= 50H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 30,
+      "id": "DE005_Q30",
+      "title": "Câu 30",
+      "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau, biết tần số thạch anh là 12MHz:",
+      "extra_lines": [
+        "DELAY:",
+        "MOV TMOD, #02H",
+        "MOV TH0, # -100",
+        "SETB TR0",
+        "LOOP:",
+        "JNB TF0, LOOP",
+        "CLR TF0",
+        "CPL P1.1",
+        "SJMP LOOP",
+        "END",
+        "Chương trình này dùng để:"
+      ],
+      "options": [
+        "A. Tạo dạng sóng vuông có chu kỳ 200µS trên chân P1.1",
+        "B. Tạo dạng sóng vuông có chu kỳ 100mS trên chân P1.1",
+        "C. Tạo dạng sóng vuông có chu kỳ 200mS trên chân P1.1",
+        "D. Tạo dạng sóng vuông có chu kỳ 100µS trên chân P1.1"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 31,
+      "id": "DE005_Q31",
+      "title": "Câu 31",
+      "prompt": "Trên vi điều khiển 89C51 cổng truyền thông nối tiếp trên 89C51 dùng thanh ghi nào để lưu dữ liệu cần truyền và nhận?",
+      "extra_lines": [],
+      "options": [
+        "A. SBUF",
+        "B. P0",
+        "C. P1",
+        "D. TMOD"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 32,
+      "id": "DE005_Q32",
+      "title": "Câu 32",
+      "prompt": "Nếu giá trị của các thanh ghi SBUF là 0x3E và thanh ghi SCON là 0x00 trên vi điều khiển 89C51, dữ liệu nhận được qua cổng nối tiếp là gì?",
+      "extra_lines": [],
+      "options": [
+        "A. 3EH",
+        "B. E3H",
+        "C. FFH",
+        "D. 00H"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 33,
+      "id": "DE005_Q33",
+      "title": "Câu 33",
+      "prompt": "Nếu tần số thạch anh trên vi điều khiển 89C51 là 11.0592MHz và giá trị nạp vào thanh ghi TH1 là FAH, tốc độ truyền là bao nhiêu?",
+      "extra_lines": [],
+      "options": [
+        "A. 4800 bps",
+        "B. 9600 bps",
+        "C. 2400 bps",
+        "D. 1200 bps"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 34,
+      "id": "DE005_Q34",
+      "title": "Câu 34",
+      "prompt": "Cho các chương trình truyền thông nối tiếp thực hiện trên vi điều khiển 89C51 dưới đây, đâu là chương trình truyền chữ “KMA” nối tiếp liên tục với tốc độ 9600 baud (8bit dữ liệu, 1 bit stop), biết tần số tạo dao động XTAL1 là 11.0592MHz.",
+      "extra_lines": [],
+      "options": [
+        "A.",
+        "B.",
+        "C.",
+        "D."
+      ],
+      "type": "mcq",
+      "images": [
+        "assets/images/de005_rId12.png",
+        "assets/images/de005_rId13.png",
+        "assets/images/de005_rId14.png",
+        "assets/images/de005_rId15.png"
+      ]
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 35,
+      "id": "DE005_Q35",
+      "title": "Câu 35",
+      "prompt": "Cờ ngắt RI trong thanh ghi SCON của vi điều khiển 89C51 có chức năng gì?",
+      "extra_lines": [],
+      "options": [
+        "A. Báo hiệu kết thúc quá trình nhận dữ liệu nối tiếp",
+        "B. Báo hiệu kết thúc quá trình truyền dữ liệu nối tiếp",
+        "C. Cho phép ngắt ngoài 1",
+        "D. Cho phép ngắt ngoài 0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 36,
+      "id": "DE005_Q36",
+      "title": "Câu 36",
+      "prompt": "Tại sao ngắt reset lại có ưu tiên cao nhất trên vi điều khiển 89C51?",
+      "extra_lines": [],
+      "options": [
+        "A. Để đảm bảo hệ thống khởi động lại đúng cách",
+        "B. Để tránh xung đột với các ngắt khác",
+        "C. Để tiết kiệm thời gian xử lý",
+        "D. Để giảm tải cho CPU"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 37,
+      "id": "DE005_Q37",
+      "title": "Câu 37",
+      "prompt": "Nếu thanh ghi IP có giá trị 04H, ngắt nào trên vi điều khiển 89C51 sẽ có mức ưu tiên cao nhất?",
+      "extra_lines": [],
+      "options": [
+        "A. Ngắt Timer 0",
+        "B. Ngắt ngoại vi 1",
+        "C. Ngắt Timer 1",
+        "D. Ngắt truyền thông nối tiếp"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 38,
+      "id": "DE005_Q38",
+      "title": "Câu 38",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "LJMP START",
+        "ORG 000BH",
+        "TIMER0_ISR: CPL P1.0",
+        "MOV TH0, #0FEH",
+        "MOV TL0, #0CH",
+        "RETI",
+        "START: MOV TMOD, #01H",
+        "MOV TH0, #0FEH",
+        "MOV TL0, #0CH",
+        "SETB TR0",
+        "MOV IE, #82H",
+        "SETB ET0",
+        "LOOP: SJMP LOOP",
+        "END",
+        "Chương trình thực hiện chức năng gì?"
+      ],
+      "options": [
+        "A. Sử dụng ngắt timer 0 để tạo xung vuông có chu kỳ 1s tại cổng P1.0",
+        "B. Sử dụng ngắt timer 1 để tạo xung vuông có chu kỳ 1s tại cổng P1.0",
+        "C. Sử dụng ngắt timer 0 để tạo xung vuông có chu kỳ 1ms tại cổng P1.0",
+        "D. Sử dụng ngắt timer 1 để tạo xung vuông có chu kỳ 1ms tại cổng P1.0"
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 39,
+      "id": "DE005_Q39",
+      "title": "Câu 39",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H",
+        "AJMP MAIN",
+        "ORG 0003H",
+        "AJMP PINT0",
+        "ORG 0100H",
+        "MAIN: MOV SP, #40H",
+        "SETB EA",
+        "SETB EX0",
+        "SETB IT0",
+        "H: SJMP H",
+        "ORG 0300H",
+        "PINT0: CPL P2.0",
+        "RETI",
+        "Chương trình thực hiện chức năng gì?"
+      ],
+      "options": [
+        "A. Nháy led tại cổng P2.0 thông qua công tắc tại ngắt ngoài 0, khi ngắt cứng ngoài tại chân INT0 tích cực theo sườn.",
+        "B. Nháy led tại cổng P2.4 thông qua công tắc tại ngắt ngoài 1, khi ngắt cứng ngoài tại chân INT0 tích cực theo sườn.",
+        "C. Nháy led tại cổng P2.0 thông qua công tắc tại ngắt ngoài 1, khi ngắt cứng ngoài tại chân INT1 tích cực mức thấp.",
+        "D. Nháy led tại cổng P2.4 thông qua công tắc tại ngắt ngoài 0, khi ngắt cứng ngoài tại chân INT1 tích cực mức thấp."
+      ],
+      "type": "mcq",
+      "images": []
+    },
+    {
+      "exam_id": "DE_005",
+      "de_num": 5,
+      "num": 40,
+      "id": "DE005_Q40",
+      "title": "Câu 40",
+      "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây:",
+      "extra_lines": [
+        "ORG 0000H LJMP MAIN",
+        "ORG 0023H LJMP UART_ISR",
+        "MAIN: MOV TMOD, #20H",
+        "MOV TH1, #0FAH",
+        "MOV SCON, #50H",
+        "SETB TR1",
+        "MOV IE, #90H",
+        "MOV A, #66",
+        "MOV SBUF, A",
+        "JNB TI, $",
+        "CLR TI",
+        "MOV C, A.4",
+        "MOV P2.0, C",
+        "LOOP: SJMP LOOP",
+        "UART_ISR: JNB TI, UART_EXIT",
+        "CLR TI",
+        "MOV C, A.4",
+        "MOV P2.0, C",
+        "UART_EXIT: RETI",
+        "END",
+        "Chương trình thực hiện chức năng gì?",
+        "— HẾT —"
+      ],
+      "options": [
+        "A. Chương trình ngắt truyền thông để truyền ký tự “B” và đưa ký tự đó ra cổng P2.0 hiển thị.",
+        "B. Chương trình ngắt truyền thông để nhận ký tự “B” và đưa ký tự đó ra cổng P2.0 hiển thị.",
+        "C. Chương trình truyền thông nối tiếp để truyền ký tự “d” và đưa ký tự đó ra cổng P1.4 hiển thị.",
+        "D. Chương trình truyền thông nối tiếp để nhận ký tự “d” và đưa ký tự đó ra cổng P1.4 hiển thị."
+      ],
+      "type": "mcq",
+      "images": []
+    }
+  ]
+}

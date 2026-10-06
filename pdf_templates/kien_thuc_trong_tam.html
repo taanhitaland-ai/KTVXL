@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tài Liệu Kiến Thức Trọng Tâm Kỹ Thuật Vi Xử Lý</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap');
+
+@page {
+  size: A4;
+  margin: 15mm 12mm 15mm 12mm;
+  @bottom-right {
+    content: "Trang " counter(page);
+    font-size: 8pt;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #111;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 10pt;
+}
+
+code, pre, .mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.cover-page {
+  page-break-after: always;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 4px solid #000;
+  padding: 40px;
+  background: #FFFDF9;
+  box-shadow: 8px 8px 0px #000;
+  text-align: center;
+}
+
+.cover-header {
+  border-bottom: 3px solid #000;
+  padding-bottom: 20px;
+}
+
+.cover-title {
+  font-size: 26pt;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin: 20px 0 10px 0;
+  text-transform: uppercase;
+}
+
+.cover-subtitle {
+  font-size: 14pt;
+  font-weight: 700;
+  color: #333;
+}
+
+.cover-badge {
+  display: inline-block;
+  background: #FFE600;
+  color: #000;
+  border: 2px solid #000;
+  padding: 6px 16px;
+  font-weight: 800;
+  font-size: 11pt;
+  border-radius: 6px;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.cover-footer {
+  border-top: 3px solid #000;
+  padding-top: 20px;
+  font-size: 10pt;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chapter-block {
+  page-break-before: always;
+  margin-bottom: 24px;
+}
+
+.chapter-title-box {
+  background: #FFE600;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0px #000;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+}
+
+.chapter-title-box h2 {
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.chapter-summary {
+  font-weight: 700;
+  font-size: 10pt;
+  color: #333;
+  margin-top: 4px;
+}
+
+.section-box {
+  background: #FFFDF9;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0px #000;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+  page-break-inside: avoid;
+}
+
+.section-title {
+  font-size: 11pt;
+  font-weight: 800;
+  margin-bottom: 8px;
+  border-bottom: 1.5px dashed #000;
+  padding-bottom: 4px;
+}
+
+.section-content {
+  font-size: 9.5pt;
+  line-height: 1.55;
+  color: #222;
+}
+
+.section-content p {
+  margin-bottom: 6px;
+}
+
+/* Question Styling */
+.q-card-pdf {
+  border: 2.5px solid #000;
+  box-shadow: 3px 3px 0px #000;
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  page-break-inside: avoid;
+  background: #fff;
+}
+
+.q-header-pdf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  border-bottom: 1.5px solid #000;
+  padding-bottom: 4px;
+}
+
+.q-title-pdf {
+  font-weight: 900;
+  font-size: 10.5pt;
+  margin-bottom: 6px;
+}
+
+.q-code-pdf {
+  background: #f4f4f4;
+  border: 1.5px solid #000;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 8.5pt;
+  margin: 6px 0;
+  white-space: pre-wrap;
+}
+
+.q-img-pdf {
+  margin: 8px 0;
+  text-align: center;
+}
+
+.q-img-pdf img {
+  max-width: 85%;
+  max-height: 200px;
+  border: 1.5px solid #000;
+  border-radius: 4px;
+}
+
+.q-options-pdf {
+  margin: 8px 0;
+}
+
+.opt-item-pdf {
+  padding: 3px 8px;
+  margin-bottom: 4px;
+  font-size: 9pt;
+  font-weight: 700;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.opt-item-pdf.correct {
+  background: #E8FFF4;
+  border: 1.5px solid #00875A;
+  color: #00875A;
+}
+
+.exp-box-pdf {
+  background: #FFFDF0;
+  border: 1.5px solid #000;
+  border-left: 5px solid #FFE600;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 8.8pt;
+}
+
+.exp-title-pdf {
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  font-size: 8pt;
+}
+
+.badge-pdf {
+  display: inline-block;
+  padding: 2px 6px;
+  border: 1.5px solid #000;
+  border-radius: 3px;
+  font-weight: 800;
+  font-size: 7.5pt;
+  background: #FFE600;
+}
+</style>
+</head>
+<body>
+
+  <!-- Cover Page -->
+  <div class="cover-page">
+    <div class="cover-header">
+      <div class="cover-badge">HỌC VIỆN KỸ THUẬT MẬT MÃ • KHOA CNTT</div>
+      <div style="font-size: 11pt; font-weight: 800; margin-top: 8px; letter-spacing: 1px;">BỘ MÔN MẠNG & AN TOÀN HỆ THỐNG</div>
+    </div>
+
+    <div>
+      <div style="font-size: 50pt; margin-bottom: 10px;">⚡</div>
+      <div class="cover-title">TỔNG HỢP KIẾN THỨC TRỌNG TÂM<br/>KỸ THUẬT VI XỬ LÝ</div>
+      <div class="cover-subtitle">Giáo Trình Tóm Tắt, Bảng Tra Cứu SFR & Bí Kíp Casio fx-580VNX</div>
+      <div style="margin-top: 24px;">
+        <span class="cover-badge" style="background: #00E599;">VI ĐIỀU KHIỂN 8051 & KIẾN TRÚC ARM7</span>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div>Hà Nội, 2026</div>
+      <div>Lưu Hành Nội Bộ Ôn Thi Chuyên Sâu</div>
+    </div>
+  </div>
+
+  <!-- Chapters Content -->
+
+  <div class="chapter-block">
+    <div class="chapter-title-box">
+      <span class="badge-pdf">CLO1</span>
+      <h2>Chương 1: Tổng Quan Vi Xử Lý, Vi Điều Khiển & Kiến Trúc ARM</h2>
+      <div class="chapter-summary">Nắm vững khái niệm bộ vi xử lý (MPU), vi điều khiển (MCU), cấu trúc bus, không gian bộ nhớ, kiến trúc ARM7TDMI, pipeline và chế độ 32-bit ARM / 16-bit Thumb.</div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">1. Khái niệm cơ bản & Phân biệt Vi xử lý - Vi điều khiển</div>
+      <div class="section-content">
+        <p><strong>Bộ vi xử lý (MPU - Microprocessor Unit)</strong>: Là khối xử lý trung tâm (CPU) được chế tạo tích hợp trên một vi mạch bán dẫn đơn (chíp IC). MPU chỉ chứa các khối tính toán và điều khiển (ALU, CU, Registers), chưa có bộ nhớ RAM/ROM và các cổng I/O trên chip; muốn hoạt động phải ghép nối với các linh kiện bên ngoài thông qua hệ thống bus.</p>
+        <p><strong>Vi điều khiển (MCU - Microcontroller Unit)</strong>: Là một hệ thống máy tính hoàn chỉnh thu nhỏ được tích hợp trên một chíp đơn (Computer on a chip), bao gồm: CPU, bộ nhớ RAM, bộ nhớ ROM (Flash), các bộ định thời (Timers), các cổng vào/ra (I/O ports) và mạch truyền thông nối tiếp (UART/SPI/I2C).</p>
+        <p><strong>So sánh cốt lõi</strong>:<br/>- MPU: Tối ưu cho xử lý dữ liệu phức tạp, tốc độ cao (máy tính, máy chủ), chi phí cao, cần mạch ngoại vi ngoài.<br/>- MCU: Tối ưu cho điều khiển nhúng, đo lường tự động, giá thành thấp, tiêu thụ ít điện năng, thiết kế mạch đơn giản.</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">2. Cấu trúc Bus & Nguyên lý hoạt động của CPU</div>
+      <div class="section-content">
+        <p><strong>Hệ thống Bus</strong>:<br/>- **Bus địa chỉ (Address Bus)**: Bus 1 chiều (Unidirectional) đi từ CPU ra bộ nhớ và ngoại vi. Số đường địa chỉ n quyết định không gian địa chỉ tối đa 2^n Byte (Ví dụ: 16 đường A15-A0 -> 2^16 = 64 KB; 24 đường A23-A0 -> 2^24 = 16 MB; 25 đường A24-A0 -> 2^25 = 32 MB).<br/>- **Bus dữ liệu (Data Bus)**: Bus 2 chiều (Bidirectional) truyền dữ liệu giữa CPU với bộ nhớ/vào-ra.<br/>- **Bus điều khiển (Control Bus)**: Truyền các tín hiệu đồng bộ và điều khiển đọc/ghi (RD, WR, PSEN, ALE...).</p>
+        <p><strong>Nguyên lý hoạt động của CPU</strong>: Hoạt động theo chu kỳ lệnh liên tục và tuần tự:<br/>- Bước 1: Nạp lệnh (Fetch) từ bộ nhớ chương trình vào thanh ghi lệnh thông qua bus dữ liệu.<br/>- Bước 2: Giải mã lệnh (Decode) bởi khối giải mã lệnh trong CPU (CU - Control Unit).<br/>- Bước 3: Thực thi lệnh (Execute) bởi khối ALU (xử lý số học và logic) hoặc khối rẽ nhánh.</p>
+        <p>Tập lệnh và chương trình được lưu trong bộ nhớ chương trình dưới dạng <strong>Mã máy / Mã nhị phân (Opcode)</strong>.</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">3. Cấu trúc bộ nhớ bán dẫn</div>
+      <div class="section-content">
+        <p><strong>Bộ nhớ ROM (Read-Only Memory)</strong>: Bộ nhớ không khả biến (Non-volatile), không mất dữ liệu khi mất điện. Thường dùng lưu chương trình nạp sẵn (Firmware/BIOS):<br/>- Mask ROM: Ghi cứng từ nhà sản xuất.<br/>- PROM: Lập trình một lần bằng thiết bị chuyên dụng.<br/>- EPROM: Xóa bằng tia cực tím qua cửa sổ thạch anh.<br/>- EEPROM & Flash ROM: Xóa và ghi lại bằng tín hiệu điện nhanh chóng.</p>
+        <p><strong>Bộ nhớ RAM (Random Access Memory)</strong>: Bộ nhớ khả biến (Volatile), mất dữ liệu khi mất điện. Dùng lưu trữ dữ liệu tạm thời trong quá trình thực hiện lệnh:<br/>- **SRAM (Static RAM)**: Cấu tạo từ flip-flop transistor, tốc độ rất cao, không cần làm tươi dữ liệu, dùng làm Cache, RAM nội.<br/>- **DRAM (Dynamic RAM)**: Cấu tạo từ tụ điện và transistor, dung lượng rất lớn, giá rẻ nhưng tụ bị rò điện nên **bắt buộc phải có quá trình làm tươi dữ liệu (Memory Refresh)** định kỳ.</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">4. Kiến trúc vi xử lý ARM & Pipeline</div>
+      <div class="section-content">
+        <p>Kiến trúc ARM thuộc hệ <strong>RISC (Reduced Instruction Set Computer)</strong>: Tập lệnh thu gọn, thời gian thực thi lệnh đồng đều (đa số 1 chu kỳ máy), cấu trúc phần cứng tối ưu năng lượng.</p>
+        <p><strong>Kỹ thuật Pipeline (Đường ống dẫn lệnh)</strong>: Phân chia quá trình thực thi lệnh thành các công đoạn gối đầu nhau (Ví dụ ARM7TDMI có pipeline 3 tầng: Fetch - Decode - Execute). Mục đích chính của pipeline là **tăng tốc độ thực thi lệnh** (Throughput) mà không cần tăng tần số xung nhịp.</p>
+        <p><strong>Hai trạng thái hoạt động của ARM7TDMI</strong>:<br/>- **Trạng thái ARM**: Thực thi tập lệnh chuẩn với độ dài lệnh và dữ liệu là **32 bit**.<br/>- **Trạng thái Thumb**: Thực thi tập lệnh thu gọn với độ dài lệnh là **16 bit**, giúp tăng mật độ mã và tiết kiệm 30-40% bộ nhớ ROM.</p>
+        <p><strong>Thanh ghi trạng thái CPSR / SPSR</strong>: CPSR (Current Program Status Register) chứa cờ điều kiện (N, Z, C, V), bit chọn chế độ làm việc và bit cấm ngắt (I, F).</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter-block">
+    <div class="chapter-title-box">
+      <span class="badge-pdf">CLO2</span>
+      <h2>Chương 2: Phần Cứng 89C51, Bộ Nhớ & Mạch Mở Rộng</h2>
+      <div class="chapter-summary">Cấu tạo chân, chức năng các cổng P0-P3, tổ chức RAM 128 Byte, vùng SFR, mạch mở rộng ROM/RAM ngoài bằng 74LS373 và 74LS138.</div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">1. Cấu trúc chân & Các cổng vào/ra (P0 - P3)</div>
+      <div class="section-content">
+        <p>Vi điều khiển 89C51 (họ MCS-51) có 40 chân DIP, cấp nguồn VCC = 5V (chân 40), VSS = GND (chân 20).</p>
+        <p><strong>Chân điều khiển quan trọng</strong>:<br/>- **EA/VPP (External Access)**: Nối mức 1 (VCC) để thực thi ROM nội (0000H-0FFFH, 4KB), nếu vượt quá 4KB sẽ tự sang ROM ngoại. Nối mức 0 (GND) để chỉ dùng ROM ngoại (bắt đầu từ 0000H).<br/>- **ALE (Address Latch Enable)**: Phát xung điều khiển vi mạch chốt 74LS373 để tách bus địa chỉ A0-A7 từ bus ghép AD0-AD7 trên cổng P0. Tần số xung f_ALE = F_osc / 6.<br/>- **PSEN (Program Store Enable)**: Tín hiệu cho phép đọc bộ nhớ chương trình ROM ngoại (tích cực mức thấp 0), nối chân OE của chip nhớ.<br/>- **RST (Reset)**: Tích cực mức cao (mức 1 ít nhất 2 chu kỳ máy). Sau reset: PC = 0000H, SP = 07H, P0-P3 = FFH, các thanh ghi khác = 00H.</p>
+        <p><strong>4 cổng I/O (8 bit mỗi cổng)</strong>:<br/>- **Cổng P0**: Chân cực thu để hở (Open Drain), khi làm cổng I/O thông thường **bắt buộc phải gắn thêm điện trở kéo lên bên ngoài** (khoảng 4.7kΩ - 10kΩ). Khi mở rộng bus, P0 làm bus đa hợp Địa chỉ/Dữ liệu (AD0-AD7). Trước khi đọc dữ liệu từ chân cổng, phải ghi bit 1 ra chân đó!<br/>- **Cổng P1**: Cổng I/O đa dụng, có sẵn trở kéo lên nội.<br/>- **Cổng P2**: Cổng I/O có trở kéo lên nội. Khi mở rộng bus, đóng vai trò bus địa chỉ byte cao (A8-A15).<br/>- **Cổng P3**: Cổng I/O kiêm các chức năng phụ đặc biệt: P3.0 (RxD), P3.1 (TxD), P3.2 (INT0), P3.3 (INT1), P3.4 (T0), P3.5 (T1), P3.6 (WR), P3.7 (RD).</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">2. Tổ chức bộ nhớ RAM nội (128 Byte: 00H - 7FH)</div>
+      <div class="section-content">
+        <p><strong>Vùng 00H - 1FH (32 byte)</strong>: 4 Bank thanh ghi đa năng (Bank 0, 1, 2, 3), mỗi bank gồm 8 thanh ghi R0 - R7. Chọn bank thông qua 2 bit RS1, RS0 trong thanh ghi PSW. Sau khi reset mặc định chọn **Bank 0** (địa chỉ 00H - 07H).</p>
+        <p><strong>Vùng 20H - 2FH (16 byte = 128 bit)</strong>: Vùng RAM có khả năng **định địa chỉ theo từng bit**, đánh số từ bit 00H đến 7FH (Ví dụ bit 0 của ô nhớ 20H có địa chỉ bit là 00H; bit 7 của ô nhớ 2FH có địa chỉ bit là 7FH).</p>
+        <p><strong>Vùng 30H - 7FH (80 byte)</strong>: Vùng RAM đa dụng (Scratch pad) và ngăn xếp (Stack). Sau reset, con trỏ ngăn xếp **SP = 07H**, lệnh PUSH đầu tiên sẽ đẩy dữ liệu vào ô nhớ **08H** (bắt đầu vùng Bank 1).</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">3. Thanh ghi chức năng đặc biệt SFR & Thanh ghi PSW</div>
+      <div class="section-content">
+        <p>Vùng SFR (Special Function Registers) nằm ở không gian địa chỉ <strong>80H - FFH</strong>.</p>
+        <p><strong>Quy tắc nhớ nhanh SFR có định địa chỉ bit</strong>: Chỉ những thanh ghi có địa chỉ tận cùng là **0 hoặc 8** mới có thể định địa chỉ bit! Gồm: ACC (E0H), B (F0H), PSW (D0H), IP (B8H), P3 (B0H), IE (A8H), P2 (A0H), SCON (98H), P1 (90H), TCON (88H), P0 (80H).</p>
+        <p>Các thanh ghi KHÔNG định địa chỉ bit: SP (81H), DPL (82H), DPH (83H), PCON (87H), TMOD (89H), TL0 (8AH), TL1 (8BH), TH0 (8CH), TH1 (8DH), SBUF (99H).</p>
+        <p><strong>Thanh ghi trạng thái PSW (D0H)</strong>:<br/>- PSW.7 (CY): Cờ nhớ (Carry).<br/>- PSW.6 (AC): Cờ nhớ phụ nửa byte thấp sang nửa byte cao (Auxiliary Carry).<br/>- PSW.5 (F0): Cờ người dùng định nghĩa.<br/>- PSW.4 (RS1), PSW.3 (RS0): Chọn Bank thanh ghi (00: Bank 0, 01: Bank 1, 10: Bank 2, 11: Bank 3).<br/>- PSW.2 (OV): Cờ tràn phép tính số học bù 2 có dấu.<br/>- PSW.1: Dự trữ.<br/>- PSW.0 (P): Cờ chẵn lẻ (Parity), tự động bằng 1 khi số bit 1 trong thanh ghi A là số lẻ.</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">4. Phương pháp tính Dung lượng & Mở rộng RAM/ROM ngoài</div>
+      <div class="section-content">
+        <p><strong>Dung lượng tối đa</strong>: 89C51 có 16 đường địa chỉ A0 - A15 -> không gian tối đa là 2^16 = 64 KB ROM ngoài và 64 KB RAM ngoài.</p>
+        <p><strong>Công thức tính dung lượng chip nhớ</strong>: Chip có k đường địa chỉ -> Dung lượng = 2^k Byte. (Ví dụ: RAM 6264 có 13 đường địa chỉ A0 - A12 -> 2^13 = 8 KB; RAM 62256 có 15 đường A0 - A14 -> 2^15 = 32 KB).</p>
+        <p><strong>Nguyên lý giải mã địa chỉ (74LS138 / Cổng Logic)</strong>:<br/>- Các đường địa chỉ thấp A0 - A(k-1) nối trực tiếp vào các chân địa chỉ của IC nhớ.<br/>- Các đường địa chỉ cao từ vi điều khiển nối vào mạch giải mã để tạo tín hiệu chọn chip CS (tích cực mức 0).<br/>- Để xác định dải địa chỉ Hex: Viết chuỗi 16 bit nhị phân từ A15 đến A0. Các bit giải mã cố định theo chân kích hoạt; các bit chạy biến thiên từ toàn 0 đến toàn 1. Chuyển từng cụm 4 bit sang số Hex.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter-block">
+    <div class="chapter-title-box">
+      <span class="badge-pdf">CLO2 & CLO3</span>
+      <h2>Chương 3: Tập Lệnh Hợp Ngữ 8051 & Các Chế Độ Định Địa Chỉ</h2>
+      <div class="chapter-summary">5 chế độ định địa chỉ, 5 nhóm lệnh cốt lõi (chuyển dữ liệu, số học, logic, xử lý bit, rẽ nhánh), cách xác định trạng thái thanh ghi và cờ.</div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">1. 5 Chế độ định địa chỉ cốt lõi</div>
+      <div class="section-content">
+        <p><strong>Tức thời (Immediate Addressing)</strong>: Dữ liệu là hằng số nằm ngay sau mã lệnh, có dấu `#` trước giá trị. Ví dụ: `MOV A, #25H` (nạp giá trị 25H vào A), `MOV DPTR, #1234H`.</p>
+        <p><strong>Trực tiếp (Direct Addressing)</strong>: Toán hạng là địa chỉ ô nhớ RAM nội (00H-7FH) hoặc thanh ghi SFR (80H-FFH). Ví dụ: `MOV A, 30H` (lấy dữ liệu từ ô nhớ 30H nạp vào A).</p>
+        <p><strong>Gián tiếp qua thanh ghi (Indirect Addressing)</strong>: Toán hạng là con trỏ địa chỉ chứa trong thanh ghi R0, R1 (với RAM nội) hoặc DPTR (với RAM ngoài), có ký tự `@`. Ví dụ: `MOV A, @R0` (lấy dữ liệu tại ô nhớ có địa chỉ lưu trong R0 nạp vào A).</p>
+        <p><strong>Thanh ghi (Register Addressing)</strong>: Toán hạng là các thanh ghi R0 - R7 của Bank hiện hành. Ví dụ: `MOV A, R3`.</p>
+        <p><strong>Chỉ số (Indexed Addressing)</strong>: Dùng truy xuất bảng trong ROM, địa chỉ ô nhớ bằng tổng nội dung thanh ghi cơ sở và thanh ghi A. Ví dụ: `MOVC A, @A+DPTR`, `MOVC A, @A+PC`.</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">2. Lệnh Chuyển dữ liệu & Lệnh Số học</div>
+      <div class="section-content">
+        <p><strong>Lệnh chuyển dữ liệu</strong>:<br/>- `MOV dest, src`: Sao chép nội dung.<br/>- `MOVX dest, src`: Truy xuất bộ nhớ RAM ngoài (Ví dụ: `MOVX A, @DPTR`, `MOVX @DPTR, A`).<br/>- `MOVC A, @A+DPTR`: Đọc hằng số từ bộ nhớ chương trình ROM.<br/>- `PUSH direct` / `POP direct`: Cất vào / lấy ra từ ngăn xếp (Lưu ý: PUSH tăng SP trước rồi mới ghi; POP đọc dữ liệu rồi giảm SP).<br/>- `SWAP A`: Đổi 4 bit cao và 4 bit thấp của thanh ghi A (Ví dụ: A = 58H -> SWAP A -> A = 85H).</p>
+        <p><strong>Lệnh số học</strong>:<br/>- `ADD A, src`: Cộng thường. `ADDC A, src`: Cộng có cờ nhớ (A = A + src + CY).<br/>- `SUBB A, src`: Trừ có mượn (A = A - src - CY). **Lưu ý**: Trước khi trừ phải chú ý cờ CY, nếu CY=1 thì sẽ trừ thêm 1!<br/>- `MUL AB`: Nhân không dấu 8-bit x 8-bit. Tích 16-bit lưu: Byte thấp vào A, Byte cao vào B. Cờ OV=1 nếu kết quả > 255 (B != 0).<br/>- `DIV AB`: Chia không dấu A cho B. Thương vào A, số dư vào B. Cờ OV=1 nếu chia cho 0 (B=0).<br/>- `DA A`: Hiệu chỉnh thập phân BCD cho thanh ghi A sau phép cộng.</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">3. Lệnh Logic, Xử lý bit & Điều khiển rẽ nhánh</div>
+      <div class="section-content">
+        <p><strong>Lệnh logic</strong>:<br/>- `ANL` (AND bit), `ORL` (OR bit), `XRL` (XOR bit).<br/>- `CLR A` (xóa A về 0), `CPL A` (đảo tất cả bit của A, lấy bù 1).<br/>- `RL A` (quay trái 1 bit), `RLC A` (quay trái qua cờ CY), `RR A` (quay phải), `RRC A` (quay phải qua CY).</p>
+        <p><strong>Lệnh điều khiển rẽ nhánh</strong>:<br/>- `SJMP rel`: Nhảy ngắn trong phạm vi [-128, +127] byte.<br/>- `LJMP addr16`: Nhảy dài tới địa chỉ 16-bit bất kỳ trong 64KB ROM.<br/>- `JZ rel` / `JNZ rel`: Nhảy nếu A = 0 / Nhảy nếu A khác 0.<br/>- `CJNE dest, src, rel`: So sánh nếu khác nhau thì nhảy. Nếu dest < src thì tự động set cờ CY = 1, ngược lại CY = 0.<br/>- `DJNZ Rn, rel`: Giảm thanh ghi đi 1, nếu khác 0 thì nhảy tiếp (vòng lặp cực kỳ thông dụng).</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter-block">
+    <div class="chapter-title-box">
+      <span class="badge-pdf">CLO3</span>
+      <h2>Chương 4: Bộ Định Thời / Bộ Đếm (Timer / Counter 0 & 1)</h2>
+      <div class="chapter-summary">Nguyên lý Timer/Counter, cấu hình thanh ghi TMOD, TCON, 4 chế độ hoạt động, công thức tính số xung đếm và giá trị nạp TH/TL.</div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">1. Nguyên lý hoạt động & Thanh ghi TMOD, TCON</div>
+      <div class="section-content">
+        <p>89C51 có 2 bộ định thời/bộ đếm 16-bit: <strong>Timer 0</strong> (TL0, TH0) và **Timer 1** (TL1, TH1).<br/>- Khi làm **Bộ định thời (Timer)**: Đếm xung nhịp nội từ dao động thạch anh qua bộ chia 12: T_cm = 12 / F_osc.<br/>- Khi làm **Bộ đếm (Counter)**: Đếm xung sườn âm (1 xuống 0) từ chân ngoài T0 (P3.4) hoặc T1 (P3.5).</p>
+        <p><strong>Thanh ghi TMOD (89H - Không định địa chỉ bit)</strong>:<br/>- 4 bit cao: Timer 1 (GATE | C/T | M1 | M0)<br/>- 4 bit thấp: Timer 0 (GATE | C/T | M1 | M0)<br/>- Bit GATE: = 0 (khởi động bằng phần mềm qua bit TR); = 1 (khởi động kết hợp: cần chân INTx ở mức 1 VÀ bit TR=1).<br/>- Bit C/T: = 0 (chế độ Định thời - Timer); = 1 (chế độ Đếm sự kiện - Counter).<br/>- 2 bit M1, M0 chọn chế độ:<br/>  + `00` (Mode 0): 13 bit (TL 5 bit, TH 8 bit, đếm tối đa 8192 xung).<br/>  + `01` (Mode 1): **16 bit** (TL 8 bit, TH 8 bit, đếm tối đa 65536 xung).<br/>  + `10` (Mode 2): **8 bit tự nạp lại (Auto-reload)**: Giá trị trong TH tự động nạp vào TL khi TL tràn về 0. Đếm tối đa 256 xung. Rất hay dùng cho baud UART!<br/>  + `11` (Mode 3): Bộ định thời chia tách (Split Timer cho Timer 0).</p>
+        <p><strong>Thanh ghi TCON (88H - Có định địa chỉ bit)</strong>:<br/>- TF1, TF0: Cờ báo tràn Timer 1, Timer 0 (bật lên 1 khi bộ đếm tràn).<br/>- TR1, TR0: Bit điều khiển chạy Timer (= 1 cho phép chạy, = 0 dừng đếm).</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">2. Công thức tính thời gian trễ & Giá trị nạp TH, TL</div>
+      <div class="section-content">
+        <p><strong>Chu kỳ máy (T_cm)</strong>:<br/>- Với F_osc = 12 MHz -> T_cm = 12 / 12 MHz = 1 µs.<br/>- Với F_osc = 11.0592 MHz -> T_cm = 12 / 11.0592 MHz ≈ 1.085 µs.</p>
+        <p><strong>Số xung đếm (N)</strong>: N = T_delay / T_cm.</p>
+        <p><strong>Giá trị nạp ban đầu (Mode 1 - 16 bit)</strong>:<br/>- Giá trị nạp = 65536 - N.<br/>- TH = int(Giá trị nạp / 256) (đổi sang Hex lấy 2 chữ số đầu).<br/>- TL = Giá trị nạp % 256 (đổi sang Hex lấy 2 chữ số cuối).</p>
+        <p><strong>Giá trị nạp ban đầu (Mode 2 - 8 bit)</strong>:<br/>- Giá trị nạp = 256 - N (viết dạng bù: `MOV THx, #-N`).</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter-block">
+    <div class="chapter-title-box">
+      <span class="badge-pdf">CLO3</span>
+      <h2>Chương 5: Truyền Thông Nối Tiếp UART & Tốc Độ Baud</h2>
+      <div class="chapter-summary">Khung truyền UART, thanh ghi SCON, SBUF, PCON, công thức tính tốc độ Baud với thạch anh 11.0592 MHz và giá trị nạp TH1.</div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">1. Nguyên lý truyền thông & Thanh ghi SCON, SBUF</div>
+      <div class="section-content">
+        <p>Giao tiếp UART trên 89C51 truyền không đồng bộ, song công toàn phần (Full Duplex) qua 2 chân <strong>RxD (P3.0)</strong> và **TxD (P3.1)**.</p>
+        <p><strong>Thanh ghi đệm SBUF (99H)</strong>: Gồm 2 thanh ghi vật lý riêng biệt cùng tên: ghi vào SBUF là phát dữ liệu qua TxD; đọc từ SBUF là nhận dữ liệu từ RxD.</p>
+        <p><strong>Thanh ghi điều khiển SCON (98H - Có định địa chỉ bit)</strong>:<br/>- SM0, SM1: Chọn chế độ truyền (Mode 0: thanh ghi dịch 8 bit; **Mode 1: UART 8 bit baud thay đổi**; Mode 2: UART 9 bit baud cố định; Mode 3: UART 9 bit baud thay đổi).<br/>- REN (bit 4): Cho phép nhận dữ liệu (= 1 cho phép nhận, = 0 cấm nhận).<br/>- TI (bit 1): Cờ ngắt truyền, vi điều khiển tự set lên 1 khi truyền xong Stop bit. **Phải xóa bằng phần mềm: `CLR TI`**.<br/>- RI (bit 0): Cờ ngắt nhận, tự set lên 1 khi nhận xong Stop bit. **Phải xóa bằng phần mềm: `CLR RI`**.</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">2. Công thức tính Tốc độ Baud & Bảng giá trị TH1 chuẩn</div>
+      <div class="section-content">
+        <p>Để tạo tốc độ Baud chuẩn, <strong>Timer 1 luôn được cấu hình ở Chế độ 2 (8 bit auto-reload)</strong>: `MOV TMOD, #20H`.</p>
+        <p><strong>Công thức Baud Rate</strong>:<br/>Baud = (2^SMOD * F_osc) / (384 * (256 - TH1))<br/>Trong đó bit SMOD nằm trong thanh ghi PCON (mặc định SMOD = 0).</p>
+        <p><strong>Bảng tra cứu tốc độ Baud chuẩn (F_osc = 11.0592 MHz, SMOD = 0)</strong>:<br/>- **9600 Baud**: 256 - TH1 = 3 -> TH1 = -3 = FDH<br/>- **4800 Baud**: 256 - TH1 = 6 -> TH1 = -6 = FAH<br/>- **2400 Baud**: 256 - TH1 = 12 -> TH1 = -12 = F4H<br/>- **1200 Baud**: 256 - TH1 = 24 -> TH1 = -24 = E8H</p>
+        <p><strong>Quy trình truyền ký tự</strong>:<br/>1. Khởi tạo Timer 1 Mode 2: `MOV TMOD, #20H`<br/>2. Nạp tốc độ Baud: `MOV TH1, #-3` (cho 9600 baud)<br/>3. Cấu hình UART: `MOV SCON, #50H` (Mode 1, REN=1)<br/>4. Bật Timer 1: `SETB TR1`<br/>5. Ghi ký tự vào SBUF: `MOV SBUF, A`<br/>6. Chờ truyền xong: `JNB TI, $`<br/>7. Xóa cờ truyền: `CLR TI`</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter-block">
+    <div class="chapter-title-box">
+      <span class="badge-pdf">CLO3</span>
+      <h2>Chương 6: Hệ Thống Ngắt (Interrupts) & Lập Trình Ngắt</h2>
+      <div class="chapter-summary">5 nguồn ngắt chuẩn, bảng vector ngắt, cấu hình thanh ghi IE và IP, lập trình ngắt Timer, ngắt ngoài và ngắt UART.</div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">1. Bảng Vector Ngắt & Điều kiện xảy ra ngắt</div>
+      <div class="section-content">
+        <p>89C51 hỗ trợ 5 nguồn ngắt chuẩn (+ Reset hệ thống):<br/>- <strong>Reset</strong>: Địa chỉ vector 0000H (Ưu tiên tuyệt đối)<br/>- **Ngắt ngoài 0 (INT0)**: Địa chỉ vector 0003H<br/>- **Ngắt Timer 0 (TF0)**: Địa chỉ vector 000BH<br/>- **Ngắt ngoài 1 (INT1)**: Địa chỉ vector 0013H<br/>- **Ngắt Timer 1 (TF1)**: Địa chỉ vector 001BH<br/>- **Ngắt nối tiếp UART (TI/RI)**: Địa chỉ vector 0023H</p>
+        <p><strong>Mẹo nhớ vector</strong>: Mỗi vector cách nhau đúng 8 byte (03H -> 0BH -> 13H -> 1BH -> 23H).</p>
+        <p><strong>Điều kiện ngắt được thực thi</strong>:<br/>1. Bit cho phép ngắt toàn cục EA = 1 (trong thanh ghi IE).<br/>2. Bit cho phép ngắt tương ứng được bật lên 1 (EX0, ET0, EX1, ET1, ES = 1).<br/>3. Cờ yêu cầu ngắt tương ứng tích cực.<br/>4. Không có ngắt cùng cấp hoặc ưu tiên cao hơn đang được phục vụ.</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">2. Thanh ghi cho phép ngắt IE & Ưu tiên ngắt IP</div>
+      <div class="section-content">
+        <p><strong>Thanh ghi IE (A8H - Có định địa chỉ bit)</strong>:<br/>- IE.7 (EA): Cho phép toàn bộ ngắt (= 1 mở, = 0 đóng toàn bộ).<br/>- IE.4 (ES): Cho phép ngắt cổng nối tiếp UART.<br/>- IE.3 (ET1): Cho phép ngắt Timer 1.<br/>- IE.2 (EX1): Cho phép ngắt ngoài 1.<br/>- IE.1 (ET0): Cho phép ngắt Timer 0.<br/>- IE.0 (EX0): Cho phép ngắt ngoài 0.<br/>- Ví dụ: Cho phép ngắt Timer 0 và Timer 1 -> IE = 10001010b = 8AH.</p>
+        <p><strong>Thanh ghi IP (B8H - Có định địa chỉ bit)</strong>:<br/>- Đặt mức ưu tiên cho từng ngắt: Bit = 1 là mức ưu tiên cao (High), Bit = 0 là mức ưu tiên thấp (Low).<br/>- Ngắt ưu tiên cao có thể ngắt (chen ngang) chương trình phục vụ ngắt ưu tiên thấp.</p>
+        <p><strong>Lệnh RETI</strong>: Chương trình phục vụ ngắt (ISR) bắt buộc phải kết thúc bằng lệnh `RETI`. Lệnh này vừa phục hồi con trỏ lệnh PC từ ngăn xếp, vừa báo cho phần cứng xóa cờ trạng thái ngắt đang phục vụ.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter-block">
+    <div class="chapter-title-box">
+      <span class="badge-pdf">TẤT CẢ DẠNG BÀI</span>
+      <h2>Phụ Lục: Sổ Tay Bấm Máy Casio fx-580VNX & Mẹo Nhớ Siêu Tốc</h2>
+      <div class="chapter-summary">Tổng hợp các thao tác bấm máy tính Casio fx-580VNX / fx-570VN Plus và các quy tắc mẹo nhẩm nhanh cho kỳ thi trắc nghiệm.</div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">1. Mẹo bấm máy Casio Mode Base-N (Chuyển đổi Hex/Dec/Bin)</div>
+      <div class="section-content">
+        <p><strong>Vào chế độ hệ cơ số</strong>: Bấm `MENU 3` (fx-580VNX) hoặc `MODE 4` (fx-570VN Plus).</p>
+        <p><strong>Các phím chọn hệ</strong>:<br/>- `x²` : Hệ Thập phân (DEC)<br/>- `xⁿ` : Hệ Thập lục phân (HEX - các chữ cái A, B, C, D, E, F nằm trên các phím (-), °'", sin, cos, tan)<br/>- `log` : Hệ Bát phân (OCT)<br/>- `ln` : Hệ Nhị phân (BIN)</p>
+        <p><strong>Tính kết quả phép toán trừ/cộng Hex</strong>: Đang ở chế độ HEX, gõ trực tiếp `45 - AD - 1` (khi cờ CY=1) -> Máy hiện ngay kết quả `97H`.</p>
+        <p><strong>Đếm số bit 1 để xác định cờ Parity P</strong>:<br/>- Sau khi tính ra kết quả Hex, bấm phím `BIN` -> màn hình hiển thị toàn bộ chuỗi nhị phân -> đếm số chữ số 1: Nếu lẻ thì P = 1, nếu chẵn thì P = 0.</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">2. Mẹo tính nhanh giá trị nạp Timer TH/TL (Mode 1 & Mode 2)</div>
+      <div class="section-content">
+        <p><strong>Timer Mode 1 (16 bit)</strong>:<br/>- Bước 1: Tính số xung N = T_delay / T_cm (với thạch anh 12MHz thì N = T_delay in µs).<br/>- Bước 2: Bấm `65536 - N` trên Casio -> Bấm chuyển sang `HEX`.<br/>- Bước 3: Đọc 4 ký tự Hex: 2 ký tự đầu là TH, 2 ký tự sau là TL.<br/>- *Ví dụ*: Cần tạo trễ 1ms (1000 µs) với XTAL 12MHz -> 65536 - 1000 = 64536 -> đổi sang HEX là FC18H -> TH = FCH, TL = 18H.</p>
+        <p><strong>Timer Mode 2 (8 bit)</strong>:<br/>- Bấm `256 - N` -> đổi sang HEX -> đó chính là giá trị của TH.</p>
+
+      </div>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">3. Mẹo nhớ nhanh Tốc độ Baud & Mẹo loại trừ trắc nghiệm</div>
+      <div class="section-content">
+        <p><strong>Tốc độ Baud (với thạch anh 11.0592 MHz)</strong>: Nhớ công thức TH1 = -28800 / Baud:<br/>- 9600 -> -3 = FDH<br/>- 4800 -> -6 = FAH<br/>- 2400 -> -12 = F4H<br/>- 1200 -> -24 = E8H</p>
+        <p><strong>Mẹo loại trừ lệnh Hợp ngữ SAI</strong>:<br/>- Hai toán hạng không được cùng là ô nhớ (Ví dụ: `MOV 30H, 40H` là SAI; phải qua A).<br/>- Không có lệnh `MOV @R2, A` (chỉ dùng `@R0` và `@R1`).<br/>- Không có lệnh `INC DPTR` byte thấp đơn lẻ, chỉ có `INC DPTR` cả 16 bit.<br/>- Không có lệnh `MOV DPTR, A` (chỉ có `MOV DPTR, #data16`).</p>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
