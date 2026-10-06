@@ -37,7 +37,7 @@ def run_tests():
 
         total_count = page.inner_text("#stat-total-count")
         print(f"VLDC Total Questions: {total_count}")
-        assert int(total_count) >= 60
+        assert int(total_count) >= 140
 
         print("\n--- 3. Testing Practice Arena & Instant Answer Check ---")
         q_cards = page.locator(".question-card")
@@ -158,7 +158,7 @@ def run_tests():
 
         exam_qs = page.locator("#exam-questions-list .question-card")
         print(f"Exam questions count: {exam_qs.count()}")
-        assert exam_qs.count() == 30
+        assert exam_qs.count() == 40
 
         timer_text = page.inner_text("#exam-timer-display")
         print(f"Exam timer running: {timer_text}")

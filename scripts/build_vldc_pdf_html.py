@@ -233,9 +233,10 @@ def generate_pdf_htmls():
     q_cards_html = ""
     for idx, q in enumerate(questions):
         opts_html = ""
-        if q["type"] == "mcq":
+        if q.get("type") == "mcq" and q.get("options"):
+            ans_key = (q.get("answer") or q.get("correct_answer") or "A").strip()
             for opt in q["options"]:
-                is_correct = opt.startswith(q["correct_answer"] + ".")
+                is_correct = opt.startswith(ans_key + ".")
                 badge = " ✅ ĐÁP ÁN ĐÚNG" if is_correct else ""
                 hl_style = "background: #DCFCE7; font-weight: bold; border-left: 4px solid #16A34A;" if is_correct else ""
                 opts_html += f"""

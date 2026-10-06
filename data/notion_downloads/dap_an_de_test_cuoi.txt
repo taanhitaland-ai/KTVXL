@@ -1,0 +1,337 @@
+
+=== Page 1 ===
+ĐỀ TEST CUỐI 
+Câu 1: Để do bề dày của bản mỏng trong suốt, người ta đặt bản mỏng trước một trong hai 
+khe giao thoa Young. Ánh sáng chi ếu vào hệ thống có bước sóng  = 0,6 m. Chiết suất 
+của bản mỏng n = 1,5. Người ta quan sát thấy vân sáng chính giữa bị lệch về vị trí vân sáng 
+thứ 5 (ứng với lúc chưa có bản mỏng). Xác định bề dày của bản mỏng:  
+𝑥0 =  (𝑛 − 1)𝑒𝐷
+𝑙 = 𝑘𝑖 
+A. e = 6 μm B. e = 5 μm C. e = 8 μm D. e = 4 μm 
+Câu 2: Trong hiện tượng nhiễu xạ Fraunofe qua một khe hẹp: bề rộng b = 10mm, biết rằng 
+chùm tia sáng đ ập vào khe v ới góc t ới  = 300 và bước sóng ánh sáng 𝜆 = 0,5mm. Góc 
+nhiễu xạ ứng với các cực tiểu nhiễu xạ đầu tiên nằm ở hai bên cực đại giữa là: 
+sin 𝛼 − sin 𝜃 = ± 𝜆
+𝑏 
+A. 330  và 270  B. 330  và 350 C. 220  và 270 D. 330  và 380 
+Câu 3: Chiếu một chùm tia sáng tr ắng song song vuông góc v ới một cách t ừ nhiễu xạ. 
+Dưới một góc nhiễu xạ 350, người ta quan sát thấy hai vạch cực đại ứng với các bước sóng 
+0,63 μm và 0,42 μm trung nhau. Xác định chu kỳ của cách từ biết rằng bậc cực đại đối với 
+vạch thứ hai trong quang phổ của cách tử không lớn hơn 5: 
+sin 𝜑 = 𝑘𝜆
+𝑑  
+A. 2,2 μm B. 2,0 μm C. 2,5 μm D. 2,6 μm  
+Câu 4: Chiếu lần lượt các bức xạ có bước sóng λ 1 và λ2 vào catot của một tế bào quang 
+điện, sau đó dùng các hi ệu điện thế hãm có độ lớn U1 và U2 để triệt tiêu các dòng quang 
+điện. Coi như đã bi ết hằng số Plăng và v ận tốc ánh sáng. Đi ện tích electron có th ể được 
+tính từ biểu thức nào trong các biểu thức sau: 
+A. 𝑒 =
+ℎ𝑐( 1
+𝜆2
++ 1
+𝜆1 
+)
+𝑈2−𝑈1
+ B. 𝑒 =
+ℎ𝑐( 1
+𝜆1
+ − 1
+𝜆2 
+)
+𝑈2−𝑈1
+ C. 𝑒 =
+ℎ𝑐( 1
+𝜆1
+ − 1
+𝜆2 
+)
+𝑈2−𝑈1
+ D. 𝑒 =
+ℎ𝑐( 1
+𝜆2
+ − 1
+𝜆1 
+)
+𝑈2−𝑈1
+ 
+Câu 5: Số lượng tử n có thể nhận các giá trị nào sau đây: 
+A. n = 1,2,3,4,…,n – 1 B. n = 1,2,3,4,… 
+C. n = 0,1,2,3,4…  D. n = 0,±1, ±2, ±3, …  
+ 
+=== Page 2 ===
+Câu 6: Momen động lượng của electron khi ở trạng thái 2s có giá trị là: 
+𝐿 =  √𝑙(𝑙 + 1). ℏ 
+A. 0 B. √6ℎ C. √12ℎ D. √2ℎ  
+Câu 7: Phương trình Schrodinger đối với vi hạt chuyển động tự do: 
+A. ∆𝛹(𝑟⃗) +
+2𝑚
+ℏ 𝑊𝛹(𝑟⃗) = 0 B. ∆𝛹(𝑟⃗) +
+2𝑚
+ℏ [𝑊 − 𝑈(𝑟⃗)]𝛹(𝑟⃗) = 0 
+C. ∆𝛹(𝑟⃗) +
+2𝑚
+ℏ [𝑊 + 𝑈(𝑟⃗)]𝛹(𝑟⃗) = 0  D. ∆𝛹(𝑟⃗) −
+2𝑚
+ℏ 𝑊𝛹(𝑟⃗) = 0 
+Câu 8: Quy tắc lựa chọn đối với số lượng tử j là: 
+A. ∆𝑗 = 0, ±1 B. ∆𝑗 = ±1 C. ∆𝑗 = ±𝑛 D. ∆𝑗 = 0 
+Câu 9: Biết các bước sóng trong vùng ánh sáng nhìn thấy của quang phổ vạch Hidro vạch 
+đỏ  = 0,6563 m vạch lam  = 0,4861 m, vạch chàm  = 0,4340 m và v ạch tím 
+ = 0,4102 m. Tìm bước sóng của quang phổ khi electron chuyển từ quỹ đạo dừng N về 
+M? 
+1
+𝜆63
++ 1
+𝜆32
+= 1
+𝜆62
+ 
+A. 1,8744 m B. 1,8121 m C. 1,0939 m D. 1,2812 m 
+Câu 10: Một vi hạt tự do có năng lượng xác định, động lượng xác định tương ứng với một 
+sóng phẳng đơn sắc xác định. Phát biểu nào sau đây là sai: 
+A. Động lượng của vi hạt liên hệ với bước sóng của sóng tương ứng theo hệ thức: 𝑝 =
+ 
+ℎ
+𝜆  
+B. Động lượng của vi hạt liên hệ với vector sóng của sóng tương ứng theo hệ thức: 𝑝̅ =
+ℎ𝑘̅ 
+C. Năng lượng của vi hạt liên hệ với tần số dao động của sóng tương ứng theo hệ thức: 
+𝐸 = ℎ𝑣 
+D. Năng lượng của vi hạt liên hệ với tần số góc của sóng tương ứng theo hệ thức: 𝐸 =
+ ℏ𝜔 
+Câu 11: Số lượng tử n có tên gọi là: 
+A. Số lượng tử orbital B. Số lượng tử spin 
+C. Số lượng tử từ  D. Số lượng tử chính 
+=== Page 3 ===
+Câu 12: Trong một hiện tượng giao thoa gây b ởi khe Young, khi toàn b ộ hệ thống đặt 
+trong không khí, người ta đo được khoảng cách của hai vân sáng liên tiếp i = 1,5mm. Nếu 
+đặt toàn bộ hệ thống trong môi trư ờng có chiết suất n thì kho ảng cách giữa hai vân sáng 
+liên tiếp là i’ = 1,125mm. Giá trị n là: 
+𝜆 = 𝑛. 𝜆′ 
+A. 𝑛 =  2 B. 𝑛 =  
+5
+4 C. 𝑛 =  
+4
+3 D. 𝑛 =  
+3
+2 
+Câu 13: Một chùm tia sáng đơn sắc có bước sóng  = 0,5m được rọi vuông góc với một 
+nêm không khí, biết số vân giao thoa chứa trong 1cm là N = 10. Góc nghiêng của nêm: 
+𝑑 = (𝑁 − 1)𝑖 = (𝑁 − 1) 𝜆
+2𝛼 
+A.  = 2,5.10-4rad B.  = 1,5.10-4rad C.  = 2,25.10-4rad D.  = 1,15.10-4rad 
+Câu 14: Trong hiện tượng nhiễu xạ qua khe hẹp: Một chùm tia sáng đơn s ắc song song, 
+bước sóng  = 0,6m được rọi vuông góc với một khe chữ nhật hẹp có bề rộng b = 0,1mm. 
+Ngay sau khe có đặt một thấu kính, màn quan sát đặt cách thấu kính D = 1m. Bề rộng của 
+vân cực đại giữa là: 
+2𝜆
+𝑏  
+A. 1,3 cm B. 1,6 cm C. 1,2 cm D. 1,4 cm 
+Câu 15: Chọn câu phát biểu đúng: 
+A. Năng suất phát xạ đơn sắc phụ thuộc vào áp suất môi trường. 
+B. Năng suất phát xạ đơn sắc phụ thuộc vào tần số bức xạ và nhiệt độ vật phát xạ. 
+C. Năng suất phát xạ đơn sắc phụ thuộc vào tần số bức xạ. 
+D. Năng suất phát xạ đơn sắc phụ thuộc vào nhiệt độ vật phát xạ. 
+Câu 16: Theo thuyết phôtôn, phát biểu nào dưới đây là sai? 
+A. Bức xạ điện từ được cấu tạo bởi vô số các hạt gọi là lượng tử ánh sáng hay phôtôn. 
+B. Cường độ của chùm bức xạ tỷ lệ với tần số của chùm bức xạ đó. 
+C. Trong chân không các phôtôn truyền đi với cùng vận tốc c = 3.108 m/s. 
+D. Mỗi phôtôn có một năng lượng xác định. 
+=== Page 4 ===
+Câu 17: Một mạch dao động điện từ có điện dung C = 0.25 μF, hệ số tự cảm L = 0.1 H và 
+điện trở R = 0. Ban đ ầu hai b ản của tụ điện có đi ện tích Q 0 = 2.5.10 -6 C. Lấy p 2 = 10. 
+Phương trình dao động điện từ của mạch đối với điện tích q theo thời gian là: 
+A. 𝑞 = 2,5. 10−6sin (2000𝜋𝑡 −  
+𝜋
+2) B. 𝑞 = 2,5. 10−6cos (2000𝜋𝑡 +  𝜋) 
+C. 𝑞 = 2,5. 10−6sin (2000𝜋𝑡)  D. 𝑞 = 2,5. 10−6cos(2000𝜋𝑡) 
+Câu 18: Trong mạch dao động điện từ riêng, cường độ dòng điện dao động tuần hoàn theo 
+thời gian với chu kỳ T. Năng lượng từ trường của cuộn cảm trong một mạch dao động biến 
+thiên như thế nào theo thời gian? 
+A. Biến thiên tuần hoàn theo thời gian với chu kỳ T/2. 
+B. Biến thiên tuần hoàn theo thời gian với chu kỳ 2T. 
+C. Biến thiên tuần hoàn theo thời gian với chu kỳ T. 
+D. Biến thiên tuần hoàn theo thời gian với chu kỳ 3T/2. 
+Câu 19: Biết rằng số nguyên tử trong một mol là NA = 6,023.1023 nguyên tử. Tìm số nguyên 
+tử có trong 1g hạt nhân nguyên tử 92U235? 
+𝑁 = 𝑚
+𝑀 . 𝑁𝐴 
+A. 2,5630.1020 nguyên tử   B. 3,5630.1021 nguyên tử 
+C. 2,5630.1021 nguyên tử  D. 3,5630.1020 nguyên tử 
+Câu 20: Quy tắc lựa chọn đối với số lượng tử m là: 
+A. ∆𝑚 = 0 B. ∆𝑚 = 1,2,3 … C. ∆𝑚 = ±1 D. ∆𝑚 = 0, ±1 
+Câu 21: Hạt electron không vận tốc ban đầu được gia tốc qua một hiệu điện thế U. Biết 
+rằng sau khi gia t ốc, hạt electron chuyện động ứng với bước sóng Đơbrơi 3A 0. Hỏi hiệu 
+điện thế U nhận các giá trị nào sau đây: 
+𝜆 = ℎ
+√2. 𝑚. 𝑒. 𝑈
+ 
+A. 16,7 V B. 0,167V C. 1,67V D.167V 
+Câu 22: Trong thí nghiệm giao thoa lưỡng lăng được bố trí như hình vẽ, khoảng vân quan 
+sát trên màn E được tính theo công thức: 
+A. 𝑖 =  𝜆𝐷
+2𝑑(𝑛−1)𝐴  B.  𝑖 =  2𝑑(𝑛−1)𝐴
+𝜆𝐷  C. 𝑖 =  𝜆𝑑
+2𝐷(𝑛−1)𝐴 D. 𝑖 =  2𝐷(𝑛−1)𝐴
+𝜆𝑑  
+=== Page 5 ===
+Câu 23: Cho biết khối lượng của electron là 9,1.10-31kg. Bước sóng ĐơBrơi của electron 
+chuyển động với vận tốc 2.106 m/s và 108 m/s lần lượt nhận các giá trị sau đây? 
+𝑝 = ℎ
+𝜆 = 𝑚. 𝑣 
+A. 6,86.10-12m và 364.10-12m  B. 686.10-12m và 3,64.10-12m 
+C. 3,64.10-12m và 686.10-12m  D. 364.10-12m/s và 6,86.10-12m/s 
+Câu 24: Phôtôn có năng lượng 250keV bay đến va chạm với một electron đứng yên và tán 
+xạ theo góc 1200 (tán xạ Kômtôn). Năng lượng của phôtôn tán xạ là: 
+∆𝜆 = 𝜆′ − 𝜆 = 2𝜆𝑐(sin 𝜃
+2)
+2
+suy ra 𝜆′ 
+𝐸′ = ℎ𝑐
+𝜆′  
+ 
+A. 9,1 MeV          B. 14,5 MeV           C. 0,91 MeV        D. 0,145 MeV 
+Câu 25: Một mạch dao đ ộng cuộn cảm có L = 5.10 -5H, một tụ điện có đi ện dung C = 
+20F, hiệu điện thế cực đại trên 2 cốt tụ điện là Uo = 110V. Điện trở của mạch không đáng 
+kể. Xác định giá trị cực đại của từ thông khi số vòng của dây là  N = 20. 
+𝜙𝑚𝑎𝑥 =  𝐿
+𝑁 𝐼0 
+A. 2,5.10-5Wb B.3,5.10-5Wb C. 4,5.10-5Wb  D. 5,5.10-5Wb 
+Câu 26: Trong dao động điện từ tắt dần, biên độ của mạch giảm theo hàm luỹ thừa: 
+A. −𝛽𝑡 B.
+−𝛽𝑡
+2  C. −2𝛽𝑡 D. 𝛽𝑡 
+Câu 27: Trong thí nghiệm giao thoa khe Young thực hiện trong chân không, người ta đặt 
+sau khe S2 một bản mặt song song có chiết suất (n > 1). Khi đó vân sáng giữa sẽ: 
+A. Dịch chuyển về phía S2. 
+B. Dịch chuyển về phía S1. 
+C. Không đủ dữ kiện kết luận vì chưa biết bước sóng ánh sáng. 
+D. Không dịch chuyển. 
+=== Page 6 ===
+Câu 28: Chiếu một chùm ánh sáng có bư ớc sóng  = 0,489m lên một tấm kim loại kali 
+dùng làm catôt của một tế bào quang điện. Biết công thoát êlectron của kali là 2,15eV. Vận 
+tốc ban đầu cực đại của quang electron bắn ra từ catôt và hiệu điện thế hãm là: 
+ℎ 𝑐
+𝜆 = 𝐴𝑡ℎ + 1
+2 𝑚𝑣0
+2 
+1
+2 𝑚𝑣0
+2 = 𝑒𝑈𝑐 
+A. 37.105m/s và 3,9V B. 37.105m/s và 0,39V 
+C. 3,7.105m/s và 0,39V D. 3,7.105m/s và 3,9V 
+Câu 29: Trong một thí nghiệm giao thoa ánh sáng, ngư ời ta đo được khoảng cách từ vân 
+sáng thứ 4 đến vân sáng th ứ 10 ở cùng một phía đ ối với vân sáng trung tâm là 2,4mm. 
+Khoảng vân là: 
+A. i = 0,6 mm B. i = 4 mm C. i = 6 mm D. i = 0,4 mm 
+Câu 30: Theo thuyết lượng tử năng lượng, phát biểu nào dưới đây là sai? 
+A. Các nguyên tử, phân tử phát xạ hay hấp thụ năng lượng bức xạ điện từ một cách 
+gián đoạn. 
+B. Theo công thức Plăng, 𝑓(𝑣, 𝑇) = ∞ khi 𝑣 → ∞. 
+C. Phần năng lượng phát xạ hay hấp thụ luôn là bội số nguyên của một lượng năng 
+lượng nhỏ xác định gọi là lượng tử năng lượng. 
+D. Đối với mỗi bức xạ điện từ đơn sắc nhất định, lượng tử năng lượng có giá trị xác 
+định. 
+Câu 31: Thấu kính trong hệ thống vân tròn Newton có bán kính cong R = 18m. Chùm sáng 
+đơn sắc tới vuông góc v ới hệ thống, quan sát các vân giao thoa c ủa chùm tia phản chiếu. 
+Biết rằng khoảng cách giữa vân tối thứ 4 và vân tối thứ 25 bằng 9mm. Bước sóng của ánh 
+sáng tới là: 
+𝑟 = √𝑘𝜆𝑅 
+A. 0,6 m B. 0,55 m C. 0,4 m D. 0,5 m 
+Câu 32: Một nguồn sáng điểm chiếu ánh sáng đơn s ắc bước sóng  = 0,5m vào một lỗ 
+tròn bán kính r = 1,00mm. Khoảng cách từ nguồn sáng tới lỗ tròn R = 1m. Khoảng cách từ 
+lỗ tròn tới điểm quan sát để lỗ tròn chứa ba đới Fresnel là: 
+𝑟 = √𝑘𝜆𝑅𝑏
+𝑅 + 𝑏 
+ b = 2 m B. b = 1 m C. b = 3 m D. b = 4 m 
+=== Page 7 ===
+Câu 33: Một hạt chuyển động theo một phương x trong một miền mà thế năng U được xác 
+định theo đi ều kiện 𝑈 =  { 0  𝑘ℎ𝑖 0 < 𝑥 < 𝑎
+ ∞ 𝑘ℎ𝑖 𝑥 ≤ 0, 𝑥 ≥ 𝑎. Vị trí mà xác su ất tìm th ấy hạt có năng 
+lượng 𝐸 =  
+𝜋2ℎ2
+2𝑚𝑎2 lớn nhất là: 
+𝐸 = 𝜋2ℎ2
+2𝑚𝑎2 𝑛2 = 𝜋2ℎ2
+2𝑚𝑎2 
+Suy ra 𝑛 = ±1 
+sin 𝑛𝜋
+𝑎 𝑥 = ±1 
+A. 𝑥 =  
+𝑎
+2  B. 𝑥 = 𝑎 
+C. 𝑥 = 0  D. 𝑥 =  
+𝑎
+4  ℎ𝑜ặ𝑐 𝑥 =
+3𝑎
+4  
+Câu 34: Trong một thí nghi ệm Young v ề giao thoa ánh sáng, hai khe Young cách nhau 
+2mm, hình ảnh giao thoa được hứng trên màn ảnh cách hai khe 1m. Sử dụng ánh sáng đơn 
+sắc có bước sóng , khoảng vân đo được là 0,2 mm. Vị trí vân sáng thứ ba cách vân sáng 
+trung tâm là: 
+𝑥𝑠 = 𝑘𝑖 
+A. 0,55 mm B. 0,60 mm C. 0,40 mm D. 0,5 mm 
+Câu 35: Khi kể đến spin, mức năng lượng 2P bị tách thành 22P1/2 và 22P3/2, mức năng lượng 
+3P bị tách thành 3 2P1/2 và 32P3/2. Số vạch tối đa có th ể tạo thành khi electron chuy ển mức 
+năng lượng từ 3P về 2P là: 
+A. 4 B. 3 C. 0 D. 1 
+Câu 36: Trong hiện tượng Kômtôn, bước sóng ban đầu của phôtôn là 0,03 A 0 và vận tốc 
+của electron bắn ra là v = 0,6c. Độ tăng bước sóng và góc tán xạ là: 
+ℎ𝑣 + 𝑚𝑒𝑐2 = ℎ𝑣′ + 𝑚𝑒𝑐2
+√1 − 𝑣2
+𝑐2
+ 
+∆𝜆 = 𝜆′ − 𝜆 = 2𝜆𝑐 (sin 𝜃
+2)
+2
+ 
+A. 0,034 A0 và 63053’ B. 0,034 A0 và 36040’ 
+C. 0,0134 A0 và 36040’ D. 0,0134 A0 và 63053’ 
+ 
+ 
+=== Page 8 ===
+Câu 37: Chọn câu phát biểu đúng: 
+A. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái cơ bản. 
+B. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái có năng lượng cao 
+hơn trạng thái cơ bản. 
+C. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái có năng lượng thấp 
+hơn trạng thái cơ bản. 
+D. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái kích thích. 
+Câu 38: Trong dao đ ộng điện từ tắt dần mạch RLC n ối tiếp, biểu thức tính chu k ỳ dao 
+động của mạch được xác định bởi: 
+A. 𝑇 =  
+2𝜋
+√𝐿𝐶− 𝑅
+2𝐿
+ B. 𝑇 =  
+2𝜋
+√ 1
+𝐿𝐶− 𝑅
+2𝐿
+ C. 𝑇 =  
+2𝜋
+√ 1
+𝐿𝐶− 2𝑅
+𝐿
+ D. 𝑇 =  
+2𝜋
+√ 1
+𝐿𝐶− ( 𝑅
+2𝐿)2
+ 
+ 
+Câu 39: Electron đang ở trạng thái 2s ứng với các số lượng tử n và l là bao nhiêu? 
+A. n = 2; l = 0 B. n = 1; l = 0 C. n = 1; l = 1 D. n = 2; l = 1 
+Câu 40: Để đo bề dày của một bản mỏng trong suốt, người ta đặt bản mỏng này trước một 
+trong hai khe c ủa máy giao thoa Young. Ánh sáng chi ếu vào h ệ thống có bư ớc sóng 
+ = 0,54 m. Chiết suất của bản mỏng n. Ngư ời ta quan sát th ấy vân sáng gi ữa bị dịch 
+chuyển về vị trí của vân sáng thứ 5 (ứng với lúc chưa đặt bản). Cho bề dày của bản mỏng 
+là e = 5,4 m. Chiết suất của bản mỏng là: 
+𝑥 =
+(𝑛 − 1)𝑒𝐷
+𝑎 = 𝑘𝑖 
+A. 𝑛 =  
+5
+4 B. 𝑛 =  
+4
+3 C. 𝑛 =  1,0 D. 𝑛 =  1,5 

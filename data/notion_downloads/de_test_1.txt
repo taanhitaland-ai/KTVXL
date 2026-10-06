@@ -1,0 +1,72 @@
+
+=== Page 1 ===
+ĐỀ TEST 1 
+Câu 1:  
+Câu 2: 
+Câu 3: Cho cách tử có chu kỳ 𝑑 = 2 𝜇𝑚. Bước sóng cực đại có thể quan sát được trong 
+quang phổ của cách tử đó. 
+A. max = 6 𝜇𝑚 
+B. max = 2 𝜇𝑚 
+C. max = 1 𝜇𝑚 
+D. max = 4 𝜇𝑚 
+Câu 4: Điều kiện để hai sóng ánh sáng giao thoa với nhau là: 
+A. Không cùng tần số và hiệu pha không phụ thuộc vào thời gian. 
+B. Cùng tần số và hiệu pha là hàm cos theo thời gian. 
+C. Không cùng tần số và hiệu pha là hàm sin theo thời gian. 
+D. Cùng tần số và hiệu pha không đổi theo thời gian. 
+Câu 5: Ánh sáng là sóng: 
+A. Sóng đàn hồi. 
+B. Sóng ngang. 
+C. Không phải sóng điện từ. 
+D. Sóng dọc. 
+Câu 6: Chọn phát biểu đúng: 
+A. Khi ánh sáng truyền từ môi trường này sang môi trường khác, tần số ánh sáng 
+không thay đổi. 
+B. Trong phương pháp đới cầu Fresnel, các đới cầu phát ra dao động sóng ngược pha 
+nhau. 
+C. Điều kiện có giao thoa ánh sáng là hai sóng gặp nhau phải cùng chu kỳ và cùng 
+phương dao động. 
+D. Hiện tượng các tia sáng lệch khỏi phương truyền thẳng khi gần các chướng ngại 
+vật nhỏ là hiện tượng tán xạ ánh sáng. 
+Câu 7: Cho ánh sáng đơn sắc truyền qua dải phân cách giữa hai môi trường có chiết suất 
+khác nhau. Phát biểu nào sau đây là đúng? 
+A. Chu kỳ ánh sáng không thay đổi. 
+B. Bước sóng ánh sáng không thay đổi. 
+C. Tần số ánh sáng thay đổi. 
+=== Page 2 ===
+D. Vận tốc ánh sáng không thay đổi. 
+Câu 8: Chiếu một chùm sáng đơn sắc có bước sóng  theo phương vuông góc với mặt 
+dưới của nêm không khí. Nêm có góc nghiêng  rất nhỏ, cạnh nêm là vân tối thứ không. 
+Vị trí của vân tối thứ 10 cách cạnh nêm một khoảng: 
+A. 𝑥 =  
+5𝛼
+λ  
+B. 𝑥 =  
+10𝛼
+λ  
+C. 𝑥 =  
+5λ
+𝛼  
+D. 𝑥 =  
+10λ
+α  
+Câu 9: Trong giao thoa hai khe Yâng, khoảng vân i được xác định bằng: 
+A. 𝑖 =  
+λ
+𝐷𝑙 
+B. 𝑖 =  
+λ𝑙
+𝐷 
+C. 𝑖 =  
+𝐷𝑙
+λ  
+D. 𝑖 =  
+λ𝐷
+𝑙  
+Câu 10: Xét một hệ thống cho vân tròn Newton (đặt trong không khí), ánh sáng đơn sắc 
+có bước sóng  = 0,56 𝜇𝑚 chiếu vuông góc với bản thuỷ tinh. Bề dày của lớp không khí 
+ứng với vân sáng đầu tiên là: 
+A. 0,28 𝜇𝑚 
+B. 0,14 𝑚𝑚 
+C. 0,28 𝑚𝑚 
+D. 0,14 𝜇𝑚 

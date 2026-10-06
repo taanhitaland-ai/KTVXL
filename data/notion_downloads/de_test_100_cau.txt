@@ -1,0 +1,744 @@
+﻿Câu 11: Một sóng điện từ có tần số f = 100 MHz truyền đi với vận tốc 3.108 m/s có bước sóng λ bằng: 
+A. λ = 300m                    B. λ = 3m                   C. λ = 0.3m                   D. λ = 30
+
+
+
+
+
+
+Câu 15: Chiếu vuống góc một chùm ánh sáng đơn sắc tới lần lượt một nêm thủy tinh và một nêm không khí. Nhận  định nào sau đây là đúng:
+A. Cạnh của nêm thủy tinh là vân tối, cạnh của nêm không khí là vân sáng.
+B. Cạnh của cả hai nêm đề là vân sáng.
+C. Cạnh của nêm thủy tinh là vân sáng, cạnh của nêm không khí là vân tối.
+D. Cạnh của cả hai nêm đều là vân tối.
+Câu 16: Cho ánh sáng đơn sắc truyền qua dải phân cách giữa 2 môi trường có chiết suất khác nhau. Phát biểu nào sau đây là đúng: 
+A. Chu kỳ ánh sáng không đổi.
+B. Bước sóng ánh sáng không thay đổi.
+C. Tần số ánh sáng thay đổi.
+D. Vận tốc ánh sáng không thay đổi.
+Câu 17: Cho cách tử có chu kỳ . Bước sóng cực đại có thể quan sát được trong quang phổ của cách tử đó là:        λmax =  d
+A. 
+B. 
+C. 
+D.
+Câu 18: Khi tia sáng đi từ môi trường thứ nhất sang môi phương trường thứi hai dưới góc tới i=300. Tia khúc xạ đi là là trên mặt phân cách giữa hai môi trường. khi đó vận tốc ánh sáng:
+n1sin I = n2sin r   và n = c/v
+A. Giảm đi 2 lần.
+B. Không thay đổi.
+C. Giảm đi  lần.
+D. Tăng lên 2 lần.
+Câu 19: Điều kiện để hai sóng ánh sáng giao thoa với nhau là:
+A. Không cùng tần số và hiệu pha không phụ thuộc vào thời gian.
+B. Cùng tần số và hiệu pha là hàm cos theo thời gian.
+C. Không cùng tần số và hiệu pha là hàm sin theo thời gian.
+D. Cùng tần số và hiệu pha không đổi theo thời gian.
+Câu 20: Ánh sáng là sóng:
+A. Sóng đàn hồi.
+B. Sóng ngang.
+C. không phải sóng điện từ.
+D. Sóng dọc.
+
+
+Câu 21: Chọn phát biểu đúng:
+A. Khi ánh sáng truyền từ môi trường này sang môi trường khác, tần số ánh sáng không thay đổi.
+B. trong phương phap đới cầu Frenen, các đới cầu phát ra dao động sóng ngược pha nhau.
+C. Điều kiện có giao thoa ánh sáng là hai sóng gặp nhau phải cùng chu kỳ và cùng phương dao động.
+D. Hiện tượng các tia sáng lệch khỏi phương truyền thẳng khi gần các chướng ngại vật nhỏ là hiện tượng tán xạ ánh sáng.
+Câu 22:Chiếu một chùm sáng đơn sắc có bước sóng λ theo phương vuông góc với mặt dưới của nêm không khí. Nêm có góc nghiêng  rất nhỏ, cạnh nêm là vân tối thứ không. Vị trí của vân tối thứ 10 cách cạnh nêm một khoảng:   Xtk = k.λ/ 
+A.                  B.                     C.                       D. 
+Câu 23: trong giao thao hai khe Yâng, khoảng vân i được xác định bằng:
+A.                  B.                          C.                   D. 
+Câu 24: Xét một hệ thống cho vân tròn newton (đặt trong không khí), ánh sáng đơn sắc có bước sóng λ = 0.56 μm chiếu vuông góc với bản thủy tinh. Bề dày của lớp không khí ứng với vân sáng đầu tiên là: 
+Vân sáng T1 -> k=1; ds = (2k-1) λ/4
+A. 0,28 μm             B. 0,14 mm               C. 0,28 mm             D. 0,14 μm
+Câu 25: Chiếu một chùm ánh sáng có bước song λ = 0.489 μm lên một tấm kim loại kali dùng làm catot của một tế bào quang điện. biết công thoát electron của kali là 2.15eV. Vận tốc ban đầu cực đại của quang electron bắn ra từ catot và hiệu điện thế hãm là:
+
+Uh là hiệu điện thế hãm
+
+
+
+A. 37.105 m/s và 3,9 V
+B. 37.105 m/s và 0,39 V
+C. 3,7.105 m/s và 0,39 V
+D. 3,7.105 m/s và 3,9V
+Câu 26: Chọn câu phát biểu đúng:
+A. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái cơ bản.
+B. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái có năng lượng cao hơn trạng thái cơ bản.
+C. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái có năng lượng thấp hơn trạng thái cơ bản.
+D. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái kích thích.
+Câu 27: Theo thuyết lượng tử năng lượng, phát biểu nào dưới đây là sai?
+A. Các nguyên tử, phân tử phát xạ hay hấp thụ năng lượng bức xạ điện từ một cách gián đoạn.
+B. Theo công thức Plăng, 
+C. Phần năng lượng phát xạ hay hấp thụ luôn là bội số nguyên của một lượng năng lượng nhỏ xác định gọi là lượng tử năng lượng.
+D. Đối với mỗi bức xạ điện từ đơn sắc nhất định, lượng tử năng lượng có giá trị xác định.
+Câu 28: Chọn câu đúng:
+A. Hệ số hấp thụ đơn sắc của vật lý tỷ lệ với tỷ số của năng thông hấp thụ và năng thông gửi tới vật.
+B. Hệ số hấp thụ đơn sắc có thể lớn hơn 1.
+C. Hệ số hấp thụ đơn sắc có giá trị lớn nhất bằng 2.
+D. khi bức xạ gửi tới vật đen tuyệt đối thì bị hấp thụ một phần.
+Câu 29: Theo thuyết photôn phát biểu nào dưới đây là sai:
+A. Bức xạ điện từ được cấu tạo bởi vô số các hạt gọi là lượng tử ánh sáng hay photôn.
+B. Cường độ của chùm bức xạ tỉ lệ với tần số của chùm bức xạ đó.
+C. Trong chân không, các photôn truyền đi với cùng vận tốc c = 3.108 m/s.
+D. Mỗi photôn có một năng lượng xác định.
+Câu 30: Chọn câu phát biểu đúng:
+A. Năng suất phát xạ đơn sắc phụ thuộc vào áp suất môi trường.
+B. Năng suất phát xạ đơn sắc phụ thuộc vào tần số bức xạ và nhiệt độ vật phát xạ.
+C. Năng suất phát xạ đơn sắc phụ thuộc vào tần số bức xạ.
+D. Năng suất phát xạ đơn sắc phụ thuộc vào nhiệt độ vật phát xạ.
+Câu 31: chọn câu đúng nhất:
+A. Vật đen tuyệt đối có khả năng phát xạ mạnh nhất và hấp thụ mạnh nhất.
+B. Vật đen tuyệt đối có khả năng phát xạ mạnh nhất.
+C. Vật đen tuyệt đối có khả năng phát xạ yếu nhất.
+D. Vật đen tuyệt đối có khả năng hấp thụ.
+Câu 32: Chọn câu đúng nhất:
+A. Tỷ số giữa năng suất phát xạ đơn sắc và hệ số hấp thụ đơn sắc phụ thuộc vào nhiệt độ của vật và tần số bức xạ.
+B. Tỷ số giữa năng suất phát xạ đơn sắc và hệ số hấp thụ đơn sắc phụ thuộc vào tần số của bức xạ.
+C. Tỷ số giữa năng suất phát xạ đơn sắc và hệ số hấp thụ đơn sắc phụ thuộc vào nhiệt độ của vật.
+D. Tỷ số giữa năng suất phát xạ đơn sắc và hệ số hấp thụ đơn sắc phụ thuộc vào bản chất vật.
+Câu 33: Chiếu lần lượt các bức xạ có bước sóng λ1 và λ2 vào catot của một tế bào quang điện, sau đó dùng các hiệu điện thế hãm có độ lớn U1 và U2 để triệt tiêu các dòng quang điện. Coi như đã biết hằng số Plăng và vận tốc ánh sáng. Điện tích electron có thể được tính từ biểu thức nào trong các biểu thức sau:
+A. 
+B. 
+C. 
+D. 
+Câu 34: Phôtôn có năng lượng 250keV bay đến va chạm với một electron đứng yên và tán xạ theo góc 1200 (tán xạ Kômtôn). Năng lượng của phôtôn tán xạ là:
+A. 9,1 MeV          B. 14,5 MeV            C. 0,91 MeV         D. 0,145 MeV
+E=250keV = hc/λ. => λ = 4,96.10-12
+
+
+=>  λ’  = λ + 2λcsin2 θ/2 = 8,599.10-12
+
+
+E =  hc/λ’ = 0.145 MeV
+
+
+Câu 35: Trong hiện tượng nhiễu xạ của sóng phẳng đơn sắc bước sóng λ qua một khe hẹp bề rộng b, k = +1, +2, ….., điều kiện cực tiểu nhiễu xa là:
+A. sin ϕ = 
+B. sin ϕ = k  
+C. sin ϕ = 2k  
+D. sin ϕ = 
+Câu 36: Chiếu một chùm tia sáng đơn sắc song song vuông góc với một khe hẹp. Bước sóng ánh sáng bằng  bề rộng của khe hẹp. Giữa hai cực tiểu nhiễu xạ thứ ba được quan sát dưới góc lệch bằng:
+A. 300
+B. 600
+C. 450
+D. 900
+Câu 37: Hiện tượng nhiễu xạ ánh sáng là:
+A. Là hiện tượng khi hai chùm sáng thích hợp gặp nhau thì trong miền gặp nhau của chúng xuất hiện những vùng sáng và tối xen kẽ.
+B. Là hiện tượng tia sáng luôn đi theo phương truyền thẳng.
+C. Là hiện tượng gặp nhau của hai hay nhiều sóng ánh sáng kết hợp.
+D. Là hiện tượng tia sáng bị lệch khỏi phương truyền thẳng khi đi gần các chướng ngại vật có kích thước nhỏ.
+Câu 38: Trong hình nhiễu xạ qua 5 khe hẹp có chu kỳ cách tử d=5b (b là bề rộng của mỗi khe), số cực đại chính giữa hai cực tiểu chính (liên tiếp, ở cùng một phía) và số cực đại phụ giữa hai cực đại chính là:
+A. 4 và 4                    B. 5 và 3                   C. 5 và 4                   D. 4 và 3
+Câu 39: Cường độ sáng tại một điểm tỉ lệ:
+A. Thuận với biên độ dao động sáng.        
+B. Thuận với bình phương của biên độ dao động sáng tại điểm đó.
+C. Nghịch với bình phương của biên độ dao động sáng.
+D. Nghịch với biên độ dao động sáng.
+Câu 40: Nhiệt độ của một vật đen tuyệt đối tăng từ 2000K đến 4000K. Năng suất phát xạ toàn phần của nó thay đổi như thế nào:
+(4000/2000)4 = 16
+A. Giảm 4 lần         B. Giảm 8 lần              C. Tăng 2 lần        D. Tăng 16 lần
+Câu 41: Giới hạn quang điện của kim loại dùng làm catot của tế bào quang điện là 0.5 μm. Cho h=6,625.10-34 Js, c = 3.108 m/s, 1e = 1,6.10-19. Khi chiếu ánh áng đơn sắc bước sóng λ = 0,36 μm vào catot của tế bào quang điện đó thì hiệu điện thế hãm để không có một electron nào đến được anot sẽ là:
+λo = 0,5 μm = hc/Athoát        => Athoát = 3,975.10-19
+
+=> Uh = 0.97 V
+
+A. 2,14 V                    B. 0,97 V                    C. 1,25 V                     D. 3,1 V
+Câu 42: Nguồn sáng đơn sắc, bước sóng 600 nm, chiếu sáng mặt phẳng chứa hai khe hẹp, song song và cách nhau 1mm và cách đều nguồn sáng. Màn quan sát cách mặt phẳng chứa hai khe 1m. Khoảng vân trên màn là:
+A. 0,45 mm               B. 0,5 mm                   C. 0,6 mm                      D. 0,9 mm
+Câu 43: R la bán kính mặt cầu S bao quanh nguồn sáng, λ là bước sóng của ánh sáng đơn sắc, b là khoảng cách từ điểm quan sát tới mặt cầu S, k = 1, 2 ,3, …… Công thức tính bán kính đới cầu Fresnel thứ k là:
+A. 
+B. 
+C. 
+D. 
+Câu 44: Hệ thông khe Young đươc đặt trong không khí,  là khoảng cách giữa hai khe, D là khoảng cách tính từ mặt phẳng khe đến màn, λ là bước sóng ánh sáng đơn sắc, k là số nguyên. Vị trí các vân tối được tính theo công thức:
+A.                                              B. 
+C.                                           D. 
+Câu 45: Xác định bước sóng của bức xạ Ronghen. Biết rằng trong hiện tượng Compton cho bởi bức xạ đó, động năng cực đại của electron bắn ra là 0,19 MeV.
+    và λc = 2,426.10-12             Wđe = 0.19 MeV
+A. λ = 2,8 pm
+B. λ = 2,6 pm
+C. λ = 3,7 pm
+D. λ = 3,9 pm
+Câu 46: Các đới cầu Fresnel có tính chất:
+A. Diện tích gần bằng nhau.
+B. Có biên độ dao động không đổi theo thời gian.
+C. Có bán kính giảm dần theo căn bặc hai của các số nguyên k.
+D. Có bán kính tăng dần theo căn bặc hai của các số nguyên k.
+Câu 47: Hệ thống khe Young được đặt trong không khí,  là khoảng cách giữa hai khe, D là khoảng cách từ mặt phẳng khe đến màn, λ là bước sóng ánh sáng đơn sắc, k là số nguyên. Vị trí các vân sáng được tính theo công thức:
+A. ys = 
+B. 
+C. 
+D. 
+
+
+Câu 48: Trong bức tranh giao thoa vân sáng là: 
+ A. Tập hợp các điểm có hiệu quang lộ đến hai nguồn bằng một số lẻ lần nửa bước sóng.
+B. Tập hợp các điểm có hiệu khoảng cách đến hai nguồn bằng một số nguyên lần bước sóng.
+C. . Tập hợp các điểm có hiệu quang lộ đến hai nguồn bằng một số nguyên lần bước sóng.
+D. Tập hợp các điểm có hiệu khoảng cách đến hai nguồn bằng một số lẻ lần nửa bước sóng.
+Câu 49: Để đo bề dày của bản mỏng trong suốt, người ta đặt bản mỏng trước một trong hai khe giao thoa i-âng. Ánh sáng chiếu vào hệ thống có bước sóng λ = 0,6 μm. Chiết suất của bản mỏng n = 1,5, Người ta quan sát thấy vân sáng chính giữa bị lệch về vị trí vân sáng thứ 5 (ứng với lúc chưa có bản mỏng). Xác định bề dày của bản mỏng: 
+xo = xs5 = 5i =   
+A. e = 6 μm
+B. e = 5 μm
+C. e = 8 μm
+D. e = 7 μm
+Câu 50: Thuyết lượng tử ánh sáng giải thích tốt nhất hiện tượng nào:
+A. Hiện tượng bức xạ nhiệt.
+B. Hiện tượng giao thoa ánh sáng.
+C. Hiện tượng quang điện.
+D. Hiệu ứng compton.
+Câu 51: Tính động lượng của electron khi có phôtôn có bước sóng ban đầu là 5pm và va chạm vào và tán xạ theo góc 900:
+A. 1,8.10-24kgm/s
+B. 1,6. 10-24kgm/s
+C. 1,8.10-22kgm/s
+D. B. 1,6. 10-22kgm/s
+Câu 52: Trong thí nghiệm giao thoa khe Young thực hiện trong chân không, người ta đặt trước khe S2 một bản mỏng song song có chiết suất là n>1. Khi đó vân sáng trung tâm sẽ:
+A. Dịch chuyển về phía S1.
+B. Không biết vì chưa biết bước sóng ánh sáng.
+C. Dịch chuyển về phía S2.
+D. Không dịch chuyển trên màn.
+Câu 53: Chiếu một chùm tia sáng trắng song song vuông góc với một cách từ nhiễu xạ. Dưới một góc nhiễu xạ 350, người ta quan sát thấy hai vạch cực đại ứng với các bước sóng 0,63 μm và 0,42 μm trung nhau. Xác định chu kỳ của cách từ biết rằng bậc cực đại đối với vạch thứ hai trong quang phổ của cách từ không lớn hơn 5:
+A. 2,4 μm
+B. 2,2 μm
+C. 3,2 μm
+D. 3,4 μm
+Câu 54: Tìm góc nhiễu xạ ứng với các cực tiểu nhiễu xạ đầu tiên nằm ở hai bên cực đại giữa trong nhiễu xạ qua Fraunhofer qua một khe hẹp bề rộng a = 10mm. Biết rằng chùm tia sáng đập vào khe hẹp với góc tới 300 và bước sóng ánh sáng 0,5 μm
+A. θ=300
+B. θ = 570
+C. 
+D. 
+Câu 55: Khảo sát nhiễu xạ của sóng cầu, với màn chắn có một lỗ tròn chứa đúng một đới đầu tiên thì cường độ sáng trên điểm M (giao điểm của trục lỗ tròn và màn ảnh) khi so với lúc không có màn chắn là:
+A. Lớn hơn 4 lần.
+B. Nhỏ hơn hai lần.
+C. Bằng nhau.
+D. Nhỏ hơn bốn lần.
+Câu 56: Giữa nguồn sáng O và điểm M, ta đặt một màn chắn có khoét một lỗ trong nhỏ chứa 6 đới cầu Fesnel. Nếu ba đới cầu đầu tiên bị che khuất hoàn toàn bởi một đĩa trong chắn sáng thì cường độ tại M là:
+A. 
+B. 
+C. 
+D. 
+Câu 57: Giữa nguồn sáng O và điểm M, ta đặt một màn chắn có khoét một lỗ trong nhỏ chứa 8 đới cầu Fesnel. Nếu ba đới cầu đầu tiên bị che khuất hoàn toàn bởi một đĩa trong chắn sáng thì cường độ tại M là:
+Đáp án: 
+Câu 57: k = 0; +1; +2; ….. điều kiện cực đại giao thoa là:
+A. 
+B. 
+C. 
+D. 
+
+
+Câu 60: Giới hạn quang điện của kim loại đùng làm ca tôt của tế bào quang điện λ0 = 0,6 μm. Cho h = 6,625.10-34Js, c = 3.108 m/s. Công thoát của electron khỏi tấm kim loại đó là: Athoát = hc/λ
+A. 33,125.10-19J
+B.39,75.10-19J
+C. 33,125.10-20J
+D. 39,75.10-20J
+Câu 61: cho một cách từ nhiễu xạ có hằng số bằng 2 μm. Sau cách từ đặt một thấu kính hội tụ, trên mặt phẳng tiêu của thấu kính người ta đặt một màn quan sát. Khoảng cách giữa hai vạch cực đại của kali (ứng với bước sóng 0,4404 μm và 0,4047 μm) trong quang phổ bậc nhất trên màn quan sát bằng 0,1mm. Hãy tìm tiêu cự của thấu kính:
+A. f = 0.65m      B. f = 0.56m         C. f = 0.45m             D. f = 0.75m
+Câu 62: Theo giả thuyết Plank, câu nào phát biểu đúng:
+A. Phân tử và nguyên tử của các chất hấp thụ năng lượng của bức xạ điện từ gián đoạn, còn bức xạ năng lượng liên tục.
+B. Phân tử và nguyên tử của các chất hấp thụ và bức xạ năng lượng của bức xạ điện từ một cách liên tục.
+C. Phân tử và nguyên tử của các chất bức xạ năng lượng của bức xạ điện từ gián đoạn và hấp thụ năng lượng liên tục.
+D. Phân tử và nguyên tử của các chất hấp thụ và bức xạ năng lượng của bức xạ điện từ một cách gián đoạn.
+Câu 64: Biểu thức định luật Stefan-Boltzmann:
+A. R(T) = σT3               B. R(T) = σ3 T                 C. σ =                  D. σ = 
+Câu 65: Khoảng cách giữa hai khe Young là , được chiếu bằng ánh sáng có bước sóng  λ = 0,5 μm. Màn quan sát ở cách mặt phẳng chứa hai khe một đoạn D = 3m. Hệ thống được đặt trong không khí. Vị trí của vân tối thứ ba là:
+A. 3,75 mm                    B. 7,5mm                 C. 4,5mm                D. 5,25mm
+Câu 67: Chiếu một chùm tia sáng đơn sắc vuông góc với bản cho vân tròn Newton và quan sát ánh sáng phản xạ. bán kính của hai vân tối liên tiếp lần lượt bằng 4,0mm và 4,38mm, bán kính cong của thấu kính bằng 6,4 mm. tìm số thứ tự của các vân tối trên:
+A. 3                     B. 2                   C. 5                        D. 4
+
+
+Câu 69: Khi tạo giao thoa trên mặt nêm bởi một chùm ánh sáng đơn sắc, chiếu vuông góc với mặt nêm, ta thấy hệ vân quan sát có hình dạng gì?
+A. Là những đường thẳng song song với cạnh nêm vì hệ vân phụ thuộc vào độ dày của nêm.
+B. Là những vân hình cos do nêm làm bằng thủy tinh.
+C. Là những vân hình sin do ánh sáng có tính chất sóng.
+D. Là những đường tròn đồng tâm vì hệ vân phụ thuộc vào vị trí trên mặt nêm.
+Câu 70: Cho h = 6,625.10-34Js, c = 3.108 m/s. Động lượng của phôtôn có tần số v = 6.1014 Hz là:
+A. 11.10-27 kg.m/s
+B. 13,25.10-28 kg.m/s
+C. 11.10-28 kg.m/s
+ D. 13,25.10-27 kg.m/s
+Câu 71: Trong hình ảnh nhiễu xạ qua 1 khe hẹp (bề rộng b), vị trí điểm quan sát trên màn ứng với góc nhiễu xạ ϕ với  là vị trí của:
+A. Vân tối bậc 1.
+B. Vân sáng bậc 2.
+C. Một điểm trong cực đại giữa.
+D. Vân sáng bậc 1.
+Câu  72: Nguyên tắc tạo ra hai sóng ánh sáng kết hợp là:
+A. Tạo ra hai sóng có cùng tần số.
+B. Tạo ra hai sóng dao động cùng phương.
+C. Từ một nguồn duy nhất tách làm hai sóng riêng biệt.
+D. Tạo ra hai sóng có cùng bước song.
+Câu 73: Trong hai khe Yâng,  là khoảng cách giữa hai khe, D là khoảng cách từ mặt phẳng khe đến màn. Độ dịch chuyển của hệ vân giao thoa khi trước một trong hai khe Yâng  được đặt một bản mỏng, song song trong suốt chiều dày e,  chiết suất n:
+A. 
+B. 
+C. 
+D. 
+Câu 74: Màu sắc của ánh sáng là do thông số nào quyết định:
+A. Tần số ánh sáng.
+B. Cường độ ánh sáng.
+C. Biên độ sóng ánh sáng.
+D. Năng lượng ánh sáng.
+Câu 75: Trong thí nghiệm giao thoa hai khe Yâng, người ta dùng chùm sáng song song đơn sắc có bước sóng λ = 0,6 μm, khoảng cách từ hai khe đến màn D = 1,5m, khoảng cách giữa hai khe hẹp là 1mm. Thí nghiệm được thực hiện trong môi trường không khí. Độ rộng của vân giao thoa i là:
+A. 9,1mm
+B. 1,9mm
+C. 9mm
+D. 0,9mm
+Câu 77: Cho cách tử có chu kỳ . Số vạch cực đại chính tối đa cho bởi cách tử nếu ánh sáng dùng trong thí nghiệm là ánh sáng màu vàng của ngọn lửa Natri có bước sóng λ = 5890o A.
+A. 7
+B. 8
+C. 5
+D. 6
+Câu 78:Màu sắc trên mặt váng dầu khi có ánh sáng mặt trời chiếu vào là do:
+A. Hiện tượng giao thoa ánh sáng.
+B. HIện tượng phản xạ ánh sáng.
+C. Hiện tượng khúc xạ ánh sáng,
+D. Hiện tượng phân cực ánh sáng.
+Câu 80: Bước sóng ứng với năng suất phát xạ cực đại của vật đen tuyệt đối có nhiệt độ bằng nhiệt độ cơ thể (370) là:
+λm  . T = b với b = 2,8978.10-3 m.K
+A. 39 μm
+B. 9,3 μm
+C. 3,9 μm
+D. 93 μm
+Câu 82: Chọn câu đúng: 
+A. Năng lượng nhỏ nhất mà các nguyên tử, phân tử phát xạ hay hấp thụ là lượng tử năng lượng.
+B. Năng lượng nhỏ nhất mà các nguyên tử phát xạ hay hấp thụ là giống nhau với mọi bức xạ điện từ.
+C. Năng lượng lớn nhất mà các nguyên tử, phân tử phát xạ là lượng tử năng lượng.
+D. Năng lượng lớn nhất mà các nguyên tử, phân tử hấp thụ là lượng tử năng lượng.
+Câu 84: Nhiệt độ của một vật đen tuyệt đối tăng từ 1000K lên 3000K. Năng suất phát xạ toàn phần của nó tăng lên bao nhiêu lần:
+A. 3 lần
+B. 81 lần
+C. 9 lần
+D. 27 lần
+Câu 85: Trong chân không, một ánh sáng đơn sắc có tần số f = 5.1014Hz. Khi đi vào nước chiết suất n = 1,33. Chu kỳ của ánh sáng này là:
+
+
+V’ = c/n .        λ = c/f          λ’ = λ/n
+A. T = 0,2.10-15s
+B. T = 2.10-15s
+C. T = 0,5.10-15s
+D. T = 5.10-15s
+Câu 91: Trong hiện Kômtôn, bước sóng ban đầu của phô tôn là 0,03o A và vận tốc của electron bắn ra là v = 6c. Độ tăng bước sóng và góc tán xạ là: 
+A. 0,034o A và 63o53’
+B. 0,034o A và 36o40’
+C. 0,0134o A và 36o40’
+D. 0,0134o A và 63o53’
+
+
+
+
+câu 99: Một nguồn sáng điểm chiều ánh sáng đơn sắc bước sóng λ= 0,5 μm vào một lỗ tròn bán kính r = 1,0 mm khoảng cách từ nguồn sáng đến lỗ tròn R = 1 m tính khoảng cách từ lỗ tròn đến điểm quan sát để lỗ tròn giữa ba đời Fresnel: 
+A. b=2m
+B. b=1m
+C. b=3m
+D. b=4m
+Câu 100: Thấu kính trong hệ thống cho vân tròn Newton có bán kính cong bằng R=18m. Chùm ánh sáng đơn sắc tới vuông góc với hệ thống, quan sát các vân giao thoa của chùm tia phản chiếu. Tìm bước sóng của ánh sáng tới biết rằng khoảng cách giữa vân tối thứ 4 và vân tối thứ 25 bằng 9mm:
+- vị trí vân tối thứ 4: 
+- vị trí vân tối thứ 25: 
+=> r25-r4 = 3 
+A. λ = 0,6 μm
+B. λ = 0,55 μm
+C. λ = 0,4 μm
+D. λ = 0,5 μm
+Câu 101: Hạt electron không vận tốc đầu được gia tốc qua một hiệu điện thế U. Tính U biết rằng sau khi gia tốc, hạt electron chuyển động ứng với bước sóng de Broglie 3Å:
+A. 16,7 V
+B. 0,167 V
+C. 1,67 V
+D. 167 V
+
+Câu 102: Cho biết me = 9,1 . 10-31kg. Bước sóng đơbrơi của electron chuyển động với vận tốc 2.106 m/s và 108 m/s lần lượt nhận các giá trị: 
+ 
+A. 6,86.10-12 m/s và 364.10-12 m/s
+B. 686.10-12 m/s và 3,64.10-12 m/s
+C. 3,64.10-12 m/s và 686.10-12 m/s
+D. 364.10-12 m/s và 6,86.10-12 m/s
+Câu 103: Trong hiện tượng nhiễu xạ qua khe hẹp. Một chùm tia sáng đơn sắc song song, có bước sóng λ=0,6μm được rọi vuông góc với một khe chữ nhật hẹp có bề rộng b=0,1mm. Ngay sau khe có đặt 1 thấu kính. Màn quan sát đặt cách thấu kính D = 1m. Bề rộng của vân cực đại chính giữa là:
+A. 1,3 cm
+B. 1,6 cm
+C. 1,2 cm
+D. 1,4 cm
+
+
+Câu 104: Một vi hạt tự do có năng lượng xác định, động lượng xác định tương ứng với một sóng phẳng đơn sắc xác định. Phát biểu nào sau đây là sai:
+A. Động lượng của vi hạt liên hệ với bước sóng của sóng tương ứng theo hệ thức: 
+B. Động lượng của vi hạt liên hệ với vecto sóng của sóng tương ứng theo hệ thức:  (cái này phải là h ngang)
+C. Động lượng của vi hạt liên hệ với tần số sao động của sóng tương ứng theo hệ thức: E= hv
+D. Động lượng của vi hạt liên hệ với tần số góc của sóng tương ứng theo hệ thức:  
+
+
+Câu 106: Phương trình Schrodinger đối với vi hạt chuyển động tự do: 
+A. 
+B. 
+C. 
+D. 
+
+
+
+
+Câu 11: Một sóng điện từ có tần số f = 100 MHz truyền đi với vận tốc 3.108 m/s có bước sóng λ bằng: 
+A. λ = 300m                    B. λ = 3m                   C. λ = 0.3m                   D. λ = 30
+
+
+
+
+
+
+Câu 15: Chiếu vuống góc một chùm ánh sáng đơn sắc tới lần lượt một nêm thủy tinh và một nêm không khí. Nhận  định nào sau đây là đúng:
+A. Cạnh của nêm thủy tinh là vân tối, cạnh của nêm không khí là vân sáng.
+B. Cạnh của cả hai nêm đề là vân sáng.
+C. Cạnh của nêm thủy tinh là vân sáng, cạnh của nêm không khí là vân tối.
+D. Cạnh của cả hai nêm đều là vân tối.
+Câu 16: Cho ánh sáng đơn sắc truyền qua dải phân cách giữa 2 môi trường có chiết suất khác nhau. Phát biểu nào sau đây là đúng: 
+A. Chu kỳ ánh sáng không đổi.
+B. Bước sóng ánh sáng không thay đổi.
+C. Tần số ánh sáng thay đổi.
+D. Vận tốc ánh sáng không thay đổi.
+Câu 17: Cho cách tử có chu kỳ . Bước sóng cực đại có thể quan sát được trong quang phổ của cách tử đó là:        λmax =  d
+A. 
+B. 
+C. 
+D.
+Câu 18: Khi tia sáng đi từ môi trường thứ nhất sang môi phương trường thứi hai dưới góc tới i=300. Tia khúc xạ đi là là trên mặt phân cách giữa hai môi trường. khi đó vận tốc ánh sáng:
+n1sin I = n2sin r   và n = c/v
+A. Giảm đi 2 lần.
+B. Không thay đổi.
+C. Giảm đi  lần.
+D. Tăng lên 2 lần.
+Câu 19: Điều kiện để hai sóng ánh sáng giao thoa với nhau là:
+A. Không cùng tần số và hiệu pha không phụ thuộc vào thời gian.
+B. Cùng tần số và hiệu pha là hàm cos theo thời gian.
+C. Không cùng tần số và hiệu pha là hàm sin theo thời gian.
+D. Cùng tần số và hiệu pha không đổi theo thời gian.
+Câu 20: Ánh sáng là sóng:
+A. Sóng đàn hồi.
+B. Sóng ngang.
+C. không phải sóng điện từ.
+D. Sóng dọc.
+
+
+Câu 21: Chọn phát biểu đúng:
+A. Khi ánh sáng truyền từ môi trường này sang môi trường khác, tần số ánh sáng không thay đổi.
+B. trong phương phap đới cầu Frenen, các đới cầu phát ra dao động sóng ngược pha nhau.
+C. Điều kiện có giao thoa ánh sáng là hai sóng gặp nhau phải cùng chu kỳ và cùng phương dao động.
+D. Hiện tượng các tia sáng lệch khỏi phương truyền thẳng khi gần các chướng ngại vật nhỏ là hiện tượng tán xạ ánh sáng.
+Câu 22:Chiếu một chùm sáng đơn sắc có bước sóng λ theo phương vuông góc với mặt dưới của nêm không khí. Nêm có góc nghiêng  rất nhỏ, cạnh nêm là vân tối thứ không. Vị trí của vân tối thứ 10 cách cạnh nêm một khoảng:   Xtk = k.λ/ 
+A.                  B.                     C.                       D. 
+Câu 23: trong giao thao hai khe Yâng, khoảng vân i được xác định bằng:
+A.                  B.                          C.                   D. 
+Câu 24: Xét một hệ thống cho vân tròn newton (đặt trong không khí), ánh sáng đơn sắc có bước sóng λ = 0.56 μm chiếu vuông góc với bản thủy tinh. Bề dày của lớp không khí ứng với vân sáng đầu tiên là: 
+Vân sáng T1 -> k=1; ds = (2k-1) λ/4
+A. 0,28 μm             B. 0,14 mm               C. 0,28 mm             D. 0,14 μm
+Câu 25: Chiếu một chùm ánh sáng có bước song λ = 0.489 μm lên một tấm kim loại kali dùng làm catot của một tế bào quang điện. biết công thoát electron của kali là 2.15eV. Vận tốc ban đầu cực đại của quang electron bắn ra từ catot và hiệu điện thế hãm là:
+
+Uh là hiệu điện thế hãm
+
+
+
+A. 37.105 m/s và 3,9 V
+B. 37.105 m/s và 0,39 V
+C. 3,7.105 m/s và 0,39 V
+D. 3,7.105 m/s và 3,9V
+Câu 26: Chọn câu phát biểu đúng:
+A. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái cơ bản.
+B. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái có năng lượng cao hơn trạng thái cơ bản.
+C. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái có năng lượng thấp hơn trạng thái cơ bản.
+D. Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái kích thích.
+Câu 27: Theo thuyết lượng tử năng lượng, phát biểu nào dưới đây là sai?
+A. Các nguyên tử, phân tử phát xạ hay hấp thụ năng lượng bức xạ điện từ một cách gián đoạn.
+B. Theo công thức Plăng, 
+C. Phần năng lượng phát xạ hay hấp thụ luôn là bội số nguyên của một lượng năng lượng nhỏ xác định gọi là lượng tử năng lượng.
+D. Đối với mỗi bức xạ điện từ đơn sắc nhất định, lượng tử năng lượng có giá trị xác định.
+Câu 28: Chọn câu đúng:
+A. Hệ số hấp thụ đơn sắc của vật lý tỷ lệ với tỷ số của năng thông hấp thụ và năng thông gửi tới vật.
+B. Hệ số hấp thụ đơn sắc có thể lớn hơn 1.
+C. Hệ số hấp thụ đơn sắc có giá trị lớn nhất bằng 2.
+D. khi bức xạ gửi tới vật đen tuyệt đối thì bị hấp thụ một phần.
+Câu 29: Theo thuyết photôn phát biểu nào dưới đây là sai:
+A. Bức xạ điện từ được cấu tạo bởi vô số các hạt gọi là lượng tử ánh sáng hay photôn.
+B. Cường độ của chùm bức xạ tỉ lệ với tần số của chùm bức xạ đó.
+C. Trong chân không, các photôn truyền đi với cùng vận tốc c = 3.108 m/s.
+D. Mỗi photôn có một năng lượng xác định.
+Câu 30: Chọn câu phát biểu đúng:
+A. Năng suất phát xạ đơn sắc phụ thuộc vào áp suất môi trường.
+B. Năng suất phát xạ đơn sắc phụ thuộc vào tần số bức xạ và nhiệt độ vật phát xạ.
+C. Năng suất phát xạ đơn sắc phụ thuộc vào tần số bức xạ.
+D. Năng suất phát xạ đơn sắc phụ thuộc vào nhiệt độ vật phát xạ.
+Câu 31: chọn câu đúng nhất:
+A. Vật đen tuyệt đối có khả năng phát xạ mạnh nhất và hấp thụ mạnh nhất.
+B. Vật đen tuyệt đối có khả năng phát xạ mạnh nhất.
+C. Vật đen tuyệt đối có khả năng phát xạ yếu nhất.
+D. Vật đen tuyệt đối có khả năng hấp thụ.
+Câu 32: Chọn câu đúng nhất:
+A. Tỷ số giữa năng suất phát xạ đơn sắc và hệ số hấp thụ đơn sắc phụ thuộc vào nhiệt độ của vật và tần số bức xạ.
+B. Tỷ số giữa năng suất phát xạ đơn sắc và hệ số hấp thụ đơn sắc phụ thuộc vào tần số của bức xạ.
+C. Tỷ số giữa năng suất phát xạ đơn sắc và hệ số hấp thụ đơn sắc phụ thuộc vào nhiệt độ của vật.
+D. Tỷ số giữa năng suất phát xạ đơn sắc và hệ số hấp thụ đơn sắc phụ thuộc vào bản chất vật.
+Câu 33: Chiếu lần lượt các bức xạ có bước sóng λ1 và λ2 vào catot của một tế bào quang điện, sau đó dùng các hiệu điện thế hãm có độ lớn U1 và U2 để triệt tiêu các dòng quang điện. Coi như đã biết hằng số Plăng và vận tốc ánh sáng. Điện tích electron có thể được tính từ biểu thức nào trong các biểu thức sau:
+A. 
+B. 
+C. 
+D. 
+Câu 34: Phôtôn có năng lượng 250keV bay đến va chạm với một electron đứng yên và tán xạ theo góc 1200 (tán xạ Kômtôn). Năng lượng của phôtôn tán xạ là:
+A. 9,1 MeV          B. 14,5 MeV            C. 0,91 MeV         D. 0,145 MeV
+E=250keV = hc/λ. => λ = 4,96.10-12
+
+
+=>  λ’  = λ + 2λcsin2 θ/2 = 8,599.10-12
+
+
+E =  hc/λ’ = 0.145 MeV
+
+
+Câu 35: Trong hiện tượng nhiễu xạ của sóng phẳng đơn sắc bước sóng λ qua một khe hẹp bề rộng b, k = +1, +2, ….., điều kiện cực tiểu nhiễu xa là:
+A. sin ϕ = 
+B. sin ϕ = k  
+C. sin ϕ = 2k  
+D. sin ϕ = 
+Câu 36: Chiếu một chùm tia sáng đơn sắc song song vuông góc với một khe hẹp. Bước sóng ánh sáng bằng  bề rộng của khe hẹp. Giữa hai cực tiểu nhiễu xạ thứ ba được quan sát dưới góc lệch bằng:
+A. 300
+B. 600
+C. 450
+D. 900
+Câu 37: Hiện tượng nhiễu xạ ánh sáng là:
+A. Là hiện tượng khi hai chùm sáng thích hợp gặp nhau thì trong miền gặp nhau của chúng xuất hiện những vùng sáng và tối xen kẽ.
+B. Là hiện tượng tia sáng luôn đi theo phương truyền thẳng.
+C. Là hiện tượng gặp nhau của hai hay nhiều sóng ánh sáng kết hợp.
+D. Là hiện tượng tia sáng bị lệch khỏi phương truyền thẳng khi đi gần các chướng ngại vật có kích thước nhỏ.
+Câu 38: Trong hình nhiễu xạ qua 5 khe hẹp có chu kỳ cách tử d=5b (b là bề rộng của mỗi khe), số cực đại chính giữa hai cực tiểu chính (liên tiếp, ở cùng một phía) và số cực đại phụ giữa hai cực đại chính là:
+A. 4 và 4                    B. 5 và 3                   C. 5 và 4                   D. 4 và 3
+Câu 39: Cường độ sáng tại một điểm tỉ lệ:
+A. Thuận với biên độ dao động sáng.        
+B. Thuận với bình phương của biên độ dao động sáng tại điểm đó.
+C. Nghịch với bình phương của biên độ dao động sáng.
+D. Nghịch với biên độ dao động sáng.
+Câu 40: Nhiệt độ của một vật đen tuyệt đối tăng từ 2000K đến 4000K. Năng suất phát xạ toàn phần của nó thay đổi như thế nào:
+(4000/2000)4 = 16
+A. Giảm 4 lần         B. Giảm 8 lần              C. Tăng 2 lần        D. Tăng 16 lần
+Câu 41: Giới hạn quang điện của kim loại dùng làm catot của tế bào quang điện là 0.5 μm. Cho h=6,625.10-34 Js, c = 3.108 m/s, 1e = 1,6.10-19. Khi chiếu ánh áng đơn sắc bước sóng λ = 0,36 μm vào catot của tế bào quang điện đó thì hiệu điện thế hãm để không có một electron nào đến được anot sẽ là:
+λo = 0,5 μm = hc/Athoát        => Athoát = 3,975.10-19
+
+=> Uh = 0.97 V
+
+A. 2,14 V                    B. 0,97 V                    C. 1,25 V                     D. 3,1 V
+Câu 42: Nguồn sáng đơn sắc, bước sóng 600 nm, chiếu sáng mặt phẳng chứa hai khe hẹp, song song và cách nhau 1mm và cách đều nguồn sáng. Màn quan sát cách mặt phẳng chứa hai khe 1m. Khoảng vân trên màn là:
+A. 0,45 mm               B. 0,5 mm                   C. 0,6 mm                      D. 0,9 mm
+Câu 43: R la bán kính mặt cầu S bao quanh nguồn sáng, λ là bước sóng của ánh sáng đơn sắc, b là khoảng cách từ điểm quan sát tới mặt cầu S, k = 1, 2 ,3, …… Công thức tính bán kính đới cầu Fresnel thứ k là:
+A. 
+B. 
+C. 
+D. 
+Câu 44: Hệ thông khe Young đươc đặt trong không khí,  là khoảng cách giữa hai khe, D là khoảng cách tính từ mặt phẳng khe đến màn, λ là bước sóng ánh sáng đơn sắc, k là số nguyên. Vị trí các vân tối được tính theo công thức:
+A.                                              B. 
+C.                                           D. 
+Câu 45: Xác định bước sóng của bức xạ Ronghen. Biết rằng trong hiện tượng Compton cho bởi bức xạ đó, động năng cực đại của electron bắn ra là 0,19 MeV.
+    và λc = 2,426.10-12             Wđe = 0.19 MeV
+A. λ = 2,8 pm
+B. λ = 2,6 pm
+C. λ = 3,7 pm
+D. λ = 3,9 pm
+Câu 46: Các đới cầu Fresnel có tính chất:
+A. Diện tích gần bằng nhau.
+B. Có biên độ dao động không đổi theo thời gian.
+C. Có bán kính giảm dần theo căn bặc hai của các số nguyên k.
+D. Có bán kính tăng dần theo căn bặc hai của các số nguyên k.
+Câu 47: Hệ thống khe Young được đặt trong không khí,  là khoảng cách giữa hai khe, D là khoảng cách từ mặt phẳng khe đến màn, λ là bước sóng ánh sáng đơn sắc, k là số nguyên. Vị trí các vân sáng được tính theo công thức:
+A. ys = 
+B. 
+C. 
+D. 
+
+
+Câu 48: Trong bức tranh giao thoa vân sáng là: 
+ A. Tập hợp các điểm có hiệu quang lộ đến hai nguồn bằng một số lẻ lần nửa bước sóng.
+B. Tập hợp các điểm có hiệu khoảng cách đến hai nguồn bằng một số nguyên lần bước sóng.
+C. . Tập hợp các điểm có hiệu quang lộ đến hai nguồn bằng một số nguyên lần bước sóng.
+D. Tập hợp các điểm có hiệu khoảng cách đến hai nguồn bằng một số lẻ lần nửa bước sóng.
+Câu 49: Để đo bề dày của bản mỏng trong suốt, người ta đặt bản mỏng trước một trong hai khe giao thoa i-âng. Ánh sáng chiếu vào hệ thống có bước sóng λ = 0,6 μm. Chiết suất của bản mỏng n = 1,5, Người ta quan sát thấy vân sáng chính giữa bị lệch về vị trí vân sáng thứ 5 (ứng với lúc chưa có bản mỏng). Xác định bề dày của bản mỏng: 
+xo = xs5 = 5i =   
+A. e = 6 μm
+B. e = 5 μm
+C. e = 8 μm
+D. e = 7 μm
+Câu 50: Thuyết lượng tử ánh sáng giải thích tốt nhất hiện tượng nào:
+A. Hiện tượng bức xạ nhiệt.
+B. Hiện tượng giao thoa ánh sáng.
+C. Hiện tượng quang điện.
+D. Hiệu ứng compton.
+Câu 51: Tính động lượng của electron khi có phôtôn có bước sóng ban đầu là 5pm và va chạm vào và tán xạ theo góc 900:
+A. 1,8.10-24kgm/s
+B. 1,6. 10-24kgm/s
+C. 1,8.10-22kgm/s
+D. B. 1,6. 10-22kgm/s
+Câu 52: Trong thí nghiệm giao thoa khe Young thực hiện trong chân không, người ta đặt trước khe S2 một bản mỏng song song có chiết suất là n>1. Khi đó vân sáng trung tâm sẽ:
+A. Dịch chuyển về phía S1.
+B. Không biết vì chưa biết bước sóng ánh sáng.
+C. Dịch chuyển về phía S2.
+D. Không dịch chuyển trên màn.
+Câu 53: Chiếu một chùm tia sáng trắng song song vuông góc với một cách từ nhiễu xạ. Dưới một góc nhiễu xạ 350, người ta quan sát thấy hai vạch cực đại ứng với các bước sóng 0,63 μm và 0,42 μm trung nhau. Xác định chu kỳ của cách từ biết rằng bậc cực đại đối với vạch thứ hai trong quang phổ của cách từ không lớn hơn 5:
+A. 2,4 μm
+B. 2,2 μm
+C. 3,2 μm
+D. 3,4 μm
+Câu 54: Tìm góc nhiễu xạ ứng với các cực tiểu nhiễu xạ đầu tiên nằm ở hai bên cực đại giữa trong nhiễu xạ qua Fraunhofer qua một khe hẹp bề rộng a = 10mm. Biết rằng chùm tia sáng đập vào khe hẹp với góc tới 300 và bước sóng ánh sáng 0,5 μm
+A. θ=300
+B. θ = 570
+C. 
+D. 
+Câu 55: Khảo sát nhiễu xạ của sóng cầu, với màn chắn có một lỗ tròn chứa đúng một đới đầu tiên thì cường độ sáng trên điểm M (giao điểm của trục lỗ tròn và màn ảnh) khi so với lúc không có màn chắn là:
+A. Lớn hơn 4 lần.
+B. Nhỏ hơn hai lần.
+C. Bằng nhau.
+D. Nhỏ hơn bốn lần.
+Câu 56: Giữa nguồn sáng O và điểm M, ta đặt một màn chắn có khoét một lỗ trong nhỏ chứa 6 đới cầu Fesnel. Nếu ba đới cầu đầu tiên bị che khuất hoàn toàn bởi một đĩa trong chắn sáng thì cường độ tại M là:
+A. 
+B. 
+C. 
+D. 
+Câu 57: Giữa nguồn sáng O và điểm M, ta đặt một màn chắn có khoét một lỗ trong nhỏ chứa 8 đới cầu Fesnel. Nếu ba đới cầu đầu tiên bị che khuất hoàn toàn bởi một đĩa trong chắn sáng thì cường độ tại M là:
+Đáp án: 
+Câu 57: k = 0; +1; +2; ….. điều kiện cực đại giao thoa là:
+A. 
+B. 
+C. 
+D. 
+
+
+Câu 60: Giới hạn quang điện của kim loại đùng làm ca tôt của tế bào quang điện λ0 = 0,6 μm. Cho h = 6,625.10-34Js, c = 3.108 m/s. Công thoát của electron khỏi tấm kim loại đó là: Athoát = hc/λ
+A. 33,125.10-19J
+B.39,75.10-19J
+C. 33,125.10-20J
+D. 39,75.10-20J
+Câu 61: cho một cách từ nhiễu xạ có hằng số bằng 2 μm. Sau cách từ đặt một thấu kính hội tụ, trên mặt phẳng tiêu của thấu kính người ta đặt một màn quan sát. Khoảng cách giữa hai vạch cực đại của kali (ứng với bước sóng 0,4404 μm và 0,4047 μm) trong quang phổ bậc nhất trên màn quan sát bằng 0,1mm. Hãy tìm tiêu cự của thấu kính:
+A. f = 0.65m      B. f = 0.56m         C. f = 0.45m             D. f = 0.75m
+Câu 62: Theo giả thuyết Plank, câu nào phát biểu đúng:
+A. Phân tử và nguyên tử của các chất hấp thụ năng lượng của bức xạ điện từ gián đoạn, còn bức xạ năng lượng liên tục.
+B. Phân tử và nguyên tử của các chất hấp thụ và bức xạ năng lượng của bức xạ điện từ một cách liên tục.
+C. Phân tử và nguyên tử của các chất bức xạ năng lượng của bức xạ điện từ gián đoạn và hấp thụ năng lượng liên tục.
+D. Phân tử và nguyên tử của các chất hấp thụ và bức xạ năng lượng của bức xạ điện từ một cách gián đoạn.
+Câu 64: Biểu thức định luật Stefan-Boltzmann:
+A. R(T) = σT3               B. R(T) = σ3 T                 C. σ =                  D. σ = 
+Câu 65: Khoảng cách giữa hai khe Young là , được chiếu bằng ánh sáng có bước sóng  λ = 0,5 μm. Màn quan sát ở cách mặt phẳng chứa hai khe một đoạn D = 3m. Hệ thống được đặt trong không khí. Vị trí của vân tối thứ ba là:
+A. 3,75 mm                    B. 7,5mm                 C. 4,5mm                D. 5,25mm
+Câu 67: Chiếu một chùm tia sáng đơn sắc vuông góc với bản cho vân tròn Newton và quan sát ánh sáng phản xạ. bán kính của hai vân tối liên tiếp lần lượt bằng 4,0mm và 4,38mm, bán kính cong của thấu kính bằng 6,4 mm. tìm số thứ tự của các vân tối trên:
+A. 3                     B. 2                   C. 5                        D. 4
+
+
+Câu 69: Khi tạo giao thoa trên mặt nêm bởi một chùm ánh sáng đơn sắc, chiếu vuông góc với mặt nêm, ta thấy hệ vân quan sát có hình dạng gì?
+A. Là những đường thẳng song song với cạnh nêm vì hệ vân phụ thuộc vào độ dày của nêm.
+B. Là những vân hình cos do nêm làm bằng thủy tinh.
+C. Là những vân hình sin do ánh sáng có tính chất sóng.
+D. Là những đường tròn đồng tâm vì hệ vân phụ thuộc vào vị trí trên mặt nêm.
+Câu 70: Cho h = 6,625.10-34Js, c = 3.108 m/s. Động lượng của phôtôn có tần số v = 6.1014 Hz là:
+A. 11.10-27 kg.m/s
+B. 13,25.10-28 kg.m/s
+C. 11.10-28 kg.m/s
+ D. 13,25.10-27 kg.m/s
+Câu 71: Trong hình ảnh nhiễu xạ qua 1 khe hẹp (bề rộng b), vị trí điểm quan sát trên màn ứng với góc nhiễu xạ ϕ với  là vị trí của:
+A. Vân tối bậc 1.
+B. Vân sáng bậc 2.
+C. Một điểm trong cực đại giữa.
+D. Vân sáng bậc 1.
+Câu  72: Nguyên tắc tạo ra hai sóng ánh sáng kết hợp là:
+A. Tạo ra hai sóng có cùng tần số.
+B. Tạo ra hai sóng dao động cùng phương.
+C. Từ một nguồn duy nhất tách làm hai sóng riêng biệt.
+D. Tạo ra hai sóng có cùng bước song.
+Câu 73: Trong hai khe Yâng,  là khoảng cách giữa hai khe, D là khoảng cách từ mặt phẳng khe đến màn. Độ dịch chuyển của hệ vân giao thoa khi trước một trong hai khe Yâng  được đặt một bản mỏng, song song trong suốt chiều dày e,  chiết suất n:
+A. 
+B. 
+C. 
+D. 
+Câu 74: Màu sắc của ánh sáng là do thông số nào quyết định:
+A. Tần số ánh sáng.
+B. Cường độ ánh sáng.
+C. Biên độ sóng ánh sáng.
+D. Năng lượng ánh sáng.
+Câu 75: Trong thí nghiệm giao thoa hai khe Yâng, người ta dùng chùm sáng song song đơn sắc có bước sóng λ = 0,6 μm, khoảng cách từ hai khe đến màn D = 1,5m, khoảng cách giữa hai khe hẹp là 1mm. Thí nghiệm được thực hiện trong môi trường không khí. Độ rộng của vân giao thoa i là:
+A. 9,1mm
+B. 1,9mm
+C. 9mm
+D. 0,9mm
+Câu 77: Cho cách tử có chu kỳ . Số vạch cực đại chính tối đa cho bởi cách tử nếu ánh sáng dùng trong thí nghiệm là ánh sáng màu vàng của ngọn lửa Natri có bước sóng λ = 5890o A.
+A. 7
+B. 8
+C. 5
+D. 6
+Câu 78:Màu sắc trên mặt váng dầu khi có ánh sáng mặt trời chiếu vào là do:
+A. Hiện tượng giao thoa ánh sáng.
+B. HIện tượng phản xạ ánh sáng.
+C. Hiện tượng khúc xạ ánh sáng,
+D. Hiện tượng phân cực ánh sáng.
+Câu 80: Bước sóng ứng với năng suất phát xạ cực đại của vật đen tuyệt đối có nhiệt độ bằng nhiệt độ cơ thể (370) là:
+λm  . T = b với b = 2,8978.10-3 m.K
+A. 39 μm
+B. 9,3 μm
+C. 3,9 μm
+D. 93 μm
+Câu 82: Chọn câu đúng: 
+A. Năng lượng nhỏ nhất mà các nguyên tử, phân tử phát xạ hay hấp thụ là lượng tử năng lượng.
+B. Năng lượng nhỏ nhất mà các nguyên tử phát xạ hay hấp thụ là giống nhau với mọi bức xạ điện từ.
+C. Năng lượng lớn nhất mà các nguyên tử, phân tử phát xạ là lượng tử năng lượng.
+D. Năng lượng lớn nhất mà các nguyên tử, phân tử hấp thụ là lượng tử năng lượng.
+Câu 84: Nhiệt độ của một vật đen tuyệt đối tăng từ 1000K lên 3000K. Năng suất phát xạ toàn phần của nó tăng lên bao nhiêu lần:
+A. 3 lần
+B. 81 lần
+C. 9 lần
+D. 27 lần
+Câu 85: Trong chân không, một ánh sáng đơn sắc có tần số f = 5.1014Hz. Khi đi vào nước chiết suất n = 1,33. Chu kỳ của ánh sáng này là:
+
+
+V’ = c/n .        λ = c/f          λ’ = λ/n
+A. T = 0,2.10-15s
+B. T = 2.10-15s
+C. T = 0,5.10-15s
+D. T = 5.10-15s
+Câu 91: Trong hiện Kômtôn, bước sóng ban đầu của phô tôn là 0,03o A và vận tốc của electron bắn ra là v = 6c. Độ tăng bước sóng và góc tán xạ là: 
+A. 0,034o A và 63o53’
+B. 0,034o A và 36o40’
+C. 0,0134o A và 36o40’
+D. 0,0134o A và 63o53’
+
+
+
+
+câu 99: Một nguồn sáng điểm chiều ánh sáng đơn sắc bước sóng λ= 0,5 μm vào một lỗ tròn bán kính r = 1,0 mm khoảng cách từ nguồn sáng đến lỗ tròn R = 1 m tính khoảng cách từ lỗ tròn đến điểm quan sát để lỗ tròn giữa ba đời Fresnel: 
+A. b=2m
+B. b=1m
+C. b=3m
+D. b=4m
+Câu 100: Thấu kính trong hệ thống cho vân tròn Newton có bán kính cong bằng R=18m. Chùm ánh sáng đơn sắc tới vuông góc với hệ thống, quan sát các vân giao thoa của chùm tia phản chiếu. Tìm bước sóng của ánh sáng tới biết rằng khoảng cách giữa vân tối thứ 4 và vân tối thứ 25 bằng 9mm:
+- vị trí vân tối thứ 4: 
+- vị trí vân tối thứ 25: 
+=> r25-r4 = 3 
+A. λ = 0,6 μm
+B. λ = 0,55 μm
+C. λ = 0,4 μm
+D. λ = 0,5 μm
+Câu 101: Hạt electron không vận tốc đầu được gia tốc qua một hiệu điện thế U. Tính U biết rằng sau khi gia tốc, hạt electron chuyển động ứng với bước sóng de Broglie 3Å:
+A. 16,7 V
+B. 0,167 V
+C. 1,67 V
+D. 167 V
+
+Câu 102: Cho biết me = 9,1 . 10-31kg. Bước sóng đơbrơi của electron chuyển động với vận tốc 2.106 m/s và 108 m/s lần lượt nhận các giá trị: 
+ 
+A. 6,86.10-12 m/s và 364.10-12 m/s
+B. 686.10-12 m/s và 3,64.10-12 m/s
+C. 3,64.10-12 m/s và 686.10-12 m/s
+D. 364.10-12 m/s và 6,86.10-12 m/s
+Câu 103: Trong hiện tượng nhiễu xạ qua khe hẹp. Một chùm tia sáng đơn sắc song song, có bước sóng λ=0,6μm được rọi vuông góc với một khe chữ nhật hẹp có bề rộng b=0,1mm. Ngay sau khe có đặt 1 thấu kính. Màn quan sát đặt cách thấu kính D = 1m. Bề rộng của vân cực đại chính giữa là:
+A. 1,3 cm
+B. 1,6 cm
+C. 1,2 cm
+D. 1,4 cm
+
+
+Câu 104: Một vi hạt tự do có năng lượng xác định, động lượng xác định tương ứng với một sóng phẳng đơn sắc xác định. Phát biểu nào sau đây là sai:
+A. Động lượng của vi hạt liên hệ với bước sóng của sóng tương ứng theo hệ thức: 
+B. Động lượng của vi hạt liên hệ với vecto sóng của sóng tương ứng theo hệ thức:  (cái này phải là h ngang)
+C. Động lượng của vi hạt liên hệ với tần số sao động của sóng tương ứng theo hệ thức: E= hv
+D. Động lượng của vi hạt liên hệ với tần số góc của sóng tương ứng theo hệ thức:  
+
+
+Câu 106: Phương trình Schrodinger đối với vi hạt chuyển động tự do: 
+A. 
+B. 
+C. 
+D.

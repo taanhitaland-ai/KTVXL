@@ -76,8 +76,8 @@
         num: q.num || (idx + 1),
         answer: q.answer || q.correct_answer,
         chapter: q.chapter_id || (typeof q.chapter === 'number' ? q.chapter : parseInt(String(q.chapter).replace(/\D+/g, ''), 10)) || 1,
-        source_title: q.source_title || 'VLDC Chuẩn KMA',
-        source: 'VLDC'
+        source_title: q.source_title || 'VLDC Chuẩn',
+        source: q.source || 'VLDC_STANDARD'
       }));
       knowledge = window.VLDC_KNOWLEDGE_DATA || null;
       currentSource = 'ALL';
@@ -214,15 +214,22 @@
     if (currentSubject === 'vldc') {
       sourceSelect.innerHTML = `
         <optgroup label="Toàn Bộ Ngân Hàng">
-          <option value="ALL">🌟 Toàn Bộ Ngân Hàng VLDC (62 câu)</option>
+          <option value="ALL">🌟 Toàn Bộ Ngân Hàng VLDC (142 câu)</option>
+        </optgroup>
+        <optgroup label="4 Nguồn Đề Thi & Đề Cương Notion">
+          <option value="NOTION_DE_CUOI">⭐ Đề Test Cuối (Notion - 38 câu)</option>
+          <option value="NOTION_TEST_100">📝 Đề Test 100 Câu (Notion - 35 câu)</option>
+          <option value="NOTION_GIAK_2025">🎯 Đề Giữa Kỳ 2025 (Notion - 6 câu)</option>
+          <option value="NOTION_DE_CUONG">📑 Đề Cương Ôn Tập A2 (Notion - 5 câu)</option>
+          <option value="VLDC_STANDARD">📚 Ngân Hàng Đề Cương & Bài Tập ĐHBK (58 câu)</option>
         </optgroup>
         <optgroup label="Lọc Theo 6 Chương Giáo Trình">
-          <option value="CHAP_1">Chương 1: Giao thoa ánh sáng (Bản mỏng, Young, Nêm, Newton)</option>
-          <option value="CHAP_2">Chương 2: Nhiễu xạ ánh sáng (Khe hẹp, Cách mạng, Lỗ tròn)</option>
-          <option value="CHAP_3">Chương 3: Phân cực ánh sáng (Định luật Malus, Góc Brewster)</option>
-          <option value="CHAP_4">Chương 4: Thuyết tương đối hẹp Einstein (Lorentz, Co độ dài)</option>
-          <option value="CHAP_5">Chương 5: Quang lượng tử (Bức xạ nhiệt, Quang điện, Compton)</option>
-          <option value="CHAP_6">Chương 6: Cơ học lượng tử & Vật lý hạt nhân</option>
+          <option value="CHAP_1">Chương 1: Dao động & Sóng điện từ (16 câu)</option>
+          <option value="CHAP_2">Chương 2: Quang học sóng - Giao thoa & Nhiễu xạ (48 câu)</option>
+          <option value="CHAP_3">Chương 3: Quang học lượng tử - Bức xạ nhiệt & Compton (26 câu)</option>
+          <option value="CHAP_4">Chương 4: Cơ học lượng tử - De Broglie & Schrödinger (21 câu)</option>
+          <option value="CHAP_5">Chương 5: Vật lý nguyên tử - Quang phổ & Spin (19 câu)</option>
+          <option value="CHAP_6">Chương 6: Vật lý hạt nhân - Năng lượng liên kết & Phóng xạ (12 câu)</option>
         </optgroup>
       `;
       currentSource = 'ALL';
@@ -329,18 +336,28 @@
       examGrid.innerHTML = `
         <div class="exam-card-choice selected neo-box" data-exam-code="RANDOM">
           <div class="exam-code-badge" style="background: #2563EB; color: #FFF;">CHUẨN MA TRẬN</div>
-          <h3 class="exam-title-choice">Đề Thi Tổng Hợp 30 Câu</h3>
-          <p class="exam-desc-choice">Trộn chuẩn 30 câu từ toàn bộ 6 chương VLDC (Giao thoa, Nhiễu xạ, Phân cực, Thuyết tương đối, Quang lượng tử, Cơ học LT).</p>
+          <h3 class="exam-title-choice">Đề Thi Tổng Hợp 40 Câu</h3>
+          <p class="exam-desc-choice">Trộn chuẩn 40 câu từ toàn bộ 6 chương VLDC (Dao động điện từ, Quang sóng, Quang lượng tử, Cơ học LT, Nguyên tử, Hạt nhân).</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="NOTION_DE_CUOI">
+          <div class="exam-code-badge" style="background: #E11D48; color: #FFF;">ĐỀ TEST CUỐI</div>
+          <h3 class="exam-title-choice">Đề Test Cuối (Notion - 38 Câu Gốc)</h3>
+          <p class="exam-desc-choice">Bộ đề chính thức từ tài liệu Notion Đề Thi với đầy đủ công thức, bài toán tính toán và hướng dẫn Casio.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="NOTION_TEST_100">
+          <div class="exam-code-badge" style="background: #F59E0B; color: #000;">TEST 100 CÂU</div>
+          <h3 class="exam-title-choice">Đề Test 100 Câu (Notion Google Docs)</h3>
+          <p class="exam-desc-choice">Bộ câu hỏi trích lục từ Google Docs Đề Test 100 câu đính kèm trên trang Notion.</p>
         </div>
         <div class="exam-card-choice neo-box" data-exam-code="VLDC_OPTICS">
           <div class="exam-code-badge" style="background: #10B981; color: #FFF;">QUANG HỌC SÓNG</div>
-          <h3 class="exam-title-choice">Chuyên Đề Quang Sóng (Chương 1, 2, 3)</h3>
-          <p class="exam-desc-choice">25 câu trắc nghiệm chuyên sâu về Giao thoa bản mỏng/Young, Nhiễu xạ Fraunhofer và Phân cực Malus.</p>
+          <h3 class="exam-title-choice">Chuyên Đề Quang Sóng (Chương 1 & 2)</h3>
+          <p class="exam-desc-choice">30 câu trắc nghiệm chuyên sâu về Sóng điện từ, Giao thoa bản mỏng/Young, Nêm không khí, Vân tròn Newton và Nhiễu xạ.</p>
         </div>
         <div class="exam-card-choice neo-box" data-exam-code="VLDC_QUANTUM">
-          <div class="exam-code-badge" style="background: #8B5CF6; color: #FFF;">LƯỢNG TỬ</div>
-          <h3 class="exam-title-choice">Chuyên Đề Quang Lượng Tử (Chương 4, 5, 6)</h3>
-          <p class="exam-desc-choice">25 câu trắc nghiệm & bài toán tính toán Compton, Quang điện Einstein, Hệ Lorentz và Giếng thế 1D.</p>
+          <div class="exam-code-badge" style="background: #8B5CF6; color: #FFF;">LƯỢNG TỬ & HẠT NHÂN</div>
+          <h3 class="exam-title-choice">Chuyên Đề Lượng Tử (Chương 3, 4, 5, 6)</h3>
+          <p class="exam-desc-choice">30 câu trắc nghiệm & bài tập Compton, Quang điện, Sóng De Broglie, Phương trình Schrödinger, Giếng thế và Hạt nhân.</p>
         </div>
       `;
       currentExamCode = 'RANDOM';
@@ -1331,20 +1348,23 @@
     examTimeRemaining = (currentSubject === 'vldc' ? 45 : (currentSubject === 'tthcm' ? 40 : 60)) * 60;
 
     if (currentSubject === 'vldc') {
-      if (currentExamCode === 'RANDOM') {
-        const shuffled = [...questions].sort(() => 0.5 - Math.random());
-        examQuestions = shuffled.slice(0, 30);
+      if (currentExamCode === 'NOTION_DE_CUOI') {
+        const match = questions.filter(q => q.source === 'NOTION_DE_CUOI');
+        examQuestions = match.length > 0 ? [...match] : questions.slice(0, 38);
+      } else if (currentExamCode === 'NOTION_TEST_100') {
+        const match = questions.filter(q => q.source === 'NOTION_TEST_100');
+        examQuestions = match.length > 0 ? [...match] : questions.slice(0, 35);
       } else if (currentExamCode === 'VLDC_OPTICS') {
-        const optics = questions.filter(q => q.chapter <= 3);
+        const optics = questions.filter(q => q.chapter <= 2);
         const shuffled = [...optics].sort(() => 0.5 - Math.random());
-        examQuestions = shuffled.slice(0, Math.min(25, shuffled.length));
+        examQuestions = shuffled.slice(0, Math.min(30, shuffled.length));
       } else if (currentExamCode === 'VLDC_QUANTUM') {
-        const quantum = questions.filter(q => q.chapter >= 4);
+        const quantum = questions.filter(q => q.chapter >= 3);
         const shuffled = [...quantum].sort(() => 0.5 - Math.random());
-        examQuestions = shuffled.slice(0, Math.min(25, shuffled.length));
+        examQuestions = shuffled.slice(0, Math.min(30, shuffled.length));
       } else {
         const shuffled = [...questions].sort(() => 0.5 - Math.random());
-        examQuestions = shuffled.slice(0, 30);
+        examQuestions = shuffled.slice(0, 40);
       }
     } else if (currentSubject === 'tthcm') {
       if (currentExamCode === 'RANDOM') {

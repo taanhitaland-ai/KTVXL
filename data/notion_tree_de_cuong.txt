@@ -1,0 +1,91 @@
+[page] Đề cương
+  [toggle] Bài tập chương 1 và 2
+    [file] Bài tập chương 1
+      -> ATTACHMENT: attachment:e1253d46-3a0f-45bb-af47-208a15b923d6:1.__CNG_N_TP_VLC_A2_CHNG_1.pdf
+    [file] Bài tập chương 2
+      -> ATTACHMENT: attachment:e0b7de09-fd10-4dee-973d-fb0a0e8ad2b4:2.__CNG_N_TP_VLC_A2_CHNG_2.pdf
+    [toggle] chương 2
+      [column_list] 
+        [column] 
+          [image] image.png
+            -> ATTACHMENT: attachment:db771e67-271c-4f3c-84f4-bb16ac6386ec:image.png
+        [column] 
+          [image] image.png
+            -> ATTACHMENT: attachment:f31d61c8-3e1a-477e-bc5a-12f380678d5a:image.png
+      [column_list] 
+        [column] 
+          [image] image.png
+            -> ATTACHMENT: attachment:a539ad4c-5a9b-4483-8950-156b6b7b5b79:image.png
+        [column] 
+          [image] image.png
+            -> ATTACHMENT: attachment:d01f4e1f-aacb-412d-b990-1ded7e740891:image.png
+      [column_list] 
+        [column] 
+          [image] image.png
+            -> ATTACHMENT: attachment:feaec688-4d33-404f-a6f2-7baab07025ac:image.png
+        [column] 
+          [image] image.png
+            -> ATTACHMENT: attachment:ea2211ba-f25a-4172-a59a-0a8ac9c8a325:image.png
+    [toggle] Chương 1 + 2
+      [column_list] 
+        [column] 
+          [image] Chương 1+2 - Anh 1.jpeg
+            -> ATTACHMENT: attachment:a2fd15c1-8b4b-4ebb-aeff-6422c382067c:Chng_12_-_Anh_1.jpeg
+        [column] 
+          [image] Chương 1+2 - Anh 2.jpeg
+            -> ATTACHMENT: attachment:4823a04c-e837-4067-a172-17ca95a9d852:Chng_12_-_Anh_2.jpeg
+  [toggle] Bài tập chương 3 và 4
+    [file] Bài tập chương 3
+      -> ATTACHMENT: attachment:fe65de28-29e5-42d4-afa1-e1489b968eca:3.__CNG_N_TP_VLC_A2_CHNG_3.pdf
+    [column_list] 
+      [column] 
+        [file] Đềkiểmtrachuong3.pdf
+          -> ATTACHMENT: attachment:4d4cdb9a-8919-412a-ba05-65d72968ae75:giak2025.pdf
+      [column] 
+        [file] Dapanbanthan
+          -> ATTACHMENT: https://app.luminpdf.com/viewer/68ef58c6aa8f012d59ecb917
+    [file] Bài tập chương 4
+      -> ATTACHMENT: attachment:a9772a26-8b11-489d-8b26-9c68ccad22a8:4.__CNG_N_TP_VLC_A2_CHNG_4.pdf
+    [toggle] chương 3 + 4
+      [column_list] 
+        [None] 
+        [None] 
+  [toggle] Bài tập chương 5 và 6
+    [file] Bài tập chương 5
+      -> ATTACHMENT: attachment:a85d4c2c-b0c3-4df9-a361-4e696bd0a50d:5.__CNG_N_TP_VLC_A2_CHNG_5.pdf
+    [file] Bài tập chương 6
+      -> ATTACHMENT: attachment:5222db61-b07d-4ee5-a984-8893a075e89b:6.__CNG_N_TP_VLC_A2_CHNG_6.pdf
+    [toggle] chương 5 + 6
+      [column_list] 
+        [column] 
+          [image] chuong 56.jpeg
+            -> ATTACHMENT: attachment:dcde4b90-cf74-4c46-a9c3-fb65edb1ede9:chuong_56.jpeg
+        [column] 
+          [image] chuong 56p2.jpeg
+            -> ATTACHMENT: attachment:99b6d42e-148e-4917-bbc5-273d74c3622a:chuong_56p2.jpeg
+  [toggle] Đề test
+    [file] Đề test1
+      -> ATTACHMENT: https://drive.google.com/file/d/1a89OquL_vtPdoCDLQlJ9cX6u2UMDYRJN/view
+    [file] Đề test 4
+      -> ATTACHMENT: https://docs.google.com/document/d/14WyxGHV3cOLZ8Z6CWnn7VH77B1EP5sF5-ZSQUu7x1No/edit?usp=sharing
+    [column_list] 
+      [column] 
+        [None] 
+      [column] 
+        [None] 
+    [column_list] 
+      [column] 
+        [None] 
+      [column] 
+        [file] Đáp án đề testcuoi
+          -> ATTACHMENT: https://drive.google.com/file/d/1iHkMrrPpjclVV-d7zFTDocx_q6dMw9P1/view?usp=sharing
+    [file] Đề test 100 câu
+      -> ATTACHMENT: https://docs.google.com/document/d/1LsDEYwFHS7tKzqjoxCz69-2cp_Dq5v_vgj--RhaYUf4/edit?tab=t.fqlsxvjhmpcl
+  [toggle] Sách bài tập vật lí đại cương tập 3
+    [external_object_instance] 
+    [text] Giải bài tập ở sách vật lí đại cương 3 →
+    [text] https://ductt111.wordpress.com/2011/08/29/hướng-dẫn-giải-bai-tập-dịnh-hướng-vldc-iii-super-hot/
+  [callout] 
+    [bulleted_list] Các bài tập chương từ 1 đến 6 là của thầy giáo cho, nên làm hết
+    [bulleted_list] Đi thi chỉ lấy trong sách bài tập vật lí đại cương tập 3, làm chương nào nếu cần thêm bài tập dạng nào đó cứ vào sách bài tập tham khảo,đã có cả lời giải
+  [text] 

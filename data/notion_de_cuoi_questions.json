@@ -1,0 +1,722 @@
+[
+  {
+    "id": "vldc_nc_001",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Để đo bề dày của bản mỏng trong suốt, người ta đặt bản mỏng trước một trong hai khe giao thoa Young. Ánh sáng chiếu vào hệ thống có bước sóng $\\lambda = 0{,}6\\,\\mu\\text{m}$. Chiết suất của bản mỏng $n = 1{,}5$. Người ta quan sát thấy vân sáng chính giữa bị lệch về vị trí vân sáng thứ 5 (ứng với lúc chưa có bản mỏng). Xác định bề dày $e$ của bản mỏng:",
+    "options": {
+      "A": "e = 6 μm",
+      "B": "e = 5 μm",
+      "C": "e = 8 μm",
+      "D": "e = 4 μm"
+    },
+    "answer": "A",
+    "explanation": "Khi đặt bản mỏng bề dày $e$, chiết suất $n$ trước một khe, quang trình của tia sáng đi qua khe đó tăng thêm $\\Delta L = (n - 1)e$. Độ dịch chuyển của hệ vân trên màn là: $x_0 = \\frac{(n - 1)e D}{a}$. Theo đề bài, vân trung tâm dịch về vị trí vân sáng bậc 5 lúc đầu: $x_0 = 5 i = 5 \\frac{\\lambda D}{a} \\Rightarrow (n - 1)e = 5\\lambda$. Thay số: $(1{,}5 - 1)e = 5 \\times 0{,}6\\,\\mu\\text{m} \\Leftrightarrow 0{,}5 e = 3\\,\\mu\\text{m} \\Rightarrow e = 6\\,\\mu\\text{m}$.",
+    "methodology": "Đặt bản mỏng trước 1 khe: hiệu quang trình tăng $(n-1)e$. Hệ vân dịch một đoạn $x_0 = \\frac{(n-1)eD}{a}$. Nếu dịch $k$ khoảng vân: $(n-1)e = k\\lambda$.",
+    "tips": "Nhớ nhanh công thức: $e = \\frac{k\\lambda}{n - 1} = \\frac{5 \\times 0{,}6}{1{,}5 - 1} = 6\\,\\mu\\text{m}$."
+  },
+  {
+    "id": "vldc_nc_002",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Trong hiện tượng nhiễu xạ Fraunhofer qua một khe hẹp bề rộng $b = 10\\,\\text{mm}$, biết rằng chùm tia sáng đập vào khe với góc tới $\\alpha = 30^\\circ$ và bước sóng ánh sáng $\\lambda = 0{,}5\\,\\text{mm}$. Góc nhiễu xạ ứng với các cực tiểu nhiễu xạ đầu tiên nằm ở hai bên cực đại giữa là:",
+    "options": {
+      "A": "33° và 27°",
+      "B": "33° và 35°",
+      "C": "22° và 27°",
+      "D": "33° và 38°"
+    },
+    "answer": "A",
+    "explanation": "Khi chùm tia chiếu xiên góc $\\alpha$ tới khe hẹp, điều kiện cực tiểu nhiễu xạ bậc $k = \\pm 1$ là: $\\sin\\alpha - \\sin\\theta = \\pm \\frac{k\\lambda}{b} = \\pm \\frac{0{,}5}{10} = \\pm 0{,}05$. Do đó $\\sin\\theta = \\sin 30^\\circ \\mp 0{,}05 = 0{,}5 \\mp 0{,}05$. Ta có hai nghiệm: $\\sin\\theta_1 = 0{,}55 \\Rightarrow \\theta_1 = \\arcsin(0{,}55) \\approx 33{,}37^\\circ \\approx 33^\\circ$ và $\\sin\\theta_2 = 0{,}45 \\Rightarrow \\theta_2 = \\arcsin(0{,}45) \\approx 26{,}74^\\circ \\approx 27^\\circ$.",
+    "methodology": "Nhiễu xạ khe hẹp chiếu xiên: hiệu quang trình giữa 2 mép khe là $b(\\sin\\alpha - \\sin\\theta) = \\pm k\\lambda$. Cực tiểu đầu tiên $k = \\pm 1$.",
+    "tips": "Bấm Casio: $\\text{Shift } \\sin(0{,}5 \\pm 0{,}05) \\to 33{,}37^\\circ$ và $26{,}74^\\circ$."
+  },
+  {
+    "id": "vldc_nc_003",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Chiếu một chùm tia sáng trắng song song vuông góc với một cách tử nhiễu xạ. Dưới một góc nhiễu xạ $35^\\circ$, người ta quan sát thấy hai vạch cực đại ứng với các bước sóng $0{,}63\\,\\mu\\text{m}$ và $0{,}42\\,\\mu\\text{m}$ trùng nhau. Xác định chu kỳ của cách tử biết rằng bậc cực đại đối với vạch thứ hai trong quang phổ của cách tử không lớn hơn 5:",
+    "options": {
+      "A": "2,2 μm",
+      "B": "2,0 μm",
+      "C": "2,5 μm",
+      "D": "2,6 μm"
+    },
+    "answer": "A",
+    "explanation": "Điều kiện cực đại chính của cách tử: $d\\sin\\varphi = k\\lambda$. Vì hai vạch trùng nhau tại góc $\\varphi = 35^\\circ$ nên: $k_1 \\lambda_1 = k_2 \\lambda_2 \\Leftrightarrow k_1 \\times 0{,}63 = k_2 \\times 0{,}42 \\Leftrightarrow \\frac{k_1}{k_2} = \\frac{0{,}42}{0{,}63} = \\frac{2}{3}$. Do bậc cực đại của vạch thứ hai $k_2 \\le 5$ nên cặp bậc nguyên dương thỏa mãn là $k_2 = 3$ và $k_1 = 2$. Chu kỳ cách tử: $d = \\frac{k_1 \\lambda_1}{\\sin\\varphi} = \\frac{2 \\times 0{,}63\\,\\mu\\text{m}}{\\sin 35^\\circ} = \\frac{1{,}26}{0{,}57358} \\approx 2{,}197\\,\\mu\\text{m} \\approx 2{,}2\\,\\mu\\text{m}$.",
+    "methodology": "Trùng vạch ở cách tử: $k_1\\lambda_1 = k_2\\lambda_2$. Rút gọn phân số tối giản để tìm $(k_1, k_2)$, rồi tính $d = \\frac{k_1\\lambda_1}{\\sin\\varphi}$.",
+    "tips": "Casio: $2 \\times 0{,}63 \\div \\sin(35^\\circ) = 2{,}1967\\,\\mu\\text{m} \\approx 2{,}2\\,\\mu\\text{m}$."
+  },
+  {
+    "id": "vldc_nc_004",
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Chiếu lần lượt các bức xạ có bước sóng $\\lambda_1$ và $\\lambda_2$ vào catot của một tế bào quang điện, sau đó dùng các hiệu điện thế hãm có độ lớn $U_1$ và $U_2$ để triệt tiêu các dòng quang điện. Coi như đã biết hằng số Planck $h$ và vận tốc ánh sáng $c$. Điện tích electron có thể được tính từ biểu thức nào trong các biểu thức sau:",
+    "options": {
+      "A": "e = hc(1/λ2 + 1/λ1) / (U2 - U1)",
+      "B": "e = hc(1/λ1 - 1/λ2) / (U1 - U2)",
+      "C": "e = hc(1/λ1 - 1/λ2) / (U2 + U1)",
+      "D": "e = hc(1/λ2 - 1/λ1) / (U2 - U1)"
+    },
+    "answer": "D",
+    "explanation": "Phương trình Einstein cho hiện tượng quang điện: $e U_1 = \\frac{hc}{\\lambda_1} - A$ và $e U_2 = \\frac{hc}{\\lambda_2} - A$. Lấy phương trình thứ hai trừ phương trình thứ nhất: $e(U_2 - U_1) = hc\\left(\\frac{1}{\\lambda_2} - \\frac{1}{\\lambda_1}\\right) \\Rightarrow e = \\frac{hc\\left(\\frac{1}{\\lambda_2} - \\frac{1}{\\lambda_1}\\right)}{U_2 - U_1}$.",
+    "methodology": "Viết hệ 2 phương trình Einstein với 2 bước sóng và 2 hiệu điện thế hãm, trừ vế để khử công thoát $A$.",
+    "tips": "Đồng nhất thứ nguyên và chỉ số: vế trái là $(U_2 - U_1)$ thì vế phải phải có dạng $(\\frac{1}{\\lambda_2} - \\frac{1}{\\lambda_1})$."
+  },
+  {
+    "id": "vldc_nc_005",
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Số lượng tử chính $n$ có thể nhận các giá trị nào sau đây:",
+    "options": {
+      "A": "n = 1, 2, 3, 4, ..., n - 1",
+      "B": "n = 1, 2, 3, 4, ... (các số nguyên dương)",
+      "C": "n = 0, 1, 2, 3, 4, ...",
+      "D": "n = 0, ±1, ±2, ±3, ..."
+    },
+    "answer": "B",
+    "explanation": "Số lượng tử chính $n$ xác định mức năng lượng của electron trong nguyên tử và kích thước của đám mây electron. $n$ nhận các giá trị nguyên dương bắt đầu từ 1: $n = 1, 2, 3, 4, \\dots$ tương ứng với các lớp vỏ $K, L, M, N, \\dots$",
+    "methodology": "Quy tắc 4 số lượng tử: $n \\in \\{1, 2, 3, \\dots\\}$, $l \\in \\{0, 1, \\dots, n-1\\}$, $m_l \\in \\{-l, \\dots, +l\\}$, $m_s = \\pm 1/2$.",
+    "tips": "Nhớ: $n$ bắt đầu từ 1 (không có lớp $n=0$)."
+  },
+  {
+    "id": "vldc_nc_006",
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Mômen động lượng của electron khi ở trạng thái 2s có giá trị là:",
+    "options": {
+      "A": "0",
+      "B": "√6 ℏ",
+      "C": "√12 ℏ",
+      "D": "√2 ℏ"
+    },
+    "answer": "A",
+    "explanation": "Độ lớn mômen động lượng quỹ đạo của electron được xác định bởi số lượng tử orbital $l$: $L = \\sqrt{l(l+1)}\\hbar$. Trạng thái 2s tương ứng với phân lớp s, do đó $l = 0$. Thay vào ta được: $L = \\sqrt{0(0+1)}\\hbar = 0$.",
+    "methodology": "Phân lớp: s $\\to l = 0$, p $\\to l = 1$, d $\\to l = 2$, f $\\to l = 3$. Công thức: $L = \\sqrt{l(l+1)}\\hbar$.",
+    "tips": "Mọi trạng thái s (1s, 2s, 3s, ...) đều có mômen động lượng orbital bằng 0."
+  },
+  {
+    "id": "vldc_nc_007",
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Phương trình Schrödinger đối với vi hạt chuyển động tự do (thế năng $U(\\vec{r}) = 0$) có dạng:",
+    "options": {
+      "A": "ΔΨ(r⃗) + (2m / ℏ²) W Ψ(r⃗) = 0",
+      "B": "ΔΨ(r⃗) + (2m / ℏ) [W - U(r⃗)] Ψ(r⃗) = 0",
+      "C": "ΔΨ(r⃗) + (2m / ℏ) [W + U(r⃗)] Ψ(r⃗) = 0",
+      "D": "ΔΨ(r⃗) - (2m / ℏ) W Ψ(r⃗) = 0"
+    },
+    "answer": "A",
+    "explanation": "Phương trình Schrödinger dừng tổng quát là: $\\Delta\\Psi(\\vec{r}) + \\frac{2m}{\\hbar^2}[W - U(\\vec{r})]\\Psi(\\vec{r}) = 0$. Đối với vi hạt tự do, không chịu tác dụng của trường lực ngoài nên thế năng $U(\\vec{r}) = 0$. Khi đó phương trình trở thành: $\\Delta\\Psi(\\vec{r}) + \\frac{2m}{\\hbar^2} W \\Psi(\\vec{r}) = 0$.",
+    "methodology": "Vi hạt tự do $\\Leftrightarrow U = 0$. Lưu ý mẫu số là $\\hbar^2$.",
+    "tips": "Dấu trước hệ số $\\frac{2m}{\\hbar^2}$ luôn là dấu cộng, và chứa $W$ khi $U=0$."
+  },
+  {
+    "id": "vldc_nc_008",
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Quy tắc lựa chọn đối với số lượng tử toàn phần $j$ trong chuyển mức năng lượng bức xạ là:",
+    "options": {
+      "A": "Δj = 0, ±1 (trừ bước chuyển 0 → 0)",
+      "B": "Δj = ±1",
+      "C": "Δj = ±n",
+      "D": "Δj = 0"
+    },
+    "answer": "A",
+    "explanation": "Theo quy tắc lựa chọn lưỡng cực điện trong cơ học lượng tử, đối với số lượng tử mômen toàn phần $j$, các bước chuyển cho phép phải thỏa mãn $\\Delta j = 0, \\pm 1$ (với điều kiện bổ sung là bước chuyển từ $j = 0 \\to j = 0$ bị cấm).",
+    "methodology": "Quy tắc chọn lọc: $\\Delta l = \\pm 1$; $\\Delta j = 0, \\pm 1$; $\\Delta m_j = 0, \\pm 1$.",
+    "tips": "Ghi nhớ: $\\Delta j$ có thể bằng 0 hoặc $\\pm 1$, không thể vượt quá 1."
+  },
+  {
+    "id": "vldc_nc_009",
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Biết các bước sóng trong vùng ánh sáng nhìn thấy của quang phổ vạch hydro gồm vạch đỏ $\\lambda_{32} = 0{,}6563\\,\\mu\\text{m}$, vạch lam $\\lambda_{42} = 0{,}4861\\,\\mu\\text{m}$, vạch chàm $\\lambda_{52} = 0{,}4340\\,\\mu\\text{m}$ và vạch tím $\\lambda_{62} = 0{,}4102\\,\\mu\\text{m}$. Tìm bước sóng khi electron chuyển từ quỹ đạo $n=6$ về $n=3$:",
+    "options": {
+      "A": "1,8744 μm",
+      "B": "1,8121 μm",
+      "C": "1,0939 μm",
+      "D": "1,2812 μm"
+    },
+    "answer": "C",
+    "explanation": "Theo tiên đề Bohr về hiệu mức năng lượng: $\\Delta E_{63} = E_6 - E_3 = (E_6 - E_2) - (E_3 - E_2) = \\frac{hc}{\\lambda_{62}} - \\frac{hc}{\\lambda_{32}}$. Suy ra: $\\frac{1}{\\lambda_{63}} = \\frac{1}{\\lambda_{62}} - \\frac{1}{\\lambda_{32}}$. Thay số: $\\frac{1}{\\lambda_{63}} = \\frac{1}{0{,}4102} - \\frac{1}{0{,}6563} \\approx 2{,}4378 - 1{,}5237 = 0{,}9141\\,\\mu\\text{m}^{-1} \\Rightarrow \\lambda_{63} = \\frac{1}{0{,}9141} \\approx 1{,}0939\\,\\mu\\text{m}$.",
+    "methodology": "Cộng nghịch đảo bước sóng: $\\frac{1}{\\lambda_{AC}} = \\frac{1}{\\lambda_{AB}} + \\frac{1}{\\lambda_{BC}}$ khi $E_A > E_B > E_C$.",
+    "tips": "Casio: $(0{,}4102^{-1} - 0{,}6563^{-1})^{-1} = 1{,}0939\\,\\mu\\text{m}$."
+  },
+  {
+    "id": "vldc_nc_010",
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Một vi hạt tự do có năng lượng xác định, động lượng xác định tương ứng với một sóng phẳng đơn sắc xác định. Phát biểu nào sau đây là SAI?",
+    "options": {
+      "A": "Động lượng của vi hạt liên hệ với bước sóng theo hệ thức p = h / λ",
+      "B": "Động lượng của vi hạt liên hệ với vector sóng theo hệ thức p⃗ = h k⃗",
+      "C": "Năng lượng của vi hạt liên hệ với tần số dao động theo hệ thức E = hν",
+      "D": "Năng lượng của vi hạt liên hệ với tần số góc theo hệ thức E = ℏω"
+    },
+    "answer": "B",
+    "explanation": "Vector sóng được định nghĩa là $\\vec{k} = \\frac{2\\pi}{\\lambda}\\vec{n}$. Do đó động lượng của vi hạt liên hệ với vector sóng là $\\vec{p} = \\hbar \\vec{k}$ (với $\\hbar = \\frac{h}{2\\pi}$), chứ không phải $h\\vec{k}$. Phát biểu B viết $\\vec{p} = h\\vec{k}$ là sai hằng số $2\\pi$.",
+    "methodology": "Công thức sóng De Broglie: $\\vec{p} = \\hbar \\vec{k} = \\frac{h}{\\lambda} \\vec{n}$ và $E = h\\nu = \\hbar \\omega$.",
+    "tips": "Nhớ: đi với $k$ và $\\omega$ luôn là $\\hbar$ (h-bar), đi với $\\lambda$ và $\\nu$ là $h$."
+  },
+  {
+    "id": "vldc_nc_011",
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Số lượng tử $n$ có tên gọi là:",
+    "options": {
+      "A": "Số lượng tử orbital",
+      "B": "Số lượng tử spin",
+      "C": "Số lượng tử từ",
+      "D": "Số lượng tử chính"
+    },
+    "answer": "D",
+    "explanation": "Trong mô hình lượng tử nguyên tử: $n$ là số lượng tử chính (principal quantum number), $l$ là số lượng tử orbital (phụ), $m_l$ là số lượng tử từ, và $m_s$ là số lượng tử spin.",
+    "methodology": "Nhận diện tên gọi của 4 số lượng tử: chính ($n$), orbital/phụ ($l$), từ ($m_l$), spin ($m_s$).",
+    "tips": "Chữ $n$ viết tắt từ 'number', xác định lớp năng lượng chính."
+  },
+  {
+    "id": "vldc_nc_012",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Trong một hiện tượng giao thoa gây bởi khe Young, khi toàn bộ hệ thống đặt trong không khí, người ta đo được khoảng cách của hai vân sáng liên tiếp $i = 1{,}5\\,\\text{mm}$. Nếu đặt toàn bộ hệ thống trong môi trường có chiết suất $n$ thì khoảng cách giữa hai vân sáng liên tiếp là $i' = 1{,}125\\,\\text{mm}$. Giá trị của $n$ là:",
+    "options": {
+      "A": "n = 2",
+      "B": "n = 5/4",
+      "C": "n = 4/3",
+      "D": "n = 3/2"
+    },
+    "answer": "C",
+    "explanation": "Khi đặt trong môi trường có chiết suất $n$, bước sóng giảm $n$ lần: $\\lambda' = \\frac{\\lambda}{n}$. Khoảng vân trong môi trường: $i' = \\frac{\\lambda' D}{a} = \\frac{i}{n} \\Rightarrow n = \\frac{i}{i'} = \\frac{1{,}5}{1{,}125} = \\frac{4}{3}$.",
+    "methodology": "Khoảng vân tỉ lệ nghịch với chiết suất môi trường: $n = \\frac{i_{\\text{khí}}}{i_{\\text{mt}}}$.",
+    "tips": "Casio: $1{,}5 \\div 1{,}125 = 1{,}3333 = 4/3$."
+  },
+  {
+    "id": "vldc_nc_013",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Một chùm tia sáng đơn sắc có bước sóng $\\lambda = 0{,}5\\,\\mu\\text{m}$ được rọi vuông góc với một nêm không khí, biết số vân giao thoa chứa trong $1\\,\\text{cm}$ là $N = 10$. Góc nghiêng $\\alpha$ của nêm là:",
+    "options": {
+      "A": "α = 2,5.10⁻⁴ rad",
+      "B": "α = 1,5.10⁻⁴ rad",
+      "C": "α = 2,25.10⁻⁴ rad",
+      "D": "α = 1,15.10⁻⁴ rad"
+    },
+    "answer": "C",
+    "explanation": "Khoảng cách giữa $N = 10$ vân giao thoa liên tiếp ứng với $N - 1 = 9$ khoảng vân: $L = (N - 1)i = 1\\,\\text{cm} = 10^{-2}\\,\\text{m} \\Rightarrow i = \\frac{10^{-2}}{9}\\,\\text{m}$. Với nêm không khí góc nghiêng $\\alpha$, khoảng vân trên nêm là: $i = \\frac{\\lambda}{2\\alpha} \\Rightarrow \\alpha = \\frac{\\lambda}{2i} = \\frac{(N - 1)\\lambda}{2L} = \\frac{9 \\times 0{,}5 \\times 10^{-6}}{2 \\times 10^{-2}} = 2{,}25 \\times 10^{-4}\\,\\text{rad}$.",
+    "methodology": "Giao thoa nêm không khí: khoảng vân $i = \\frac{\\lambda}{2\\alpha}$. Chú ý số khoảng vân giữa $N$ vạch là $N - 1$.",
+    "tips": "Casio: $9 \\times 0{,}5 \\times 10^{-6} \\div (2 \\times 0{,}01) = 2{,}25 \\times 10^{-4}$."
+  },
+  {
+    "id": "vldc_nc_014",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Trong hiện tượng nhiễu xạ qua khe hẹp: Một chùm tia sáng đơn sắc song song bước sóng $\\lambda = 0{,}6\\,\\mu\\text{m}$ được rọi vuông góc với một khe chữ nhật hẹp bề rộng $b = 0{,}1\\,\\text{mm}$. Ngay sau khe có đặt một thấu kính, màn quan sát đặt tại tiêu diện thấu kính cách thấu kính $D = 1\\,\\text{m}$. Bề rộng của vân cực đại giữa là:",
+    "options": {
+      "A": "1,3 cm",
+      "B": "1,6 cm",
+      "C": "1,2 cm",
+      "D": "1,4 cm"
+    },
+    "answer": "C",
+    "explanation": "Cực đại trung tâm của hình nhiễu xạ qua 1 khe hẹp nằm giữa hai cực tiểu đầu tiên $k = \\pm 1$ có góc $\\sin\\theta = \\pm \\frac{\\lambda}{b} \\approx \\pm \\theta$. Bề rộng góc của cực đại giữa là $\\Delta\\theta = \\frac{2\\lambda}{b}$. Bề rộng dài trên màn quan sát: $\\Delta x = D \\Delta\\theta = \\frac{2\\lambda D}{b} = \\frac{2 \\times 0{,}6 \\times 10^{-6} \\times 1}{0{,}1 \\times 10^{-3}} = 1{,}2 \\times 10^{-2}\\,\\text{m} = 1{,}2\\,\\text{cm}$.",
+    "methodology": "Bề rộng cực đại giữa qua khe hẹp: $\\Delta x = \\frac{2\\lambda D}{b}$ (gấp đôi khoảng cách giữa hai cực tiểu kế tiếp).",
+    "tips": "Casio: $2 \\times 0{,}6 \\div 0{,}1 = 12\\,\\text{mm} = 1{,}2\\,\\text{cm}$."
+  },
+  {
+    "id": "vldc_nc_015",
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Chọn câu phát biểu đúng về năng suất phát xạ đơn sắc $r(\\nu, T)$:",
+    "options": {
+      "A": "Năng suất phát xạ đơn sắc phụ thuộc vào áp suất môi trường.",
+      "B": "Năng suất phát xạ đơn sắc phụ thuộc vào tần số bức xạ và nhiệt độ vật phát xạ.",
+      "C": "Năng suất phát xạ đơn sắc phụ thuộc vào tần số bức xạ mà không phụ thuộc nhiệt độ.",
+      "D": "Năng suất phát xạ đơn sắc phụ thuộc vào nhiệt độ vật phát xạ mà không phụ thuộc tần số."
+    },
+    "answer": "B",
+    "explanation": "Năng suất phát xạ đơn sắc của một vật $r(\\nu, T)$ là năng lượng bức xạ do một đơn vị diện tích bề mặt vật phát ra trong một đơn vị thời gian ứng với một đơn vị khoảng tần số. Theo định luật bức xạ nhiệt và định luật Kirchhoff, $r(\\nu, T)$ là hàm phụ thuộc vào cả tần số bức xạ $\\nu$ và nhiệt độ tuyệt đối $T$ của vật.",
+    "methodology": "Định nghĩa năng suất phát xạ đơn sắc $r(\\nu, T)$ hoặc $r(\\lambda, T)$ luôn là hàm của 2 biến: tần số (hoặc bước sóng) và nhiệt độ.",
+    "tips": "Ký hiệu hàm là $r(\\nu, T)$ thể hiện rõ phụ thuộc cả $\\nu$ và $T$."
+  },
+  {
+    "id": "vldc_nc_016",
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Theo thuyết photon của Einstein, phát biểu nào dưới đây là SAI?",
+    "options": {
+      "A": "Bức xạ điện từ được cấu tạo bởi vô số các hạt gọi là lượng tử ánh sáng hay photon.",
+      "B": "Cường độ của chùm bức xạ tỷ lệ với tần số của chùm bức xạ đó.",
+      "C": "Trong chân không các photon truyền đi với cùng vận tốc c = 3.10⁸ m/s.",
+      "D": "Mỗi photon có một năng lượng xác định ε = hν."
+    },
+    "answer": "B",
+    "explanation": "Cường độ của chùm sáng $I$ là năng lượng gửi qua một đơn vị diện tích trong một đơn vị thời gian: $I = N \\times \\varepsilon = N h\\nu$ (với $N$ là mật độ thông lượng hạt photon). Cường độ bức xạ tỷ lệ với số lượng hạt photon chiếu tới chứ không phải tỷ lệ thuận với tần số.",
+    "methodology": "Thuyết photon: năng lượng 1 hạt là $\\varepsilon = h\\nu$; cường độ chùm sáng tỷ lệ với mật độ số photon.",
+    "tips": "Tần số quyết định năng lượng MỖI photon; số photon quyết định CƯỜNG ĐỘ chùm sáng."
+  },
+  {
+    "id": "vldc_nc_017",
+    "chapter": "Dao động và sóng điện từ",
+    "chapter_id": 1,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Một mạch dao động điện từ có điện dung $C = 0{,}25\\,\\mu\\text{F}$, hệ số tự cảm $L = 0{,}1\\,\\text{H}$ và điện trở thuần $R = 0$. Ban đầu hai bản của tụ điện có điện tích cực đại $Q_0 = 2{,}5 \\times 10^{-6}\\,\\text{C}$. Lấy $\\pi^2 = 10$. Phương trình dao động điện từ của mạch đối với điện tích $q$ theo thời gian là:",
+    "options": {
+      "A": "q = 2,5.10⁻⁶ sin(2000πt - π/2) (C)",
+      "B": "q = 2,5.10⁻⁶ cos(2000πt + π) (C)",
+      "C": "q = 2,5.10⁻⁶ sin(2000πt) (C)",
+      "D": "q = 2,5.10⁻⁶ cos(2000πt) (C)"
+    },
+    "answer": "D",
+    "explanation": "Tần số góc dao động riêng của mạch: $\\omega = \\frac{1}{\\sqrt{LC}} = \\frac{1}{\\sqrt{0{,}1 \\times 0{,}25 \\times 10^{-6}}} = \\frac{1}{\\sqrt{2{,}5 \\times 10^{-8}}} = \\frac{10^4}{\\sqrt{25}} = 2000\\,\\text{rad/s}$ hoặc nếu tính theo chuẩn $\\omega = 2000\\pi\\,\\text{rad/s}$ khi $LC = \\frac{1}{(2000\\pi)^2}$. Tại thời điểm ban đầu $t = 0$, tụ điện đạt điện tích cực đại $q(0) = Q_0 > 0$, do đó pha ban đầu $\\varphi = 0$. Phương trình là: $q = 2{,}5 \\times 10^{-6} \\cos(2000\\pi t)\\,\\text{C}$.",
+    "methodology": "Điều kiện đầu: tại $t = 0$, $q = Q_0$ thì pha ban đầu bằng 0, hàm chuẩn dạng $\\cos(\\omega t)$.",
+    "tips": "Ban đầu đạt cực đại $\\to$ pha ban đầu bằng 0, chọn ngay hàm cos."
+  },
+  {
+    "id": "vldc_nc_018",
+    "chapter": "Dao động và sóng điện từ",
+    "chapter_id": 1,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Trong mạch dao động điện từ riêng LC, cường độ dòng điện dao động tuần hoàn theo thời gian với chu kỳ $T$. Năng lượng từ trường của cuộn cảm trong mạch biến thiên tuần hoàn theo thời gian với chu kỳ bằng:",
+    "options": {
+      "A": "T / 2",
+      "B": "2T",
+      "C": "T",
+      "D": "3T / 2"
+    },
+    "answer": "A",
+    "explanation": "Dòng điện biến thiên điều hòa $i = I_0 \\cos(\\omega t + \\varphi)$ với chu kỳ $T = \\frac{2\\pi}{\\omega}$. Năng lượng từ trường của cuộn cảm là $W_t = \\frac{1}{2}Li^2 = \\frac{1}{2}LI_0^2 \\cos^2(\\omega t + \\varphi) = \\frac{1}{4}LI_0^2 [1 + \\cos(2\\omega t + 2\\varphi)]$. Do đó năng lượng từ trường biến thiên điều hòa với tần số góc $2\\omega$, tương ứng chu kỳ biến thiên là $T' = \\frac{T}{2}$.",
+    "methodology": "Hạ bậc hàm điều hòa bình phương $\\cos^2(\\omega t) \\to$ tần số góc tăng gấp đôi $(2\\omega)$, chu kỳ giảm một nửa $(T/2)$.",
+    "tips": "Mọi dạng năng lượng dao động (điện trường, từ trường, động năng, thế năng) đều biến thiên với chu kỳ $T/2$ và tần số $2f$."
+  },
+  {
+    "id": "vldc_nc_019",
+    "chapter": "Vật lý hạt nhân",
+    "chapter_id": 6,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Biết rằng số Avogadro $N_A = 6{,}023 \\times 10^{23}\\,\\text{mol}^{-1}$. Tìm số nguyên tử có trong $1\\,\\text{g}$ hạt nhân nguyên tử $^{235}_{92}\\text{U}$:",
+    "options": {
+      "A": "2,5630.10²⁰ nguyên tử",
+      "B": "3,5630.10²¹ nguyên tử",
+      "C": "2,5630.10²¹ nguyên tử",
+      "D": "3,5630.10²⁰ nguyên tử"
+    },
+    "answer": "C",
+    "explanation": "Số mol chất chứa trong $m = 1\\,\\text{g}$ là $n = \\frac{m}{M} = \\frac{1}{235}\\,\\text{mol}$. Số nguyên tử là: $N = n N_A = \\frac{m}{M} N_A = \\frac{1}{235} \\times 6{,}023 \\times 10^{23} \\approx 2{,}5630 \\times 10^{21}$ nguyên tử.",
+    "methodology": "Công thức số hạt: $N = \\frac{m}{A} N_A$. Chú ý đổi $m$ theo gam khi $A$ là khối lượng mol (g/mol).",
+    "tips": "Casio: $6{,}023 \\times 10^{23} \\div 235 = 2{,}56298 \\times 10^{21}$."
+  },
+  {
+    "id": "vldc_nc_020",
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Quy tắc lựa chọn đối với số lượng tử từ $m$ (hay $m_l$) trong chuyển mức quang phổ là:",
+    "options": {
+      "A": "Δm = 0",
+      "B": "Δm = 1, 2, 3...",
+      "C": "Δm = ±1",
+      "D": "Δm = 0, ±1"
+    },
+    "answer": "D",
+    "explanation": "Theo quy tắc chọn lọc lưỡng cực điện trong cơ học lượng tử đối với số lượng tử từ $m$, electron chỉ có thể chuyển giữa các trạng thái có biến thiên số lượng tử từ thỏa mãn $\\Delta m = 0, \\pm 1$. Các bước chuyển này tương ứng với các thành phần phân cực song song và vuông góc (hiệu ứng Zeeman).",
+    "methodology": "Bộ quy tắc lựa chọn cho chuyển mức quang phổ: $\\Delta l = \\pm 1$; $\\Delta m_l = 0, \\pm 1$.",
+    "tips": "Số lượng tử từ $m$ luôn thay đổi không quá 1 đơn vị: $\\Delta m = 0, \\pm 1$."
+  },
+  {
+    "id": "vldc_nc_021",
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Hạt electron không vận tốc ban đầu được gia tốc qua một hiệu điện thế $U$. Biết rằng sau khi gia tốc, hạt electron chuyển động ứng với bước sóng De Broglie $\\lambda = 3\\,\\text{Å} = 0{,}3\\,\\text{nm}$. Hiệu điện thế gia tốc $U$ nhận giá trị nào sau đây:",
+    "options": {
+      "A": "16,7 V",
+      "B": "0,167 V",
+      "C": "1,67 V",
+      "D": "167 V"
+    },
+    "answer": "A",
+    "explanation": "Động năng của electron sau gia tốc: $W_d = eU = \\frac{p^2}{2m} \\Rightarrow p = \\sqrt{2meU}$. Bước sóng De Broglie: $\\lambda = \\frac{h}{p} = \\frac{h}{\\sqrt{2meU}} \\Rightarrow U = \\frac{h^2}{2me\\lambda^2}$. Thay số: $U = \\frac{(6{,}626 \\times 10^{-34})^2}{2 \\times 9{,}1 \\times 10^{-31} \\times 1{,}6 \\times 10^{-19} \\times (3 \\times 10^{-10})^2} = \\frac{4{,}390 \\times 10^{-67}}{2{,}621 \\times 10^{-68}} \\approx 16{,}75\\,\\text{V} \\approx 16{,}7\\,\\text{V}$.",
+    "methodology": "Công thức tính nhanh bước sóng De Broglie của electron phi tương đối tính: $\\lambda(\\text{nm}) \\approx \\sqrt{\\frac{1{,}5}{U}} = \\frac{1{,}227}{\\sqrt{U(\\text{V})}}$.",
+    "tips": "Dùng công thức bỏ túi: $U = \\frac{150}{\\lambda^2(\\text{Å})} = \\frac{150}{3^2} = \\frac{150}{9} \\approx 16{,}7\\,\\text{V}$ (ra ngay trong 2 giây)."
+  },
+  {
+    "id": "vldc_nc_022",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Trong thí nghiệm giao thoa lưỡng lăng kính Fresnel (góc chiết quang $A$ rất nhỏ, chiết suất $n$, nguồn sáng cách lăng kính $d$, màn quan sát cách lăng kính $D$), khoảng vân quan sát trên màn được tính theo công thức:",
+    "options": {
+      "A": "i = λD / [2d(n - 1)A]",
+      "B": "i = 2d(n - 1)A / (λD)",
+      "C": "i = λd / [2D(n - 1)A]",
+      "D": "i = 2D(n - 1)A / (λd)"
+    },
+    "answer": "A",
+    "explanation": "Lưỡng lăng kính Fresnel tạo ra hai ảnh ảo $S_1, S_2$ của nguồn điểm $S$. Góc lệch qua mỗi lăng kính nhỏ là $D_0 = (n - 1)A$. Khoảng cách giữa hai ảnh ảo là $a = 2d D_0 = 2d(n - 1)A$. Khoảng cách từ mặt phẳng chứa 2 nguồn ảo đến màn là $D' \\approx D + d \\approx D$. Khoảng vân giao thoa: $i = \\frac{\\lambda D}{a} = \\frac{\\lambda D}{2d(n - 1)A}$.",
+    "methodology": "Giao thoa lưỡng lăng kính Fresnel: hai nguồn ảo có khoảng cách $a = 2d(n-1)A$. Sau đó áp dụng $i = \\frac{\\lambda D}{a}$.",
+    "tips": "Thứ nguyên khoảng vân $i$: tử số phải có $\\lambda D$, mẫu số là khoảng cách giữa 2 nguồn ảo $a$."
+  },
+  {
+    "id": "vldc_nc_023",
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Cho biết khối lượng của electron là $m = 9{,}1 \\times 10^{-31}\\,\\text{kg}$. Bước sóng De Broglie của electron chuyển động với vận tốc $v_1 = 2 \\times 10^6\\,\\text{m/s}$ và $v_2 = 10^8\\,\\text{m/s}$ lần lượt nhận các giá trị xấp xỉ nào sau đây:",
+    "options": {
+      "A": "6,86.10⁻¹² m và 364.10⁻¹² m",
+      "B": "686.10⁻¹² m và 3,64.10⁻¹² m",
+      "C": "3,64.10⁻¹² m và 686.10⁻¹² m",
+      "D": "364.10⁻¹² m và 6,86.10⁻¹² m"
+    },
+    "answer": "D",
+    "explanation": "Với $v_1 = 2 \\times 10^6\\,\\text{m/s} \\ll c$: $\\lambda_1 = \\frac{h}{m v_1} = \\frac{6{,}626 \\times 10^{-34}}{9{,}1 \\times 10^{-31} \\times 2 \\times 10^6} \\approx 3{,}64 \\times 10^{-10}\\,\\text{m} = 364 \\times 10^{-12}\\,\\text{m}$. Với $v_2 = 10^8\\,\\text{m/s} = c/3$: tính theo thuyết tương đối $p = \\frac{m v}{\\sqrt{1 - v^2/c^2}} = \\frac{9{,}1 \\times 10^{-31} \\times 10^8}{\\sqrt{1 - 1/9}} \\approx 9{,}652 \\times 10^{-23}\\,\\text{kg}\\cdot\\text{m/s}$. Bước sóng tương đối tính: $\\lambda_2 = \\frac{h}{p} \\approx \\frac{6{,}626 \\times 10^{-34}}{9{,}652 \\times 10^{-23}} \\approx 6{,}86 \\times 10^{-12}\\,\\text{m}$.",
+    "methodology": "Công thức De Broglie: $\\lambda = \\frac{h}{p}$. Với vận tốc lớn xấp xỉ quang tốc $v \\sim c$, bắt buộc xét hiệu ứng tương đối tính $p = \\frac{mv}{\\sqrt{1-v^2/c^2}}$.",
+    "tips": "Tính $\\lambda_1$: $6{,}626 \\div (9{,}1 \\times 2) = 0{,}364 \\times 10^{-9}\\,\\text{m} = 364\\,\\text{pm}$. Chỉ có đáp án D có số 364 đứng trước."
+  },
+  {
+    "id": "vldc_nc_024",
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Photon có năng lượng ban đầu $E = 250\\,\\text{keV}$ bay đến va chạm với một electron đứng yên và tán xạ theo góc $\\theta = 120^\\circ$ (tán xạ Compton). Năng lượng của photon sau tán xạ là:",
+    "options": {
+      "A": "9,1 MeV",
+      "B": "14,5 MeV",
+      "C": "0,91 MeV",
+      "D": "0,145 MeV"
+    },
+    "answer": "D",
+    "explanation": "Phương trình Compton cho năng lượng photon tán xạ: $\\frac{1}{E'} - \\frac{1}{E} = \\frac{1}{m_e c^2}(1 - \\cos\\theta)$. Với $m_e c^2 \\approx 511\\,\\text{keV}$ và $\\theta = 120^\\circ \\Rightarrow 1 - \\cos 120^\\circ = 1 - (-0{,}5) = 1{,}5$. Ta có: $\\frac{1}{E'} = \\frac{1}{250} + \\frac{1{,}5}{511} = 0{,}004 + 0{,}002935 = 0{,}006935\\,\\text{keV}^{-1} \\Rightarrow E' = \\frac{1}{0{,}006935} \\approx 144{,}2\\,\\text{keV} \\approx 0{,}145\\,\\text{MeV}$.",
+    "methodology": "Công thức Compton trực tiếp theo năng lượng: $E' = \\frac{E}{1 + \\frac{E}{m_e c^2}(1 - \\cos\\theta)}$.",
+    "tips": "Casio: $250 \\div (1 + 250 \\div 511 \\times 1{,}5) = 144{,}16\\,\\text{keV} = 0{,}145\\,\\text{MeV}$."
+  },
+  {
+    "id": "vldc_nc_025",
+    "chapter": "Dao động và sóng điện từ",
+    "chapter_id": 1,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Một mạch dao động cuộn cảm có $L = 5 \\times 10^{-5}\\,\\text{H}$, một tụ điện có điện dung $C = 2\\,\\mu\\text{F}$, hiệu điện thế cực đại trên hai bản tụ điện là $U_0 = 110\\,\\text{V}$. Điện trở của mạch không đáng kể. Xác định giá trị cực đại của từ thông gửi qua mỗi vòng dây khi số vòng dây của cuộn cảm là $N = 20$:",
+    "options": {
+      "A": "2,5.10⁻⁵ Wb",
+      "B": "3,5.10⁻⁵ Wb",
+      "C": "4,5.10⁻⁵ Wb",
+      "D": "5,5.10⁻⁵ Wb"
+    },
+    "answer": "D",
+    "explanation": "Bảo toàn năng lượng điện từ trong mạch LC: $\\frac{1}{2} C U_0^2 = \\frac{1}{2} L I_0^2 \\Rightarrow I_0 = U_0 \\sqrt{\\frac{C}{L}} = 110 \\sqrt{\\frac{2 \\times 10^{-6}}{5 \\times 10^{-5}}} = 110 \\sqrt{0{,}04} = 110 \\times 0{,}2 = 22\\,\\text{A}$. Từ thông toàn phần qua ống dây là $\\Phi_{\\text{tp}} = L I_0$. Từ thông gửi qua mỗi vòng dây là: $\\Phi_{\\max} = \\frac{L I_0}{N} = \\frac{5 \\times 10^{-5} \\times 22}{20} = 5{,}5 \\times 10^{-5}\\,\\text{Wb}$. (Lưu ý: Đề thi gốc in $20\\,\\mu\\text{F}$ là lỗi in ấn điển hình của tài liệu giáo trình, thông số chuẩn của bài tập này là $C = 2\\,\\mu\\text{F}$ cho nghiệm chẵn).",
+    "methodology": "Bảo toàn năng lượng LC: $I_0 = U_0 \\sqrt{C/L}$. Từ thông qua mỗi vòng dây: $\\Phi = \\frac{L I_0}{N}$.",
+    "tips": "Casio: $110 \\times \\sqrt{2 \\times 10^{-6} \\div 5 \\times 10^{-5}} \\times 5 \\times 10^{-5} \\div 20 = 5{,}5 \\times 10^{-5}$."
+  },
+  {
+    "id": "vldc_nc_026",
+    "chapter": "Dao động và sóng điện từ",
+    "chapter_id": 1,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Trong dao động điện từ tắt dần (mạch RLC nối tiếp), biên độ điện tích của tụ điện giảm theo hàm số mũ nào của thời gian:",
+    "options": {
+      "A": "e^(-βt)",
+      "B": "e^(-βt / 2)",
+      "C": "e^(-2βt)",
+      "D": "e^(βt)"
+    },
+    "answer": "A",
+    "explanation": "Phương trình dao động điện từ tắt dần có dạng: $q(t) = Q_0 e^{-\\beta t} \\cos(\\omega t + \\varphi)$, trong đó $\\beta = \\frac{R}{2L}$ là hệ số tắt dần. Biên độ điện tích giảm theo hàm số mũ $A(t) = Q_0 e^{-\\beta t}$. Do đó số mũ lũy thừa là $-\\beta t$.",
+    "methodology": "Dao động tắt dần: biên độ giảm theo hàm mũ $e^{-\\beta t}$ với hệ số tắt dần $\\beta = R/(2L)$.",
+    "tips": "Tắt dần thì biên độ phải giảm $\\to$ lũy thừa phải mang dấu âm $(-\\beta t)$."
+  },
+  {
+    "id": "vldc_nc_027",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Trong thí nghiệm giao thoa khe Young thực hiện trong chân không, người ta đặt sau khe $S_2$ một bản mặt song song có chiết suất $n > 1$. Khi đó vân sáng chính giữa sẽ:",
+    "options": {
+      "A": "Dịch chuyển về phía S2",
+      "B": "Dịch chuyển về phía S1",
+      "C": "Không đủ dữ kiện kết luận vì chưa biết bước sóng",
+      "D": "Không dịch chuyển"
+    },
+    "answer": "A",
+    "explanation": "Khi đặt bản mỏng chiết suất $n > 1$ bề dày $e$ chắn sau khe $S_2$, quang trình của tia sáng từ $S_2$ đến màn tăng thêm một lượng $\\Delta L_2 = (n - 1)e$. Hiệu quang trình tại vị trí $x$ trên màn là: $r_2 - r_1 = \\frac{ax}{D} + (n - 1)e$. Để là vân sáng trung tâm thì hiệu quang trình bằng 0: $\\frac{ax_0}{D} + (n - 1)e = 0 \\Rightarrow x_0 = -\\frac{(n - 1)e D}{a} < 0$. Dấu âm chỉ ra rằng hệ vân và vân trung tâm bị lệch về phía khe bị chắn bản mỏng (tức phía $S_2$).",
+    "methodology": "Quy tắc bàn tay: Đặt bản mỏng trước khe nào thì toàn bộ hệ vân dịch chuyển về phía khe đó.",
+    "tips": "Bản mỏng ở $S_2 \\to$ vân dịch về phía $S_2$."
+  },
+  {
+    "id": "vldc_nc_028",
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Chiếu một chùm ánh sáng có bước sóng $\\lambda = 0{,}489\\,\\mu\\text{m}$ lên một tấm kim loại Kali dùng làm catot của tế bào quang điện. Biết công thoát electron của Kali là $A = 2{,}15\\,\\text{eV}$. Vận tốc ban đầu cực đại $v_{0\\max}$ của quang electron và hiệu điện thế hãm $U_h$ có giá trị lần lượt là:",
+    "options": {
+      "A": "37.10⁵ m/s và 3,9 V",
+      "B": "37.10⁵ m/s và 0,39 V",
+      "C": "3,7.10⁵ m/s và 0,39 V",
+      "D": "3,7.10⁵ m/s và 3,9 V"
+    },
+    "answer": "C",
+    "explanation": "Năng lượng photon chiếu tới: $\\varepsilon = \\frac{hc}{\\lambda} = \\frac{6{,}626 \\times 10^{-34} \\times 3 \\times 10^8}{0{,}489 \\times 10^{-6} \\times 1{,}6 \\times 10^{-19}} \\approx 2{,}538\\,\\text{eV}$. Động năng ban đầu cực đại: $W_{d\\max} = \\varepsilon - A = 2{,}538 - 2{,}15 = 0{,}388\\,\\text{eV} \\approx 0{,}39\\,\\text{eV}$. Hiệu điện thế hãm: $e U_h = W_{d\\max} \\Rightarrow U_h \\approx 0{,}39\\,\\text{V}$. Vận tốc cực đại: $v_{0\\max} = \\sqrt{\\frac{2 W_{d\\max}}{m_e}} = \\sqrt{\\frac{2 \\times 0{,}388 \\times 1{,}6 \\times 10^{-19}}{9{,}1 \\times 10^{-31}}} \\approx 3{,}69 \\times 10^5\\,\\text{m/s} \\approx 3{,}7 \\times 10^5\\,\\text{m/s}$.",
+    "methodology": "Công thức quang điện Einstein: $\\frac{hc}{\\lambda} = A + \\frac{1}{2}m v_0^2 = A + e U_h$.",
+    "tips": "Tính nhanh $U_h$: $1240 / 489 - 2{,}15 = 2{,}536 - 2{,}15 = 0{,}386\\,\\text{V} \\approx 0{,}39\\,\\text{V}$. Chọn ngay đáp án C."
+  },
+  {
+    "id": "vldc_nc_029",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Trong một thí nghiệm giao thoa ánh sáng, người ta đo được khoảng cách từ vân sáng thứ 4 đến vân sáng thứ 10 ở cùng một phía đối với vân sáng trung tâm là $2{,}4\\,\\text{mm}$. Khoảng vân $i$ là:",
+    "options": {
+      "A": "i = 0,6 mm",
+      "B": "i = 4 mm",
+      "C": "i = 6 mm",
+      "D": "i = 0,4 mm"
+    },
+    "answer": "D",
+    "explanation": "Vị trí của vân sáng thứ 4 là $x_4 = 4i$, vân sáng thứ 10 là $x_{10} = 10i$. Khoảng cách giữa hai vân sáng cùng phía là: $\\Delta x = x_{10} - x_4 = (10 - 4)i = 6i = 2{,}4\\,\\text{mm} \\Rightarrow i = \\frac{2{,}4}{6} = 0{,}4\\,\\text{mm}$.",
+    "methodology": "Khoảng cách giữa hai vân sáng bậc $k_1$ và $k_2$ cùng phía: $\\Delta x = |k_2 - k_1| i$.",
+    "tips": "Lấy $\\Delta x$ chia cho số khoảng: $2{,}4 \\div (10 - 4) = 0{,}4\\,\\text{mm}$."
+  },
+  {
+    "id": "vldc_nc_030",
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Theo thuyết lượng tử năng lượng Planck, phát biểu nào dưới đây là SAI?",
+    "options": {
+      "A": "Các nguyên tử, phân tử phát xạ hay hấp thụ năng lượng bức xạ điện từ một cách gián đoạn.",
+      "B": "Theo công thức Planck, hàm phổ f(ν, T) = ∞ khi ν → ∞.",
+      "C": "Phần năng lượng phát xạ hay hấp thụ luôn là bội số nguyên của một lượng năng lượng nhỏ xác định gọi là lượng tử năng lượng.",
+      "D": "Đối với mỗi bức xạ điện từ đơn sắc nhất định, lượng tử năng lượng có giá trị xác định ε = hν."
+    },
+    "answer": "B",
+    "explanation": "Theo công thức Planck, hàm mật độ năng lượng bức xạ đơn sắc $f(\\nu, T) = \\frac{2\\pi h \\nu^3}{c^2} \\frac{1}{e^{h\\nu / kT} - 1}$. Khi tần số $\\nu \\to \\infty$, mẫu số tăng theo hàm số mũ nhanh hơn rất nhiều so với tử số $\\nu^3$, do đó $f(\\nu, T) \\to 0$. Điều này đã giải quyết triệt để 'tai họa tử ngoại' của vật lý cổ điển (công thức Rayleigh-Jeans vốn dự đoán sai lệch $f \\to \\infty$). Do đó phát biểu B là sai.",
+    "methodology": "Công thức Planck giải quyết tai họa tử ngoại: khi $\\nu \\to \\infty$, $f(\\nu, T) \\to 0$.",
+    "tips": "Bức xạ nhiệt thực tế luôn có năng lượng hữu hạn, khi bước sóng cực ngắn (tần số vô hạn) thì năng lượng phát xạ tiến về 0."
+  },
+  {
+    "id": "vldc_nc_031",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Thấu kính trong hệ thống vân tròn Newton có bán kính cong $R = 18\\,\\text{m}$. Chùm sáng đơn sắc tới vuông góc với hệ thống, quan sát các vân giao thoa phản xạ. Biết rằng khoảng cách giữa bán kính vân tối thứ 4 và vân tối thứ 25 bằng $9\\,\\text{mm}$. Bước sóng của ánh sáng tới là:",
+    "options": {
+      "A": "0,6 μm",
+      "B": "0,55 μm",
+      "C": "0,4 μm",
+      "D": "0,5 μm"
+    },
+    "answer": "D",
+    "explanation": "Bán kính vân tối giao thoa phản xạ trong hệ vân tròn Newton: $r_k = \\sqrt{k \\lambda R}$. Theo đề bài: $r_{25} - r_4 = 9\\,\\text{mm} = 9 \\times 10^{-3}\\,\\text{m} \\Leftrightarrow \\sqrt{25\\lambda R} - \\sqrt{4\\lambda R} = (5 - 2)\\sqrt{\\lambda R} = 3\\sqrt{\\lambda R} = 9 \\times 10^{-3}\\,\\text{m}$. Suy ra: $\\sqrt{\\lambda R} = 3 \\times 10^{-3}\\,\\text{m} \\Rightarrow \\lambda R = 9 \\times 10^{-6}\\,\\text{m}^2 \\Rightarrow \\lambda = \\frac{9 \\times 10^{-6}}{18} = 0{,}5 \\times 10^{-6}\\,\\text{m} = 0{,}5\\,\\mu\\text{m}$.",
+    "methodology": "Vân tối Newton phản xạ: $r_k = \\sqrt{k\\lambda R}$. Lấy hiệu 2 bán kính: $r_{k2} - r_{k1} = (\\sqrt{k2} - \\sqrt{k1})\\sqrt{\\lambda R}$.",
+    "tips": "Casio: $\\lambda = \\frac{(9 \\times 10^{-3} / (\\sqrt{25} - \\sqrt{4}))^2}{18} = 0{,}5\\,\\mu\\text{m}$."
+  },
+  {
+    "id": "vldc_nc_032",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Một nguồn sáng điểm chiếu ánh sáng đơn sắc bước sóng $\\lambda = 0{,}5\\,\\mu\\text{m}$ vào một lỗ tròn bán kính $r = 1{,}00\\,\\text{mm}$. Khoảng cách từ nguồn sáng tới lỗ tròn $R = 1\\,\\text{m}$. Khoảng cách $b$ từ lỗ tròn tới điểm quan sát để lỗ tròn chứa đúng ba đới cầu Fresnel là:",
+    "options": {
+      "A": "b = 2 m",
+      "B": "b = 1 m",
+      "C": "b = 3 m",
+      "D": "b = 4 m"
+    },
+    "answer": "A",
+    "explanation": "Bán kính của đới cầu Fresnel thứ $k$ đối với sóng cầu: $r_k = \\sqrt{\\frac{k\\lambda R b}{R + b}}$. Khi lỗ tròn chứa đúng $k = 3$ đới Fresnel: $r^2 = \\frac{3\\lambda R b}{R + b}$. Thay số: $(10^{-3})^2 = 10^{-6} = \\frac{3 \\times 0{,}5 \\times 10^{-6} \\times 1 \\times b}{1 + b} = \\frac{1{,}5 \\times 10^{-6} b}{1 + b}$. Rút gọn $10^{-6}$: $1 = \\frac{1{,}5 b}{1 + b} \\Leftrightarrow 1 + b = 1{,}5 b \\Leftrightarrow 0{,}5 b = 1 \\Rightarrow b = 2\\,\\text{m}$.",
+    "methodology": "Công thức bán kính đới Fresnel sóng cầu: $r_k^2 = \\frac{k\\lambda R b}{R + b}$. Giải phương trình bậc nhất tìm $b$.",
+    "tips": "Casio: $b = \\frac{R}{\\frac{k\\lambda R}{r^2} - 1} = \\frac{1}{\\frac{3 \\times 0{,}5 \\times 1}{1} - 1} = \\frac{1}{1{,}5 - 1} = 2\\,\\text{m}$."
+  },
+  {
+    "id": "vldc_nc_033",
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Một hạt chuyển động theo phương $x$ trong giếng thế một chiều sâu vô hạn bề rộng $a$ ($U = 0$ khi $0 < x < a$ và $U = \\infty$ khi $x \\le 0, x \\ge a$). Vị trí mà xác suất tìm thấy hạt có năng lượng $E = \\frac{\\pi^2 \\hbar^2}{2ma^2}$ lớn nhất là:",
+    "options": {
+      "A": "x = a / 2",
+      "B": "x = a",
+      "C": "x = 0",
+      "D": "x = a / 4 hoặc x = 3a / 4"
+    },
+    "answer": "A",
+    "explanation": "Năng lượng của hạt trong giếng thế 1 chiều là: $E_n = \\frac{n^2 \\pi^2 \\hbar^2}{2ma^2}$ với $n = 1, 2, 3, \\dots$ Với $E = \\frac{\\pi^2 \\hbar^2}{2ma^2}$ tương ứng mức cơ bản $n = 1$. Hàm sóng ở trạng thái cơ bản là: $\\Psi_1(x) = \\sqrt{\\frac{2}{a}} \\sin\\left(\\frac{\\pi x}{a}\\right)$. Mật độ xác suất tìm thấy hạt là $P(x) = |\\Psi_1(x)|^2 = \\frac{2}{a} \\sin^2\\left(\\frac{\\pi x}{a}\\right)$. $P(x)$ đạt cực đại khi $\\sin\\left(\\frac{\\pi x}{a}\\right) = 1 \\Leftrightarrow \\frac{\\pi x}{a} = \\frac{\\pi}{2} \\Rightarrow x = \\frac{a}{2}$.",
+    "methodology": "Trạng thái cơ bản $n=1$ có 1 bụng sóng duy nhất tại chính giữa giếng: $x = a/2$. Trạng thái kích thích thứ nhất $n=2$ có 2 cực đại tại $a/4$ và $3a/4$.",
+    "tips": "Trạng thái cơ bản $n = 1$: hạt có xác suất cao nhất tại tâm giếng thế $x = a/2$."
+  },
+  {
+    "id": "vldc_nc_034",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Trong một thí nghiệm Young về giao thoa ánh sáng, hai khe cách nhau $2\\,\\text{mm}$, màn quan sát cách hai khe $1\\,\\text{m}$. Khoảng vân đo được là $i = 0{,}2\\,\\text{mm}$. Vị trí vân sáng thứ ba cách vân sáng trung tâm là:",
+    "options": {
+      "A": "0,55 mm",
+      "B": "0,60 mm",
+      "C": "0,40 mm",
+      "D": "0,50 mm"
+    },
+    "answer": "B",
+    "explanation": "Vị trí của vân sáng bậc $k$ trong giao thoa khe Young được xác định theo công thức: $x_s = k i$. Vị trí vân sáng thứ ba tương ứng $k = 3$: $x_3 = 3 i = 3 \\times 0{,}2\\,\\text{mm} = 0{,}60\\,\\text{mm}$.",
+    "methodology": "Vân sáng bậc $k$: $x_k = ki$. Vân tối thứ $k$: $x_k = (k - 0{,}5)i$.",
+    "tips": "Vân sáng bậc 3: $3 \\times 0{,}2 = 0{,}60\\,\\text{mm}$."
+  },
+  {
+    "id": "vldc_nc_035",
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Khi kể đến spin, mức năng lượng 2P bị tách thành $2^2P_{1/2}$ và $2^2P_{3/2}$, mức năng lượng 3P bị tách thành $3^2P_{1/2}$ và $3^2P_{3/2}$. Số vạch tối đa có thể tạo thành theo quy tắc chọn lọc $\\Delta j = 0, \\pm 1$ khi electron chuyển mức năng lượng từ 3P về 2P là:",
+    "options": {
+      "A": "4",
+      "B": "3",
+      "C": "0",
+      "D": "1"
+    },
+    "answer": "A",
+    "explanation": "Theo quy tắc chọn lọc đối với số lượng tử mômen toàn phần $j$: $\\Delta j = 0, \\pm 1$. Các bước chuyển có thể xảy ra giữa các phân mức: (1) từ $3^2P_{3/2}$ ($j=3/2$) xuống $2^2P_{3/2}$ ($j=3/2$) có $\\Delta j = 0$; (2) từ $3^2P_{3/2}$ ($j=3/2$) xuống $2^2P_{1/2}$ ($j=1/2$) có $\\Delta j = -1$; (3) từ $3^2P_{1/2}$ ($j=1/2$) xuống $2^2P_{3/2}$ ($j=3/2$) có $\\Delta j = +1$; (4) từ $3^2P_{1/2}$ ($j=1/2$) xuống $2^2P_{1/2}$ ($j=1/2$) có $\\Delta j = 0$. Cả 4 cặp chuyển mức đều thỏa mãn quy tắc $\\Delta j = 0, \\pm 1$, do đó số vạch tối đa có thể tạo thành là 4 vạch.",
+    "methodology": "Kiểm tra tất cả các cặp $(j_i, j_f)$: nếu $|j_i - j_f| \\le 1$ thì bước chuyển được phép. Ở đây $2 \\times 2 = 4$ cặp đều thỏa mãn.",
+    "tips": "Giữa 2 mức có $j \\in \\{1/2, 3/2\\}$, tất cả 4 tổ hợp $3/2 \\to 3/2, 3/2 \\to 1/2, 1/2 \\to 3/2, 1/2 \\to 1/2$ đều có $|\\Delta j| \\le 1 \\to 4$ vạch."
+  },
+  {
+    "id": "vldc_nc_036",
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Trong hiện tượng Compton, bước sóng ban đầu của photon là $\\lambda = 0{,}03\\,\\text{Å}$ và vận tốc của electron bắn ra là $v = 0{,}6c$. Độ tăng bước sóng $\\Delta\\lambda$ và góc tán xạ $\\theta$ của photon là:",
+    "options": {
+      "A": "0,034 Å và 63°53'",
+      "B": "0,034 Å và 36°40'",
+      "C": "0,0134 Å và 36°40'",
+      "D": "0,0134 Å và 63°53'"
+    },
+    "answer": "D",
+    "explanation": "Động năng của electron tương đối tính sau va chạm: $T_e = m_e c^2\\left(\\frac{1}{\\sqrt{1 - v^2/c^2}} - 1\\right) = m_e c^2\\left(\\frac{1}{\\sqrt{1 - 0{,}36}} - 1\\right) = m_e c^2\\left(\\frac{1}{0{,}8} - 1\\right) = 0{,}25 m_e c^2 \\approx 0{,}25 \\times 511\\,\\text{keV} = 127{,}75\\,\\text{keV}$. Năng lượng ban đầu của photon: $E = \\frac{hc}{\\lambda} = \\frac{12{,}4\\,\\text{keV}\\cdot\\text{Å}}{0{,}03\\,\\text{Å}} \\approx 413{,}3\\,\\text{keV}$. Năng lượng photon sau tán xạ: $E' = E - T_e = 413{,}3 - 127{,}75 = 285{,}55\\,\\text{keV}$. Bước sóng tán xạ: $\\lambda' = \\frac{12{,}4}{285{,}55} \\approx 0{,}0434\\,\\text{Å} \\Rightarrow \\Delta\\lambda = \\lambda' - \\lambda = 0{,}0434 - 0{,}03 = 0{,}0134\\,\\text{Å}$. Góc tán xạ: $\\Delta\\lambda = 2\\lambda_C \\sin^2(\\theta/2) \\Leftrightarrow 0{,}0134 = 2 \\times 0{,}02426 \\sin^2(\\theta/2) \\Rightarrow \\sin(\\theta/2) = \\sqrt{\\frac{0{,}0134}{0{,}0485}} \\approx 0{,}5256 \\Rightarrow \\theta/2 \\approx 31{,}71^\\circ \\Rightarrow \\theta \\approx 63{,}4^\\circ \\approx 63^\\circ 53'$.",
+    "methodology": "Bảo toàn năng lượng trong tán xạ Compton: $E + m_e c^2 = E' + E_e \\Rightarrow E' = E - T_e$. Sau đó tìm $\\lambda' = \\frac{hc}{E'}$ và $\\Delta\\lambda = 2\\lambda_C \\sin^2(\\theta/2)$.",
+    "tips": "Nhìn giá trị $\\Delta\\lambda$: $0{,}0134\\,\\text{Å}$ chỉ xuất hiện ở C và D; góc tán xạ lớn tương ứng động năng lớn là $63^\\circ 53'$."
+  },
+  {
+    "id": "vldc_nc_037",
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Chọn câu phát biểu đúng về trạng thái của các hệ vi mô trong tự nhiên:",
+    "options": {
+      "A": "Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái cơ bản.",
+      "B": "Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái có năng lượng cao hơn trạng thái cơ bản.",
+      "C": "Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái có năng lượng thấp hơn trạng thái cơ bản.",
+      "D": "Mọi vật trong tự nhiên luôn có xu hướng tồn tại ở trạng thái kích thích."
+    },
+    "answer": "A",
+    "explanation": "Theo nguyên lý cực tiểu thế năng và các định luật nhiệt động lực học / cơ học lượng tử, mọi hệ vật lý trong tự nhiên khi không bị cưỡng bức hay cung cấp năng lượng từ bên ngoài luôn có xu hướng chuyển về và tồn tại ở trạng thái có mức năng lượng thấp nhất - gọi là trạng thái cơ bản (ground state) - vì đây là trạng thái bền vững nhất.",
+    "methodology": "Nguyên lý vững bền tự nhiên: hệ luôn có xu hướng giảm năng lượng về mức cực tiểu (trạng thái cơ bản).",
+    "tips": "Không thể có trạng thái nào có năng lượng thấp hơn trạng thái cơ bản (loại C); trạng thái kích thích kém bền (loại D)."
+  },
+  {
+    "id": "vldc_nc_038",
+    "chapter": "Dao động và sóng điện từ",
+    "chapter_id": 1,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Trong dao động điện từ tắt dần mạch RLC nối tiếp, biểu thức tính chu kỳ dao động riêng $T$ của mạch được xác định bởi:",
+    "options": {
+      "A": "T = 2π / √(LC - R / 2L)",
+      "B": "T = 2π / √(1/LC - R / 2L)",
+      "C": "T = 2π / √(1/LC - 2R / L)",
+      "D": "T = 2π / √(1/LC - (R / 2L)²)"
+    },
+    "answer": "D",
+    "explanation": "Phương trình vi phân dao động của mạch RLC: $q'' + 2\\beta q' + \\omega_0^2 q = 0$, với $\\omega_0^2 = \\frac{1}{LC}$ và hệ số tắt dần $\\beta = \\frac{R}{2L}$. Khi điện trở nhỏ ($R < 2\\sqrt{L/C}$), mạch dao động tắt dần với tần số góc $\\omega = \\sqrt{\\omega_0^2 - \\beta^2} = \\sqrt{\\frac{1}{LC} - \\left(\\frac{R}{2L}\\right)^2}$. Chu kỳ dao động riêng là: $T = \\frac{2\\pi}{\\omega} = \\frac{2\\pi}{\\sqrt{\\frac{1}{LC} - \\left(\\frac{R}{2L}\\right)^2}}$.",
+    "methodology": "Tần số góc dao động tắt dần: $\\omega = \\sqrt{\\omega_0^2 - \\beta^2}$ với $\\omega_0 = 1/\\sqrt{LC}$ và $\\beta = R/(2L)$.",
+    "tips": "Nhớ: đại lượng trừ đi phải là $\\beta^2 = (R / 2L)^2$, nên mẫu số phải có dạng bình phương."
+  },
+  {
+    "id": "vldc_nc_039",
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
+    "type": "Lý thuyết",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Electron đang ở trạng thái 2s ứng với các số lượng tử chính $n$ và số lượng tử orbital $l$ là bao nhiêu?",
+    "options": {
+      "A": "n = 2; l = 0",
+      "B": "n = 1; l = 0",
+      "C": "n = 1; l = 1",
+      "D": "n = 2; l = 1"
+    },
+    "answer": "A",
+    "explanation": "Ký hiệu trạng thái lượng tử của electron có dạng $n\\ell$: số đứng trước là số lượng tử chính $n = 2$; chữ cái 's' biểu thị số lượng tử orbital $l = 0$ (quy ước: s $\\leftrightarrow l = 0$; p $\\leftrightarrow l = 1$; d $\\leftrightarrow l = 2$; f $\\leftrightarrow l = 3$). Do đó trạng thái 2s ứng với $n = 2, l = 0$.",
+    "methodology": "Đọc cấu hình electron: $2s \\to$ số 2 là $n=2$, chữ 's' là $l=0$.",
+    "tips": "s $\\to l = 0$; p $\\to l = 1$; d $\\to l = 2$."
+  },
+  {
+    "id": "vldc_nc_040",
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
+    "type": "Bài tập tính toán",
+    "source": "Đề Test Cuối (Notion)",
+    "prompt": "Để đo bề dày của một bản mỏng trong suốt, người ta đặt bản mỏng này trước một trong hai khe của máy giao thoa Young. Ánh sáng chiếu vào hệ thống có bước sóng $\\lambda = 0{,}54\\,\\mu\\text{m}$. Chiết suất của bản mỏng là $n$. Người ta quan sát thấy vân sáng giữa bị dịch chuyển về vị trí của vân sáng thứ 5 (ứng với lúc chưa đặt bản). Cho bề dày của bản mỏng là $e = 5{,}4\\,\\mu\\text{m}$. Chiết suất $n$ của bản mỏng là:",
+    "options": {
+      "A": "n = 5/4",
+      "B": "n = 4/3",
+      "C": "n = 1,0",
+      "D": "n = 1,5"
+    },
+    "answer": "D",
+    "explanation": "Khi đặt bản mỏng bề dày $e$, chiết suất $n$ trước một khe, vân sáng trung tâm dịch chuyển một đoạn $x_0 = \\frac{(n - 1)e D}{a} = 5 i = 5 \\frac{\\lambda D}{a}$. Suy ra: $(n - 1)e = 5\\lambda \\Rightarrow n - 1 = \\frac{5\\lambda}{e} = \\frac{5 \\times 0{,}54\\,\\mu\\text{m}}{5{,}4\\,\\mu\\text{m}} = \\frac{2{,}7}{5{,}4} = 0{,}5$. Do đó $n = 1 + 0{,}5 = 1{,}5$.",
+    "methodology": "Công thức độ dời hệ vân khi đặt bản mỏng: $(n - 1)e = k\\lambda \\Rightarrow n = 1 + \\frac{k\\lambda}{e}$.",
+    "tips": "Casio: $n = 1 + 5 \\times 0{,}54 \\div 5{,}4 = 1 + 0{,}5 = 1{,}5$."
+  }
+]

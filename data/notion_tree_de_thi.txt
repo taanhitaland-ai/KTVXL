@@ -1,0 +1,166 @@
+[page] Đề thi
+  [sub_sub_header] Đề thi giữa kì
+    [text] ‣
+  [sub_sub_header] Năm 2024
+    [toggle] Chương 1: Dao động và sóng điện từ
+      [image] image.png
+        -> ATTACHMENT: attachment:79e59f44-f88b-4d57-b552-4caf10249b32:image.png
+    [toggle] Chương 2: Quang học sóng
+      [image] image.png
+        -> ATTACHMENT: attachment:7363faf4-f864-4cd9-97a2-db0b1d1ed8ac:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:1a0615d8-0df2-451e-b6cd-2e326f798d89:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:cb638d27-05e9-4dba-82b1-d8174ce906c9:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:a8fac45b-d193-47ad-81ac-b96d5399d719:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:4db14e3b-a8d8-49a3-8777-52a05b433034:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:65bb0021-1eaf-4a4d-8171-77db9b73b1fa:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:a45427e3-eed6-4736-b292-db73621d48ad:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:d190a767-2b75-4da1-8d96-d9adc432529e:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:70ef42f4-f51d-4c24-b1a2-0a373384361e:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:a48c7549-3f24-45d2-ae00-bcfb0e44ecb9:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:1e253232-dd79-4bb9-8d0b-e4a2c67659f2:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:df600133-701f-40d7-ac30-f021d76f7fbe:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:440ca84b-cca7-4800-b165-05480b12be79:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:64859089-29b0-4c1e-afea-f73a76337724:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:313a3159-145b-424f-b2ea-cb36984c6497:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:e4ae0480-a584-4625-8973-c90264afc1d7:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:4b15898a-c960-4df1-a9bc-b2754629fae5:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:3eaa710a-74ca-47b0-bf3a-0c479d327976:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:816b45eb-fd5e-4d54-8730-9112058bbf38:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:732f3551-ba53-4206-b6f8-43994b72e683:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:d0a9c58a-b001-4ca1-8a47-0ffeaee90880:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:bc744156-f1f0-4df5-8a6b-efaf9e6aff28:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:30c9b850-7100-4dda-bfb8-229e19268ce9:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:f257b421-b5ea-40d9-97dc-b2c90fbeb9ec:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:c057f251-8bb9-43ee-af2c-a0ff7f33b769:image.png
+    [toggle] Chương 3: Quang học lượng tử
+      [image] image.png
+        -> ATTACHMENT: attachment:4f616642-1d9b-4e8f-9109-98f5b1030629:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:b9b39ba7-e1d5-4750-bfed-24f8eac61f69:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:2360a27c-9a19-4b26-8c0d-91414d59bfeb:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:d87394f6-e8bb-4741-b8e4-3183c64e81d7:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:f03c0f72-1c20-431b-bccc-3b3273a1c717:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:01a4e186-b532-454e-819b-1d2c762d0159:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:b21a4fa0-4fdd-4055-86b8-c127c1dd024c:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:8602d74f-5665-46fc-bdd8-6579ab7133da:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:9c6c37b5-6d5e-47cc-b483-f655c9d00f56:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:89325fee-c779-43ff-90a8-a853b0c6a68b:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:dbf02802-7581-4c9e-8b69-a68407d5ff02:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:61733672-ceff-47a5-a922-8ab4255eccca:image.png
+    [toggle] Chương 4: Cơ học lượng tử
+      [image] image.png
+        -> ATTACHMENT: attachment:7635201e-bc01-4358-a126-af549d5492b4:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:9f533728-5555-434e-a3eb-a135a12bd9af:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:d91d6d7e-ce00-44d6-9ce9-632572cde671:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:81565b2d-4e9e-4bb2-8539-e8ed87d636c8:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:20685feb-1a3d-45dd-b195-895c99881801:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:793ab46e-0ead-40ef-be05-a8e1229e9f24:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:46f47435-7140-4ee5-89ac-3f4feca67d53:image.png
+    [toggle] Chương 5: Vật lý nguyên tử
+    [toggle] Chương 6: Vật lý hạt nhân
+    [text] 
+  [sub_sub_header] Năm ??? đề 1
+    [toggle] Chương 1: Dao động và sóng điện từ
+      [image] image.png
+        -> ATTACHMENT: attachment:2fb3c850-d042-453d-9d0b-c0ee457f763e:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:542702d4-13bc-4d8c-b773-0e7cba088362:image.png
+    [toggle] Chương 2: Quang học sóng
+      [image] image.png
+        -> ATTACHMENT: attachment:3cb32cba-b509-480e-8947-b8005e5ee794:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:2e4202f7-56e4-4245-9fc7-a169b18b147f:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:32be235d-d41f-446d-990d-e8911f9bc7cd:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:389ba50a-54cb-4b11-b770-506cd7201b28:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:d15bcf0a-1179-4f24-8f9e-fc86fcc760e0:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:bf32b3ca-cec3-40df-ad47-4443fdb19e68:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:3a1ea6dc-d1f1-4e96-80a8-3c1cd4d0e123:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:0c438c0c-35de-46d6-ae9c-f9d30f9df715:image.png
+    [toggle] Chương 3: Quang học lượng tử
+      [image] image.png
+        -> ATTACHMENT: attachment:34fcbeef-061d-4ab8-b5a9-50132ae234b4:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:b0ad5815-84f2-4585-8433-6add2a55a0dd:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:2e873f83-d2df-4845-81fe-4eac3079edbf:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:16b46d78-e569-4a76-9c69-fb764029da98:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:fd34be62-5eb3-43f5-b8be-900dfaef4c1b:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:6498eae9-ddb9-4987-8c4b-a39cfe795684:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:134e9696-f31a-4ea5-8141-52decf3b7d1c:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:1fcf581e-046e-4b10-809c-fe2dc645cc24:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:13652f6c-de98-4979-9e68-7c33f2cde2d7:image.png
+    [toggle] Chương 4: Cơ học lượng tử
+      [image] image.png
+        -> ATTACHMENT: attachment:1bd58ee4-5e2e-4f2e-80fb-920ed37fa071:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:72a4ff5e-6cec-4c91-833d-ab68dc0277ef:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:8ca9ba24-d122-468a-bc38-085b09917324:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:8e1e2ec0-4e38-4dc1-9cb8-e3aeb60a1fdc:image.png
+    [toggle] Chương 5: Vật lý nguyên tử
+      [image] image.png
+        -> ATTACHMENT: attachment:2bda3c69-ba1a-4782-9dd6-7454d428a2c0:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:9d226560-cb97-46ef-acd2-ce7e30824966:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:45db2329-e24e-474b-934f-7f4b8ec98cbf:image.png
+      [image] image.png
+        -> ATTACHMENT: attachment:c1c93d6b-229e-4fc3-ad01-573749d3757b:image.png
+    [toggle] Chương 6: Vật lý hạt nhân
+      [image] image.png
+        -> ATTACHMENT: attachment:08ad803c-c624-41e1-bb30-e4380b1a8599:image.png
+  [text] 
+  [text] 
