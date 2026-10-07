@@ -5,7 +5,8 @@
   const subjects = {
     ktvxl: { name: 'Kỹ thuật Vi xử lý', minutes: 60 },
     tthcm: { name: 'Tư tưởng Hồ Chí Minh', minutes: 40 },
-    vldc: { name: 'Vật lý đại cương', minutes: 45 }
+    vldc: { name: 'Vật lý đại cương', minutes: 45 },
+    xstk: { name: 'Xác suất thống kê', minutes: 60 }
   };
 
   const sources = {
@@ -15,12 +16,28 @@
       ['TTHCM_DE_651', 'MÃ ĐỀ 651', 'Đề thi mẫu 651 KTMM'],
       ['TTHCM_DE_CUONG', 'ĐỀ CƯƠNG', 'Đề cương ATTT KMA 2019', 40]
     ],
+    xstk: [1, 2, 3, 4, 5].map(n => [
+      'KMA_EXAM_' + String(n).padStart(2, '0'),
+      'GIỮA KỲ ' + String(n).padStart(2, '0'),
+      'Đề kiểm tra giữa kỳ ' + String(n).padStart(2, '0') + ' (bản trích)'
+    ]),
     vldc: [
       ['NOTION_DE_CUOI', 'ĐỀ TEST CUỐI', 'Đề Test Cuối (Notion)'],
       ['NOTION_TEST_100', 'TEST 100 CÂU', 'Đề Test 100 Câu (bản trích)'],
       ['NOTION_GIAK_2025', 'GIỮA KỲ 2025', 'Đề giữa kỳ 2025'],
       ['NOTION_DE_CUONG', 'ĐỀ CƯƠNG A2', 'Đề cương ôn tập A2'],
       ['VLDC_STANDARD', 'NGÂN HÀNG', 'Ngân hàng bài tập Vật lý', 40]
+    ]
+  };
+
+  const specialties = {
+    vldc: [
+      ['VLDC_OPTICS', 'Chuyên đề Dao động & Quang học sóng', [1, 2], 30],
+      ['VLDC_QUANTUM', 'Chuyên đề Lượng tử, Nguyên tử & Hạt nhân', [3, 4, 5, 6], 30]
+    ],
+    xstk: [
+      ['XSTK_PROB', 'Chuyên đề Xác suất (Chương 1–5)', [1, 2, 3, 4, 5], 40],
+      ['XSTK_STAT', 'Chuyên đề Thống kê (Chương 6–8)', [6, 7, 8], 40]
     ]
   };
 
@@ -76,20 +93,20 @@
           : `${count} câu trong dữ liệu hiện có • Giữ nguyên thứ tự`
       };
     });
-    if (subject === 'vldc') {
-      for (const [code, title, chapters] of [
-        ['VLDC_OPTICS', 'Chuyên đề Dao động & Quang học sóng', [1, 2]],
-        ['VLDC_QUANTUM', 'Chuyên đề Lượng tử, Nguyên tử & Hạt nhân', [3, 4, 5, 6]]
-      ]) {
+    if (specialties[subject]) {
+      for (const [code, title, chapters, limit] of specialties[subject]) {
         const available = questions.filter(q => chapters.includes(chapterOf(q))).length;
-        exams.push({ code, badge: 'CHUYÊN ĐỀ', title, available, count: Math.min(30, available), description: `Trộn tối đa 30 câu từ chương ${chapters.join(', ')}` });
+        exams.push({ code, badge: 'CHUYÊN ĐỀ', title, available, count: Math.min(limit, available), description: `Trộn tối đa ${limit} câu từ chương ${chapters.join(', ')}` });
       }
     }
+    const randomCount = subject === 'ktvxl'
+      ? Math.min(35, questions.filter(q => q.type === 'mcq').length) + Math.min(5, questions.filter(q => q.type === 'fib').length)
+      : Math.min(40, questions.length);
     exams.push({
       code: 'RANDOM', badge: 'NGẪU NHIÊN', title: 'Đề thi tổng hợp ngẫu nhiên',
-      count: Math.min(40, questions.length), available: questions.length,
+      count: randomCount, available: questions.length,
       description: subject === 'ktvxl'
-        ? 'Trộn 40 câu: 35 trắc nghiệm + 5 điền kết quả'
+        ? `Trộn ${Math.min(35, questions.filter(q => q.type === 'mcq').length)} trắc nghiệm + ${Math.min(5, questions.filter(q => q.type === 'fib').length)} điền kết quả`
         : 'Trộn 40 câu, phân bổ theo các chương có trong ngân hàng'
     });
     return exams;
@@ -106,9 +123,9 @@
       }
       return sampleChapters(questions, 40, random);
     }
-    if (code === 'VLDC_OPTICS' || code === 'VLDC_QUANTUM') {
-      const chapters = code === 'VLDC_OPTICS' ? [1, 2] : [3, 4, 5, 6];
-      return sampleChapters(questions.filter(q => chapters.includes(chapterOf(q))), 30, random);
+    const specialty = (specialties[subject] || []).find(item => item[0] === code);
+    if (specialty) {
+      return sampleChapters(questions.filter(q => specialty[2].includes(chapterOf(q))), entry.count, random);
     }
     return sourceQuestions(subject, questions, code).slice(0, entry.count);
   }

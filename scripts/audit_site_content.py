@@ -37,7 +37,8 @@ def full_audit():
     for subject, filename, global_name in [
         ('KTVXL', 'data.js', 'QUESTIONS_DATABASE'),
         ('TTHCM', 'tthcm_data.js', 'TTHCM_QUESTIONS_DATA'),
-        ('VLDC', 'vldc_data.js', 'VLDC_QUESTIONS_DATA')
+        ('VLDC', 'vldc_data.js', 'VLDC_QUESTIONS_DATA'),
+        ('XSTK', 'xstk_data.js', 'XSTK_QUESTIONS_DATA')
     ]:
         name = 'questions_db.json' if subject == 'KTVXL' else subject.lower() + '_questions_db.json'
         questions = json.loads((ROOT / 'data' / name).read_text(encoding='utf-8'))
@@ -65,7 +66,7 @@ def full_audit():
                     issues.append(f'{qid}: no fill-in answer')
             else:
                 issues.append(f'{qid}: invalid question type')
-            if subject != 'KTVXL' and int(q.get('chapter_id') or q.get('chapter') or 0) not in range(1, 7):
+            if subject != 'KTVXL' and int(q.get('chapter_id') or q.get('chapter') or 0) not in range(1, 9 if subject == 'XSTK' else 7):
                 issues.append(f'{qid}: invalid chapter')
             for field in ('prompt', 'options', 'explanation', 'methodology', 'tips_casio', 'tips'):
                 values = q.get(field, '')
@@ -77,6 +78,13 @@ def full_audit():
                     if not (ROOT / directory / image).is_file():
                         issues.append(f'{qid}: missing {directory}/{image}')
         print(f'{subject}: {len(questions)} questions checked.')
+    for filename, global_name, canonical in [
+        ('data.js', 'KTVXL_KNOWLEDGE', 'knowledge_base.json'),
+        ('tthcm_knowledge_data.js', 'TTHCM_KNOWLEDGE_DATA', 'tthcm_knowledge_base.json'),
+        ('vldc_knowledge_data.js', 'VLDC_KNOWLEDGE_DATA', 'vldc_knowledge_base.json'),
+    ]:
+        if bundle_value(filename, global_name) != json.loads((ROOT / 'data' / canonical).read_text(encoding='utf-8')):
+            issues.append(f'{filename}: knowledge bundle differs from the canonical data')
     for directory in ('web', 'docs'):
         page = PageAssets()
         page.feed((ROOT / directory / 'index.html').read_text(encoding='utf-8'))
@@ -85,7 +93,7 @@ def full_audit():
         for reference in page.references:
             if not (ROOT / directory / reference).is_file():
                 issues.append(f'{directory}/index.html: missing asset {reference}')
-        for filename in ('app.js', 'vldc_simulations.js'):
+        for filename in ('app.js', 'vldc_simulations.js', 'xstk_simulations.js'):
             script = (ROOT / directory / filename).read_text(encoding='utf-8')
             for reference in set(re.findall(r"getElementById\('([^']+)'\)", script)):
                 if reference not in page.ids:

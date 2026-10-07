@@ -707,7 +707,7 @@ code, pre, .mono {
 
 .exam-select-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
   margin: 28px 0;
 }
@@ -717,16 +717,74 @@ code, pre, .mono {
   border: var(--border-width) solid #000;
   box-shadow: var(--shadow-sm);
   border-radius: 8px;
-  padding: 20px;
+  padding: 44px 18px 18px;
   cursor: pointer;
   text-align: left;
-  transition: all 0.1s ease;
+  transition: all 0.15s ease;
+  position: relative;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
 }
 
-.exam-card-choice:hover, .exam-card-choice.selected {
-  background: var(--neo-yellow);
+.exam-card-choice:hover {
+  background: #FEF9C3;
   transform: translate(-2px, -2px);
   box-shadow: var(--shadow-main);
+}
+
+.exam-card-choice.selected {
+  background: var(--neo-yellow) !important;
+  border-width: 3px !important;
+  border-color: #000 !important;
+  transform: translate(-3px, -3px) !important;
+  box-shadow: 6px 6px 0px #000 !important;
+  outline: 2px solid #000;
+}
+
+.exam-card-choice.selected::before {
+  content: "✓ ĐANG CHỌN";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #000;
+  color: #FFE600;
+  font-size: 0.68rem;
+  font-weight: 900;
+  padding: 3px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.exam-code-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 3px 8px;
+  border: 1.5px solid #000;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background: #FFE600;
+  color: #000;
+}
+
+.exam-title-choice {
+  font-size: 1.05rem;
+  font-weight: 900;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+  color: #000;
+}
+
+.exam-desc-choice {
+  font-size: 0.82rem;
+  color: #4B5563;
+  line-height: 1.4;
+  margin: 0;
+  flex-grow: 1;
 }
 
 .exam-active-layout {
@@ -1001,12 +1059,30 @@ code, pre, .mono {
   box-shadow: 2px 2px 0px #000;
 }
 
+.subject-toggle-btn.active[data-subject="vldc"] {
+  background: #2563EB;
+  color: #fff;
+  border-color: #000;
+  box-shadow: 2px 2px 0px #000;
+}
+
+.subject-toggle-btn.active[data-subject="xstk"] {
+  background: #059669;
+  color: #fff;
+  border-color: #000;
+  box-shadow: 2px 2px 0px #000;
+}
+
 .badge-chap1 { background: #FEF08A; color: #854D0E; }
 .badge-chap2 { background: #FED7AA; color: #9A3412; }
 .badge-chap3 { background: #BBF7D0; color: #166534; }
 .badge-chap4 { background: #BFDBFE; color: #1E40AF; }
 .badge-chap5 { background: #DDD6FE; color: #5B21B6; }
 .badge-chap6 { background: #FBCFE8; color: #9D174D; }
+.badge-chap7 { background: #A7F3D0; color: #065F46; }
+.badge-chap8 { background: #FDE68A; color: #78350F; }
+.chapter-header.chap7 { background: #A7F3D0; }
+.chapter-header.chap8 { background: #FDE68A; }
 
 
 /* ==========================================================================

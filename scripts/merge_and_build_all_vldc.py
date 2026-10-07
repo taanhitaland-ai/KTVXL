@@ -252,21 +252,6 @@ def main():
         ch_qs = [q for q in master if q['chapter_id'] == ch]
         print(f"  Chương {ch} ({CHAPTER_NAMES[ch]}): {len(ch_qs)} câu")
 
-    # Export to JSON
-    with open('data/vldc_questions_db.json', 'w', encoding='utf-8') as f:
-        json.dump(master, f, ensure_ascii=False, indent=2)
-
-    # Export to web/vldc_data.js and docs/vldc_data.js
-    js_content = f"// VLDC Master Question Database - Exported with {len(master)} curated questions\n"
-    js_content += f"window.VLDC_QUESTIONS_DATA = {json.dumps(master, ensure_ascii=False, indent=2)};\n\n"
-    js_content += "if (typeof module !== 'undefined' && module.exports) {\n    module.exports = { VLDC_QUESTIONS_DATA: window.VLDC_QUESTIONS_DATA };\n}\n"
-
-    with open('web/vldc_data.js', 'w', encoding='utf-8') as f:
-        f.write(js_content)
-
-    with open('docs/vldc_data.js', 'w', encoding='utf-8') as f:
-        f.write(js_content)
-
     write_questions('vldc', master)
     print("Successfully synchronized the canonical database, JSON files, and browser bundles.")
 

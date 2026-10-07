@@ -222,7 +222,7 @@
           "title": "3. Mẹo nhớ nhanh Tốc độ Baud & Mẹo loại trừ trắc nghiệm",
           "content": [
             "**Tốc độ Baud (với thạch anh 11.0592 MHz)**: Nhớ công thức TH1 = -28800 / Baud:\n- 9600 -> -3 = FDH\n- 4800 -> -6 = FAH\n- 2400 -> -12 = F4H\n- 1200 -> -24 = E8H",
-            "**Mẹo loại trừ lệnh Hợp ngữ SAI**:\n- Hai toán hạng không được cùng là ô nhớ (Ví dụ: `MOV 30H, 40H` là SAI; phải qua A).\n- Không có lệnh `MOV @R2, A` (chỉ dùng `@R0` và `@R1`).\n- Không có lệnh `INC DPTR` byte thấp đơn lẻ, chỉ có `INC DPTR` cả 16 bit.\n- Không có lệnh `MOV DPTR, A` (chỉ có `MOV DPTR, #data16`)."
+            "**Mẹo kiểm tra lệnh Hợp ngữ**:\n- 8051 hỗ trợ `MOV direct, direct`: `MOV 30H, 40H` hợp lệ, sao chép nội dung địa chỉ 40H vào địa chỉ 30H. Không cần đi qua A.\n- Không có lệnh `MOV @R2, A` (chỉ dùng `@R0` và `@R1`).\n- Không có lệnh `INC DPTR` byte thấp đơn lẻ, chỉ có `INC DPTR` cả 16 bit.\n- Không có lệnh `MOV DPTR, A` (chỉ có `MOV DPTR, #data16`)."
           ]
         }
       ]

@@ -1,0 +1,1025 @@
+import os
+from playwright.sync_api import sync_playwright
+
+html_content = r"""<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>HƯỚNG DẪN PHƯƠNG PHÁP & GIẢI CHI TIẾT CÁC BÀI TẬP TRỌNG TÂM XÁC SUẤT (ATTT 2026)</title>
+    <!-- KaTeX CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });"></script>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 12mm 12mm 15mm 12mm;
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        body {
+            font-family: 'Segoe UI', 'Liberation Sans', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 12.5px;
+            line-height: 1.55;
+            color: #1a202c;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            height: 258mm;
+            max-height: 258mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px 20px 20px;
+            page-break-after: always;
+            border: 2.5px solid #1a365d;
+            outline: 5px double #2b6cb0;
+            outline-offset: 4px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .cover-header { margin-top: 15px; }
+        .cover-inst {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #2b6cb0;
+            letter-spacing: 1px;
+        }
+        .cover-dept {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 5px;
+        }
+        .cover-divider {
+            width: 120px;
+            height: 2px;
+            background-color: #2b6cb0;
+            margin: 12px auto;
+        }
+        .cover-body { margin: auto 0; }
+        .cover-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a365d;
+            text-transform: uppercase;
+            line-height: 1.35;
+            margin-bottom: 12px;
+        }
+        .cover-subtitle {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c5282;
+            max-width: 650px;
+            margin: 0 auto 20px auto;
+        }
+        .cover-badge {
+            display: inline-block;
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+            border: 1px solid #bee3f8;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12.5px;
+            font-weight: 700;
+        }
+        .cover-footer {
+            margin-bottom: 15px;
+            font-size: 12.5px;
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* Section Header */
+        .section-header {
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+            margin-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .section-title {
+            font-size: 16.5px;
+            font-weight: 800;
+            color: #1a365d;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .section-tag {
+            font-size: 11.5px;
+            font-weight: 700;
+            background: #e2e8f0;
+            color: #4a5568;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* Method Guide Box */
+        .method-box {
+            background-color: #f7fafc;
+            border: 1px solid #cbd5e0;
+            border-left: 4px solid #3182ce;
+            padding: 10px 14px;
+            border-radius: 4px;
+            margin-bottom: 14px;
+            break-inside: avoid;
+        }
+        .method-title {
+            font-weight: 800;
+            color: #2b6cb0;
+            font-size: 13.5px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+        }
+        .method-content {
+            font-size: 12px;
+            color: #2d3748;
+            line-height: 1.5;
+        }
+
+        /* Grading Table */
+        .grading-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+            background-color: #ffffff;
+            font-size: 12px;
+        }
+        .grading-table th, .grading-table td {
+            border: 1px solid #cbd5e0;
+            padding: 7px 9px;
+            vertical-align: top;
+        }
+        .grading-table th {
+            background-color: #2b6cb0;
+            color: #ffffff;
+            font-weight: 700;
+            text-align: center;
+        }
+        .col-q {
+            width: 85px;
+            text-align: center;
+            font-weight: 700;
+            color: #1a365d;
+            background-color: #f7fafc;
+        }
+        .col-sub {
+            width: 45px;
+            text-align: center;
+            font-weight: 700;
+            color: #2b6cb0;
+            background-color: #f7fafc;
+        }
+        .col-content {
+            text-align: left;
+        }
+        .col-score {
+            width: 50px;
+            text-align: center;
+            font-weight: 700;
+            color: #c53030;
+            background-color: #fffaf0;
+        }
+
+        /* Tips & Alerts */
+        .tip-box {
+            background-color: #f0fff4;
+            border-left: 4px solid #38a169;
+            color: #22543d;
+            padding: 7px 12px;
+            font-size: 11.5px;
+            margin: 6px 0 10px 0;
+            border-radius: 2px;
+            break-inside: avoid;
+        }
+        .warning-box {
+            background-color: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            color: #744210;
+            padding: 7px 12px;
+            font-size: 11.5px;
+            margin: 6px 0 10px 0;
+            border-radius: 2px;
+            break-inside: avoid;
+        }
+
+        .page-break { page-break-before: always; }
+        .highlight { font-weight: 700; color: #2b6cb0; }
+        ul, ol { margin: 4px 0 4px 18px; padding: 0; }
+        li { margin-bottom: 3px; }
+    </style>
+</head>
+<body>
+
+    <!-- TRANG BÌA -->
+    <div class="cover-page">
+        <div class="cover-header">
+            <div class="cover-inst">HỌC VIỆN KỸ THUẬT MẬT MÃ</div>
+            <div class="cover-dept">KHOA CƠ BẢN &bull; BỘ MÔN TOÁN</div>
+            <div class="cover-divider"></div>
+        </div>
+        <div class="cover-body">
+            <div class="cover-title">PHƯƠNG PHÁP GIẢI & ĐÁP ÁN BAREM ĐIỂM<br>CÁC BÀI TẬP TRỌNG TÂM XÁC SUẤT</div>
+            <div class="cover-subtitle">GIẢI CHI TIẾT TỪNG PHẦN, TỪNG DẠNG THEO FILE ĐỀ "BÀI TẬP XÁC SUẤT.ATTT 2026"</div>
+            <div class="cover-badge">TRÌNH BÀY TỰ LUẬN CHUẨN THI &bull; BAREM PHÂN BỔ BƯỚC ĐIỂM 0,5Đ</div>
+            <div style="margin-top: 25px; font-size: 13px; color: #4a5568; line-height: 1.8; max-width: 620px; margin-left: auto; margin-right: auto;">
+                Tài liệu được phân tích theo 5 chủ đề lớn của phần Xác suất trong chương trình đào tạo ATTT:
+                <br>&bull; <b>Chủ đề 1:</b> Khái niệm xác suất, công thức cộng & công thức nhân xác suất
+                <br>&bull; <b>Chủ đề 2:</b> Công thức xác suất toàn phần & công thức Bayes
+                <br>&bull; <b>Chủ đề 3:</b> Lược đồ Bernoulli & định lý xấp xỉ Moivre - Laplace
+                <br>&bull; <b>Chủ đề 4:</b> Biến ngẫu nhiên một chiều (Rời rạc & Liên tục, Phân phối chuẩn)
+                <br>&bull; <b>Chủ đề 5:</b> Biến ngẫu nhiên hai chiều (Bảng phân phối, Tính độc lập, Mật độ biên)
+                <br><br>
+                Mỗi chủ đề đều có: <b>Quy trình các bước làm chuẩn barem chấm thi</b> kèm <b>2 - 3 bài tập trọng tâm tiêu biểu nhất</b> được giải mẫu chi tiết theo từng nấc điểm (0,5đ).
+            </div>
+        </div>
+        <div class="cover-footer">
+            <b>Môn học:</b> Xác suất thống kê &bull; <b>Đối tượng:</b> Sinh viên ngành An toàn thông tin<br>
+            Hà Nội &bull; Năm học 2026
+        </div>
+    </div>
+
+    <!-- ==================== CHỦ ĐỀ 1 ==================== -->
+    <div class="page-break"></div>
+    <div class="section-header">
+        <h2 class="section-title">CHỦ ĐỀ 1: CÁC KHÁI NIỆM XÁC SUẤT & CÔNG THỨC CỘNG, NHÂN</h2>
+        <span class="section-tag">BÀI 1 &rarr; BÀI 12 FILE ĐỀ</span>
+    </div>
+
+    <!-- Hướng dẫn phương pháp & cách trình bày dạng 1 -->
+    <div class="method-box">
+        <div class="method-title">
+            <span>📌 QUY TRÌNH LÀM BÀI & CÁCH TRÌNH BÀY CHUẨN BAREM (THANG 0,5Đ)</span>
+            <span style="color:#c53030;">TỐI ĐA 1,5 - 2,0 ĐIỂM</span>
+        </div>
+        <div class="method-content">
+            <b>1. Bước 1 (0,5đ) - Xác định không gian mẫu & Gọi biến cố:</b>
+            <br>&bull; Xác định số phần tử không gian mẫu: $n(\Omega) = C_n^k$ (chọn không thứ tự) hoặc $A_n^k$ (chọn có thứ tự).
+            <br>&bull; Đặt tên biến cố: <i>"Gọi $A$ là biến cố..."</i> hoặc <i>"Gọi $A_i$ là biến cố..."</i>.
+            <br><b>2. Bước 2 (0,5đ) - Lập luận quan hệ biến cố & Viết công thức:</b>
+            <br>&bull; Nếu biến cố là giao của các phép thử: <b>Bắt buộc phải có câu:</b> <i>"Nhận xét: $A_1, A_2$ là các biến cố độc lập trong toàn thể"</i>. Sau đó viết $P(A_1 A_2) = P(A_1) P(A_2)$.
+            <br>&bull; Nếu bài toán có cụm từ <i>"có ít nhất 1"</i>: Luôn xét <b>biến cố đối</b> $\overline{A}$: <i>"Không có lần nào xảy ra"</i> $\Rightarrow P(A) = 1 - P(\overline{A})$.
+            <br>&bull; Nếu dùng công thức cộng: $P(A \cup B) = P(A) + P(B) - P(AB)$. Nếu xung khắc thì $P(A + B) = P(A) + P(B)$.
+            <br><b>3. Bước 3 (0,5đ) - Thay số, rút gọn phân số & Kết luận:</b>
+            <br>&bull; Thay số cụ thể, rút gọn phân số tối giản và quy đổi số thập phân 4 chữ số.
+        </div>
+    </div>
+
+    <!-- Lời giải các bài trọng tâm Chủ đề 1 -->
+    <table class="grading-table">
+        <thead>
+            <tr>
+                <th class="col-q">Bài</th>
+                <th class="col-sub">Ý</th>
+                <th class="col-content">Nội dung trình bày tự luận theo barem chuẩn</th>
+                <th class="col-score">Điểm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bài 1 -->
+            <tr>
+                <td rowspan="3" class="col-q"><b>Bài 1</b><br>(Trang 1)</td>
+                <td class="col-sub">-</td>
+                <td class="col-content">
+                    - Tổng số quả cầu trong hộp là: $8 + 3 + 4 = 15$ (quả).
+                    <br>Số cách chọn ngẫu nhiên 6 quả cầu từ 15 quả là:
+                    $$n(\Omega) = C_{15}^6 = \frac{15!}{6! \times 9!} = 5005$$
+                    - Gọi $A$ là biến cố: "Trong 6 quả cầu được chọn có đúng 3 quả cầu trắng, 2 quả cầu đỏ và 1 quả cầu đen".
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Để biến cố $A$ xảy ra, ta tiến hành 3 công đoạn độc lập:
+                    <br>&bull; Chọn 3 quả cầu trắng từ 8 quả trắng: có $C_8^3 = 56$ (cách).
+                    <br>&bull; Chọn 2 quả cầu đỏ từ 3 quả đỏ: có $C_3^2 = 3$ (cách).
+                    <br>&bull; Chọn 1 quả cầu đen từ 4 quả đen: có $C_4^1 = 4$ (cách).
+                    <br>Theo quy tắc nhân, số kết quả thuận lợi cho biến cố $A$ là:
+                    $$n(A) = C_8^3 \times C_3^2 \times C_4^1 = 56 \times 3 \times 4 = 672$$
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Xác suất của biến cố $A$ theo công thức xác suất cổ điển là:
+                    $$P(A) = \frac{n(A)}{n(\Omega)} = \frac{672}{5005} = \frac{96}{715} \approx 0.1343$$
+                    <i>Kết luận:</i> Xác suất chọn được 3 quả trắng, 2 quả đỏ, 1 quả đen là $\dfrac{96}{715}$ (khoảng $13,43\%$).
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+
+            <!-- Bài 4 -->
+            <tr>
+                <td rowspan="2" class="col-q"><b>Bài 4</b><br>(Trang 1)</td>
+                <td class="col-sub">-</td>
+                <td class="col-content">
+                    - Gọi $A_1$ là biến cố: "Xạ thủ thứ nhất bắn trúng tấm bia" $\Rightarrow P(A_1) = 0.4$.
+                    <br>- Gọi $A_2$ là biến cố: "Xạ thủ thứ hai bắn trúng tấm bia" $\Rightarrow P(A_2) = 0.6$.
+                    <br><b>Nhận xét:</b> $A_1, A_2$ là hai biến cố độc lập với nhau.
+                    <br>Xác suất bắn trượt của từng người là:
+                    $$P(\overline{A_1}) = 1 - 0.4 = 0.6; \quad P(\overline{A_2}) = 1 - 0.6 = 0.4$$
+                    - Gọi $A$ là biến cố: "Có ít nhất một viên đạn trúng đích".
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Biến cố đối của $A$ là $\overline{A}$: "Cả hai xạ thủ đều bắn trượt".
+                    <br>Ta có biểu diễn: $\overline{A} = \overline{A_1} \cdot \overline{A_2}$.
+                    <br>Vì $A_1, A_2$ độc lập nên $\overline{A_1}, \overline{A_2}$ cũng độc lập. Áp dụng quy tắc nhân xác suất:
+                    $$P(\overline{A}) = P(\overline{A_1}) \times P(\overline{A_2}) = 0.6 \times 0.4 = 0.24$$
+                    - Áp dụng công thức biến cố đối:
+                    $$P(A) = 1 - P(\overline{A}) = 1 - 0.24 = 0.76$$
+                    <i>(Cách 2: $P(A) = P(A_1 \cup A_2) = P(A_1) + P(A_2) - P(A_1 A_2) = 0.4 + 0.6 - 0.24 = 0.76$)</i>.
+                    <br><i>Kết luận:</i> Xác suất có ít nhất một viên đạn trúng đích là $0.76$ ($76\%$).
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+
+            <!-- Bài 11 -->
+            <tr>
+                <td rowspan="4" class="col-q"><b>Bài 11</b><br>(Trang 1)</td>
+                <td class="col-sub"><b>a</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Gọi $X$ là số phát bắn trúng của An $\Rightarrow X \sim B(2; 0.6)$.
+                    <br>Gọi $Y$ là số phát bắn trúng của Bình $\Rightarrow Y \sim B(2; 0.7)$.
+                    <br><b>Nhận xét:</b> Các phát bắn của An và Bình là hoàn toàn độc lập với nhau.
+                    <br>Phân phối xác suất của An ($n=2, p=0.6, q=0.4$):
+                    <br>&bull; $P(X=0) = 0.4^2 = 0.16$; &nbsp; $P(X=1) = C_2^1(0.6)(0.4) = 0.48$; &nbsp; $P(X=2) = 0.6^2 = 0.36$.
+                    <br>Phân phối xác suất của Bình ($n=2, p=0.7, q=0.3$):
+                    <br>&bull; $P(Y=0) = 0.3^2 = 0.09$; &nbsp; $P(Y=1) = C_2^1(0.7)(0.3) = 0.42$; &nbsp; $P(Y=2) = 0.7^2 = 0.49$.
+                    <br>- Gọi $A$ là biến cố: "Có đúng 3 phát trúng đích trong tổng số 4 phát".
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Biến cố $A$ xảy ra trong 2 trường hợp xung khắc:
+                    <br>+ TH1: An trúng 1 phát và Bình trúng 2 phát: $\{X = 1, Y = 2\}$.
+                    <br>+ TH2: An trúng 2 phát và Bình trúng 1 phát: $\{X = 2, Y = 1\}$.
+                    <br>Do các biến cố thành phần xung khắc và $X, Y$ độc lập:
+                    $$P(A) = P(X=1)P(Y=2) + P(X=2)P(Y=1)$$
+                    $$P(A) = 0.48 \times 0.49 + 0.36 \times 0.42 = 0.2352 + 0.1512 = 0.3864$$
+                    <i>Kết luận:</i> Xác suất có đúng 3 phát trúng đích là $0.3864$ ($38,64\%$).
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>b</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Gọi $B$ là biến cố: "Có ít nhất 2 phát trúng đích".
+                    <br>Biến cố đối của $B$ là $\overline{B}$: "Có ít hơn 2 phát trúng đích" (tức có 0 phát trúng hoặc đúng 1 phát trúng).
+                    <br>&bull; TH có 0 phát trúng: $\{X=0, Y=0\}$
+                    $$P_0 = P(X=0)P(Y=0) = 0.16 \times 0.09 = 0.0144$$
+                    &bull; TH có đúng 1 phát trúng: $\{X=1, Y=0\} + \{X=0, Y=1\}$
+                    $$P_1 = P(X=1)P(Y=0) + P(X=0)P(Y=1) = 0.48 \times 0.09 + 0.16 \times 0.42 = 0.0432 + 0.0672 = 0.1104$$
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Xác suất biến cố đối:
+                    $$P(\overline{B}) = P_0 + P_1 = 0.0144 + 0.1104 = 0.1248$$
+                    - Áp dụng công thức biến cố đối:
+                    $$P(B) = 1 - P(\overline{B}) = 1 - 0.1248 = 0.8752$$
+                    <i>Kết luận:</i> Xác suất có ít nhất 2 phát trúng đích là $0.8752$ ($87,52\%$).
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- ==================== CHỦ ĐỀ 2 ==================== -->
+    <div class="page-break"></div>
+    <div class="section-header">
+        <h2 class="section-title">CHỦ ĐỀ 2: CÔNG THỨC XÁC SUẤT TOÀN PHẦN & CÔNG THỨC BAYES</h2>
+        <span class="section-tag">BÀI 13 &rarr; BÀI 25 FILE ĐỀ</span>
+    </div>
+
+    <!-- Hướng dẫn phương pháp & cách trình bày dạng 2 -->
+    <div class="method-box">
+        <div class="method-title">
+            <span>📌 QUY TRÌNH LÀM BÀI & CÁCH TRÌNH BÀY CHUẨN BAREM (THANG 0,5Đ)</span>
+            <span style="color:#c53030;">TỐI ĐA 2,0 - 2,5 ĐIỂM</span>
+        </div>
+        <div class="method-content">
+            <b>1. Bước 1 (0,5đ) - Thiết lập hệ biến cố đầy đủ:</b>
+            <br>&bull; Gọi $H_1, H_2, \dots, H_n$ là các trạng thái / giả thiết ban đầu (chọn máy, chọn nhóm, số bi lấy từ thùng I...).
+            <br>&bull; <b>Bắt buộc phải có câu:</b> <i>"Nhận xét: $\{H_1, H_2, \dots, H_n\}$ là một hệ biến cố đầy đủ vì các $H_i$ đôi một xung khắc và $\sum_{i=1}^n P(H_i) = 1$."</i>
+            <br><b>2. Bước 2 (0,5đ) - Xác định biến cố kết quả & Công thức XS đầy đủ:</b>
+            <br>&bull; Gọi $A$ là biến cố kết quả cần tính (bị bệnh, rút được bi đỏ...). Nêu rõ các xác suất có điều kiện $P(A|H_i)$.
+            <br>&bull; Viết công thức: $P(A) = \sum_{i=1}^n P(H_i) P(A|H_i)$. Thay số tính $P(A)$.
+            <br><b>3. Bước 3 (0,5đ - 1,0đ) - Áp dụng công thức Bayes (nếu có câu hỏi ngược):</b>
+            <br>&bull; Đề bài hỏi: <i>"Biết kết quả $A$ đã xảy ra, tính xác suất nguyên nhân là do giả thiết $H_k$"</i>.
+            <br>&bull; Viết công thức Bayes: $P(H_k|A) = \dfrac{P(H_k) P(A|H_k)}{P(A)}$. Thay số và kết luận.
+        </div>
+    </div>
+
+    <!-- Lời giải các bài trọng tâm Chủ đề 2 -->
+    <table class="grading-table">
+        <thead>
+            <tr>
+                <th class="col-q">Bài</th>
+                <th class="col-sub">Ý</th>
+                <th class="col-content">Nội dung trình bày tự luận theo barem chuẩn</th>
+                <th class="col-score">Điểm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bài 20 -->
+            <tr>
+                <td rowspan="3" class="col-q"><b>Bài 20</b><br>(Trang 2)</td>
+                <td class="col-sub"><b>a</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Gọi $H_1$ là biến cố: "Người được chọn nghiện thuốc lá" $\Rightarrow P(H_1) = 0.30$.
+                    <br>- Gọi $H_2$ là biến cố: "Người được chọn không nghiện thuốc lá" $\Rightarrow P(H_2) = 1 - 0.30 = 0.70$.
+                    <br><b>Nhận xét:</b> $\{H_1, H_2\}$ là một hệ biến cố đầy đủ vì $H_1, H_2$ xung khắc và $P(H_1) + P(H_2) = 1$.
+                    <br>- Gọi $A$ là biến cố: "Người được chọn bị viêm họng".
+                    <br>Theo đề bài ta có các xác suất có điều kiện:
+                    $$P(A|H_1) = 0.60; \quad P(A|H_2) = 0.40$$
+                    - Áp dụng <b>công thức xác suất đầy đủ</b>:
+                    $$P(A) = P(H_1)P(A|H_1) + P(H_2)P(A|H_2) = 0.30 \times 0.60 + 0.70 \times 0.40 = 0.18 + 0.28 = 0.46$$
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Biết người đó bị viêm họng, xác suất người đó nghiện thuốc lá là $P(H_1|A)$.
+                    <br>Áp dụng <b>công thức Bayes</b>:
+                    $$P(H_1|A) = \frac{P(H_1)P(A|H_1)}{P(A)} = \frac{0.30 \times 0.60}{0.46} = \frac{0.18}{0.46} = \frac{9}{23} \approx 0.3913$$
+                    <i>Kết luận:</i> Xác suất người đó nghiện thuốc lá khi biết người đó viêm họng là $\dfrac{9}{23} \approx 0.3913$ ($39,13\%$).
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>b</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Người đó không bị viêm họng ứng với biến cố đối $\overline{A}$.
+                    <br>Xác suất không bị viêm họng là: $P(\overline{A}) = 1 - P(A) = 1 - 0.46 = 0.54$.
+                    <br>Các xác suất có điều kiện tương ứng:
+                    <br>$P(\overline{A}|H_1) = 1 - 0.60 = 0.40; \quad P(\overline{A}|H_2) = 1 - 0.40 = 0.60$.
+                    <br>- Biết người đó không bị viêm họng, xác suất người đó nghiện thuốc lá là $P(H_1|\overline{A})$.
+                    <br>Áp dụng <b>công thức Bayes</b>:
+                    $$P(H_1|\overline{A}) = \frac{P(H_1)P(\overline{A}|H_1)}{P(\overline{A})} = \frac{0.30 \times 0.40}{0.54} = \frac{0.12}{0.54} = \frac{2}{9} \approx 0.2222$$
+                    <i>Kết luận:</i> Xác suất người đó nghiện thuốc lá khi không viêm họng là $\dfrac{2}{9} \approx 0.2222$ ($22,22\%$).
+                </td>
+                <td class="col-score">1,0</td>
+            </tr>
+
+            <!-- Bài 22 -->
+            <tr>
+                <td rowspan="4" class="col-q"><b>Bài 22</b><br>(Trang 3)</td>
+                <td class="col-sub"><b>a</b><br>(1,5đ)</td>
+                <td class="col-content">
+                    - Thùng I có 4 bóng đỏ, 6 bóng xanh (10 bóng). Rút 2 bóng từ thùng I bỏ vào thùng II:
+                    <br>Số cách rút 2 bóng từ thùng I là $C_{10}^2 = 45$.
+                    <br>Gọi các giả thiết về 2 bóng chuyển từ thùng I sang thùng II:
+                    <br>&bull; $H_1$: "Rút được 2 bóng đỏ" $\Rightarrow P(H_1) = \dfrac{C_4^2}{C_{10}^2} = \dfrac{6}{45} = \dfrac{2}{15}$.
+                    <br>&bull; $H_2$: "Rút được 1 bóng đỏ, 1 bóng xanh" $\Rightarrow P(H_2) = \dfrac{C_4^1 C_6^1}{C_{10}^2} = \dfrac{24}{45} = \dfrac{8}{15}$.
+                    <br>&bull; $H_3$: "Rút được 2 bóng xanh" $\Rightarrow P(H_3) = \dfrac{C_6^2}{C_{10}^2} = \dfrac{15}{45} = \dfrac{5}{15}$.
+                    <br><b>Nhận xét:</b> $\{H_1, H_2, H_3\}$ là một hệ biến cố đầy đủ vì đôi một xung khắc và tổng xác suất bằng 1.
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Ban đầu thùng II có 7 đỏ, 3 xanh (10 bóng). Sau khi nhận 2 bóng từ thùng I, thùng II có tổng cộng 12 bóng.
+                    <br>Gọi $A$ là biến cố: "Bóng lấy ra từ thùng II là bóng đỏ".
+                    <br>&bull; Nếu $H_1$ xảy ra: thùng II có $7+2=9$ đỏ, 3 xanh $\Rightarrow P(A|H_1) = \dfrac{9}{12}$.
+                    <br>&bull; Nếu $H_2$ xảy ra: thùng II có $7+1=8$ đỏ, 4 xanh $\Rightarrow P(A|H_2) = \dfrac{8}{12}$.
+                    <br>&bull; Nếu $H_3$ xảy ra: thùng II có 7 đỏ, $3+2=5$ xanh $\Rightarrow P(A|H_3) = \dfrac{7}{12}$.
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Áp dụng <b>công thức xác suất đầy đủ</b>:
+                    $$P(A) = \sum_{i=1}^3 P(H_i)P(A|H_i) = \frac{6}{45} \times \frac{9}{12} + \frac{24}{45} \times \frac{8}{12} + \frac{15}{45} \times \frac{7}{12}$$
+                    $$P(A) = \frac{54 + 192 + 105}{540} = \frac{351}{540} = \frac{13}{20} = 0.65$$
+                    <i>Kết luận:</i> Xác suất bóng lấy ra ở thùng II là bóng đỏ là $0.65$ ($65\%$).
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>b</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Gọi $B$ là biến cố: "Bóng lấy ra từ thùng II là bóng xanh" $\Rightarrow B = \overline{A}$.
+                    $$P(B) = 1 - P(A) = 1 - 0.65 = 0.35$$
+                    - Gọi $C$ là biến cố: "Bóng xanh lấy ra từ thùng II là bóng của thùng I chuyển sang".
+                    <br>&bull; Nếu $H_1$ xảy ra: không có bóng xanh nào từ thùng I chuyển sang $\Rightarrow P(C|H_1) = 0$.
+                    <br>&bull; Nếu $H_2$ xảy ra: có 1 bóng xanh của thùng I trong 12 bóng ở thùng II $\Rightarrow P(C|H_2) = \dfrac{1}{12}$.
+                    <br>&bull; Nếu $H_3$ xảy ra: có 2 bóng xanh của thùng I trong 12 bóng ở thùng II $\Rightarrow P(C|H_3) = \dfrac{2}{12}$.
+                    <br>Theo công thức xác suất đầy đủ:
+                    $$P(C) = \frac{6}{45} \times 0 + \frac{24}{45} \times \frac{1}{12} + \frac{15}{45} \times \frac{2}{12} = \frac{24 + 30}{540} = \frac{54}{540} = 0.10$$
+                    - Biết bóng lấy ra là bóng xanh, xác suất bóng đó là của thùng I:
+                    $$P(C|B) = \frac{P(C \cap B)}{P(B)} = \frac{P(C)}{P(B)} = \frac{0.10}{0.35} = \frac{2}{7} \approx 0.2857$$
+                    <i>Kết luận:</i> Xác suất cần tìm là $\dfrac{2}{7} \approx 0.2857$ ($28,57\%$).
+                </td>
+                <td class="col-score">1,0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- ==================== CHỦ ĐỀ 3 ==================== -->
+    <div class="page-break"></div>
+    <div class="section-header">
+        <h2 class="section-title">CHỦ ĐỀ 3: LƯỢC ĐỒ BERNOULLI & ĐỊNH LÝ MOIVRE - LAPLACE</h2>
+        <span class="section-tag">BÀI 1 &rarr; BÀI 8 (MỤC BERNOULLI)</span>
+    </div>
+
+    <!-- Hướng dẫn phương pháp & cách trình bày dạng 3 -->
+    <div class="method-box">
+        <div class="method-title">
+            <span>📌 QUY TRÌNH LÀM BÀI & CÁCH TRÌNH BÀY CHUẨN BAREM (THANG 0,5Đ)</span>
+            <span style="color:#c53030;">TỐI ĐA 1,5 - 2,0 ĐIỂM</span>
+        </div>
+        <div class="method-content">
+            <b>1. Nhận dạng bài toán:</b> Thực hiện $n$ phép thử độc lập, mỗi phép thử chỉ có 2 kết cục (thành công với xác suất $p$, thất bại với xác suất $q = 1 - p$).
+            <br><b>2. Khi $n$ nhỏ ($n \le 20$): Áp dụng công thức Bernoulli chính xác:</b>
+            $$P_n(k) = C_n^k p^k q^{n-k}$$
+            &bull; Chú ý thiết lập mối liên hệ giữa điều kiện đề bài và số lần thành công $k$ (ví dụ: điểm số $S = 4k - 1(n - k)$).
+            <br><b>3. Khi $n$ lớn ($n \ge 50$): Áp dụng định lý tích phân Moivre - Laplace:</b>
+            $$P(k_1 \le X \le k_2) \approx \Phi_0(x_2) - \Phi_0(x_1) \quad \text{với } x_1 = \frac{k_1 - np}{\sqrt{npq}}, \quad x_2 = \frac{k_2 - np}{\sqrt{npq}}$$
+            &bull; Quy tắc hàm Laplace: $\Phi_0(-x) = -\Phi_0(x)$; $\Phi_0(x) \approx 0.5000$ khi $x \ge 4.5$.
+        </div>
+    </div>
+
+    <!-- Lời giải các bài trọng tâm Chủ đề 3 -->
+    <table class="grading-table">
+        <thead>
+            <tr>
+                <th class="col-q">Bài</th>
+                <th class="col-sub">Ý</th>
+                <th class="col-content">Nội dung trình bày tự luận theo barem chuẩn</th>
+                <th class="col-score">Điểm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bài 1 -->
+            <tr>
+                <td rowspan="3" class="col-q"><b>Bài 1</b><br>(Trang 3)</td>
+                <td class="col-sub"><b>a</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Mỗi câu hỏi trắc nghiệm có 4 phương án, chỉ có 1 phương án đúng.
+                    <br>Học sinh chọn hú họa nên xác suất trả lời đúng mỗi câu là $p = \dfrac{1}{4} = 0.25$.
+                    <br>Xác suất trả lời sai mỗi câu là $q = 1 - p = 0.75$.
+                    <br><b>Nhận xét:</b> Việc trả lời 15 câu hỏi độc lập với nhau tạo thành lược đồ Bernoulli với $n = 15$ và $p = 0.25$.
+                    <br>- Gọi $k$ là số câu trả lời đúng ($0 \le k \le 15$). Khi đó số câu trả lời sai là $15 - k$.
+                    <br>Tổng số điểm học sinh đạt được là:
+                    $$S = 4 \times k - 1 \times (15 - k) = 5k - 15$$
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Để được 25 điểm thì:
+                    $$5k - 15 = 25 \Leftrightarrow 5k = 40 \Leftrightarrow k = 8 \text{ (câu đúng)}$$
+                    - Theo <b>công thức Bernoulli</b>, xác suất để có đúng 8 câu trả lời đúng là:
+                    $$P_{15}(8) = C_{15}^8 p^8 q^{15-8} = C_{15}^8 (0.25)^8 (0.75)^7$$
+                    $$= 6435 \times (0.25)^8 \times (0.75)^7 \approx 0.0131$$
+                    <i>Kết luận:</i> Xác suất để học sinh được 25 điểm là xấp xỉ $0.0131$ (hay $1,31\%$).
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>b</b><br>(0,75đ)</td>
+                <td class="col-content">
+                    - Để học sinh được ít nhất 55 điểm thì:
+                    $$5k - 15 \ge 55 \Leftrightarrow 5k \ge 70 \Leftrightarrow k \ge 14$$
+                    Vì $k \in \{0, 1, \dots, 15\}$ nên $k \in \{14, 15\}$ (tức học sinh phải trả lời đúng 14 hoặc 15 câu).
+                    <br>Áp dụng công thức Bernoulli:
+                    $$P(k \ge 14) = P_{15}(14) + P_{15}(15) = C_{15}^{14} (0.25)^{14} (0.75)^1 + C_{15}^{15} (0.25)^{15} (0.75)^0$$
+                    $$= 15 \times (0.25)^{14} \times 0.75 + 1 \times (0.25)^{15} = 46 \times (0.25)^{15} \approx 4.284 \times 10^{-8}$$
+                    <i>Kết luận:</i> Xác suất để được ít nhất 55 điểm là cực kỳ nhỏ, xấp xỉ $4.28 \times 10^{-8}$.
+                </td>
+                <td class="col-score">0,75</td>
+            </tr>
+
+            <!-- Bài 2 -->
+            <tr>
+                <td rowspan="2" class="col-q"><b>Bài 2</b><br>(Trang 3)</td>
+                <td class="col-sub">-</td>
+                <td class="col-content">
+                    - Gọi $X$ là số sản phẩm loại I trong $n = 600$ sản phẩm được chọn.
+                    <br>Xác suất mỗi sản phẩm là loại I là $p = 0.65 \Rightarrow q = 1 - 0.65 = 0.35$.
+                    <br><b>Nhận xét:</b> Các sản phẩm được chọn độc lập nên $X \sim B(600; 0.65)$.
+                    <br>Vì $n = 600$ rất lớn, ta có:
+                    $$np = 600 \times 0.65 = 390 \ge 5; \quad nq = 600 \times 0.35 = 210 \ge 5$$
+                    Độ lệch chuẩn: $\sqrt{npq} = \sqrt{600 \times 0.65 \times 0.35} = \sqrt{136.5} \approx 11.6833$.
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Theo <b>công thức tích phân Moivre - Laplace</b>, xác suất để $330 \le X \le 390$ là:
+                    $$P(330 \le X \le 390) \approx \Phi_0(x_2) - \Phi_0(x_1)$$
+                    Trong đó:
+                    $$x_1 = \frac{330 - 390}{11.6833} = \frac{-60}{11.6833} \approx -5.14; \quad x_2 = \frac{390 - 390}{11.6833} = 0$$
+                    Tra bảng hàm Laplace: $\Phi_0(0) = 0$ và $\Phi_0(-5.14) = -\Phi_0(5.14) \approx -0.5000$ (do $5.14 > 4.5$).
+                    $$P(330 \le X \le 390) \approx 0 - (-0.5000) = 0.5000$$
+                    <i>Kết luận:</i> Xác suất để số sản phẩm loại I từ 330 đến 390 là xấp xỉ $0.5000$ ($50\%$).
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+
+            <!-- Bài 4 -->
+            <tr>
+                <td rowspan="2" class="col-q"><b>Bài 4</b><br>(Trang 3)</td>
+                <td class="col-sub">-</td>
+                <td class="col-content">
+                    - Gọi $X$ là số phát đạn bắn trúng trong $n = 4$ phát bắn độc lập.
+                    <br>Ta có $X$ tuân theo phân phối nhị thức: $X \sim B(4; 0.45)$ với $p = 0.45, q = 0.55$.
+                    <br>- Xét bất phương trình biến cố:
+                    $$X^2 - 7X + 10 < 0 \Leftrightarrow (X - 2)(X - 5) < 0 \Leftrightarrow 2 < X < 5$$
+                    Vì biến ngẫu nhiên $X$ chỉ nhận các giá trị nguyên từ $0$ đến $4$:
+                    $$2 < X < 5 \Leftrightarrow X \in \{3, 4\}$$
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Theo công thức Bernoulli, xác suất cần tìm là:
+                    $$P(X^2 - 7X + 10 < 0) = P(X = 3) + P(X = 4)$$
+                    $$= C_4^3 (0.45)^3 (0.55)^1 + C_4^4 (0.45)^4 (0.55)^0$$
+                    $$= 4 \times 0.091125 \times 0.55 + 1 \times 0.04100625 = 0.200475 + 0.041006 = 0.2415$$
+                    <i>Kết luận:</i> Xác suất của biến cố là $0.2415$ (khoảng $24,15\%$).
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- ==================== CHỦ ĐỀ 4 ==================== -->
+    <div class="page-break"></div>
+    <div class="section-header">
+        <h2 class="section-title">CHỦ ĐỀ 4: BIẾN NGẪU NHIÊN MỘT CHIỀU</h2>
+        <span class="section-tag">BÀI 1 &rarr; BÀI 16 (TRANG 4 - 5)</span>
+    </div>
+
+    <!-- Hướng dẫn phương pháp & cách trình bày dạng 4 -->
+    <div class="method-box">
+        <div class="method-title">
+            <span>📌 QUY TRÌNH LÀM BÀI & CÁCH TRÌNH BÀY CHUẨN BAREM (THANG 0,5Đ)</span>
+            <span style="color:#c53030;">TỐI ĐA 2,0 - 3,0 ĐIỂM</span>
+        </div>
+        <div class="method-content">
+            <b>1. Biến rời rạc:</b>
+            <br>&bull; Lập bảng phân phối: Liệt kê giá trị $x_i$, tính $p_i = P(X=x_i)$. Kiểm tra $\sum p_i = 1$.
+            <br>&bull; Kỳ vọng: $E(X) = \sum x_i p_i$; &nbsp; Phương sai: $V(X) = E(X^2) - [E(X)]^2 = \sum x_i^2 p_i - [E(X)]^2$.
+            <br><b>2. Biến liên tục:</b>
+            <br>&bull; Tìm hằng số $k$: Giải phương trình chuẩn hóa $\displaystyle\int_{-\infty}^{+\infty} f(x)dx = 1$ (kèm điều kiện $f(x) \ge 0$).
+            <br>&bull; Hàm phân bố $F(x) = \displaystyle\int_{-\infty}^x f(t)dt$: <b>Bắt buộc viết đủ 3 nhánh</b> ($x \le a, a < x < b, x \ge b$).
+            <br>&bull; Xác suất: $P(a \le X \le b) = F(b) - F(a) = \displaystyle\int_a^b f(x)dx$.
+            <br><b>3. Phân phối chuẩn $X \sim N(\mu; \sigma^2)$:</b>
+            <br>&bull; $P(\alpha \le X \le \beta) = \Phi_0\left(\frac{\beta - \mu}{\sigma}\right) - \Phi_0\left(\frac{\alpha - \mu}{\sigma}\right)$.
+            <br>&bull; Dung sai đối xứng: $P(|X - \mu| \le \varepsilon) = 2\Phi_0\left(\frac{\varepsilon}{\sigma}\right)$.
+        </div>
+    </div>
+
+    <!-- Lời giải các bài trọng tâm Chủ đề 4 -->
+    <table class="grading-table">
+        <thead>
+            <tr>
+                <th class="col-q">Bài</th>
+                <th class="col-sub">Ý</th>
+                <th class="col-content">Nội dung trình bày tự luận theo barem chuẩn</th>
+                <th class="col-score">Điểm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bài 4 (Rời rạc) -->
+            <tr>
+                <td rowspan="3" class="col-q"><b>Bài 4</b><br>(Trang 4)</td>
+                <td class="col-sub"><b>a</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Chuồng có 6 con gà (2 trống, 4 mái). Bắt ngẫu nhiên 2 con gà.
+                    <br>Số phần tử không gian mẫu: $n(\Omega) = C_6^2 = 15$.
+                    <br>Gọi $X$ là số gà mái được bắt ra. Khi đó $X$ nhận các giá trị $x \in \{0, 1, 2\}$.
+                    <br>&bull; $P(X = 0) = \dfrac{C_4^0 C_2^2}{15} = \dfrac{1}{15}$.
+                    <br>&bull; $P(X = 1) = \dfrac{C_4^1 C_2^1}{15} = \dfrac{4 \times 2}{15} = \dfrac{8}{15}$.
+                    <br>&bull; $P(X = 2) = \dfrac{C_4^2 C_2^0}{15} = \dfrac{6}{15} = \dfrac{2}{5}$.
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - <b>Bảng phân phối xác suất của $X$:</b>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 4px; text-align: center;">
+                        <tr style="border: 1px solid #cbd5e0;"><th style="padding: 3px; border: 1px solid #cbd5e0; background: #edf2f7;">X</th><td>0</td><td>1</td><td>2</td></tr>
+                        <tr style="border: 1px solid #cbd5e0;"><th style="padding: 3px; border: 1px solid #cbd5e0; background: #edf2f7;">P</th><td>$\dfrac{1}{15}$</td><td>$\dfrac{8}{15}$</td><td>$\dfrac{6}{15}$</td></tr>
+                    </table>
+                    <i>(Kiểm tra tổng: $\frac{1}{15} + \frac{8}{15} + \frac{6}{15} = 1$)</i>.
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>b</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Tính kỳ vọng $E(X)$:
+                    $$E(X) = \sum x_i p_i = 0 \times \frac{1}{15} + 1 \times \frac{8}{15} + 2 \times \frac{6}{15} = \frac{20}{15} = \frac{4}{3} \approx 1.3333$$
+                    - Tính $E(X^2)$ và phương sai $V(X)$:
+                    $$E(X^2) = \sum x_i^2 p_i = 0^2 \times \frac{1}{15} + 1^2 \times \frac{8}{15} + 2^2 \times \frac{6}{15} = \frac{8 + 24}{15} = \frac{32}{15}$$
+                    $$V(X) = E(X^2) - [E(X)]^2 = \frac{32}{15} - \left(\frac{4}{3}\right)^2 = \frac{32}{15} - \frac{16}{9} = \frac{96 - 80}{45} = \frac{16}{45} \approx 0.3556$$
+                    <i>Kết luận:</i> $E(X) = \dfrac{4}{3}$ và $V(X) = \dfrac{16}{45}$.
+                </td>
+                <td class="col-score">1,0</td>
+            </tr>
+
+            <!-- Bài 11 (Liên tục arctan) -->
+            <tr>
+                <td rowspan="3" class="col-q"><b>Bài 11</b><br>(Trang 5)</td>
+                <td class="col-sub"><b>a</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Điều kiện chuẩn hóa hàm mật độ: $\displaystyle\int_{-\infty}^{+\infty} f(x)dx = 1$ với $f(x) \ge 0, \forall x$.
+                    <br>Ta có:
+                    $$\int_{-\infty}^{+\infty} \frac{k}{e^x + e^{-x}}dx = k \int_{-\infty}^{+\infty} \frac{e^x}{e^{2x} + 1}dx$$
+                    Đặt $u = e^x \Rightarrow du = e^x dx$. Khi $x \to -\infty \Rightarrow u \to 0$; khi $x \to +\infty \Rightarrow u \to +\infty$.
+                    $$= k \int_0^{+\infty} \frac{du}{u^2 + 1} = k [\arctan(u)]_0^{+\infty} = k \left(\frac{\pi}{2} - 0\right) = \frac{k\pi}{2}$$
+                    Để là hàm mật độ thì $\dfrac{k\pi}{2} = 1 \Leftrightarrow k = \dfrac{2}{\pi}$ (thỏa mãn $k > 0$).
+                </td>
+                <td class="col-score">1,0</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>b1</b><br>(0,5đ)</td>
+                <td class="col-content">
+                    - Tìm hàm phân phối xác suất $F(x) = P(X < x) = \displaystyle\int_{-\infty}^x f(t)dt$:
+                    $$F(x) = \int_{-\infty}^x \frac{2}{\pi} \frac{e^t}{e^{2t} + 1}dt = \frac{2}{\pi} [\arctan(e^t)]_{-\infty}^x$$
+                    Vì khi $t \to -\infty$, $e^t \to 0 \Rightarrow \arctan(0) = 0$. Do đó:
+                    $$F(x) = \frac{2}{\pi}\arctan(e^x), \quad \forall x \in (-\infty; +\infty)$$
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>b2</b><br>(0,5đ)</td>
+                <td class="col-content">
+                    - Tính xác suất $P\left\{\ln\left(\dfrac{1}{\sqrt{3}}\right) \le X \le \ln\sqrt{3}\right\}$:
+                    $$P = F(\ln\sqrt{3}) - F\left(\ln(1/\sqrt{3})\right)$$
+                    Vì $e^{\ln\sqrt{3}} = \sqrt{3}$ và $e^{\ln(1/\sqrt{3})} = \dfrac{1}{\sqrt{3}}$, ta có:
+                    $$F(\ln\sqrt{3}) = \frac{2}{\pi}\arctan(\sqrt{3}) = \frac{2}{\pi} \cdot \frac{\pi}{3} = \frac{2}{3}$$
+                    $$F\left(\ln(1/\sqrt{3})\right) = \frac{2}{\pi}\arctan\left(\frac{1}{\sqrt{3}}\right) = \frac{2}{\pi} \cdot \frac{\pi}{6} = \frac{1}{3}$$
+                    $$P = \frac{2}{3} - \frac{1}{3} = \frac{1}{3}$$
+                    <i>Kết luận:</i> $k = \dfrac{2}{\pi}$ và $P\left\{\ln(1/\sqrt{3}) \le X \le \ln\sqrt{3}\right\} = \dfrac{1}{3}$.
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+
+            <!-- Bài 13 (Phân phối chuẩn) -->
+            <tr>
+                <td rowspan="2" class="col-q"><b>Bài 13</b><br>(Trang 5)</td>
+                <td class="col-sub">-</td>
+                <td class="col-content">
+                    - Trọng lượng $X$ (kg) của trẻ sơ sinh tuân theo phân phối chuẩn:
+                    $$X \sim N(\mu; \sigma^2) = N(3; 0.04) \Rightarrow \mu = 3 \text{ kg}, \quad \sigma = \sqrt{0.04} = 0.2 \text{ kg}$$
+                    - Cần tính xác suất $P(2.8 \le X \le 3.2)$.
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Áp dụng công thức tính xác suất cho đại lượng ngẫu nhiên phân phối chuẩn:
+                    $$P(2.8 \le X \le 3.2) = \Phi_0\left(\frac{3.2 - \mu}{\sigma}\right) - \Phi_0\left(\frac{2.8 - \mu}{\sigma}\right)$$
+                    $$= \Phi_0\left(\frac{3.2 - 3}{0.2}\right) - \Phi_0\left(\frac{2.8 - 3}{0.2}\right) = \Phi_0(1) - \Phi_0(-1) = 2\Phi_0(1)$$
+                    Tra bảng hàm Laplace ta có $\Phi_0(1) \approx 0.3413$.
+                    $$P(2.8 \le X \le 3.2) = 2 \times 0.3413 = 0.6826$$
+                    <i>Kết luận:</i> Xác suất trọng lượng trẻ sơ sinh từ 2,8 đến 3,2 kg là $0.6826$ ($68,26\%$).
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- ==================== CHỦ ĐỀ 5 ==================== -->
+    <div class="page-break"></div>
+    <div class="section-header">
+        <h2 class="section-title">CHỦ ĐỀ 5: BIẾN NGẪU NHIÊN HAI CHIỀU (VECTƠ NGẪU NHIÊN)</h2>
+        <span class="section-tag">BÀI 1 &rarr; BÀI 7 (TRANG 6)</span>
+    </div>
+
+    <!-- Hướng dẫn phương pháp & cách trình bày dạng 5 -->
+    <div class="method-box">
+        <div class="method-title">
+            <span>📌 QUY TRÌNH LÀM BÀI & CÁCH TRÌNH BÀY CHUẨN BAREM (THANG 0,5Đ)</span>
+            <span style="color:#c53030;">TỐI ĐA 2,0 - 3,0 ĐIỂM</span>
+        </div>
+        <div class="method-content">
+            <b>1. Biến 2 chiều rời rạc:</b>
+            <br>&bull; Phân phối biên: $P(X = x_i) = \sum_j p_{ij}$ (cộng theo cột); $P(Y = y_j) = \sum_i p_{ij}$ (cộng theo hàng).
+            <br>&bull; <b>Kiểm tra tính độc lập:</b> So sánh $p_{ij}$ với $P(X=x_i) \times P(Y=y_j)$. Nếu tồn tại dù chỉ 1 ô mà $p_{ij} \ne P(X=x_i)P(Y=y_j)$ thì kết luận ngay $X$ và $Y$ <b>không độc lập</b>.
+            <br><b>2. Biến 2 chiều liên tục:</b>
+            <br>&bull; Tìm hằng số $k$: Giải phương trình chuẩn hóa 2 lớp tích phân: $\displaystyle\iint_D f(x, y) dx dy = 1$.
+            <br>&bull; Hàm mật độ biên: $f_X(x) = \displaystyle\int_{-\infty}^{+\infty} f(x, y)dy$ và $f_Y(y) = \displaystyle\int_{-\infty}^{+\infty} f(x, y)dx$.
+            <br>&bull; Kỳ vọng: $E(X) = \displaystyle\iint_D x f(x, y) dx dy$; &nbsp; $E(Y) = \displaystyle\iint_D y f(x, y) dx dy$.
+        </div>
+    </div>
+
+    <!-- Lời giải các bài trọng tâm Chủ đề 5 -->
+    <table class="grading-table">
+        <thead>
+            <tr>
+                <th class="col-q">Bài</th>
+                <th class="col-sub">Ý</th>
+                <th class="col-content">Nội dung trình bày tự luận theo barem chuẩn</th>
+                <th class="col-score">Điểm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bài 2 (Rời rạc 2D) -->
+            <tr>
+                <td rowspan="3" class="col-q"><b>Bài 2</b><br>(Trang 6)</td>
+                <td class="col-sub"><b>a</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Cho bảng phân phối đồng thời của $(X, Y)$:
+                    <table style="width: 70%; border-collapse: collapse; margin: 4px 0; text-align: center;">
+                        <tr style="background:#edf2f7;"><th style="border:1px solid #cbd5e0;">Y \ X</th><th style="border:1px solid #cbd5e0;">1</th><th style="border:1px solid #cbd5e0;">2</th><th style="border:1px solid #cbd5e0;">3</th></tr>
+                        <tr><td style="border:1px solid #cbd5e0;"><b>1</b></td><td style="border:1px solid #cbd5e0;">0.15</td><td style="border:1px solid #cbd5e0;">0.20</td><td style="border:1px solid #cbd5e0;">0.10</td></tr>
+                        <tr><td style="border:1px solid #cbd5e0;"><b>2</b></td><td style="border:1px solid #cbd5e0;">0.35</td><td style="border:1px solid #cbd5e0;">0.05</td><td style="border:1px solid #cbd5e0;">0.15</td></tr>
+                    </table>
+                    - Tìm phân phối xác suất biên của $X$:
+                    <br>&bull; $P(X = 1) = 0.15 + 0.35 = 0.50$.
+                    <br>&bull; $P(X = 2) = 0.20 + 0.05 = 0.25$.
+                    <br>&bull; $P(X = 3) = 0.10 + 0.15 = 0.25$.
+                    <br>- Tìm phân phối xác suất biên của $Y$:
+                    <br>&bull; $P(Y = 1) = 0.15 + 0.20 + 0.10 = 0.45$.
+                    <br>&bull; $P(Y = 2) = 0.35 + 0.05 + 0.15 = 0.55$.
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"></td>
+                <td class="col-content">
+                    - Hàm phân phối đồng thời $F(x, y) = P(X < x, Y < y) = \sum_{x_i < x, y_j < y} P(X = x_i, Y = y_j)$:
+                    <br>&bull; Nếu $x \le 1$ hoặc $y \le 1$: $F(x, y) = 0$.
+                    <br>&bull; Nếu $1 < x \le 2, 1 < y \le 2$: $F(x, y) = P(1, 1) = 0.15$.
+                    <br>&bull; Nếu $2 < x \le 3, 1 < y \le 2$: $F(x, y) = 0.15 + 0.20 = 0.35$.
+                    <br>&bull; Nếu $x > 3, 1 < y \le 2$: $F(x, y) = 0.15 + 0.20 + 0.10 = 0.45$.
+                    <br>&bull; Nếu $1 < x \le 2, y > 2$: $F(x, y) = 0.15 + 0.35 = 0.50$.
+                    <br>&bull; Nếu $2 < x \le 3, y > 2$: $F(x, y) = 0.35 + 0.05 + 0.35 = 0.75$.
+                    <br>&bull; Nếu $x > 3, y > 2$: $F(x, y) = 1.00$.
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>b</b><br>(0,5đ)</td>
+                <td class="col-content">
+                    - Kiểm tra tính độc lập của $X$ và $Y$:
+                    <br>Hai biến ngẫu nhiên $X$ và $Y$ độc lập khi và chỉ khi:
+                    $$P(X = x_i, Y = y_j) = P(X = x_i) \times P(Y = y_j), \quad \forall (i, j)$$
+                    Xét cặp giá trị $(x_1, y_1) = (1, 1)$:
+                    <br>&bull; Từ bảng phân phối đồng thời: $P(X = 1, Y = 1) = 0.15$.
+                    <br>&bull; Tích xác suất biên: $P(X = 1) \times P(Y = 1) = 0.50 \times 0.45 = 0.225$.
+                    <br>Vì $0.15 \ne 0.225$, suy ra:
+                    $$P(X = 1, Y = 1) \ne P(X = 1) \times P(Y = 1)$$
+                    <i>Kết luận:</i> Hai biến ngẫu nhiên $X$ và $Y$ <b>không độc lập</b> với nhau.
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+
+            <!-- Bài 3 (Liên tục hình vuông) -->
+            <tr>
+                <td rowspan="3" class="col-q"><b>Bài 3</b><br>(Trang 6)</td>
+                <td class="col-sub"><b>a1</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Cho $f(x, y) = a(x + y^2)$ trên miền $D = [0; 1] \times [0; 1]$.
+                    <br>Điều kiện chuẩn hóa hàm mật độ đồng thời:
+                    $$\iint_D f(x, y)dxdy = 1 \quad \text{và } a \ge 0$$
+                    Ta tính tích phân 2 lớp:
+                    $$\int_0^1 \int_0^1 a(x + y^2)dxdy = a \int_0^1 \left[ \frac{x^2}{2} + xy^2 \right]_0^1 dy = a \int_0^1 \left( \frac{1}{2} + y^2 \right) dy$$
+                    $$= a \left[ \frac{y}{2} + \frac{y^3}{3} \right]_0^1 = a \left( \frac{1}{2} + \frac{1}{3} \right) = \frac{5}{6}a$$
+                    Để là hàm mật độ thì $\dfrac{5}{6}a = 1 \Leftrightarrow a = \dfrac{6}{5}$ (thỏa mãn $a > 0$).
+                </td>
+                <td class="col-score">1,0</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>a2</b><br>(0,5đ)</td>
+                <td class="col-content">
+                    - Tìm hàm mật độ biên của $X$:
+                    <br>&bull; Nếu $x \notin [0; 1]$: $f_X(x) = 0$.
+                    <br>&bull; Nếu $x \in [0; 1]$:
+                    $$f_X(x) = \int_0^1 f(x, y)dy = \int_0^1 \frac{6}{5}(x + y^2)dy = \frac{6}{5} \left[ xy + \frac{y^3}{3} \right]_0^1 = \frac{6}{5}x + \frac{2}{5}$$
+                    Vậy $f_X(x) = \begin{cases} \dfrac{6}{5}x + \dfrac{2}{5} & \text{khi } x \in [0; 1] \\ 0 & \text{khi } x \notin [0; 1] \end{cases}$
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>a3</b><br>(0,5đ)</td>
+                <td class="col-content">
+                    - Tìm hàm mật độ biên của $Y$:
+                    <br>&bull; Nếu $y \notin [0; 1]$: $f_Y(y) = 0$.
+                    <br>&bull; Nếu $y \in [0; 1]$:
+                    $$f_Y(y) = \int_0^1 f(x, y)dx = \int_0^1 \frac{6}{5}(x + y^2)dx = \frac{6}{5} \left[ \frac{x^2}{2} + xy^2 \right]_0^1 = \frac{6}{5}y^2 + \frac{3}{5}$$
+                    Vậy $f_Y(y) = \begin{cases} \dfrac{6}{5}y^2 + \dfrac{3}{5} & \text{khi } y \in [0; 1] \\ 0 & \text{khi } y \notin [0; 1] \end{cases}$
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+
+            <!-- Bài 4 (Liên tục miền tam giác) -->
+            <tr>
+                <td rowspan="3" class="col-q"><b>Bài 4</b><br>(Trang 6)</td>
+                <td class="col-sub"><b>a</b><br>(1,0đ)</td>
+                <td class="col-content">
+                    - Cho $f(x, y) = \dfrac{k}{\sqrt{xy}}$ trên miền $D = \{0 < x \le y < 1\}$.
+                    <br>Ta tính tích phân chuẩn hóa:
+                    $$\iint_D f(x, y)dxdy = k \int_0^1 \left( \int_0^y \frac{1}{\sqrt{x} \sqrt{y}}dx \right) dy$$
+                    Tính tích phân bên trong theo biến $x$:
+                    $$\int_0^y \frac{1}{\sqrt{x}}dx = [2\sqrt{x}]_0^y = 2\sqrt{y}$$
+                    Thay vào tích phân ngoài:
+                    $$k \int_0^1 \frac{1}{\sqrt{y}} (2\sqrt{y}) dy = 2k \int_0^1 1 dy = 2k [y]_0^1 = 2k$$
+                    Để là hàm mật độ xác suất thì $2k = 1 \Leftrightarrow k = \dfrac{1}{2}$ (Đpcm).
+                </td>
+                <td class="col-score">1,0</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>b1</b><br>(0,5đ)</td>
+                <td class="col-content">
+                    - Tính kỳ vọng của $X$:
+                    $$E(X) = \iint_D x f(x, y)dxdy = \frac{1}{2} \int_0^1 \left( \int_0^y \frac{x}{\sqrt{x}\sqrt{y}}dx \right) dy$$
+                    $$= \frac{1}{2} \int_0^1 \frac{1}{\sqrt{y}} \left[ \frac{2}{3}x^{3/2} \right]_0^y dy = \frac{1}{2} \int_0^1 \frac{1}{\sqrt{y}} \left(\frac{2}{3}y^{3/2}\right) dy$$
+                    $$= \frac{1}{3} \int_0^1 y dy = \frac{1}{3} \left[ \frac{y^2}{2} \right]_0^1 = \frac{1}{6}$$
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+            <tr>
+                <td class="col-sub"><b>b2</b><br>(0,5đ)</td>
+                <td class="col-content">
+                    - Tính kỳ vọng của $Y$:
+                    $$E(Y) = \iint_D y f(x, y)dxdy = \frac{1}{2} \int_0^1 \left( \int_0^y \frac{y}{\sqrt{x}\sqrt{y}}dx \right) dy$$
+                    $$= \frac{1}{2} \int_0^1 \sqrt{y} [2\sqrt{x}]_0^y dy = \frac{1}{2} \int_0^1 \sqrt{y} (2\sqrt{y}) dy = \int_0^1 y dy = \left[ \frac{y^2}{2} \right]_0^1 = \frac{1}{2}$$
+                    <i>Kết luận:</i> $k = \dfrac{1}{2}; \quad E(X) = \dfrac{1}{6}; \quad E(Y) = \dfrac{1}{2}$.
+                </td>
+                <td class="col-score">0,5</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+"""
+
+# Ghi file HTML
+output_html_path = os.path.abspath("generate_pdf/attt_solutions.html")
+with open(output_html_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print(f"HTML saved to: {output_html_path}")
+
+pdf_output_path = os.path.abspath("GIAI_TRONG_TAM_BAI_TAP_XAC_SUAT_ATTT.pdf")
+print(f"Rendering PDF to: {pdf_output_path}...")
+
+with sync_playwright() as p:
+    browser = p.chromium.launch()
+    page = browser.new_page()
+    page.goto(f"file://{output_html_path}", wait_until="networkidle")
+    page.wait_for_timeout(2000)
+    page.evaluate("() => document.fonts.ready")
+    
+    page.pdf(
+        path=pdf_output_path,
+        format="A4",
+        margin={
+            "top": "12mm",
+            "bottom": "14mm",
+            "left": "12mm",
+            "right": "12mm"
+        },
+        print_background=True,
+        display_header_footer=True,
+        header_template='<div style="font-size: 8px; width: 100%; text-align: right; padding-right: 15mm; color: #a0aec0; font-family: sans-serif;">HỌC VIỆN KỸ THUẬT MẬT MÃ &bull; BÀI TẬP XÁC SUẤT TRỌNG TÂM ATTT</div>',
+        footer_template='<div style="font-size: 8.5px; width: 100%; text-align: center; color: #718096; font-family: sans-serif;">Đáp án tự luận chuẩn &bull; Trang <span class="pageNumber"></span> / <span class="totalPages"></span></div>'
+    )
+    browser.close()
+
+print(f"PDF successfully generated at: {pdf_output_path}")

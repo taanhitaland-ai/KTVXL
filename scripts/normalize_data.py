@@ -20,6 +20,15 @@ def ensure_unique_ids(questions):
     return questions
 
 
+def normalize_tthcm_questions(questions):
+    ensure_unique_ids(questions)
+    # PDF page footers had been appended to the last answer on some pages.
+    footer = r'\s+Trang\s+\d+/\d+\s*[-–]\s*Mã đề thi\s*\d+\s*$'
+    for question in questions:
+        question['options'] = [re.sub(footer, '', option).rstrip() for option in question.get('options', [])]
+    return questions
+
+
 # Explicit formulas preserve even the intentionally wrong distractors.
 FORMULA_OPTIONS = {
     'vldc_nc_004': [r'e = \frac{hc(1/\lambda_2 + 1/\lambda_1)}{U_2-U_1}', r'e = \frac{hc(1/\lambda_1 - 1/\lambda_2)}{U_1-U_2}', r'e = \frac{hc(1/\lambda_1 - 1/\lambda_2)}{U_2+U_1}', r'e = \frac{hc(1/\lambda_2 - 1/\lambda_1)}{U_2-U_1}'],
@@ -83,6 +92,7 @@ EMBEDDED = {
     'a⃗(t)': r'$\vec a(t)$',
     'phía S2': r'phía $S_2$',
     'phía S1': r'phía $S_1$',
+    '3/4 bước sóng': r'$\frac34$ bước sóng',
 }
 
 UNITS = {'μm': r'\mu\mathrm{m}', 'kg·m/s': r'\mathrm{kg}\cdot\mathrm{m/s}', 'm/s': r'\mathrm{m/s}', 'MeV': r'\mathrm{MeV}', 'mm': r'\mathrm{mm}', 'cm': r'\mathrm{cm}', 'pm': r'\mathrm{pm}', 'nm': r'\mathrm{nm}', 'rad': r'\mathrm{rad}', 'Wb': r'\mathrm{Wb}', 'kg': r'\mathrm{kg}', 'Å': r'\text{Å}', 'm': r'\mathrm{m}', 's': r'\mathrm{s}', 'V': r'\mathrm{V}'}
@@ -153,10 +163,36 @@ def write_questions(subject, questions):
         (ROOT / f'{directory}/{prefix}_data.js').write_text(bundle, encoding='utf-8')
 
 
+def normalize_microprocessor_knowledge():
+    old = 'Hai toán hạng không được cùng là ô nhớ (Ví dụ: `MOV 30H, 40H` là SAI; phải qua A).'
+    new = '8051 hỗ trợ `MOV direct, direct`: `MOV 30H, 40H` hợp lệ, sao chép nội dung địa chỉ 40H vào địa chỉ 30H. Không cần đi qua A.'
+    def repair(value):
+        if isinstance(value, str):
+            if old in value:
+                return value.replace(old, new).replace('**Mẹo loại trừ lệnh Hợp ngữ SAI**', '**Mẹo kiểm tra lệnh Hợp ngữ**')
+            return value
+        if isinstance(value, list):
+            return [repair(item) for item in value]
+        if isinstance(value, dict):
+            return {key: repair(item) for key, item in value.items()}
+        return value
+    knowledge = repair(json.loads((ROOT / 'data/knowledge_base.json').read_text(encoding='utf-8')))
+    text = json.dumps(knowledge, ensure_ascii=False, indent=2) + '\n'
+    (ROOT / 'data/knowledge_base.json').write_text(text, encoding='utf-8')
+    for directory in ('web', 'docs'):
+        (ROOT / directory / 'data/knowledge_base.json').write_text(text, encoding='utf-8')
+    path = ROOT / 'web/data.js'
+    bundle = path.read_text(encoding='utf-8')
+    start = re.search(r'window\.KTVXL_KNOWLEDGE\s*=\s*', bundle).end()
+    _, length = json.JSONDecoder().raw_decode(bundle[start:])
+    path.write_text(bundle[:start] + json.dumps(knowledge, ensure_ascii=False) + bundle[start + length:], encoding='utf-8')
+
+
 def main():
+    normalize_microprocessor_knowledge()
     tthcm = json.loads((ROOT / 'data/tthcm_questions_db.json').read_text(encoding='utf-8'))
     vldc = json.loads((ROOT / 'data/vldc_questions_db.json').read_text(encoding='utf-8'))
-    write_questions('tthcm', ensure_unique_ids(tthcm))
+    write_questions('tthcm', normalize_tthcm_questions(tthcm))
     write_questions('vldc', normalize_vldc_questions(vldc))
     knowledge = json.loads((ROOT / 'data/vldc_knowledge_base.json').read_text(encoding='utf-8'))
     normalize_physics_knowledge(knowledge)

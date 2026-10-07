@@ -1,119 +1,91 @@
-# 🎓 Hệ Thống Ôn Luyện & Thi Thử Trắc Nghiệm KMA (KTVXL • TTHCM • VLDC)
+# Hệ thống ôn luyện và thi thử KMA
 
-> Nền tảng học tập, luyện thi trắc nghiệm và mô phỏng trực quan chuẩn kiến trúc Neobrutalism dành cho sinh viên Học viện Kỹ thuật Mật mã (KMA) và các trường đại học khối kỹ thuật.
+Ứng dụng HTML/CSS/JavaScript với luyện tập, thi thử, tra cứu kiến thức, mô phỏng và tải tài liệu PDF. Bốn môn hiện có:
 
-🌐 **Trang web trực tuyến (Live Demo)**: [https://taanhitaland-ai.github.io/KTVXL/](https://taanhitaland-ai.github.io/KTVXL/)
+| Môn | Số câu trong ngân hàng | Thời gian thi thử |
+| --- | ---: | ---: |
+| Kỹ thuật Vi xử lý | 984 | 60 phút |
+| Tư tưởng Hồ Chí Minh | 885 | 40 phút |
+| Vật lý đại cương | 142 | 45 phút |
+| Xác suất thống kê | 139 | 60 phút |
 
----
+Trang đã công bố: [GitHub Pages](https://taanhitaland-ai.github.io/KTVXL/). Nội dung ở đó chỉ thay đổi sau khi đưa bản sửa lên GitHub.
 
-## 📚 1. Giới Thiệu Các Môn Học
+## Chạy trên máy
 
-### ⚡ Kỹ Thuật Vi Xử Lý (984 câu)
-- **5 Đề thi chính thức KMA** (Đề 001 đến 005) chuẩn 40 câu theo ma trận chuẩn đầu ra (CLO1, CLO2, CLO3).
-- **18 Part chuyên đề bài tập chuyên sâu**: Cấu trúc 8051, không gian nhớ RAM/ROM, tập lệnh ASM, Timer/Counter định thời, UART truyền thông nối tiếp, thanh ghi chức năng đặc biệt SFR.
-- Câu hỏi tính toán trắc nghiệm và câu hỏi điền kết quả (Fill-in-the-blank).
+Mở `web/index.html` hoặc `docs/index.html` bằng Chrome/Edge. Dữ liệu câu hỏi và thư viện hiển thị công thức đều nằm trong dự án, nên không cần máy chủ hay CDN để luyện tập. Phông chữ Google là tùy chọn, có phông chữ dự phòng.
 
-### 📕 Tư Tưởng Hồ Chí Minh (885 câu)
-- **4 Nguồn đề thi & đề cương uy tín**:
-  - ⭐ Ngân Hàng Đề Gốc Full ĐA A (281 câu)
-  - 📝 Mã Đề Thi 132 Chính Thức (298 câu)
-  - 🎯 Đề Thi Mẫu 651 KTMM (48 câu)
-  - 📑 Đề Cương Ôn Thi ATTT KMA 2019 (258 câu)
-- Phân loại rõ ràng theo 6 chương giáo trình chuẩn của Bộ GD&ĐT.
+Để kiểm tra đường dẫn và tải PDF qua HTTP, chạy từ thư mục dự án với Python 3.10 trở lên:
 
-### ⚛️ Vật Lý Đại Cương (142 câu)
-- **Tổng hợp từ tài liệu Đề thi & Đề cương Notion**:
-  - Đề Test Cuối (38 câu có công thức & hướng dẫn giải)
-  - Đề Test 100 Câu (trích lục từ Google Docs)
-  - Đề Thi Giữa Kỳ 2025 (Cơ học lượng tử & phương trình Schrödinger)
-  - Đề Cương Bài Tập 6 Chương A2
-- **Đầy đủ 100% lời giải chi tiết**, phương pháp phân tích dạng bài và mẹo bấm máy Casio fx-580VNX (`CONST`, `CONV`).
-- 🔬 **Phòng Thí Nghiệm Mô Phỏng Vật Lý Trực Quan (Interactive Physics Lab)**:
-  - Giao thoa khe Young (thay đổi bước sóng, bề rộng khe, chèn bản mỏng)
-  - Hiện tượng quang điện ngoài & điện thế hãm
-  - Tán xạ Compton góc va chạm photon
-  - Giếng thế lượng tử 1 chiều & hàm sóng Schrödinger
-  - Định luật phân cực ánh sáng Malus
-
----
-
-## 🛠️ 2. Hướng Dẫn Cài Đặt & Chạy Cục Bộ
-
-Hệ thống được thiết kế hoàn toàn bằng Vanilla HTML5, CSS3, JavaScript (không yêu cầu cài đặt framework phức tạp):
-
-### Cách 1: Mở trực tiếp
-Mở file `web/index.html` hoặc `docs/index.html` trực tiếp bằng trình duyệt (Chrome, Edge, Firefox).
-
-### Cách 2: Chạy Web Server cục bộ (Khuyến nghị)
-```bash
-# Clone repository
-git clone https://github.com/taanhitaland-ai/KTVXL.git
-cd KTVXL
-
-# Chạy server với Python
-python3 -m http.server 8000
-
-# Hoặc dùng Node.js npx serve
-npx serve web/
-```
-Truy cập: `http://localhost:8000/web/`
-
----
-
-## 📁 3. Cấu Trúc Thư Mục
-
-```text
-├── web/                     # Mã nguồn giao diện chính của ứng dụng
-│   ├── index.html           # File giao diện chính
-│   ├── app.js               # Logic điều khiển, chấm điểm, lọc, làm bài thi
-│   ├── styles.css           # Giao diện phong cách Neobrutalism
-│   ├── data.js              # Dữ liệu môn Vi xử lý
-│   ├── tthcm_data.js        # Dữ liệu môn Tư tưởng Hồ Chí Minh
-│   └── vldc_data.js         # Dữ liệu môn Vật lý đại cương
-├── docs/                    # Thư mục build triển khai GitHub Pages
-├── data/                    # Cơ sở dữ liệu gốc dạng JSON
-│   ├── questions_db.json    # Database Vi xử lý
-│   ├── tthcm_questions.json # Database Tư tưởng HCM
-│   └── vldc_questions_db.json # Database Vật lý đại cương
-├── pdf_templates/           # Template HTML để render tài liệu PDF in ấn
-├── scripts/                 # Bộ công cụ tự động hóa & kiểm thử
-│   ├── build_vldc_pdf_html.py  # Sinh template PDF HTML
-│   ├── generate_vldc_pdfs.py # Render PDF bằng Playwright Chromium
-│   ├── test_vldc_e2e.py      # E2E test tự động
-│   └── merge_and_build_all_vldc.py # Chuẩn hóa và đồng bộ database
-├── *.pdf                    # Các file tài liệu PDF đã biên soạn chuẩn A4
-└── README.md                # Tài liệu dự án & Hướng dẫn đóng góp
+```sh
+python -m http.server 8765 --bind 127.0.0.1
 ```
 
----
+Mở [bản nguồn](http://127.0.0.1:8765/web/index.html) hoặc [bản GitHub Pages cục bộ](http://127.0.0.1:8765/docs/index.html).
 
-## 🤝 4. Hướng Dẫn Đóng Góp (Contributing)
+## Cách chọn đề
 
-Mọi đóng góp nhằm hoàn thiện ngân hàng câu hỏi, bổ sung lời giải chi tiết hoặc cải tiến giao diện đều rất được hoan nghênh!
+- Đề có nguồn cụ thể giữ thứ tự câu hỏi và chỉ dùng nguồn đã chọn. Mỗi thẻ hiển thị số câu thực tế; nút bắt đầu ghi tên đề đang chọn.
+- Vi xử lý có 5 đề chính thức, mỗi đề 35 trắc nghiệm và 5 điền kết quả. Đề ngẫu nhiên lấy cùng cơ cấu từ ngân hàng.
+- Tư tưởng HCM lấy 40 câu đầu của Full A, mã 132 hoặc đề cương. Đề mẫu 651 giữ đủ 48 câu. Đề ngẫu nhiên lấy 40 câu theo các chương hiện có.
+- Vật lý giữ 38/35/6/5 câu của bốn nguồn Notion. Ngân hàng bài tập lấy 40 câu đầu trong 58 câu; hai chuyên đề trộn tối đa 30 câu; đề tổng hợp trộn 40 câu.
+- Xác suất thống kê có 5 bản trích đề giữa kỳ với 7/4/4/4/6 câu. Chuyên đề Xác suất trộn 40 câu chương 1–5; chuyên đề Thống kê dùng 32 câu hiện có ở chương 6–8. Đề tổng hợp trộn 40 câu.
+- Đáp án điền kết quả trong bài thi tự ghi nhận khi nhập. Sau khi nộp hoặc hết giờ, bài làm được khóa; có thể xem lại lời giải hoặc chọn đề khác.
 
-### Quy trình đóng góp:
-1. **Fork** repository này về tài khoản GitHub của bạn.
-2. Tạo một nhánh mới (branch) cho tính năng hoặc câu hỏi bạn muốn đóng góp:
-   ```bash
-   git checkout -b feature/them-cau-hoi-vldc
-   ```
-3. Chỉnh sửa hoặc thêm câu hỏi vào `data/` hoặc `scripts/`.
-4. Nếu thêm câu hỏi cho môn Vật Lý, chạy lệnh đồng bộ:
-   ```bash
-   python3 scripts/merge_and_build_all_vldc.py
-   ```
-5. Chạy kiểm thử tự động để đảm bảo không phát sinh lỗi:
-   ```bash
-   python3 scripts/test_vldc_e2e.py
-   ```
-6. Commit thay đổi và push lên nhánh của bạn:
-   ```bash
-   git commit -m "feat: bổ sung lời giải chi tiết cho chuyên đề Quang sóng"
-   git push origin feature/them-cau-hoi-vldc
-   ```
-7. Mở một **Pull Request (PR)** trên GitHub để được review và merge vào dự án!
+Lịch sử luyện tập và câu đánh dấu được lưu theo từng môn trên trình duyệt. Bài thi đang làm được cảnh báo khi thoát hoặc tải lại trang; bài thi chưa nộp không được khôi phục sau khi đóng trang.
 
----
+## Cấu trúc và cập nhật
 
-## 📄 5. Giấy Phép & Tác Quyền
-Dự án được xây dựng phục vụ mục đích học tập phi lợi nhuận cho cộng đồng sinh viên. Chúc các bạn ôn tập tốt và đạt kết quả cao trong các kỳ thi!
+- `web/`: giao diện nguồn, dữ liệu trình duyệt, 6 mô phỏng Vật lý và 4 mô phỏng Xác suất thống kê.
+- `docs/`: bản triển khai GitHub Pages, đồng bộ byte với `web/`.
+- `data/`: dữ liệu câu hỏi chuẩn trong `*_questions_db.json`, cùng dữ liệu kiến thức Vật lý.
+- `web/exam_config.js`: tên môn, thời gian, danh sách đề và quy tắc chọn câu dùng chung cho ứng dụng và kiểm thử.
+- `scripts/`: công cụ nhập dữ liệu, chuẩn hóa, đồng bộ và kiểm tra.
+- `web/vendor/katex/`: KaTeX 0.16.9 và giấy phép của thư viện.
+- `XSTK/`, các thư mục tài liệu và PDF: tài liệu đã biên soạn. Các PDF có quy trình sinh riêng; sửa ngân hàng web không tự cập nhật nội dung PDF.
+
+Sau khi sửa giao diện hoặc dữ liệu trong `web/`, đồng bộ bản triển khai:
+
+```sh
+python scripts/sync_site.py
+```
+
+Các bộ nhập dữ liệu TTHCM, VLDC và XSTK đã gọi bước chuẩn hóa để giữ mã câu hỏi riêng biệt, định dạng công thức và nhãn chương thống nhất. Với dữ liệu hiện có, có thể chạy lại:
+
+```sh
+python scripts/normalize_data.py
+python scripts/normalize_statistics.py
+python scripts/sync_site.py
+```
+
+Không dùng thứ tự mã câu hỏi để suy ra chương: mã cũ được giữ để lịch sử học tập tiếp tục hoạt động; hãy đọc `chapter_id`.
+
+## Kiểm tra
+
+Cần Node.js 22 trở lên và Python 3.10 trở lên. Bộ kiểm tra cơ bản không cần cài gói npm:
+
+```sh
+npm test
+python scripts/sync_site.py --check
+python scripts/audit_site_content.py
+```
+
+Các kiểm tra xác nhận mã câu hỏi, khóa đáp án, nguồn/thứ tự/số câu của từng đề, cú pháp công thức, đường dẫn tài nguyên, mã phần tử giao diện và đồng bộ `web/`–`docs/`. GitHub Actions chạy các bước này trên push/PR. Kiểm tra cấu trúc và cú pháp không thay thế việc đối chiếu tính đúng đắn học thuật với đề gốc.
+
+Kiểm tra thao tác trên trình duyệt bằng Playwright CLI đã cài và máy chủ cục bộ đang chạy. Dùng một phiên mới cho mỗi lần chạy bộ kiểm tra chính:
+
+```sh
+playwright-cli -s=kma-review open http://127.0.0.1:8765/web/index.html
+playwright-cli -s=kma-review run-code --filename scripts/browser_checks.js
+playwright-cli -s=kma-review eval "window.__KMA_BROWSER_REPORT"
+playwright-cli -s=kma-review run-code --filename scripts/browser_extra_checks.js
+playwright-cli -s=kma-review eval "window.__KMA_EXTRA_REPORT"
+```
+
+Kết quả chỉ hoàn tất khi báo cáo có `complete: true`. CLI có thể trả lại trạng thái hộp thoại trước khi bộ kiểm tra chạy xong; chờ báo cáo cuối, không chạy bước kế tiếp khi bước chính còn hoạt động. Bộ chính kiểm tra 27 lựa chọn đề, nhập/xóa đáp án, điểm, khóa bài, thoát/chuyển môn và tự nộp khi hết giờ. Bộ bổ sung kiểm tra lưu tiến độ, đánh dấu, kiến thức, PDF, mô phỏng, dữ liệu lưu hỏng và màn hình 390px. Ảnh kiểm tra nằm trong `output/playwright/`, không ghi đè tài nguyên triển khai.
+
+Các kiểm tra Python/Node cũ vẫn có trong `scripts/` để tham khảo và cần Playwright tương ứng. Bộ CLI và các lệnh kiểm tra cơ bản ở trên là luồng kiểm tra hiện tại.
+
+## Đóng góp
+
+Tạo nhánh riêng, sửa dữ liệu hoặc giao diện, đồng bộ `docs/` và chạy các kiểm tra trước khi tạo Pull Request. Khi sửa đáp án học thuật, ghi rõ nguồn đối chiếu; không thay khóa đáp án chỉ để khớp lời giải sinh tự động. Dự án phục vụ học tập cộng đồng.

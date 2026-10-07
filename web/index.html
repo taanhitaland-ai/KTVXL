@@ -33,6 +33,9 @@
         <button class="subject-toggle-btn" data-subject="vldc" id="btn-subj-vldc">
           ⚛️ VẬT LÝ ĐẠI CƯƠNG (142 câu)
         </button>
+        <button class="subject-toggle-btn" data-subject="xstk" id="btn-subj-xstk">
+          🎲 XÁC SUẤT THỐNG KÊ (139 câu)
+        </button>
       </div>
 
       <nav class="nav-tabs" role="tablist">
@@ -171,16 +174,19 @@
         <div class="exam-select-grid" id="exam-select-grid" role="group" aria-label="Chọn đề thi"></div>
 
         <button id="btn-start-exam" class="neo-btn neo-btn-green" style="font-size: 1.1rem; padding: 14px 32px;">
-          🚀 BẮT ĐẦU LÀM BÀI THI (60:00)
+          🚀 BẮT ĐẦU LÀM BÀI: <strong>ĐỀ 001</strong> (60:00)
         </button>
       </div>
 
       <!-- In-Exam View -->
       <div id="exam-active-view" style="display: none;">
         <div class="exam-top-bar">
-          <div>
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-exit-exam" class="neo-btn" style="padding: 6px 12px; font-size: 0.82rem; background: #FFF; color: #000; margin-right: 6px;" title="Thoát bài thi để chọn lại đề">
+              ↩️ Chọn đề khác
+            </button>
             <span class="neo-badge badge-exam" id="exam-current-name">ĐỀ THI 001</span>
-            <span style="margin-left: 12px; font-weight: 800;">Tiến độ: <span id="exam-progress-text">0/40</span> câu</span>
+            <span style="margin-left: 6px; font-weight: 800;">Tiến độ: <span id="exam-progress-text">0/40</span> câu</span>
           </div>
           <div class="exam-timer" id="exam-timer-display">60:00</div>
           <button id="btn-back-exam" class="neo-btn neo-btn-white" hidden>↩️ Chọn đề khác</button>
@@ -238,7 +244,7 @@
         <div>
           <h1 style="color: #000;">TRUNG TÂM XUẤT BẢN & TẢI TÀI LIỆU PDF</h1>
           <p style="font-size: 1.05rem; font-weight: 700; color: #111;">
-            Tải về 2 file tài liệu PDF hoàn chỉnh, chất lượng in ấn cao để học tập và ôn thi offline.
+            Tài liệu PDF của 4 môn để tải về, in và ôn tập offline. Các bản PDF được biên soạn riêng với ngân hàng câu hỏi trên trang.
           </p>
         </div>
       </div>
@@ -333,12 +339,74 @@
             ⬇️ TẢI PDF 62 CÂU VLDC + CASIO
           </a>
         </div>
+
+        <!-- PDF 7 Card: XSTK Tong Hop Kien Thuc -->
+        <div class="download-card">
+          <div>
+            <div class="download-icon">🎲</div>
+            <span class="neo-badge badge-exam" style="margin-bottom: 10px; background: #A7F3D0; color: #065F46;">XSTK • TỔNG HỢP KIẾN THỨC</span>
+            <h2 class="download-title">Tổng Hợp Kiến Thức Xác Suất Thống Kê KMA</h2>
+            <p class="download-desc">
+              Hệ thống hóa toàn diện 8 chương lý thuyết cốt lõi, công thức tính toán kinh điển (Bayes, Bernoulli, Chuẩn, Student, Kiểm định) và ví dụ minh họa chuẩn KMA.
+            </p>
+          </div>
+          <a href="XSTK_Tong_Hop_Kien_Thuc.pdf" download="XSTK_Tong_Hop_Kien_Thuc.pdf" class="neo-btn neo-btn-yellow" style="width: 100%; background: #6EE7B7;">
+            ⬇️ TẢI PDF XSTK LÝ THUYẾT 8 CHƯƠNG
+          </a>
+        </div>
+
+        <!-- PDF 8 Card: XSTK Giai De Kiem Tra -->
+        <div class="download-card">
+          <div>
+            <div class="download-icon">📝</div>
+            <span class="neo-badge badge-exam" style="margin-bottom: 10px; background: #FED7AA; color: #9A3412;">XSTK • GIẢI CHI TIẾT 5 ĐỀ THI</span>
+            <h2 class="download-title">Giải Chi Tiết 5 Đề Kiểm Tra Giữa Kỳ KMA</h2>
+            <p class="download-desc">
+              Trọn bộ 5 đề thi giữa kỳ chính thức kèm đáp án chi tiết, bảng tra giá trị tới hạn chuẩn và phân phối Student phục vụ thi học phần.
+            </p>
+          </div>
+          <a href="XSTK_Giai_De_Kiem_Tra.pdf" download="XSTK_Giai_De_Kiem_Tra.pdf" class="neo-btn neo-btn-green" style="width: 100%;">
+            ⬇️ TẢI PDF GIẢI 5 ĐỀ THI GIỮA KỲ
+          </a>
+        </div>
+
+        <!-- PDF 9 Card: XSTK Giai Bai Tap ATTT -->
+        <div class="download-card">
+          <div>
+            <div class="download-icon">🛡️</div>
+            <span class="neo-badge badge-exam" style="margin-bottom: 10px; background: #BFDBFE; color: #1E40AF;">XSTK • CHUYÊN ĐỀ ATTT</span>
+            <h2 class="download-title">Giải Trọng Tâm Bài Tập Xác Suất ATTT</h2>
+            <p class="download-desc">
+              Tuyển tập bài tập chuyên sâu hệ An Toàn Thông Tin 2026 kèm phương pháp giải bài toán mật mã, phân phối ngẫu nhiên và kiểm định giả thuyết.
+            </p>
+          </div>
+          <a href="XSTK_Giai_Trong_Tam_ATTT.pdf" download="XSTK_Giai_Trong_Tam_ATTT.pdf" class="neo-btn neo-btn-yellow" style="width: 100%; background: #93C5FD;">
+            ⬇️ TẢI PDF CHUYÊN ĐỀ ATTT 2026
+          </a>
+        </div>
+
+        <!-- PDF 10 Card: XSTK Meo Thi & Casio -->
+        <div class="download-card">
+          <div>
+            <div class="download-icon">📟</div>
+            <span class="neo-badge badge-exam" style="margin-bottom: 10px; background: #FDE68A; color: #78350F;">XSTK • SỔ TAY CASIO & MẸO THI</span>
+            <h2 class="download-title">Note Trọng Tâm & Mẹo Thi Casio fx-580VNX</h2>
+            <p class="download-desc">
+              Hướng dẫn toàn diện phím bấm Casio: Bảng Menu 6 (Thống kê 1 biến x̄, s*, s*²), Menu 7 (Normal CD, Binomial, Poisson) và mẹo nhớ không thể quên.
+            </p>
+          </div>
+          <a href="XSTK_Meo_Va_Casio.pdf" download="XSTK_Meo_Va_Casio.pdf" class="neo-btn neo-btn-green" style="width: 100%;">
+            ⬇️ TẢI PDF SỔ TAY CASIO & MẸO THI
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- TAB 5: MÔ PHỎNG VẬT LÝ TRỰC QUAN (INTERACTIVE PHYSICS LAB) -->
+    <!-- TAB 5: MÔ PHỎNG TRỰC QUAN (INTERACTIVE LAB) -->
     <section id="tab-visualize" class="tab-pane">
-      <div class="knowledge-hero" style="background: #93C5FD;">
+      <!-- VLDC PHYSICS LAB -->
+      <div id="lab-container-vldc">
+        <div class="knowledge-hero" style="background: #93C5FD;">
         <div>
           <span class="neo-badge badge-exam" style="background: #1D4ED8; color: #FFF; font-size: 0.85rem; margin-bottom: 8px;">🔬 INTERACTIVE PHYSICS LAB (60 FPS)</span>
           <h1 style="color: #000;">PHÒNG THÍ NGHIỆM MÔ PHỎNG VẬT LÝ TRỰC QUAN</h1>
@@ -754,6 +822,321 @@
           </div>
         </div>
       </div>
+      </div> <!-- end #lab-container-vldc -->
+
+      <!-- XSTK PROBABILITY & STATISTICS LAB -->
+      <div id="lab-container-xstk" style="display: none;">
+        <div class="knowledge-hero" style="background: #A7F3D0;">
+          <div>
+            <span class="neo-badge badge-exam" style="background: #059669; color: #FFF; font-size: 0.85rem; margin-bottom: 8px;">🎲 INTERACTIVE PROBABILITY & STATISTICS LAB (60 FPS)</span>
+            <h1 style="color: #000;">PHÒNG THÍ NGHIỆM MÔ PHỎNG XÁC SUẤT & THỐNG KÊ TRỰC QUAN</h1>
+            <p style="font-size: 1.05rem; font-weight: 700; color: #064E3B;">
+              Trực quan hóa bản chất các quy luật xác suất, hội tụ tần suất, định lý giới hạn trung tâm, phân phối chuẩn Gauss và khoảng tin cậy 95% bằng đồ họa chuyển động thời gian thực 60 FPS.
+            </p>
+          </div>
+        </div>
+
+        <!-- Module Selector Bar -->
+        <div class="sim-nav-bar">
+          <button class="xstk-sim-nav-btn sim-nav-btn active" data-sim="lln">1. Luật Số Lớn & Tung Đồng Xu (LLN)</button>
+          <button class="xstk-sim-nav-btn sim-nav-btn" data-sim="galton">2. Bảng Galton & Định Lý Giới Hạn Trung Tâm (CLT)</button>
+          <button class="xstk-sim-nav-btn sim-nav-btn" data-sim="normal">3. Phân Phối Chuẩn Gauss & Diện Tích Xác Suất</button>
+          <button class="xstk-sim-nav-btn sim-nav-btn" data-sim="ci">4. Mô Phỏng Khoảng Tin Cậy 95% Cho Kỳ Vọng</button>
+        </div>
+
+        <!-- Module 1: LLN -->
+        <div id="xstk-pane-lln" class="xstk-sim-view-pane sim-view-pane active">
+          <div class="sim-grid">
+            <div class="sim-canvas-card">
+              <div class="sim-card-header">
+                <span class="sim-card-title">🎲 Mô Phỏng Luật Số Lớn & Sự Hội Tụ Tần Suất Thực Nghiệm f_n → p</span>
+                <span class="neo-badge" style="background: #059669; color: #FFF;">Biến Cố & XS</span>
+              </div>
+              <div class="sim-canvas-wrapper">
+                <canvas id="cv-xstk-lln" class="sim-canvas" width="680" height="380"></canvas>
+              </div>
+            </div>
+            <div class="sim-controls-card">
+              <div>
+                <div class="sim-section-title">⚙️ Thiết Lập Phép Thử Ngẫu Nhiên</div>
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Mô hình phép thử:</span>
+                  </div>
+                  <select id="sel-lln-mode" class="neo-select" style="width: 100%; padding: 8px; font-weight: 800; border: 2px solid #000; border-radius: 6px; background: #FFF;">
+                    <option value="coin">Tung đồng xu cân đối (p = 0.50)</option>
+                    <option value="dice">Gieo xúc sắc 6 mặt - Ra mặt 6 (p = 1/6 ≈ 0.167)</option>
+                    <option value="custom">Tùy chỉnh xác suất lý thuyết p</option>
+                  </select>
+                </div>
+                <div class="sim-slider-row" id="row-lln-p" style="display: none;">
+                  <div class="sim-slider-label-row">
+                    <span>Xác suất lý thuyết (p):</span>
+                    <span id="val-lln-p" class="sim-val-badge">0.50</span>
+                  </div>
+                  <input type="range" id="sl-lln-p" class="sim-slider" min="0.05" max="0.95" value="0.50" step="0.05">
+                </div>
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Tốc độ mô phỏng:</span>
+                    <span id="val-lln-speed" class="sim-val-badge">1x</span>
+                  </div>
+                  <input type="range" id="sl-lln-speed" class="sim-slider" min="1" max="25" value="1" step="1">
+                </div>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;">
+                  <button id="btn-lln-play" class="neo-btn neo-btn-green" style="flex: 1;">▶️ Bắt Đầu</button>
+                  <button id="btn-lln-step1" class="neo-btn neo-btn-white" style="flex: 1;">+1 Lần</button>
+                  <button id="btn-lln-step100" class="neo-btn neo-btn-white" style="flex: 1;">+100 Lần</button>
+                  <button id="btn-lln-step1000" class="neo-btn neo-btn-yellow" style="flex: 1;">+1.000 Lần</button>
+                  <button id="btn-lln-reset" class="neo-btn neo-btn-rose">🔄 Làm Lại</button>
+                </div>
+              </div>
+
+              <div>
+                <div class="sim-section-title">📊 Kết Quả Thực Nghiệm Thời Gian Thực</div>
+                <div class="sim-readout-grid">
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Tổng số phép thử (n)</div>
+                    <div id="val-lln-trials" class="sim-readout-val">0</div>
+                  </div>
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Số lần xuất hiện (m)</div>
+                    <div id="val-lln-successes" class="sim-readout-val">0</div>
+                  </div>
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Tần suất f_n = m/n</div>
+                    <div id="val-lln-fn" class="sim-readout-val">0.0000</div>
+                  </div>
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Sai số tuyệt đối |f_n - p|</div>
+                    <div id="val-lln-error" class="sim-readout-val">0.0000</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sim-explain-card">
+                <strong>💡 Định lý Bernoulli (Luật số lớn):</strong> Khi số phép thử độc lập $n \to \infty$, tần suất xuất hiện $f_n = \frac{m}{n}$ sẽ hội tụ theo xác suất về xác suất lý thuyết $p$: $\lim_{n \to \infty} P(|f_n - p| < \varepsilon) = 1$. Dải màu xanh nhạt minh họa biên sai số tin cậy 95% có độ rộng tỉ lệ nghịch với $1/\sqrt{n}$.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 2: Galton Board -->
+        <div id="xstk-pane-galton" class="xstk-sim-view-pane sim-view-pane">
+          <div class="sim-grid">
+            <div class="sim-canvas-card">
+              <div class="sim-card-header">
+                <span class="sim-card-title">🔬 Bảng Galton (Bean Machine) & Định Lý Giới Hạn Trung Tâm CLT</span>
+                <span class="neo-badge" style="background: #2563EB; color: #FFF;">Phân Phối Chuẩn</span>
+              </div>
+              <div class="sim-canvas-wrapper">
+                <canvas id="cv-xstk-galton" class="sim-canvas" width="680" height="420"></canvas>
+              </div>
+            </div>
+            <div class="sim-controls-card">
+              <div>
+                <div class="sim-section-title">⚙️ Thông Số Bảng Galton</div>
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Số hàng đinh (k):</span>
+                    <span id="val-galton-rows" class="sim-val-badge">8 hàng</span>
+                  </div>
+                  <input type="range" id="sl-galton-rows" class="sim-slider" min="6" max="12" value="8" step="1">
+                </div>
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Tốc độ rơi hạt:</span>
+                    <span id="val-galton-rate" class="sim-val-badge">2 hạt/nhịp</span>
+                  </div>
+                  <input type="range" id="sl-galton-rate" class="sim-slider" min="1" max="10" value="2" step="1">
+                </div>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;">
+                  <button id="btn-galton-play" class="neo-btn neo-btn-green" style="flex: 1;">▶️ Thả Hạt</button>
+                  <button id="btn-galton-drop1" class="neo-btn neo-btn-white" style="flex: 1;">+1 Hạt</button>
+                  <button id="btn-galton-drop100" class="neo-btn neo-btn-white" style="flex: 1;">+100 Hạt</button>
+                  <button id="btn-galton-drop1000" class="neo-btn neo-btn-yellow" style="flex: 1;">⚡ Thả Nhanh 1.000 Hạt</button>
+                  <button id="btn-galton-reset" class="neo-btn neo-btn-rose">🔄 Làm Lại</button>
+                </div>
+              </div>
+
+              <div>
+                <div class="sim-section-title">📊 Đặc Trưng Thống Kê</div>
+                <div class="sim-readout-grid">
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Tổng số hạt tích lũy</div>
+                    <div id="val-galton-total" class="sim-readout-val">0</div>
+                  </div>
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Kỳ vọng lý thuyết E(X)</div>
+                    <div id="val-galton-mean" class="sim-readout-val">E(X) = 4.0</div>
+                  </div>
+                  <div class="sim-readout-card" style="grid-column: span 2;">
+                    <div class="sim-readout-label">Độ lệch chuẩn lý thuyết σ(X)</div>
+                    <div id="val-galton-std" class="sim-readout-val">σ(X) = 1.414</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sim-explain-card">
+                <strong>💡 Định lý Moivre - Laplace:</strong> Mỗi hạt va vào một đinh sẽ có xác suất 50% nảy sang trái và 50% sang phải (phép thử Bernoulli). Vị trí rơi cuối cùng là tổng của $k$ biến cố độc lập mang phân phối Nhị thức $B(k, 0.5)$. Khi $k$ lớn, phân phối này xấp xỉ hoàn hảo đường cong chuông Gauss chuẩn $N\left(\frac{k}{2}, \frac{k}{4}\right)$.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 3: Normal Distribution Bell Curve -->
+        <div id="xstk-pane-normal" class="xstk-sim-view-pane sim-view-pane">
+          <div class="sim-grid">
+            <div class="sim-canvas-card">
+              <div class="sim-card-header">
+                <span class="sim-card-title">📐 Đường Cong Chuông Gauss N(μ, σ²) & Diện Tích Xác Suất P(a ≤ X ≤ b)</span>
+                <span class="neo-badge" style="background: #F59E0B; color: #000;">Tích Phân XS</span>
+              </div>
+              <div class="sim-canvas-wrapper">
+                <canvas id="cv-xstk-normal" class="sim-canvas" width="680" height="380"></canvas>
+              </div>
+            </div>
+            <div class="sim-controls-card">
+              <div>
+                <div class="sim-section-title">⚙️ Tham Số Phân Phối & Khoảng Tích Phân</div>
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Kỳ vọng (μ):</span>
+                    <span id="val-norm-mu" class="sim-val-badge">0.0</span>
+                  </div>
+                  <input type="range" id="sl-norm-mu" class="sim-slider" min="-3.0" max="3.0" value="0.0" step="0.2">
+                </div>
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Độ lệch chuẩn (σ):</span>
+                    <span id="val-norm-sigma" class="sim-val-badge">1.0</span>
+                  </div>
+                  <input type="range" id="sl-norm-sigma" class="sim-slider" min="0.5" max="2.5" value="1.0" step="0.1">
+                </div>
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Cận dưới (a):</span>
+                    <span id="val-norm-a" class="sim-val-badge">-1.0</span>
+                  </div>
+                  <input type="range" id="sl-norm-a" class="sim-slider" min="-5.0" max="5.0" value="-1.0" step="0.1">
+                </div>
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Cận trên (b):</span>
+                    <span id="val-norm-b" class="sim-val-badge">1.0</span>
+                  </div>
+                  <input type="range" id="sl-norm-b" class="sim-slider" min="-5.0" max="5.0" value="1.0" step="0.1">
+                </div>
+                <div style="margin-top: 10px;">
+                  <div style="font-weight: 800; font-size: 0.8rem; margin-bottom: 6px; text-transform: uppercase;">⚡ Chọn Nhanh Khoảng Đặc Biệt:</div>
+                  <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+                    <button class="btn-norm-preset neo-btn neo-btn-white" data-preset="1sigma" style="padding: 4px 8px; font-size: 0.78rem;">μ ± 1σ (68.3%)</button>
+                    <button class="btn-norm-preset neo-btn neo-btn-white" data-preset="2sigma" style="padding: 4px 8px; font-size: 0.78rem;">μ ± 2σ (95.4%)</button>
+                    <button class="btn-norm-preset neo-btn neo-btn-yellow" data-preset="3sigma" style="padding: 4px 8px; font-size: 0.78rem;">Quy tắc 3σ (99.7%)</button>
+                    <button class="btn-norm-preset neo-btn neo-btn-white" data-preset="left50" style="padding: 4px 8px; font-size: 0.78rem;">X ≤ μ (50%)</button>
+                    <button class="btn-norm-preset neo-btn neo-btn-white" data-preset="right25" style="padding: 4px 8px; font-size: 0.78rem;">Đuôi phải 2.5%</button>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="sim-section-title">📊 Giá Trị Chuẩn Hóa & Xác Suất</div>
+                <div class="sim-readout-grid">
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Z_a = (a - μ)/σ</div>
+                    <div id="val-norm-za" class="sim-readout-val">-1.00</div>
+                  </div>
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Z_b = (b - μ)/σ</div>
+                    <div id="val-norm-zb" class="sim-readout-val">1.00</div>
+                  </div>
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Xác suất P(a ≤ X ≤ b)</div>
+                    <div id="val-norm-prob" class="sim-readout-val">0.6827</div>
+                  </div>
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Tỷ lệ diện tích (%)</div>
+                    <div id="val-norm-pct" class="sim-readout-val">68.27%</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sim-explain-card">
+                <strong>💡 Công thức tích phân Laplace:</strong> $P(a \le X \le b) = \Phi\left(\frac{b - \mu}{\sigma}\right) - \Phi\left(\frac{a - \mu}{\sigma}\right)$. Vùng màu vàng có gạch chéo là phần diện tích dưới đường cong chuông, biểu diễn xác suất để biến ngẫu nhiên liên tục nhận giá trị trong đoạn $[a, b]$.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 4: Confidence Interval Simulation -->
+        <div id="xstk-pane-ci" class="xstk-sim-view-pane sim-view-pane">
+          <div class="sim-grid">
+            <div class="sim-canvas-card">
+              <div class="sim-card-header">
+                <span class="sim-card-title">🎯 Mô Phỏng Bản Chất Khoảng Tin Cậy 95% (Mẫu Lặp Lại)</span>
+                <span class="neo-badge" style="background: #10B981; color: #FFF;">Ước Lượng Tham Số</span>
+              </div>
+              <div class="sim-canvas-wrapper">
+                <canvas id="cv-xstk-ci" class="sim-canvas" width="680" height="380"></canvas>
+              </div>
+            </div>
+            <div class="sim-controls-card">
+              <div>
+                <div class="sim-section-title">⚙️ Thiết Lập Mẫu Ngẫu Nhiên</div>
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Độ tin cậy danh định (1 - α):</span>
+                  </div>
+                  <select id="sel-ci-conf" class="neo-select" style="width: 100%; padding: 8px; font-weight: 800; border: 2px solid #000; border-radius: 6px; background: #FFF;">
+                    <option value="0.95" selected>95% (u_α/2 = 1.960)</option>
+                    <option value="0.90">90% (u_α/2 = 1.645)</option>
+                    <option value="0.99">99% (u_α/2 = 2.576)</option>
+                  </select>
+                </div>
+                <div class="sim-slider-row">
+                  <div class="sim-slider-label-row">
+                    <span>Kích thước mỗi mẫu (n):</span>
+                    <span id="val-ci-n" class="sim-val-badge">n = 30</span>
+                  </div>
+                  <input type="range" id="sl-ci-n" class="sim-slider" min="10" max="100" value="30" step="5">
+                </div>
+                <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;">
+                  <button id="btn-ci-play" class="neo-btn neo-btn-green" style="flex: 1;">▶️ Chạy Liên Tục</button>
+                  <button id="btn-ci-sample20" class="neo-btn neo-btn-white" style="flex: 1;">+20 Mẫu</button>
+                  <button id="btn-ci-sample100" class="neo-btn neo-btn-yellow" style="flex: 1;">+100 Mẫu</button>
+                  <button id="btn-ci-reset" class="neo-btn neo-btn-rose">🔄 Làm Lại</button>
+                </div>
+              </div>
+
+              <div>
+                <div class="sim-section-title">📊 Đếm Tỷ Lệ Bao Phủ Thực Nghiệm</div>
+                <div class="sim-readout-grid">
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Tổng số mẫu rút ra (M)</div>
+                    <div id="val-ci-total" class="sim-readout-val">0</div>
+                  </div>
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Số khoảng trúng μ₀ (Xanh)</div>
+                    <div id="val-ci-covered" class="sim-readout-val" style="color: #059669;">0</div>
+                  </div>
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Số khoảng trượt μ₀ (Đỏ)</div>
+                    <div id="val-ci-missed" class="sim-readout-val" style="color: #DC2626;">0</div>
+                  </div>
+                  <div class="sim-readout-card">
+                    <div class="sim-readout-label">Tỷ lệ bao phủ thực tế</div>
+                    <div id="val-ci-pct" class="sim-readout-val" style="color: #2563EB;">0.0%</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sim-explain-card">
+                <strong>💡 Ý nghĩa độ tin cậy 95%:</strong> Tham số tổng thể $\mu_0$ là một hằng số cố định (đường màu xanh lam ở giữa). Khoảng tin cậy $[\bar{X} - \varepsilon, \bar{X} + \varepsilon]$ là biến động ngẫu nhiên theo từng mẫu. "Độ tin cậy 95%" có nghĩa là nếu ta lặp lại việc lấy mẫu vô số lần, thì có đúng 95% số khoảng tính được sẽ chứa $\mu_0$ (đoạn xanh lục) và khoảng 5% sẽ trượt ra ngoài (đoạn đỏ).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end #lab-container-xstk -->
 
     </section>
 
@@ -833,6 +1216,9 @@
   <script src="vldc_data.js"></script>
   <script src="vldc_knowledge_data.js"></script>
   <script src="vldc_simulations.js"></script>
+  <script src="xstk_data.js"></script>
+  <script src="xstk_knowledge_data.js"></script>
+  <script src="xstk_simulations.js"></script>
   <script src="exam_config.js"></script>
   <script src="app.js"></script>
 </body>

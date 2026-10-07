@@ -14,7 +14,8 @@ async (page) => {
   const cases = {
     ktvxl: ['1','2','3','4','5','RANDOM'],
     tthcm: ['TTHCM_FULL_A','TTHCM_DE_132','TTHCM_DE_651','TTHCM_DE_CUONG','RANDOM'],
-    vldc: ['NOTION_DE_CUOI','NOTION_TEST_100','NOTION_GIAK_2025','NOTION_DE_CUONG','VLDC_STANDARD','VLDC_OPTICS','VLDC_QUANTUM','RANDOM']
+    vldc: ['NOTION_DE_CUOI','NOTION_TEST_100','NOTION_GIAK_2025','NOTION_DE_CUONG','VLDC_STANDARD','VLDC_OPTICS','VLDC_QUANTUM','RANDOM'],
+    xstk: ['KMA_EXAM_01','KMA_EXAM_02','KMA_EXAM_03','KMA_EXAM_04','KMA_EXAM_05','XSTK_PROB','XSTK_STAT','RANDOM']
   };
   let passed = 0;
   for (const [subject, codes] of Object.entries(cases)) {
@@ -24,20 +25,26 @@ async (page) => {
     for (const code of codes) {
       await page.locator('.exam-card-choice[data-exam-code="' + code + '"]').click();
       assert(await page.locator('.exam-card-choice.selected').getAttribute('data-exam-code') === code, 'Choice did not change: ' + code);
+      const chosenTitle = await page.locator('.exam-card-choice.selected .exam-title-choice').textContent();
+      assert((await page.locator('#btn-start-exam').textContent()).includes(chosenTitle), 'Start button does not identify selected exam');
       await page.locator('#btn-start-exam').click();
       const actual = await page.locator('#exam-questions-list .question-card').evaluateAll(cards => cards.map(card => card.dataset.questionId));
-      const data = await page.evaluate(subject => subject === 'ktvxl' ? window.KTVXL_QUESTIONS : subject === 'tthcm' ? window.TTHCM_QUESTIONS_DATA : window.VLDC_QUESTIONS_DATA, subject);
+      const data = await page.evaluate(subject => ({ktvxl:window.KTVXL_QUESTIONS,tthcm:window.TTHCM_QUESTIONS_DATA,vldc:window.VLDC_QUESTIONS_DATA,xstk:window.XSTK_QUESTIONS_DATA})[subject], subject);
       const unique = new Set(actual);
       assert(unique.size === actual.length, 'Duplicate questions in exam ' + code);
-      if (!['RANDOM','VLDC_OPTICS','VLDC_QUANTUM'].includes(code)) {
+      if (!['RANDOM','VLDC_OPTICS','VLDC_QUANTUM','XSTK_PROB','XSTK_STAT'].includes(code)) {
         const source = subject === 'ktvxl' ? 'DE_' + code.padStart(3,'0') : code;
         const matched = data.filter(q => subject === 'ktvxl' ? q.exam_id === source : q.source === source).sort((a,b) => a.num-b.num);
         const limit = subject === 'tthcm' && code !== 'TTHCM_DE_651' || code === 'VLDC_STANDARD' ? 40 : matched.length;
         assert(JSON.stringify(actual) === JSON.stringify(matched.slice(0,limit).map(q => q.id)), 'Wrong source/order: ' + subject + '/' + code);
       } else {
-        assert(actual.length === (code === 'RANDOM' ? 40 : 30), 'Wrong random/specialty count');
+        const available = data.filter(q => code === 'XSTK_STAT' ? q.chapter_id >= 6 : code === 'XSTK_PROB' ? q.chapter_id <= 5 : code === 'VLDC_OPTICS' ? q.chapter_id <= 2 : code === 'VLDC_QUANTUM' ? q.chapter_id >= 3 : true).length;
+        assert(actual.length === Math.min(code === 'RANDOM' || subject === 'xstk' ? 40 : 30, available), 'Wrong random/specialty count');
+        const selectedData = data.filter(q => actual.includes(q.id));
+        if (code === 'XSTK_PROB') assert(selectedData.every(q => q.chapter_id <= 5), 'Probability specialty contains statistics questions');
+        if (code === 'XSTK_STAT') assert(selectedData.every(q => q.chapter_id >= 6), 'Statistics specialty contains probability questions');
       }
-      const minutes = {ktvxl:60,tthcm:40,vldc:45}[subject];
+      const minutes = {ktvxl:60,tthcm:40,vldc:45,xstk:60}[subject];
       const timer = await page.locator('#exam-timer-display').textContent();
       assert(timer.startsWith(minutes + ':') || timer.startsWith((minutes-1)+':'), 'Wrong duration for ' + subject);
       const duplicateDOM = await page.evaluate(() => {
@@ -75,15 +82,34 @@ async (page) => {
   await fib.fill('');
   assert(await page.locator('#exam-progress-text').textContent() === '0/40', 'Clearing did not clear progress');
   acceptDialogs = false;
+  await page.locator('#btn-exit-exam').click();
+  assert(await page.locator('#exam-active-view').isVisible(), 'Canceling exam exit discarded work');
+  acceptDialogs = true;
+  await page.locator('#btn-exit-exam').click();
+  assert(await page.locator('#exam-setup-view').isVisible(), 'Confirmed exam exit did not restore selection');
+  await page.locator('#btn-start-exam').click();
+  acceptDialogs = false;
   await page.locator('#btn-subj-tthcm').click();
   assert(await page.locator('#app-brand-badge').textContent() === '⚡ KTVXL', 'Canceling a subject change discarded exam');
   acceptDialogs = true;
   await page.locator('#btn-subj-tthcm').click();
   assert(await page.locator('#exam-setup-view').isVisible(), 'Confirmed subject change kept old exam');
   assert(await page.locator('#exam-questions-list .question-card').count() === 0, 'Old exam cards remain after subject change');
+  // Elapsed real time must auto-submit even if timer ticks were delayed.
+  await page.locator('#btn-subj-vldc').click();
+  await page.locator('#btn-start-exam').click();
+  await page.evaluate(() => {
+    window.__KMA_NATIVE_NOW = Date.now;
+    Date.now = () => window.__KMA_NATIVE_NOW() + 46 * 60 * 1000;
+  });
+  await page.locator('#exam-result-modal.active').waitFor();
+  assert(await page.locator('#exam-timer-display').textContent() === '00:00', 'Expired timer did not reach zero');
+  assert(await page.locator('#exam-questions-list button:enabled,#exam-questions-list input:enabled').count() === 0, 'Expired exam remains editable');
+  await page.evaluate(() => {Date.now = window.__KMA_NATIVE_NOW; delete window.__KMA_NATIVE_NOW;});
+  await page.locator('#btn-close-modal').click();
   assert(errors.length === 0, 'Browser errors: ' + errors.join('; '));
   console.log('PASS ' + passed + ' exam choices + auto-saving/clearing fill-in answers + subject-change confirmation. Browser errors: 0.');
-  const report = { passed, checks, fillIn: true, subjectConfirmation: true, browserErrors: errors, complete: true };
+  const report = { passed, checks, fillIn: true, examExit: true, subjectConfirmation: true, autoSubmit: true, browserErrors: errors, complete: true };
   await page.evaluate(report => window.__KMA_BROWSER_REPORT = report, report);
   return report;
   } catch (error) {

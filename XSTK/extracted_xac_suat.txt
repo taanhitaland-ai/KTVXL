@@ -1,0 +1,421 @@
+=== TRANG 1 ===
+1 
+ 
+ 
+BÀI TẬP XÁC SUẤT 
+Các khái niệm về xác suất- Các công thức cộng, định lý nhân xác suất. 
+1. Một chiếc hộp đựng 8 quả cầu trắng, 3 quả cầu đỏ và 4 quả cầu đen. Chọn ngẫu nhiên 6 quả cầu. 
+Tính xác suất để được 3 quả cầu trắng, 2 quả cầu đỏ, 1 quả cầu đen. 
+2. Thành phố A có 5 đội bóng nam, 2 đội bóng nữ. Thành phố B có 4 đội nam, 3 đội nữ. Hưởng 
+ứng ngay hội thể dục thể thao toàn dân, người ta định tổ chức một trận đấu giữa 2 đội nam của 2 
+tỉnh và một trận đấu giữa  2 đội nữ của 2 tỉnh. Hỏi có bao nhiêu phương án khác nhau về chọn 
+các đội thi đấu. 
+3. Nam thực hiện liên tiếp hai thí nghiệm. Thí nghiệm thứ nhất có xác suất thành công là 0, 7. 
+Nếu thí nghiệm thứ nhất thành công thì xác suất thành công của thí nghiệm thứ hai là 0, 9. Nếu 
+thí nghiệm thứ nhất không thành công thì xác suất để thành công thí nghiệm thứ hai là 0, 4. Tìm 
+xác 
+suất để: 
+1. Cả hai thí nghiệm thành công. 
+2. Cả hai thí nghiệm đều không thành công. 
+3. Thí nghiệm thứ nhất thành công và thí nghiệm thứ hai không thành công. 
+4. Hai xạ thủ cùng bắn mỗi nguời một phát vào một tấm bia. Xác suất bắn trúng một viên của mỗi 
+người lần lượt là 0,4; 0,6. Tính xác suất để có ít nhất một viên đạn trúng đích. 
+HD :  
+5. Một cuộc thi có ba vòng thi. Vòng 1 lấy 90% thí sinh, vòng 2 lấy 80% số thí sinh đỗ vòng 1, 
+vòng 3 lấy 60% số thí sinh đỗ vòng 2. Tính xác suất để một thí sinh bị loại ở vòng ba. 
+6. Để đánh giá học tập của sinh viên với môn Tin học nhà trường tổ chức 2 kỳ thi cho tất cả các 
+sinh viên đủ điều kiện dự thi. Được biết xác suất (tỷ lệ) để sinh viên ở kỳ thi lần I đạt yêu cầu 
+trở lên là 0,6. Số sinh viên không đạt ở lần I dự thi lần II có điểm đạt yêu cầu trở lên xác suất (tỷ 
+lệ) là 0,9. Hãy tính xác suất (tỷ lệ) sinh viên đạt yêu cầu trở lên của môn Tin học. 
+7.  Một tổ gồm 10 người liên hoan bàn tròn. Mọi người ngồi một cách ngẫu nhiên. Tìm xác suất để 
+bạn A ngồi cạnh bạn B. 
+8.  Một người có một lồng chim bồ câu có 3 con cái, 2 con đực. Một người đến mua, người bán bắt 
+ngẫu nhiên ra một con, người mua chấp nhận con chim đó. 
+a) Tìm xác suất để người đó mua được một con cái. 
+         Sau người thứ nhất người thứ 2 đến mua, người bán lại bắt ngẫu nhiên ra một con. 
+b) Tính xác suất để người thứ 2 mua được con chim đực, nếu người bán không nhớ đã 
+bán con chim gì (đực hay cái). 
+9. Ba xạ thủ cùng bắn vào một mục tiêu, mỗi người một phát đạn. Xác suất bắn trúng đích của 
+người thứ nhất là 0,7;người thứ hai là 0.8; người thứ ba là 0.9. Người báo bia báo có 2 phát 
+trúng đích. Tính xác suất để xạ thủ thứ nhất bắn trúng. 
+10. Một đoàn tầu có 5 toa đỗ ở một sân ga. Có 5 hành khách từ sân ga lên tầu, mỗi người độc lập 
+nhau chọn ngẫu nhiên một toa, tính xác suất để 1 toa có 4 người, 1 toa có 1 người và 3 toa còn 
+lại không có ai. 
+11. An và Bình cùng bắn mỗi người 2 phát vào một mục tiêu. Xác suất bắn trúng mỗi phát của từng 
+người là:0,6; 0,7; Tính xác suất để: 
+a) Có đúng 3 phát trúng đích. 
+b) Có ít nhất 2 phát trúng đích. 
+
+
+=== TRANG 2 ===
+2 
+ 
+12. Cho 
+m
+2
+1
+a
+,.....
+a,
+a
+là các số nguyên tố cùng nhau (ước chung lớn nhất của 
+j
+i a,
+a
+ bằng 1 với mọi 
+i j. Tập M={1, 2, 3,  ...N}, lấy ngẫu nhiên ra một phần tử a, tính xác suất để a chia hết cho 
+m
+2
+1
+a
+,.....
+a,
+a
+. Tính giới hạn của xác suất này khi N→+. 
+Công thức xác suất toàn phần (đầy đủ)- Công thức Bayes. 
+13. Một nhóm 20 sinh viên gồm ba loại: 3 sinh viên giỏi, 5 sinh viên khá và 12 sinh viên 
+trung bình. Chọn ngẫu nhiên 3 sinh viên đi dự thi. 
+a. Tính xác suất để 3 sinh viên được chọn có ít nhất 1 sinh viên giỏi. 
+b. Nhưng hôm nay nhóm chỉ có 18 bạn đi học ( 2 bạn nghỉ học). Tính xác suất đề trong 3 
+sinh viên được chọn cả 3 bạn đều là sinh viên khá. 
+ 
+14.  Một lô hạt giống gồm 3 loại: Loại I chiếm 2/3 số hạt của cả lô, loại II chiếm 1/4 , còn lại là loại 
+III. Loai I có tỷ lệ nảy mầm là 80%, loại II là 60%, loại III là 40%. Hỏi tỷ lệ nảy mầm của cả lô 
+là bao nhiêu. 
+15. Một công ti một ngày sản xuất được 850 sản phẩm trong đó có 50 sản phẩm không đạt chất 
+lượng. Lần lượt lấy ra ngẫu nhiên không hoàn lại 2 sản phẩm để kiểm tra. 
+1. Tính xác suất để sản phẩm thứ hai không đạt chất lượng biết sản phẩm thứ nhất đạt chất 
+lượng. 
+2. Tính xác suất để sản phẩm thứ hai không đạt chất lượng. 
+16. Một hộp có 10 viên bi, trong đó có 6 bi đỏ và 4 bi trắng. Một bạn A lấy ngẫu nhiên 2 viên bi bỏ 
+ra khỏi hộp, sau đó bạn B cũng lấy ngẫu nhiên ra 2 viên, tính xác suất để bạn B lấy được hai bi 
+đỏ nếu như B không biết A đã lấy được những viên bi nào ? 
+17. Một cuộc thi có ba vòng, vòng thứ nhất loại 10% số thi sinh đi thi, vòng hai loại 20% số thí sinh 
+qua vòng 1, vòng thứ 3 loại 30% số thí sinh qua vòng hai. 
+a) Tính xác suất để một thí sinh lọt qua cả ba vòng. 
+b) Tính xác suất để một thí sinh bị loại ở vòng hai, biết rằng thí sinh đó bị loại. 
+18. Một nhóm 20 sinh viên gồm ba loại : 3 sinh viên giỏi, 5 sinh viên khá, còn lại là trung bình. 
+Chọn ngẫu nhiên 3 sinh viên đi dự thi, nhưng chỉ có 18 bạn đi học, hai bạn nghỉ. Tính xác suất 
+để trong ba sinh viên được chọn cả ba đều là sinh viên khá. 
+19. Có 2 nhóm học mã dịch thu được kết quả: 
+Nhóm I: có 9 người xếp loại A, 20 người xếp loại B. 
+Nhóm II: Có 5 người xếp loại A, 15 người xếp loại B. 
+Lấy ngẫu nhiên từ nhóm II một người chuyển vào nhóm I, sau đó lấy ngẫu nhiên một người từ  nhóm đó để đi thi 
+mã dịch. 
+  a) Tính xác suất để người được chọn xếp loại A. 
+  b) Biết rằng người được lấy xếp loại A, tính xác suất để người này là người của nhóm II. 
+20. Tỷ lệ người nghiên thuốc lá của một thành phố là 30%, biết rằng tỷ lệ người viêm họng trong số 
+người nghiện thuốc lá là 60%,tỷ lệ người viêm họng trong số người không nghiện thuốc lá là 
+40%. 
+        a) Lấy ngẫu nhiên một người biết rằng người đó viêm họng, tính xác suất để người   
+đó nghiện thuốc. 
+        b) Nếu người đó không bị viêm họng, tính xác suất để người đó nghiện thuốc. 
+21.  Số nam giới trong một thành phố chiếm 48%, trong số nam giới có 70% tốt nghiệp đại học. 
+Trong số nữ giới có 42% tốt nghiệp đại học. Một người đến thành phố và tình cờ gặp một 
+người, tính xác suất để người đó gặp một người nữ tốt nghiệp đại học. 
+
+
+=== TRANG 3 ===
+3 
+ 
+22. Có 2 thùng đựng bóng: thùng I có 4 bóng đỏ, 6 bóng xanh: thùng II có 7 bóng đỏ và 3 bóng 
+xanh. Lấy ngẫu nhiên 2 bóng ở thùng I bỏ vào thùng II, sau đó lại lẫy ngẫu nhiên một bóng ở 
+thùng II ra, tính xác suất để: 
+a) Bóng Lấy ra ở thùng II là bóng đỏ. 
+b) biết bóng Lấy ra ở thùng II là bóng xanh, tính xác suất để bóng xanh là của thùng I. 
+23.  
+24. Một hộp đựng 10 quá bóng gồm có 6 quá mới và 4 quá bóng cũ. 
+a. Nhóm I lấy ra 2 quả để sử dụng. Tính xác suất để có ít nhất 1 quả bóng mớ được lấy 
+ra. 
+b. Nhóm I sử dụng xong lại bỏ vào hộp. Nhóm II lại lấy 2 quá ra sử dụng. Tính xác suất 
+để 2 quả bóng do nhóm II lấy ra đều là bóng mới. (Bóng còn mới lá bóng chưa mang ra 
+sừ dụng lần nào). 
+ 
+25. Hai cái thùng chứa các quả cầu như sau: thùng 1 có 5 cầu trắng, 5 cầu đỏ; thùng 2 có 3 cầu 
+trắng, 4 cầu đỏ. Người ta lấy ngẫu nhiên 2 quả từ thùng 1 rồi bỏ vào thùng 2. Sau đó lấy ngẫu 
+nhiên ra 1 quả từ thùng 2. 
+a) Tìm xác suất lấy ra được quả đỏ từ thùng 2. 
+b) Giả sử lấy được 1 quả đỏ từ thùng 2. Tìm xác suất để quả đỏ đó là của thùng 1. 
+ 
+Công thức Bernoulli 
+1. Một bài thi trắc nghiệm gồm 15 câu hỏi, mỗi câu hỏi có 4 câu trả lời, trong đó chỉ có 1 câu trả 
+lời đúng. Giả sử mỗi câu trả lời đúng được 4 điểm và mỗi câu trả lời sai bị trừ 1 điểm. Một học 
+sinh kém làm bài bằng cách chọn hú họa một câu trả lời. Tính xác suất để anh ta được a) 25 
+điểm    b) ít nhất 55 điểm 
+2. Một công ty sản xuất hàng hóa với xác suất làm ra sản phẩm loại I là 0,65. Chọn ngẫu nhiên 600 
+sản phẩm, tính xác suất để số sản phẩm loại I nằm trong khoảng từ 330 đến 390. 
+3. Một lớp học có 5 bóng đèn, mỗi bóng có xác suất bị cháy là 0,25. Lớp học đủ ánh sáng nếu có ít 
+nhất 4 bóng đèn sáng. Tính xác suất để lớp học không đủ ánh sáng. 
+4. Một xạ thủ bắn liên tiếp 4 phát vào một mục tiêu với xác suất bắn trúng mỗi phát là 0,45. Gọi X 
+là số phát đạn bắn trúng mục tiêu. Tính xác suất của biến cố X2-7X+10<0. 
+5. Hai xạ thủ cùng bắn mỗi nguời một phát vào một tấm bia. Xác suất bắn trúng một viên của mỗi người lần lượt là 0,6; 0,7. Tính xác 
+suất để có đúng một viên đạn trúng đích. 
+6. Một xạ thủ bắn liên tiếp 4 phát vào một mục tiêu với xác suất bắn trúng mỗi phát là 0,65. Gọi X là số phát đạn bắn trúng mục 
+tiêu. Tính xác suất của biến cố X2-6X+8<0. 
+7. Biết xác suất sinh con gái trong mỗi lần sinh là 0,51 ; các lần sinh độc lập. Tìm xác suất 
+để khi chọn ngẫu nhiên một gia đình có 2 con ta được: 
+a. Gia đình này có ít nhất một con gái. 
+b. Gia đình có con thứ hai là trai, biết rằng họ có ít nhất một con gái. 
+8. Một dây chuyền sản xuất ra sản phẩm chất lượng cao có tỷ lệ sản phẩm tốt là 99%. Được biết 
+chất lượng các sản phẩm là độc lập, hãy tính xác suất để trong 10 sản phẩm hú hoạ lấy ra để 
+kiểm tra có: 
+a) 2 sản phẩm là phế phẩm. 
+b) Có ít nhất một sản phẩm là phế phẩm. 
+Biến ngẫu nhiên một chiều 
+1. Xác định hàm phân phối xác suất và vẽ đồ thị của nó của biến ngẫu nhiên rời rạc X có phân 
+
+
+=== TRANG 4 ===
+4 
+ 
+phối theo bảng sau: 
+     X = x i 
+ 1 
+2 
+3 
+  P{ X = x i }= p i 
+0.16 
+0.24 
+0.6 
+2. Cho biến ngẫu nhiên X và Y độc lập với nhau và có phân phối theo bảng sau: 
+                                       
+ X  
+ 0 
+   1 
+  2 
+ 
+ Y  
+ -1 
+   1 
+P i 
+0.3 
+0.4 
+0.3 
+ P i 
+ 0.4 
+  0.6 
+               Hãy lập bảng phân phối của biến ngẫu nhiên X 2 , X+Y, XY. 
+3. Số máy tính có khả năng bán được trong một tuần tại một cửa hàng là một biến ngẫu nhiên X có bảng phân 
+phối như sau: 
+X 
+0 
+1 
+2 
+3 
+4 
+5 
+P 
+0,05 
+0,15 
+0,20 
+0,35 
+0,15 
+0,10 
+a) Tính xác suất để trong một tuần cửa hàng đó bán được ít nhất 3 chiếc máy tính. 
+b)  Khi bán được một chiếc máy tính thì cửa hàng đó lãi 3 triệu đồng, chi phí của cửa hàng mỗi tuần là 500 
+nghìn đồng. Tính tiền lãi trung bình của cửa hàng trong tuần. 
+4. Một chuồng gà có 6 con, trong đó có 2 gà trỗng, 4 gà mái, bắt ngẫu nhiên ra hai con gà. Gọi 
+X là số gà mái được bắt ra. 
+a) Lập bảng phân bố xác suất của  X. 
+b) Tính kỳ vọng và phương sai của biến ngẫu nhiên X. 
+5. Cho biến ngẫu nhiên liên tục X có hàm mật độ: 
+𝑓(𝑥) = {𝑘(𝑥+ 1)2     𝑛ế𝑢 𝑥 ∈[0; 3]
+0                 𝑛ế𝑢 𝑥∉[0; 3] 
+a) Tìm k? 
+b) Tính P(X>2), kỳ vọng của X. 
+6. Cho biến ngẫu nhiên liên tục X có hàm mật độ: 
+𝑓(𝑥) = {𝑘(𝑥2 + 𝑥+ 1)   𝑛ế𝑢 𝑥 ∈[0; 1]
+0                 𝑛ế𝑢 𝑥∉[0; 1]
+ 
+a) Tìm k? 
+b) Tính P(0<X<1/2), kỳ vọng của X. 
+7. Biến ngẫu nhiên liên tục X với hàm mật độ xác suất 
+𝑓(𝑥) = { 0         𝑣ớ𝑖 𝑥< 0
+3𝑒−3𝑥  𝑣ớ𝑖   𝑥≥0 
+a) Tìm hàm phân bố 𝐹(𝑥). 
+b) Tìm kỳ vọng toán, phương sai của biến ngẫu nhiên X. 
+8. Chứng minh f(x) = 
+2
+2
+x
+1
++
+
+ là hàm mật độ của biến ngẫu nhiên X nào đó. 
+Tìm P(
+
+
+X
+
+). 
+9. Cho hàm số sau:        
+   
+ 
+f(x) = 
+
+
+
+
+
+0
+  x
+a.e
+0
+       x
+0
+2
+x
+-
+ 
+a) Hãy xác định tham số a để f(x) là hàm mật độ của biến ngẫu nhiên X. 
+
+
+=== TRANG 5 ===
+5 
+ 
+b) Tính P(-1<X<1). 
+10. Một biến ngẫu nhiên 𝑋 có hàm mật độ: 
+𝑓(𝑥) = {𝑘𝑥2(𝑥−2)2 nếu 0 ≤x ≤2
+0  nếu trái lại 
+ 
+a. Chứng minh rằng 𝑘= 15/16. 
+b. Tính kỳ vọng và phương sai của X . 
+11. Cho X là biến ngẫu nhiên có hàm mật độ: 
+𝑓(𝑥) =
+𝑘
+𝑒𝑥+ 𝑒−𝑥 (−∞< 𝑥< +∞) 
+a. Chưng minh rằng 𝑘=
+2
+𝜋. 
+b. Tìm hàm phân phối của 𝑋. Tính xác suất 𝑃{ln 
+1
+√3 ≤𝑋≤ln √3}. 
+12. Cho hàm mật độ của biến ngẫu nhiên X là: 
+𝑓(𝑥) = {𝑘⋅cos (𝜋𝑥)  nếu 0 ≤x ≤1
+2
+0  nếu trái lại 
+ 
+a. Chứng minh k = 𝜋. 
+b. Xác định hàm phân phối của X. Tính kỳ vọng của X 
+13. Trọng lượng X ( kg ) của trẻ sơ sinh là một đại lượng ngã̃u nhiên tuân theo phân phối 
+chuẩn 𝑁(3; 0,04). Tính trọng lượng) tré sơ sinh có trogng lương từ 2,8 đến 3,2 kg. 
+ 
+14. Chiều cao của một nam thanh niên đã trưởng thành là một biến ngẫu nhiên X tuân theo luật 
+phân bố chuẩn N(160; 36). Tìm xác suất để khi lấy ngẫu nhiên 4 nam thì có ít nhất một 
+người có chiều cao trong khoảng (158; 162). 
+15. Người ta tiện một loại chi tiết máy  có độ dài theo quy định là a= 20 cm. Trong sản xuất các 
+thành phẩm loại chi tiết máy đó có độ dài tuân theo luật phân bố chuẩn N (20cm; (0.2) 2 ). 
+Tính xác xuất để độ dài thành phẩm chi tiết máy sản xuất ra có dung sai (lệch khỏi quy định) 
+không vượt quá 
+3.0
+=
+
+cm. 
+16. Đại lượng ngẫu nhiên X có phân phối chuẩn với kỳ vọng 40, độ lệch chuẩn bằng 2. Tính xác suất của biến cố 
+trong 6 lần quan sát thì có 4 lần giá trị X rơi vào khoảng (38,41) . 
+Biến ngẫu nhiên hai chiều 
+1. Cho biến ngẫu nhiên 2 chiều (X,Y) có luật phân phối đồng thời như sau: 
+           x i 
+y j 
+    
+          x 1 
+ 
+         x 2 
+ 
+ 
+          x 3 
+y 1 
+ 
+y 2 
+ 
+0.18 
+ 
+0.08 
+ 
+0.22 
+ 
+0.16 
+ 
+0.16 
+ 
+0.20 
+ Tìm luật phân phối của từng biến ngẫu nhiên X và Y. 
+
+
+=== TRANG 6 ===
+6 
+ 
+2. Cho bảng phân phối của biến ngẫu nhiên (X,Y). 
+ 
+           x i 
+y j 
+    
+          1 
+ 
+          2 
+ 
+ 
+          3 
+ 
+1 
+2 
+  
+0.15 
+0.35 
+ 
+0.20 
+0.05 
+ 
+0.1 
+0.15 
+a) Xác định hàm phân phối đồng thời của (X,Y). 
+b) Hai biến X và Y có độc lập không? 
+3. Cho hàm mật độ đồng thời của một họ véc tơ ngẫu nhiên (X,Y) là 
+            f(x,y)=a(x+y 2 ) khi 
+1.
+y 
+ x,
+0
+
+
+ 
+a) Xác định hằng số a.     Tìm các hàm mật độ biên (thành phần)  của X,Y. 
+4. Cho hàm mật độ đồng thời của véc tơ ngẫu nhiên 𝜉(𝑋, 𝑌) là: 
+𝑓(𝑥, 𝑦) = {
+𝑘
+√𝑥𝑦
+  nếu 0 < x ≤y < 1
+0  nếu trái lại 
+ 
+a. Chứng minh rằng 𝑘=
+1
+2. 
+b. Tính các kỳ vọng của 𝑋 và của 𝑌. 
+5. Cho hàm mật độ đồng thời cuaa véc tơ ngẫunhiên 𝜉(𝑋, 𝑌) là: 
+𝑓(𝑥, 𝑦) = {
+𝑘𝑒−𝑥−2𝑦 né́u 0 < 𝑥< 𝑦
+0
+ nếu trái lại 
+ 
+a. Chúng minh rằng k = 6. 
+b. Tìm các hàm mật độ thành phần (biên duyên) 𝑋; Y. 
+ 
+6. Cho X, Y là hai đại lượng ngẫu nhiên có hàm mật độ đồng thời là: 
+𝑓(𝑥, 𝑦) = {
+𝑘
+𝑥2𝑦    𝑛ế𝑢 𝑥≥1 𝑣à 1
+𝑥≤𝑦≤𝑥
+0          𝑛ế𝑢 𝑡𝑟á𝑖 𝑙ạ𝑖                     
+ 
+a) Tìm k?        b)Tìm hàm mật độ của X và của Y. 
+7. Cho X, Y là hai đại lượng ngẫu nhiên có hàm mật độ đồng thời là  𝑓(𝑥, 𝑦) =
+𝑘
+(1+𝑥2)(1+𝑦2) 
+a) Tìm k?             Tìm hàm mật độ của X và của Y. 
+ 
+BÀI TẬP THỐNG KÊ 
+ 
+1. Quan sát chiều cao 100 nam sinh viên trong khoá học ta được, chiều cao trung bình là x
+=163.28cm, độ lệch mẫu là 8.25. 
+
+

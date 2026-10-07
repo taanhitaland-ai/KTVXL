@@ -48,7 +48,7 @@ async (page) => {
     checks.push('knowledge formulas, Casio guide, keyboard chapter controls');
 
     await page.locator('#btn-tab-download').click();
-    assert(await page.locator('.download-card').count() === 6, 'Incomplete download catalog');
+    assert(await page.locator('.download-card').count() === 10, 'Incomplete download catalog');
     const files = await page.locator('#tab-download a[download]').evaluateAll(links => links.map(link=>link.href));
     const downloads = await page.evaluate(async files => Promise.all(files.map(async url => {
       const response = await fetch(url);
@@ -56,7 +56,7 @@ async (page) => {
       return {url, ok:response.ok, signature:String.fromCharCode(...bytes.slice(0,5))};
     })), files);
     assert(downloads.every(file=>file.ok&&file.signature==='%PDF-'), 'Missing or invalid PDF download');
-    checks.push('all six PDF downloads return valid PDF files');
+    checks.push('all ten PDF downloads return valid PDF files');
 
     await page.locator('#btn-tab-visualize').click();
     for(const [module, canvas] of [['young','cv-young'],['diffraction','cv-diffraction'],['photoelectric','cv-photoelectric'],['compton','cv-compton'],['quantum','cv-quantum'],['polarization','cv-polarization']]) {
@@ -78,6 +78,45 @@ async (page) => {
     await slider('sl-quantum-n',3);
     assert(await page.locator('#out-quantum-en').textContent() === '3.384 eV', 'Quantum control did not update energy');
     checks.push('six nonblank simulations; polarizer, grating and quantum controls');
+
+    // Switching subjects must keep each lab's active pane and bind controls once.
+    await page.locator('#btn-subj-xstk').click();
+    await page.locator('#btn-tab-visualize').click();
+    await page.locator('#btn-lln-reset').click();
+    await page.locator('#btn-lln-step1').click();
+    assert(await page.locator('#val-lln-trials').textContent() === '1', 'Statistics lab added duplicate event handlers');
+    for (const [module, canvas] of [['lln','cv-xstk-lln'],['galton','cv-xstk-galton'],['normal','cv-xstk-normal'],['ci','cv-xstk-ci']]) {
+      await page.locator('.xstk-sim-nav-btn[data-sim="'+module+'"]').click();
+      await page.waitForTimeout(150);
+      const drawn = await page.locator('#'+canvas).evaluate(canvas => canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data.some((value,index)=>index%4===3&&value>0));
+      assert(drawn, 'Blank statistics simulation: '+module);
+    }
+    await page.locator('#btn-ci-reset').click();
+    await page.locator('#btn-ci-sample20').click();
+    assert(await page.locator('#val-ci-total').textContent() === '20', 'Sample count doubled after subject change');
+    await page.locator('.xstk-sim-nav-btn[data-sim="normal"]').click();
+    await slider('sl-norm-mu',3);
+    await slider('sl-norm-sigma',2.5);
+    await page.locator('.btn-norm-preset[data-preset="3sigma"]').click();
+    assert(await page.locator('#sl-norm-b').inputValue() === '10.5', 'Normal preset is outside the slider range');
+    assert(await page.locator('#val-norm-pct').textContent() === '99.73%', 'Normal preset probability wrong');
+    await slider('sl-norm-a',5);
+    await slider('sl-norm-b',-2);
+    assert(await page.locator('#val-norm-prob').textContent() === '0.0000', 'Reversed bounds do not keep a valid interval');
+    const bounds = await page.evaluate(() => ({a:Number(document.getElementById('sl-norm-a').value),b:Number(document.getElementById('sl-norm-b').value)}));
+    assert(bounds.a <= bounds.b, 'Shaded interval disagrees with probability');
+    await page.locator('#btn-subj-vldc').click();
+    await page.locator('.sim-nav-btn[data-sim="young"]').click();
+    await page.locator('#btn-subj-xstk').click();
+    assert(await page.locator('#xstk-pane-normal').isVisible(), 'Physics navigation hid statistics panes');
+    await page.locator('#btn-tab-practice').click();
+    assert(await page.locator('[data-clo="8"]').count() === 1, 'Statistics chapter 8 filter missing');
+    await page.locator('#filter-source').selectOption('CHAP_8');
+    assert(await page.locator('#questions-container .question-card').count() === 17, 'Statistics chapter filter count incorrect');
+    await page.locator('#btn-tab-knowledge').click();
+    assert(await page.locator('.chapter-title').count() === 9, 'Statistics chapters or Casio handbook missing');
+    assert(await page.locator('#knowledge-chapters-container .katex').count() >= 40, 'Statistics knowledge formulas remain plain text');
+    checks.push('four statistics labs, single event binding, normal bounds and presets, eight chapter filters and knowledge');
 
     await page.evaluate(() => {localStorage.setItem('kma_active_subject','invalid');localStorage.setItem('kma_user_answers_ktvxl_v2','null');localStorage.setItem('kma_starred_questions_ktvxl_v2','{}');});
     await page.reload();
@@ -106,10 +145,18 @@ async (page) => {
       assert(size.scroll <= size.width+2,'Mobile overflow in '+tab+': '+JSON.stringify(size));
     }
     await page.locator('#btn-tab-exam').click();
-    await page.screenshot({path:'../outputs/thi-thu-vat-ly-mobile.png',fullPage:true,animations:'disabled'});
+    await page.screenshot({path:'output/playwright/thi-thu-vat-ly-mobile.png',fullPage:true,animations:'disabled'});
     await page.setViewportSize({width:1440,height:1000});
-    await page.screenshot({path:'../outputs/thi-thu-vat-ly.png',fullPage:true,animations:'disabled'});
+    await page.screenshot({path:'output/playwright/thi-thu-vat-ly.png',fullPage:true,animations:'disabled'});
     checks.push('five tabs fit a 390px mobile viewport');
+    await page.locator('#btn-subj-xstk').click();
+    await page.setViewportSize({width:390,height:844});
+    for(const tab of ['practice','exam','knowledge','download','visualize']) {
+      await page.locator('#btn-tab-'+tab).click();
+      const size = await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
+      assert(size.scroll <= size.width+2,'Statistics mobile overflow in '+tab+': '+JSON.stringify(size));
+    }
+    checks.push('statistics tabs fit a 390px mobile viewport');
     assert(errors.length===0,'Browser errors: '+errors.join('; '));
     const report = {complete:true,checks,browserErrors:errors};
     await page.evaluate(report=>window.__KMA_EXTRA_REPORT=report,report);

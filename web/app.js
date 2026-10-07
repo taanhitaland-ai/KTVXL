@@ -11,20 +11,20 @@
   }
   const savedSubject = readLocal('kma_active_subject');
   let currentSubject = examConfig.subjects[savedSubject] ? savedSubject : 'ktvxl';
-  const selectedExamCodes = { ktvxl: '1', tthcm: 'TTHCM_FULL_A', vldc: 'NOTION_DE_CUOI' };
+  const selectedExamCodes = { ktvxl: '1', tthcm: 'TTHCM_FULL_A', vldc: 'NOTION_DE_CUOI', xstk: 'RANDOM' };
 
   // State Management
   let questions = [];
   let knowledge = null;
   let userAnswers = {}; // { [qId]: { answer, isCorrect, inputVal } }
   let starredQuestions = new Set();
-  
+
   // Filter state
   let currentSource = 'ALL';
   let currentClo = 'ALL';
   let currentStatus = 'ALL';
   let searchKeyword = '';
-  
+
   // Exam simulator state
   let examActive = false;
   let examQuestions = [];
@@ -86,7 +86,19 @@
     currentSubject = subject;
     writeLocal('kma_active_subject', subject);
 
-    if (subject === 'vldc') {
+    if (subject === 'xstk') {
+      questions = (window.XSTK_QUESTIONS_DATA || []).map((q, idx) => ({
+        ...q,
+        num: q.num || (idx + 1),
+        answer: q.answer || q.correct_answer,
+        chapter: q.chapter_id || (typeof q.chapter === 'number' ? q.chapter : parseInt(String(q.chapter).replace(/\D+/g, ''), 10)) || 1,
+        source_title: q.source_title || 'XSTK Chuẩn',
+        source: q.source || 'KMA_STANDARD'
+      }));
+      knowledge = window.XSTK_KNOWLEDGE_DATA || null;
+      currentSource = 'ALL';
+      currentExamCode = 'RANDOM';
+    } else if (subject === 'vldc') {
       questions = (window.VLDC_QUESTIONS_DATA || []).map((q, idx) => ({
         ...q,
         num: q.num || (idx + 1),
@@ -112,8 +124,8 @@
 
     loadSavedState();
     currentExamCode = selectedExamCodes[subject];
-    const subjectData = { ktvxl: window.KTVXL_QUESTIONS, tthcm: window.TTHCM_QUESTIONS_DATA, vldc: window.VLDC_QUESTIONS_DATA };
-    const subjectLabels = { ktvxl: '⚡ VI XỬ LÝ', tthcm: '📕 TƯ TƯỞNG HCM', vldc: '⚛️ VẬT LÝ ĐẠI CƯƠNG' };
+    const subjectData = { ktvxl: window.KTVXL_QUESTIONS, tthcm: window.TTHCM_QUESTIONS_DATA, vldc: window.VLDC_QUESTIONS_DATA, xstk: window.XSTK_QUESTIONS_DATA };
+    const subjectLabels = { ktvxl: '⚡ VI XỬ LÝ', tthcm: '📕 TƯ TƯỞNG HCM', vldc: '⚛️ VẬT LÝ ĐẠI CƯƠNG', xstk: '🎲 XÁC SUẤT THỐNG KÊ' };
     for (const [key, label] of Object.entries(subjectLabels)) {
       const btn = document.getElementById('btn-subj-' + key);
       if (btn) btn.textContent = label + ' (' + (subjectData[key] || []).length + ' câu)';
@@ -124,7 +136,12 @@
     const brandBadge = document.getElementById('app-brand-badge');
     const brandTitle = document.getElementById('app-brand-title');
     if (brandBadge && brandTitle) {
-      if (subject === 'vldc') {
+      if (subject === 'xstk') {
+        brandBadge.textContent = '🎲 XSTK';
+        brandBadge.style.background = '#059669';
+        brandBadge.style.color = '#FFF';
+        brandTitle.textContent = 'XÁC SUẤT THỐNG KÊ';
+      } else if (subject === 'vldc') {
         brandBadge.textContent = '⚛️ VLDC';
         brandBadge.style.background = '#2563EB';
         brandBadge.style.color = '#FFF';
@@ -146,18 +163,37 @@
     const btnKtvxl = document.getElementById('btn-subj-ktvxl');
     const btnTthcm = document.getElementById('btn-subj-tthcm');
     const btnVldc = document.getElementById('btn-subj-vldc');
+    const btnXstk = document.getElementById('btn-subj-xstk');
     if (btnKtvxl) btnKtvxl.classList.toggle('active', subject === 'ktvxl');
     if (btnTthcm) btnTthcm.classList.toggle('active', subject === 'tthcm');
     if (btnVldc) btnVldc.classList.toggle('active', subject === 'vldc');
+    if (btnXstk) btnXstk.classList.toggle('active', subject === 'xstk');
 
-    // Highlight Lab button when in VLDC
+    // Update Lab Tab button and Lab containers
     const btnLab = document.getElementById('btn-tab-visualize');
+    const labVldc = document.getElementById('lab-container-vldc');
+    const labXstk = document.getElementById('lab-container-xstk');
+    const hasLab = subject === 'vldc' || subject === 'xstk';
+    btnLab.hidden = !hasLab;
     if (btnLab) {
-      if (subject === 'vldc') {
+      if (subject === 'xstk') {
+        btnLab.innerHTML = '🎲 Mô Phỏng Xác Suất (Lab) <span style="background: #FFE600; color: #000; padding: 1px 6px; border: 1.5px solid #000; border-radius: 4px; font-size: 0.7rem; font-weight: 900; margin-left: 4px;">HOT</span>';
+        if (labVldc) labVldc.style.display = 'none';
+        if (labXstk) labXstk.style.display = 'block';
+        if (window.initXstkLab) window.initXstkLab();
+      } else if (subject === 'vldc') {
         btnLab.innerHTML = '🔬 Mô Phỏng Vật Lý (Lab) <span style="background: #FFE600; color: #000; padding: 1px 6px; border: 1.5px solid #000; border-radius: 4px; font-size: 0.7rem; font-weight: 900; margin-left: 4px;">HOT</span>';
+        if (labVldc) labVldc.style.display = 'block';
+        if (labXstk) labXstk.style.display = 'none';
+        if (window.initPhysicsLab) window.initPhysicsLab();
       } else {
-        btnLab.textContent = '🔬 Mô Phỏng Vật Lý (Lab)';
+        btnLab.textContent = '🔬 Mô Phỏng Trực Quan';
+        if (labVldc) labVldc.style.display = 'none';
+        if (labXstk) labXstk.style.display = 'none';
       }
+    }
+    if (!hasLab && document.getElementById('tab-visualize').classList.contains('active')) {
+      document.getElementById('btn-tab-practice').click();
     }
 
     updateFilterUI();
@@ -168,6 +204,7 @@
     const btnKtvxl = document.getElementById('btn-subj-ktvxl');
     const btnTthcm = document.getElementById('btn-subj-tthcm');
     const btnVldc = document.getElementById('btn-subj-vldc');
+    const btnXstk = document.getElementById('btn-subj-xstk');
 
     if (btnKtvxl) {
       btnKtvxl.addEventListener('click', () => {
@@ -189,6 +226,14 @@
       btnVldc.addEventListener('click', () => {
         if (currentSubject !== 'vldc') {
           switchSubject('vldc');
+        }
+      });
+    }
+
+    if (btnXstk) {
+      btnXstk.addEventListener('click', () => {
+        if (currentSubject !== 'xstk') {
+          switchSubject('xstk');
         }
       });
     }
@@ -247,7 +292,8 @@
         const question = questions.find(q => q.source === code);
         return [code, (exam ? exam.title : question.source_title || code) + ' (' + questions.filter(q => q.source === code).length + ' câu)'];
       }));
-      group('Lọc theo chương', [1,2,3,4,5,6].map(chapter => {
+      const chapterCount = currentSubject === 'xstk' ? 8 : 6;
+      group('Lọc theo chương', Array.from({ length: chapterCount }, (_, i) => i + 1).map(chapter => {
         const inChapter = questions.filter(q => q.chapter === chapter);
         return ['CHAP_' + chapter, (inChapter[0] ? inChapter[0].chapter_title : 'Chương ' + chapter) + ' (' + inChapter.length + ' câu)'];
       }));
@@ -260,7 +306,7 @@
     const byChapter = currentSubject !== 'ktvxl';
     if (btnGroup) {
       btnGroup.previousElementSibling.textContent = byChapter ? 'Chương:' : 'Chuẩn đầu ra:';
-      const entries = byChapter ? [1,2,3,4,5,6].map(n => [String(n), 'Chương ' + n]) : [['CLO1','CLO1: Tổng quan'],['CLO2','CLO2: Phần cứng & Tập lệnh'],['CLO3','CLO3: Lập trình & Ứng dụng']];
+      const entries = byChapter ? Array.from({ length: currentSubject === 'xstk' ? 8 : 6 }, (_, i) => [String(i + 1), 'Chương ' + (i + 1)]) : [['CLO1','CLO1: Tổng quan'],['CLO2','CLO2: Phần cứng & Tập lệnh'],['CLO3','CLO3: Lập trình & Ứng dụng']];
       btnGroup.innerHTML = [['ALL', 'Tất cả'], ...entries].map(([code, text]) => '<button class="neo-filter-btn' + (code === 'ALL' ? ' active' : '') + '" data-clo="' + code + '">' + text + '</button>').join('');
       currentClo = 'ALL';
       btnGroup.querySelectorAll('[data-clo]').forEach(btn => btn.addEventListener('click', () => {
@@ -271,6 +317,14 @@
         renderPracticeQuestions();
       }));
     }
+  }
+
+  function updateStartExamButton() {
+    const btnStart = document.getElementById('btn-start-exam');
+    if (!btnStart) return;
+    const exam = examConfig.catalog(currentSubject, questions).find(item => item.code === currentExamCode);
+    const timeMins = examConfig.subjects[currentSubject].minutes;
+    btnStart.textContent = exam ? '🚀 BẮT ĐẦU: ' + exam.title + ' (' + timeMins + ':00)' : 'Chưa có đề thi';
   }
 
   function updateExamSetupUI() {
@@ -290,12 +344,7 @@
       card.className = 'exam-card-choice';
       card.dataset.examCode = exam.code;
       card.disabled = exam.count === 0;
-      card.innerHTML = '<span class="neo-badge ' + (exam.code === 'RANDOM' ? 'badge-clo3' : 'badge-exam') + '">' + escapeHtml(exam.badge) + '</span><span class="exam-title-choice">' + escapeHtml(exam.title) + '</span><span class="exam-desc-choice">' + escapeHtml(exam.description) + '</span>';
-      card.addEventListener('click', () => {
-        currentExamCode = exam.code;
-        selectedExamCodes[currentSubject] = exam.code;
-        updateExamSummary();
-      });
+      card.innerHTML = '<span class="exam-code-badge neo-badge ' + (exam.code === 'RANDOM' ? 'badge-clo3' : 'badge-exam') + '">' + escapeHtml(exam.badge) + '</span><span class="exam-title-choice">' + escapeHtml(exam.title) + '</span><span class="exam-desc-choice">' + escapeHtml(exam.description) + '</span>';
       examGrid.appendChild(card);
     }
     updateExamSummary();
@@ -311,7 +360,7 @@
     const minutes = examConfig.subjects[currentSubject].minutes;
     document.getElementById('exam-setup-description').textContent = exam ? exam.title + ' • ' + exam.count + ' câu • ' + minutes + ' phút. ' + exam.description + '.' : 'Chưa có câu hỏi cho môn học này.';
     const start = document.getElementById('btn-start-exam');
-    start.textContent = '🚀 BẮT ĐẦU LÀM BÀI THI (' + minutes + ':00)';
+    updateStartExamButton();
     start.disabled = !exam || !exam.count;
   }
 
@@ -326,6 +375,7 @@
     document.getElementById('exam-questions-list').innerHTML = '';
     document.getElementById('btn-submit-exam').disabled = false;
     document.getElementById('btn-back-exam').hidden = true;
+    document.getElementById('btn-exit-exam').hidden = false;
   }
 
   function setupApp() {
@@ -333,6 +383,7 @@
     setupFilters();
     setupKnowledgeHub();
     setupExamSimulator();
+    updateExamSetupUI();
     setupImageLightbox();
     renderPracticeQuestions();
     updateStatsBar();
@@ -395,7 +446,7 @@
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const targetTab = btn.getAttribute('data-tab');
-        
+
         tabBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
@@ -461,7 +512,16 @@
   function getFilteredQuestions() {
     return questions.filter(q => {
       // Source filter
-      if (currentSubject === 'vldc') {
+      if (currentSubject === 'xstk') {
+        if (currentSource !== 'ALL') {
+          if (currentSource.startsWith('CHAP_')) {
+            const chapNum = parseInt(currentSource.replace('CHAP_', ''), 10);
+            if (q.chapter !== chapNum) return false;
+          } else {
+            if (q.source !== currentSource) return false;
+          }
+        }
+      } else if (currentSubject === 'vldc') {
         if (currentSource !== 'ALL') {
           if (currentSource.startsWith('CHAP_')) {
             const chapNum = parseInt(currentSource.replace('CHAP_', ''), 10);
@@ -489,7 +549,7 @@
 
       // CLO / Chapter filter
       if (currentClo !== 'ALL') {
-        if (currentSubject === 'vldc' || currentSubject === 'tthcm') {
+        if (currentSubject === 'xstk' || currentSubject === 'vldc' || currentSubject === 'tthcm') {
           if (String(q.chapter) !== currentClo) return false;
         } else {
           if (q.clo !== currentClo) return false;
@@ -536,7 +596,7 @@
       return;
     }
 
-    let subjName = currentSubject === 'vldc' ? 'Vật Lý Đại Cương' : (currentSubject === 'tthcm' ? 'Tư Tưởng HCM' : 'Vi Xử Lý');
+    let subjName = currentSubject === 'xstk' ? 'Xác Suất Thống Kê' : (currentSubject === 'vldc' ? 'Vật Lý Đại Cương' : (currentSubject === 'tthcm' ? 'Tư Tưởng HCM' : 'Vi Xử Lý'));
     let sourceLabel = currentSource;
     if (currentSource === 'ALL') sourceLabel = `Toàn Bộ Ngân Hàng ${subjName}`;
     else if (currentSource === 'ALL_EXAMS') sourceLabel = '5 Đề Thi Chính Thức KMA';
@@ -597,7 +657,7 @@
     sourceBadge.textContent = q.source_title ? `${q.source_title} • Câu ${q.num}` : (q.exam_title ? `${q.exam_title} • Câu ${q.num}` : `${q.source} • Câu ${q.num}`);
     badges.appendChild(sourceBadge);
 
-    if (currentSubject === 'vldc' || currentSubject === 'tthcm') {
+    if (currentSubject === 'xstk' || currentSubject === 'vldc' || currentSubject === 'tthcm') {
       const chapBadge = document.createElement('span');
       chapBadge.className = `neo-badge badge-chap${q.chapter || 1}`;
       chapBadge.textContent = `Chương ${q.chapter || 1}`;
@@ -664,7 +724,7 @@
     // Extra lines / Code
     if (q.extra_lines && q.extra_lines.length > 0) {
       const hasCode = q.extra_lines.some(l => /^(ORG|MOV|ADD|SUBB|INC|DEC|CPL|SETB|JMP|LJMP|SJMP|AJMP|DJNZ|CJNE|JNZ|JZ|CLR|RET|RETI|DB|DW|EQU|END|TIMER|UART|START|LAP|LOOP|DL|TAB)/i.test(l.trim()));
-      
+
       if (hasCode) {
         const codeBlock = document.createElement('pre');
         codeBlock.className = 'q-extra-code';
@@ -951,6 +1011,8 @@
     if (!container) return;
     container.innerHTML = '';
     if (!knowledge || !knowledge.chapters) return;
+    document.querySelector('#tab-knowledge .knowledge-hero h1').textContent = 'KIẾN THỨC TRỌNG TÂM • ' + examConfig.subjects[currentSubject].name.toUpperCase();
+    document.querySelector('#tab-knowledge .knowledge-hero p').textContent = 'Tổng hợp theo các chương trong ngân hàng câu hỏi, kèm công thức, phương pháp và mẹo ôn tập.';
 
     const chapters = [...knowledge.chapters];
     if (knowledge.casio_guide) {
@@ -1152,75 +1214,75 @@
       container.appendChild(kwCard);
     }
 
-    // If VLDC, add Magic Keywords & Casio Handbook table cards
-    if (currentSubject === 'vldc') {
-      if (knowledge.magic_keywords) {
-        const kwCard = document.createElement('div');
-        kwCard.className = 'chapter-card';
-        kwCard.innerHTML = `
-          <div class="chapter-header" style="background: #93C5FD;">
-            <div>
-              <span class="neo-badge" style="background:#1D4ED8; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">TỪ KHÓA & CÔNG THỨC VÀNG</span>
-              <h3 class="chapter-title">Bảng "Từ Khóa Vàng" & Công Thức Tính Nhanh VLDC</h3>
-            </div>
-            <span style="font-size: 1.2rem;">▼</span>
+    // If VLDC, add Magic Keywords table card
+    if (currentSubject === 'vldc' && knowledge.magic_keywords) {
+      const kwCard = document.createElement('div');
+      kwCard.className = 'chapter-card';
+      kwCard.innerHTML = `
+        <div class="chapter-header" style="background: #93C5FD;">
+          <div>
+            <span class="neo-badge" style="background:#1D4ED8; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">TỪ KHÓA & CÔNG THỨC VÀNG</span>
+            <h3 class="chapter-title">Bảng "Từ Khóa Vàng" & Công Thức Tính Nhanh VLDC</h3>
           </div>
-          <div class="chapter-body">
-            <table class="table-custom" style="width: 100%; border-collapse: collapse;">
-              <thead>
-                <tr style="background: #FFE600; font-weight: 800;">
-                  <th style="padding: 8px 10px; border: 2px solid #000; width: 42%;">Dạng Đề / Hiện Tượng</th>
-                  <th style="padding: 8px 10px; border: 2px solid #000;">Công Thức Khóa & Chú Ý</th>
+          <span style="font-size: 1.2rem;">▼</span>
+        </div>
+        <div class="chapter-body">
+          <table class="table-custom" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #FFE600; font-weight: 800;">
+                <th style="padding: 8px 10px; border: 2px solid #000; width: 42%;">Dạng Đề / Hiện Tượng</th>
+                <th style="padding: 8px 10px; border: 2px solid #000;">Công Thức Khóa & Chú Ý</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${knowledge.magic_keywords.map(mk => `
+                <tr>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(mk.keyword)}</td>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; color: #1E3A8A; font-weight: 800;">${escapeHtml(mk.match)}</td>
                 </tr>
-              </thead>
-              <tbody>
-                ${knowledge.magic_keywords.map(mk => `
-                  <tr>
-                    <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(mk.keyword)}</td>
-                    <td style="padding: 8px 10px; border: 1.5px solid #000; color: #1E3A8A; font-weight: 800;">${escapeHtml(mk.match)}</td>
-                  </tr>
-                `).join('')}
-              </tbody>
-            </table>
-          </div>
-        `;
-        container.appendChild(kwCard);
-      }
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+      container.appendChild(kwCard);
+    }
 
-      if (knowledge.casio_handbook) {
-        const casioCard = document.createElement('div');
-        casioCard.className = 'chapter-card';
-        casioCard.innerHTML = `
-          <div class="chapter-header" style="background: #A7F3D0;">
-            <div>
-              <span class="neo-badge" style="background:#065F46; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">SỔ TAY CASIO fx-580VNX</span>
-              <h3 class="chapter-title">Tra Cứu Hằng Số & Chuyển Đổi Đơn Vị (CONST & CONV)</h3>
-            </div>
-            <span style="font-size: 1.2rem;">▼</span>
+    // Casio Handbook table card (VLDC & XSTK)
+    if (knowledge && knowledge.casio_handbook) {
+      const isXstk = currentSubject === 'xstk';
+      const casioCard = document.createElement('div');
+      casioCard.className = 'chapter-card';
+      casioCard.innerHTML = `
+        <div class="chapter-header" style="background: #A7F3D0;">
+          <div>
+            <span class="neo-badge" style="background:#065F46; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">SỔ TAY CASIO fx-580VNX</span>
+            <h3 class="chapter-title">${isXstk ? 'Thủ Thuật Thống Kê, Phân Phối Chuẩn & Phím Bấm Casio fx-580VNX' : 'Tra Cứu Hằng Số & Chuyển Đổi Đơn Vị (CONST & CONV)'}</h3>
           </div>
-          <div class="chapter-body">
-            <table class="table-custom" style="width: 100%; border-collapse: collapse;">
-              <thead>
-                <tr style="background: #FFE600; font-weight: 800;">
-                  <th style="padding: 8px 10px; border: 2px solid #000; width: 35%;">Đại Lượng Vật Lý</th>
-                  <th style="padding: 8px 10px; border: 2px solid #000; width: 30%;">Phím Bấm Casio</th>
-                  <th style="padding: 8px 10px; border: 2px solid #000;">Giá Trị Chuẩn SI</th>
+          <span style="font-size: 1.2rem;">▼</span>
+        </div>
+        <div class="chapter-body">
+          <table class="table-custom" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #FFE600; font-weight: 800;">
+                <th style="padding: 8px 10px; border: 2px solid #000; width: 35%;">${isXstk ? 'Chức Năng Thống Kê' : 'Đại Lượng Vật Lý'}</th>
+                <th style="padding: 8px 10px; border: 2px solid #000; width: 32%;">Phím Bấm Casio</th>
+                <th style="padding: 8px 10px; border: 2px solid #000;">${isXstk ? 'Ý Nghĩa / Kết Quả' : 'Giá Trị Chuẩn SI'}</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${knowledge.casio_handbook.map(c => `
+                <tr>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(c.name)}</td>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; font-family: monospace; font-weight: 800; color: #991B1B;">${escapeHtml(c.shortcut)}</td>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(c.value)}</td>
                 </tr>
-              </thead>
-              <tbody>
-                ${knowledge.casio_handbook.map(c => `
-                  <tr>
-                    <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(c.name)}</td>
-                    <td style="padding: 8px 10px; border: 1.5px solid #000; font-family: monospace; font-weight: 800; color: #991B1B;">${escapeHtml(c.shortcut)}</td>
-                    <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(c.value)}</td>
-                  </tr>
-                `).join('')}
-              </tbody>
-            </table>
-          </div>
-        `;
-        container.appendChild(casioCard);
-      }
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+      container.appendChild(casioCard);
     }
     container.querySelectorAll('.chapter-header').forEach(header => {
       const body = header.nextElementSibling;
@@ -1242,6 +1304,17 @@
 
   // Exam Simulator Logic
   function setupExamSimulator() {
+    document.getElementById('exam-select-grid').addEventListener('click', event => {
+      const card = event.target.closest('.exam-card-choice');
+      if (!card || card.disabled) return;
+      currentExamCode = card.dataset.examCode;
+      selectedExamCodes[currentSubject] = currentExamCode;
+      updateExamSummary();
+    });
+    document.getElementById('btn-exit-exam').addEventListener('click', () => {
+      if (examActive && !confirm('Thoát bài thi hiện tại để chọn đề khác? Bài làm này sẽ bị hủy.')) return;
+      resetExamView();
+    });
     document.getElementById('btn-start-exam').addEventListener('click', startExam);
     document.getElementById('btn-submit-exam').addEventListener('click', () => {
       if (!examActive) return;
@@ -1355,6 +1428,7 @@
     examActive = false;
     document.getElementById('btn-submit-exam').disabled = true;
     document.getElementById('btn-back-exam').hidden = false;
+    document.getElementById('btn-exit-exam').hidden = true;
     document.querySelectorAll('#exam-questions-list button, #exam-questions-list input').forEach(el => el.disabled = true);
 
     let correctCount = 0;
@@ -1388,11 +1462,31 @@
     const clo3Bar = document.getElementById('clo3-progress-bar');
 
     if (clo1Stat && clo1Bar && clo2Stat && clo2Bar && clo3Stat && clo3Bar) {
-      if (currentSubject === 'vldc') {
+      if (currentSubject === 'xstk') {
+        const c123 = examQuestions.filter(q => q.chapter <= 3);
+        const c45 = examQuestions.filter(q => q.chapter === 4 || q.chapter === 5);
+        const c678 = examQuestions.filter(q => q.chapter >= 6);
+
+        const corr123 = c123.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+        const corr45 = c45.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+        const corr678 = c678.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+
+        clo1Stat.previousElementSibling.textContent = 'Chương 1-3: Biến cố, Xác suất & Rời rạc';
+        clo1Stat.textContent = `${corr123}/${c123.length} câu`;
+        clo1Bar.style.width = c123.length > 0 ? `${(corr123/c123.length)*100}%` : '0%';
+
+        clo2Stat.previousElementSibling.textContent = 'Chương 4-5: Biến liên tục & 2 chiều';
+        clo2Stat.textContent = `${corr45}/${c45.length} câu`;
+        clo2Bar.style.width = c45.length > 0 ? `${(corr45/c45.length)*100}%` : '0%';
+
+        clo3Stat.previousElementSibling.textContent = 'Chương 6-8: Lý thuyết mẫu, Ước lượng & Kiểm định';
+        clo3Stat.textContent = `${corr678}/${c678.length} câu`;
+        clo3Bar.style.width = c678.length > 0 ? `${(corr678/c678.length)*100}%` : '0%';
+      } else if (currentSubject === 'vldc') {
         const c12 = examQuestions.filter(q => q.chapter === 1 || q.chapter === 2);
         const c34 = examQuestions.filter(q => q.chapter === 3 || q.chapter === 4);
         const c56 = examQuestions.filter(q => q.chapter === 5 || q.chapter === 6);
-        
+
         const corr12 = c12.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
         const corr34 = c34.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
         const corr56 = c56.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
@@ -1412,7 +1506,7 @@
         const c12 = examQuestions.filter(q => q.chapter === 1 || q.chapter === 2);
         const c34 = examQuestions.filter(q => q.chapter === 3 || q.chapter === 4);
         const c56 = examQuestions.filter(q => q.chapter === 5 || q.chapter === 6);
-        
+
         const corr12 = c12.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
         const corr34 = c34.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
         const corr56 = c56.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;

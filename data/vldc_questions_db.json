@@ -2913,7 +2913,7 @@
       "A. Tạo ra hiệu quang lộ giữa tia thường (o) và tia bất thường (e) đúng bằng $\\lambda/4$ (hiệu pha $\\pi/2$), dùng để biến ánh sáng phân cực thẳng thành phân cực tròn hoặc elip",
       "B. Làm giảm cường độ ánh sáng đi 4 lần",
       "C. Quay mặt phẳng dao động của ánh sáng phân cực đi một góc 90°",
-      "D. Lọc bỏ 3/4 bước sóng trong quang phổ ánh sáng trắng"
+      "D. Lọc bỏ $\\frac34$ bước sóng trong quang phổ ánh sáng trắng"
     ],
     "correct_answer": "A",
     "correct_answer_text": "Tạo ra hiệu quang lộ giữa tia thường (o) và tia bất thường (e) đúng bằng λ/4 (hiệu pha π/2), dùng để biến ánh sáng phân cực thẳng thành phân cực tròn hoặc elip",

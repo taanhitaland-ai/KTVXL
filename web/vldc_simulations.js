@@ -127,14 +127,15 @@
   }
 
   function setupModuleSwitchers() {
-    const btns = document.querySelectorAll('.sim-nav-btn');
+    const container = document.getElementById('lab-container-vldc');
+    const btns = container.querySelectorAll('.sim-nav-btn');
     btns.forEach(btn => {
       btn.addEventListener('click', () => {
         btns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const mod = btn.getAttribute('data-sim');
         SIM_STATE.activeModule = mod;
-        document.querySelectorAll('.sim-view-pane').forEach(p => p.classList.remove('active'));
+        container.querySelectorAll('.sim-view-pane').forEach(p => p.classList.remove('active'));
         const pane = document.getElementById(`sim-pane-${mod}`);
         if (pane) pane.classList.add('active');
       });
@@ -447,7 +448,7 @@
   // -------------------------------------------------------------------
   function startAnimationLoop() {
     function loop() {
-      if (!document.hidden && document.getElementById('tab-visualize').classList.contains('active')) {
+      if (!document.hidden && document.getElementById('tab-visualize').classList.contains('active') && document.getElementById('lab-container-vldc').style.display !== 'none') {
         SIM_STATE.time += 0.03;
         renderActiveModule();
       }

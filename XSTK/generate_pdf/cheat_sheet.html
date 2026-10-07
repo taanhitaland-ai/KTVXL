@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>SỔ TAY TRỌNG TÂM, MẸO LÀM BÀI & BẢNG NGUYÊN HÀM XÁC SUẤT THỐNG KÊ</title>
+    <!-- KaTeX CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ],
+                throwOnError: false
+            });"></script>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 12mm 12mm 14mm 12mm;
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        body {
+            font-family: 'Segoe UI', 'Liberation Sans', Roboto, Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #1a202c;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header banner */
+        .header-banner {
+            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner-title {
+            font-size: 19px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 4px 0;
+        }
+        .banner-sub {
+            font-size: 12.5px;
+            font-weight: 400;
+            opacity: 0.92;
+            margin: 0;
+        }
+        .banner-tag {
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+            font-weight: 700;
+            font-size: 11.5px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        /* Section structure */
+        .section-title {
+            font-size: 14.5px;
+            font-weight: 800;
+            color: #1a365d;
+            text-transform: uppercase;
+            border-left: 4px solid #2b6cb0;
+            padding-left: 8px;
+            margin: 14px 0 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .badge-step {
+            background: #e2e8f0;
+            color: #2d3748;
+            font-size: 10.5px;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 4px;
+        }
+
+        /* Cards and Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .card {
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            padding: 10px 12px;
+            background-color: #f8fafc;
+            break-inside: avoid;
+        }
+        .card-header {
+            font-weight: 700;
+            font-size: 12.5px;
+            color: #2c5282;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .card-body {
+            font-size: 11.5px;
+            color: #2d3748;
+        }
+
+        /* Standard Steps Table */
+        .step-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0;
+            font-size: 11px;
+            background: #ffffff;
+        }
+        .step-table th, .step-table td {
+            border: 1px solid #cbd5e0;
+            padding: 5px 8px;
+            vertical-align: top;
+        }
+        .step-table th {
+            background-color: #edf2f7;
+            color: #1a365d;
+            font-weight: 700;
+            text-align: center;
+        }
+        .step-num {
+            width: 75px;
+            text-align: center;
+            font-weight: 700;
+            color: #2b6cb0;
+            background-color: #f7fafc;
+        }
+        .step-score {
+            width: 65px;
+            text-align: center;
+            font-weight: 700;
+            color: #c53030;
+            background-color: #fffaf0;
+        }
+
+        /* Boxes */
+        .box-rule {
+            background-color: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 5px 10px;
+            margin: 5px 0;
+            font-size: 10.5px;
+            line-height: 1.4;
+            border-radius: 3px;
+            break-inside: avoid;
+        }
+        .box-casio {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 8px 12px;
+            margin: 8px 0;
+            font-size: 11.5px;
+            border-radius: 3px;
+            break-inside: avoid;
+        }
+        .box-warning {
+            background-color: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 8px 12px;
+            margin: 8px 0;
+            font-size: 11.5px;
+            border-radius: 3px;
+            break-inside: avoid;
+        }
+        .box-tip {
+            background-color: #f0fff4;
+            border-left: 4px solid #38a169;
+            padding: 5px 10px;
+            margin: 5px 0;
+            font-size: 10.5px;
+            line-height: 1.4;
+            border-radius: 3px;
+            break-inside: avoid;
+        }
+
+        /* Formula Table */
+        .formula-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 4px 0 6px 0;
+            font-size: 10px;
+            line-height: 1.35;
+            background: #ffffff;
+        }
+        .formula-table th, .formula-table td {
+            border: 1px solid #cbd5e0;
+            padding: 2.5px 5px;
+            text-align: left;
+        }
+        .formula-table th {
+            background-color: #2b6cb0;
+            color: #ffffff;
+            font-weight: 700;
+            text-align: center;
+        }
+        .formula-table tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        .highlight-text {
+            color: #c53030;
+            font-weight: 700;
+        }
+        .keyword {
+            color: #2b6cb0;
+            font-weight: 700;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+        ul, ol {
+            margin: 4px 0 4px 18px;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 3px;
+        }
+        kbd {
+            background-color: #edf2f7;
+            border: 1px solid #cbd5e0;
+            border-radius: 3px;
+            padding: 1px 4px;
+            font-family: monospace;
+            font-size: 10px;
+            font-weight: 700;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER BANNER -->
+    <div class="header-banner">
+        <div>
+            <div class="banner-title">SỔ TAY TRỌNG TÂM & MẸO LÀM BÀI XÁC SUẤT THỐNG KÊ</div>
+            <div class="banner-sub">Quy trình giải tự luận chuẩn barem điểm (0,5đ) &bull; Mẹo bấm máy Casio &bull; Bảng nguyên hàm lượng giác</div>
+        </div>
+        <div class="banner-tag">HỌC VIỆN KỸ THUẬT MẬT MÃ</div>
+    </div>
+
+    <!-- PHẦN 1: QUY CHUẨN BAREM ĐIỂM & 4 CÂU THẦN CHÚ KHÔNG BỊ TRỪ ĐIỂM -->
+    <div class="section-title">
+        <span>I. NGUYÊN TẮC BAREM ĐIỂM & 4 "CÂU THẦN CHÚ" ĂN TRỌN ĐIỂM TỰ LUẬN</span>
+        <span class="badge-step">CHUẨN BAREM KMA</span>
+    </div>
+
+    <div class="box-rule">
+        <b>⭐ 4 CÂU VĂN BẮT BUỘC PHẢI VIẾT ĐỂ LẤY TRỌN ĐIỂM (MỖI CÂU TƯƠNG ĐƯƠNG 0,5 ĐIỂM TRONG BAREM):</b>
+        <ol>
+            <li><span class="keyword">Gọi biến cố rõ ràng bằng lời văn:</span> Luôn bắt đầu bằng <i>"Gọi $A$ là biến cố..."</i> hoặc <i>"Gọi $A_i$ là biến cố..."</i>. Tuyệt đối không viết xác suất $P(A)$ khi chưa định nghĩa $A$.</li>
+            <li><span class="keyword">Câu nhận xét tính chất mối quan hệ biến cố (CỰC KỲ QUAN TRỌNG):</span>
+                <br>&bull; Nếu dùng công thức nhân: <i>"<b>Nhận xét:</b> $A_1, A_2, A_3$ là các biến cố độc lập trong toàn thể."</i>
+                <br>&bull; Nếu dùng công thức xác suất đầy đủ: <i>"<b>Nhận xét:</b> $\{H_1, H_2, H_3\}$ là một hệ biến cố đầy đủ vì các $H_i$ đôi một xung khắc và $\sum P(H_i) = 1$."</i>
+                <br>&bull; Nếu dùng công thức cộng: <i>"<b>Nhận xét:</b> Các biến cố thành phần đôi một xung khắc."</i>
+            </li>
+            <li><span class="keyword">Viết công thức giải tích tổng quát trước khi thay số:</span> Luôn viết công thức bằng ký hiệu toán học trước (ví dụ $P(B) = P(A_1)P(\overline{A_2})\dots$ hoặc $P(A) = \sum P(H_i)P(A|H_i)$) rồi mới thay số vào dòng sau. Thay số thẳng mà không có công thức bị trừ ngay 0,25đ - 0,5đ.</li>
+            <li><span class="keyword">Câu kết luận đầy đủ cả phân số tối giản và số thập phân:</span> <i>"Vậy xác suất cần tìm là $P = \dfrac{a}{b} \approx 0.xxxx$ (hay $xx,xx\%$)."</i></li>
+        </ol>
+    </div>
+
+    <!-- PHẦN 2: TRỌNG TÂM CÁC DẠNG BÀI TRONG ĐỀ & QUY TRÌNH 3 BƯỚC -->
+    <div class="section-title">
+        <span>II. QUY TRÌNH GIẢI TRỌNG TÂM THEO TỪNG DẠNG BÀI THI</span>
+        <span class="badge-step">PHỔ ĐIỂM CHI TIẾT</span>
+    </div>
+
+    <!-- DẠNG 1 & DẠNG 2 -->
+    <div class="grid-2">
+        <!-- Card Dạng 1 -->
+        <div class="card">
+            <div class="card-header">
+                <span>DẠNG 1: RÚT THẺ CÓ TÍCH CHIA HẾT CHO 6</span>
+                <span class="highlight-text">1,5 điểm</span>
+            </div>
+            <div class="card-body">
+                <b>1. Các bước làm chuẩn barem:</b>
+                <br>&bull; <i>Bước 1 (0,5đ):</i> Tính không gian mẫu $n(\Omega) = C_n^2$. Gọi $A$ là biến cố tích 2 số chia hết cho 6.
+                <br>&bull; <i>Bước 2 (0,5đ):</i> Phân chia $n$ số thành 4 nhóm độc lập:
+                <div style="background:#fff; padding:4px 6px; border:1px solid #e2e8f0; margin:3px 0;">
+                    1. Bội của 6 ($S_6$); 2. Chẵn không chia hết 6 ($S_c$);<br>
+                    3. Lẻ chia hết 3 ($S_3$); 4. Còn lại lẻ không chia hết 3 ($S_0$).
+                </div>
+                Chia 2 trường hợp thuận lợi:
+                <br>+ <b>TH1:</b> Rút $\ge 1$ thẻ thuộc $S_6$: $C_{|S_6|}^1 C_{n-|S_6|}^1 + C_{|S_6|}^2$.
+                <br>+ <b>TH2:</b> Không rút thẻ $S_6$: rút 1 thẻ chẵn từ $S_c$ và 1 thẻ từ $S_3$: $C_{|S_c|}^1 \times C_{|S_3|}^1$.
+                <br>&bull; <i>Bước 3 (0,5đ):</i> $n(A) = \text{TH1} + \text{TH2} \Rightarrow P(A) = \dfrac{n(A)}{n(\Omega)}$.
+                <br><b>💡 Mẹo làm & kiểm tra:</b>
+                <br>- Thẻ 1..10: $S_6=\{6\}(1), S_c=\{2,4,8,10\}(4), S_3=\{3,9\}(2)$.
+                <br>$\Rightarrow n(A) = 9 + 4\times 2 = 17 \Rightarrow P = 17/45$.
+                <br>- Thẻ 5..14: $S_6=\{6,12\}(2), S_c=\{8,10,14\}(3), S_3=\{9\}(1)$.
+                <br>$\Rightarrow n(A) = (2\times 8 + 1) + 3\times 1 = 20 \Rightarrow P = 20/45 = 4/9$.
+            </div>
+        </div>
+
+        <!-- Card Dạng 2 -->
+        <div class="card">
+            <div class="card-header">
+                <span>DẠNG 2: TỔ HỢP LẬP SỐ (LẺ ĐỨNG CẠNH NHAU)</span>
+                <span class="highlight-text">1,5 điểm</span>
+            </div>
+            <div class="card-body">
+                <b>1. Các bước làm chuẩn barem:</b>
+                <br>&bull; <i>Bước 1 (0,5đ):</i> Tìm $n(\Omega)$: Số có 5 chữ số khác nhau từ $\{0,1,2,3,4,5,6\}$: $a_1 \neq 0 \Rightarrow 6 \times A_6^4 = 2160$. Gọi $E$ là biến cố cần tính.
+                <br>&bull; <i>Bước 2 (0,5đ):</i> Số cần lập có đúng 2 số lẻ và 3 số chẵn.
+                <br>Buộc 2 số lẻ cạnh nhau thành khối $K$: có $A_3^2 = 6$ cách.
+                <br>Chia 2 trường hợp cho 3 chữ số chẵn:
+                <br>+ <b>TH1 (Không có số 0):</b> Chọn 3 số $\{2,4,6\}$ (1 cách). Hoán vị khối $K$ và 3 số chẵn: $1 \times 6 \times 4! = 144$ số.
+                <br>+ <b>TH2 (Có số 0):</b> Chọn thêm 2 số từ $\{2,4,6\}$ ($C_3^2 = 3$ cách). Hoán vị 4 phần tử trừ vị trí số 0 đứng đầu:
+                $$3 \times 6 \times (4! - 3!) = 3 \times 6 \times 18 = 324 \text{ số}$$
+                <br>&bull; <i>Bước 3 (0,5đ):</i> $n(E) = 144 + 324 = 468$.
+                $$P(E) = \frac{468}{2160} = \frac{13}{60} \approx 0.2167$$
+                <br><b>💡 Mẹo nhớ nhanh:</b> Đề bài tập này ở cả 4 đề đều có chung đáp số cố định là $\mathbf{13/60}$.
+            </div>
+        </div>
+    </div>
+
+    <!-- DẠNG 3 & DẠNG 4 -->
+    <div class="grid-2">
+        <!-- Card Dạng 3 -->
+        <div class="card">
+            <div class="card-header">
+                <span>DẠNG 3: XẠ THỦ BẮN BIA / XE SỰ CỐ (ĐỘC LẬP)</span>
+                <span class="highlight-text">1,5 - 2,0 điểm</span>
+            </div>
+            <div class="card-body">
+                <b>1. Các bước làm chuẩn barem:</b>
+                <br>&bull; <i>Bước 1 (0,5đ):</i> Gọi $A_i$ là biến cố người thứ $i$ bắn trúng ($i=1,2,3$). Ghi rõ $P(A_i)$ và $P(\overline{A_i})$. <b>Khẳng định:</b> $A_1, A_2, A_3$ độc lập.
+                <br>&bull; <i>Bước 2 (0,5đ):</i> Biểu diễn biến cố điều kiện $B$:
+                <br>- Đúng 1 trúng: $B = A_1\overline{A_2}\overline{A_3} + \overline{A_1}A_2\overline{A_3} + \overline{A_1}\overline{A_2}A_3$.
+                <br>- Đúng 2 trúng: $B = A_1A_2\overline{A_3} + A_1\overline{A_2}A_3 + \overline{A_1}A_2A_3$.
+                <br>Thay số tính $P(B)$.
+                <br>&bull; <i>Bước 3 (0,5đ - 1,0đ):</i> Tính $P(A_1 \cap B)$ và dùng Bayes:
+                $$P(A_1|B) = \frac{P(A_1 \cap B)}{P(B)}$$
+                <br><b>💡 Mẹo kiểm tra Casio:</b>
+                <br>Lấy $p_1 q_2 q_3 + q_1 p_2 q_3 + q_1 q_2 p_3$ bấm thẳng trong 1 dòng.
+                <br>Phần tử người 1 trúng chia cho cả tổng $P(B)$.
+            </div>
+        </div>
+
+        <!-- Card Dạng 4 -->
+        <div class="card">
+            <div class="card-header">
+                <span>DẠNG 4: XÁC SUẤT ĐẦY ĐỦ & CÔNG THỨC BAYES</span>
+                <span class="highlight-text">1,5 - 2,5 điểm</span>
+            </div>
+            <div class="card-body">
+                <b>1. Các bước làm chuẩn barem:</b>
+                <br>&bull; <i>Bước 1 (0,5đ):</i> Gọi $H_1, H_2, H_3$ là các giả thiết (bộ tộc, máy, hộp bi). <b>Khẳng định:</b> $\{H_i\}$ là hệ biến cố đầy đủ.
+                <br>&bull; <i>Bước 2 (0,5đ):</i> Gọi $A$ là biến cố kết quả (bị bệnh, loại A, rút bi trắng). Viết công thức XS đầy đủ:
+                $$P(A) = \sum_{i=1}^n P(H_i)P(A|H_i)$$
+                <br>&bull; <i>Bước 3 (0,5đ):</i> Nếu có câu hỏi ngược (biết $A$ đã xảy ra, tính xác suất nguyên nhân $H_k$), dùng công thức Bayes:
+                $$P(H_k|A) = \frac{P(H_k)P(A|H_k)}{P(A)}$$
+                <br><b>💡 Mẹo kiểm tra kết quả:</b>
+                <br>- Tổng các xác suất hậu nghiệm sau khi dùng Bayes phải có tổng bằng 1: $\sum_{k} P(H_k|A) = 1$.
+            </div>
+        </div>
+    </div>
+
+    <!-- DẠNG 5 & DẠNG 6 -->
+    <div class="grid-2">
+        <!-- Card Dạng 5 -->
+        <div class="card">
+            <div class="card-header">
+                <span>DẠNG 5: KIỂM ĐỊNH KCS DÂY CHUYỀN PHẾ PHẨM</span>
+                <span class="highlight-text">1,5 - 2,0 điểm</span>
+            </div>
+            <div class="card-body">
+                <b>1. Bản chất mô hình (Đừng nhầm lẫn!):</b>
+                <br>&bull; $T$: Chính phẩm ($P(T)=0.97$), $H$: Phế phẩm ($P(H)=0.03$).
+                <br>&bull; $K$: Máy báo tốt, $\overline{K}$: Máy báo hỏng (loại ra).
+                <br>&bull; Độ chính xác: $P(K|T) = 0.98 \Rightarrow P(\overline{K}|T) = 0.02$.
+                <br>&bull; Phát hiện hỏng: $P(\overline{K}|H) = 0.95 \Rightarrow P(K|H) = 0.05$.
+                <br><b>2. Hai câu hỏi kinh điển:</b>
+                <br>&bull; <b>Xác suất sản phẩm bị trả lại ($P(A)$):</b>
+                $$P(A) = P(\overline{K}) = P(T)P(\overline{K}|T) + P(H)P(\overline{K}|H)$$
+                $$= 0.97 \times 0.02 + 0.03 \times 0.95 = 0.0479$$
+                &bull; <b>Xác suất sản phẩm hỏng được vào kho ($P(B)$):</b>
+                $$P(B) = P(H \cap K) = P(H)P(K|H) = 0.03 \times 0.05 = 0.0015$$
+                <br><b>⚠️ Cảnh báo bẫy:</b> Đề hỏi xác suất 1 sản phẩm ngẫu nhiên là sản phẩm hỏng được vào kho $\Rightarrow$ là $P(H \cap K)$, KHÔNG PHẢI $P(H|K)$!
+            </div>
+        </div>
+
+        <!-- Card Dạng 6 -->
+        <div class="card">
+            <div class="card-header">
+                <span>DẠNG 6: TÍCH PHÂN MOIVRE - LAPLACE ($n=100$)</span>
+                <span class="highlight-text">1,5 điểm</span>
+            </div>
+            <div class="card-body">
+                <b>1. Điều kiện áp dụng:</b> $n = 100$ lớn, $np \ge 5, nq \ge 5$.
+                <br><b>2. Công thức tính xác suất:</b>
+                $$P(k_1 \le X \le k_2) \approx \Phi_0(x_2) - \Phi_0(x_1)$$
+                $$\text{với } x_1 = \frac{k_1 - np}{\sqrt{npq}}, \quad x_2 = \frac{k_2 - np}{\sqrt{npq}}$$
+                <b>3. Quy tắc tính hàm Laplace $\Phi_0(x)$:</b>
+                <br>&bull; $\Phi_0(-x) = -\Phi_0(x)$.
+                <br>&bull; Khi $x \ge 4.5 \Rightarrow \Phi_0(x) \approx 0.5000$.
+                <br>&bull; Khi $x = 0 \Rightarrow \Phi_0(0) = 0$.
+                <br><b>💡 Mẹo tính trong bài thi Đề 2 & Đề 4:</b>
+                <br>+ Máy 1 ($p=0.6, np=60, \sqrt{npq} \approx 4.899$):
+                <br>$x_1 = 0, x_2 \approx 6.12 \Rightarrow P \approx 0.5 - 0 = 0.5000$.
+                <br>+ Máy 2 ($p=0.7, np=70, \sqrt{npq} \approx 4.583$):
+                <br>$x_1 \approx -2.18, x_2 \approx 4.36 \Rightarrow P \approx 0.5 + \Phi_0(2.18) = 0.9854$.
+                <br>+ Máy 3 ($p=0.8, np=80, \sqrt{npq} = 4$):
+                <br>$x_1 = -5.0, x_2 = 2.5 \Rightarrow P \approx \Phi_0(2.5) + 0.5 = 0.9938$.
+            </div>
+        </div>
+    </div>
+
+    <!-- DẠNG 7 & DẠNG 8 -->
+    <div class="page-break"></div>
+    <div class="section-title">
+        <span>II. QUY TRÌNH GIẢI TRỌNG TÂM THEO TỪNG DẠNG BÀI THI (TIẾP THEO)</span>
+        <span class="badge-step">BIẾN NGẪU NHIÊN 1D & 2D</span>
+    </div>
+
+    <div class="grid-2">
+        <!-- Card Dạng 7 -->
+        <div class="card">
+            <div class="card-header">
+                <span>DẠNG 7: BIẾN RỜI RẠC $X, Y$ ĐỘC LẬP (TỔNG & TÍCH)</span>
+                <span class="highlight-text">2,5 điểm</span>
+            </div>
+            <div class="card-body">
+                <b>1. Tính kỳ vọng:</b>
+                $$E(X) = \sum x_i p_i; \quad E(Y) = \sum y_j q_j$$
+                <b>2. Bảng phân phối xác suất của $X+Y$ và $XY$:</b>
+                <br>&bull; Do $X, Y$ độc lập: $P(X=x, Y=y) = P(X=x) \times P(Y=y)$.
+                <br>&bull; <i>Mẹo làm:</i> Lập nháp ma trận bảng 2 chiều $4 \times 3$:
+                <table style="width:100%; border-collapse:collapse; margin:4px 0; font-size:10px; text-align:center;">
+                    <tr style="background:#edf2f7;"><th style="border:1px solid #cbd5e0;">X \ Y</th><th style="border:1px solid #cbd5e0;">-1 (0.25)</th><th style="border:1px solid #cbd5e0;">0 (0.40)</th><th style="border:1px solid #cbd5e0;">1 (0.35)</th></tr>
+                    <tr><td style="border:1px solid #cbd5e0;"><b>0 (0.3)</b></td><td style="border:1px solid #cbd5e0;">p=0.075</td><td style="border:1px solid #cbd5e0;">p=0.120</td><td style="border:1px solid #cbd5e0;">p=0.105</td></tr>
+                    <tr><td style="border:1px solid #cbd5e0;"><b>1 (0.2)</b></td><td style="border:1px solid #cbd5e0;">p=0.050</td><td style="border:1px solid #cbd5e0;">p=0.080</td><td style="border:1px solid #cbd5e0;">p=0.070</td></tr>
+                    <tr><td style="border:1px solid #cbd5e0;"><b>2 (0.2)</b></td><td style="border:1px solid #cbd5e0;">p=0.050</td><td style="border:1px solid #cbd5e0;">p=0.080</td><td style="border:1px solid #cbd5e0;">p=0.070</td></tr>
+                    <tr><td style="border:1px solid #cbd5e0;"><b>3 (0.3)</b></td><td style="border:1px solid #cbd5e0;">p=0.075</td><td style="border:1px solid #cbd5e0;">p=0.120</td><td style="border:1px solid #cbd5e0;">p=0.105</td></tr>
+                </table>
+                &bull; Gom các ô có cùng tổng $x+y$ hoặc cùng tích $xy$ lại.
+                <br><b>💡 Mẹo kiểm tra cực nhanh:</b>
+                <br>1. Tổng hàng xác suất ở bảng kết quả phải bằng đúng $1.000$.
+                <br>2. Dùng tính chất kỳ vọng để dò sai:
+                $$E(X+Y) = E(X) + E(Y) = 1.5 + 0.1 = 1.6$$
+                $$E(XY) = E(X)E(Y) = 1.5 \times 0.1 = 0.15$$
+                Tính lại $\sum s_i P(S=s_i)$ xem có bằng 1.6 không!
+            </div>
+        </div>
+
+        <!-- Card Dạng 8 -->
+        <div class="card">
+            <div class="card-header">
+                <span>DẠNG 8: BIẾN LIÊN TỤC 1 CHIỀU & 2 CHIỀU</span>
+                <span class="highlight-text">2,0 - 3,0 điểm</span>
+            </div>
+            <div class="card-body">
+                <b>1. Điều kiện hàm mật độ:</b>
+                <br>&bull; $f(x) \ge 0, \forall x$ và $\displaystyle\int_{-\infty}^{+\infty} f(x)dx = 1$.
+                <br>&bull; Biến 2 chiều: $\displaystyle\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(x, y)dxdy = 1$.
+                <br><b>2. Hàm mật độ biên của $X$:</b>
+                $$f_X(x) = \int_{-\infty}^{+\infty} f(x, y)dy$$
+                <b>3. Giải bất phương trình xác suất $P(X^3 > X)$:</b>
+                <br>&bull; Xét $X^3 - X > 0 \Leftrightarrow X(X-1)(X+1) > 0$.
+                <br>&bull; Vì biến ngẫu nhiên $X \in [0; 2]$, nên $X \ge 0$ và $X+1 > 0$.
+                <br>&bull; Do đó $X(X-1)(X+1) > 0 \Leftrightarrow X > 1$.
+                <br>&bull; Vậy $P(X^3 > X) = P(1 < X \le 2) = \displaystyle\int_1^2 f(x)dx$.
+                <br><b>4. Hàm phân bố xác suất $F(x) = P(X < x)$:</b>
+                <br>Luôn viết rõ 3 nhánh:
+                <br>&bull; $x \le a \Rightarrow F(x) = 0$.
+                <br>&bull; $a < x < b \Rightarrow F(x) = \displaystyle\int_a^x f(t)dt$.
+                <br>&bull; $x \ge b \Rightarrow F(x) = 1$.
+            </div>
+        </div>
+    </div>
+
+    <!-- CÁC BẪY KINH ĐIỂN CẦN TRÁNH VỀ BIẾN NGẪU NHIÊN -->
+    <div class="box-warning" style="margin-top: 10px;">
+        <b>⚠️ 4 BẪY SAI LẦM KINH ĐIỂN VỀ BIẾN NGẪU NHIÊN KHIẾN HỌC VIÊN MẤT ĐIỂM OAN:</b>
+        <ol>
+            <li><b>Bẫy bất đẳng thức $X^3 > X$ trên đoạn $[0; 2]$:</b> Rất nhiều bạn giải ra $X > 1$ hoặc $X < -1$ rồi lấy tích phân cả trên miền âm. Chú ý biến $X$ chỉ nhận giá trị trên $[0; 2]$, nên miền lấy tích phân chỉ là $(1; 2]$.</li>
+            <li><b>Bẫy viết thiếu miền của hàm mật độ biên $f_X(x)$ và hàm phân bố $F(x)$:</b> Khi viết hàm mật độ biên $f_X(x)$, bắt buộc phải viết dạng 2 nhánh (nhánh trong miền và nhánh bằng 0 ở ngoài miền). Tương tự hàm $F(x)$ bắt buộc phải đủ 3 khoảng ($x \le a, a < x < b, x \ge b$). Thiếu nhánh ngoài miền bị trừ 0,5đ.</li>
+            <li><b>Bẫy phương sai của tổng/hiệu:</b> Chú ý $V(aX + bY) = a^2 V(X) + b^2 V(Y)$ khi $X, Y$ độc lập. Đặc biệt: $V(X - Y) = V(X) + V(Y)$ (DẤU CỘNG, KHÔNG PHẢI DẤU TRỪ!). Hằng số nhân vào trong biến ngẫu nhiên khi ra ngoài phương sai phải BÌNH PHƯƠNG: $V(2X) = 4V(X)$.</li>
+            <li><b>Bẫy kiểm tra tổng xác suất ma trận $X+Y$ và $XY$:</b> Với biến rời rạc, sau khi lập bảng xác suất của $X+Y$ và $XY$, bước đầu tiên phải lấy máy tính cộng hàng xác suất xem có bằng $1.000$ không. Nếu khác 1 thì chắc chắn đã nhầm lẫn khi nhóm các ô có cùng tổng hoặc tích.</li>
+        </ol>
+    </div>
+
+    <!-- PHẦN 3: BẢNG NGUYÊN HÀM & CÔNG THỨC LƯỢNG GIÁC HAY DÙNG -->
+    <div class="page-break"></div>
+    <div class="section-title">
+        <span>III. BẢNG NGUYÊN HÀM & TÍCH PHÂN HAY DÙNG (ĐẶC BIỆT LƯỢNG GIÁC)</span>
+        <span class="badge-step">TRA CỨU NHANH TRONG PHÒNG THI</span>
+    </div>
+
+    <div class="box-tip">
+        <b>📌 LÝ DO CẦN THUỘC BẢNG NÀY:</b> Trong các đề thi môn Xác suất thống kê của Học viện, các bài toán tìm hằng số chuẩn hóa $k$, tìm hàm phân bố $F(x)$, hoặc chuẩn hóa biến ngẫu nhiên liên tục rất hay xuất hiện biểu thức chứa căn bậc hai dạng $\sqrt{a^2 - x^2}$ (như Câu 4 Đề 5: $\dfrac{k}{\sqrt{4-x^2}}$). Học viên bắt buộc phải nắm vững các nguyên hàm lượng giác ngược này!
+    </div>
+
+    <table class="formula-table">
+        <thead>
+            <tr>
+                <th style="width: 32%;">Hàm số cần lấy nguyên hàm $f(x)$</th>
+                <th style="width: 44%;">Nguyên hàm tổng quát $\int f(x)dx$</th>
+                <th style="width: 24%;">Ví dụ áp dụng trong đề thi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dạng lượng giác ngược -->
+            <tr style="background:#fffaf0;">
+                <td><b>$\dfrac{1}{\sqrt{a^2 - x^2}}$</b></td>
+                <td>$\arcsin\left(\dfrac{x}{a}\right) + C$</td>
+                <td>$\displaystyle\int_{-2}^2 \frac{k}{\sqrt{4-x^2}}dx = k\pi = 1 \Rightarrow k = \frac{1}{\pi}$</td>
+            </tr>
+            <tr style="background:#fffaf0;">
+                <td><b>$\dfrac{1}{a^2 + x^2}$</b></td>
+                <td>$\dfrac{1}{a} \arctan\left(\dfrac{x}{a}\right) + C$</td>
+                <td>Phân phối Cauchy: $\displaystyle\int_{-\infty}^{+\infty} \frac{C}{1+x^2}dx = C\pi$</td>
+            </tr>
+            <tr style="background:#fffaf0;">
+                <td><b>$\sqrt{a^2 - x^2}$</b></td>
+                <td>$\dfrac{x}{2}\sqrt{a^2 - x^2} + \dfrac{a^2}{2}\arcsin\left(\dfrac{x}{a}\right) + C$</td>
+                <td>Phân phối nửa đường tròn Wigner</td>
+            </tr>
+            <tr style="background:#fffaf0;">
+                <td><b>$\dfrac{1}{\sqrt{x^2 \pm a^2}}$</b></td>
+                <td>$\ln\left|x + \sqrt{x^2 \pm a^2}\right| + C$</td>
+                <td>Tích phân suy rộng vô hạn</td>
+            </tr>
+
+            <!-- Lượng giác cơ bản & hạ bậc -->
+            <tr>
+                <td>$\sin^2 x$</td>
+                <td>$\dfrac{x}{2} - \dfrac{\sin 2x}{4} + C$ &nbsp;<i>(Hạ bậc: $\frac{1 - \cos 2x}{2}$)</i></td>
+                <td>Tính kỳ vọng biến góc pha</td>
+            </tr>
+            <tr>
+                <td>$\cos^2 x$</td>
+                <td>$\dfrac{x}{2} + \dfrac{\sin 2x}{4} + C$ &nbsp;<i>(Hạ bậc: $\frac{1 + \cos 2x}{2}$)</i></td>
+                <td>Tính phương sai biến điều hòa</td>
+            </tr>
+            <tr>
+                <td>$\tan x = \dfrac{\sin x}{\cos x}$</td>
+                <td>$-\ln|\cos x| + C$</td>
+                <td>Đổi biến vi phân $d(\cos x)$</td>
+            </tr>
+            <tr>
+                <td>$\cot x = \dfrac{\cos x}{\sin x}$</td>
+                <td>$\ln|\sin x| + C$</td>
+                <td>Đổi biến vi phân $d(\sin x)$</td>
+            </tr>
+            <tr>
+                <td>$\dfrac{1}{\cos^2 x} = 1 + \tan^2 x$</td>
+                <td>$\tan x + C$</td>
+                <td>Đổi biến $x = a\tan t$</td>
+            </tr>
+            <tr>
+                <td>$\dfrac{1}{\sin^2 x} = 1 + \cot^2 x$</td>
+                <td>$-\cot x + C$</td>
+                <td>Tích phân lượng giác vi phân</td>
+            </tr>
+
+            <!-- Hàm mũ & Đa thức -->
+            <tr>
+                <td>$x^n$ ($n \ne -1$)</td>
+                <td>$\dfrac{x^{n+1}}{n+1} + C$</td>
+                <td>Đề 1, 3: $\displaystyle\int_0^2 ax^3dx, \int_0^2 ax^4dx$</td>
+            </tr>
+            <tr>
+                <td>$e^{\lambda x}$</td>
+                <td>$\dfrac{1}{\lambda} e^{\lambda x} + C$</td>
+                <td>Phân phối mũ $f(x) = \lambda e^{-\lambda x}$</td>
+            </tr>
+            <tr>
+                <td>$x e^{\lambda x}$ <i>(Từng phần)</i></td>
+                <td>$\dfrac{e^{\lambda x}}{\lambda}\left(x - \dfrac{1}{\lambda}\right) + C$</td>
+                <td>Tính kỳ vọng phân phối mũ: $E(X) = 1/\lambda$</td>
+            </tr>
+            <tr>
+                <td>$x^2 e^{\lambda x}$ <i>(Từng phần)</i></td>
+                <td>$\dfrac{e^{\lambda x}}{\lambda}\left(x^2 - \dfrac{2x}{\lambda} + \dfrac{2}{\lambda^2}\right) + C$</td>
+                <td>Tính mô-men cấp 2: $E(X^2) = 2/\lambda^2$</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="box-rule">
+        <b>💡 BẢNG QUY TẮC ĐỔI BIẾN LƯỢNG GIÁC TRONG TÍCH PHÂN XÁC SUẤT:</b>
+        <br>&bull; Biểu thức có $\sqrt{a^2 - x^2} \longrightarrow$ Đặt $x = a\sin t$ với $t \in [-\pi/2; \pi/2] \Rightarrow dx = a\cos t dt$ và $\sqrt{a^2 - x^2} = a\cos t$.
+        <br>&bull; Biểu thức có $a^2 + x^2 \longrightarrow$ Đặt $x = a\tan t$ với $t \in (-\pi/2; \pi/2] \Rightarrow dx = \dfrac{a}{\cos^2 t}dt = a(1+\tan^2 t)dt$.
+        <br>&bull; Biểu thức có $\sqrt{x^2 - a^2} \longrightarrow$ Đặt $x = \dfrac{a}{\cos t}$ với $t \in [0; \pi] \setminus \{\pi/2\}$.
+    </div>
+
+    <!-- TÍCH PHÂN SUY RỘNG ĐẶC BIỆT -->
+    <div class="box-tip">
+        <b>🌟 CÁC TÍCH PHÂN KINH ĐIỂN CẦN NHỚ TRONG PHÂN PHỐI CHUẨN & PHÂN PHỐI MŨ:</b>
+        <br>&bull; <b>Tích phân Gauss - Poisson (Chuẩn hóa phân phối chuẩn):</b>
+        $$\int_{-\infty}^{+\infty} e^{-x^2}dx = \sqrt{\pi} \quad \Longleftrightarrow \quad \frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^{+\infty} e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx = 1$$
+        &bull; <b>Tích phân hàm Gamma:</b> $\Gamma(\alpha) = \displaystyle\int_0^{+\infty} x^{\alpha - 1} e^{-x}dx$. Với số nguyên dương $n$: $\Gamma(n) = (n - 1)!$. Đặc biệt: $\Gamma(1/2) = \sqrt{\pi}$.
+    </div>
+
+    <!-- PHẦN 4: MẸO BẤM MÁY CASIO KIỂM TRA ĐÁP SỐ -->
+    <div class="page-break"></div>
+    <div class="section-title">
+        <span>IV. MẸO BẤM MÁY CASIO (FX-580VN X / FX-880BTG) DÒ ĐÁP SỐ SIÊU TỐC</span>
+        <span class="badge-step">CASIO TRICKS</span>
+    </div>
+
+    <div class="grid-2">
+        <div class="card">
+            <div class="card-header">
+                <span>1. TÍNH TỔ HỢP, CHỈNH HỢP & HOÁN VỊ</span>
+                <span class="badge-step">CƠ BẢN</span>
+            </div>
+            <div class="card-body">
+                &bull; <b>Tổ hợp $C_n^k$:</b> Bấm <kbd>n</kbd> <kbd>SHIFT</kbd> <kbd>÷</kbd> (nCr) <kbd>k</kbd> <kbd>=</kbd>.
+                <br><i>Ví dụ:</i> $C_{10}^2 \rightarrow$ <kbd>10</kbd> <kbd>SHIFT</kbd> <kbd>÷</kbd> <kbd>2</kbd> <kbd>=</kbd> $\rightarrow 45$.
+                <br>&bull; <b>Chỉnh hợp $A_n^k$:</b> Bấm <kbd>n</kbd> <kbd>SHIFT</kbd> <kbd>×</kbd> (nPr) <kbd>k</kbd> <kbd>=</kbd>.
+                <br><i>Ví dụ:</i> $A_6^4 \rightarrow$ <kbd>6</kbd> <kbd>SHIFT</kbd> <kbd>×</kbd> <kbd>4</kbd> <kbd>=</kbd> $\rightarrow 360$.
+                <br>&bull; <b>Giai thừa $n!$:</b> Bấm <kbd>n</kbd> <kbd>SHIFT</kbd> <kbd>x⁻¹</kbd> (x!).
+                <br><i>Ví dụ:</i> $4! \rightarrow$ <kbd>4</kbd> <kbd>SHIFT</kbd> <kbd>x⁻¹</kbd> <kbd>=</kbd> $\rightarrow 24$.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span>2. BẤM TÍCH PHÂN XÁC ĐỊNH & TÌM $a$</span>
+                <span class="badge-step">BIẾN LIÊN TỤC</span>
+            </div>
+            <div class="card-body">
+                &bull; <b>Tìm hằng số $a$:</b> Bấm tích phân với hệ số bằng 1 rồi lấy nghịch đảo:
+                <br><i>Ví dụ:</i> $\int_0^2 x^3 dx$: Bấm <kbd>∫dx</kbd> <kbd>x</kbd> <kbd>x³</kbd> cận <kbd>0</kbd> đến <kbd>2</kbd> <kbd>=</kbd> $\rightarrow 4$.
+                <br>Vì $a \times 4 = 1 \Rightarrow a = 1/4 = 0.25$.
+                <br>&bull; <b>Dò tích phân lượng giác:</b>
+                <br>Bắt buộc chuyển máy về đơn vị <b>Radian</b>: <kbd>SHIFT</kbd> <kbd>MENU</kbd> <kbd>2</kbd> <kbd>2</kbd> (Rad).
+                <br>Bấm $\int_{-2}^2 \frac{1}{\sqrt{4-x^2}}dx \rightarrow$ máy hiện $\pi \approx 3.14159$.
+                <br>$\Rightarrow k = 1/\pi$.
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-2">
+        <div class="card">
+            <div class="card-header">
+                <span>3. TÍNH KỲ VỌNG $E(X)$ & PHƯƠNG SAI $V(X)$</span>
+                <span class="badge-step">MENU THỐNG KÊ</span>
+            </div>
+            <div class="card-body">
+                &bull; Bật cột tần số (Frequency):
+                <br><kbd>SHIFT</kbd> <kbd>MENU</kbd> <kbd>↓</kbd> <kbd>3</kbd> (Thống kê) <kbd>1</kbd> (Bật).
+                <br>&bull; Vào chế độ 1 biến: <kbd>MENU</kbd> <kbd>6</kbd> (Statistics) <kbd>1</kbd> (1-Variable).
+                <br>&bull; Cột $x$: Nhập các giá trị $x_i$ ($0, 1, 2, 3$).
+                <br>&bull; Cột $Freq$: Nhập xác suất $p_i$ ($0.3, 0.2, 0.2, 0.3$).
+                <br>&bull; Bấm <kbd>AC</kbd> $\rightarrow$ <kbd>OPTN</kbd> <kbd>2</kbd> (1-Variable Calc):
+                <br>- $\bar{x} = 1.5 \Rightarrow E(X) = 1.5$.
+                <br>- $\sigma^2_x \Rightarrow V(X)$ (Phương sai).
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span>4. GOM BẢNG TỔNG $X+Y$ & $XY$ NHANH</span>
+                <span class="badge-step">BẢNG TABLE</span>
+            </div>
+            <div class="card-body">
+                &bull; Khi cần cộng nhiều số thập phân dài:
+                <br>Dùng biến nhớ gán:
+                <br>$0.075 \rightarrow$ <kbd>STO</kbd> <kbd>A</kbd>; $0.05 \rightarrow$ <kbd>STO</kbd> <kbd>B</kbd>...
+                <br>&bull; <b>Kiểm tra tính độc lập:</b>
+                <br>Sau khi tính bảng phân phối $X+Y$ và $XY$:
+                <br>Bấm tổng cột $P$:
+                $$0.075 + 0.170 + 0.235 + 0.225 + 0.190 + 0.105$$
+                Máy phải ra đúng $1$. Nếu ra $0.99$ hoặc $1.01$ là đã sót hoặc cộng sai một trường hợp nào đó!
+            </div>
+        </div>
+    </div>
+
+    <!-- PHẦN 5: BẢNG CHECKLIST TRƯỚC KHI NỘP BÀI -->
+    <div class="section-title">
+        <span>V. BẢNG CHECKLIST 6 BƯỚC SOÁT LẠI BÀI THI TRƯỚC KHI NỘP</span>
+        <span class="badge-step">BẢO VỆ ĐIỂM 10</span>
+    </div>
+
+    <table class="step-table">
+        <thead>
+            <tr>
+                <th style="width: 8%;">STT</th>
+                <th style="width: 25%;">Hạng mục kiểm tra</th>
+                <th style="width: 52%;">Chi tiết cần đối chiếu trong bài làm</th>
+                <th style="width: 15%;">Điểm nguy cơ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align:center; font-weight:700;">1</td>
+                <td><b>Định nghĩa biến cố</b></td>
+                <td>Đã viết đủ các câu <i>"Gọi $A_i$ là biến cố..."</i>, <i>"Gọi $H_i$ là biến cố..."</i> chưa? Có bị sót biến cố nào tính thẳng xác suất không?</td>
+                <td style="text-align:center; color:#c53030; font-weight:700;">-0,5 đ/bài</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:700;">2</td>
+                <td><b>Tính độc lập / Hệ đầy đủ</b></td>
+                <td>Đã có câu khẳng định <i>"Các biến cố độc lập trong toàn thể"</i> hoặc <i>"$\{H_i\}$ tạo thành một hệ biến cố đầy đủ"</i> chưa?</td>
+                <td style="text-align:center; color:#c53030; font-weight:700;">-0,5 đ/bài</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:700;">3</td>
+                <td><b>Công thức giải tích</b></td>
+                <td>Đã ghi công thức chữ tổng quát ($P(A) = \sum P(H_i)P(A|H_i)$ hoặc Bayes) trước khi thay số chưa?</td>
+                <td style="text-align:center; color:#c53030; font-weight:700;">-0,5 đ/câu</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:700;">4</td>
+                <td><b>Khoảng giá trị xác suất</b></td>
+                <td>Mọi kết quả xác suất tính ra có nằm nghiêm ngặt trong đoạn $[0; 1]$ không? (Nếu tính ra $P > 1$ hoặc $P < 0$ chắc chắn sai!).</td>
+                <td style="text-align:center; color:#c53030; font-weight:700;">Mất sạch điểm</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:700;">5</td>
+                <td><b>Biến liên tục & Hàm phân bố</b></td>
+                <td>Đã có bước kiểm tra $a \ge 0$ chưa? Hàm phân bố $F(x)$ đã viết đủ cả 3 nhánh ($x \le a$, $a < x < b$, $x \ge b$) chưa?</td>
+                <td style="text-align:center; color:#c53030; font-weight:700;">-0,5 đ/câu</td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-weight:700;">6</td>
+                <td><b>Kết luận đáp số</b></td>
+                <td>Đã ghi phân số tối giản kèm giá trị thập phân làm tròn 4 chữ số và tỷ lệ $\%$ chưa?</td>
+                <td style="text-align:center; color:#c53030; font-weight:700;">-0,25 đ/câu</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
