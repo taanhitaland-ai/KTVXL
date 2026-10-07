@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KTVXL by ashv4ni</title>
-  <link rel="stylesheet" href="styles.css?v=43ce7446ee46">
+  <link rel="stylesheet" href="styles.css?v=c4ecb2ba71db">
   <link rel="stylesheet" href="chapter_diagrams.css?v=b00efd3cfd30">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23FFE600' stroke='%23000' stroke-width='8'/><text x='50%' y='60%' font-size='42' font-weight='900' text-anchor='middle' fill='%23000'>8051</text></svg>">
   
@@ -55,6 +55,9 @@
         <button class="nav-tab-btn" data-tab="tab-download" id="btn-tab-download">
           📥 Tải File PDF
         </button>
+        <button class="nav-tab-btn" data-tab="tab-schedule" id="btn-tab-schedule" style="background: #FEF08A; color: #000;">
+          📅 Lịch Thi & Pomodoro
+        </button>
       </nav>
 
       <div class="stats-bar">
@@ -69,6 +72,17 @@
       </div>
     </div>
   </header>
+
+  <!-- Global Exam Alert Ticker Bar -->
+  <div class="exam-alert-ticker" id="global-exam-ticker">
+    <div class="ticker-content">
+      <span class="ticker-badge">🔥 ĐẾM NGƯỢC THI:</span>
+      <span class="ticker-text" id="ticker-exam-info">Môn gần nhất: <strong>Kỹ thuật vi xử lý</strong> (13h T3 13/10/2026) — Còn: <span class="ticker-countdown" id="ticker-countdown-val">Đang tính toán...</span></span>
+      <button class="neo-btn neo-btn-sm neo-btn-yellow" id="ticker-btn-view" onclick="document.getElementById('btn-tab-schedule').click();">
+        📅 Lịch Thi & Bấm Giờ
+      </button>
+    </div>
+  </div>
 
   <!-- Main Container -->
   <main class="main-content">
@@ -1141,6 +1155,441 @@
 
     </section>
 
+    <!-- TAB 6: LỊCH THI, POMODORO & THỐNG KÊ THỜI GIAN HỌC (SCHEDULE & FOCUS) -->
+    <section id="tab-schedule" class="tab-pane">
+      <!-- Hero Banner -->
+      <div class="schedule-hero">
+        <div>
+          <span class="neo-badge badge-exam" style="background: #000; color: #FFE600; font-size: 0.85rem; margin-bottom: 8px;">
+            🎓 HỌC VIỆN KỸ THUẬT MẬT MÃ • HỌC KỲ I (2026)
+          </span>
+          <h1>LỊCH THI CÁC MÔN & ĐỒNG HỒ POMODORO ÔN TẬP</h1>
+          <p>
+            Đếm ngược thời gian thực từng giây đến ngày thi chính thức. Tích hợp đồng hồ bấm giờ Pomodoro tùy chỉnh thời gian và hệ thống theo dõi chi tiết số phút đã học của từng môn mỗi ngày!
+          </p>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a href="#pomodoro-main-box" class="neo-btn neo-btn-green" onclick="document.getElementById('pomodoro-main-box').scrollIntoView({behavior: 'smooth', block: 'center'});">
+            🍅 Bấm Giờ Pomodoro Ngay
+          </a>
+          <a href="#study-tracker-box" class="neo-btn neo-btn-white" onclick="document.getElementById('study-tracker-box').scrollIntoView({behavior: 'smooth', block: 'center'});">
+            📊 Xem Thời Gian Đã Học
+          </a>
+        </div>
+      </div>
+
+      <!-- Section Title -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+        <h2 style="font-size: 1.35rem; font-weight: 900; color: #000; display: flex; align-items: center; gap: 8px;">
+          <span>📅</span> LỊCH THI 5 MÔN CHÍNH THỨC & ĐẾM NGƯỢC THỜI GIAN THỰC
+        </h2>
+        <span style="font-size: 0.88rem; font-weight: 700; color: #4B5563;">
+          🕒 Tự động cập nhật 1 giây/lần theo đồng hồ thời gian thực
+        </span>
+      </div>
+
+      <!-- Exam Cards Grid (5 Môn) -->
+      <div class="exam-grid-container">
+
+        <!-- 1. Kỹ thuật vi xử lý -->
+        <div class="exam-schedule-card" id="exam-card-ktvxl" style="border-top: 6px solid #F59E0B;">
+          <div>
+            <div class="exam-card-top">
+              <div class="exam-card-identity">
+                <div class="exam-card-icon" style="background: #FEF08A;">⚡</div>
+                <div>
+                  <h3 class="exam-card-title">Kỹ Thuật Vi Xử Lý</h3>
+                  <div class="exam-card-sub">Khoa An Toàn Thông Tin & CNTT</div>
+                </div>
+              </div>
+              <span class="neo-badge badge-exam-urgent" id="exam-badge-ktvxl">🔥 KHẨN CẤP</span>
+            </div>
+
+            <div class="exam-time-box">
+              <div class="exam-time-row">
+                <span>🗓️</span> <span><strong>Thứ Ba, 13/10/2026</strong></span>
+              </div>
+              <div class="exam-time-row">
+                <span>⏰</span> <span>Ca thi: <strong>13h00, 14h00</strong> (60 phút / ca)</span>
+              </div>
+              <div class="exam-time-row">
+                <span>📝</span> <span>Hình thức: <strong>Trắc nghiệm 40 câu</strong> máy tính</span>
+              </div>
+              <div class="exam-notes-text">
+                💡 <strong>Trọng tâm:</strong> 8051 SFR, Timer Mode 1/2, UART SCON/SBUF, Chu kỳ lệnh & Bảng chân trị 74LS138.
+              </div>
+            </div>
+
+            <!-- Countdown Box -->
+            <div class="countdown-container" id="exam-cd-ktvxl">
+              <!-- Rendered by JS -->
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="exam-card-bar-track">
+              <div class="exam-card-bar-fill" id="exam-bar-ktvxl" style="background: #F59E0B;"></div>
+            </div>
+          </div>
+
+          <div class="exam-card-actions">
+            <button class="neo-btn neo-btn-yellow btn-jump-subject-practice" data-subject="ktvxl">
+              🎯 Ôn Tập KTVXL
+            </button>
+            <button class="neo-btn neo-btn-white btn-jump-subject-pomo" data-subject="ktvxl">
+              🍅 Bấm Giờ
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. Tư tưởng Hồ Chí Minh -->
+        <div class="exam-schedule-card" id="exam-card-tthcm" style="border-top: 6px solid #EF4444;">
+          <div>
+            <div class="exam-card-top">
+              <div class="exam-card-identity">
+                <div class="exam-card-icon" style="background: #FEE2E2;">📕</div>
+                <div>
+                  <h3 class="exam-card-title">Tư Tưởng Hồ Chí Minh</h3>
+                  <div class="exam-card-sub">Khoa Lý Luận Chính Trị</div>
+                </div>
+              </div>
+              <span class="neo-badge badge-exam-warning" id="exam-badge-tthcm">⚡ SẮP ĐẾN</span>
+            </div>
+
+            <div class="exam-time-box">
+              <div class="exam-time-row">
+                <span>🗓️</span> <span><strong>Thứ Hai, 19/10/2026</strong></span>
+              </div>
+              <div class="exam-time-row">
+                <span>⏰</span> <span>Ca thi: <strong>13h00, 15h00</strong></span>
+              </div>
+              <div class="exam-time-row">
+                <span>📝</span> <span>Hình thức: <strong>Trắc nghiệm chuẩn KMA</strong></span>
+              </div>
+              <div class="exam-notes-text">
+                💡 <strong>Trọng tâm:</strong> 6 chương giáo trình, các mốc sự kiện lịch sử Đảng, tác phẩm kinh điển của Bác.
+              </div>
+            </div>
+
+            <div class="countdown-container" id="exam-cd-tthcm">
+              <!-- Rendered by JS -->
+            </div>
+
+            <div class="exam-card-bar-track">
+              <div class="exam-card-bar-fill" id="exam-bar-tthcm" style="background: #EF4444;"></div>
+            </div>
+          </div>
+
+          <div class="exam-card-actions">
+            <button class="neo-btn neo-btn-yellow btn-jump-subject-practice" data-subject="tthcm">
+              🎯 Ôn Tập TTHCM
+            </button>
+            <button class="neo-btn neo-btn-white btn-jump-subject-pomo" data-subject="tthcm">
+              🍅 Bấm Giờ
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Vật lý đại cương 2 -->
+        <div class="exam-schedule-card" id="exam-card-vldc" style="border-top: 6px solid #3B82F6;">
+          <div>
+            <div class="exam-card-top">
+              <div class="exam-card-identity">
+                <div class="exam-card-icon" style="background: #DBEAFE;">⚛️</div>
+                <div>
+                  <h3 class="exam-card-title">Vật Lý Đại Cương 2</h3>
+                  <div class="exam-card-sub">Khoa Khoa Học Cơ Bản</div>
+                </div>
+              </div>
+              <span class="neo-badge badge-exam-info" id="exam-badge-vldc">⏳ ĐANG ĐẾM NGƯỢC</span>
+            </div>
+
+            <div class="exam-time-box">
+              <div class="exam-time-row">
+                <span>🗓️</span> <span><strong>Thứ Tư, 21/10/2026</strong></span>
+              </div>
+              <div class="exam-time-row">
+                <span>⏰</span> <span>Ca thi: <strong>7h00, 8h00, 9h00</strong> (Các ca)</span>
+              </div>
+              <div class="exam-time-row">
+                <span>📝</span> <span>Hình thức: <strong>Trắc nghiệm 40 câu / 60 phút</strong></span>
+              </div>
+              <div class="exam-notes-text">
+                💡 <strong>Trọng tâm:</strong> Giao thoa Young / bản mỏng, Nhiễu xạ cách tử, Quang điện ngoài, Compton, Giếng thế 1D, Malus.
+              </div>
+            </div>
+
+            <div class="countdown-container" id="exam-cd-vldc">
+              <!-- Rendered by JS -->
+            </div>
+
+            <div class="exam-card-bar-track">
+              <div class="exam-card-bar-fill" id="exam-bar-vldc" style="background: #3B82F6;"></div>
+            </div>
+          </div>
+
+          <div class="exam-card-actions">
+            <button class="neo-btn neo-btn-yellow btn-jump-subject-practice" data-subject="vldc">
+              🎯 Ôn Tập VLDC
+            </button>
+            <button class="neo-btn neo-btn-white btn-jump-subject-pomo" data-subject="vldc">
+              🍅 Bấm Giờ
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. Giáo dục thể chất 3 -->
+        <div class="exam-schedule-card" id="exam-card-gdtc" style="border-top: 6px solid #10B981;">
+          <div>
+            <div class="exam-card-top">
+              <div class="exam-card-identity">
+                <div class="exam-card-icon" style="background: #D1FAE5;">🏃</div>
+                <div>
+                  <h3 class="exam-card-title">Giáo Dục Thể Chất 3</h3>
+                  <div class="exam-card-sub">Bộ Môn Giáo Dục Thể Chất</div>
+                </div>
+              </div>
+              <span class="neo-badge badge-exam-info" id="exam-badge-gdtc">⏳ ĐANG ĐẾM NGƯỢC</span>
+            </div>
+
+            <div class="exam-time-box">
+              <div class="exam-time-row">
+                <span>🗓️</span> <span><strong>Thứ Năm, 22/10/2026</strong></span>
+              </div>
+              <div class="exam-time-row">
+                <span>⏰</span> <span>Ca thi: <strong>7h00 sáng</strong></span>
+              </div>
+              <div class="exam-time-row">
+                <span>📝</span> <span>Hình thức: <strong>Kiểm tra thể lực & kỹ thuật</strong></span>
+              </div>
+              <div class="exam-notes-text">
+                💡 <strong>Lưu ý:</strong> Mặc đúng trang phục thể thao quy định, mang theo thẻ sinh viên, khởi động kỹ 15 phút.
+              </div>
+            </div>
+
+            <div class="countdown-container" id="exam-cd-gdtc">
+              <!-- Rendered by JS -->
+            </div>
+
+            <div class="exam-card-bar-track">
+              <div class="exam-card-bar-fill" id="exam-bar-gdtc" style="background: #10B981;"></div>
+            </div>
+          </div>
+
+          <div class="exam-card-actions">
+            <button class="neo-btn neo-btn-green btn-jump-subject-pomo" data-subject="gdtc" style="width: 100%;">
+              🍅 Bấm Giờ Tập Luyện
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. Toán xác suất thống kê -->
+        <div class="exam-schedule-card" id="exam-card-xstk" style="border-top: 6px solid #059669;">
+          <div>
+            <div class="exam-card-top">
+              <div class="exam-card-identity">
+                <div class="exam-card-icon" style="background: #A7F3D0;">🎲</div>
+                <div>
+                  <h3 class="exam-card-title">Toán Xác Suất Thống Kê</h3>
+                  <div class="exam-card-sub">Khoa Khoa Học Cơ Bản</div>
+                </div>
+              </div>
+              <span class="neo-badge badge-exam-info" id="exam-badge-xstk">⏳ ĐANG ĐẾM NGƯỢC</span>
+            </div>
+
+            <div class="exam-time-box">
+              <div class="exam-time-row">
+                <span>🗓️</span> <span><strong>Thứ Sáu, 23/10/2026</strong></span>
+              </div>
+              <div class="exam-time-row">
+                <span>⏰</span> <span>Ca thi: <strong>13h00, 15h00</strong></span>
+              </div>
+              <div class="exam-time-row">
+                <span>📝</span> <span>Hình thức: <strong>Trắc nghiệm 40 câu / 60 phút</strong></span>
+              </div>
+              <div class="exam-notes-text">
+                💡 <strong>Trọng tâm:</strong> Bayes, Bernoulli, Chuẩn N(μ, σ²), Ước lượng khoảng tin cậy, Kiểm định u/t, Casio fx-580VNX.
+              </div>
+            </div>
+
+            <div class="countdown-container" id="exam-cd-xstk">
+              <!-- Rendered by JS -->
+            </div>
+
+            <div class="exam-card-bar-track">
+              <div class="exam-card-bar-fill" id="exam-bar-xstk" style="background: #059669;"></div>
+            </div>
+          </div>
+
+          <div class="exam-card-actions">
+            <button class="neo-btn neo-btn-yellow btn-jump-subject-practice" data-subject="xstk">
+              🎯 Ôn Tập XSTK
+            </button>
+            <button class="neo-btn neo-btn-white btn-jump-subject-pomo" data-subject="xstk">
+              🍅 Bấm Giờ
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SECTION B & C: POMODORO & STUDY TRACKER TWO-COLUMN LAYOUT -->
+      <div class="planner-two-col">
+
+        <!-- CỘT TRÁI: ĐỒNG HỒ BẤM GIỜ POMODORO (FOCUS TIMER) -->
+        <div class="pomodoro-card" id="pomodoro-main-box">
+          <div class="pomo-header">
+            <h2><span>🍅</span> ĐỒNG HỒ POMODORO TẬP TRUNG</h2>
+            <button id="btn-toggle-pomo-sound" class="neo-btn neo-btn-sm neo-btn-white active" title="Bật/Tắt chuông báo">
+              🔔 Chuông: Bật
+            </button>
+          </div>
+
+          <!-- Chế độ Focus / Break -->
+          <div class="pomo-modes">
+            <button class="pomo-mode-btn active pomo-preset-btn" data-minutes="25" data-mode="focus">
+              🍅 Tập Trung (25p)
+            </button>
+            <button class="pomo-mode-btn pomo-preset-btn" data-minutes="5" data-mode="shortBreak">
+              ☕ Nghỉ Ngắn (5p)
+            </button>
+            <button class="pomo-mode-btn pomo-preset-btn" data-minutes="15" data-mode="longBreak">
+              🏖️ Nghỉ Dài (15p)
+            </button>
+          </div>
+
+          <!-- Màn hình số to -->
+          <div class="pomo-display-box">
+            <div style="margin-bottom: 8px;">
+              <span class="neo-badge" id="pomodoro-mode-badge" style="background: #EF4444; color: #FFF; font-weight: 900; font-size: 0.82rem;">
+                🍅 TẬP TRUNG CAO ĐỘ
+              </span>
+            </div>
+            <div class="pomo-timer-digits" id="pomodoro-time-display">25:00</div>
+
+            <div class="pomo-progress-track">
+              <div class="pomo-progress-fill" id="pomodoro-progress-bar"></div>
+            </div>
+
+            <div class="pomo-status-meta">
+              <span id="pomodoro-current-subject-label">Đang học môn: <strong>⚡ Kỹ thuật vi xử lý</strong></span>
+              <span>Phiên hôm nay: <strong id="pomodoro-session-count" style="color: #EF4444;">0 phiên</strong></span>
+            </div>
+          </div>
+
+          <!-- Presets thời gian nhanh -->
+          <div style="margin-bottom: 12px;">
+            <div style="font-weight: 800; font-size: 0.85rem; color: #4B5563; margin-bottom: 6px;">
+              ⚡ Chọn thời lượng học nhanh:
+            </div>
+            <div class="pomo-preset-group">
+              <button class="pomo-preset-btn" data-minutes="15" data-mode="focus">15 phút</button>
+              <button class="pomo-preset-btn active" data-minutes="25" data-mode="focus">25 phút (Chuẩn)</button>
+              <button class="pomo-preset-btn" data-minutes="30" data-mode="focus">30 phút</button>
+              <button class="pomo-preset-btn" data-minutes="45" data-mode="focus">45 phút (1 tiết)</button>
+              <button class="pomo-preset-btn" data-minutes="50" data-mode="focus">50 phút (Deep Work)</button>
+              <button class="pomo-preset-btn" data-minutes="60" data-mode="focus">60 phút (1 ca thi)</button>
+              <button class="pomo-preset-btn" data-minutes="90" data-mode="focus">90 phút</button>
+            </div>
+          </div>
+
+          <!-- Tùy chỉnh số phút (Custom Input) -->
+          <div class="pomo-custom-row">
+            <span style="font-weight: 800; font-size: 0.85rem; color: #374151;">⚙️ Hoặc tự đặt thời gian:</span>
+            <input type="number" id="input-custom-pomodoro" class="pomo-custom-input" min="1" max="300" value="25" />
+            <span style="font-weight: 800; font-size: 0.85rem;">phút</span>
+            <button id="btn-apply-custom-pomodoro" class="neo-btn neo-btn-sm neo-btn-yellow">
+              Áp Dụng
+            </button>
+          </div>
+
+          <!-- Chọn môn học đang tập trung -->
+          <div style="margin-bottom: 16px;">
+            <div style="font-weight: 800; font-size: 0.85rem; color: #4B5563; margin-bottom: 6px;">
+              📚 Chọn môn học để tính thời gian:
+            </div>
+            <div class="pomo-subj-chips" id="pomodoro-subject-chips">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Bộ nút điều khiển chính -->
+          <div class="pomo-main-controls">
+            <button id="btn-pomodoro-start" class="neo-btn neo-btn-green">
+              ▶️ BẮT ĐẦU
+            </button>
+            <button id="btn-pomodoro-reset" class="neo-btn neo-btn-white">
+              🔄 ĐẶT LẠI
+            </button>
+            <button id="btn-pomodoro-skip" class="neo-btn neo-btn-yellow" title="Hoàn thành sớm và tích lũy thời gian">
+              ⏭️ HOÀN THÀNH
+            </button>
+          </div>
+        </div>
+
+        <!-- CỘT PHẢI: BẢNG THỐNG KÊ THỜI GIAN ĐÃ HỌC / MÔN / NGÀY -->
+        <div class="tracker-card" id="study-tracker-box">
+          <div class="pomo-header">
+            <h2><span>📊</span> THỜI GIAN ĐÃ HỌC / MÔN / NGÀY</h2>
+            <button id="btn-reset-all-study-stats" class="neo-btn neo-btn-sm neo-btn-white" title="Làm mới dữ liệu thống kê">
+              🔄 Đặt Lại
+            </button>
+          </div>
+
+          <!-- Thẻ tổng quan Metric -->
+          <div class="tracker-metrics-grid">
+            <div class="metric-pill-card" style="background: #F0FDF4; border-color: #16A34A;">
+              <div class="metric-pill-label">⏱️ Hôm Nay Đã Học</div>
+              <div class="metric-pill-value" id="stat-today-total-time" style="color: #166534;">0 phút</div>
+            </div>
+
+            <div class="metric-pill-card" style="background: #FEF2F2; border-color: #EF4444;">
+              <div class="metric-pill-label">🍅 Phiên Pomodoro</div>
+              <div class="metric-pill-value" id="stat-today-sessions" style="color: #DC2626;">0 phiên</div>
+            </div>
+
+            <div class="metric-pill-card" style="background: #EFF6FF; border-color: #3B82F6;">
+              <div class="metric-pill-label">🏆 Học Nhiều Nhất</div>
+              <div class="metric-pill-value" id="stat-today-top-subject" style="font-size: 0.95rem; color: #1E40AF;">Chưa có</div>
+            </div>
+          </div>
+
+          <!-- Danh sách phân bổ từng môn hôm nay -->
+          <div style="font-weight: 800; font-size: 0.9rem; color: #1F2937; margin-bottom: 8px;">
+            📈 Phân bổ thời gian học tập từng môn hôm nay:
+          </div>
+          <div class="study-breakdown-list" id="study-subject-breakdown-list">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Bảng lịch sử 7 ngày qua -->
+          <div class="study-history-section">
+            <h3>
+              <span>🗓️ Nhật Ký Học Tập 7 Ngày Qua</span>
+              <span style="font-size: 0.75rem; font-weight: 700; color: #6B7280;">Lưu tự động trong máy</span>
+            </h3>
+            <div class="study-table-wrap">
+              <table class="study-table">
+                <thead>
+                  <tr>
+                    <th>Ngày</th>
+                    <th>Tổng Giờ</th>
+                    <th>Chi Tiết Môn Học</th>
+                    <th>Thao Tác</th>
+                  </tr>
+                </thead>
+                <tbody id="study-history-tbody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
   <!-- Chapter knowledge diagram -->
@@ -1279,6 +1728,7 @@
   <script src="diagram_knowledge.js?v=543309e08f0a"></script>
   <script src="diagram_geometry.js?v=739672278b1f"></script>
   <script src="chapter_diagrams.js?v=5eabb7ab0c73"></script>
-  <script src="app.js?v=90bdc40b4a24"></script>
+  <script src="app.js?v=f1deb50d7347"></script>
+  <script src="schedule_pomodoro.js?v=60336ca21fe6"></script>
 </body>
 </html>
