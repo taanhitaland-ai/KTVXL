@@ -168,14 +168,14 @@
     <section id="tab-exam" class="tab-pane">
       <!-- Setup Screen -->
       <div id="exam-setup-view" class="exam-setup-box">
-        <span class="neo-badge badge-exam" style="font-size: 0.9rem; margin-bottom: 16px;">⏱️ CHUẨN MA TRẬN ĐỀ THI KMA</span>
-        <h2>PHÒNG THI THỬ TRẮC NGHIỆM KỸ THUẬT VI XỬ LÝ</h2>
-        <p style="font-size: 1rem; color: #444; max-width: 600px; margin: 0 auto;">
+        <span class="neo-badge badge-exam" id="exam-setup-badge" style="font-size: 0.9rem; margin-bottom: 16px;">⏱️ CHUẨN MA TRẬN ĐỀ THI KMA</span>
+        <h2 id="exam-setup-title">PHÒNG THI THỬ TRẮC NGHIỆM KỸ THUẬT VI XỬ LÝ</h2>
+        <p id="exam-setup-desc" style="font-size: 1rem; color: #444; max-width: 600px; margin: 0 auto;">
           Đề thi gồm đúng <strong>40 câu hỏi</strong> (35 câu trắc nghiệm + 5 câu điền khuyết), thời gian làm bài <strong>60 phút</strong>.
           Bám sát 100% chuẩn đầu ra CLO1, CLO2, CLO3 của Học viện Kỹ thuật Mật mã.
         </p>
 
-        <div class="exam-select-grid">
+        <div class="exam-select-grid exam-grid-choices" id="exam-select-grid">
           <div class="exam-card-choice selected" data-exam-code="1">
             <div class="neo-badge badge-exam" style="margin-bottom: 8px;">ĐỀ 001</div>
             <h3 style="font-weight: 800; font-size: 1.1rem;">Đề Thi Chính Thức 001</h3>
@@ -209,16 +209,19 @@
         </div>
 
         <button id="btn-start-exam" class="neo-btn neo-btn-green" style="font-size: 1.1rem; padding: 14px 32px;">
-          🚀 BẮT ĐẦU LÀM BÀI THI (60:00)
+          🚀 BẮT ĐẦU LÀM BÀI: <strong>ĐỀ 001</strong> (60:00)
         </button>
       </div>
 
       <!-- In-Exam View -->
       <div id="exam-active-view" style="display: none;">
         <div class="exam-top-bar">
-          <div>
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <button id="btn-exit-exam" class="neo-btn" style="padding: 6px 12px; font-size: 0.82rem; background: #FFF; color: #000; margin-right: 6px;" title="Thoát bài thi để chọn lại đề">
+              ↩️ Chọn đề khác
+            </button>
             <span class="neo-badge badge-exam" id="exam-current-name">ĐỀ THI 001</span>
-            <span style="margin-left: 12px; font-weight: 800;">Tiến độ: <span id="exam-progress-text">0/40</span> câu</span>
+            <span style="margin-left: 6px; font-weight: 800;">Tiến độ: <span id="exam-progress-text">0/40</span> câu</span>
           </div>
           <div class="exam-timer" id="exam-timer-display">60:00</div>
           <button id="btn-submit-exam" class="neo-btn neo-btn-red">
@@ -233,7 +236,7 @@
           <!-- Question Palette Matrix -->
           <div class="details-panel-container">
             <div class="neo-box" style="padding: 18px;">
-              <h4 style="font-weight: 900; margin-bottom: 12px; text-transform: uppercase;">BẢNG CÂU HỎI (1 - 40)</h4>
+              <h4 id="exam-palette-title" style="font-weight: 900; margin-bottom: 12px; text-transform: uppercase;">BẢNG CÂU HỎI (1 - 40)</h4>
               <div class="palette-grid" id="exam-palette-grid">
                 <!-- 40 buttons -->
               </div>

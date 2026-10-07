@@ -409,141 +409,172 @@
     }
   }
 
+  function updateStartExamButton() {
+    const btnStart = document.getElementById('btn-start-exam');
+    if (!btnStart) return;
+    const timeMins = (currentSubject === 'xstk' ? 60 : (currentSubject === 'vldc' ? 45 : (currentSubject === 'tthcm' ? 40 : 60)));
+    const activeCard = document.querySelector('.exam-card-choice.selected');
+    const badgeText = activeCard?.querySelector('.exam-code-badge, .neo-badge')?.textContent?.trim() || '';
+    const titleText = activeCard?.querySelector('.exam-title-choice, h3')?.textContent?.trim() || currentExamCode;
+    const displayName = badgeText ? `${badgeText} - ${titleText}` : titleText;
+    btnStart.innerHTML = `🚀 BẮT ĐẦU: <strong>${escapeHtml(displayName)}</strong> (${timeMins}:00)`;
+  }
+
   function updateExamSetupUI() {
-    const examGrid = document.querySelector('.exam-grid-choices');
+    const examGrid = document.getElementById('exam-select-grid') || document.querySelector('.exam-select-grid') || document.querySelector('.exam-grid-choices');
     if (!examGrid) return;
 
+    const setupTitle = document.getElementById('exam-setup-title') || document.querySelector('#exam-setup-view h2');
+    const setupDesc = document.getElementById('exam-setup-desc') || document.querySelector('#exam-setup-view p');
+    const setupBadge = document.getElementById('exam-setup-badge') || document.querySelector('#exam-setup-view .badge-exam');
+
     if (currentSubject === 'xstk') {
+      if (setupTitle) setupTitle.textContent = 'PHÒNG THI THỬ TRẮC NGHIỆM XÁC SUẤT VÀ THỐNG KÊ';
+      if (setupDesc) setupDesc.innerHTML = 'Đề thi gồm đúng <strong>40 câu hỏi</strong> phủ khắp 8 chương giáo trình KMA kèm đề kiểm tra giữa kỳ. Thời gian làm bài <strong>60 phút</strong>.';
+      if (setupBadge) setupBadge.textContent = '⏱️ CHUẨN MA TRẬN ĐỀ THI KMA • 60 PHÚT';
+      const validXstk = ['RANDOM', 'KMA_EXAM_01', 'KMA_EXAM_02', 'XSTK_PROB', 'XSTK_STAT'];
+      if (!validXstk.includes(currentExamCode)) currentExamCode = 'RANDOM';
+
       examGrid.innerHTML = `
-        <div class="exam-card-choice selected neo-box" data-exam-code="RANDOM">
+        <div class="exam-card-choice ${currentExamCode === 'RANDOM' ? 'selected' : ''}" data-exam-code="RANDOM">
           <div class="exam-code-badge" style="background: #059669; color: #FFF;">CHUẨN MA TRẬN</div>
           <h3 class="exam-title-choice">Đề Thi Tổng Hợp 40 Câu (XSTK)</h3>
           <p class="exam-desc-choice">Trộn chuẩn 40 câu ngẫu nhiên phủ khắp 8 chương giáo trình Xác suất và Thống kê học viện KMA.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="KMA_EXAM_01">
+        <div class="exam-card-choice ${currentExamCode === 'KMA_EXAM_01' ? 'selected' : ''}" data-exam-code="KMA_EXAM_01">
           <div class="exam-code-badge" style="background: #2563EB; color: #FFF;">ĐỀ GIỮA KỲ 01</div>
           <h3 class="exam-title-choice">Đề Kiểm Tra Giữa Kỳ 01 (KMA)</h3>
           <p class="exam-desc-choice">Đề thi giữa kỳ chính thức số 01 kèm bài tập bổ trợ tổ hợp, Bayes, Poisson và phân phối chuẩn.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="KMA_EXAM_02">
+        <div class="exam-card-choice ${currentExamCode === 'KMA_EXAM_02' ? 'selected' : ''}" data-exam-code="KMA_EXAM_02">
           <div class="exam-code-badge" style="background: #E11D48; color: #FFF;">ĐỀ GIỮA KỲ 02</div>
           <h3 class="exam-title-choice">Đề Kiểm Tra Giữa Kỳ 02 (KMA)</h3>
           <p class="exam-desc-choice">Bộ đề thi trắc nghiệm & tự luận giữa kỳ số 02 kèm bảng tra Laplace và Student.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="XSTK_PROB">
+        <div class="exam-card-choice ${currentExamCode === 'XSTK_PROB' ? 'selected' : ''}" data-exam-code="XSTK_PROB">
           <div class="exam-code-badge" style="background: #F59E0B; color: #000;">CHUYÊN ĐỀ XÁC SUẤT</div>
           <h3 class="exam-title-choice">Chuyên Đề Xác Suất (Chương 1 - 5)</h3>
           <p class="exam-desc-choice">40 câu trắc nghiệm chuyên sâu về biến cố, Bayes, biến ngẫu nhiên 1 chiều rời rạc, liên tục và 2 chiều.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="XSTK_STAT">
+        <div class="exam-card-choice ${currentExamCode === 'XSTK_STAT' ? 'selected' : ''}" data-exam-code="XSTK_STAT">
           <div class="exam-code-badge" style="background: #8B5CF6; color: #FFF;">CHUYÊN ĐỀ THỐNG KÊ</div>
           <h3 class="exam-title-choice">Chuyên Đề Thống Kê (Chương 6 - 8)</h3>
           <p class="exam-desc-choice">40 câu lý thuyết mẫu, phương sai hiệu chỉnh, khoảng tin cậy kỳ vọng/tỷ lệ và kiểm định giả thuyết.</p>
         </div>
       `;
-      currentExamCode = 'RANDOM';
     } else if (currentSubject === 'vldc') {
+      if (setupTitle) setupTitle.textContent = 'PHÒNG THI THỬ TRẮC NGHIỆM VẬT LÝ ĐẠI CƯƠNG 2';
+      if (setupDesc) setupDesc.innerHTML = 'Đề thi gồm <strong>30 - 40 câu hỏi</strong> chuẩn từ tài liệu Notion và ngân hàng bài tập KMA. Thời gian làm bài <strong>45 phút</strong>.';
+      if (setupBadge) setupBadge.textContent = '⏱️ CHUẨN MA TRẬN ĐỀ THI KMA • 45 PHÚT';
+      const validVldc = ['RANDOM', 'NOTION_DE_CUOI', 'NOTION_TEST_100', 'VLDC_OPTICS', 'VLDC_QUANTUM'];
+      if (!validVldc.includes(currentExamCode)) currentExamCode = 'RANDOM';
+
       examGrid.innerHTML = `
-        <div class="exam-card-choice selected neo-box" data-exam-code="RANDOM">
+        <div class="exam-card-choice ${currentExamCode === 'RANDOM' ? 'selected' : ''}" data-exam-code="RANDOM">
           <div class="exam-code-badge" style="background: #2563EB; color: #FFF;">CHUẨN MA TRẬN</div>
           <h3 class="exam-title-choice">Đề Thi Tổng Hợp 40 Câu</h3>
           <p class="exam-desc-choice">Trộn chuẩn 40 câu từ toàn bộ 6 chương VLDC (Dao động điện từ, Quang sóng, Quang lượng tử, Cơ học LT, Nguyên tử, Hạt nhân).</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="NOTION_DE_CUOI">
+        <div class="exam-card-choice ${currentExamCode === 'NOTION_DE_CUOI' ? 'selected' : ''}" data-exam-code="NOTION_DE_CUOI">
           <div class="exam-code-badge" style="background: #E11D48; color: #FFF;">ĐỀ TEST CUỐI</div>
           <h3 class="exam-title-choice">Đề Test Cuối (Notion - 38 Câu Gốc)</h3>
           <p class="exam-desc-choice">Bộ đề chính thức từ tài liệu Notion Đề Thi với đầy đủ công thức, bài toán tính toán và hướng dẫn Casio.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="NOTION_TEST_100">
+        <div class="exam-card-choice ${currentExamCode === 'NOTION_TEST_100' ? 'selected' : ''}" data-exam-code="NOTION_TEST_100">
           <div class="exam-code-badge" style="background: #F59E0B; color: #000;">TEST 100 CÂU</div>
           <h3 class="exam-title-choice">Đề Test 100 Câu (Notion Google Docs)</h3>
           <p class="exam-desc-choice">Bộ câu hỏi trích lục từ Google Docs Đề Test 100 câu đính kèm trên trang Notion.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="VLDC_OPTICS">
+        <div class="exam-card-choice ${currentExamCode === 'VLDC_OPTICS' ? 'selected' : ''}" data-exam-code="VLDC_OPTICS">
           <div class="exam-code-badge" style="background: #10B981; color: #FFF;">QUANG HỌC SÓNG</div>
           <h3 class="exam-title-choice">Chuyên Đề Quang Sóng (Chương 1 & 2)</h3>
           <p class="exam-desc-choice">30 câu trắc nghiệm chuyên sâu về Sóng điện từ, Giao thoa bản mỏng/Young, Nêm không khí, Vân tròn Newton và Nhiễu xạ.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="VLDC_QUANTUM">
+        <div class="exam-card-choice ${currentExamCode === 'VLDC_QUANTUM' ? 'selected' : ''}" data-exam-code="VLDC_QUANTUM">
           <div class="exam-code-badge" style="background: #8B5CF6; color: #FFF;">LƯỢNG TỬ & HẠT NHÂN</div>
-          <h3 class="exam-title-choice">Chuyên Đề Lượng Tử (Chương 3, 4, 5, 6)</h3>
+          <h3 class="exam-title-choice">Chuyên Đề Lượng Tử (Chương 3 - 6)</h3>
           <p class="exam-desc-choice">30 câu trắc nghiệm & bài tập Compton, Quang điện, Sóng De Broglie, Phương trình Schrödinger, Giếng thế và Hạt nhân.</p>
         </div>
       `;
-      currentExamCode = 'RANDOM';
     } else if (currentSubject === 'tthcm') {
+      if (setupTitle) setupTitle.textContent = 'PHÒNG THI THỬ TRẮC NGHIỆM TƯ TƯỞNG HỒ CHÍ MINH';
+      if (setupDesc) setupDesc.innerHTML = 'Ngân hàng <strong>885 câu hỏi</strong> trích xuất từ đề thi chính thức các khóa KMA. Thời gian làm bài <strong>40 phút</strong> cho <strong>40 câu</strong>.';
+      if (setupBadge) setupBadge.textContent = '⏱️ CHUẨN MA TRẬN ĐỀ THI KMA • 40 PHÚT';
+      const validTthcm = ['RANDOM', 'TTHCM_FULL_A', 'TTHCM_DE_132', 'TTHCM_DE_651', 'TTHCM_DE_CUONG'];
+      if (!validTthcm.includes(currentExamCode)) currentExamCode = 'RANDOM';
+
       examGrid.innerHTML = `
-        <div class="exam-card-choice selected neo-box" data-exam-code="RANDOM">
-          <div class="exam-code-badge">TRỘN ĐỀ</div>
+        <div class="exam-card-choice ${currentExamCode === 'RANDOM' ? 'selected' : ''}" data-exam-code="RANDOM">
+          <div class="exam-code-badge" style="background: #000; color: #FFE600;">TRỘN ĐỀ</div>
           <h3 class="exam-title-choice">Đề Thi Ngẫu Nhiên 40 Câu</h3>
           <p class="exam-desc-choice">Trộn chuẩn từ ngân hàng 885 câu, phân bổ đều 6 chương giáo trình TTHCM.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="TTHCM_FULL_A">
-          <div class="exam-code-badge">ĐỀ GỐC</div>
-          <h3 class="exam-title-choice">Bộ Đề Cuối Kỳ (Full A)</h3>
-          <p class="exam-desc-choice">40 câu trích xuất từ đề thi chuẩn cuối kỳ học viện KMA.</p>
+        <div class="exam-card-choice ${currentExamCode === 'TTHCM_FULL_A' ? 'selected' : ''}" data-exam-code="TTHCM_FULL_A">
+          <div class="exam-code-badge" style="background: #EF4444; color: #FFF;">ĐỀ GỐC</div>
+          <h3 class="exam-title-choice">Bộ Đề Cuối Kỳ (Full A - 281 Câu)</h3>
+          <p class="exam-desc-choice">40 câu trích xuất ngẫu nhiên từ bộ đề thi chuẩn cuối kỳ học viện KMA.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="TTHCM_DE_132">
-          <div class="exam-code-badge">MÃ ĐỀ 132</div>
+        <div class="exam-card-choice ${currentExamCode === 'TTHCM_DE_132' ? 'selected' : ''}" data-exam-code="TTHCM_DE_132">
+          <div class="exam-code-badge" style="background: #2563EB; color: #FFF;">MÃ ĐỀ 132</div>
           <h3 class="exam-title-choice">Mã Đề Thi 132 Chính Thức</h3>
           <p class="exam-desc-choice">40 câu trắc nghiệm thực chiến theo mã đề 132.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="TTHCM_DE_651">
-          <div class="exam-code-badge">MÃ ĐỀ 651</div>
+        <div class="exam-card-choice ${currentExamCode === 'TTHCM_DE_651' ? 'selected' : ''}" data-exam-code="TTHCM_DE_651">
+          <div class="exam-code-badge" style="background: #10B981; color: #FFF;">MÃ ĐỀ 651</div>
           <h3 class="exam-title-choice">Đề Thi Mẫu 651 KTMM</h3>
           <p class="exam-desc-choice">Bộ đề thi trắc nghiệm mẫu 48 câu của Phòng KT&ĐBCLĐT Học viện.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="TTHCM_DE_CUONG">
-          <div class="exam-code-badge">ĐỀ CƯƠNG</div>
+        <div class="exam-card-choice ${currentExamCode === 'TTHCM_DE_CUONG' ? 'selected' : ''}" data-exam-code="TTHCM_DE_CUONG">
+          <div class="exam-code-badge" style="background: #8B5CF6; color: #FFF;">ĐỀ CƯƠNG</div>
           <h3 class="exam-title-choice">Đề Cương ATTT KMA</h3>
           <p class="exam-desc-choice">40 câu tuyển chọn từ đề cương ôn thi hệ An toàn thông tin.</p>
         </div>
       `;
-      currentExamCode = 'RANDOM';
     } else {
+      if (setupTitle) setupTitle.textContent = 'PHÒNG THI THỬ TRẮC NGHIỆM KỸ THUẬT VI XỬ LÝ';
+      if (setupDesc) setupDesc.innerHTML = 'Đề thi gồm đúng <strong>40 câu hỏi</strong> (35 câu trắc nghiệm + 5 câu điền khuyết), thời gian làm bài <strong>60 phút</strong>. Bám sát 100% chuẩn đầu ra CLO1, CLO2, CLO3 của Học viện Kỹ thuật Mật mã.';
+      if (setupBadge) setupBadge.textContent = '⏱️ CHUẨN MA TRẬN ĐỀ THI KMA • 60 PHÚT';
+      const validKtvxl = ['1', '2', '3', '4', '5', 'RANDOM'];
+      if (currentExamCode && currentExamCode.startsWith('DE_00')) {
+        currentExamCode = currentExamCode.replace('DE_00', '');
+      }
+      if (!validKtvxl.includes(currentExamCode)) currentExamCode = '1';
+
       examGrid.innerHTML = `
-        <div class="exam-card-choice selected neo-box" data-exam-code="1">
+        <div class="exam-card-choice ${currentExamCode === '1' ? 'selected' : ''}" data-exam-code="1">
           <div class="exam-code-badge">MÃ ĐỀ 001</div>
           <h3 class="exam-title-choice">Đề Kiểm Tra 001</h3>
           <p class="exam-desc-choice">Chuẩn 40 câu: 6 CLO1, 9 CLO2, 25 CLO3 (Có câu hỏi điền kết quả FIB).</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="2">
+        <div class="exam-card-choice ${currentExamCode === '2' ? 'selected' : ''}" data-exam-code="2">
           <div class="exam-code-badge">MÃ ĐỀ 002</div>
           <h3 class="exam-title-choice">Đề Kiểm Tra 002</h3>
           <p class="exam-desc-choice">Chuẩn 40 câu: 6 CLO1, 9 CLO2, 25 CLO3 bám sát ma trận đề.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="3">
+        <div class="exam-card-choice ${currentExamCode === '3' ? 'selected' : ''}" data-exam-code="3">
           <div class="exam-code-badge">MÃ ĐỀ 003</div>
           <h3 class="exam-title-choice">Đề Kiểm Tra 003</h3>
           <p class="exam-desc-choice">Chuẩn 40 câu: Trọng tâm lập trình Timer, UART và giải mã địa chỉ.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="4">
+        <div class="exam-card-choice ${currentExamCode === '4' ? 'selected' : ''}" data-exam-code="4">
           <div class="exam-code-badge">MÃ ĐỀ 004</div>
           <h3 class="exam-title-choice">Đề Kiểm Tra 004</h3>
           <p class="exam-desc-choice">Chuẩn 40 câu: Cấu trúc bộ nhớ, thanh ghi SFR và mạch ngoại vi.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="5">
+        <div class="exam-card-choice ${currentExamCode === '5' ? 'selected' : ''}" data-exam-code="5">
           <div class="exam-code-badge">MÃ ĐỀ 005</div>
           <h3 class="exam-title-choice">Đề Kiểm Tra 005</h3>
           <p class="exam-desc-choice">Chuẩn 40 câu: Chuyên đề tính toán Baud rate, Timer Mode 2, cờ ALU.</p>
         </div>
-        <div class="exam-card-choice neo-box" data-exam-code="RANDOM">
-          <div class="exam-code-badge">NGẪU NHIÊN</div>
+        <div class="exam-card-choice ${currentExamCode === 'RANDOM' ? 'selected' : ''}" data-exam-code="RANDOM">
+          <div class="exam-code-badge" style="background: #000; color: #FFE600;">NGẪU NHIÊN</div>
           <h3 class="exam-title-choice">Đề Thi Tổng Hợp (Random)</h3>
           <p class="exam-desc-choice">Hệ thống tự động bốc ngẫu nhiên 40 câu từ toàn bộ ngân hàng 984 câu.</p>
         </div>
       `;
-      currentExamCode = '1';
     }
 
-    const cards = examGrid.querySelectorAll('.exam-card-choice');
-    cards.forEach(c => {
-      c.addEventListener('click', () => {
-        cards.forEach(x => x.classList.remove('selected'));
-        c.classList.add('selected');
-        currentExamCode = c.getAttribute('data-exam-code');
-      });
-    });
+    updateStartExamButton();
   }
 
   function setupApp() {
@@ -551,6 +582,7 @@
     setupFilters();
     setupKnowledgeHub();
     setupExamSimulator();
+    updateExamSetupUI();
     setupImageLightbox();
     renderPracticeQuestions();
     updateStatsBar();
@@ -1429,9 +1461,34 @@
 
   // Exam Simulator Logic
   function setupExamSimulator() {
+    const examGrid = document.getElementById('exam-select-grid') || document.querySelector('.exam-select-grid') || document.querySelector('.exam-grid-choices');
+    if (examGrid) {
+      examGrid.addEventListener('click', (e) => {
+        const card = e.target.closest('.exam-card-choice');
+        if (!card) return;
+        examGrid.querySelectorAll('.exam-card-choice').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        currentExamCode = card.getAttribute('data-exam-code') || 'RANDOM';
+        updateStartExamButton();
+      });
+    }
+
     const btnStart = document.getElementById('btn-start-exam');
     if (btnStart) {
       btnStart.addEventListener('click', startExam);
+    }
+
+    const btnExit = document.getElementById('btn-exit-exam');
+    if (btnExit) {
+      btnExit.addEventListener('click', () => {
+        if (confirm('Bạn có chắc muốn thoát bài thi hiện tại để chọn đề khác không?')) {
+          clearInterval(examTimerInterval);
+          examActive = false;
+          document.getElementById('exam-active-view').style.display = 'none';
+          document.getElementById('exam-setup-view').style.display = 'block';
+          updateExamSetupUI();
+        }
+      });
     }
 
     const btnSubmit = document.getElementById('btn-submit-exam');
@@ -1453,6 +1510,7 @@
         document.getElementById('exam-result-modal').classList.remove('active');
         document.getElementById('exam-setup-view').style.display = 'block';
         document.getElementById('exam-active-view').style.display = 'none';
+        updateExamSetupUI();
       });
     }
 
@@ -1475,11 +1533,11 @@
         const shuffled = [...questions].sort(() => 0.5 - Math.random());
         examQuestions = shuffled.slice(0, Math.min(40, shuffled.length));
       } else if (currentExamCode === 'XSTK_PROB') {
-        const prob = questions.filter(q => q.chapter <= 5);
+        const prob = questions.filter(q => (q.chapter_id || q.chapter) <= 5);
         const shuffled = [...prob].sort(() => 0.5 - Math.random());
         examQuestions = shuffled.slice(0, Math.min(40, shuffled.length));
       } else if (currentExamCode === 'XSTK_STAT') {
-        const stat = questions.filter(q => q.chapter >= 6);
+        const stat = questions.filter(q => (q.chapter_id || q.chapter) >= 6);
         const shuffled = [...stat].sort(() => 0.5 - Math.random());
         examQuestions = shuffled.slice(0, Math.min(40, shuffled.length));
       } else {
@@ -1495,11 +1553,11 @@
         const match = questions.filter(q => q.source === 'NOTION_TEST_100');
         examQuestions = match.length > 0 ? [...match] : questions.slice(0, 35);
       } else if (currentExamCode === 'VLDC_OPTICS') {
-        const optics = questions.filter(q => q.chapter <= 2);
+        const optics = questions.filter(q => (q.chapter_id || q.chapter) <= 2);
         const shuffled = [...optics].sort(() => 0.5 - Math.random());
         examQuestions = shuffled.slice(0, Math.min(30, shuffled.length));
       } else if (currentExamCode === 'VLDC_QUANTUM') {
-        const quantum = questions.filter(q => q.chapter >= 3);
+        const quantum = questions.filter(q => (q.chapter_id || q.chapter) >= 3);
         const shuffled = [...quantum].sort(() => 0.5 - Math.random());
         examQuestions = shuffled.slice(0, Math.min(30, shuffled.length));
       } else {
@@ -1512,17 +1570,25 @@
         examQuestions = shuffled.slice(0, 40);
       } else {
         const matched = questions.filter(q => q.source === currentExamCode);
-        examQuestions = matched.length >= 40 ? matched.slice(0, 40) : questions.slice(0, 40);
+        const shuffled = [...matched].sort(() => 0.5 - Math.random());
+        examQuestions = shuffled.length >= 40 ? shuffled.slice(0, 40) : shuffled;
       }
     } else {
+      // KTVXL
       if (currentExamCode === 'RANDOM') {
         const shuffled = [...questions].sort(() => 0.5 - Math.random());
         examQuestions = shuffled.slice(0, 40);
       } else {
-        const deNum = parseInt(currentExamCode, 10);
-        examQuestions = questions.filter(q => q.de_num === deNum && q.exam_id && q.exam_id.startsWith('DE_'));
-        if (examQuestions.length === 0) {
-          examQuestions = questions.slice(0, 40);
+        const targetExamId = currentExamCode.startsWith('DE_')
+          ? currentExamCode
+          : `DE_${String(currentExamCode).padStart(3, '0')}`;
+        const matched = questions.filter(q => q.exam_id === targetExamId);
+        if (matched.length > 0) {
+          examQuestions = [...matched];
+        } else {
+          const deNum = parseInt(currentExamCode, 10);
+          const matchedNum = questions.filter(q => q.de_num === deNum);
+          examQuestions = matchedNum.length > 0 ? matchedNum.slice(0, 40) : questions.slice(0, 40);
         }
       }
     }
@@ -1532,10 +1598,20 @@
 
     const examTitleEl = document.getElementById('exam-current-name');
     if (examTitleEl) {
+      const activeCard = document.querySelector('.exam-card-choice.selected');
+      const cardTitle = activeCard ? activeCard.querySelector('.exam-title-choice, h3')?.textContent : null;
       const subjTag = currentSubject === 'xstk' ? 'XSTK' : (currentSubject === 'vldc' ? 'VLDC' : (currentSubject === 'tthcm' ? 'TTHCM' : 'KTVXL'));
-      examTitleEl.textContent = currentExamCode === 'RANDOM' ? 
-        `ĐỀ THI NGẪU NHIÊN (${subjTag})` : 
-        `BÀI THI: ${currentExamCode}`;
+      examTitleEl.textContent = cardTitle ? `${cardTitle} (${subjTag})` : (currentExamCode === 'RANDOM' ? `ĐỀ THI NGẪU NHIÊN (${subjTag})` : `BÀI THI: ${currentExamCode}`);
+    }
+
+    const examProgressEl = document.getElementById('exam-progress-text') || document.getElementById('exam-answered-stat');
+    if (examProgressEl) {
+      examProgressEl.textContent = `0/${examQuestions.length}`;
+    }
+
+    const paletteTitleEl = document.getElementById('exam-palette-title') || document.querySelector('.details-panel-container h4');
+    if (paletteTitleEl) {
+      paletteTitleEl.textContent = `BẢNG CÂU HỎI (1 - ${examQuestions.length})`;
     }
 
     renderExamQuestions();
@@ -1608,10 +1684,10 @@
   function updateExamProgress() {
     const total = examQuestions.length;
     const answered = Object.keys(examUserAnswers).length;
-    const statEl = document.getElementById('exam-answered-stat');
+    const statEl = document.getElementById('exam-progress-text') || document.getElementById('exam-answered-stat');
     const barEl = document.getElementById('exam-progress-bar');
 
-    if (statEl) statEl.textContent = `${answered} / ${total}`;
+    if (statEl) statEl.textContent = `${answered}/${total}`;
     if (barEl) barEl.style.width = `${Math.round((answered / total) * 100)}%`;
 
     for (const qId in examUserAnswers) {
