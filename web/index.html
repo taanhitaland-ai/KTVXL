@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KTVXL by ashv4ni</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=43ce7446ee46">
+  <link rel="stylesheet" href="chapter_diagrams.css?v=312b8615ecaf">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23FFE600' stroke='%23000' stroke-width='8'/><text x='50%' y='60%' font-size='42' font-weight='900' text-anchor='middle' fill='%23000'>8051</text></svg>">
   
   <!-- KaTeX Math Formula Rendering -->
-  <link rel="stylesheet" href="vendor/katex/katex.min.css">
-  <script defer src="vendor/katex/katex.min.js"></script>
-  <script defer src="vendor/katex/auto-render.min.js"></script>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css?v=505d5f829022">
+  <script defer src="vendor/katex/katex.min.js?v=dc84b296ec3e"></script>
+  <script defer src="vendor/katex/auto-render.min.js?v=9cb8dacfc086"></script>
 </head>
 <body>
 
@@ -1142,6 +1143,49 @@
 
   </main>
 
+  <!-- Chapter knowledge diagram -->
+  <dialog id="chapter-diagram-dialog" class="chapter-diagram-dialog" aria-labelledby="chapter-diagram-title" aria-describedby="chapter-diagram-help">
+    <div class="diagram-shell">
+      <header class="diagram-heading">
+        <div>
+          <span class="neo-badge diagram-heading-badge">⚡ SƠ ĐỒ KIẾN THỨC • VI XỬ LÝ</span>
+          <h2 id="chapter-diagram-title"></h2>
+        </div>
+        <button type="button" class="neo-btn neo-btn-white neo-btn-sm" data-diagram-action="close" autofocus>✕ Đóng</button>
+      </header>
+      <div class="diagram-toolbar">
+        <p id="chapter-diagram-help">Bấm vào một khối để xem chức năng và các đường kết nối.</p>
+        <div class="diagram-zoom-controls" role="group" aria-label="Điều chỉnh sơ đồ">
+          <button type="button" class="neo-btn neo-btn-white neo-btn-sm" data-diagram-action="out" aria-label="Thu nhỏ sơ đồ">−</button>
+          <output class="diagram-zoom-value" aria-label="Mức phóng đại">100%</output>
+          <button type="button" class="neo-btn neo-btn-white neo-btn-sm" data-diagram-action="in" aria-label="Phóng to sơ đồ">+</button>
+          <button type="button" class="neo-btn neo-btn-sm" data-diagram-action="fit">Toàn sơ đồ</button>
+          <button type="button" class="neo-btn neo-btn-white neo-btn-sm" data-diagram-action="overview">Bỏ chọn</button>
+        </div>
+      </div>
+      <div class="diagram-view-tabs" role="tablist" aria-label="Các sơ đồ chức năng trong chương"></div>
+      <div class="diagram-workspace">
+        <div class="diagram-map-panel">
+          <div class="diagram-map-caption">
+            <span class="diagram-map-count"></span>
+            <div class="diagram-wire-legend"><span class="legend-data">Dữ liệu</span><span class="legend-address">Địa chỉ</span><span class="legend-control">Điều khiển</span></div>
+          </div>
+          <div class="diagram-viewport" tabindex="0" role="region" aria-label="Sơ đồ chương; cuộn để xem các nhánh">
+            <div class="diagram-surface"></div>
+          </div>
+          <p class="diagram-scroll-hint">Cuộn hoặc vuốt để di chuyển • + / − để phóng to • Toàn sơ đồ để xem tổng thể</p>
+        </div>
+        <aside class="diagram-detail" aria-label="Chi tiết kiến thức đang chọn">
+          <div class="diagram-detail-heading" aria-live="polite" aria-atomic="true">
+            <p class="diagram-detail-context"></p>
+            <h3 class="diagram-detail-title"></h3>
+          </div>
+          <div class="diagram-detail-text"></div>
+        </aside>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Exam Result Modal -->
   <div class="modal-overlay" id="exam-result-modal">
     <div class="result-card neo-box">
@@ -1210,16 +1254,19 @@
   </div>
 
   <!-- Scripts -->
-  <script src="data.js"></script>
-  <script src="tthcm_data.js"></script>
-  <script src="tthcm_knowledge_data.js"></script>
-  <script src="vldc_data.js"></script>
-  <script src="vldc_knowledge_data.js"></script>
-  <script src="vldc_simulations.js"></script>
-  <script src="xstk_data.js"></script>
-  <script src="xstk_knowledge_data.js"></script>
-  <script src="xstk_simulations.js"></script>
-  <script src="exam_config.js"></script>
-  <script src="app.js"></script>
+  <script src="data.js?v=34ded3b280d3"></script>
+  <script src="tthcm_data.js?v=f69d4213c46a"></script>
+  <script src="tthcm_knowledge_data.js?v=cc49c9613640"></script>
+  <script src="vldc_data.js?v=bf1f4a8c60a1"></script>
+  <script src="vldc_knowledge_data.js?v=574e65188909"></script>
+  <script src="vldc_simulations.js?v=581cb4af261d"></script>
+  <script src="xstk_data.js?v=9c9d299bacd4"></script>
+  <script src="xstk_knowledge_data.js?v=45d4eebc67ae"></script>
+  <script src="xstk_simulations.js?v=caa7fe353931"></script>
+  <script src="exam_config.js?v=78582c1a981f"></script>
+  <script src="chapter_diagram_data.js?v=e88e18e56c1e"></script>
+  <script src="diagram_geometry.js?v=739672278b1f"></script>
+  <script src="chapter_diagrams.js?v=954615de3302"></script>
+  <script src="app.js?v=80d90c7da7da"></script>
 </body>
 </html>

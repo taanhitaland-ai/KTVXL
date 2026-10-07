@@ -169,7 +169,10 @@ def normalize_microprocessor_knowledge():
     def repair(value):
         if isinstance(value, str):
             if old in value:
-                return value.replace(old, new).replace('**Mẹo loại trừ lệnh Hợp ngữ SAI**', '**Mẹo kiểm tra lệnh Hợp ngữ**')
+                value = value.replace(old, new).replace('**Mẹo loại trừ lệnh Hợp ngữ SAI**', '**Mẹo kiểm tra lệnh Hợp ngữ**')
+            value = value.replace('vi điều khiển tự set lên 1 khi truyền xong Stop bit', 'Mode 0 đặt TI ở cuối bit dữ liệu thứ 8; Mode 1/2/3 đặt TI ở đầu bit Stop')
+            value = value.replace('tự set lên 1 khi nhận xong Stop bit', 'đặt khi nhận được dữ liệu hợp lệ theo chế độ đang dùng')
+            value = value.replace('Để tạo tốc độ Baud chuẩn, **Timer 1 luôn được cấu hình ở Chế độ 2 (8 bit auto-reload)**', 'Trong cấu hình thường dùng cho UART Mode 1/3, **Timer 1 được đặt ở Chế độ 2 (8 bit auto-reload)**')
             return value
         if isinstance(value, list):
             return [repair(item) for item in value]

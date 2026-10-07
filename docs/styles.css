@@ -1317,6 +1317,10 @@ code, pre, .mono {
 .q-title, .panel-text, .section-content, .option-btn { overflow-wrap: anywhere; min-width: 0; }
 .options-grid, .questions-stream, .chapter-card, .download-card { min-width: 0; }
 .neo-select { max-width: 100%; }
+@media (max-width: 960px) {
+  .subject-toggle-group { flex-wrap: wrap; width: 100%; max-width: 100%; }
+  .subject-toggle-btn { flex: 1 1 45%; white-space: normal; }
+}
 @media (max-width: 600px) {
   .app-header { position: static; padding: 12px 16px; }
   .logo-area { flex-wrap: wrap; gap: 8px; }

@@ -93,7 +93,7 @@ def full_audit():
         for reference in page.references:
             if not (ROOT / directory / reference).is_file():
                 issues.append(f'{directory}/index.html: missing asset {reference}')
-        for filename in ('app.js', 'vldc_simulations.js', 'xstk_simulations.js'):
+        for filename in ('app.js', 'chapter_diagrams.js', 'vldc_simulations.js', 'xstk_simulations.js'):
             script = (ROOT / directory / filename).read_text(encoding='utf-8')
             for reference in set(re.findall(r"getElementById\('([^']+)'\)", script)):
                 if reference not in page.ids:

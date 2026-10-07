@@ -241,6 +241,7 @@
 
   function switchSubject(subject) {
     if (examActive && !confirm('Bạn đang trong bài thi. Chuyển môn học sẽ hủy bài thi hiện tại. Tiếp tục?')) return;
+    if (window.KMA_CHAPTER_DIAGRAMS) window.KMA_CHAPTER_DIAGRAMS.close();
     resetExamView();
     currentStatus = 'ALL';
     searchKeyword = '';
@@ -1021,6 +1022,7 @@
     chapters.forEach(chap => {
       const card = document.createElement('div');
       card.className = 'chapter-card';
+      card.dataset.chapterId = String(chap.id);
 
       const header = document.createElement('div');
       header.className = `chapter-header ${typeof chap.id === 'number' ? 'chap' + chap.id : chap.id}`;
@@ -1145,6 +1147,23 @@
       }
 
       card.appendChild(header);
+      if (currentSubject === 'ktvxl' && chap.sections && window.KMA_CHAPTER_DIAGRAMS && window.KMA_DIAGRAM_DATA[chap.id]) {
+        const actions = document.createElement('div');
+        actions.className = 'chapter-diagram-actions';
+        const hint = document.createElement('span');
+        hint.textContent = 'Khám phá các khối và luồng hoạt động';
+        const diagramButton = document.createElement('button');
+        diagramButton.type = 'button';
+        diagramButton.className = 'neo-btn neo-btn-sm chapter-diagram-button';
+        diagramButton.textContent = '🧩 Xem đồ thị';
+        diagramButton.setAttribute('aria-label', 'Xem đồ thị: ' + chap.title);
+        diagramButton.setAttribute('aria-haspopup', 'dialog');
+        diagramButton.addEventListener('click', () => window.KMA_CHAPTER_DIAGRAMS.open(chap, {
+          trigger: diagramButton, formatText: formatMarkdownText, renderMath
+        }));
+        actions.append(hint, diagramButton);
+        card.appendChild(actions);
+      }
       card.appendChild(body);
       container.appendChild(card);
     });
@@ -1285,7 +1304,7 @@
       container.appendChild(casioCard);
     }
     container.querySelectorAll('.chapter-header').forEach(header => {
-      const body = header.nextElementSibling;
+      const body = header.closest('.chapter-card').querySelector('.chapter-body');
       if (!body) return;
       header.setAttribute('role', 'button');
       header.tabIndex = 0;
