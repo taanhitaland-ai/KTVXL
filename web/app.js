@@ -854,17 +854,19 @@
       showExpBtn.addEventListener('click', () => {
         openSideDetails(q);
         highlightActiveCard(card);
+        if (window.innerWidth <= 1100) {
+          document.getElementById('details-side-panel')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
       });
 
       actionRow.appendChild(showExpBtn);
       card.appendChild(actionRow);
     }
 
-    // Click card to open side drawer
+    // Click card to highlight active card without auto-opening explanation
     card.addEventListener('click', (e) => {
       if (isExamMode) return;
       if (!e.target.closest('button, input, img')) {
-        openSideDetails(q);
         highlightActiveCard(card);
       }
     });
@@ -912,7 +914,6 @@
       }
     });
 
-    openSideDetails(q);
     highlightActiveCard(card);
     if (currentStatus !== 'ALL') renderPracticeQuestions();
   }
@@ -947,7 +948,6 @@
     feedbackEl.className = `fib-feedback ${isCorrect ? 'correct' : 'wrong'}`;
     feedbackEl.textContent = isCorrect ? 'ĐÚNG ✅' : `SAI ❌ (Đ.Á: ${q.answer})`;
 
-    openSideDetails(q);
     highlightActiveCard(card);
     if (currentStatus !== 'ALL') renderPracticeQuestions();
   }
