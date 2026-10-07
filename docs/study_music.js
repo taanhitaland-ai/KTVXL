@@ -57,7 +57,7 @@
   function render() {
     const item = current();
     $('music-now').textContent = item?.title || 'Chọn một bài để bắt đầu';
-    if (!$('music-video-dock').hidden) $('music-video-title').textContent = 'YouTube · ' + (item?.title || '');
+    if ($('music-video-dock')) $('music-video-dock').hidden = true;
     $('music-source').hidden = !item;
     if (item) { $('music-source').href = item.url; $('music-source').textContent = (item.kind === 'youtube' ? 'Mở trên YouTube' : 'Mở tệp âm thanh') + ' ↗'; }
     $('music-play').disabled = !item;
@@ -72,9 +72,8 @@
     renderList(); updateProgress();
   }
   function showVideo(show) {
-    $('music-video-dock').hidden = !show;
-    document.body.classList.toggle('music-video-open', show);
-    if (show) $('music-video-title').textContent = 'YouTube · ' + (current()?.title || '');
+    if ($('music-video-dock')) $('music-video-dock').hidden = true;
+    document.body.classList.remove('music-video-open');
   }
   function pause(message) {
     revision++; pending = false; playing = false;
@@ -112,22 +111,22 @@
         reject(new Error('Trình phát YouTube chưa sẵn sàng. Nhấn Phát để thử lại.'));
       }, 15000);
       youtube = new YT.Player('music-youtube-player', {
-        width: '100%', height: '200', host: 'https://www.youtube-nocookie.com',
-        playerVars: { playsinline: 1, controls: 1, origin: location.origin },
+        width: '200', height: '200', host: 'https://www.youtube-nocookie.com',
+        playerVars: { playsinline: 1, controls: 0, origin: location.origin },
         events: {
           onReady: event => { clearTimeout(timer); event.target.setVolume(state.volume); resolve(event.target); },
           onStateChange: event => {
             if (current()?.kind !== 'youtube' || loadedId !== state.selectedId || event.target.getVideoData()?.video_id !== current().videoId) return;
-            if (event.data === YT.PlayerState.PLAYING) { playing = true; pending = false; status('Đang phát · ' + current().title); render(); }
+            if (event.data === YT.PlayerState.PLAYING) { playing = true; pending = false; status('Đang phát nền · ' + current().title); render(); }
             else if (event.data === YT.PlayerState.PAUSED) { playing = false; pending = false; render(); }
             else if (event.data === YT.PlayerState.ENDED) { playing = false; advance(true); }
           },
           onError: event => {
             if (current()?.kind !== 'youtube') return;
             const messages = { 2: 'Link video chưa hợp lệ.', 5: 'Trình duyệt chưa phát được video này.', 100: 'Video đã bị xóa hoặc chuyển sang riêng tư.', 101: 'YouTube không cho phép phát nhúng bài này.', 150: 'YouTube không cho phép phát nhúng bài này.', 153: 'YouTube chưa nhận diện được trang phát. Hãy mở trang trực tiếp hoặc dùng link âm thanh.' };
-            fail((messages[event.data] || 'Không phát được video YouTube này.') + ' Bạn có thể chọn bài khác hoặc mở nguồn nhạc.');
+            fail((messages[event.data] || 'Không phát được bài này.') + ' Bạn có thể chọn bài khác hoặc mở nguồn nhạc.');
           },
-          onAutoplayBlocked: () => { pending = false; playing = false; status('Nhấn nút ▶ ngay trong video YouTube để bắt đầu.'); render(); }
+          onAutoplayBlocked: () => { pending = false; playing = false; status('Nhấn nút ▶ Phát để bắt đầu.'); render(); }
         }
       });
     });
@@ -143,15 +142,15 @@
         audio.volume = state.volume / 100;
         await audio.play();
         if (token !== revision) return;
-        playing = true; pending = false; status('Đang phát · ' + item.title); render();
+        playing = true; pending = false; status('Đang phát nền · ' + item.title); render();
       } else {
-        audio.pause(); showVideo(true);
+        audio.pause(); showVideo(false);
         const player = await getYouTube();
         if (token !== revision || current()?.id !== item.id) return;
         loadedId = item.id; player.setVolume(state.volume); player.unMute();
         if (player.getVideoData()?.video_id === item.videoId) player.playVideo();
         else player.loadVideoById(item.videoId);
-        pending = false; status('Nhấn ▶ trong video nếu trình duyệt chưa bắt đầu phát.'); render();
+        pending = false; status('Đang phát nền · ' + item.title); render();
       }
     } catch (error) {
       if (token !== revision) return;
@@ -283,14 +282,6 @@
   audio.addEventListener('pause', () => { if (current()?.kind === 'audio' && !pending) { playing = false; render(); } });
   audio.addEventListener('playing', () => { if (current()?.kind === 'audio') { playing = true; pending = false; render(); } });
   audio.addEventListener('timeupdate', updateProgress); audio.addEventListener('loadedmetadata', updateProgress);
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden && current()?.kind === 'youtube') { pause('YouTube đã tạm dừng khi bạn rời trang.'); showVideo(false); }
-  });
-  new MutationObserver(() => {
-    if (document.body.classList.contains('chapter-diagram-open') && current()?.kind === 'youtube' && !$('music-video-dock').hidden) {
-      pause('Video đã tạm dừng để bạn xem sơ đồ.'); showVideo(false);
-    }
-  }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
   for (const id of ['side-tab-pomo', 'pomodoro-main-box']) {
     const shortcut = document.createElement('button'); shortcut.type = 'button'; shortcut.className = 'neo-btn neo-btn-white neo-btn-sm music-pomo-shortcut'; shortcut.textContent = '🎧 Mở nhạc chill';
     shortcut.addEventListener('click', () => {
