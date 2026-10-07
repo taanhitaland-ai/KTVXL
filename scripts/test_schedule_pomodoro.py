@@ -65,7 +65,7 @@ def run_tests():
             assert title in card_text, f"{title} not found in card"
             assert date_str in card_text, f"{date_str} not found in card"
             assert time_str in card_text, f"{time_str} not found in card"
-            
+
             # Check countdown digits
             cd_el = page.locator(f"#exam-cd-{card_id}")
             cd_text = cd_el.inner_text().replace('\n', ' ')
