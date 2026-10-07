@@ -26,3 +26,6 @@ __pycache__/
 .playwright-cli/
 output/playwright/
 
+# Office lock files
+~$*
+

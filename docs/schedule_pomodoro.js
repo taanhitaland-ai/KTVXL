@@ -1,7 +1,7 @@
 /**
  * SCHEDULE, COUNTDOWN, POMODORO & DAILY STUDY TIME TRACKER
  * Học viện Kỹ thuật Mật mã (KMA) - Khóa ôn thi học kỳ 2026
- * Developed by ashv4ni
+ * Developed by ashv4ni & henise
  * Features:
  * - Live Exam Countdown (5 subjects, XSTK is TỰ LUẬN)
  * - Fixed Right Side Drawer (Dockable/Pinnable widget accessible on all tabs)
@@ -558,7 +558,7 @@
       clearInterval(pomodoroState.intervalId);
       pomodoroState.intervalId = null;
     }
-    document.title = 'KTVXL by ashv4ni';
+    document.title = 'KTVXL by ashv4ni & henise';
     renderPomodoroDisplay();
   }
 

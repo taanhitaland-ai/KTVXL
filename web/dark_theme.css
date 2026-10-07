@@ -133,3 +133,8 @@ body.dark-mode .chapter-diagram-dialog .diagram-heading { background-image: url(
   body.dark-mode :is(.knowledge-hero, .schedule-hero) { padding-right: 24px; padding-bottom: 125px; min-height: 0; }
   body.dark-mode :is(.knowledge-hero, .schedule-hero)::after { width: 185px; height: 130px; right: 6px; }
 }
+
+/* Credits added upstream share the existing dark palette. */
+body.dark-mode .brand-credit-badge { background:var(--night-raised); color:var(--night-accent); border-color:var(--border-color); }
+body.dark-mode .app-footer { background:var(--bg-card); border-color:var(--border-color); }
+body.dark-mode .footer-left { color:var(--text-muted); }
