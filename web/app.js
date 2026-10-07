@@ -1907,6 +1907,9 @@
     setTimeout(() => renderMath(), 80);
   });
 
+  // Expose switchSubject for external tabs/modules
+  window.switchSubject = switchSubject;
+
   // Start app on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
