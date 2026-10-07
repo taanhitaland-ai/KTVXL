@@ -138,3 +138,17 @@ body.dark-mode .chapter-diagram-dialog .diagram-heading { background-image: url(
 body.dark-mode .brand-credit-badge { background:var(--night-raised); color:var(--night-accent); border-color:var(--border-color); }
 body.dark-mode .app-footer { background:var(--bg-card); border-color:var(--border-color); }
 body.dark-mode .footer-left { color:var(--text-muted); }
+
+/* Inline explanation inside question cards */
+body.dark-mode .card-inline-explanation { background: var(--bg-card); border-color: var(--border-color); box-shadow: 3px 3px 0 #10091B; }
+body.dark-mode .inline-exp-header { background: var(--night-raised); border-color: var(--border-color); color: var(--text-main); }
+body.dark-mode .inline-exp-title { color: var(--text-main); }
+body.dark-mode .inline-exp-ans-badge { background: #263D33; color: #CDEACC; border-color: #86B48E; box-shadow: 1px 1px 0 #10091B; }
+body.dark-mode .inline-exp-close-btn { background: var(--bg-card); color: var(--text-muted); border-color: var(--border-color); box-shadow: 1px 1px 0 #10091B; }
+body.dark-mode .inline-exp-close-btn:hover { background: #553042; color: #FFD6DC; }
+body.dark-mode .inline-exp-section { border-color: var(--border-color); box-shadow: 2px 2px 0 #10091B; }
+body.dark-mode .inline-exp-section.exp-main { background: var(--night-raised); }
+body.dark-mode .inline-exp-section.exp-method { background: #382531; }
+body.dark-mode .inline-exp-section.exp-casio { background: #2E2042; }
+body.dark-mode .inline-exp-sec-title { color: var(--night-accent); }
+body.dark-mode .inline-exp-sec-body { color: var(--text-main); }

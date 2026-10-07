@@ -843,35 +843,101 @@
       card.appendChild(fibBox);
     }
 
-    // Action Row
+    // Action Row & Inline Explanation (Practice Mode)
     if (!isExamMode) {
       const actionRow = document.createElement('div');
       actionRow.className = 'q-action-row';
 
       const showExpBtn = document.createElement('button');
-      showExpBtn.className = 'neo-btn neo-btn-white neo-btn-sm';
-      showExpBtn.innerHTML = currentSubject === 'tthcm' ? '💡 Xem Lời Giải & Mẹo Nhớ' : '💡 Xem Lời Giải & Mẹo Casio';
-      showExpBtn.addEventListener('click', () => {
-        openSideDetails(q);
-        highlightActiveCard(card);
-        if (window.innerWidth <= 1100) {
-          document.getElementById('details-side-panel')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-      });
+      showExpBtn.className = 'neo-btn neo-btn-white neo-btn-sm btn-toggle-exp';
+      const hasAnswered = Boolean(userState);
+      showExpBtn.innerHTML = getExpBtnText(hasAnswered);
 
       actionRow.appendChild(showExpBtn);
       card.appendChild(actionRow);
+
+      const inlineExp = document.createElement('div');
+      inlineExp.className = 'card-inline-explanation';
+      inlineExp.id = `inline-exp-${q.id}`;
+      inlineExp.style.display = hasAnswered ? 'block' : 'none';
+      inlineExp.innerHTML = renderInlineExplanationHTML(q);
+
+      const closeBtn = inlineExp.querySelector('.inline-exp-close-btn');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          inlineExp.style.display = 'none';
+          showExpBtn.innerHTML = getExpBtnText(false);
+        });
+      }
+
+      showExpBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openSideDetails(q);
+        highlightActiveCard(card);
+        const isOpen = inlineExp.style.display === 'block';
+        inlineExp.style.display = isOpen ? 'none' : 'block';
+        showExpBtn.innerHTML = getExpBtnText(!isOpen);
+      });
+
+      card.appendChild(inlineExp);
     }
 
     // Click card to highlight active card without auto-opening explanation
     card.addEventListener('click', (e) => {
       if (isExamMode) return;
-      if (!e.target.closest('button, input, img')) {
+      if (!e.target.closest('button, input, img, .card-inline-explanation')) {
         highlightActiveCard(card);
       }
     });
 
     return card;
+  }
+
+  function getExpBtnText(isOpen) {
+    const tipLabel = currentSubject === 'tthcm' ? 'Mẹo Nhớ' : 'Mẹo Casio';
+    return isOpen ? `🔽 Ẩn Lời Giải & ${tipLabel}` : `💡 Xem Lời Giải & ${tipLabel}`;
+  }
+
+  function renderInlineExplanationHTML(q) {
+    const tipLabel = currentSubject === 'tthcm' ? 'MẸO GHI NHỚ NHANH' : 'MẸO CASIO / TÍNH NHANH';
+    const explanationText = q.explanation ? formatMarkdownText(q.explanation) : '<em>(Chưa có lời giải chi tiết cho câu hỏi này)</em>';
+    const ansBadgeText = q.answer ? `ĐÁP ÁN ĐÚNG: <strong>${escapeHtml(String(q.answer))}</strong>` : '';
+
+    let extraSections = '';
+    if (q.solution_method) {
+      extraSections += `
+        <div class="inline-exp-section exp-method">
+          <div class="inline-exp-sec-title">🎯 PHƯƠNG PHÁP GIẢI:</div>
+          <div class="inline-exp-sec-body">${formatMarkdownText(q.solution_method)}</div>
+        </div>
+      `;
+    }
+    if (q.casio_tip) {
+      extraSections += `
+        <div class="inline-exp-section exp-casio">
+          <div class="inline-exp-sec-title">⚡ ${tipLabel}:</div>
+          <div class="inline-exp-sec-body">${formatMarkdownText(q.casio_tip)}</div>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="inline-exp-header">
+        <div class="inline-exp-header-left">
+          <span class="inline-exp-badge-icon">💡</span>
+          <span class="inline-exp-title">LỜI GIẢI CHI TIẾT</span>
+          ${ansBadgeText ? `<span class="inline-exp-ans-badge">${ansBadgeText}</span>` : ''}
+        </div>
+        <button type="button" class="inline-exp-close-btn" title="Thu gọn lời giải" aria-label="Thu gọn lời giải">✕ Thu gọn</button>
+      </div>
+      <div class="inline-exp-body">
+        <div class="inline-exp-section exp-main">
+          <div class="inline-exp-sec-body">${explanationText}</div>
+        </div>
+        ${extraSections}
+      </div>
+    `;
   }
 
   function highlightActiveCard(card) {
@@ -914,9 +980,16 @@
       }
     });
 
+    // Auto display explanation both inline inside card and in side panel
+    const inlineExp = card.querySelector('.card-inline-explanation');
+    if (inlineExp) {
+      inlineExp.style.display = 'block';
+      const showExpBtn = card.querySelector('.btn-toggle-exp');
+      if (showExpBtn) showExpBtn.innerHTML = getExpBtnText(true);
+    }
+
     openSideDetails(q);
     highlightActiveCard(card);
-    if (currentStatus !== 'ALL') renderPracticeQuestions();
   }
 
   // Handle FIB input
@@ -949,9 +1022,16 @@
     feedbackEl.className = `fib-feedback ${isCorrect ? 'correct' : 'wrong'}`;
     feedbackEl.textContent = isCorrect ? 'ĐÚNG ✅' : `SAI ❌ (Đ.Á: ${q.answer})`;
 
+    // Auto display explanation both inline inside card and in side panel
+    const inlineExp = card.querySelector('.card-inline-explanation');
+    if (inlineExp) {
+      inlineExp.style.display = 'block';
+      const showExpBtn = card.querySelector('.btn-toggle-exp');
+      if (showExpBtn) showExpBtn.innerHTML = getExpBtnText(true);
+    }
+
     openSideDetails(q);
     highlightActiveCard(card);
-    if (currentStatus !== 'ALL') renderPracticeQuestions();
   }
 
   // Side Drawer Display
