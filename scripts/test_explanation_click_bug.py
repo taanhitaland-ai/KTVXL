@@ -15,13 +15,12 @@ async def test_explanation_behavior():
         await page.goto(f"file://{HTML_PATH}")
         await page.wait_for_load_state("networkidle")
 
-        # 1. Verify initial placeholder
         panel_content = page.locator("#panel-content")
-        initial_text = await panel_content.inner_text()
-        print("Initial panel text includes placeholder:", "Xem lời giải & mẹo Casio" in initial_text)
-        assert "Xem lời giải & mẹo Casio" in initial_text
+        has_sec_exp_initial = await page.locator("#panel-content .panel-section.sec-exp").count() > 0
+        print("Initial has sec-exp (explanation section)?:", has_sec_exp_initial)
+        assert not has_sec_exp_initial, "Initially, explanation sections should not exist (placeholder only)"
 
-        # 2. Click on the question card body (not button/input)
+        # 1. Click on the question card body (q-title)
         first_card = page.locator(".question-card").first
         q_text = first_card.locator(".q-title")
         print("Clicking question card body (q-title)...")
@@ -32,60 +31,55 @@ async def test_explanation_behavior():
         card_class = await first_card.get_attribute("class")
         assert "active-selected" in card_class, "Card should be highlighted when clicked"
 
-        # Verify explanation is NOT shown (still placeholder)
-        panel_text_after_card_click = await panel_content.inner_text()
-        print("After clicking card, explanation opened?:", "Lời Giải Chi Tiết" in panel_text_after_card_click)
-        assert "Lời Giải Chi Tiết" not in panel_text_after_card_click, "Clicking card must NOT open explanation!"
-        assert "Xem lời giải & mẹo Casio" in panel_text_after_card_click
+        # Verify explanation is NOT shown on card click (still no .sec-exp)
+        has_sec_exp_on_card = await page.locator("#panel-content .panel-section.sec-exp").count() > 0
+        print("After clicking card, explanation opened?:", has_sec_exp_on_card)
+        assert not has_sec_exp_on_card, "Clicking card body must NOT open explanation!"
 
-        # Capture screenshot 1
-        shot1 = os.path.join(ARTIFACT_DIR, "screenshot_click_card_no_explanation.png")
-        await page.screenshot(path=shot1)
-        print(f"Saved {shot1}")
-
-        # 3. Select an option (Option A)
+        # 2. Select an option (Option A) - SHOULD NOW OPEN EXPLANATION (User requested)
         first_option = first_card.locator(".option-btn").first
-        print("Clicking Option A...")
+        print("Clicking Option A on Question 1...")
         await first_option.click()
-        await page.wait_for_timeout(300)
+        await page.wait_for_timeout(400)
 
         # Verify option selected
         option_class = await first_option.get_attribute("class")
         assert "selected-correct" in option_class or "selected-wrong" in option_class
 
-        # Verify explanation still NOT auto-opened
-        panel_text_after_option_click = await panel_content.inner_text()
-        print("After selecting option, explanation opened?:", "Lời Giải Chi Tiết" in panel_text_after_option_click)
-        assert "Lời Giải Chi Tiết" not in panel_text_after_option_click, "Selecting option must NOT auto-open explanation!"
-
-        # Capture screenshot 2
-        shot2 = os.path.join(ARTIFACT_DIR, "screenshot_select_option_no_explanation.png")
-        await page.screenshot(path=shot2)
-        print(f"Saved {shot2}")
-
-        # 4. Click the 'Xem Lời Giải & Mẹo Casio' button
-        exp_btn = first_card.locator(".q-action-row button").first
-        btn_text = await exp_btn.inner_text()
-        print(f"Clicking button: '{btn_text}'...")
-        await exp_btn.click()
-        await page.wait_for_timeout(400)
-
-        # Verify explanation IS NOW shown!
-        panel_text_after_btn = await panel_content.inner_text()
-        has_exp = "LỜI GIẢI CHI TIẾT" in panel_text_after_btn.upper()
-        print("After clicking button, explanation opened?:", has_exp)
-        assert has_exp, "Clicking 'Xem Lời Giải' button MUST open explanation!"
+        # Verify explanation IS NOW shown after selecting an option!
+        has_sec_exp_after_opt = await page.locator("#panel-content .panel-section.sec-exp").count() > 0
+        print("After selecting option, explanation opened?:", has_sec_exp_after_opt)
+        assert has_sec_exp_after_opt, "Selecting option MUST now open explanation!"
 
         title_el = await page.locator("#panel-q-title").inner_text()
         print("Panel title:", title_el)
         assert "LỜI GIẢI • CÂU 1" in title_el.upper()
 
-        # Capture screenshot 3
-        shot3 = os.path.join(ARTIFACT_DIR, "screenshot_click_btn_explanation_shown.png")
-        await page.screenshot(path=shot3)
-        print(f"Saved {shot3}")
+        # Capture screenshot
+        shot1 = os.path.join(ARTIFACT_DIR, "screenshot_select_option_explanation_shown.png")
+        await page.screenshot(path=shot1)
+        print(f"Saved {shot1}")
 
-        print("All test assertions PASSED successfully!")
+        # 3. Test on another card (Question 2) - Click WRONG option to test "kể cả chọn đúng hay sai"
+        second_card = page.locator(".question-card").nth(1)
+        opt_b = second_card.locator(".option-btn").nth(1)
+        print("Clicking Option B on Question 2 (wrong answer test)...")
+        await opt_b.click()
+        await page.wait_for_timeout(400)
+
+        has_sec_exp_q2 = await page.locator("#panel-content .panel-section.sec-exp").count() > 0
+        print("After selecting option on Q2, explanation opened?:", has_sec_exp_q2)
+        assert has_sec_exp_q2, "Selecting option on Q2 MUST open explanation!"
+
+        title_q2 = await page.locator("#panel-q-title").inner_text()
+        print("Q2 Panel title:", title_q2)
+        assert "LỜI GIẢI • CÂU 2" in title_q2.upper()
+
+        shot_q2 = os.path.join(ARTIFACT_DIR, "screenshot_q2_option_explanation_shown.png")
+        await page.screenshot(path=shot_q2)
+        print(f"Saved {shot_q2}")
+
+        print("All explanation behavior assertions PASSED successfully!")
         await browser.close()
 
 if __name__ == "__main__":

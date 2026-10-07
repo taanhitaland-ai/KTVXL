@@ -914,6 +914,7 @@
       }
     });
 
+    openSideDetails(q);
     highlightActiveCard(card);
     if (currentStatus !== 'ALL') renderPracticeQuestions();
   }
@@ -948,6 +949,7 @@
     feedbackEl.className = `fib-feedback ${isCorrect ? 'correct' : 'wrong'}`;
     feedbackEl.textContent = isCorrect ? 'ĐÚNG ✅' : `SAI ❌ (Đ.Á: ${q.answer})`;
 
+    openSideDetails(q);
     highlightActiveCard(card);
     if (currentStatus !== 'ALL') renderPracticeQuestions();
   }
