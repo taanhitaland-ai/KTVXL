@@ -671,14 +671,14 @@
     ],
     "options": [],
     "type": "fib",
-    "answer": "58",
+    "answer": "C.7",
     "acceptable_answers": [
       "58",
       "58H",
       "58",
       "58h"
     ],
-    "explanation": "Thực hiện phép tính toán logic ngược: Để sau phép toán `ANL A, #9BH` thanh ghi A có kết quả $91\\text{H}$, giá trị ban đầu cần nạp là $58\\text{H}$.",
+    "explanation": "Ban đầu nạp $A = 15\\text{H} = 0001\\,0101_2$. Để sau lệnh ANL A, #9BH ($1001\\,1011_2$) tích lũy A đạt $91\\text{H} = 1001\\,0001_2$, giá trị của A trước phép AND phải có bit 7 bằng 1 (tức $95\\text{H} = 1001\\,0101_2$). Để đưa bit 7 của A lên 1, ta dùng lệnh SETB ACC.7. Chỗ trống sau tiền tố AC cần điền là C.7.",
     "methodology": "Tính giá trị cần nạp bằng cách đảo ngược phép toán logic.",
     "tips_casio": "Điền số Hex: 58.",
     "clo": "CLO3",
@@ -1101,11 +1101,11 @@
       "D. Ngắt truyền thông nối tiếp"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thanh ghi ưu tiên ngắt IP có giá trị $0A\\text{H} = 0000\\_1010_2$: Bit 1 (PT0 - ưu tiên Timer 0) và Bit 3 (PT1 - ưu tiên Timer 1) được đặt lên 1, do đó hai nguồn ngắt Timer 0 và Timer 1 có mức ưu tiên cao nhất.",
+    "explanation": "Thanh ghi ưu tiên ngắt IP có giá trị $0\\text{AH} = 0000\\,1010_2$: Bit 1 (PT0 - Timer 0) và Bit 3 (PT1 - Timer 1) cùng được đặt lên 1 (mức ưu tiên cao). Khi hai nguồn ngắt có cùng mức ưu tiên trong thanh ghi IP, vi điều khiển 8051 sẽ xét thứ tự ưu tiên phần cứng mặc định (polling sequence): Ngắt ngoài 0 > Timer 0 > Ngắt ngoài 1 > Timer 1 > Cổng nối tiếp. Vì Timer 0 có thứ tự phần cứng đứng trước Timer 1, nên ngắt có mức ưu tiên cao nhất là Ngắt Timer 0. Chọn đáp án B.",
     "methodology": "Tra cứu các bit trong thanh ghi IP: bit 0: PX0, bit 1: PT0, bit 2: PX1, bit 3: PT1, bit 4: PS.",
     "tips_casio": "IP = 0AH = 0000_1010b -> Bit 3 (PT1) và Bit 1 (PT0) được đặt lên 1.",
     "clo": "CLO3",
@@ -2102,7 +2102,7 @@
     "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 1 cần tạo độ trễ 20 ms với tần số thạch anh 12 MHz. Giá trị của TH1 và TL1 là bao nhiêu?",
     "extra_lines": [],
     "options": [
-      "A. TH1 = B2H, TL1 = A0H",
+      "A. TH1 = B1H, TL1 = E0H",
       "B. TH1 = C2H, TL1 = B0H",
       "C. TH1 = D0H, TL1 = 50H",
       "D. TH1 = A0H, TL1 = 30H"
@@ -2112,7 +2112,7 @@
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với tần số thạch anh $12\\,\\text{MHz}$, chu kỳ máy là $T_{\\text{ckm}} = \\frac{12}{12\\,\\text{MHz}} = 1\\,\\mu\\text{s}$. Khoảng thời gian trễ cần tạo là $20\\,\\text{ms} = 20{,}000\\,\\mu\\text{s}$, tương ứng số xung đếm cần thiết là $N = 20{,}000$ xung. Timer 1 ở Chế độ 1 ($16\\,\\text{bit}$) nên giá trị nạp ban đầu là: $\\text{Val} = 65{,}536 - 20{,}000 = 45{,}536 = B2A0\\text{H}$. Do đó byte cao $\\text{TH1} = B2\\text{H}$ và byte thấp $\\text{TL1} = A0\\text{H}$.",
+    "explanation": "Với tần số thạch anh $12\\,\\text{MHz}$, chu kỳ máy là $T_{\\text{cm}} = 1\\,\\mu\\text{s}$. Khoảng thời gian trễ $20\\,\\text{ms} = 20.000\\,\\mu\\text{s} = 20.000$ chu kỳ máy. Timer 1 chế độ 1 (16 bit) đếm tiến từ giá trị nạp đến khi tràn ($65.536$). Giá trị nạp $N = 65536 - 20000 = 45536 = \\text{B1E0H}$. Do đó $\\text{TH1} = \\text{B1H}$ và $\\text{TL1} = \\text{E0H}$. Chọn đáp án A.",
     "methodology": "Thạch anh $12\\,\\text{MHz}$ -> T_ckm = $1\\,\\mu\\text{s}$. Trễ $20\\,\\text{ms}$ = $20000\\,\\mu\\text{s}$ -> Số xung N = 20000. Giá trị nạp = 65536 - 20000 = 45536 = B2A0H -> TH1 = B2H, TL1 = A0H.",
     "tips_casio": "Casio 580VNX (MENU 3): 65536 - 20000 = 45536 -> HEX: B2A0. TH1 = B2H, TL1 = A0H.",
     "clo": "CLO3",
@@ -2356,14 +2356,14 @@
       "A. MOV IE, #90H",
       "B. MOV IE, #95H",
       "C. MOV IE, #80H",
-      "D. MOV IE, #82H"
+      "D. MOV IE, #84H"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Các lệnh cấu hình ngắt tương đương với việc gán trực tiếp giá trị vào thanh ghi IE: Lệnh `MOV IE, #82H` đặt bit 7 (EA = 1, cho phép ngắt toàn cục) và bit 1 (ET0 = 1, cho phép ngắt Timer 0).",
+    "explanation": "Lệnh SETB EA cho phép ngắt toàn cục (bit 7 của thanh ghi IE: EA = 1, tương ứng $80\\text{H}$). Lệnh SETB EX1 cho phép ngắt ngoài 1 (bit 2 của thanh ghi IE: EX1 = 1, tương ứng $04\\text{H}$). Khi gán trực tiếp vào thanh ghi IE: $\\text{IE} = 80\\text{H} + 04\\text{H} = 84\\text{H}$. Dòng lệnh tương đương là MOV IE, #84H. Chọn đáp án D.",
     "methodology": "Thanh ghi IE: Bit 7 (EA - Enable All) = 80H, bit 1 (ET0) = 02H. Lệnh MOV IE, #82H cho phép toàn bộ ngắt và cho phép ngắt Timer 0.",
     "tips_casio": "EA (80H) + ET0 (02H) = 82H -> MOV IE, #82H.",
     "clo": "CLO3",
@@ -3138,7 +3138,7 @@
     "exam_title": "Đề Kiểm Tra 003",
     "num": 22,
     "title": "DE_003 - Câu 22",
-    "prompt": "Cho chương trình con thực hiện bởi vi điều khiển 89C51, biết tần số thạch anh là 6MHz, hãy xác định chức năng của chương trình:",
+    "prompt": "Cho chương trình con thực hiện bởi vi điều khiển 89C51, biết tần số thạch anh là 12MHz, hãy xác định chức năng của chương trình:",
     "extra_lines": [
       "MOV TMOD, #10H",
       "SETB TR1",
@@ -3160,7 +3160,7 @@
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}} = 2\\,\\mu\\text{s}$), Timer 1 hoạt động ở Chế độ 1 nạp giá trị $\\text{B1E0H}$. Số xung đếm nửa chu kỳ trễ kết hợp lệnh đảo `CPL P1.5` tạo ra dạng sóng vuông tuần hoàn có tần số $25\\,\\text{Hz}$ xuất ra tại chân P1.5.",
+    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}} = 1\\,\\mu\\text{s}$), Timer 1 hoạt động ở Chế độ 1 nạp giá trị $\\text{B1E0H} = 45536$. Số chu kỳ đếm tạo trễ nửa chu kỳ là $65536 - 45536 = 20000\\,\\mu\\text{s} = 20\\,\\text{ms}$. Lệnh CPL P1.5 đảo trạng thái chân P1.5 sau mỗi nửa chu kỳ, do đó chu kỳ sóng vuông toàn phần là $T = 2 \\times 20\\,\\text{ms} = 40\\,\\text{ms} = 0{,}04\\,\\text{s}$. Tần số sóng vuông: $f = 1 / 0{,}04 = 25\\,\\text{Hz}$. Chọn đáp án A.",
     "methodology": "$f_{\\text{osc}} = 6\\,\\text{MHz}$ ($T_{\\text{cm}} = 2\\,\\mu\\text{s}$). Nạp $\\text{B1E0H} = 45{,}536 \\implies$ đếm 20,000 xung $= 40{,}000\\,\\mu\\text{s} = 40\\,\\text{ms}$ nửa chu kỳ $\\implies T = 80\\,\\text{ms}$ (hoặc tần số $25\\,\\text{Hz}$).",
     "tips_casio": "Tạo xung vuông có tần số $25\\,\\text{Hz}$ xuất từ cổng P1.5.",
     "clo": "CLO3",
@@ -3936,7 +3936,7 @@
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Khi chân tín hiệu $\\overline{\\text{EA}}$ (External Access) được duy trì ở mức điện thế thấp (0V/GND), vi điều khiển 89C51 sẽ bỏ qua toàn bộ bộ nhớ ROM nội và chỉ thực thi các lệnh được lưu trữ trong bộ nhớ chương trình ngoài (ROM ngoại).",
+    "explanation": "Khi chân tín hiệu RST (Reset) của vi điều khiển 89C51 được duy trì ở mức điện thế cao (mức 1) trong ít nhất 2 chu kỳ máy, mạch reset nội sẽ khởi tạo lại toàn bộ hệ thống, thanh ghi con trỏ lệnh PC được nạp về địa chỉ $0000\\text{H}$ để bắt đầu lại chương trình từ đầu. Chọn đáp án A.",
     "methodology": "Chân $\\overline{\\text{EA}}$ giữ mức thấp (0V) buộc vi điều khiển chỉ thực thi bộ nhớ chương trình bên ngoài (ROM ngoại).",
     "tips_casio": "EA = 0 -> Chỉ thực thi chương trình trong ROM ngoại.",
     "clo": "CLO1",
@@ -7506,17 +7506,17 @@
     "prompt": "Trong hệ thống bus của máy tính, bus dữ liệu có chiều di chuyển thông tin dữ liệu đi từ:",
     "extra_lines": [],
     "options": [
-      "Từ CPU đến bộ nhớ và thiết bị ngoại vi.",
-      "Từ bộ nhớ và thiết bị ngoại vi đến CPU.",
-      "Cả hai đáp án A và B đều đúng.",
-      "Cả hai đáp án A và B đều sai."
+      "A. Từ CPU đến bộ nhớ và thiết bị ngoại vi.",
+      "B. Từ bộ nhớ và thiết bị ngoại vi đến CPU.",
+      "C. Cả hai đáp án A và B đều đúng.",
+      "D. Cả hai đáp án A và B đều sai."
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Vì là bus hai chiều nên chiều di chuyển của dữ liệu trên Data Bus có thể đi từ CPU đến bộ nhớ/ngoại vi (khi ghi - Write) hoặc từ bộ nhớ/ngoại vi đến CPU (khi đọc - Read). Do đó cả hai đáp án A và B đều đúng.",
+    "explanation": "Bus dữ liệu (Data Bus) là bus hai chiều (bidirectional), cho phép truyền dữ liệu từ CPU đến bộ nhớ và thiết bị ngoại vi khi thực hiện lệnh ghi (Write), đồng thời nhận dữ liệu từ bộ nhớ và thiết bị ngoại vi về CPU khi thực hiện lệnh đọc (Read). Do đó cả hai đáp án A và B đều đúng. Chọn đáp án C.",
     "methodology": "Tính hai chiều của Data Bus: CPU -> Memory/IO (Ghi) và Memory/IO -> CPU (Đọc).",
     "tips_casio": "Data bus 2 chiều: Đi cả 2 hướng CPU <-> Ngoại vi/Bộ nhớ.",
     "clo": "CLO1",
@@ -7702,17 +7702,17 @@
     "prompt": "Trong hệ thống bus của máy tính, bus địa chỉ có chiều di chuyển thông tin địa chỉ đi từ:",
     "extra_lines": [],
     "options": [
-      "C. Cả hai đáp án A và B đều đúng.",
-      "B. Từ bộ nhớ và thiết bị ngoại vi đến CPU.",
       "A. Từ CPU đến bộ nhớ và thiết bị ngoại vi.",
+      "B. Từ bộ nhớ và thiết bị ngoại vi đến CPU.",
+      "C. Cả hai đáp án A và B đều đúng.",
       "D. Cả hai đáp án A và B đều sai."
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "A",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Bus địa chỉ có chiều di chuyển tín hiệu một chiều từ CPU đến bộ nhớ và thiết bị ngoại vi (đáp án A trong nội dung câu hỏi, ký hiệu đáp án C trên giao diện chọn).",
+    "explanation": "Bus địa chỉ (Address Bus) là bus một chiều (unidirectional), tín hiệu địa chỉ luôn do CPU (hoặc bộ điều khiển DMA) phát ra truyền tới bộ nhớ và các cổng ngoại vi để chọn ô nhớ hoặc thiết bị cần truy xuất. Tín hiệu địa chỉ không bao giờ đi ngược từ bộ nhớ hay ngoại vi về CPU. Chọn đáp án A.",
     "methodology": "Chiều Address Bus: Từ CPU đến bộ nhớ và ngoại vi.",
     "tips_casio": "CPU luôn là nguồn phát tín hiệu địa chỉ.",
     "clo": "CLO1",
@@ -12325,10 +12325,7 @@
     "title": "Part 7 - Câu 22",
     "prompt": "Cho sơ đồ mở rộng của 89C51 với bộ nhớ ROM trên vi điều khiển 89C51, như hình vẽ dưới đây, không gian địa chỉ bộ nhớ ROM mở rộng là_______ KB. Ghi chú đáp án viết giá trị hệ thập phân, ví dụ kết quả là 10 ghi: 10.",
     "extra_lines": [],
-    "options": [
-      "Nhập câu trả lời của bạn",
-      "Câu trả lời đúng: 2"
-    ],
+    "options": [],
     "type": "fib",
     "answer": "2",
     "acceptable_answers": [
@@ -12609,10 +12606,7 @@
     "title": "Part 7 - Câu 32",
     "prompt": "Cho sơ đồ mở rộng của 89C51 với bộ nhớ ROM như hình vẽ dưới đây, không gian địa chỉ ROM mở rộng là_______ KB. Ghi chú đáp án viết giá trị hệ thập phân, ví dụ kết quả là 10 ghi: 10",
     "extra_lines": [],
-    "options": [
-      "Nhập câu trả lời của bạn",
-      "Câu trả lời đúng: 8"
-    ],
+    "options": [],
     "type": "fib",
     "answer": "8",
     "acceptable_answers": [
@@ -12809,10 +12803,7 @@
     "title": "Part 7 - Câu 39",
     "prompt": "Cho sơ đồ mở rộng của 89C51 với bộ nhớ ROM như hình vẽ dưới đây, không gian địa chỉ nhớ ROM mở rộng là_______ KB. Ghi chú đáp án viết giá trị hệ thập phân, ví dụ kết quả là 10 ghi: 10",
     "extra_lines": [],
-    "options": [
-      "Nhập câu trả lời của bạn",
-      "Câu trả lời đúng: 16"
-    ],
+    "options": [],
     "type": "fib",
     "answer": "16",
     "acceptable_answers": [
@@ -18359,14 +18350,14 @@
     "extra_lines": [],
     "options": [],
     "type": "fib",
-    "answer": "00",
+    "answer": "20",
     "acceptable_answers": [
       "00",
       "00H",
       "00",
       "00h"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (20H) và toán hạng (40H): kết quả A = 60H. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=0.",
+    "explanation": "Lệnh MOV @R1, A ghi nội dung trong thanh ghi A vào ô nhớ RAM nội có địa chỉ lưu trong R1 (ô nhớ 30H). Lệnh này không làm thay đổi nội dung thanh ghi A, do đó sau lệnh nội dung trong thanh ghi A vẫn là 20H.",
     "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
     "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 20 ADD 40 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
     "clo": "CLO2",
@@ -19210,11 +19201,11 @@
       "P=0, CY=0"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "B",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (A7H) và toán hạng (2FH): kết quả A = D7H. Phân tích cờ trạng thái: CY=0, AC=1, OV=0, P=0.",
+    "explanation": "Khởi tạo A = A7H, R0 = 2FH, CLR C (CY = 0). Sau lệnh ADDC A, R0: A = A7H + 2FH + 0 = D6H = 11010110b. Số bit 1 của A là 5 (lẻ), nên cờ chẵn lẻ P = 1. Lệnh tiếp theo SETB C đặt cờ nhớ CY = 1. Do đó trạng thái cuối cùng là P = 1, CY = 1. Chọn đáp án B.",
     "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
     "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập A7 ADD 2F để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
     "clo": "CLO2",
@@ -19504,18 +19495,23 @@
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 54,
     "title": "Part 11 - Câu 54",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0FEH MOV R0, #012H SETB C SUBB A, R0 (1 Point) CY=1, P=0 CY=0, P=1 CY=1, P=1 CY=0, P=0",
+    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây: MOV A, #0FEH; MOV R0, #012H; SETB C; SUBB A, R0",
     "extra_lines": [],
-    "options": [],
+    "options": [
+      "CY=1, P=0",
+      "CY=0, P=1",
+      "CY=1, P=1",
+      "CY=0, P=0"
+    ],
     "type": "fib",
-    "answer": "00",
+    "answer": "D",
     "acceptable_answers": [
       "00",
       "00H",
       "00",
       "00h"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (FEH) và toán hạng (12H): kết quả A = EBH. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=0.",
+    "explanation": "Lệnh SETB C đặt CY = 1. Sau đó thực hiện SUBB A, R0: A = 0FEH - 12H - 1 = EBH = 11101011b. Vì FEH > 13H nên không phát sinh mượn ở bit 7, do đó CY = 0. Kết quả EBH có 6 bit 1 (chẵn), nên cờ chẵn lẻ P = 0. Trạng thái cờ là CY = 0, P = 0. Chọn đáp án D.",
     "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
     "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập FE SUB 12 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
     "clo": "CLO2",
@@ -19616,14 +19612,14 @@
     "extra_lines": [],
     "options": [],
     "type": "fib",
-    "answer": "80",
+    "answer": "5B",
     "acceptable_answers": [
       "80",
       "80H",
       "80",
       "80h"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (5BH) và toán hạng (C3H): kết quả A = 1EH. Phân tích cờ trạng thái: CY=1, AC=0, OV=0, P=0.",
+    "explanation": "Lệnh XCH A, R1 hoán đổi trực tiếp nội dung giữa thanh ghi tích lũy A và thanh ghi R1. Trước lệnh: A = 5BH, R1 = 40H. Sau khi thực thi lệnh: thanh ghi R1 nhận giá trị cũ của A là 5BH (và A nhận giá trị 40H).",
     "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
     "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5B ADD C3 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
     "clo": "CLO2",
@@ -19806,14 +19802,14 @@
     "extra_lines": [],
     "options": [],
     "type": "fib",
-    "answer": "80",
+    "answer": "40",
     "acceptable_answers": [
       "80",
       "80H",
       "80",
       "80h"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (5BH) và toán hạng (C3H): kết quả A = 1EH. Phân tích cờ trạng thái: CY=1, AC=0, OV=0, P=0.",
+    "explanation": "Lệnh XCH A, R1 hoán đổi nội dung giữa thanh ghi tích lũy A và thanh ghi R1. Trước lệnh: A = 5BH, R1 = 40H. Sau khi thực thi lệnh: thanh ghi A nhận giá trị cũ của R1 là 40H.",
     "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
     "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5B ADD C3 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
     "clo": "CLO2",
@@ -19832,14 +19828,14 @@
     "extra_lines": [],
     "options": [],
     "type": "fib",
-    "answer": "04",
+    "answer": "4F",
     "acceptable_answers": [
       "04",
       "04H",
       "04",
       "04h"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (50H) và toán hạng (4FH): kết quả A = 9FH. Phân tích cờ trạng thái: CY=0, AC=0, OV=1, P=0.",
+    "explanation": "Lệnh MOV R2, 30H sử dụng chế độ định địa chỉ trực tiếp để sao chép nội dung ô nhớ RAM 30H vào thanh ghi R2. Theo đề bài ô nhớ 30H chứa giá trị 4FH, do đó sau lệnh thanh ghi R2 có giá trị 4FH.",
     "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
     "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 50 ADD 4F để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
     "clo": "CLO2",
@@ -19858,14 +19854,14 @@
     "extra_lines": [],
     "options": [],
     "type": "fib",
-    "answer": "05",
+    "answer": "72",
     "acceptable_answers": [
       "05",
       "05H",
       "05",
       "05h"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (5BH) và toán hạng (72H): kết quả A = CDH. Phân tích cờ trạng thái: CY=0, AC=0, OV=1, P=1.",
+    "explanation": "Lệnh MOV 40H, @R1 sử dụng chế độ định địa chỉ gián tiếp qua thanh ghi con trỏ R1. Vì R1 = 60H nên lệnh sẽ đọc nội dung ô nhớ 60H (chứa 72H) và ghi vào ô nhớ 40H. Sau lệnh ô nhớ 40H chứa giá trị 72H.",
     "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
     "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5B ADD 72 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
     "clo": "CLO2",
@@ -19884,14 +19880,14 @@
     "extra_lines": [],
     "options": [],
     "type": "fib",
-    "answer": "85",
+    "answer": "1011",
     "acceptable_answers": [
       "85",
       "85H",
       "85",
       "85h"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (5BH) và toán hạng (C3H): kết quả A = 98H. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=1.",
+    "explanation": "Thực hiện phép trừ có mượn SUBB A, @R1 với A = 5BH, [40H] = C3H, CY ban đầu = 1 (do PSW = 81H). Kết quả A = 5BH - C3H - 1 = 97H. Phân tích cờ: do 5BH < C4H nên phát sinh mượn từ bit 7 (CY = 1); nibble thấp BH - 3H - 1 = 7H không cần mượn (AC = 0); phép trừ có dấu bị tràn (OV = 1); kết quả 97H = 10010111b có 5 bit 1 lẻ (P = 1). Bốn cờ CY, AC, OV, P là 1011b.",
     "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
     "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5B SUB C3 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
     "clo": "CLO2",
@@ -21427,14 +21423,14 @@
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Chương trình cấu hình Timer 0 với hai khoảng định thời khác nhau: nạp giá trị đếm tương ứng $200\\,\\mu\\text{s}$ khi chân P1.6 ở mức cao và $40\\,\\mu\\text{s}$ khi P1.6 ở mức thấp, tạo ra sóng vuông không đối xứng có xung cao $200\\,\\mu\\text{s}$ và xung thấp $40\\,\\mu\\text{s}$ trên chân P1.6.",
+    "explanation": "Chương trình cấu hình Timer 0 ở Chế độ 2 (8-bit tự nạp lại). Khi chân P1.6 ở mức cao (SETB P1.6), TH0 được nạp 56, thời gian trễ mức cao là (256 - 56) x 1µs = 200µs. Khi chân P1.6 ở mức thấp (CLR P1.6), TH0 được nạp 216, thời gian trễ mức thấp là (256 - 216) x 1µs = 40µs. Do đó tạo ra sóng vuông có thời gian xung cao 200µs và xung thấp 40µs trên chân P1.6. Chọn đáp án A.",
     "methodology": "Nạp TH0 tạo mức cao $200\\,\\mu\\text{s}$ và mức thấp $40\\,\\mu\\text{s}$ trên chân cổng P1.6.",
     "tips_casio": "Thời gian mức cao $200\\,\\mu\\text{s}$ và mức thấp $40\\,\\mu\\text{s}$.",
     "clo": "CLO2",
     "level": "VD",
     "topic_name": "Timer 0 tạo xung lệch đối xứng (Duty Cycle)",
     "images": [
-      "assets/images/p13_q06.png"
+      "assets/images/p13_q25.png"
     ]
   },
   {
@@ -21850,14 +21846,14 @@
     "extra_lines": [],
     "options": [],
     "type": "fib",
-    "answer": "40",
+    "answer": "13H",
     "acceptable_answers": [
       "40",
       "40H",
       "40",
       "40h"
     ],
-    "explanation": "Để ô nhớ tại địa chỉ $20\\text{H}$ có nội dung là $13\\text{H}$, giá trị tham số cần điền vào chỗ trống trong đoạn chương trình là $40\\text{H}$.",
+    "explanation": "Lệnh XCH A, 20H hoán đổi nội dung của thanh ghi tích lũy A và ô nhớ 20H. Để sau khi thực hiện, ô nhớ 20H nhận giá trị 13H, giá trị ban đầu cần nạp vào thanh ghi A trong lệnh MOV A, #___ là 13H (hoặc 19 thập phân).",
     "methodology": "Thực hiện gán giá trị thông qua con trỏ địa chỉ gián tiếp để ô nhớ $20\\text{H}$ nhận giá trị $13\\text{H}$.",
     "tips_casio": "Điền số: 40.",
     "clo": "CLO2",
@@ -21975,14 +21971,14 @@
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Chương trình sử dụng Timer 0 ở Chế độ 1 với hai lần nạp giá trị khác nhau giữa hai trạng thái bật và tắt chân P1.6: thời gian xung ở mức cao duy trì trong $40\\,\\mu\\text{s}$ và thời gian xung ở mức thấp duy trì trong $200\\,\\mu\\text{s}$.",
+    "explanation": "Chương trình cấu hình Timer 0 ở Chế độ 2. Khi chân P1.6 ở mức cao (SETB P1.6), TH0 được nạp 216, thời gian xung cao là (256 - 216) x 1µs = 40µs. Khi chân P1.6 ở mức thấp (CLR P1.6), TH0 được nạp 56, thời gian xung thấp là (256 - 56) x 1µs = 200µs. Do đó tạo ra sóng có thời gian xung cao 40µs và xung thấp 200µs trên chân P1.6. Chọn đáp án C.",
     "methodology": "Nạp hai giá trị định thời vào Timer 0: khoảng thời gian mức cao là $40\\,\\mu\\text{s}$ và khoảng thời gian mức thấp là $200\\,\\mu\\text{s}$ trên chân P1.6.",
     "tips_casio": "Xung cao $40\\,\\mu\\text{s}$ và xung thấp $200\\,\\mu\\text{s}$ trên chân P1.6.",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Timer 0 tạo xung chu kỳ với xung cao 40µs và xung thấp 200µs",
     "images": [
-      "assets/images/p13_q25.png"
+      "assets/images/p13_q06.png"
     ]
   },
   {
@@ -22804,11 +22800,11 @@
       "Sao chép nội dung trong RAM nội tới RAM ngoại, với địa chỉ bắt đầu tương ứngđặt tại DATA1 và DATA2"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Tần số xung đếm cung cấp cho Timer ở chế độ định thời bằng $\\frac{1}{12}$ tần số dao động của thạch anh.",
+    "explanation": "Quan sát đoạn mã trong hình: Lệnh MOVX A, @DPTR đọc dữ liệu từ RAM ngoài (địa chỉ DATA1) vào A, sau đó lệnh MOV @R1, A ghi dữ liệu từ A vào RAM nội (địa chỉ DATA2). Vòng lặp tăng cả DPTR và R1 (INC DPTR, INC R1) và tiếp tục cho đến khi gặp ký tự 24H (mã kết thúc chuỗi). Chức năng của đoạn chương trình là: Sao chép nội dung trong RAM ngoại tới RAM nội, với địa chỉ bắt đầu tương ứng đặt tại DATA1 và DATA2. Chọn đáp án B.",
     "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
     "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
     "clo": "CLO3",
@@ -22834,11 +22830,11 @@
       "Tính đảo các số nhị phân 8 bit đặt tại R1, R0 và lưu tại R3, R2"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "B",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Lệnh so sánh không thỏa mãn điều kiện nhảy sẽ tiếp tục thực hiện lệnh kế tiếp.",
+    "explanation": "Quan sát đoạn mã trong hình: Đoạn mã đọc 16 bit dữ liệu từ R1 (byte cao) và R0 (byte thấp), sau đó dùng lệnh CPL A và cộng bù để tính số bù 2 (đảo dấu/lấy bù nhị phân 16 bit), lưu kết quả vào cặp thanh ghi R3 (byte cao) và R2 (byte thấp). Chức năng của đoạn mã là: Tính đảo các số nhị phân 16 bit đặt tại R1, R0 và lưu tại R3, R2. Chọn đáp án B.",
     "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
     "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
     "clo": "CLO3",
@@ -22948,11 +22944,11 @@
       "Kết thúc chương trình"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Chương trình thực hiện chuyển hướng tới nhãn L1.",
+    "explanation": "Lệnh nạp A = 043H = 0100 0011b. Các bit của A: A.0=1, A.1=1, A.2=0, A.6=1. Lệnh JB ACC.2, L1 kiểm tra bit A.2: vì A.2 = 0 nên lệnh không nhảy tới L1. Tiếp tục thực hiện lệnh kế tiếp: JBC ACC.6, L2 kiểm tra bit A.6: vì A.6 = 1 nên lệnh sẽ nhảy tới nhãn L2 đồng thời xóa bit ACC.6 về 0. Do đó kết quả là: Đưa chương trình tới nhãn L2 và xóa bit AC6 về 0. Chọn đáp án C.",
     "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
     "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
     "clo": "CLO3",

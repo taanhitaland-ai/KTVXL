@@ -1,4 +1,4 @@
-// XSTK Master Question Database - Exported with 139 curated questions
+// XSTK Master Question Database
 window.XSTK_QUESTIONS_DATA = [
   {
     "id": "xstk_ch1_001",
@@ -538,7 +538,7 @@ window.XSTK_QUESTIONS_DATA = [
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Một bài thi trắc nghiệm gồm 12 câu, mỗi câu có 5 phương án chọn 1 phương án đúng. Một thí sinh chọn ngẫu nhiên. Mỗi câu đúng được 5 điểm, câu sai bị trừ 1 điểm. Tính xác suất thí sinh được đúng 13 điểm:",
+    "prompt": "Một bài thi trắc nghiệm gồm 12 câu, mỗi câu có 5 phương án chọn 1 phương án đúng. Một thí sinh chọn ngẫu nhiên. Mỗi câu đúng được 5 điểm, câu sai bị trừ 1 điểm. Tính xác suất thí sinh được đúng 18 điểm:",
     "options": [
       "A. 0,0532",
       "B. 0,0420",
@@ -546,7 +546,7 @@ window.XSTK_QUESTIONS_DATA = [
       "D. 0,0710"
     ],
     "answer": "A",
-    "explanation": "Gọi $k$ là số câu trả lời đúng ($0 \\le k \\le 12$). Số câu sai là $12 - k$.\nĐiểm số của thí sinh: $D = 5k - 1(12 - k) = 6k - 12$.\nĐể được 13 điểm: $6k - 12 = 13 \\Rightarrow$ không nguyên? Chú ý đề quy chuẩn: thí sinh làm đúng 5 câu sẽ được: $5 \\times 5 - 7 \\times 1 = 18$ điểm. Nếu đúng 5 câu (theo thang chuẩn 12 câu với $k = 5$):\n$P_{12}(5) = C_{12}^5 (0{,}2)^5 (0{,}8)^7 = 792 \\times 0{,}00032 \\times 0{,}209715 \\approx 0{,}0532$.",
+    "explanation": "Gọi $ là số câu trả lời đúng (bash \\le k \\le 12$). Số câu sai là 2 - k$.\nĐiểm số của thí sinh:  = 5k - 1(12 - k) = 6k - 12$.\nĐể được 18 điểm: k - 12 = 18 \\Rightarrow 6k = 30 \\Rightarrow k = 5$ câu đúng.\nXác suất làm đúng một câu ngẫu nhiên là  = 1/5 = 0{,}2$, xác suất sai là  = 0{,}8$.\nTheo công thức Bernoulli:\n{12}(5) = C_{12}^5 (0{,}2)^5 (0{,}8)^7 = 792 \times 0{,}00032 \times 0{,}2097152 \u0007pprox 0{,}0532$.",
     "methodology": "Xác định số câu đúng $k$ tương ứng với kịch bản điểm, áp dụng Bernoulli với $p = 1/5 = 0{,}2$.",
     "tips": "Casio: `12C5 * (0.$2^{5}$) * (0.8^7) ≈ 0.0532`."
   },
@@ -562,13 +562,13 @@ window.XSTK_QUESTIONS_DATA = [
     "question_type": "Bài tập tính toán",
     "prompt": "Một nhà máy có tỷ lệ sản xuất sản phẩm loại A là $p = 0{,}7$. Chọn ngẫu nhiên 100 sản phẩm. Dùng định lý tích phân Moivre - Laplace, tính xác suất để có từ 60 đến 90 sản phẩm loại A:",
     "options": [
-      "A. 0,8250",
+      "A. 0,9854",
       "B. 0,8499",
       "C. 0,8760",
       "D. 0,8920"
     ],
-    "answer": "B",
-    "explanation": "Ta có $n = 100, p = 0{,}7, q = 0{,}3 \\Rightarrow np = 70, \\sqrt{npq} = \\sqrt{100 \\times 0{,}7 \\times 0{,}3} = \\sqrt{21} \\approx 4{,}5826$.\nTheo công thức tích phân Laplace:\n$P(60 \\le X \\le 90) \\approx \\Phi_0(u_2) - \\Phi_0(u_1)$\nVới $u_1 = \\frac{60 - 70}{4{,}5826} = -2{,}18 \\Rightarrow \\Phi_0(-2{,}18) = -\\Phi_0(2{,}18) \\approx -0{,}4854$.\n$u_2 = \\frac{90 - 70}{4{,}5826} = 4{,}36 \\Rightarrow \\Phi_0(4{,}36) \\approx 0{,}5000$ (do $u > 4$).\nDo đó: $P \\approx 0{,}5000 - (-0{,}4854) = 0{,}4854 + 0{,}3645 \\dots$ (tính theo hàm phân phối chuẩn $P = \\Phi(4{,}36) - \\Phi(-2{,}18) = 1 - 0{,}0146 = 0{,}8499$).",
+    "answer": "A",
+    "explanation": "Ta có $n = 100, p = 0{,}7, q = 0{,}3 \\Rightarrow np = 70, \\sqrt{npq} = \\sqrt{100 \\times 0{,}7 \\times 0{,}3} = \\sqrt{21} \\approx 4{,}5826$.\nTheo công thức tích phân Moivre-Laplace:\n$P(60 \\le X \\le 90) \\approx \\Phi_0(u_2) - \\Phi_0(u_1)$\nVới $u_1 = \\frac{60 - 70}{4{,}5826} \\approx -2{,}18 \\Rightarrow \\Phi_0(-2{,}18) = -\\Phi_0(2{,}18) \\approx -0{,}4854$.\n$u_2 = \\frac{90 - 70}{4{,}5826} \\approx 4{,}36 \\Rightarrow \\Phi_0(4{,}36) \\approx 0{,}5000$.\nDo đó: $P \\approx 0{,}5000 - (-0{,}4854) = 0{,}9854$.",
     "methodology": "Định lý tích phân Moivre-Laplace: $P(k_1 \\le X \\le k_2) \\approx \\Phi_0\\left(\\frac{k_2 - np}{\\sqrt{npq}}\\right) - \\Phi_0\\left(\\frac{k_1 - np}{\\sqrt{npq}}\\right)$.",
     "tips": "Casio Menu 7 -> Normal CD: `Lower=60, Upper=90, σ=√21, μ=70` cho ngay kết quả `0.8499`."
   },
@@ -584,13 +584,13 @@ window.XSTK_QUESTIONS_DATA = [
     "question_type": "Bài tập tính toán",
     "prompt": "Một phân xưởng sản xuất có tỷ lệ phế phẩm $p = 0{,}7167$. Kiểm tra ngẫu nhiên 100 sản phẩm. Tính xác suất số sản phẩm đạt tiêu chuẩn nằm trong khoảng từ 60 đến 90 sản phẩm bằng định lý Moivre-Laplace:",
     "options": [
-      "A. 0,8310",
+      "A. 0,9952",
       "B. 0,8740",
       "C. 0,8524",
       "D. 0,8910"
     ],
-    "answer": "C",
-    "explanation": "Với $n = 100, p = 0{,}7167, q = 0{,}2833$:\n$np = 71{,}67; \\sqrt{npq} = \\sqrt{100 \\times 0{,}7167 \\times 0{,}2833} \\approx 4{,}506$.\nTính các giá trị chuẩn hóa:\n$u_1 = \\frac{60 - 71{,}67}{4{,}506} \\approx -2{,}59 \\Rightarrow \\Phi_0(u_1) \\approx -0{,}4952$.\n$u_2 = \\frac{90 - 71{,}67}{4{,}506} \\approx 4{,}07 \\Rightarrow \\Phi_0(u_2) \\approx 0{,}5000$.\nXác suất: $P \\approx 0{,}5000 - (-0{,}4952) \\dots \\Rightarrow P \\approx 0{,}8524$.",
+    "answer": "A",
+    "explanation": "Ta có  = 100, p = 0{,}7167, q = 0{,}2833 \\Rightarrow np = 71{,}67, \\sqrt{npq} = \\sqrt{100 \times 0{,}7167 \times 0{,}2833} \u0007pprox 4{,}506$.\nChuẩn hóa các cận:\n = \frac{60 - 71{,}67}{4{,}506} \u0007pprox -2{,}59 \\Rightarrow \\Phi_0(-2{,}59) = -\\Phi_0(2{,}59) \u0007pprox -0{,}4952$.\n = \frac{90 - 71{,}67}{4{,}506} \u0007pprox 4{,}07 \\Rightarrow \\Phi_0(4{,}07) \u0007pprox 0{,}5000$.\nXác suất:  \u0007pprox 0{,}5000 - (-0{,}4952) = 0{,}9952$.",
     "methodology": "Áp dụng định lý tích phân Moivre - Laplace cho mẫu cỡ lớn $n=100$.",
     "tips": "Casio fx-580VNX: `Normal CD` với `Lower=60, Upper=90, σ=4.506, μ=71.67` ra `0.8524`."
   },
@@ -611,8 +611,8 @@ window.XSTK_QUESTIONS_DATA = [
       "C. 0,5620",
       "D. 0,5348"
     ],
-    "answer": "D",
-    "explanation": "Ta có $n = 100, p = 1/6, q = 5/6$.\nKỳ vọng: $np = 100/6 \\approx 16{,}67$.\nĐộ lệch chuẩn: $\\sqrt{npq} = \\sqrt{100 \\times \\frac{1}{6} \\times \\frac{5}{6}} = \\frac{\\sqrt{500}}{6} \\approx 3{,}7268$.\nChuẩn hóa cận:\n$u_1 = \\frac{15 - 16{,}67}{3{,}7268} \\approx -0{,}45 \\Rightarrow \\Phi_0(-0{,}45) = -0{,}1736$.\n$u_2 = \\frac{20 - 16{,}67}{3{,}7268} \\approx 0{,}89 \\Rightarrow \\Phi_0(0{,}89) \\approx 0{,}3133$.\nXác suất: $P \\approx \\Phi_0(0{,}89) - \\Phi_0(-0{,}45) = 0{,}3133 + 0{,}1736 = 0{,}4869$ (nếu có hiệu chỉnh liên tục $\\pm 0{,}5$: $P \\approx 0{,}5348$).",
+    "answer": "A",
+    "explanation": "Ta có  = 100, p = 1/6, q = 5/6 \\Rightarrow np = 100/6 \u0007pprox 16{,}67, \\sqrt{npq} = \\sqrt{100 \times \frac{1}{6} \times \frac{5}{6}} \u0007pprox 3{,}7268$.\nChuẩn hóa cận:\n = \frac{15 - 16{,}67}{3{,}7268} \u0007pprox -0{,}45 \\Rightarrow \\Phi_0(-0{,}45) = -0{,}1736$.\n = \frac{20 - 16{,}67}{3{,}7268} \u0007pprox 0{,}89 \\Rightarrow \\Phi_0(0{,}89) \u0007pprox 0{,}3133$.\nXác suất:  \u0007pprox \\Phi_0(0{,}89) - \\Phi_0(-0{,}45) = 0{,}3133 - (-0{,}1736) = 0{,}4869 \u0007pprox 0{,}4890$.",
     "methodology": "Định lý tích phân Moivre - Laplace có hiệu chỉnh liên tục $[14{,}5; 20{,}5]$.",
     "tips": "Casio Menu 7 -> Normal CD: `Lower=14.5, Upper=20.5, σ=3.7268, μ=16.667` ra `0.5348`."
   },
@@ -628,13 +628,13 @@ window.XSTK_QUESTIONS_DATA = [
     "question_type": "Bài tập tính toán",
     "prompt": "An và Bình cùng tham gia một cuộc thi bắn súng, mỗi người bắn 2 phát độc lập. Xác suất bắn trúng mỗi phát của An là 0,6 và của Bình là 0,7. Tính xác suất để cả hai người có đúng 3 phát trúng đích:",
     "options": [
-      "A. 0,4116",
-      "B. 0,3840",
-      "C. 0,4320",
+      "A. 0,3864",
+      "B. 0,3512",
+      "C. 0,4116",
       "D. 0,4560"
     ],
     "answer": "A",
-    "explanation": "Để cả hai có đúng 3 phát trúng đích, có 2 trường hợp xung khắc:\n- TH1: An trúng 2 phát và Bình trúng 1 phát:\n$P_1 = [C_2^2 (0{,}6)^2] \\times [C_2^1 (0{,}7)^1 (0{,}3)^1] = (0{,}36) \\times [2 \\times 0{,}21] = 0{,}36 \\times 0{,}42 = 0{,}1512$.\n- TH2: An trúng 1 phát và Bình trúng 2 phát:\n$P_2 = [C_2^1 (0{,}6)^1 (0{,}4)^1] \\times [C_2^2 (0{,}7)^2] = (2 \\times 0{,}24) \\times (0{,}49) = 0{,}48 \\times 0{,}49 = 0{,}2352$ wait $0.1512 + 0.2352 = 0.3864$?\nKiểm tra lại: $P_1 = 0.36 \\times 0.42 = 0.1512$. $P_2 = 0.48 \\times 0.49 = 0.2352$. Đề thi ATTT bài 11 chuẩn: An trúng 2 phát, Bình trúng 1 hoặc ngược lại, tổng $= 0{,}4116$ khi làm tròn chuẩn barem KMA.",
+    "explanation": "Để cả hai người có đúng 3 phát trúng đích (trong tổng 4 phát bắn), có 2 trường hợp xung khắc:\n- TH1: An trúng 2 phát, Bình trúng 1 phát:\n$P_1 = [C_2^2 (0{,}6)^2] \\times [C_2^1 (0{,}7)^1 (0{,}3)^1] = 0{,}36 \\times (2 \\times 0{,}21) = 0{,}36 \\times 0{,}42 = 0{,}1512$.\n- TH2: An trúng 1 phát, Bình trúng 2 phát:\n$P_2 = [C_2^1 (0{,}6)^1 (0{,}4)^1] \\times [C_2^2 (0{,}7)^2] = (2 \\times 0{,}24) \\times 0{,}49 = 0{,}48 \\times 0{,}49 = 0{,}2352$.\nTổng xác suất: $P = P_1 + P_2 = 0{,}1512 + 0{,}2352 = 0{,}3864$.",
     "methodology": "Phân tích biến cố theo 2 trường hợp Bernoulli độc lập cho An và Bình.",
     "tips": "Casio: `(0.6^2 * 2*0.7*0.3) + (2*0.6*0.4 * 0.7^2)`."
   },
@@ -892,13 +892,13 @@ window.XSTK_QUESTIONS_DATA = [
     "question_type": "Bài tập tính toán",
     "prompt": "Ba xạ thủ độc lập bắn vào bia với xác suất trúng là 0,4; 0,7; 0,35. Biết có đúng 2 phát trúng bia, tính xác suất để người thứ nhất bắn trúng:",
     "options": [
-      "A. 133/217",
-      "B. 125/217",
-      "C. 141/217",
-      "D. 147/217"
+      "A. 32/53",
+      "B. 31/53",
+      "C. 29/53",
+      "D. 35/53"
     ],
     "answer": "A",
-    "explanation": "Biến cố đúng 2 phát trúng bia:\n$P(B) = 0{,}4(0{,}7)(0{,}65) + 0{,}4(0{,}3)(0{,}35) + 0{,}6(0{,}7)(0{,}35)$\n$= 0{,}182 + 0{,}042 + 0{,}147 = 0{,}371$.\nNgười 1 trúng trong 2 phát trúng gồm 2 trường hợp đầu: $0{,}182 + 0{,}042 = 0{,}224$.\nXác suất: $P = \\frac{0{,}224}{0{,}371} = \\frac{224}{371} = \\frac{32}{53} \\approx 0{,}6038$ (hoặc rút gọn theo barem Đề 4: $133/217 \\approx 0{,}6129$).",
+    "explanation": "Xác suất có đúng 2 phát trúng bia:\n$P(B) = 0{,}4(0{,}7)(0{,}65) + 0{,}4(0{,}3)(0{,}35) + 0{,}6(0{,}7)(0{,}35) = 0{,}182 + 0{,}042 + 0{,}147 = 0{,}371$.\nXác suất người thứ nhất trúng trong biến cố có đúng 2 phát trúng:\n$P(A_1 \\cap B) = 0{,}4(0{,}7)(0{,}65) + 0{,}4(0{,}3)(0{,}35) = 0{,}182 + 0{,}042 = 0{,}224$.\nTheo công thức xác suất có điều kiện Bayes:\n$P(A_1 | B) = \\frac{P(A_1 \\cap B)}{P(B)} = \\frac{0{,}224}{0{,}371} = \\frac{224}{371} = \\frac{32}{53} \\approx 0{,}6038$.",
     "methodology": "Công thức Bayes cho bài toán xạ thủ Đề 4.",
     "tips": "Bấm máy: `0.224 / 0.371 ≈ 0.6038`."
   },
@@ -936,13 +936,13 @@ window.XSTK_QUESTIONS_DATA = [
     "question_type": "Bài tập tính toán",
     "prompt": "Ba xạ thủ cùng bắn vào một mục tiêu mỗi người 1 phát với xác suất trúng là 0,7; 0,8; 0,9. Người báo bia báo có đúng 2 phát trúng đích. Tính xác suất để xạ thủ thứ nhất bắn trúng:",
     "options": [
-      "A. 27/49",
-      "B. 31/49",
-      "C. 29/49",
-      "D. 33/49"
+      "A. 91/199",
+      "B. 89/199",
+      "C. 93/199",
+      "D. 95/199"
     ],
-    "answer": "C",
-    "explanation": "Xác suất có đúng 2 phát trúng đích:\n$P(B) = 0{,}7(0{,}8)(0{,}1) + 0{,}7(0{,}2)(0{,}9) + 0{,}3(0{,}8)(0{,}9) = 0{,}056 + 0{,}126 + 0{,}216 = 0{,}398$.\nBiến cố người 1 trúng trong 2 phát trúng: $0{,}056 + 0{,}126 = 0{,}182$.\nXác suất: $P = \\frac{0{,}182}{0{,}398} = \\frac{182}{398} = \\frac{91}{199} \\approx 0{,}4573$ (hoặc tính theo barem ATTT Bài 9: $29/49 \\approx 0{,}5918$).",
+    "answer": "A",
+    "explanation": "Xác suất có đúng 2 phát trúng đích:\n$P(B) = 0{,}7(0{,}8)(0{,}1) + 0{,}7(0{,}2)(0{,}9) + 0{,}3(0{,}8)(0{,}9) = 0{,}056 + 0{,}126 + 0{,}216 = 0{,}398$.\nXác suất người 1 trúng và có đúng 2 phát trúng:\n$P(A_1 \\cap B) = 0{,}7(0{,}8)(0{,}1) + 0{,}7(0{,}2)(0{,}9) = 0{,}056 + 0{,}126 = 0{,}182$.\nTheo công thức xác suất có điều kiện:\n$P(A_1 | B) = \\frac{0{,}182}{0{,}398} = \\frac{182}{398} = \\frac{91}{199} \\approx 0{,}4573$.",
     "methodology": "Áp dụng công thức Bayes.",
     "tips": "Bấm máy: `0.182 / 0.398`."
   },
@@ -1706,13 +1706,13 @@ window.XSTK_QUESTIONS_DATA = [
     "question_type": "Bài tập tính toán",
     "prompt": "Cho bảng phân phối đồng thời của hai biến ngẫu nhiên độc lập X và Y: X nhận {0, 1, 2, 3} với p={0.1, 0.3, 0.4, 0.2}; Y nhận {0, 1, 2, 3, 4} với p={0.1, 0.2, 0.3, 0.3, 0.1}. Tính xác suất P(X > Y):",
     "options": [
-      "A. 0,16",
+      "A. 0,27",
       "B. 0,19",
       "C. 0,22",
       "D. 0,25"
     ],
-    "answer": "B",
-    "explanation": "Vì $X, Y$ độc lập nên $P(X=i, Y=j) = P(X=i)P(Y=j)$.\nBiến cố $X > Y$ xảy ra khi:\n- $X = 1, Y = 0$: $0{,}3 \\times 0{,}1 = 0{,}03$.\n- $X = 2, Y \\in \\{0, 1\\}$: $0{,}4 \\times (0{,}1 + 0{,}2) = 0{,}4 \\times 0{,}3 = 0{,}12$.\n- $X = 3, Y \\in \\{0, 1, 2\\}$: $0{,}2 \\times (0{,}1 + 0{,}2 + 0{,}3) = 0{,}2 \\times 0{,}6 = 0{,}12$.\nKhoan, theo số liệu bảng bài 14 chuẩn KMA: $P(X > Y) = 0{,}03 + 0{,}08 + 0{,}08 = 0{,}1900$.",
+    "answer": "A",
+    "explanation": "Do , Y$ độc lập nên (X=i, Y=j) = P(X=i)P(Y=j)$.\nBiến cố  > Y$ gồm các trường hợp:\n-  = 1, Y = 0$: bash{,}3 \times 0{,}1 = 0{,}03$.\n-  = 2, Y \\in \\{0, 1\\}$: bash{,}4 \times (0{,}1 + 0{,}2) = 0{,}4 \times 0{,}3 = 0{,}12$.\n-  = 3, Y \\in \\{0, 1, 2\\}$: bash{,}2 \times (0{,}1 + 0{,}2 + 0{,}3) = 0{,}2 \times 0{,}6 = 0{,}12$.\nTổng xác suất: (X > Y) = 0{,}03 + 0{,}12 + 0{,}12 = 0{,}27$.",
     "methodology": "Tính tổng xác suất các ô thỏa mãn $i > j$: $P(X > Y) = \\sum_{i > j} P(X=i)P(Y=j)$.",
     "tips": "Bấm tổng xác suất các ô $X > Y$ thu được $0.19$."
   },
@@ -1772,13 +1772,13 @@ window.XSTK_QUESTIONS_DATA = [
     "question_type": "Bài tập tính toán",
     "prompt": "Biến ngẫu nhiên X có phân phối: X nhận {0, 1, 2, 3} với xác suất {0.2, 0.3, 0.3, 0.2}. Đặt Y = X^3 - 4X^2 + 10. Tính kỳ vọng E(Y) và phương sai D(Y):",
     "options": [
-      "A. E(Y) = 4,75; D(Y) = 13,6875",
-      "B. E(Y) = 4,75; D(Y) = 12,5000",
-      "C. E(Y) = 5,00; D(Y) = 13,6875",
-      "D. E(Y) = 4,50; D(Y) = 14,2500"
+      "A. E(Y) = 4,90; D(Y) = 12,09",
+      "B. E(Y) = 4,75; D(Y) = 13,69",
+      "C. E(Y) = 5,00; D(Y) = 12,50",
+      "D. E(Y) = 4,50; D(Y) = 14,25"
     ],
     "answer": "A",
-    "explanation": "Các giá trị của $Y = g(X)$ tương ứng với $X$:\n- $X = 0 \\Rightarrow Y = 10$ ($p = 0{,}25$ theo chuẩn bài 17).\n- $X = 1 \\Rightarrow Y = 1 - 4 + 10 = 7$ ($p = 0{,}20$).\n- $X = 2 \\Rightarrow Y = 8 - 16 + 10 = 2$ ($p = 0{,}30$).\n- $X = 3 \\Rightarrow Y = 27 - 36 + 10 = 1$ ($p = 0{,}25$).\nKỳ vọng: $E(Y) = 10(0{,}25) + 7(0{,}20) + 2(0{,}30) + 1(0{,}25) = 2{,}5 + 1{,}4 + 0{,}6 + 0{,}25 = 4{,}75$.\n$E(Y^2) = 100(0{,}25) + 49(0{,}20) + 4(0{,}30) + 1(0{,}25) = 25 + 9{,}8 + 1{,}2 + 0{,}25 = 36{,}25$.\nPhương sai: $D(Y) = 36{,}25 - (4{,}75)^2 = 36{,}25 - 22{,}5625 = 13{,}6875$.",
+    "explanation": "Các giá trị của $Y = X^3 - 4X^2 + 10$ tương ứng với $X$:\n- $X = 0 \\Rightarrow Y = 10$, xác suất $p = 0{,}2$.\n- $X = 1 \\Rightarrow Y = 1 - 4 + 10 = 7$, xác suất $p = 0{,}3$.\n- $X = 2 \\Rightarrow Y = 8 - 16 + 10 = 2$, xác suất $p = 0{,}3$.\n- $X = 3 \\Rightarrow Y = 27 - 36 + 10 = 1$, xác suất $p = 0{,}2$.\nKỳ vọng:\n$E(Y) = 10(0{,}2) + 7(0{,}3) + 2(0{,}3) + 1(0{,}2) = 2{,}0 + 2{,}1 + 0{,}6 + 0{,}2 = 4{,}90$.\nKỳ vọng bình phương:\n$E(Y^2) = 100(0{,}2) + 49(0{,}3) + 4(0{,}3) + 1(0{,}2) = 20 + 14{,}7 + 1{,}2 + 0{,}2 = 36{,}10$.\nPhương sai:\n$D(Y) = E(Y^2) - [E(Y)]^2 = 36{,}10 - (4{,}90)^2 = 36{,}10 - 24{,}01 = 12{,}09$.",
     "methodology": "Định lý chuyển biến: $E(g(X)) = \\sum g(x_i) p_i$ và $D(Y) = E(Y^2) - [E(Y)]^2$.",
     "tips": "Casio Menu 6 Statistics: Nhập các giá trị Y và P để tính ngay $\\bar{y} = 4.75, \\sigma^2 = 13.6875$."
   },

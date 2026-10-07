@@ -1,0 +1,805 @@
+[
+  [
+    "PART_11_Q48",
+    {
+      "status": "FLAGGED",
+      "target_answer": "A",
+      "calculated_answer": "D",
+      "explanation_valid": false,
+      "notes": "83H + 49H = CCH là đúng. Tuy nhiên nibble thấp: 3H + 9H = CH, không phát sinh carry từ bit 3 sang bit 4 nên AC=0, không phải AC=1. Xét số có dấu: 83H (-125) + 49H (+73) có hai toán hạng khác dấu nên OV=0. Vì vậy AC=0, OV=0, tương ứng phương án A. Do đó đáp án hiện tại A thực ra đúng; lỗi chỉ nằm ở đánh giá ban đầu của calculated_answer.",
+      "checked_at": "2026-10-07 18:45:02"
+    }
+  ],
+  [
+    "PART_11_Q50",
+    {
+      "status": "FLAGGED",
+      "target_answer": "D",
+      "calculated_answer": "D",
+      "explanation_valid": false,
+      "notes": "Đáp án D (CY=0, P=1) là đúng nếu CY ban đầu được mặc định bằng 0: 25H+7DH=A2H, không có carry nên CY=0; A2H có 3 bit 1 nên P=1. Tuy nhiên lời giải hiện tại sai khi kết luận AC=1 và OV=1: nibble thấp 5H+DH=12H nên AC=1 là đúng, nhưng OV phải bằng 0 vì hai toán hạng có bit dấu khác nhau. Ngoài ra ADDC phụ thuộc CY trước lệnh; đề không khởi tạo CY nên về mặt chặt chẽ trạng thái kết quả không xác định duy nhất.",
+      "checked_at": "2026-10-07 18:45:03"
+    }
+  ],
+  [
+    "PART_11_Q43",
+    {
+      "status": "FLAGGED",
+      "target_answer": "D",
+      "calculated_answer": "B",
+      "explanation_valid": false,
+      "notes": "A7H+2FH+CY(0)=D6H, không phải D7H; P=1 vì D6H có 5 bit 1; lệnh SETB C ở cuối làm CY=1. Đáp án đúng là P=1, CY=1 (B).",
+      "checked_at": "2026-10-07 18:45:04"
+    }
+  ],
+  [
+    "PART_11_Q54",
+    {
+      "status": "FLAGGED",
+      "target_answer": "00",
+      "calculated_answer": "CY=0, P=0",
+      "explanation_valid": true,
+      "notes": "SETB C đặt CY=1 nên SUBB tính FEH-12H-1=EBH. Không có mượn nên CY=0. EBH=11101011b có 6 bit 1 (chẵn) nên P=0. Vì vậy đáp án đúng là CY=0, P=0; nếu '00' mã hóa lần lượt CY,P thì đáp án hiện tại thực chất đúng, nhưng không khớp định dạng đáp án mô tả.",
+      "checked_at": "2026-10-07 18:45:08"
+    }
+  ],
+  [
+    "PART_11_Q58",
+    {
+      "status": "FLAGGED",
+      "target_answer": "80",
+      "calculated_answer": "5B",
+      "explanation_valid": false,
+      "notes": "XCH A,R1 trao đổi trực tiếp nội dung của A và R1, không thực hiện ADD và cũng không truy cập ô nhớ 40H. Ban đầu A=5BH, R1=40H nên sau lệnh A=40H và R1=5BH. Vì vậy đáp án 80 sai; lời giải hiện tại mô tả một phép cộng không liên quan đến lệnh XCH.",
+      "checked_at": "2026-10-07 18:45:10"
+    }
+  ],
+  [
+    "PART_11_Q55",
+    {
+      "status": "FLAGGED",
+      "target_answer": "B",
+      "calculated_answer": "D",
+      "explanation_valid": false,
+      "notes": "ADDC phụ thuộc CY ban đầu, nhưng đề không cho trạng thái CY trước lệnh. Nếu giả sử CY=0 thì 53H+12H=65H, AC=0; sau CLR C thì CY=0, nên B. Nếu CY ban đầu=1 thì 53H+12H+1=66H, AC=0; sau CLR C vẫn CY=0, nên cũng B. Vì vậy xét các cờ được hỏi, đáp án đúng luôn là B (CY=0, AC=0). Do đó calculated_answer phải là B; lời giải hiện tại kết luận đúng nhưng chưa xét CY đầu vào của ADDC. Ngoài ra P của 65H là 0 vì có 4 bit 1. OV=0.",
+      "checked_at": "2026-10-07 18:45:12"
+    }
+  ],
+  [
+    "PART_11_Q59",
+    {
+      "status": "FLAGGED",
+      "target_answer": "85",
+      "calculated_answer": "85",
+      "explanation_valid": false,
+      "notes": "Đáp án 85H là đúng. PSW ban đầu 81H nên CY=1. SUBB thực hiện 5BH-C3H-1=97H, không phải 98H. Các cờ sau phép trừ: CY=1, AC=0, OV=1; A=97H có 5 bit 1 nên P=1. Giữ nguyên các bit PSW không bị SUBB tác động cho PSW=85H. Lời giải hiện tại sai ở kết quả trung gian A=98H và vì vậy chưa chính xác 100%, dù kết luận cờ và đáp án cuối đúng.",
+      "checked_at": "2026-10-07 18:45:13"
+    }
+  ],
+  [
+    "PART_11_Q62",
+    {
+      "status": "FLAGGED",
+      "target_answer": "C",
+      "calculated_answer": "C",
+      "explanation_valid": false,
+      "notes": "Đáp án C đúng: AC=1 và OV=1 trong cả hai trường hợp CY ban đầu là 0 hoặc 1. Tuy nhiên lời giải chưa chuẩn 100% vì ADDC thực hiện A=A+R0+CY, trong khi đề không cho CY ban đầu. Nếu CY=0 thì A=25H+7DH=A2H, CY=0, AC=1, OV=1, P=1; nếu CY=1 thì A=A3H, CY=0, AC=1, OV=1, P=0. Vì vậy kết luận AC=1, OV=1 vẫn đúng, nhưng việc khẳng định A=A2H và P=1 mà không nêu giả thiết CY ban đầu bằng 0 là thiếu cơ sở.",
+      "checked_at": "2026-10-07 18:45:17"
+    }
+  ],
+  [
+    "PART_11_Q67",
+    {
+      "status": "FLAGGED",
+      "target_answer": "05",
+      "calculated_answer": "72",
+      "explanation_valid": false,
+      "notes": "MOV 40H,@R1 dùng định địa chỉ gián tiếp qua R1. Vì R1=60H và ô nhớ 60H chứa 72H nên lệnh chép 72H vào ô nhớ 40H. Đáp án hiện tại 05 sai. Lời giải hiện tại hoàn toàn không liên quan vì phân tích lệnh ADD và các cờ trạng thái, trong khi đề bài là lệnh MOV.",
+      "checked_at": "2026-10-07 18:45:18"
+    }
+  ],
+  [
+    "PART_11_Q66",
+    {
+      "status": "FLAGGED",
+      "target_answer": "04",
+      "calculated_answer": "4F",
+      "explanation_valid": false,
+      "notes": "MOV R2,30H dùng địa chỉ trực tiếp: sao chép nội dung ô RAM 30H vào R2. Vì (30H)=4FH nên sau lệnh R2=4FH. Đáp án 04 sai. Lời giải hiện tại cũng sai hoàn toàn vì đã phân tích lệnh ADD và các cờ CY/AC/OV/P, trong khi đề bài là lệnh MOV.",
+      "checked_at": "2026-10-07 18:45:18"
+    }
+  ],
+  [
+    "PART_11_Q64",
+    {
+      "status": "FLAGGED",
+      "target_answer": "A",
+      "calculated_answer": "C",
+      "explanation_valid": false,
+      "notes": "CLR C nên carry-in=0. ADDC: 27H+C5H+0=ECH, không có carry ra bit 7 nên CY=0. Tuy nhiên 27H (+39) + C5H (-59) là hai toán hạng khác dấu nên không thể tràn số có dấu; tính theo carry cũng cho OV=0. Vì vậy đúng ra OV=0, CY=0, tức đáp án A. Do đó đáp án hiện tại A thực tế đúng; trường calculated_answer phải là A.",
+      "checked_at": "2026-10-07 18:45:19"
+    }
+  ],
+  [
+    "PART_11_Q65",
+    {
+      "status": "FLAGGED",
+      "target_answer": "80",
+      "calculated_answer": "40",
+      "explanation_valid": false,
+      "notes": "Lệnh XCH A,R1 hoán đổi trực tiếp nội dung A và R1, không thực hiện phép ADD và không truy cập gián tiếp ô nhớ 40H. PSW=81H có RS1=RS0=0 nên chọn bank 0, nhưng đề đã cho trực tiếp (R1)=40H. Sau XCH: A=40H và R1=5BH. Giá trị (40H)=C3H không liên quan. Vì vậy đáp án hiện tại 80 là sai và lời giải hiện tại hoàn toàn không đúng với lệnh XCH.",
+      "checked_at": "2026-10-07 18:45:20"
+    }
+  ],
+  [
+    "PART_11_Q68",
+    {
+      "status": "FLAGGED",
+      "target_answer": "85",
+      "calculated_answer": "C5",
+      "explanation_valid": false,
+      "notes": "PSW=81H nên CY ban đầu=1. SUBB thực hiện 5BH-C3H-1=97H. Có borrow nên CY=1; nibble thấp: BH-3H-1=7H không borrow nên AC=0; 5BH (dương) trừ C3H (âm) cho 97H (âm) gây tràn số có dấu nên OV=1; 97H có 5 bit 1 nên P=1. Do đó CY AC F0 RS1 RS0 OV - P = 1 1? Không: CY=1, AC=0, F0 giữ nguyên từ PSW ban đầu=0, RS1=0, RS0=0, OV=1, bit1 ban đầu=0, P=1 => 10000101B = 85H. Vì đề hỏi các cờ CY, AC, OV, P thì chúng lần lượt là 1011B; còn nếu hỏi nội dung PSW sau lệnh thì là 85H. Đáp án 85 có thể đúng theo PSW, nhưng không đúng theo đúng câu chữ 'các cờ ... sẽ là ___B'; lời giải cũng sai khi tính A=98H vì đã bỏ qua CY=1 của SUBB.",
+      "checked_at": "2026-10-07 18:45:24"
+    }
+  ],
+  [
+    "PART_12_Q05",
+    {
+      "status": "FLAGGED",
+      "target_answer": "41",
+      "calculated_answer": "41",
+      "explanation_valid": false,
+      "notes": "Đáp án 41H là đúng: R0=7EH; [7EH]=00H, [7FH]=40H; INC @R0 làm [7EH]=01H; INC R0 làm R0=7FH; INC @R0 làm [7FH]=41H. Lời giải hiện tại kết luận đúng nhưng quá chung chung, không trình bày diễn biến R0 và các ô nhớ nên chưa đủ logic để coi là lời giải chuẩn xác/đầy đủ.",
+      "checked_at": "2026-10-07 18:45:25"
+    }
+  ],
+  [
+    "PART_12_Q09",
+    {
+      "status": "FLAGGED",
+      "target_answer": "FF",
+      "calculated_answer": "FE",
+      "explanation_valid": false,
+      "notes": "SUBB thực hiện A = A - dữ liệu - CY. Sau MOV A,#55H, ta có A=55H nhưng CY không được MOV thay đổi. Vì đề không cho trạng thái CY ban đầu nên kết quả không xác định duy nhất: nếu CY=0 thì A=55H-56H=FFH; nếu CY=1 thì A=FEH. Do đó đáp án FF chỉ đúng khi ngầm giả sử CY=0, còn đề hiện tại thiếu điều kiện về CY; lời giải cũng không giải thích vai trò của cờ CY.",
+      "checked_at": "2026-10-07 18:45:26"
+    }
+  ],
+  [
+    "PART_12_Q06",
+    {
+      "status": "FLAGGED",
+      "target_answer": "77",
+      "calculated_answer": "77",
+      "explanation_valid": false,
+      "notes": "Đáp án 77H là đúng vì R0 được nạp 77H và cả ADD A,R0 lẫn ADDC A,R0 chỉ thay đổi A và các cờ liên quan, không ghi đè R0. Lời giải hiện tại kết luận đúng nhưng diễn giải không chuẩn/chưa đủ logic vì nói chung chung về 'ghi đè trên thanh ghi/ô nhớ' mà không chỉ rõ R0 không hề bị thay đổi.",
+      "checked_at": "2026-10-07 18:45:27"
+    }
+  ],
+  [
+    "PART_12_Q07",
+    {
+      "status": "FLAGGED",
+      "target_answer": "74",
+      "calculated_answer": "74",
+      "explanation_valid": false,
+      "notes": "Đáp án 74H là đúng: SETB C đặt C=1; MOV A,#0C9H => A=C9H; MOV R2,#54H; SUBB A,R2 thực hiện A=C9H-54H-C=75H-1=74H. Lời giải hiện tại kết luận đúng nhưng không giải thích cơ chế SUBB trừ thêm cờ Carry/Borrow, nên chưa đủ logic để coi là chuẩn xác 100%.",
+      "checked_at": "2026-10-07 18:45:27"
+    }
+  ],
+  [
+    "PART_11_Q69",
+    {
+      "status": "FLAGGED",
+      "target_answer": "C",
+      "calculated_answer": "A",
+      "explanation_valid": false,
+      "notes": "8BH + B4H = 13FH nên A=3FH. Nửa thấp: BH + 4H = FH, không có carry từ bit 3 sang bit 4 nên AC=0. A=3FH có 6 bit 1 (chẵn) nên P=0. Do đó trạng thái cần chọn là P=0, AC=0, tương ứng lựa chọn C theo danh sách đã cho. Vì vậy đáp án hiện tại C thực chất đúng; tuy nhiên trường calculated_answer theo nhãn lựa chọn phải là C, không phải A. Lời giải hiện tại sai ở OV: 8BH và B4H đều là số âm có dấu, tổng cho kết quả 3FH dương nên OV=1 là đúng. Như vậy toàn bộ lời giải CY=1, AC=0, OV=1, P=0 là chính xác. Lưu ý đề có hai lựa chọn đầu trùng nhau.",
+      "checked_at": "2026-10-07 18:45:28"
+    }
+  ],
+  [
+    "PART_12_Q11",
+    {
+      "status": "FLAGGED",
+      "target_answer": "51",
+      "calculated_answer": "51",
+      "explanation_valid": false,
+      "notes": "Đáp án 51H là đúng: MOV P3,#55H làm P3=55H=01010101b; CLR P3.2 xóa bit 2 đang bằng 1, nên P3=01010001b=51H. Lời giải hiện tại kết luận đúng nhưng quá chung chung, không giải thích thao tác xóa bit P3.2 nên chưa đủ logic để xem là lời giải chuẩn xác 100%.",
+      "checked_at": "2026-10-07 18:45:32"
+    }
+  ],
+  [
+    "PART_12_Q10",
+    {
+      "status": "FLAGGED",
+      "target_answer": "00",
+      "calculated_answer": "F4",
+      "explanation_valid": false,
+      "notes": "Thực thi: R0=7FH; [7EH]=ADH; [7FH]=26H; DEC R0 => R0=7EH; MOV A,7FH => A=26H; XRL A,@R0 => A=26H XOR ADH=8BH; MOV R0,A => R0=8BH; XRL A,#7FH => A=8BH XOR 7FH=F4H. Vì vậy nếu đề hỏi nội dung thanh ghi A thì đáp án đúng là F4H, không phải 00H. Lời giải hiện tại chỉ khẳng định kết quả 00H mà không chứng minh các bước nên sai. Nếu hiểu đúng nguyên văn 'ô nhớ có địa chỉ A' là ô nhớ tại địa chỉ F4H thì đề còn thiếu dữ kiện để xác định nội dung ô đó.",
+      "checked_at": "2026-10-07 18:45:33"
+    }
+  ],
+  [
+    "PART_12_Q04",
+    {
+      "status": "FLAGGED",
+      "target_answer": "30",
+      "calculated_answer": "KHÔNG XÁC ĐỊNH/KHÔNG HỢP LỆ TRÊN AT89C51",
+      "explanation_valid": false,
+      "notes": "MOV A,#30H đặt A=30H; MOV R1,#F0H đặt R1=F0H. Tuy nhiên MOV @R1,A và MOV A,@R1 dùng định địa chỉ gián tiếp qua R1. Với 8051/AT89C51 chỉ có 128 byte RAM nội 00H-7FH; vùng F0H không phải RAM gián tiếp hợp lệ. Địa chỉ F0H là thanh ghi B chỉ khi truy cập trực tiếp, không phải qua @R1. Vì vậy không thể kết luận A=30H trên 89C51; đáp án và lời giải hiện tại không chuẩn xác.",
+      "checked_at": "2026-10-07 18:45:35"
+    }
+  ],
+  [
+    "PART_12_Q14",
+    {
+      "status": "FLAGGED",
+      "target_answer": "5D",
+      "calculated_answer": "5D",
+      "explanation_valid": false,
+      "notes": "Kết quả 5DH là đúng nhưng lời giải hiện tại quá chung chung, không thực sự chứng minh kết quả. Cụ thể: P3=5BH=01011011B; CPL P3.1 đảo bit 1 từ 1 thành 0 => 59H (01011001B); CPL P3.2 đảo bit 2 từ 0 thành 1 => 5DH (01011101B). Vì vậy đáp án đúng là 5D, nhưng lời giải cần nêu rõ từng phép đảo bit.",
+      "checked_at": "2026-10-07 18:45:35"
+    }
+  ],
+  [
+    "PART_12_Q15",
+    {
+      "status": "FLAGGED",
+      "target_answer": "8E",
+      "calculated_answer": "8E",
+      "explanation_valid": false,
+      "notes": "Tính độc lập: A=C5H; SWAP A hoán đổi hai nibble nên A=5CH; ADD A,#32H => 5CH+32H=8EH. Đáp án 8E là chính xác. Tuy nhiên lời giải hiện tại quá chung chung, không trình bày phép SWAP và phép cộng cụ thể nên chưa đủ logic để được xem là lời giải chuẩn xác/đầy đủ.",
+      "checked_at": "2026-10-07 18:45:36"
+    }
+  ],
+  [
+    "PART_12_Q17",
+    {
+      "status": "FLAGGED",
+      "target_answer": "A",
+      "calculated_answer": "A",
+      "explanation_valid": false,
+      "notes": "A=FFH; ADD A,#02H -> A=01H và CY=1. JNZ được thực hiện vì A!=0 nên nhảy đến SKIP. ADDC A,#02H tính 01H+02H+CY(1)=04H. Vì vậy kết quả đúng là 04H, tương ứng lựa chọn A. Lời giải hiện tại sai khi kết luận 03H.",
+      "checked_at": "2026-10-07 18:45:40"
+    }
+  ],
+  [
+    "PART_12_Q18",
+    {
+      "status": "FLAGGED",
+      "target_answer": "A",
+      "calculated_answer": "B",
+      "explanation_valid": false,
+      "notes": "A bắt đầu FFH. ADD A,#02H cho kết quả 01H và CY=1. Vì A≠0 nên JZ không nhảy. ADDC A,#02H tính 01H+02H+CY(1)=04H. Do đó A cuối là 04H, tương ứng lựa chọn C, không phải A. Lời giải hiện tại kết luận 05H là sai.",
+      "checked_at": "2026-10-07 18:45:40"
+    }
+  ],
+  [
+    "PART_12_Q16",
+    {
+      "status": "FLAGGED",
+      "target_answer": "7F",
+      "calculated_answer": "7F",
+      "explanation_valid": false,
+      "notes": "R0 được nạp 7EH. INC @R0 chỉ tăng nội dung ô RAM 7EH, không đổi R0. Sau đó INC R0 làm R0 = 7FH. Lệnh INC @R0 cuối chỉ tăng nội dung ô RAM 7FH, nên R0 vẫn là 7FH. Đáp án 7F đúng, nhưng lời giải hiện tại quá chung chung, không giải thích đúng vai trò của địa chỉ gián tiếp @R0 và lệnh INC R0 nên chưa đủ chuẩn xác để coi là lời giải hợp lệ.",
+      "checked_at": "2026-10-07 18:45:43"
+    }
+  ],
+  [
+    "PART_12_Q20",
+    {
+      "status": "FLAGGED",
+      "target_answer": "3A",
+      "calculated_answer": "05",
+      "explanation_valid": false,
+      "notes": "CLR C làm C=0; MOV A,#0FFH đặt A=FFH; MOV B,#05H đặt B=05H; SUBB A,B chỉ thực hiện A=A-B-C=FFH-05H-0=FAH và không thay đổi toán hạng B. Vì vậy B cuối cùng vẫn là 05H, không phải 3AH. Lời giải hiện tại không trình bày phép tính cụ thể và kết luận sai.",
+      "checked_at": "2026-10-07 18:45:44"
+    }
+  ],
+  [
+    "PART_12_Q23",
+    {
+      "status": "FLAGGED",
+      "target_answer": "15",
+      "calculated_answer": "F0",
+      "explanation_valid": false,
+      "notes": "R0 được nạp F0H bởi MOV R0,#0F0H. Lệnh XRL A,R0 thực hiện XOR và lưu kết quả vào A, không ghi đè R0. Vì vậy sau đoạn mã, A=0FH còn R0 vẫn=F0H. Đáp án hiện tại 15 (tức 0FH nếu hiểu là thập phân) đã nhầm giá trị của A với R0; lời giải hiện tại cũng sai kết luận.",
+      "checked_at": "2026-10-07 18:45:49"
+    }
+  ],
+  [
+    "PART_12_Q19",
+    {
+      "status": "FLAGGED",
+      "target_answer": "7E",
+      "calculated_answer": "AA",
+      "explanation_valid": false,
+      "notes": "MOV R0,#0AAH nạp AAH vào R0. Lệnh ADD A,R0 chỉ cộng R0 vào thanh ghi A và ghi kết quả vào A, không thay đổi R0. Vì vậy sau đoạn mã R0 vẫn bằng AAH. Giá trị 7EH là kết quả của phép C3H + AAH = 16DH nên A nhận 6DH (8 bit thấp), không phải 7EH.",
+      "checked_at": "2026-10-07 18:45:49"
+    }
+  ],
+  [
+    "PART_12_Q21",
+    {
+      "status": "FLAGGED",
+      "target_answer": "7C",
+      "calculated_answer": "5F",
+      "explanation_valid": false,
+      "notes": "Thực thi: R0=7EH; RAM[7E]=55H, RAM[7F]=4FH; INC R0 => R0=7FH; A=55H; ORL A,@R0 => A=55H OR 4FH=5FH; MOV R0,A => R0=5FH; lệnh ORL A,7EH chỉ đổi A (thành 5FH), không đổi R0. Vì vậy R0 cuối cùng là 5FH, không phải 7CH; lời giải hiện tại sai và cũng thiếu diễn giải từng bước.",
+      "checked_at": "2026-10-07 18:45:49"
+    }
+  ],
+  [
+    "PART_12_Q25",
+    {
+      "status": "FLAGGED",
+      "target_answer": "45",
+      "calculated_answer": "45",
+      "explanation_valid": false,
+      "notes": "Tính độc lập: A=5AH; [5AH]=5AH; XRL [5AH],#DBH => 5A XOR DB=81H; CPL A => A=A5H; XRL [5AH],A => 81 XOR A5=24H, không phải 45H. Vì vậy đáp án hiện tại 45H là sai; lời giải cũng sai và thiếu diễn giải. Kết quả đúng là 24H.",
+      "checked_at": "2026-10-07 18:45:50"
+    }
+  ],
+  [
+    "PART_12_Q27",
+    {
+      "status": "FLAGGED",
+      "target_answer": "00",
+      "calculated_answer": "83",
+      "explanation_valid": false,
+      "notes": "MOV P2,#00H đặt P2=00000000b. CPL P2.1 đảo bit 1 thành 1 => 02H; CPL P2.0 đảo bit 0 thành 1 => 03H; CPL P2.7 đảo bit 7 thành 1 => 83H. Vì vậy đáp án 00H và lời giải hiện tại đều sai.",
+      "checked_at": "2026-10-07 18:45:50"
+    }
+  ],
+  [
+    "PART_12_Q28",
+    {
+      "status": "FLAGGED",
+      "target_answer": "6D",
+      "calculated_answer": "6D",
+      "explanation_valid": false,
+      "notes": "MOV A,#0B6H nạp A = B6H = 10110110b. Lệnh RL A quay vòng trái 1 bit, đưa bit 7 cũ về bit 0: 10110110b -> 01101101b = 6DH. Vì vậy đáp án 6D là đúng. Tuy nhiên lời giải hiện tại quá chung chung, không thể hiện phép quay bit của RL A nên chưa đủ logic để được xem là lời giải chuẩn xác 100%.",
+      "checked_at": "2026-10-07 18:45:54"
+    }
+  ],
+  [
+    "PART_12_Q33",
+    {
+      "status": "FLAGGED",
+      "target_answer": "F2",
+      "calculated_answer": "F2",
+      "explanation_valid": false,
+      "notes": "0F0H OR 0E2H = 11110000 OR 11100010 = 11110010 = F2H, nên đáp án F2 đúng. Tuy nhiên lời giải hiện tại quá chung chung, không thực hiện phép OR theo từng bit nên chưa đủ logic để chứng minh kết quả.",
+      "checked_at": "2026-10-07 18:45:55"
+    }
+  ],
+  [
+    "PART_12_Q29",
+    {
+      "status": "FLAGGED",
+      "target_answer": "A",
+      "calculated_answer": "10",
+      "explanation_valid": false,
+      "notes": "R1=3 nên vòng lặp chạy 3 lần. Mỗi lần SETB C làm C=1 trước SUBB; SUBB A,#2 thực hiện A=A-2-C=A-3. Từ A=17: 17→14→11→8? Kiểm tra lại: lần 1: 17-2-1=14; lần 2: 14-2-1=11; lần 3: 11-2-1=8. Vì vậy kết quả đúng là 8 (lựa chọn thứ 4), không phải A=17. Lời giải hiện tại kết luận 25H cũng sai và không nhất quán với các lựa chọn.",
+      "checked_at": "2026-10-07 18:45:56"
+    }
+  ],
+  [
+    "PART_12_Q34",
+    {
+      "status": "FLAGGED",
+      "target_answer": "00",
+      "calculated_answer": "B2",
+      "explanation_valid": false,
+      "notes": "C3H + 77H = 13AH nên A=3AH và CY=1. Tiếp theo ADDC A,20H thực hiện 3AH + 77H + 1 = B2H. Vì vậy đáp án 00H sai; lời giải hiện tại không trình bày phép cộng và cờ nhớ CY nên kết luận không chính xác.",
+      "checked_at": "2026-10-07 18:45:57"
+    }
+  ],
+  [
+    "PART_12_Q32",
+    {
+      "status": "FLAGGED",
+      "target_answer": "5B",
+      "calculated_answer": "00",
+      "explanation_valid": false,
+      "notes": "DIV AB thực hiện phép chia không dấu A/B, thương lưu vào A và số dư lưu vào B. 77H = 119, 07H = 7; 119/7 = 17 dư 0. Vì vậy sau lệnh DIV AB, B = 00H, không phải 5BH. Lời giải hiện tại không nêu đúng cơ chế DIV AB và kết luận sai.",
+      "checked_at": "2026-10-07 18:45:57"
+    }
+  ],
+  [
+    "PART_12_Q31",
+    {
+      "status": "FLAGGED",
+      "target_answer": "FF",
+      "calculated_answer": "55",
+      "explanation_valid": false,
+      "notes": "Ô 7EH được gán 55H và không có lệnh nào sau đó ghi lại vào ô này. INC R0 làm R0=7FH; MOV A,7EH cho A=55H; ORL A,@R0 lấy 4FH tại 7FH nên A=5FH; MOV R0,A chỉ đổi R0 thành 5FH; ORL A,7EH vẫn chỉ đổi A thành 5FH. Vì vậy 7EH cuối cùng vẫn là 55H, không phải FFH. Lời giải hiện tại sai cả kết luận và thiếu diễn giải từng bước.",
+      "checked_at": "2026-10-07 18:46:00"
+    }
+  ],
+  [
+    "PART_12_Q30",
+    {
+      "status": "FLAGGED",
+      "target_answer": "0A",
+      "calculated_answer": "0A",
+      "explanation_valid": false,
+      "notes": "Tính độc lập: A=A3H+E6H=189H nên A=89H và C=1. Lệnh RRC A quay phải qua cờ Carry: C cũ=1 được đưa vào bit 7, còn các bit A dịch phải; 89H=10001001b nên kết quả A=11000100b=C4H. Vì vậy đáp án hiện tại 0A là sai; lời giải hiện tại cũng sai và không trình bày đúng quá trình tính toán.",
+      "checked_at": "2026-10-07 18:46:02"
+    }
+  ],
+  [
+    "PART_12_Q35",
+    {
+      "status": "FLAGGED",
+      "target_answer": "00",
+      "calculated_answer": "8B",
+      "explanation_valid": false,
+      "notes": "ABH = 10101011b. MOV C,P1.0 lấy bit 0 = 1; ANL C,P1.6 thực hiện C = 1 AND 0 = 0; MOV P1.5,C xóa bit 5 của P1. Vì ABH có bit 5 = 1 nên sau khi xóa, P1 = 10001011b = 8BH. Do đó đáp án 00H và lời giải hiện tại đều sai; lời giải hiện tại cũng không trình bày đúng quá trình biến đổi bit.",
+      "checked_at": "2026-10-07 18:46:03"
+    }
+  ],
+  [
+    "PART_12_Q37",
+    {
+      "status": "FLAGGED",
+      "target_answer": "11",
+      "calculated_answer": "11",
+      "explanation_valid": false,
+      "notes": "77H = 119, 07H = 7. Lệnh DIV AB thực hiện phép chia không dấu A/B, thương được lưu vào A và số dư vào B. 119/7 = 17 = 11H, dư 0. Vì vậy đáp án 11H là đúng. Tuy nhiên lời giải hiện tại quá chung chung, không nêu phép chia, giá trị thương hay cơ chế của DIV AB nên chưa đủ logic để xem là lời giải chuẩn xác 100%.",
+      "checked_at": "2026-10-07 18:46:04"
+    }
+  ],
+  [
+    "PART_12_Q36",
+    {
+      "status": "FLAGGED",
+      "target_answer": "41",
+      "calculated_answer": "55",
+      "explanation_valid": false,
+      "notes": "R0 được nạp 55H và không bị thay đổi. Lệnh ANL A,R0 chỉ thực hiện A = C3H AND 55H = 41H, nên 41H là giá trị của A, không phải R0. Do đó nội dung cuối của R0 là 55H.",
+      "checked_at": "2026-10-07 18:46:04"
+    }
+  ],
+  [
+    "PART_12_Q38",
+    {
+      "status": "FLAGGED",
+      "target_answer": "00",
+      "calculated_answer": "BB",
+      "explanation_valid": false,
+      "notes": "P1=ABH=10101011B. MOV C,P1.0 => C=1. P1.6=0 nên /P1.6=1; ANL C,/P1.6 => C=1. MOV P1.4,C đặt bit 4 từ 0 thành 1, do đó P1=10111011B=BBH. Đáp án 00 và lời giải hiện tại đều sai; lời giải hiện tại cũng không trình bày các bước biến đổi bit cần thiết.",
+      "checked_at": "2026-10-07 18:46:05"
+    }
+  ],
+  [
+    "PART_12_Q42",
+    {
+      "status": "FLAGGED",
+      "target_answer": "08",
+      "calculated_answer": "08",
+      "explanation_valid": false,
+      "notes": "Tính độc lập: A=5AH; [5AH]=5AH; ANL 5AH,#0BDH => 5AH AND BDH = 18H; CPL A => A=A5H; ANL 5AH,A => 18H AND A5H = 00H. Vì vậy đáp án hiện tại 08H là sai; kết quả đúng phải là 00H. Lời giải hiện tại cũng không hợp lệ vì chỉ khẳng định kết quả mà không chứng minh từng phép toán. Lưu ý trường is_correct phải là false.",
+      "checked_at": "2026-10-07 18:46:10"
+    }
+  ],
+  [
+    "PART_12_Q40",
+    {
+      "status": "FLAGGED",
+      "target_answer": "00",
+      "calculated_answer": "AA",
+      "explanation_valid": false,
+      "notes": "Ô nhớ 26H được gán AAH bởi MOV 26H,#0AAH. Hai lệnh ADD A,26H và ADDC A,@R0 chỉ thay đổi A cùng các cờ liên quan, không ghi lại vào ô nhớ 26H. Vì R0=26H nên @R0 chỉ đọc gián tiếp nội dung tại 26H. Do đó sau toàn bộ đoạn mã, ô nhớ 26H vẫn là AAH; đáp án 00 và lời giải hiện tại đều sai.",
+      "checked_at": "2026-10-07 18:46:11"
+    }
+  ],
+  [
+    "PART_12_Q41",
+    {
+      "status": "FLAGGED",
+      "target_answer": "30",
+      "calculated_answer": "30",
+      "explanation_valid": false,
+      "notes": "Tính độc lập: MOV A,#52H => A=52H. ADD A,#7BH => 52H+7BH=CDH, không phát sinh carry nên C=0. RLC A quay trái qua cờ C: CDH=11001101b, với C ban đầu 0 => A=10011010b=9AH. Vì vậy đáp án hiện tại 30H là sai. Lời giải hiện tại cũng sai và thiếu các bước tính cụ thể. Kết quả đúng là 9AH.",
+      "checked_at": "2026-10-07 18:46:12"
+    }
+  ],
+  [
+    "PART_12_Q39",
+    {
+      "status": "FLAGGED",
+      "target_answer": "55",
+      "calculated_answer": "KHÔNG XÁC ĐỊNH",
+      "explanation_valid": false,
+      "notes": "Đoạn mã chỉ tác động lên P2, không có lệnh nào đọc hoặc ghi P3. Cụ thể: MOV P2,#5BH làm P2=5BH; CPL P2.0 đảo bit 0 từ 1 thành 0 nên P2=5AH; SETB P2.7 đặt bit 7 thành 1 nên P2=DAH. Vì vậy nếu đề thực sự hỏi P3 thì không thể suy ra nội dung P3 từ đoạn mã và đáp án 55H là sai. Nếu đề bị nhầm P3 thành P2 thì đáp án đúng phải là DAH. Lời giải hiện tại cũng không hợp lệ vì không theo dõi cụ thể các bit và kết luận 55H không xuất phát từ các lệnh đã cho.",
+      "checked_at": "2026-10-07 18:46:13"
+    }
+  ],
+  [
+    "PART_12_Q44",
+    {
+      "status": "FLAGGED",
+      "target_answer": "00",
+      "calculated_answer": "3F",
+      "explanation_valid": false,
+      "notes": "R0=7FH; RAM[7EH]=00H; RAM[7FH]=40H. DEC @R0 làm RAM40H→3FH. DEC R0 làm R0: 7FH→7EH. DEC @R0 tiếp theo chỉ làm RAM[7EH]: 00H→FFH. Vì vậy ô nhớ 7FH cuối cùng vẫn là 3FH, không phải 00H; lời giải hiện tại vừa thiếu diễn giải từng lệnh vừa kết luận sai.",
+      "checked_at": "2026-10-07 18:46:14"
+    }
+  ],
+  [
+    "PART_12_Q22",
+    {
+      "status": "FLAGGED",
+      "target_answer": "03",
+      "calculated_answer": "0F",
+      "explanation_valid": false,
+      "notes": "MOV B,#0FH nạp B=0FH. Lệnh ADD A,B thực hiện A=A+B và chỉ lưu kết quả vào A, không ghi đè B. Vì vậy B vẫn là 0FH. Đáp án 03H và lời giải hiện tại đều sai.",
+      "checked_at": "2026-10-07 18:46:15"
+    }
+  ],
+  [
+    "PART_12_Q43",
+    {
+      "status": "FLAGGED",
+      "target_answer": "30",
+      "calculated_answer": "F0",
+      "explanation_valid": false,
+      "notes": "MOV R1,#0F0H nạp F0H vào R1. Hai lệnh MOV @R1,A và MOV A,@R1 chỉ dùng R1 làm thanh ghi chứa địa chỉ gián tiếp, không thay đổi nội dung R1. Vì vậy sau toàn bộ đoạn mã, R1 vẫn bằng F0H; 30H là giá trị của A/dữ liệu được ghi, không phải R1.",
+      "checked_at": "2026-10-07 18:46:15"
+    }
+  ],
+  [
+    "PART_12_Q45",
+    {
+      "status": "FLAGGED",
+      "target_answer": "A",
+      "calculated_answer": "D",
+      "explanation_valid": false,
+      "notes": "R1=3 nên vòng lặp chạy 3 lần. SETB C làm C=1. Lần 1: A=17-2-1=14; SUBB không mượn nên C=0. Lần 2: A=14-2=12. Lần 3: A=12-2=10. Vì vậy giá trị cuối của A là 10, tương ứng lựa chọn đầu tiên (A), không phải D nếu các lựa chọn được gán A/B/C/D theo thứ tự. Lời giải hiện tại kết luận 55H là sai và không liên quan đến quá trình thực thi.",
+      "checked_at": "2026-10-07 18:46:17"
+    }
+  ],
+  [
+    "PART_12_Q47",
+    {
+      "status": "FLAGGED",
+      "target_answer": "A",
+      "calculated_answer": "A",
+      "explanation_valid": false,
+      "notes": "A=18H nên ACC.7=0, lệnh JB không nhảy đến SKIP. Thực hiện ADD A,30H với 30H=10H nên A=18H+10H=28H; sau đó MOV 30H,A làm 30H=28H và SJMP EXIT bỏ qua nhánh SUBB. Vì vậy đáp án A (28H) là đúng. Lời giải hiện tại sai vì kết luận giá trị cuối là 12H, mâu thuẫn với kết quả thực thi và cả đáp án A.",
+      "checked_at": "2026-10-07 18:46:18"
+    }
+  ],
+  [
+    "PART_12_Q48",
+    {
+      "status": "FLAGGED",
+      "target_answer": "34",
+      "calculated_answer": "35",
+      "explanation_valid": false,
+      "notes": "XCHD A,@R0 chỉ hoán đổi 4 bit thấp giữa A và ô RAM được R0 trỏ tới. Ban đầu A=36H, R0=20H và RAM[20H]=75H nên nibble thấp 6 và 5 được đổi cho nhau: A=35H, RAM[20H]=76H. Vì vậy đáp án 34H là sai; lời giải hiện tại cũng không chính xác và thiếu bước giải thích cơ chế XCHD.",
+      "checked_at": "2026-10-07 18:46:19"
+    }
+  ],
+  [
+    "PART_12_Q49",
+    {
+      "status": "FLAGGED",
+      "target_answer": "56",
+      "calculated_answer": "FF",
+      "explanation_valid": false,
+      "notes": "Tính lần lượt: A=5AH; [5AH]=5AH; ORL 5AH,#22H => [5AH]=5AH OR 22H=7AH; CPL A => A=A5H; ORL 5AH,A => [5AH]=7AH OR A5H=FFH. Vì vậy đáp án đúng là FF, không phải 56; lời giải hiện tại cũng không trình bày phép tính cụ thể và kết luận sai.",
+      "checked_at": "2026-10-07 18:46:21"
+    }
+  ],
+  [
+    "PART_12_Q51",
+    {
+      "status": "FLAGGED",
+      "target_answer": "65",
+      "calculated_answer": "65",
+      "explanation_valid": false,
+      "notes": "Tính độc lập: A=ABH; CLR C làm C=0; ADDC A,#BAH nên A=ABH+BAH+0=165H, thanh ghi A 8-bit giữ byte thấp là 65H (đồng thời CY=1). Đáp án 65 là đúng, nhưng lời giải hiện tại quá chung chung, không trình bày phép cộng và vai trò của cờ C nên chưa đủ logic để coi là chuẩn xác 100%.",
+      "checked_at": "2026-10-07 18:46:21"
+    }
+  ],
+  [
+    "PART_12_Q46",
+    {
+      "status": "FLAGGED",
+      "target_answer": "20",
+      "calculated_answer": "02",
+      "explanation_valid": false,
+      "notes": "22H × 10H = 0220H. Với lệnh MUL AB của 8051, byte thấp của tích được lưu vào A và byte cao được lưu vào B. Do đó A=20H, B=02H. Đáp án hiện tại 20 nhầm giá trị của A với B; lời giải hiện tại cũng không trình bày phép nhân và quy tắc lưu kết quả nên kết luận sai.",
+      "checked_at": "2026-10-07 18:46:22"
+    }
+  ],
+  [
+    "PART_12_Q53",
+    {
+      "status": "FLAGGED",
+      "target_answer": "55",
+      "calculated_answer": "8B",
+      "explanation_valid": false,
+      "notes": "R0 ban đầu = 7FH; DEC R0 => 7EH. A = [7FH] = 26H. XRL A,@R0 => 26H XOR ADH = 8BH. MOV R0,A => R0 = 8BH. Lệnh XRL A,7FH sau đó chỉ thay đổi A, không đổi R0. Vì vậy đáp án đúng là 8BH, không phải 55H; lời giải hiện tại vừa thiếu các bước tính cụ thể vừa kết luận sai.",
+      "checked_at": "2026-10-07 18:46:24"
+    }
+  ],
+  [
+    "PART_12_Q50",
+    {
+      "status": "FLAGGED",
+      "target_answer": "A",
+      "calculated_answer": "A",
+      "explanation_valid": false,
+      "notes": "A=FFH; ADD A,#1 -> A=00H và CY=1. JZ SKIP được thực hiện vì A=00H. Tại SKIP, ADDC A,#03H tính 00H+03H+CY(1)=04H. Do đó đáp án đúng là 04H, tương ứng lựa chọn A. Đáp án hiện tại đúng nhưng lời giải hiện tại sai hoàn toàn khi kết luận 78H.",
+      "checked_at": "2026-10-07 18:46:24"
+    }
+  ],
+  [
+    "PART_12_Q52",
+    {
+      "status": "FLAGGED",
+      "target_answer": "A",
+      "calculated_answer": "B",
+      "explanation_valid": false,
+      "notes": "MOV 30H,#02H lưu 02H vào RAM 30H; MOV A,30H nên A=02H. MOVC A,@A+DPTR đọc bộ nhớ mã tại TABLE+2, tức phần tử thứ 3 của bảng là 0A4H. Sau MOV P1,A, P1=0A4H. Vì vậy đáp án đúng là B, không phải A; lời giải hiện tại kết luận 00H là sai.",
+      "checked_at": "2026-10-07 18:46:25"
+    }
+  ],
+  [
+    "PART_12_Q55",
+    {
+      "status": "FLAGGED",
+      "target_answer": "00",
+      "calculated_answer": "FF",
+      "explanation_valid": false,
+      "notes": "MOV A,#0F0H nạp A=F0H. ORL A,#0FH thực hiện OR theo bit: F0H OR 0FH = FFH. Vì vậy đáp án đúng là FF, không phải 00; lời giải hiện tại sai cả logic lẫn kết luận.",
+      "checked_at": "2026-10-07 18:46:27"
+    }
+  ],
+  [
+    "PART_13_Q06",
+    {
+      "status": "FLAGGED",
+      "target_answer": "A",
+      "calculated_answer": "KHÔNG THỂ XÁC ĐỊNH",
+      "explanation_valid": false,
+      "notes": "Đề bài không cung cấp đoạn mã Assembly nên không thể tính độc lập giá trị nạp Timer 0/1, thời gian mức cao/thấp hay tần số ngõ ra. Vì vậy chưa đủ dữ kiện để khẳng định đáp án A và lời giải hiện tại là chính xác 100%.",
+      "checked_at": "2026-10-07 18:46:29"
+    }
+  ],
+  [
+    "PART_13_Q05",
+    {
+      "status": "FLAGGED",
+      "target_answer": "B",
+      "calculated_answer": "B",
+      "explanation_valid": false,
+      "notes": "Đáp án B (5000µs) chỉ có thể kết luận nếu đúng là chương trình con có R5 lặp 250 lần, R6 lặp 10 lần và chu kỳ lệnh/tần số xung phù hợp để vòng trong mất khoảng 500µs. Tuy nhiên đề bài được cung cấp không chứa mã chương trình con nên không thể kiểm chứng các dữ kiện này. Vì vậy đáp án hiện tại chưa thể xác nhận đúng 100% và lời giải hiện tại thiếu căn cứ từ đề.",
+      "checked_at": "2026-10-07 18:46:29"
+    }
+  ],
+  [
+    "PART_13_Q10",
+    {
+      "status": "FLAGGED",
+      "target_answer": "D",
+      "calculated_answer": "D",
+      "explanation_valid": false,
+      "notes": "Phần mã Assembly thực tế không xuất hiện trong đề bài được cung cấp, nên không thể kiểm chứng độc lập rằng A thực sự được nạp 3BH và R1 khiến RL A chạy đúng 8 lần. Nếu đúng là A=3BH và RL A thực hiện đúng 8 lần thì kết quả 3BH (lựa chọn D) và lập luận của lời giải là chính xác; tuy nhiên với dữ liệu hiện có chưa thể kết luận chuẩn xác 100%.",
+      "checked_at": "2026-10-07 18:46:33"
+    }
+  ],
+  [
+    "PART_12_Q57",
+    {
+      "status": "FLAGGED",
+      "target_answer": "0F",
+      "calculated_answer": "F0",
+      "explanation_valid": false,
+      "notes": "R1 được nạp F0H bởi MOV R1,#0F0H và không có lệnh nào sau đó thay đổi R1. MOV @R1,#0FH ghi 0FH vào ô nhớ được R1 trỏ tới, không ghi vào R1. ADD A,@R1 chỉ thay đổi A (F0H+0FH=FFH), còn R1 vẫn là F0H. Vì vậy đáp án hiện tại 0F và lời giải hiện tại đều sai.",
+      "checked_at": "2026-10-07 18:46:33"
+    }
+  ],
+  [
+    "PART_13_Q11",
+    {
+      "status": "FLAGGED",
+      "target_answer": "B",
+      "calculated_answer": "KHÔNG XÁC ĐỊNH",
+      "explanation_valid": false,
+      "notes": "Đề bài bị thiếu phần mã lệnh của chương trình con nên không thể suy ra R0 được nạp 40H hay xác định địa chỉ bắt đầu của khối dữ liệu. Vì vậy chưa đủ căn cứ kết luận đáp án B; lời giải hiện tại tự giả định các lệnh/điều kiện kết thúc không xuất hiện trong dữ liệu được cung cấp.",
+      "checked_at": "2026-10-07 18:46:34"
+    }
+  ],
+  [
+    "PART_13_Q14",
+    {
+      "status": "FLAGGED",
+      "target_answer": "26",
+      "calculated_answer": "0X26",
+      "explanation_valid": false,
+      "notes": "Mặt nạ đúng là 0010 0110₂, tương ứng 0x26 (26H) = 38 thập phân. Đáp án hiện tại ghi \"26\" nếu được hiểu là số thập phân thì sai. Lời giải sai ở đẳng thức 0010 0110₂ = 26H nếu đáp án FIB yêu cầu nhập 26 theo hệ thập phân; kết quả thập phân đúng phải là 38. Nếu hệ thống quy ước ô trống nhập số hex không kèm H/0x thì \"26\" mới đúng.",
+      "checked_at": "2026-10-07 18:46:36"
+    }
+  ],
+  [
+    "PART_13_Q17",
+    {
+      "status": "FLAGGED",
+      "target_answer": "B",
+      "calculated_answer": "KHÔNG XÁC ĐỊNH ĐƯỢC",
+      "explanation_valid": false,
+      "notes": "Đề bài bị thiếu nội dung chương trình con (đoạn mã cần phân tích), nên không thể tính số chu kỳ máy và suy ra thời gian trễ. Vì vậy chưa có cơ sở khẳng định đáp án B (1s); lời giải hiện tại tự giả định có ba vòng lặp và tổng thời gian xấp xỉ 1.000.000 µs nhưng đề được cung cấp không chứa dữ liệu để kiểm chứng.",
+      "checked_at": "2026-10-07 18:46:39"
+    }
+  ],
+  [
+    "PART_13_Q20",
+    {
+      "status": "FLAGGED",
+      "target_answer": "40",
+      "calculated_answer": "KHÔNG ĐỦ DỮ KIỆN",
+      "explanation_valid": false,
+      "notes": "Đề bài bị thiếu đoạn chương trình/sơ đồ hoặc nội dung bộ nhớ nên không thể suy ra độc lập giá trị cần điền là 40H. Lời giải hiện tại chỉ khẳng định địa chỉ 40H chứa dữ liệu 27H mà không có dữ kiện chứng minh, vì vậy không thể xác nhận đáp án 40 là chính xác 100%.",
+      "checked_at": "2026-10-07 18:46:40"
+    }
+  ],
+  [
+    "PART_13_Q21",
+    {
+      "status": "FLAGGED",
+      "target_answer": "40",
+      "calculated_answer": "KHÔNG XÁC ĐỊNH ĐƯỢC TỪ DỮ KIỆN ĐÃ CUNG CẤP",
+      "explanation_valid": false,
+      "notes": "Đề bài bị thiếu đoạn chương trình chứa chỗ trống, nên không thể suy ra độc lập giá trị cần điền là 40H. Lời giải hiện tại chỉ khẳng định đáp án 40H mà không có phép tính hay phân tích lệnh/địa chỉ để chứng minh. Vì vậy chưa thể xác nhận đáp án và lời giải chuẩn xác 100%.",
+      "checked_at": "2026-10-07 18:46:41"
+    }
+  ],
+  [
+    "PART_13_Q18",
+    {
+      "status": "FLAGGED",
+      "target_answer": "60",
+      "calculated_answer": "KHÔNG ĐỦ DỮ KIỆN",
+      "explanation_valid": false,
+      "notes": "Đề bài được cung cấp thiếu phần chương trình và trạng thái/giá trị RAM ban đầu. Chỉ biết có lệnh ANL A,@R1 thì không thể suy ra duy nhất R1=60H; muốn kết luận 60H phải biết giá trị A trước ANL và nội dung RAM tại địa chỉ 60H sao cho phép AND cho kết quả 1CH. Vì vậy đáp án 60 và lời giải hiện tại chưa thể được xác nhận là đúng từ dữ kiện đã cho.",
+      "checked_at": "2026-10-07 18:46:42"
+    }
+  ],
+  [
+    "PART_13_Q22",
+    {
+      "status": "FLAGGED",
+      "target_answer": "C",
+      "calculated_answer": "KHÔNG XÁC ĐỊNH",
+      "explanation_valid": false,
+      "notes": "Đề bài bị thiếu nội dung chương trình con nên không thể tính số chu kỳ máy và xác định thời gian trễ. Việc lời giải khẳng định hai vòng lặp tạo khoảng 1000 µs không thể kiểm chứng nếu không có mã lệnh/giá trị thanh ghi đếm. Riêng với thạch anh 6 MHz, nếu kiến trúc dùng chu kỳ máy = 12 chu kỳ dao động thì 1 chu kỳ máy = 2 µs là đúng, nhưng chưa đủ để kết luận đáp án C (1 ms).",
+      "checked_at": "2026-10-07 18:46:44"
+    }
+  ],
+  [
+    "PART_13_Q15",
+    {
+      "status": "FLAGGED",
+      "target_answer": "D",
+      "calculated_answer": "D",
+      "explanation_valid": false,
+      "notes": "Không thể xác nhận 100% vì đề bài bị thiếu đoạn mã chương trình con cần thẩm định. Nếu đúng như lời giải mô tả: DPTR khởi tạo 1000H, A=0, MOVX @DPTR,A và vòng lặp ghi đến hết 1050H thì đáp án D là đúng; tuy nhiên không có mã lệnh nên chưa thể kiểm chứng điều kiện dừng có thực sự tạo phạm vi 1000H–1050H hay không.",
+      "checked_at": "2026-10-07 18:46:45"
+    }
+  ],
+  [
+    "PART_13_Q25",
+    {
+      "status": "FLAGGED",
+      "target_answer": "C",
+      "calculated_answer": "KHÔNG THỂ XÁC ĐỊNH",
+      "explanation_valid": false,
+      "notes": "Đề bài bị thiếu đoạn mã Assembly nên không thể xác định Timer 0/1, mode, các giá trị nạp THx/TLx và thời điểm đổi trạng thái P1.6. Với 89C51 chuẩn và thạch anh 12 MHz, timer chạy theo chu kỳ máy 1 µs khi dùng clock nội, nhưng riêng dữ kiện này không đủ để suy ra xung cao 40 µs và xung thấp 200 µs. Vì vậy chưa có căn cứ xác nhận đáp án C hay lời giải hiện tại là chính xác 100%.",
+      "checked_at": "2026-10-07 18:46:46"
+    }
+  ]
+]

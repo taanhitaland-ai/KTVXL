@@ -357,7 +357,7 @@
     "chapter_id": 1,
     "type": "mcq",
     "source": "NOTION_DE_CUOI",
-    "prompt": "Một mạch dao động điện từ có điện dung $C = 0{,}25\\,\\mu\\text{F}$, hệ số tự cảm $L = 0{,}1\\,\\text{H}$ và điện trở thuần $R = 0$. Ban đầu hai bản của tụ điện có điện tích cực đại $Q_0 = 2{,}5 \\times 10^{-6}\\,\\text{C}$. Lấy $\\pi^2 = 10$. Phương trình dao động điện từ của mạch đối với điện tích $q$ theo thời gian là:",
+    "prompt": "Một mạch dao động điện từ có điện dung  = \frac{0{,}25}{\\pi^2}\\,\\mu\text{F}$, hệ số tự cảm  = 0{,}1\\,\text{H}$ và điện trở thuần  = 0$. Ban đầu hai bản của tụ điện có điện tích cực đại  = 2{,}5 \times 10^{-6}\\,\text{C}$. Lấy $\\pi^2 = 10$. Phương trình dao động điện từ của mạch đối với điện tích $ theo thời gian là:",
     "options": [
       "A. q = 2,5.10⁻⁶ sin(2000πt - π/2) (C)",
       "B. q = 2,5.10⁻⁶ cos(2000πt + π) (C)",
@@ -365,7 +365,7 @@
       "D. q = 2,5.10⁻⁶ cos(2000πt) (C)"
     ],
     "answer": "D",
-    "explanation": "Tần số góc dao động riêng của mạch: $\\omega = \\frac{1}{\\sqrt{LC}} = \\frac{1}{\\sqrt{0{,}1 \\times 0{,}25 \\times 10^{-6}}} = \\frac{1}{\\sqrt{2{,}5 \\times 10^{-8}}} = \\frac{10^4}{\\sqrt{25}} = 2000\\,\\text{rad/s}$ hoặc nếu tính theo chuẩn $\\omega = 2000\\pi\\,\\text{rad/s}$ khi $LC = \\frac{1}{(2000\\pi)^2}$. Tại thời điểm ban đầu $t = 0$, tụ điện đạt điện tích cực đại $q(0) = Q_0 > 0$, do đó pha ban đầu $\\varphi = 0$. Phương trình là: $q = 2{,}5 \\times 10^{-6} \\cos(2000\\pi t)\\,\\text{C}$.",
+    "explanation": "Tần số góc dao động riêng của mạch:\n$\\omega = \frac{1}{\\sqrt{LC}} = \frac{1}{\\sqrt{0{,}1 \times \frac{0{,}25}{\\pi^2} \times 10^{-6}}} = \frac{\\pi}{\\sqrt{2{,}5 \times 10^{-8}}} = \frac{10^4 \\pi}{\\sqrt{25}} = 2000\\pi\\,\text{rad/s}$.\nTại thời điểm ban đầu  = 0$, tụ điện tích điện cực đại (0) = Q_0 > 0$, do đó pha ban đầu $\u000barphi = 0$.\nPhương trình dao động điện tích:\n = Q_0 \\cos(\\omega t + \u000barphi) = 2{,}5 \times 10^{-6} \\cos(2000\\pi t)\\,\text{C}$.\nChọn đáp án D.",
     "methodology": "Điều kiện đầu: tại $t = 0$, $q = Q_0$ thì pha ban đầu bằng 0, hàm chuẩn dạng $\\cos(\\omega t)$.",
     "tips": "Ban đầu đạt cực đại $\\to$ pha ban đầu bằng 0, chọn ngay hàm cos.",
     "num": 17,
@@ -1369,7 +1369,7 @@
     "chapter_id": 2,
     "type": "mcq",
     "source": "NOTION_TEST_100",
-    "prompt": "Cho một cách tử nhiễu xạ có chu kỳ $d = 2\\,\\mu\\text{m}$. Sau cách tử đặt một thấu kính hội tụ có tiêu cự $f$. Trên mặt phẳng tiêu của thấu kính đặt màn quan sát. Khoảng cách giữa hai vạch cực đại quang phổ bậc nhất ($k = 1$) ứng với hai bước sóng $\\lambda_1 = 0{,}4404\\,\\mu\\text{m}$ và $\\lambda_2 = 0{,}4047\\,\\mu\\text{m}$ trên màn bằng $\\Delta x = 1\\,\\text{mm}$. Tiêu cự $f$ của thấu kính là:",
+    "prompt": "Cho một cách tử nhiễu xạ có chu kỳ  = 2\\,\\mu\text{m}$. Sau cách tử đặt một thấu kính hội tụ có tiêu cự $. Trên mặt phẳng tiêu của thấu kính đặt màn quan sát. Khoảng cách giữa hai vạch cực đại quang phổ bậc nhất ( = 1$) ứng với hai bước sóng $\\lambda_1 = 0{,}4404\\,\\mu\text{m}$ và $\\lambda_2 = 0{,}4047\\,\\mu\text{m}$ trên màn bằng $\\Delta x = 1\\,\text{cm}$. Tiêu cự $ của thấu kính là:",
     "options": [
       "A. f = 0,65 m",
       "B. f = 0,56 m",
@@ -1377,7 +1377,7 @@
       "D. f = 0,72 m"
     ],
     "answer": "B",
-    "explanation": "Góc nhiễu xạ của cực đại bậc nhất nhỏ nên $\\sin\\varphi \\approx \\tan\\varphi \\approx \\frac{x}{f} = \\frac{\\lambda}{d} \\Rightarrow x = f \\frac{\\lambda}{d}$. Khoảng cách giữa hai vạch quang phổ trên tiêu diện thấu kính: $\\Delta x = x_1 - x_2 = f \\frac{\\lambda_1 - \\lambda_2}{d} \\Rightarrow f = \\frac{d \\Delta x}{\\lambda_1 - \\lambda_2}$. Thay số: $f = \\frac{2 \\times 10^{-6}\\,\\text{m} \\times 10^{-3}\\,\\text{m}}{(0{,}4404 - 0{,}4047) \\times 10^{-6}\\,\\text{m}} = \\frac{2 \\times 10^{-3}}{0{,}0357} \\approx 0{,}056\\,\\text{m}$ hoặc với đề gốc $\\Delta x = 1\\,\\text{cm} = 10^{-2}\\,\\text{m} \\implies f = 0{,}56\\,\\text{m}$.",
+    "explanation": "Góc nhiễu xạ cực đại bậc nhất thỏa mãn công thức cách tử: \\sin\u000barphi = k\\lambda = \\lambda$.\nVì góc $\u000barphi$ nhỏ nên $\\sin\u000barphi \u0007pprox \tan\u000barphi = \frac{x}{f} \\Rightarrow x = f \frac{\\lambda}{d}$.\nKhoảng cách giữa hai vạch quang phổ bậc 1 trên tiêu diện thấu kính:\n$\\Delta x = x_1 - x_2 = f \frac{\\lambda_1 - \\lambda_2}{d} \\Rightarrow f = \frac{d \\Delta x}{\\lambda_1 - \\lambda_2}$.\nThay số với $\\Delta x = 1\\,\text{cm} = 10^{-2}\\,\text{m}$:\n = \frac{2 \times 10^{-6}\\,\text{m} \times 10^{-2}\\,\text{m}}{(0{,}4404 - 0{,}4047) \times 10^{-6}\\,\text{m}} = \frac{2 \times 10^{-2}}{0{,}0357} \u0007pprox 0{,}56\\,\text{m}$.\nChọn đáp án B.",
     "methodology": "Độ phân tán góc của cách tử: $D_{\\varphi} = \\frac{d\\varphi}{d\\lambda} = \\frac{k}{d\\cos\\varphi}$. Độ phân tán dài: $D_l = f D_{\\varphi} \\approx \\frac{kf}{d} \\implies \\Delta x = f \\frac{k\\Delta\\lambda}{d}$.",
     "tips": "Casio: $2 \\times 10^{-5} \\div 0{,}0357 \\approx 0{,}56\\,\\text{m}$.",
     "num": 63,
@@ -1663,7 +1663,7 @@
       "D. Hàm sóng chỉ cần liên tục, không đòi hỏi tính đơn trị."
     ],
     "answer": "A",
-    "explanation": "Để hàm sóng $\\Psi(\\vec{r})$ có ý nghĩa vật lý (mật độ xác suất $|\\Psi|^2$ mang ý nghĩa thống kê thực tế), nó phải thỏa mãn 3 điều kiện tiêu chuẩn (chuẩn hóa):\n1. Đơn trị: tại mỗi điểm chỉ có duy nhất một giá trị mật độ xác suất.\n2. Hữu hạn: xác suất tìm thấy hạt tại mọi miền hữu hạn không thể bằng vô cùng.\n3. Liên tục: $\\Psi$ và các đạo hàm riêng bậc nhất $\\frac{\\partial \\Psi}{\\partial x}, \\frac{\\partial \\Psi}{\\partial y}, \\frac{\\partial \\Psi}{\\partial z}$ phải liên tục.",
+    "explanation": "Để hàm sóng $\\Psi(\u000bec{r}, t)$ có ý nghĩa vật lý (xác định mật độ xác suất tìm hạt $|\\Psi|^2$), hàm sóng phải thỏa mãn các điều kiện tiêu chuẩn:\n1. Đơn trị: Tại mỗi điểm trong không gian chỉ có một giá trị xác định duy nhất.\n2. Hữu hạn: Tích phân mật độ xác suất trên toàn không gian bằng 1 (điều kiện chuẩn hóa), nên $\\Psi$ không thể tiến tới vô cùng.\n3. Liên tục và có các đạo hàm riêng bậc nhất liên tục trên toàn không gian (để mật độ dòng xác suất bảo toàn và phương trình Schrödinger có nghiệm vật lý).\nChọn đáp án A.",
     "methodology": "3 điều kiện tiêu chuẩn của hàm sóng: Đơn trị, Hữu hạn, Liên tục (cả hàm sóng và đạo hàm bậc nhất).",
     "tips": "Ghi nhớ: 'Đơn trị - Hữu hạn - Liên tục'.",
     "num": 76,
