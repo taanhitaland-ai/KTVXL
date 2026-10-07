@@ -113,13 +113,13 @@ EXTRA_DE_CUONG_QUESTIONS = [
 ]
 
 def main():
-    with open('data/vldc_questions_db.json') as f:
+    with open('data/vldc_questions_db.json', encoding='utf-8') as f:
         existing = json.load(f)
 
-    with open('data/notion_de_cuoi_questions.json') as f:
+    with open('data/notion_de_cuoi_questions.json', encoding='utf-8') as f:
         de_cuoi = json.load(f)
 
-    with open('data/notion_100_g25_questions.json') as f:
+    with open('data/notion_100_g25_questions.json', encoding='utf-8') as f:
         notion_100 = json.load(f)
 
     seen = set()
@@ -170,7 +170,17 @@ def main():
 
         # Standardize source
         raw_src = q.get('source', '')
-        if 'Cuối' in raw_src:
+        known_sources = {
+            'NOTION_DE_CUOI': 'Đề Test Cuối (Notion)',
+            'NOTION_TEST_100': 'Đề Test 100 Câu (Notion)',
+            'NOTION_GIAK_2025': 'Đề Giữa Kỳ 2025 (Notion)',
+            'NOTION_DE_CUONG': 'Đề Cương Ôn Tập A2 (Notion)',
+            'VLDC_STANDARD': 'Ngân Hàng Giáo Trình ĐHBK'
+        }
+        if raw_src in known_sources:
+            q['source'] = raw_src
+            q['source_title'] = known_sources[raw_src]
+        elif 'Cuối' in raw_src:
             q['source'] = 'NOTION_DE_CUOI'
             q['source_title'] = 'Đề Test Cuối (Notion)'
         elif '100' in raw_src:
@@ -235,6 +245,8 @@ def main():
                     opt_list.append(f"{letter}. {val}")
             q['options'] = opt_list
 
+    from normalize_data import normalize_vldc_questions, write_questions
+    normalize_vldc_questions(master)
     print(f"Total master questions: {len(master)}")
     for ch in range(1, 7):
         ch_qs = [q for q in master if q['chapter_id'] == ch]
@@ -255,7 +267,8 @@ def main():
     with open('docs/vldc_data.js', 'w', encoding='utf-8') as f:
         f.write(js_content)
 
-    print("Successfully synchronized data/vldc_questions_db.json, web/vldc_data.js, and docs/vldc_data.js!")
+    write_questions('vldc', master)
+    print("Successfully synchronized the canonical database, JSON files, and browser bundles.")
 
 if __name__ == '__main__':
     main()

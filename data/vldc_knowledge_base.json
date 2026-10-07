@@ -4,43 +4,125 @@
   "chapters": [
     {
       "id": 1,
-      "title": "Chương 1: Quang Học Sóng - Giao Thoa Ánh Sáng",
-      "summary": "Nghiên cứu hiện tượng giao thoa của hai hay nhiều sóng ánh sáng kết hợp, sự phân bố cực đại (vân sáng) và cực tiểu (vân tối), giao thoa khe Young, giao thoa bản mỏng nêm không khí và vân tròn Newton.",
+      "title": "Chương 1: Dao động & Sóng điện từ",
+      "summary": "Các hệ thức dùng trong câu hỏi dao động LC và sóng điện từ.",
+      "core_formulas": [
+        {
+          "name": "Dao động điện tích khi q(0) = Q₀",
+          "formula": "$q=Q_0\\cos\\omega t$",
+          "desc": "Điều kiện ban đầu như câu Đề Test Cuối về mạch LC."
+        },
+        {
+          "name": "Chu kỳ năng lượng trong mạch LC",
+          "formula": "$T_{\\mathrm{nang\\ luong}}=\\frac T2$",
+          "desc": "Năng lượng phụ thuộc bình phương điện tích hoặc dòng điện."
+        },
+        {
+          "name": "Bảo toàn năng lượng LC",
+          "formula": "$I_0=U_0\\sqrt{\\frac CL}$; $\\Phi=\\frac{L I_0}{N}$",
+          "desc": "N là số vòng dây; Φ là từ thông qua mỗi vòng."
+        },
+        {
+          "name": "Dao động tắt dần",
+          "formula": "$Q(t)=Q_0e^{-\\beta t}$; $\\beta=\\frac R{2L}$",
+          "desc": "Biên độ giảm theo hàm mũ."
+        },
+        {
+          "name": "Bước sóng điện từ trong chân không",
+          "formula": "$\\lambda=\\frac cf=cT$",
+          "desc": "c là vận tốc ánh sáng trong chân không."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Chương 2: Quang học sóng",
+      "summary": "Giao thoa, nhiễu xạ và phân cực ánh sáng.",
       "core_formulas": [
         {
           "name": "Hiệu quang lộ khe Young",
-          "formula": "ΔL = L2 - L1 = (a * x) / D",
+          "formula": "$\\Delta L=L_2-L_1=\\frac{ax}{D}$",
           "desc": "Trong đó a là khoảng cách 2 khe, D là khoảng cách từ 2 khe đến màn, x là tọa độ điểm trên màn."
         },
         {
           "name": "Vị trí vân sáng & vân tối",
-          "formula": "Vân sáng: xs = k * (λ * D / a); Vân tối: xt = (k + 0.5) * (λ * D / a)",
+          "formula": "Vân sáng: $x_s=\\frac{k\\lambda D}{a}$; Vân tối: $x_t=\\frac{(k+0.5)\\lambda D}{a}$",
           "desc": "k là bậc giao thoa (k = 0, ±1, ±2...)."
         },
         {
           "name": "Khoảng vân giao thoa",
-          "formula": "i = (λ * D) / a",
+          "formula": "$i=\\frac{\\lambda D}{a}$",
           "desc": "Khoảng cách giữa hai vân sáng liên tiếp hoặc hai vân tối liên tiếp."
         },
         {
           "name": "Độ dịch vân khi đặt bản mỏng",
-          "formula": "Δx = (D / a) * (n - 1) * e",
+          "formula": "$\\Delta x=\\frac{D(n-1)e}{a}$",
           "desc": "Đặt bản mỏng bề dày e, chiết suất n trước một trong hai khe. Hệ vân dịch về phía khe có đặt bản mỏng."
         },
         {
           "name": "Độ dịch vân khi dịch chuyển nguồn S",
-          "formula": "Δx = (D / d) * y0",
+          "formula": "$|\\Delta x|=\\frac{D|y_0|}{d}$",
           "desc": "Nguồn S dịch một đoạn y0 vuông góc với trục đối xứng, khoảng cách nguồn đến khe là d. Hệ vân dịch ngược chiều y0."
         },
         {
           "name": "Giao thoa nêm không khí",
-          "formula": "Khoảng vân: i = λ / (2 * α); Vân tối: dk = k * λ / 2",
+          "formula": "Khoảng vân: $i=\\frac{\\lambda}{2\\alpha}$; Vân tối: $d_k=\\frac{k\\lambda}{2}$",
           "desc": "α là góc nghiêng của nêm (rad). Cạnh nêm (d = 0) luôn là vân tối do phản xạ trên môi trường chiết quang hơn bị mất nửa bước sóng (λ/2)."
         },
         {
           "name": "Vân tròn Newton (ánh sáng phản xạ)",
-          "formula": "Vân tối: rk = √(k * R * λ); Vân sáng: rk = √((k - 0.5) * R * λ)",
+          "formula": "Vân tối: $r_k=\\sqrt{kR\\lambda}$; Vân sáng: $r_k=\\sqrt{(k-0.5)R\\lambda}$",
           "desc": "R là bán kính cong của thấu kính phẳng - lồi. Tâm hệ vân (k = 0) là một điểm tối."
+        },
+        {
+          "name": "Bán kính đới cầu Fresnel thứ k",
+          "formula": "$r_k=\\sqrt{\\frac{kab\\lambda}{a+b}}$",
+          "desc": "a là khoảng cách từ nguồn điểm đến mặt cầu, b là khoảng cách từ mặt cầu đến điểm quan sát M. Sóng phẳng (a → ∞): rk = √(k * b * λ)."
+        },
+        {
+          "name": "Diện tích đới cầu Fresnel",
+          "formula": "$\\Delta S\\approx\\frac{\\pi ab\\lambda}{a+b}$",
+          "desc": "Diện tích các đới cầu xấp xỉ bằng nhau và không phụ thuộc vào số thứ tự đới k."
+        },
+        {
+          "name": "Nhiễu xạ qua lỗ tròn",
+          "formula": "$m=\\frac{R_0^2(a+b)}{ab\\lambda}$",
+          "desc": "m là số đới cầu mở ra. Nếu m lẻ: tâm M sáng cực đại (I = 4*I1 với m=1). Nếu m chẵn: tâm M tối (I ≈ 0 với m=2)."
+        },
+        {
+          "name": "Nhiễu xạ qua đĩa tròn (Điểm Arago)",
+          "formula": "Tâm hình học luôn là ĐIỂM SÁNG",
+          "desc": "Dao động tại M do các đới cầu còn lại (bắt đầu từ đới k+1) tạo ra: A ≈ Ak+1 / 2 > 0."
+        },
+        {
+          "name": "Nhiễu xạ sóng phẳng qua 1 khe hẹp (Fraunhofer)",
+          "formula": "Cực tiểu: $b\\sin\\varphi=k\\lambda$; Cực đại phụ (xấp xỉ): $b\\sin\\varphi\\approx\\frac{(2k+1)\\lambda}{2}$",
+          "desc": "b là bề rộng khe hẹp, φ là góc nhiễu xạ, k = ±1, ±2... Bề rộng cực đại giữa bằng 2 lần cực đại phụ."
+        },
+        {
+          "name": "Cách tử nhiễu xạ (Diffraction Grating)",
+          "formula": "$d\\sin\\varphi=k\\lambda$, với $d=a+b$ là chu kỳ cách tử",
+          "desc": "Số cực đại chính quan sát được: |k| ≤ d / λ. Tổng số cực đại chính: N = 2 * [d/λ] + 1."
+        },
+        {
+          "name": "Định luật Malus (Maluyt)",
+          "formula": "$I=I_0\\cos^2\\alpha$",
+          "desc": "I0 là cường độ ánh sáng phân cực tới kính phân tích, α là góc giữa quang trục của kính phân cực và kính phân tích. Khi α = 0°: I = I0; khi α = 90°: I = 0 (tắt sáng)."
+        },
+        {
+          "name": "Định luật Brewster",
+          "formula": "$\\tan i_B=\\frac{n_2}{n_1}=n_{21}$",
+          "desc": "Khi góc tới bằng góc Brewster iB, tia phản xạ là ánh sáng phân cực thẳng hoàn toàn (vector E vuông góc mặt phẳng tới). Tia phản xạ vuông góc tia khúc xạ: iB + r = 90°."
+        },
+        {
+          "name": "Ánh sáng tự nhiên qua kính phân cực lý tưởng",
+          "formula": "$I_1=\\frac{I_{\\mathrm{tn}}}{2}$",
+          "desc": "Cường độ ánh sáng giảm một nửa khi biến thành ánh sáng phân cực phẳng."
+        },
+        {
+          "name": "Hệ 2 kính phân cực quay góc α",
+          "formula": "$I=\\frac{I_{\\mathrm{tn}}}{2}\\cos^2\\alpha$",
+          "desc": "Cường độ chùm sáng thoát ra khỏi kính thứ 2 khi chiếu ánh sáng tự nhiên ban đầu."
         }
       ],
       "magic_keywords": [
@@ -63,46 +145,7 @@
         {
           "kw": "Tâm vân tròn Newton phản xạ",
           "meaning": "Luôn là ĐIỂM TỐI (do phản xạ tại lớp không khí tiếp xúc bị cộng thêm λ/2)"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Chương 2: Quang Học Sóng - Nhiễu Xạ Ánh Sáng",
-      "summary": "Hiện tượng tia sáng bị lệch khỏi phương truyền thẳng khi đi qua các vật chướng ngại có kích thước cỡ bước sóng. Phương pháp đới cầu Fresnel, nhiễu xạ qua lỗ tròn, đĩa tròn Arago, nhiễu xạ sóng phẳng qua một khe hẹp và cách mạng nhiễu xạ.",
-      "core_formulas": [
-        {
-          "name": "Bán kính đới cầu Fresnel thứ k",
-          "formula": "rk = √((k * a * b * λ) / (a + b))",
-          "desc": "a là khoảng cách từ nguồn điểm đến mặt cầu, b là khoảng cách từ mặt cầu đến điểm quan sát M. Sóng phẳng (a → ∞): rk = √(k * b * λ)."
         },
-        {
-          "name": "Diện tích đới cầu Fresnel",
-          "formula": "ΔS ≈ (π * a * b * λ) / (a + b)",
-          "desc": "Diện tích các đới cầu xấp xỉ bằng nhau và không phụ thuộc vào số thứ tự đới k."
-        },
-        {
-          "name": "Nhiễu xạ qua lỗ tròn",
-          "formula": "m = R0² * (a + b) / (a * b * λ)",
-          "desc": "m là số đới cầu mở ra. Nếu m lẻ: tâm M sáng cực đại (I = 4*I1 với m=1). Nếu m chẵn: tâm M tối (I ≈ 0 với m=2)."
-        },
-        {
-          "name": "Nhiễu xạ qua đĩa tròn (Điểm Arago)",
-          "formula": "Tâm hình học luôn là ĐIỂM SÁNG",
-          "desc": "Dao động tại M do các đới cầu còn lại (bắt đầu từ đới k+1) tạo ra: A ≈ Ak+1 / 2 > 0."
-        },
-        {
-          "name": "Nhiễu xạ sóng phẳng qua 1 khe hẹp (Fraunhofer)",
-          "formula": "Cực tiểu: b * sin(φ) = k * λ; Cực đại: b * sin(φ) = (2k + 1) * (λ / 2)",
-          "desc": "b là bề rộng khe hẹp, φ là góc nhiễu xạ, k = ±1, ±2... Bề rộng cực đại giữa bằng 2 lần cực đại phụ."
-        },
-        {
-          "name": "Cách tử nhiễu xạ (Diffraction Grating)",
-          "formula": "d * sin(φ) = k * λ (với d = a + b là chu kỳ cách tử)",
-          "desc": "Số cực đại chính quan sát được: |k| ≤ d / λ. Tổng số cực đại chính: N = 2 * [d/λ] + 1."
-        }
-      ],
-      "magic_keywords": [
         {
           "kw": "Lỗ tròn chứa số đới LẺ",
           "meaning": "Tâm là VÂN SÁNG (m=1 sáng gấp 4 lần khi không có màn)"
@@ -122,36 +165,7 @@
         {
           "kw": "Bề rộng cực đại giữa khe hẹp",
           "meaning": "Δx0 = 2 * (λ * f / b)"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Chương 3: Quang Học Sóng - Phân Cực Ánh Sáng",
-      "summary": "Bản chất sóng ngang của ánh sáng. Sự khác biệt giữa ánh sáng tự nhiên và ánh sáng phân cực. Phân cực do phản xạ, khúc xạ và lưỡng chiết. Định luật Malus và định luật Brewster.",
-      "core_formulas": [
-        {
-          "name": "Định luật Malus (Maluyt)",
-          "formula": "I = I0 * cos²(α)",
-          "desc": "I0 là cường độ ánh sáng phân cực tới kính phân tích, α là góc giữa quang trục của kính phân cực và kính phân tích. Khi α = 0°: I = I0; khi α = 90°: I = 0 (tắt sáng)."
         },
-        {
-          "name": "Định luật Brewster",
-          "formula": "tan(iB) = n2 / n1 = n21",
-          "desc": "Khi góc tới bằng góc Brewster iB, tia phản xạ là ánh sáng phân cực thẳng hoàn toàn (vector E vuông góc mặt phẳng tới). Tia phản xạ vuông góc tia khúc xạ: iB + r = 90°."
-        },
-        {
-          "name": "Ánh sáng tự nhiên qua kính phân cực lý tưởng",
-          "formula": "I1 = I_tn / 2",
-          "desc": "Cường độ ánh sáng giảm một nửa khi biến thành ánh sáng phân cực phẳng."
-        },
-        {
-          "name": "Hệ 2 kính phân cực quay góc α",
-          "formula": "I = (I_tn / 2) * cos²(α)",
-          "desc": "Cường độ chùm sáng thoát ra khỏi kính thứ 2 khi chiếu ánh sáng tự nhiên ban đầu."
-        }
-      ],
-      "magic_keywords": [
         {
           "kw": "Góc Brewster iB",
           "meaning": "tan(iB) = n2/n1; Tia phản xạ vuông góc tia khúc xạ (iB + r = 90°)"
@@ -171,38 +185,38 @@
       ]
     },
     {
-      "id": 4,
-      "title": "Chương 4: Quang Lượng Tử - Bức Xạ Nhiệt & Lượng Tử Ánh Sáng",
+      "id": 3,
+      "title": "Chương 3: Quang học lượng tử",
       "summary": "Bức xạ nhiệt cân bằng, vật đen tuyệt đối, định luật Stefan-Boltzmann, định luật dịch chuyển Wien. Thuyết lượng tử Planck, thuyết photon Einstein, hiện tượng quang điện ngoài và hiệu ứng tán xạ Compton.",
       "core_formulas": [
         {
           "name": "Định luật Stefan - Boltzmann",
-          "formula": "R = σ * T⁴",
+          "formula": "$R=\\sigma T^4$",
           "desc": "Năng suất phát xạ toàn phần của vật đen tuyệt đối tỉ lệ với lũy thừa 4 của nhiệt độ tuyệt đối. Hằng số Stefan-Boltzmann σ = 5.67 * 10⁻⁸ W/(m²·K⁴)."
         },
         {
           "name": "Định luật dịch chuyển Wien",
-          "formula": "λm * T = b",
+          "formula": "$\\lambda_m T=b$",
           "desc": "Bước sóng ứng với năng suất phát xạ cực đại tỉ lệ nghịch với nhiệt độ. Hằng số Wien b = 2.898 * 10⁻³ m·K."
         },
         {
           "name": "Năng lượng photon & Động lượng photon",
-          "formula": "ε = h * ν = (h * c) / λ; p = h / λ = ε / c",
+          "formula": "$\\varepsilon=h\\nu=\\frac{hc}{\\lambda}$; $p=\\frac h\\lambda=\\frac\\varepsilon c$",
           "desc": "Hằng số Planck h = 6.625 * 10⁻³⁴ J·s, c = 3 * 10⁸ m/s. 1 eV = 1.6 * 10⁻¹⁹ J."
         },
         {
           "name": "Phương trình quang điện Einstein",
-          "formula": "h * ν = A + 0.5 * m * v0max² = A + e * Uh",
+          "formula": "$h\\nu=A+\\frac12mv_{0\\max}^2=A+eU_h$",
           "desc": "A = hc / λ0 là công thoát của electron, λ0 là giới hạn quang điện, Uh là hiệu điện thế hãm."
         },
         {
           "name": "Độ tăng bước sóng Compton",
-          "formula": "Δλ = λ' - λ = 2 * λc * sin²(θ / 2) = λc * (1 - cos θ)",
+          "formula": "$\\Delta\\lambda=\\lambda'-\\lambda=2\\lambda_c\\sin^2\\frac\\theta2=\\lambda_c(1-\\cos\\theta)$",
           "desc": "λc = h / (m0 * c) = 2.426 * 10⁻¹² m = 0.02426 Å là bước sóng Compton của electron. θ là góc tán xạ của photon."
         },
         {
           "name": "Động năng electron giật lùi trong Compton",
-          "formula": "Ke = h * c * (1 / λ - 1 / λ')",
+          "formula": "$K_e=hc\\left(\\frac1\\lambda-\\frac1{\\lambda'}\\right)$",
           "desc": "Được xác định theo định luật bảo toàn năng lượng toàn phần."
         }
       ],
@@ -226,33 +240,33 @@
       ]
     },
     {
-      "id": 5,
-      "title": "Chương 5: Cơ Học Lượng Tử - Sóng De Broglie & Giếng Thế",
+      "id": 4,
+      "title": "Chương 4: Cơ học lượng tử",
       "summary": "Giả thuyết De Broglie về lưỡng tính sóng - hạt của vật chất vi mô. Hệ thức bất định Heisenberg. Hàm sóng Schrödinger và ý nghĩa thống kê Born. Khảo sát hạt trong giếng thế thế năng một chiều sâu vô hạn.",
       "core_formulas": [
         {
           "name": "Bước sóng De Broglie",
-          "formula": "λ = h / p = h / (m * v) = h / √(2 * m * Wđ)",
+          "formula": "$\\lambda=\\frac hp=\\frac h{mv}=\\frac h{\\sqrt{2mW_{\\mathrm{d}}}}$",
           "desc": "Với electron phi tương đối tính được gia tốc bởi U: λ = h / √(2 * m * e * U) = 12.27 / √U (Å)."
         },
         {
           "name": "Hệ thức bất định Heisenberg",
-          "formula": "Δx * Δpx ≥ ħ / 2 ≈ ħ; ΔE * Δt ≥ ħ",
+          "formula": "$\\Delta x\\,\\Delta p_x\\ge\\frac\\hbar2$; $\\Delta E\\,\\Delta t\\ge\\frac\\hbar2$",
           "desc": "ħ = h / (2π) = 1.055 * 10⁻³⁴ J·s. Không thể đồng thời xác định chính xác vị trí và xung lượng của vi hạt."
         },
         {
           "name": "Hạt trong giếng thế 1 chiều sâu vô hạn (bề rộng a)",
-          "formula": "Mức năng lượng: En = (n² * π² * ħ²) / (2 * m * a²) = (n² * h²) / (8 * m * a²)",
+          "formula": "$E_n=\\frac{n^2\\pi^2\\hbar^2}{2ma^2}=\\frac{n^2h^2}{8ma^2}$",
           "desc": "n = 1, 2, 3... là số lượng tử. Năng lượng hạt bị lượng tử hóa (gián đoạn). Năng lượng trạng thái cơ bản E1 = h² / (8*m*a²)."
         },
         {
           "name": "Hàm sóng dừng trong giếng thế",
-          "formula": "ψn(x) = √(2 / a) * sin((n * π * x) / a)",
+          "formula": "$\\psi_n(x)=\\sqrt{\\frac2a}\\sin\\frac{n\\pi x}{a}$",
           "desc": "Với 0 ≤ x ≤ a. Ngoài giếng (x < 0 hoặc x > a): ψ(x) = 0."
         },
         {
           "name": "Xác suất tìm hạt",
-          "formula": "dw = |ψ(x)|² * dx; w = ∫ |ψ(x)|² dx",
+          "formula": "$dw=|\\psi(x)|^2dx$; $w=\\int|\\psi(x)|^2dx$",
           "desc": "|ψ(x)|² là mật độ xác suất tìm hạt tại tọa độ x."
         }
       ],
@@ -276,28 +290,36 @@
       ]
     },
     {
-      "id": 6,
-      "title": "Chương 6: Vật Lý Nguyên Tử & Hạt Nhân",
-      "summary": "Tiên đề Bo về nguyên tử Hydro, các mức năng lượng và dãy quang phổ. Cấu tạo hạt nhân, độ hụt khối, năng lượng liên kết và định luật phóng xạ.",
+      "id": 5,
+      "title": "Chương 5: Vật lý nguyên tử",
+      "summary": "Mẫu Bo và các dãy quang phổ nguyên tử Hydro.",
       "core_formulas": [
         {
           "name": "Mức năng lượng nguyên tử Hydro (Mẫu Bo)",
-          "formula": "En = -13.6 / n² (eV)",
+          "formula": "$E_n=-\\frac{13.6}{n^2}\\,\\mathrm{eV}$",
           "desc": "Bán kính quỹ đạo dừng: rn = n² * r0 (với r0 = 0.53 Å là bán kính Bo)."
         },
         {
           "name": "Bước sóng quang phổ Hydro",
-          "formula": "1 / λ = R_H * (1 / m² - 1 / n²)",
+          "formula": "$\\frac1\\lambda=R_H\\left(\\frac1{m^2}-\\frac1{n^2}\\right)$",
           "desc": "Dãy Lyman (về m=1, vùng tử ngoại); Dãy Balmer (về m=2, vùng khả kiến); Dãy Paschen (về m=3, vùng hồng ngoại)."
-        },
+        }
+      ],
+      "magic_keywords": []
+    },
+    {
+      "id": 6,
+      "title": "Chương 6: Vật lý hạt nhân",
+      "summary": "Độ hụt khối, năng lượng liên kết và phóng xạ.",
+      "core_formulas": [
         {
           "name": "Độ hụt khối & Năng lượng liên kết hạt nhân",
-          "formula": "Δm = [Z * mp + (A - Z) * mn] - mX; Elk = Δm * c²",
+          "formula": "$\\Delta m=Z m_p+(A-Z)m_n-m_X$; $E_{\\mathrm{lk}}=\\Delta m c^2$",
           "desc": "Năng lượng liên kết riêng: ε = Elk / A (đặc trưng cho độ bền vững của hạt nhân)."
         },
         {
           "name": "Định luật phân rã phóng xạ",
-          "formula": "N(t) = N0 * e^(-λ * t) = N0 * 2^(-t / T)",
+          "formula": "$N(t)=N_0 e^{-\\lambda t}=N_0\\,2^{-t/T}$",
           "desc": "Chu kỳ bán rã: T = ln(2) / λ ≈ 0.693 / λ. Độ phóng xạ: H(t) = λ * N(t)."
         }
       ],
@@ -338,5 +360,6 @@
       "title": "Mẹo Tính Tán Xạ Compton",
       "steps": "Δλ = 0.02426 * (1 - cos(θ)) (Å). Bấm máy đặt góc DEG (Độ). Góc 60°: cos = 0.5 -> Δλ = 0.01213 Å. Góc 90°: Δλ = 0.02426 Å. Góc 180°: Δλ = 0.04852 Å."
     }
-  ]
+  ],
+  "chapter_scheme": "KMA_A2"
 }

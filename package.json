@@ -1,0 +1,11 @@
+{
+  "name": "ktvxl-kma-practice",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static multi-subject KMA practice and mock exams",
+  "scripts": {
+    "test": "node --test scripts/regression.test.cjs && node scripts/check_math.cjs",
+    "sync": "python scripts/sync_site.py",
+    "audit": "python scripts/audit_site_content.py"
+  }
+}

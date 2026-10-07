@@ -569,7 +569,8 @@ def main():
     doc_questions = parse_doc_text('TTHCM/extracted_doc_text.txt', fa_questions)
     
     # Combine all questions
-    all_questions = fa_questions + q132_questions + q651_questions + doc_questions
+    from normalize_data import ensure_unique_ids
+    all_questions = ensure_unique_ids(fa_questions + q132_questions + q651_questions + doc_questions)
     print(f'Total questions collected: {len(all_questions)}')
     
     # Clean temporary helper fields before serialization

@@ -1,119 +1,107 @@
+"""Check structural integrity, static assets and exact deployed-source parity."""
 import json
-import os
+from pathlib import Path
+import re
 import sys
+from html.parser import HTMLParser
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class PageAssets(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.ids, self.references = [], []
+
+    def handle_starttag(self, tag, attributes):
+        attrs = dict(attributes)
+        if attrs.get('id'):
+            self.ids.append(attrs['id'])
+        for key in ('src', 'href'):
+            value = attrs.get(key, '')
+            if value and not value.startswith(('#', 'data:', 'https:', 'http:')):
+                self.references.append(value.split('#')[0].split('?')[0])
+
+
+def bundle_value(filename, global_name):
+    text = (ROOT / 'web' / filename).read_text(encoding='utf-8')
+    match = re.search(r'window\.' + global_name + r'\s*=\s*', text)
+    if not match:
+        raise ValueError(f'Missing {global_name} in {filename}')
+    return json.JSONDecoder().raw_decode(text[match.end():])[0]
+
 
 def full_audit():
-    print("=== FULL SITE AUDIT START ===")
     issues = []
-    
-    # 1. KTVXL
-    with open("data/questions_db.json", encoding="utf-8") as f:
-        ktvxl = json.load(f)
-    print(f"1. KTVXL: {len(ktvxl)} questions loaded.")
-    
-    for idx, q in enumerate(ktvxl):
-        qid = q.get("id", f"idx_{idx}")
-        prompt = q.get("prompt", "").strip()
-        qtype = q.get("type")
-        ans = q.get("answer")
-        exp = q.get("explanation", "").strip()
-        opts = q.get("options", [])
-        
-        if not prompt:
-            issues.append(f"KTVXL {qid}: empty prompt")
-        if not exp:
-            issues.append(f"KTVXL {qid}: empty explanation")
-            
-        if qtype == "mcq":
-            if len(opts) < 2:
-                issues.append(f"KTVXL {qid}: mcq has fewer than 2 options ({len(opts)})")
-            if ans not in ["A", "B", "C", "D"]:
-                issues.append(f"KTVXL {qid}: invalid mcq answer {ans}")
-        elif qtype == "fib":
-            acc = q.get("acceptable_answers", [])
-            if not acc and not ans:
-                issues.append(f"KTVXL {qid}: fib missing answer/acceptable_answers")
-                
-        # LaTeX dollar check
-        text_to_check = (
-            prompt + " "
-            + " ".join(opts) + " "
-            + exp + " "
-            + q.get("methodology", "") + " "
-            + q.get("tips_casio", "")
-        )
-        text_clean = text_to_check.replace(r"\$", "")
-        c = text_clean.count("$")
-        if c % 2 != 0:
-            issues.append(f"KTVXL {qid}: unclosed LaTeX math $ (count={c})")
-            
-        # Images check
-        images = list(q.get("images", []))
-        if q.get("image"):
-            images.append(q.get("image"))
-        for img in images:
-            if not os.path.exists(os.path.join("web", img)):
-                issues.append(f"KTVXL {qid}: missing image in web/ {img}")
-            if not os.path.exists(os.path.join("docs", img)):
-                issues.append(f"KTVXL {qid}: missing image in docs/ {img}")
-
-    # 2. TTHCM
-    with open("data/tthcm_questions_db.json", encoding="utf-8") as f:
-        tthcm = json.load(f)
-    print(f"2. TTHCM: {len(tthcm)} questions loaded.")
-    for idx, q in enumerate(tthcm):
-        qid = q.get("id", f"idx_{idx}")
-        prompt = q.get("prompt", "").strip()
-        ans = q.get("answer")
-        exp = q.get("explanation", "").strip()
-        opts = q.get("options", [])
-        if not prompt: issues.append(f"TTHCM {qid}: empty prompt")
-        if not exp: issues.append(f"TTHCM {qid}: empty explanation")
-        if len(opts) < 2: issues.append(f"TTHCM {qid}: fewer than 2 options")
-        if ans not in ["A", "B", "C", "D"]: issues.append(f"TTHCM {qid}: invalid answer {ans}")
-        
-    # 3. VLDC
-    with open("data/vldc_questions_db.json", encoding="utf-8") as f:
-        vldc = json.load(f)
-    print(f"3. VLDC: {len(vldc)} questions loaded.")
-    for idx, q in enumerate(vldc):
-        qid = q.get("id", f"idx_{idx}")
-        prompt = q.get("prompt", "").strip()
-        ans = q.get("answer")
-        exp = q.get("explanation", "").strip()
-        opts = q.get("options", [])
-        if not prompt: issues.append(f"VLDC {qid}: empty prompt")
-        if not exp: issues.append(f"VLDC {qid}: empty explanation")
-        if len(opts) < 2: issues.append(f"VLDC {qid}: fewer than 2 options")
-        if ans not in ["A", "B", "C", "D"]: issues.append(f"VLDC {qid}: invalid answer {ans}")
-        
-        text_to_check = prompt + " " + " ".join(opts) + " " + exp
-        text_clean = text_to_check.replace(r"\$", "")
-        c = text_clean.count("$")
-        if c % 2 != 0:
-            issues.append(f"VLDC {qid}: unclosed LaTeX math $ (count={c})")
-
-    # 4. Parity check between web/ and docs/ data files
-    for filename in ["data/questions.json", "data.js", "tthcm_data.js", "vldc_data.js"]:
-        web_file = os.path.join("web", filename)
-        docs_file = os.path.join("docs", filename)
-        if not os.path.exists(web_file):
-            issues.append(f"Missing {web_file}")
-        if not os.path.exists(docs_file):
-            issues.append(f"Missing {docs_file}")
-        if os.path.exists(web_file) and os.path.exists(docs_file):
-            if os.path.getsize(web_file) != os.path.getsize(docs_file):
-                issues.append(f"Size mismatch between {web_file} ({os.path.getsize(web_file)}) and {docs_file} ({os.path.getsize(docs_file)})")
-
-    print(f"\nTOTAL ISSUES DETECTED: {len(issues)}")
+    total = 0
+    for subject, filename, global_name in [
+        ('KTVXL', 'data.js', 'QUESTIONS_DATABASE'),
+        ('TTHCM', 'tthcm_data.js', 'TTHCM_QUESTIONS_DATA'),
+        ('VLDC', 'vldc_data.js', 'VLDC_QUESTIONS_DATA')
+    ]:
+        name = 'questions_db.json' if subject == 'KTVXL' else subject.lower() + '_questions_db.json'
+        questions = json.loads((ROOT / 'data' / name).read_text(encoding='utf-8'))
+        total += len(questions)
+        if questions != bundle_value(filename, global_name):
+            issues.append(f'{subject}: browser bundle differs from the canonical question database')
+        ids = set()
+        for q in questions:
+            qid = q.get('id')
+            if not qid or qid in ids:
+                issues.append(f'{subject}: missing/duplicate question ID {qid}')
+            ids.add(qid)
+            for field in ('prompt', 'explanation'):
+                if not str(q.get(field, '')).strip():
+                    issues.append(f'{qid}: empty {field}')
+            if q.get('type') == 'mcq':
+                options = q.get('options', [])
+                answer = str(q.get('answer', ''))
+                if len(options) < 2 or len(answer) != 1 or not ('A' <= answer <= 'D') or ord(answer)-65 >= len(options):
+                    issues.append(f'{qid}: invalid options/answer key')
+                if any(not isinstance(option, str) or not option.strip() for option in options):
+                    issues.append(f'{qid}: empty or non-text option')
+            elif q.get('type') == 'fib':
+                if not q.get('acceptable_answers') and q.get('answer') in (None, ''):
+                    issues.append(f'{qid}: no fill-in answer')
+            else:
+                issues.append(f'{qid}: invalid question type')
+            if subject != 'KTVXL' and int(q.get('chapter_id') or q.get('chapter') or 0) not in range(1, 7):
+                issues.append(f'{qid}: invalid chapter')
+            for field in ('prompt', 'options', 'explanation', 'methodology', 'tips_casio', 'tips'):
+                values = q.get(field, '')
+                for text in values if isinstance(values, list) else [values]:
+                    if str(text).replace(r'\$', '').count('$') % 2:
+                        issues.append(f'{qid}: unclosed math delimiter in {field}')
+            for image in set(q.get('images', []) + ([q['image']] if q.get('image') else [])):
+                for directory in ('web', 'docs'):
+                    if not (ROOT / directory / image).is_file():
+                        issues.append(f'{qid}: missing {directory}/{image}')
+        print(f'{subject}: {len(questions)} questions checked.')
+    for directory in ('web', 'docs'):
+        page = PageAssets()
+        page.feed((ROOT / directory / 'index.html').read_text(encoding='utf-8'))
+        if len(page.ids) != len(set(page.ids)):
+            issues.append(f'{directory}/index.html: duplicate DOM IDs')
+        for reference in page.references:
+            if not (ROOT / directory / reference).is_file():
+                issues.append(f'{directory}/index.html: missing asset {reference}')
+        for filename in ('app.js', 'vldc_simulations.js'):
+            script = (ROOT / directory / filename).read_text(encoding='utf-8')
+            for reference in set(re.findall(r"getElementById\('([^']+)'\)", script)):
+                if reference not in page.ids:
+                    issues.append(f'{directory}/{filename}: missing DOM target #{reference}')
+    for source in (ROOT / 'web').rglob('*'):
+        if source.is_file():
+            mirror = ROOT / 'docs' / source.relative_to(ROOT / 'web')
+            if not mirror.is_file() or source.read_bytes() != mirror.read_bytes():
+                issues.append(f'web/docs contents differ: {source.relative_to(ROOT / "web")}')
     if issues:
-        for issue in issues[:30]:
-            print(" -", issue)
-        print("FAIL: Audit did not pass!")
-        sys.exit(1)
-    else:
-        print("SUCCESS: 100% of questions, options, answers, formulas, images, and mirrors PASSED!")
-    print("=== FULL SITE AUDIT END ===")
+        print('\n'.join(issues[:50]))
+        print(f'FAIL: {len(issues)} issues.')
+        return 1
+    print(f'PASS: {total} questions, static assets, IDs and site-copy parity. Run npm test to check formula syntax and exam selection.')
+    return 0
+
 
 if __name__ == '__main__':
-    full_audit()
+    sys.exit(full_audit())

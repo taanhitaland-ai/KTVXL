@@ -259,7 +259,7 @@ code, pre, .mono {
 
 .knowledge-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
   gap: 24px;
 }
 
@@ -905,7 +905,7 @@ code, pre, .mono {
 /* Download Hub Cards */
 .download-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
   gap: 24px;
 }
 
@@ -1224,3 +1224,33 @@ code, pre, .mono {
   color: #1E40AF;
 }
 
+
+/* Dynamic exam choices and results. */
+[hidden] { display: none !important; }
+.exam-card-choice { font: inherit; color: inherit; }
+.exam-card-choice:focus-visible { outline: 3px solid var(--neo-blue); outline-offset: 4px; }
+.exam-card-choice:disabled { opacity: .5; cursor: not-allowed; }
+.exam-title-choice { display: block; font-weight: 800; font-size: 1.1rem; margin-top: 8px; }
+.exam-desc-choice { display: block; font-size: .85rem; color: #444; margin-top: 6px; }
+.exam-setup-description { font-size: 1rem; color: #444; max-width: 600px; margin: 0 auto; }
+.exam-progress-track { height: 12px; background: #fff; border: 2px solid #000; border-radius: 4px; overflow: hidden; margin-bottom: 20px; }
+#exam-progress-bar { background: var(--neo-green); height: 100%; width: 0; transition: width .15s; }
+.option-btn.selected-exam { background: var(--neo-yellow); box-shadow: 3px 3px 0 #000; }
+.option-btn:disabled { cursor: default; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+.q-title, .panel-text, .section-content, .option-btn { overflow-wrap: anywhere; min-width: 0; }
+.options-grid, .questions-stream, .chapter-card, .download-card { min-width: 0; }
+.neo-select { max-width: 100%; }
+@media (max-width: 600px) {
+  .app-header { position: static; padding: 12px 16px; }
+  .logo-area { flex-wrap: wrap; gap: 8px; }
+  .brand-title { font-size: 1.1rem; }
+  .subject-toggle-group { flex-wrap: wrap; width: 100%; }
+  .subject-toggle-btn { flex: 1 1 100%; white-space: normal; }
+  .search-input { min-width: 0; width: 100%; }
+  .exam-setup-box { padding: 20px 14px; }
+  .exam-setup-box h2 { font-size: 1.4rem; }
+  .filter-toolbar { padding: 14px; }
+  .result-card { padding: 20px 14px; max-height: 90vh; overflow-y: auto; }
+}
+.subject-toggle-btn.active[data-subject="vldc"] { background: #2563EB; color: #fff; border-color: #000; box-shadow: 2px 2px 0 #000; }
