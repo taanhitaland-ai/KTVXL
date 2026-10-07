@@ -2011,3 +2011,401 @@ code, pre, .mono {
   .result-card { padding: 20px 14px; max-height: 90vh; overflow-y: auto; }
 }
 .subject-toggle-btn.active[data-subject="vldc"] { background: #2563EB; color: #fff; border-color: #000; box-shadow: 2px 2px 0 #000; }
+
+/* ============================================================
+   FIXED RIGHT SIDE DRAWER & FLOATING TRIGGER (PERSISTENT WIDGET)
+   ============================================================ */
+
+/* Floating Trigger Button (When Drawer is collapsed) */
+.neo-floating-planner-trigger {
+  position: fixed;
+  right: 0;
+  top: 140px;
+  z-index: 990;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--neo-yellow);
+  color: #000;
+  border: var(--border-width) solid #000;
+  border-right: none;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  box-shadow: -3px 3px 0px #000;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: inherit;
+  user-select: none;
+}
+
+.neo-floating-planner-trigger:hover {
+  transform: translateX(-4px);
+  box-shadow: -5px 5px 0px #000;
+}
+
+.planner-trigger-icon {
+  font-size: 1.4rem;
+  animation: pulse-urgent 2s infinite ease-in-out;
+}
+
+.planner-trigger-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.15;
+}
+
+.planner-trigger-text strong {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+.planner-trigger-text small {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #4B5563;
+}
+
+/* Fixed Right Side Drawer */
+.side-planner-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 390px;
+  max-width: 92vw;
+  height: 100vh;
+  background: var(--bg-card);
+  border-left: var(--border-width) solid #000;
+  box-shadow: -6px 0px 0px #000;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(105%);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+}
+
+.side-planner-drawer.open {
+  transform: translateX(0);
+}
+
+/* When pinned on desktop view */
+body.planner-pinned .side-planner-drawer {
+  transform: translateX(0);
+  box-shadow: -4px 0 0 #000;
+}
+
+@media (min-width: 1350px) {
+  body.planner-pinned .main-content,
+  body.planner-pinned .app-header,
+  body.planner-pinned .exam-alert-ticker {
+    margin-right: 390px;
+  }
+}
+
+.side-drawer-header {
+  padding: 14px 16px;
+  background: var(--neo-yellow);
+  border-bottom: var(--border-width) solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side-drawer-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #000;
+}
+
+.side-drawer-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.side-drawer-nav {
+  display: flex;
+  background: #E2E8F0;
+  border-bottom: 2px solid #000;
+  padding: 6px;
+  gap: 6px;
+}
+
+.side-nav-btn {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  border: 2px solid #000;
+  border-radius: var(--radius-sm);
+  background: #FFF;
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px 0 #000;
+  transition: all 0.1s ease;
+}
+
+.side-nav-btn.active {
+  background: #000;
+  color: var(--neo-yellow);
+}
+
+.side-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.side-tab-content {
+  display: none;
+}
+
+.side-tab-content.active {
+  display: block;
+}
+
+.compact-drawer-card {
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.compact-stat-row {
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+
+/* ============================================================
+   NEOBRUTALISM DARK MODE
+   ============================================================ */
+body.dark-mode {
+  --bg-main: #121214;
+  --bg-card: #18181B;
+  --text-main: #F4F4F5;
+  --border-color: #52525B;
+  --neo-gray: #27272A;
+  --shadow-main: 4px 4px 0px #000000;
+  --shadow-lg: 6px 6px 0px #000000;
+  --shadow-sm: 2px 2px 0px #000000;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+body.dark-mode .app-header {
+  background: #18181B;
+  border-bottom-color: #52525B;
+}
+
+body.dark-mode .brand-badge {
+  border-color: #71717A;
+}
+
+body.dark-mode .brand-title {
+  color: #F4F4F5;
+}
+
+body.dark-mode .stat-pill {
+  background: #27272A;
+  border-color: #52525B;
+  color: #E4E4E7;
+}
+
+body.dark-mode .stat-pill strong {
+  color: var(--neo-yellow);
+}
+
+body.dark-mode .neo-box,
+body.dark-mode .question-card,
+body.dark-mode .details-panel,
+body.dark-mode .exam-setup-box,
+body.dark-mode .knowledge-card,
+body.dark-mode .download-card,
+body.dark-mode .result-card,
+body.dark-mode .exam-schedule-card,
+body.dark-mode .pomodoro-card,
+body.dark-mode .tracker-card,
+body.dark-mode .side-planner-drawer {
+  background: #1E1E24;
+  color: #F4F4F5;
+  border-color: #52525B;
+}
+
+body.dark-mode .exam-card-title,
+body.dark-mode .q-title,
+body.dark-mode .chapter-title,
+body.dark-mode .download-title,
+body.dark-mode .pomo-header h2,
+body.dark-mode .stat-row-title,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #F4F4F5;
+}
+
+body.dark-mode .filter-toolbar {
+  background: #1E1E24;
+  border-color: #52525B;
+}
+
+body.dark-mode .filter-label {
+  color: #D4D4D8;
+}
+
+body.dark-mode .neo-select,
+body.dark-mode .neo-input {
+  background: #27272A;
+  color: #F4F4F5;
+  border-color: #52525B;
+}
+
+body.dark-mode .neo-filter-btn {
+  background: #27272A;
+  color: #E4E4E7;
+  border-color: #52525B;
+}
+
+body.dark-mode .neo-filter-btn.active {
+  background: var(--neo-yellow);
+  color: #000;
+  border-color: #000;
+}
+
+body.dark-mode .option-btn {
+  background: #27272A;
+  color: #F4F4F5;
+  border-color: #52525B;
+}
+
+body.dark-mode .option-btn:hover:not(:disabled) {
+  background: #3F3F46;
+}
+
+body.dark-mode .option-btn.selected-exam {
+  background: #854D0E;
+  color: #FEF08A;
+  border-color: #FACC15;
+}
+
+body.dark-mode .option-btn.correct {
+  background: #064E3B;
+  color: #A7F3D0;
+  border-color: #10B981;
+}
+
+body.dark-mode .option-btn.wrong {
+  background: #7F1D1D;
+  color: #FECACA;
+  border-color: #EF4444;
+}
+
+body.dark-mode .exam-time-box,
+body.dark-mode .pomo-display-box,
+body.dark-mode .metric-pill-card,
+body.dark-mode .study-stat-row,
+body.dark-mode .sim-canvas-card,
+body.dark-mode .sim-controls-card,
+body.dark-mode .sim-explain-card {
+  background: #27272A;
+  border-color: #52525B;
+  color: #E4E4E7;
+}
+
+body.dark-mode .metric-pill-value {
+  color: #F4F4F5;
+}
+
+body.dark-mode .study-table th {
+  background: #27272A;
+  color: #F4F4F5;
+  border-color: #52525B;
+}
+
+body.dark-mode .study-table td {
+  background: #1E1E24;
+  color: #E4E4E7;
+  border-color: #52525B;
+}
+
+body.dark-mode .pomo-mode-btn,
+body.dark-mode .pomo-preset-btn,
+body.dark-mode .pomo-subj-btn,
+body.dark-mode .stat-add-btn {
+  background: #27272A;
+  color: #E4E4E7;
+  border-color: #52525B;
+}
+
+body.dark-mode .pomo-preset-btn.active,
+body.dark-mode .pomo-subj-btn.active {
+  background: var(--neo-yellow);
+  color: #000;
+  border-color: #000;
+}
+
+body.dark-mode .pomo-timer-digits {
+  color: #FACC15;
+}
+
+body.dark-mode .exam-alert-ticker {
+  background: #451A03;
+  border-bottom-color: #78350F;
+  color: #FEF3C7;
+}
+
+body.dark-mode .ticker-text {
+  color: #FEF3C7;
+}
+
+body.dark-mode .schedule-hero {
+  background: #854D0E;
+  border-color: #52525B;
+}
+
+body.dark-mode .schedule-hero h1 {
+  color: #FEF08A;
+}
+
+body.dark-mode .schedule-hero p {
+  color: #FEF3C7;
+}
+
+body.dark-mode .exam-card-sub,
+body.dark-mode .exam-notes-text,
+body.dark-mode .sim-readout-label {
+  color: #A1A1AA;
+}
+
+body.dark-mode .neo-btn-white {
+  background: #27272A;
+  color: #F4F4F5;
+  border-color: #52525B;
+}
+
+body.dark-mode .neo-btn-white:hover {
+  background: #3F3F46;
+}
+
+body.dark-mode .katex {
+  color: #F4F4F5;
+}
+
+body.dark-mode .side-drawer-nav {
+  background: #27272A;
+  border-bottom-color: #52525B;
+}
+
+body.dark-mode .side-nav-btn {
+  background: #1E1E24;
+  color: #E4E4E7;
+  border-color: #52525B;
+}
+
+body.dark-mode .side-nav-btn.active {
+  background: var(--neo-yellow);
+  color: #000;
+  border-color: #000;
+}
