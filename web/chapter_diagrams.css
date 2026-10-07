@@ -72,9 +72,30 @@ body.chapter-diagram-open { overflow:hidden; }
 .diagram-related-button { display:flex; gap:8px; align-items:flex-start; width:100%; text-align:left; margin-bottom:6px; padding:7px 8px; border:1.5px solid var(--border-color); border-radius:var(--radius-sm); background:var(--bg-main); color:var(--text-main); font:inherit; font-size:.73rem; line-height:1.5; cursor:pointer; }
 .diagram-related-button:hover { background:var(--diagram-accent); }
 .diagram-link-number { display:inline-flex; flex-shrink:0; align-items:center; justify-content:center; min-width:22px; height:22px; background:#fff; border:1px solid var(--border-color); border-radius:4px; font-weight:900; font-size:.65rem; }
-.diagram-knowledge-reference { margin-top:16px; padding-top:12px; border-top:2px dashed var(--border-color); }
-.diagram-knowledge-reference summary { font-weight:800; font-size:.75rem; cursor:pointer; }
-.diagram-knowledge-reference > div { margin-top:12px; }
+.diagram-knowledge-reference { margin-top:20px; border:2px solid var(--border-color); border-radius:var(--radius-md); box-shadow:3px 3px 0 var(--border-color); background:#fffdf5; overflow:hidden; }
+.diagram-knowledge-reference > summary { display:flex; align-items:center; gap:9px; min-height:60px; padding:12px 10px; background:var(--diagram-accent); color:var(--text-main); font-size:.8rem; font-weight:800; line-height:1.5; cursor:pointer; list-style:none; }
+.diagram-knowledge-reference > summary::-webkit-details-marker { display:none; }
+.diagram-knowledge-reference > summary::marker { content:''; }
+.diagram-knowledge-reference[open] > summary { border-bottom:2px solid var(--border-color); }
+.diagram-knowledge-caret { display:flex; align-items:center; justify-content:center; flex:0 0 32px; height:32px; margin-left:auto; border:2px solid #fff; border-radius:50%; background:#fff; color:var(--text-main); transition:border-color 200ms ease; }
+.diagram-knowledge-caret svg { width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; transition:transform 200ms ease; }
+.diagram-knowledge-reference[open] .diagram-knowledge-caret { border-color:var(--border-color); }
+.diagram-knowledge-reference[open] .diagram-knowledge-caret svg { transform:rotate(90deg); }
+@media (prefers-reduced-motion:reduce) { .diagram-knowledge-caret, .diagram-knowledge-caret svg { transition:none; } }
+.diagram-knowledge-reference > summary:hover { box-shadow:inset 0 0 0 2px var(--border-color); }
+.diagram-knowledge-reference > summary:focus-visible { outline:3px solid var(--border-color); outline-offset:-5px; }
+.diagram-knowledge-icon { flex-shrink:0; font-size:1.25rem; line-height:1; }
+.diagram-knowledge-label { display:flex; flex-direction:column; gap:3px; min-width:0; }
+.diagram-knowledge-label strong { font-size:.82rem; font-weight:900; }
+.diagram-knowledge-label small { font-size:.67rem; font-weight:600; }
+.diagram-knowledge-content { padding:12px 10px; }
+.diagram-reading-section { margin-bottom:14px; border:1.5px solid var(--border-color); border-left:5px solid var(--diagram-accent); border-radius:6px; background:#fff; overflow:hidden; }
+.diagram-reading-section:last-child { margin-bottom:0; }
+.diagram-reading-section h4 { padding:10px 11px; border-bottom:1px solid var(--border-color); background:var(--bg-main); font-size:.82rem; font-weight:900; line-height:1.6; }
+.diagram-reading-section > div { padding:12px 11px; font-size:.88rem; line-height:1.9; overflow-x:auto; }
+.diagram-reading-section p { margin-bottom:16px; }
+.diagram-reading-section p + p { padding-top:14px; border-top:1px solid #e4dfd2; }
+.diagram-reading-section p:last-child { margin-bottom:0; }
 @media (max-width:1000px) and (min-width:761px) { .diagram-workspace { grid-template-columns:minmax(0,1fr) 280px; } }
 @media (max-width:760px) {
   .chapter-diagram-dialog { width:calc(100vw - 16px); height:calc(100dvh - 24px); border-radius:var(--radius-md); }
@@ -91,6 +112,7 @@ body.chapter-diagram-open { overflow:hidden; }
   .diagram-workspace { display:flex; flex-direction:column; padding:10px; gap:10px; overflow:auto; }
   .diagram-map-panel { flex:1; min-height:230px; }
   .diagram-detail { flex:0 0 32%; min-height:160px; }
+  .diagram-detail:has(.diagram-knowledge-reference[open]) { flex-basis:min(70dvh,620px); min-height:350px; }
   .diagram-map-caption { padding:8px; font-size:.59rem; }
   .diagram-wire-legend { gap:8px; }
   .diagram-wire-legend > span::before { width:14px; }

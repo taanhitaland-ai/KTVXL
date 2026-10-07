@@ -38,13 +38,44 @@
     const details = document.createElement('details');
     details.className = 'diagram-knowledge-reference';
     const summary = document.createElement('summary');
-    summary.textContent = all ? 'Đọc kiến thức cả chương' : 'Kiến thức liên quan trong chương';
+    const references = all ? sourceSections.flatMap((section,s) => section.content.map((_,p)=>[s,p])) : refs;
+    const icon = document.createElement('span');
+    icon.className = 'diagram-knowledge-icon';
+    icon.setAttribute('aria-hidden','true');
+    icon.textContent = '📖';
+    const copy = document.createElement('span');
+    copy.className = 'diagram-knowledge-label';
+    const label = document.createElement('strong');
+    label.textContent = all ? 'Đọc kiến thức cả chương' : 'Đọc kiến thức liên quan';
+    const hint = document.createElement('small');
+    hint.textContent = references.length+' mục '+(all ? 'trong chương' : 'gắn với thành phần này');
+    copy.append(label,hint);
+    const caret = document.createElement('span');
+    caret.className = 'diagram-knowledge-caret';
+    caret.setAttribute('aria-hidden','true');
+    const arrow = svgElement('svg',{viewBox:'0 0 24 24',focusable:'false'});
+    arrow.appendChild(svgElement('path',{d:'M9 5 L16 12 L9 19'}));
+    caret.appendChild(arrow);
+    summary.append(icon,copy,caret);
     details.appendChild(summary);
     const content = document.createElement('div');
-    const references = all ? sourceSections.flatMap((section,s) => section.content.map((_,p)=>[s,p])) : refs;
+    content.className = 'diagram-knowledge-content';
+    const groups = new Map();
     for (const [sectionIndex,paragraphIndex] of references) {
       const section = sourceSections[sectionIndex];
-      if (section && section.content[paragraphIndex]) paragraph(section.content[paragraphIndex],content);
+      if (!section || !section.content[paragraphIndex]) continue;
+      if (!groups.has(sectionIndex)) groups.set(sectionIndex,[]);
+      groups.get(sectionIndex).push(section.content[paragraphIndex]);
+    }
+    for (const [sectionIndex,paragraphs] of groups) {
+      const section = document.createElement('section');
+      section.className = 'diagram-reading-section';
+      const heading = document.createElement('h4');
+      heading.textContent = sourceSections[sectionIndex].title;
+      const body = document.createElement('div');
+      paragraphs.forEach(text=>paragraph(text,body));
+      section.append(heading,body);
+      content.appendChild(section);
     }
     details.appendChild(content);
     parent.appendChild(details);
