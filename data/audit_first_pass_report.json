@@ -1,0 +1,68 @@
+{
+  "total": 2150,
+  "missing_fields": [],
+  "missing_images": [],
+  "answer_contradictions": [],
+  "latex_issues": [
+    {
+      "subj": "ktvxl",
+      "id": "PART_09_ROOT_Q10",
+      "field": "prompt"
+    },
+    {
+      "subj": "ktvxl",
+      "id": "PART_09_ROOT_Q22",
+      "field": "prompt"
+    },
+    {
+      "subj": "ktvxl",
+      "id": "PART_09_ROOT_Q38",
+      "field": "prompt"
+    },
+    {
+      "subj": "ktvxl",
+      "id": "PART_09_ROOT_Q40",
+      "field": "prompt"
+    },
+    {
+      "subj": "ktvxl",
+      "id": "PART_09_ROOT_Q54",
+      "field": "prompt"
+    },
+    {
+      "subj": "ktvxl",
+      "id": "PART_09_ROOT_Q55",
+      "field": "prompt"
+    },
+    {
+      "subj": "ktvxl",
+      "id": "PART_09_BT_Q50",
+      "field": "prompt"
+    },
+    {
+      "subj": "ktvxl",
+      "id": "PART_12_Q12",
+      "field": "prompt"
+    },
+    {
+      "subj": "ktvxl",
+      "id": "PART_12_Q17",
+      "field": "prompt"
+    },
+    {
+      "subj": "ktvxl",
+      "id": "PART_12_Q18",
+      "field": "prompt"
+    },
+    {
+      "subj": "ktvxl",
+      "id": "PART_12_Q47",
+      "field": "prompt"
+    },
+    {
+      "subj": "ktvxl",
+      "id": "PART_12_Q50",
+      "field": "prompt"
+    }
+  ]
+}

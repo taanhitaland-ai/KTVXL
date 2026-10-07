@@ -67,3 +67,55 @@ test('XSTK chapter groups match probability and statistics content', () => {
   }
   assert.equal(exams.select('xstk', data.xstk, 'XSTK_STAT').length, 32);
 });
+
+test('revised fill-in answers accept the corrected value and reject the stale key', () => {
+  const normalize = value => String(value).trim().toUpperCase().replace(/H$/, '');
+  for (const [id, correct, stale] of [
+    ['DE001_Q23','C.7','58'], ['PART_11_Q12','20','00'],
+    ['PART_11_Q58','5B','80'], ['PART_11_Q65','40','81'],
+    ['PART_11_Q66','4F','30'], ['PART_11_Q67','72','60'],
+    ['PART_11_Q68','1011','85'], ['PART_13_Q21','13','40']
+  ]) {
+    const q = data.ktvxl.find(q => q.id === id);
+    assert.equal(q.type, 'fib', id);
+    assert.equal(normalize(q.answer), normalize(correct), id);
+    assert.ok(q.acceptable_answers.some(value => normalize(value) === normalize(correct)), id);
+    assert.ok(!q.acceptable_answers.some(value => normalize(value) === normalize(stale)), id);
+  }
+  const q = data.ktvxl.find(q => q.id === 'PART_11_Q54');
+  assert.equal(q.type, 'mcq');
+  assert.equal(q.answer, 'D');
+  assert.match(q.options[3], /CY=0, P=0/);
+});
+
+test('revised probability keys match calculations from the stated distributions', () => {
+  const answer = id => {
+    const q = data.xstk.find(q => q.id === id);
+    return q.options[q.answer.charCodeAt(0)-65];
+  };
+  const probability = .6**2 * 2*.7*.3 + 2*.6*.4 * .7**2;
+  assert.match(answer('xstk_ch2_011'), new RegExp(probability.toFixed(4).replace('.', '\\{,\\}')));
+  const above = [.1,.3,.4,.2].reduce((total, px, x) =>
+    total + px * [.1,.2,.3,.3,.1].slice(0,x).reduce((sum, py) => sum+py,0),0);
+  assert.match(answer('xstk_ch5_013'), new RegExp(above.toFixed(2).replace('.', '\\{,\\}')));
+  const values = [0,1,2,3].map(x => x**3-4*x**2+10), probabilities = [.2,.3,.3,.2];
+  const mean = values.reduce((sum, value, i) => sum+value*probabilities[i],0);
+  const variance = values.reduce((sum, value, i) => sum+value**2*probabilities[i],0)-mean**2;
+  assert.match(answer('xstk_ch5_016'), new RegExp(mean.toFixed(2).replace('.', '\\{,\\}')));
+  assert.match(answer('xstk_ch5_016'), new RegExp(variance.toFixed(2).replace('.', '\\{,\\}')));
+  assert.match(data.xstk.find(q=>q.id==='xstk_ch2_009').prompt, /tỷ lệ sản phẩm đạt tiêu chuẩn/);
+});
+
+test('LC oscillator and grating explanations preserve consistent units', () => {
+  // pi^2=10 is stipulated by the oscillator problem.
+  const angularFrequency = 1/Math.sqrt(.1*.25e-6);
+  assert.ok(Math.abs(angularFrequency-2000*Math.sqrt(10))<1e-9);
+  const oscillator = data.vldc.find(q=>q.id==='vldc_nc_017');
+  assert.match(oscillator.prompt, /C = 0\{,\}25/);
+  assert.equal(oscillator.answer,'D');
+  assert.match(oscillator.explanation,/2000\\sqrt\{10\}/);
+  const grating = data.vldc.find(q=>q.id==='vldc_n100_026');
+  assert.match(grating.prompt, /1\\,\\mathrm\{cm\}/);
+  assert.ok(Math.abs(2e-6*1e-2/((.4404-.4047)*1e-6)-.56)<.001);
+  assert.equal(grating.answer,'B');
+});

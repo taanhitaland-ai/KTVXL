@@ -71,6 +71,8 @@ def full_audit():
             for field in ('prompt', 'options', 'explanation', 'methodology', 'tips_casio', 'tips'):
                 values = q.get(field, '')
                 for text in values if isinstance(values, list) else [values]:
+                    if re.search(r'[\x00-\x08\x0b\x0c\x0e-\x1f]', str(text)):
+                        issues.append(f'{qid}: invalid control character in {field}')
                     if str(text).replace(r'\$', '').count('$') % 2:
                         issues.append(f'{qid}: unclosed math delimiter in {field}')
             for image in set(q.get('images', []) + ([q['image']] if q.get('image') else [])):

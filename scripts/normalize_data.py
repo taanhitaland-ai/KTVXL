@@ -26,6 +26,12 @@ def normalize_tthcm_questions(questions):
     footer = r'\s+Trang\s+\d+/\d+\s*[-–]\s*Mã đề thi\s*\d+\s*$'
     for question in questions:
         question['options'] = [re.sub(footer, '', option).rstrip() for option in question.get('options', [])]
+        if question['id'] == 'TTHCM_AT_155':
+            # Binary Word formatting data was inserted inside the word "mình"
+            # during source extraction; both surrounding text fragments survive.
+            corrupt = r'mìn\x00.*?h, phải xét'
+            question['options'] = [re.sub(corrupt, 'mình, phải xét', option, flags=re.S) for option in question['options']]
+            question['explanation'] = re.sub(corrupt, 'mình, phải xét', question['explanation'], flags=re.S)
     return questions
 
 
