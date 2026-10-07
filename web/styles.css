@@ -1001,12 +1001,28 @@ code, pre, .mono {
   box-shadow: 2px 2px 0px #000;
 }
 
+.subject-toggle-btn.active[data-subject="vldc"] {
+  background: #2563EB;
+  color: #fff;
+  border-color: #000;
+  box-shadow: 2px 2px 0px #000;
+}
+
+.subject-toggle-btn.active[data-subject="xstk"] {
+  background: #059669;
+  color: #fff;
+  border-color: #000;
+  box-shadow: 2px 2px 0px #000;
+}
+
 .badge-chap1 { background: #FEF08A; color: #854D0E; }
 .badge-chap2 { background: #FED7AA; color: #9A3412; }
 .badge-chap3 { background: #BBF7D0; color: #166534; }
 .badge-chap4 { background: #BFDBFE; color: #1E40AF; }
 .badge-chap5 { background: #DDD6FE; color: #5B21B6; }
 .badge-chap6 { background: #FBCFE8; color: #9D174D; }
+.badge-chap7 { background: #A7F3D0; color: #065F46; }
+.badge-chap8 { background: #FDE68A; color: #78350F; }
 
 
 /* ==========================================================================

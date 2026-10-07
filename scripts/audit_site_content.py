@@ -93,8 +93,51 @@ def full_audit():
         if c % 2 != 0:
             issues.append(f"VLDC {qid}: unclosed LaTeX math $ (count={c})")
 
-    # 4. Parity check between web/ and docs/ data files
-    for filename in ["data/questions.json", "data.js", "tthcm_data.js", "vldc_data.js"]:
+    # 4. XSTK
+    with open("data/xstk_questions_db.json", encoding="utf-8") as f:
+        xstk = json.load(f)
+    print(f"4. XSTK: {len(xstk)} questions loaded.")
+    for idx, q in enumerate(xstk):
+        qid = q.get("id", f"idx_{idx}")
+        prompt = q.get("prompt", "").strip()
+        ans = q.get("answer")
+        exp = q.get("explanation", "").strip()
+        opts = q.get("options", [])
+        if not prompt: issues.append(f"XSTK {qid}: empty prompt")
+        if not exp: issues.append(f"XSTK {qid}: empty explanation")
+        if len(opts) != 4: issues.append(f"XSTK {qid}: does not have exactly 4 options ({len(opts)})")
+        if ans not in ["A", "B", "C", "D"]: issues.append(f"XSTK {qid}: invalid answer {ans}")
+        
+        text_to_check = prompt + " " + " ".join(opts) + " " + exp + " " + q.get("methodology", "") + " " + q.get("tips", "")
+        text_clean = text_to_check.replace(r"\$", "")
+        c = text_clean.count("$")
+        if c % 2 != 0:
+            issues.append(f"XSTK {qid}: unclosed LaTeX math $ (count={c})")
+
+    # 5. Parity check between web/ and docs/ files
+    files_to_check = [
+        "data/questions.json",
+        "data/xstk_questions.json",
+        "data.js",
+        "tthcm_data.js",
+        "tthcm_knowledge_data.js",
+        "vldc_data.js",
+        "vldc_knowledge_data.js",
+        "vldc_simulations.js",
+        "xstk_data.js",
+        "xstk_knowledge_data.js",
+        "xstk_simulations.js",
+        "index.html",
+        "app.js",
+        "styles.css",
+        "XSTK_Tong_Hop_Kien_Thuc.pdf",
+        "XSTK_Giai_De_Kiem_Tra.pdf",
+        "XSTK_Giai_Trong_Tam_ATTT.pdf",
+        "XSTK_Meo_Va_Casio.pdf",
+        "VLDC_Kien_Thuc_Trong_Tam.pdf",
+        "VLDC_Ngan_Hang_Cau_Hoi_Loi_Giai_Meo_Casio.pdf"
+    ]
+    for filename in files_to_check:
         web_file = os.path.join("web", filename)
         docs_file = os.path.join("docs", filename)
         if not os.path.exists(web_file):

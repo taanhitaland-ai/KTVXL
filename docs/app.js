@@ -70,7 +70,19 @@
     localStorage.setItem('kma_active_subject', subject);
     loadSavedState();
 
-    if (subject === 'vldc') {
+    if (subject === 'xstk') {
+      questions = (window.XSTK_QUESTIONS_DATA || []).map((q, idx) => ({
+        ...q,
+        num: q.num || (idx + 1),
+        answer: q.answer || q.correct_answer,
+        chapter: q.chapter_id || (typeof q.chapter === 'number' ? q.chapter : parseInt(String(q.chapter).replace(/\D+/g, ''), 10)) || 1,
+        source_title: q.source_title || 'XSTK Chuẩn',
+        source: q.source || 'KMA_STANDARD'
+      }));
+      knowledge = window.XSTK_KNOWLEDGE_DATA || null;
+      currentSource = 'ALL';
+      currentExamCode = 'RANDOM';
+    } else if (subject === 'vldc') {
       questions = (window.VLDC_QUESTIONS_DATA || []).map((q, idx) => ({
         ...q,
         num: q.num || (idx + 1),
@@ -98,7 +110,12 @@
     const brandBadge = document.getElementById('app-brand-badge');
     const brandTitle = document.getElementById('app-brand-title');
     if (brandBadge && brandTitle) {
-      if (subject === 'vldc') {
+      if (subject === 'xstk') {
+        brandBadge.textContent = '🎲 XSTK';
+        brandBadge.style.background = '#059669';
+        brandBadge.style.color = '#FFF';
+        brandTitle.textContent = 'XÁC SUẤT THỐNG KÊ';
+      } else if (subject === 'vldc') {
         brandBadge.textContent = '⚛️ VLDC';
         brandBadge.style.background = '#2563EB';
         brandBadge.style.color = '#FFF';
@@ -120,17 +137,31 @@
     const btnKtvxl = document.getElementById('btn-subj-ktvxl');
     const btnTthcm = document.getElementById('btn-subj-tthcm');
     const btnVldc = document.getElementById('btn-subj-vldc');
+    const btnXstk = document.getElementById('btn-subj-xstk');
     if (btnKtvxl) btnKtvxl.classList.toggle('active', subject === 'ktvxl');
     if (btnTthcm) btnTthcm.classList.toggle('active', subject === 'tthcm');
     if (btnVldc) btnVldc.classList.toggle('active', subject === 'vldc');
+    if (btnXstk) btnXstk.classList.toggle('active', subject === 'xstk');
 
-    // Highlight Lab button when in VLDC
+    // Update Lab Tab button and Lab containers
     const btnLab = document.getElementById('btn-tab-visualize');
+    const labVldc = document.getElementById('lab-container-vldc');
+    const labXstk = document.getElementById('lab-container-xstk');
     if (btnLab) {
-      if (subject === 'vldc') {
+      if (subject === 'xstk') {
+        btnLab.innerHTML = '🎲 Mô Phỏng Xác Suất (Lab) <span style="background: #FFE600; color: #000; padding: 1px 6px; border: 1.5px solid #000; border-radius: 4px; font-size: 0.7rem; font-weight: 900; margin-left: 4px;">HOT</span>';
+        if (labVldc) labVldc.style.display = 'none';
+        if (labXstk) labXstk.style.display = 'block';
+        if (window.initXstkLab) window.initXstkLab();
+      } else if (subject === 'vldc') {
         btnLab.innerHTML = '🔬 Mô Phỏng Vật Lý (Lab) <span style="background: #FFE600; color: #000; padding: 1px 6px; border: 1.5px solid #000; border-radius: 4px; font-size: 0.7rem; font-weight: 900; margin-left: 4px;">HOT</span>';
+        if (labVldc) labVldc.style.display = 'block';
+        if (labXstk) labXstk.style.display = 'none';
+        if (window.initPhysicsLab) window.initPhysicsLab();
       } else {
-        btnLab.textContent = '🔬 Mô Phỏng Vật Lý (Lab)';
+        btnLab.textContent = '🔬 Mô Phỏng Trực Quan';
+        if (labVldc) labVldc.style.display = 'none';
+        if (labXstk) labXstk.style.display = 'block';
       }
     }
 
@@ -142,6 +173,7 @@
     const btnKtvxl = document.getElementById('btn-subj-ktvxl');
     const btnTthcm = document.getElementById('btn-subj-tthcm');
     const btnVldc = document.getElementById('btn-subj-vldc');
+    const btnXstk = document.getElementById('btn-subj-xstk');
 
     if (btnKtvxl) {
       btnKtvxl.addEventListener('click', () => {
@@ -163,6 +195,14 @@
       btnVldc.addEventListener('click', () => {
         if (currentSubject !== 'vldc') {
           switchSubject('vldc');
+        }
+      });
+    }
+
+    if (btnXstk) {
+      btnXstk.addEventListener('click', () => {
+        if (currentSubject !== 'xstk') {
+          switchSubject('xstk');
         }
       });
     }
@@ -194,7 +234,7 @@
     const panelContent = document.getElementById('panel-content');
     if (panelTitle && panelContent) {
       panelTitle.textContent = '💡 CHỌN CÂU HỎI ĐỂ XEM LỜI GIẢI';
-      const subjName = subject === 'vldc' ? 'Vật Lý Đại Cương 2' : (subject === 'tthcm' ? 'Tư Tưởng Hồ Chí Minh' : 'Kỹ Thuật Vi Xử Lý');
+      const subjName = subject === 'xstk' ? 'Xác Suất Thống Kê' : (subject === 'vldc' ? 'Vật Lý Đại Cương 2' : (subject === 'tthcm' ? 'Tư Tưởng Hồ Chí Minh' : 'Kỹ Thuật Vi Xử Lý'));
       panelContent.innerHTML = `
         <div class="panel-placeholder">
           <p style="font-size: 2.2rem; margin-bottom: 12px;">📚</p>
@@ -211,7 +251,35 @@
     const sourceSelect = document.getElementById('filter-source');
     if (!sourceSelect) return;
 
-    if (currentSubject === 'vldc') {
+    if (currentSubject === 'xstk') {
+      sourceSelect.innerHTML = `
+        <optgroup label="Toàn Bộ Ngân Hàng">
+          <option value="ALL">🌟 Toàn Bộ Ngân Hàng XSTK (139 câu)</option>
+        </optgroup>
+        <optgroup label="5 Đề Kiểm Tra Giữa Kỳ KMA">
+          <option value="KMA_EXAM_01">📝 Đề Kiểm Tra Giữa Kỳ 01 (7 câu)</option>
+          <option value="KMA_EXAM_02">📝 Đề Kiểm Tra Giữa Kỳ 02 (4 câu)</option>
+          <option value="KMA_EXAM_03">📝 Đề Kiểm Tra Giữa Kỳ 03 (4 câu)</option>
+          <option value="KMA_EXAM_04">📝 Đề Kiểm Tra Giữa Kỳ 04 (4 câu)</option>
+          <option value="KMA_EXAM_05">📝 Đề Kiểm Tra Giữa Kỳ 05 (6 câu)</option>
+        </optgroup>
+        <optgroup label="Chuyên Đề & Bài Tập Chuẩn">
+          <option value="KMA_STANDARD">📚 Ngân Hàng Bài Tập Chuẩn KMA (108 câu)</option>
+          <option value="ATTT_CHUYEN_DE">🛡️ Chuyên Đề An Toàn Thông Tin (6 câu)</option>
+        </optgroup>
+        <optgroup label="Lọc Theo 8 Chương Giáo Trình">
+          <option value="CHAP_1">Chương 1: Biến cố ngẫu nhiên & Định nghĩa xác suất (18 câu)</option>
+          <option value="CHAP_2">Chương 2: Các quy tắc tính xác suất cơ bản (11 câu)</option>
+          <option value="CHAP_3">Chương 3: Đại lượng ngẫu nhiên rời rạc & Phân phối (14 câu)</option>
+          <option value="CHAP_4">Chương 4: Đại lượng ngẫu nhiên liên tục & Phân phối (22 câu)</option>
+          <option value="CHAP_5">Chương 5: Đại lượng ngẫu nhiên hai chiều (19 câu)</option>
+          <option value="CHAP_6">Chương 6: Thống kê mô tả & Lý thuyết mẫu (23 câu)</option>
+          <option value="CHAP_7">Chương 7: Ước lượng tham số (15 câu)</option>
+          <option value="CHAP_8">Chương 8: Kiểm định giả thuyết thống kê (17 câu)</option>
+        </optgroup>
+      `;
+      currentSource = 'ALL';
+    } else if (currentSubject === 'vldc') {
       sourceSelect.innerHTML = `
         <optgroup label="Toàn Bộ Ngân Hàng">
           <option value="ALL">🌟 Toàn Bộ Ngân Hàng VLDC (142 câu)</option>
@@ -294,7 +362,20 @@
     const btnGroup = document.querySelector('.filter-btn-group');
     const filterLabel = btnGroup ? btnGroup.previousElementSibling : null;
     if (btnGroup) {
-      if (currentSubject === 'vldc' || currentSubject === 'tthcm') {
+      if (currentSubject === 'xstk') {
+        if (filterLabel) filterLabel.textContent = 'Chương:';
+        btnGroup.innerHTML = `
+          <button class="neo-filter-btn active" data-clo="ALL">Tất cả</button>
+          <button class="neo-filter-btn" data-clo="1">Chương 1</button>
+          <button class="neo-filter-btn" data-clo="2">Chương 2</button>
+          <button class="neo-filter-btn" data-clo="3">Chương 3</button>
+          <button class="neo-filter-btn" data-clo="4">Chương 4</button>
+          <button class="neo-filter-btn" data-clo="5">Chương 5</button>
+          <button class="neo-filter-btn" data-clo="6">Chương 6</button>
+          <button class="neo-filter-btn" data-clo="7">Chương 7</button>
+          <button class="neo-filter-btn" data-clo="8">Chương 8</button>
+        `;
+      } else if (currentSubject === 'vldc' || currentSubject === 'tthcm') {
         if (filterLabel) filterLabel.textContent = 'Chương:';
         btnGroup.innerHTML = `
           <button class="neo-filter-btn active" data-clo="ALL">Tất cả</button>
@@ -332,7 +413,36 @@
     const examGrid = document.querySelector('.exam-grid-choices');
     if (!examGrid) return;
 
-    if (currentSubject === 'vldc') {
+    if (currentSubject === 'xstk') {
+      examGrid.innerHTML = `
+        <div class="exam-card-choice selected neo-box" data-exam-code="RANDOM">
+          <div class="exam-code-badge" style="background: #059669; color: #FFF;">CHUẨN MA TRẬN</div>
+          <h3 class="exam-title-choice">Đề Thi Tổng Hợp 40 Câu (XSTK)</h3>
+          <p class="exam-desc-choice">Trộn chuẩn 40 câu ngẫu nhiên phủ khắp 8 chương giáo trình Xác suất và Thống kê học viện KMA.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="KMA_EXAM_01">
+          <div class="exam-code-badge" style="background: #2563EB; color: #FFF;">ĐỀ GIỮA KỲ 01</div>
+          <h3 class="exam-title-choice">Đề Kiểm Tra Giữa Kỳ 01 (KMA)</h3>
+          <p class="exam-desc-choice">Đề thi giữa kỳ chính thức số 01 kèm bài tập bổ trợ tổ hợp, Bayes, Poisson và phân phối chuẩn.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="KMA_EXAM_02">
+          <div class="exam-code-badge" style="background: #E11D48; color: #FFF;">ĐỀ GIỮA KỲ 02</div>
+          <h3 class="exam-title-choice">Đề Kiểm Tra Giữa Kỳ 02 (KMA)</h3>
+          <p class="exam-desc-choice">Bộ đề thi trắc nghiệm & tự luận giữa kỳ số 02 kèm bảng tra Laplace và Student.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="XSTK_PROB">
+          <div class="exam-code-badge" style="background: #F59E0B; color: #000;">CHUYÊN ĐỀ XÁC SUẤT</div>
+          <h3 class="exam-title-choice">Chuyên Đề Xác Suất (Chương 1 - 5)</h3>
+          <p class="exam-desc-choice">40 câu trắc nghiệm chuyên sâu về biến cố, Bayes, biến ngẫu nhiên 1 chiều rời rạc, liên tục và 2 chiều.</p>
+        </div>
+        <div class="exam-card-choice neo-box" data-exam-code="XSTK_STAT">
+          <div class="exam-code-badge" style="background: #8B5CF6; color: #FFF;">CHUYÊN ĐỀ THỐNG KÊ</div>
+          <h3 class="exam-title-choice">Chuyên Đề Thống Kê (Chương 6 - 8)</h3>
+          <p class="exam-desc-choice">40 câu lý thuyết mẫu, phương sai hiệu chỉnh, khoảng tin cậy kỳ vọng/tỷ lệ và kiểm định giả thuyết.</p>
+        </div>
+      `;
+      currentExamCode = 'RANDOM';
+    } else if (currentSubject === 'vldc') {
       examGrid.innerHTML = `
         <div class="exam-card-choice selected neo-box" data-exam-code="RANDOM">
           <div class="exam-code-badge" style="background: #2563EB; color: #FFF;">CHUẨN MA TRẬN</div>
@@ -568,7 +678,16 @@
   function getFilteredQuestions() {
     return questions.filter(q => {
       // Source filter
-      if (currentSubject === 'vldc') {
+      if (currentSubject === 'xstk') {
+        if (currentSource !== 'ALL') {
+          if (currentSource.startsWith('CHAP_')) {
+            const chapNum = parseInt(currentSource.replace('CHAP_', ''), 10);
+            if (q.chapter !== chapNum) return false;
+          } else {
+            if (q.source !== currentSource) return false;
+          }
+        }
+      } else if (currentSubject === 'vldc') {
         if (currentSource !== 'ALL') {
           if (currentSource.startsWith('CHAP_')) {
             const chapNum = parseInt(currentSource.replace('CHAP_', ''), 10);
@@ -596,7 +715,7 @@
 
       // CLO / Chapter filter
       if (currentClo !== 'ALL') {
-        if (currentSubject === 'vldc' || currentSubject === 'tthcm') {
+        if (currentSubject === 'xstk' || currentSubject === 'vldc' || currentSubject === 'tthcm') {
           if (String(q.chapter) !== currentClo) return false;
         } else {
           if (q.clo !== currentClo) return false;
@@ -643,7 +762,7 @@
       return;
     }
 
-    let subjName = currentSubject === 'vldc' ? 'Vật Lý Đại Cương' : (currentSubject === 'tthcm' ? 'Tư Tưởng HCM' : 'Vi Xử Lý');
+    let subjName = currentSubject === 'xstk' ? 'Xác Suất Thống Kê' : (currentSubject === 'vldc' ? 'Vật Lý Đại Cương' : (currentSubject === 'tthcm' ? 'Tư Tưởng HCM' : 'Vi Xử Lý'));
     let sourceLabel = currentSource;
     if (currentSource === 'ALL') sourceLabel = `Toàn Bộ Ngân Hàng ${subjName}`;
     else if (currentSource === 'ALL_EXAMS') sourceLabel = '5 Đề Thi Chính Thức KMA';
@@ -703,7 +822,7 @@
     sourceBadge.textContent = q.source_title ? `${q.source_title} • Câu ${q.num}` : (q.exam_title ? `${q.exam_title} • Câu ${q.num}` : `${q.source} • Câu ${q.num}`);
     badges.appendChild(sourceBadge);
 
-    if (currentSubject === 'vldc' || currentSubject === 'tthcm') {
+    if (currentSubject === 'xstk' || currentSubject === 'vldc' || currentSubject === 'tthcm') {
       const chapBadge = document.createElement('span');
       chapBadge.className = `neo-badge badge-chap${q.chapter || 1}`;
       chapBadge.textContent = `Chương ${q.chapter || 1}`;
@@ -1235,75 +1354,75 @@
       container.appendChild(kwCard);
     }
 
-    // If VLDC, add Magic Keywords & Casio Handbook table cards
-    if (currentSubject === 'vldc') {
-      if (knowledge.magic_keywords) {
-        const kwCard = document.createElement('div');
-        kwCard.className = 'chapter-card';
-        kwCard.innerHTML = `
-          <div class="chapter-header" style="background: #93C5FD;">
-            <div>
-              <span class="neo-badge" style="background:#1D4ED8; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">TỪ KHÓA & CÔNG THỨC VÀNG</span>
-              <h3 class="chapter-title">Bảng "Từ Khóa Vàng" & Công Thức Tính Nhanh VLDC</h3>
-            </div>
-            <span style="font-size: 1.2rem;">▼</span>
+    // If VLDC, add Magic Keywords table card
+    if (currentSubject === 'vldc' && knowledge.magic_keywords) {
+      const kwCard = document.createElement('div');
+      kwCard.className = 'chapter-card';
+      kwCard.innerHTML = `
+        <div class="chapter-header" style="background: #93C5FD;">
+          <div>
+            <span class="neo-badge" style="background:#1D4ED8; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">TỪ KHÓA & CÔNG THỨC VÀNG</span>
+            <h3 class="chapter-title">Bảng "Từ Khóa Vàng" & Công Thức Tính Nhanh VLDC</h3>
           </div>
-          <div class="chapter-body">
-            <table class="table-custom" style="width: 100%; border-collapse: collapse;">
-              <thead>
-                <tr style="background: #FFE600; font-weight: 800;">
-                  <th style="padding: 8px 10px; border: 2px solid #000; width: 42%;">Dạng Đề / Hiện Tượng</th>
-                  <th style="padding: 8px 10px; border: 2px solid #000;">Công Thức Khóa & Chú Ý</th>
+          <span style="font-size: 1.2rem;">▼</span>
+        </div>
+        <div class="chapter-body">
+          <table class="table-custom" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #FFE600; font-weight: 800;">
+                <th style="padding: 8px 10px; border: 2px solid #000; width: 42%;">Dạng Đề / Hiện Tượng</th>
+                <th style="padding: 8px 10px; border: 2px solid #000;">Công Thức Khóa & Chú Ý</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${knowledge.magic_keywords.map(mk => `
+                <tr>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(mk.keyword)}</td>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; color: #1E3A8A; font-weight: 800;">${escapeHtml(mk.match)}</td>
                 </tr>
-              </thead>
-              <tbody>
-                ${knowledge.magic_keywords.map(mk => `
-                  <tr>
-                    <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(mk.keyword)}</td>
-                    <td style="padding: 8px 10px; border: 1.5px solid #000; color: #1E3A8A; font-weight: 800;">${escapeHtml(mk.match)}</td>
-                  </tr>
-                `).join('')}
-              </tbody>
-            </table>
-          </div>
-        `;
-        container.appendChild(kwCard);
-      }
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+      container.appendChild(kwCard);
+    }
 
-      if (knowledge.casio_handbook) {
-        const casioCard = document.createElement('div');
-        casioCard.className = 'chapter-card';
-        casioCard.innerHTML = `
-          <div class="chapter-header" style="background: #A7F3D0;">
-            <div>
-              <span class="neo-badge" style="background:#065F46; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">SỔ TAY CASIO fx-580VNX</span>
-              <h3 class="chapter-title">Tra Cứu Hằng Số & Chuyển Đổi Đơn Vị (CONST & CONV)</h3>
-            </div>
-            <span style="font-size: 1.2rem;">▼</span>
+    // Casio Handbook table card (VLDC & XSTK)
+    if (knowledge && knowledge.casio_handbook) {
+      const isXstk = currentSubject === 'xstk';
+      const casioCard = document.createElement('div');
+      casioCard.className = 'chapter-card';
+      casioCard.innerHTML = `
+        <div class="chapter-header" style="background: #A7F3D0;">
+          <div>
+            <span class="neo-badge" style="background:#065F46; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">SỔ TAY CASIO fx-580VNX</span>
+            <h3 class="chapter-title">${isXstk ? 'Thủ Thuật Thống Kê, Phân Phối Chuẩn & Phím Bấm Casio fx-580VNX' : 'Tra Cứu Hằng Số & Chuyển Đổi Đơn Vị (CONST & CONV)'}</h3>
           </div>
-          <div class="chapter-body">
-            <table class="table-custom" style="width: 100%; border-collapse: collapse;">
-              <thead>
-                <tr style="background: #FFE600; font-weight: 800;">
-                  <th style="padding: 8px 10px; border: 2px solid #000; width: 35%;">Đại Lượng Vật Lý</th>
-                  <th style="padding: 8px 10px; border: 2px solid #000; width: 30%;">Phím Bấm Casio</th>
-                  <th style="padding: 8px 10px; border: 2px solid #000;">Giá Trị Chuẩn SI</th>
+          <span style="font-size: 1.2rem;">▼</span>
+        </div>
+        <div class="chapter-body">
+          <table class="table-custom" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="background: #FFE600; font-weight: 800;">
+                <th style="padding: 8px 10px; border: 2px solid #000; width: 35%;">${isXstk ? 'Chức Năng Thống Kê' : 'Đại Lượng Vật Lý'}</th>
+                <th style="padding: 8px 10px; border: 2px solid #000; width: 32%;">Phím Bấm Casio</th>
+                <th style="padding: 8px 10px; border: 2px solid #000;">${isXstk ? 'Ý Nghĩa / Kết Quả' : 'Giá Trị Chuẩn SI'}</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${knowledge.casio_handbook.map(c => `
+                <tr>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(c.name)}</td>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; font-family: monospace; font-weight: 800; color: #991B1B;">${escapeHtml(c.shortcut)}</td>
+                  <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(c.value)}</td>
                 </tr>
-              </thead>
-              <tbody>
-                ${knowledge.casio_handbook.map(c => `
-                  <tr>
-                    <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(c.name)}</td>
-                    <td style="padding: 8px 10px; border: 1.5px solid #000; font-family: monospace; font-weight: 800; color: #991B1B;">${escapeHtml(c.shortcut)}</td>
-                    <td style="padding: 8px 10px; border: 1.5px solid #000; font-weight: 700;">${escapeHtml(c.value)}</td>
-                  </tr>
-                `).join('')}
-              </tbody>
-            </table>
-          </div>
-        `;
-        container.appendChild(casioCard);
-      }
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+      container.appendChild(casioCard);
     }
     renderMath(container);
   }
@@ -1349,9 +1468,26 @@
   function startExam() {
     examUserAnswers = {};
     examActive = true;
-    examTimeRemaining = (currentSubject === 'vldc' ? 45 : (currentSubject === 'tthcm' ? 40 : 60)) * 60;
+    examTimeRemaining = (currentSubject === 'xstk' ? 60 : (currentSubject === 'vldc' ? 45 : (currentSubject === 'tthcm' ? 40 : 60))) * 60;
 
-    if (currentSubject === 'vldc') {
+    if (currentSubject === 'xstk') {
+      if (currentExamCode === 'RANDOM') {
+        const shuffled = [...questions].sort(() => 0.5 - Math.random());
+        examQuestions = shuffled.slice(0, Math.min(40, shuffled.length));
+      } else if (currentExamCode === 'XSTK_PROB') {
+        const prob = questions.filter(q => q.chapter <= 5);
+        const shuffled = [...prob].sort(() => 0.5 - Math.random());
+        examQuestions = shuffled.slice(0, Math.min(40, shuffled.length));
+      } else if (currentExamCode === 'XSTK_STAT') {
+        const stat = questions.filter(q => q.chapter >= 6);
+        const shuffled = [...stat].sort(() => 0.5 - Math.random());
+        examQuestions = shuffled.slice(0, Math.min(40, shuffled.length));
+      } else {
+        const matched = questions.filter(q => q.source === currentExamCode);
+        const others = questions.filter(q => q.source !== currentExamCode).sort(() => 0.5 - Math.random());
+        examQuestions = [...matched, ...others].slice(0, Math.min(40, questions.length));
+      }
+    } else if (currentSubject === 'vldc') {
       if (currentExamCode === 'NOTION_DE_CUOI') {
         const match = questions.filter(q => q.source === 'NOTION_DE_CUOI');
         examQuestions = match.length > 0 ? [...match] : questions.slice(0, 38);
@@ -1396,7 +1532,7 @@
 
     const examTitleEl = document.getElementById('exam-current-name');
     if (examTitleEl) {
-      const subjTag = currentSubject === 'vldc' ? 'VLDC' : (currentSubject === 'tthcm' ? 'TTHCM' : 'KTVXL');
+      const subjTag = currentSubject === 'xstk' ? 'XSTK' : (currentSubject === 'vldc' ? 'VLDC' : (currentSubject === 'tthcm' ? 'TTHCM' : 'KTVXL'));
       examTitleEl.textContent = currentExamCode === 'RANDOM' ? 
         `ĐỀ THI NGẪU NHIÊN (${subjTag})` : 
         `BÀI THI: ${currentExamCode}`;
@@ -1505,7 +1641,7 @@
     const modalDetail = document.getElementById('modal-score-detail');
     if (modalScore) modalScore.textContent = scoreFormatted;
     if (modalDetail) {
-      const totalMins = (currentSubject === 'vldc' ? 45 : (currentSubject === 'tthcm' ? 40 : 60));
+      const totalMins = (currentSubject === 'xstk' ? 60 : (currentSubject === 'vldc' ? 45 : (currentSubject === 'tthcm' ? 40 : 60)));
       const minsSpent = Math.floor((totalMins * 60 - examTimeRemaining) / 60);
       const secsSpent = (totalMins * 60 - examTimeRemaining) % 60;
       modalDetail.textContent = `Đúng ${correctCount} / ${total} câu • Thời gian làm bài: ${minsSpent.toString().padStart(2, '0')}:${secsSpent.toString().padStart(2, '0')}`;
@@ -1520,7 +1656,27 @@
     const clo3Bar = document.getElementById('clo3-progress-bar');
 
     if (clo1Stat && clo1Bar && clo2Stat && clo2Bar && clo3Stat && clo3Bar) {
-      if (currentSubject === 'vldc') {
+      if (currentSubject === 'xstk') {
+        const c123 = examQuestions.filter(q => q.chapter <= 3);
+        const c45 = examQuestions.filter(q => q.chapter === 4 || q.chapter === 5);
+        const c678 = examQuestions.filter(q => q.chapter >= 6);
+        
+        const corr123 = c123.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+        const corr45 = c45.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+        const corr678 = c678.filter(q => examUserAnswers[q.id] && examUserAnswers[q.id].isCorrect).length;
+
+        clo1Stat.previousElementSibling.textContent = 'Chương 1-3: Biến cố, Xác suất & Rời rạc';
+        clo1Stat.textContent = `${corr123}/${c123.length} câu`;
+        clo1Bar.style.width = c123.length > 0 ? `${(corr123/c123.length)*100}%` : '0%';
+
+        clo2Stat.previousElementSibling.textContent = 'Chương 4-5: Biến liên tục & 2 chiều';
+        clo2Stat.textContent = `${corr45}/${c45.length} câu`;
+        clo2Bar.style.width = c45.length > 0 ? `${(corr45/c45.length)*100}%` : '0%';
+
+        clo3Stat.previousElementSibling.textContent = 'Chương 6-8: Lý thuyết mẫu, Ước lượng & Kiểm định';
+        clo3Stat.textContent = `${corr678}/${c678.length} câu`;
+        clo3Bar.style.width = c678.length > 0 ? `${(corr678/c678.length)*100}%` : '0%';
+      } else if (currentSubject === 'vldc') {
         const c12 = examQuestions.filter(q => q.chapter === 1 || q.chapter === 2);
         const c34 = examQuestions.filter(q => q.chapter === 3 || q.chapter === 4);
         const c56 = examQuestions.filter(q => q.chapter === 5 || q.chapter === 6);
