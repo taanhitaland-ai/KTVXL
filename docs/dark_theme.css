@@ -1,0 +1,135 @@
+/* AllHallows-inspired palette. Layout and diagram geometry remain unchanged. */
+body.dark-mode {
+  color-scheme: dark;
+  --bg-main: #1B1029;
+  --bg-card: #291B3B;
+  --text-main: #F1EAF7;
+  --text-muted: #C5B5D4;
+  --border-color: #58416E;
+  --night-raised: #362448;
+  --night-hover: #432E57;
+  --night-accent: #F3DF78;
+  --night-ink: #251335;
+  --neo-yellow: var(--night-accent);
+  --neo-purple: #C4A6DE;
+  --neo-orange: #E4AE7D;
+  --neo-blue: #B5A6DF;
+  --neo-cyan: #A9C3C0;
+  --neo-green: #A6C99B;
+  --neo-red: #EBA7AD;
+  --neo-pink: #CDA5CB;
+  --neo-gray: var(--night-raised);
+  --shadow-main: 4px 4px 0 #10091B;
+  --shadow-lg: 6px 6px 0 #10091B;
+  --shadow-sm: 2px 2px 0 #10091B;
+  --shadow-inset: inset 2px 2px 0 #10091B;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+body.dark-mode :is(.app-header, .side-planner-drawer) { background: #241433; border-color: var(--border-color); }
+body.dark-mode :is(.brand-title, .q-title, .chapter-title, .download-title, .exam-card-title, .sim-card-title, .sim-section-title) { color: var(--text-main); }
+body.dark-mode :is(h1, h2, h3, h4) { color: var(--text-main); }
+body.dark-mode .brand-badge { background: var(--night-raised) !important; color: var(--night-accent) !important; }
+body.dark-mode :is(.neo-box, .neo-box-sm, .question-card, .details-panel, .exam-setup-box, .chapter-card, .download-card, .result-card, .exam-schedule-card, .pomodoro-card, .tracker-card, .sim-canvas-card, .sim-controls-card, .sim-explain-card, .filter-toolbar) { background: var(--bg-card); color: var(--text-main); border-color: var(--border-color); }
+body.dark-mode :is(.question-card.active-selected, .exam-time-box, .pomo-display-box, .metric-pill-card, .study-stat-row, .sim-readout-card, .q-star-btn, .panel-section, .panel-header, .side-drawer-nav) { background: var(--night-raised); color: var(--text-main); border-color: var(--border-color); }
+body.dark-mode :is(.stat-pill, .subject-toggle-group) { background: var(--bg-card); border-color: var(--border-color); color: var(--text-muted); }
+body.dark-mode :is(.stat-pill strong, .pomo-timer-digits, .sim-readout-val, .metric-pill-value) { color: var(--night-accent); }
+body.dark-mode :is(.filter-label, .panel-text, .section-content, .exam-desc-choice, .exam-setup-description, .download-desc, .sim-readout-label, .exam-card-sub, .exam-notes-text, .metric-pill-label, .stat-row-pct, .planner-trigger-text small) { color: var(--text-muted); }
+
+/* Neutral controls; warm yellow indicates the current action. */
+body.dark-mode :is(.neo-btn, .neo-select, .neo-input, .search-input, .pomo-custom-input) { border-color: var(--border-color); }
+body.dark-mode .neo-btn { background: var(--night-accent); color: var(--night-ink); }
+body.dark-mode :is(.neo-btn-white, .neo-btn-blue, .neo-btn-purple, .neo-select, .neo-input, .search-input, .pomo-custom-input, .nav-tab-btn, .neo-filter-btn, .subject-toggle-btn, .sim-nav-btn, .side-nav-btn, .pomo-mode-btn, .pomo-preset-btn, .pomo-subj-btn, .stat-add-btn) { background: var(--night-raised); color: var(--text-muted); border-color: var(--border-color); }
+body.dark-mode :is(.neo-btn-white, .nav-tab-btn, .neo-filter-btn, .subject-toggle-btn, .sim-nav-btn, .side-nav-btn, .pomo-preset-btn, .pomo-subj-btn, .stat-add-btn):hover { background: var(--night-hover); color: var(--text-main); }
+body.dark-mode #btn-tab-schedule { background: var(--night-raised) !important; color: var(--text-muted) !important; }
+body.dark-mode :is(.nav-tab-btn.active, .neo-filter-btn.active, .sim-nav-btn.active, .side-nav-btn.active, .pomo-mode-btn.active, .pomo-preset-btn.active, .pomo-subj-btn.active), body.dark-mode .subject-toggle-btn.active[data-subject], body.dark-mode #btn-tab-schedule.active { background: var(--night-accent) !important; color: var(--night-ink) !important; border-color: var(--night-accent); }
+body.dark-mode .neo-btn-green { background: #B8D29D; color: #20311D; }
+body.dark-mode .neo-btn-red { background: #553042; color: #FFD6DC; }
+body.dark-mode :is(button, summary, input, select):focus-visible { outline: 3px solid var(--night-accent); outline-offset: 3px; }
+
+/* Continuous reading surfaces replace the old white and neon panels. */
+body.dark-mode :is(.knowledge-hero, .schedule-hero) { background: radial-gradient(ellipse at top right, #462C57 0, #2F1B43 65%); border-color: var(--border-color); color: var(--text-main); }
+body.dark-mode :is(.knowledge-hero, .schedule-hero) h1 { color: var(--night-accent) !important; }
+body.dark-mode :is(.knowledge-hero, .schedule-hero) p { color: var(--text-muted) !important; }
+body.dark-mode .chapter-header { background: var(--night-raised) !important; color: var(--text-main); border-color: var(--border-color); }
+body.dark-mode .chapter-header .neo-badge { background: var(--bg-card) !important; color: var(--night-accent) !important; border-color: var(--border-color); }
+body.dark-mode .chapter-diagram-actions { background: #241733; color: var(--text-muted); }
+body.dark-mode .chapter-body { background: var(--bg-card); color: var(--text-main); }
+body.dark-mode .chapter-body > p { color: var(--text-muted) !important; }
+body.dark-mode :is(.section-item, .panel-section, .study-history-section) { border-color: var(--border-color); }
+body.dark-mode .section-title { color: var(--night-accent); }
+body.dark-mode .chapter-body [style*="color"] { color: var(--text-main) !important; }
+body.dark-mode .chapter-body [style*="background"] { background: var(--night-raised) !important; border-color: var(--border-color) !important; }
+body.dark-mode :is(.table-custom, .study-table) :is(th, td) { border-color: var(--border-color) !important; }
+body.dark-mode :is(.table-custom, .study-table) th { background: var(--night-raised); color: var(--night-accent); }
+body.dark-mode :is(.table-custom, .study-table) td { background: var(--bg-card); color: var(--text-main); }
+body.dark-mode :is(.study-table td, .stat-row-title, .stat-row-mins, .pomo-header h2) { color: var(--text-main) !important; }
+body.dark-mode .section-content code { background: var(--night-raised); color: var(--night-accent); }
+body.dark-mode .katex { color: inherit; }
+
+/* Correct and incorrect answers retain their meaning with softer colors. */
+body.dark-mode .option-btn { background: var(--night-raised); color: var(--text-main); border-color: var(--border-color); }
+body.dark-mode .option-btn:hover:not(:disabled) { background: var(--night-hover); }
+body.dark-mode .option-btn.selected-exam { background: #514226; color: #FFF0AC; border-color: var(--night-accent); }
+body.dark-mode .option-btn.correct { background: #263D33; color: #CDEACC; border-color: #86B48E; }
+body.dark-mode .option-btn.wrong { background: #4A293C; color: #F7CDD5; border-color: #C1899D; }
+body.dark-mode .exam-card-choice { background: var(--night-raised); color: var(--text-main); border-color: var(--border-color); }
+body.dark-mode .exam-card-choice.selected { color: var(--night-ink); }
+body.dark-mode .exam-card-choice.selected .exam-desc-choice { color: #584724; }
+body.dark-mode :is(.neo-badge, .q-star-btn.starred) { background: var(--night-raised); color: var(--night-accent); border-color: var(--border-color); }
+body.dark-mode :is(.exam-card-icon, .sim-val-badge) { background: var(--night-raised); color: var(--text-main); border-color: var(--border-color); }
+body.dark-mode .exam-review-row { background: var(--bg-card) !important; border-color: var(--border-color) !important; }
+body.dark-mode .exam-review-row [style*="color"] { color: var(--text-main) !important; }
+body.dark-mode .exam-review-row [style*="background"] { background: var(--night-raised) !important; }
+
+/* The planner uses the same purple surfaces. */
+body.dark-mode :is(.exam-alert-ticker, .side-drawer-header) { background: #33213E; color: var(--text-main); border-color: var(--border-color); }
+body.dark-mode :is(.ticker-text, .side-drawer-title) { color: var(--text-main); }
+body.dark-mode .ticker-badge { background: #543048; color: #F6CFD6; border-color: #785167; }
+body.dark-mode #tab-schedule h2 { color: var(--text-main) !important; }
+body.dark-mode :is(.exam-time-row, .pomo-status-meta) { color: var(--text-muted); }
+body.dark-mode :is(.exam-schedule-card, .exam-card-icon) { border-color: var(--border-color) !important; }
+body.dark-mode .exam-card-icon { background: var(--night-raised) !important; }
+body.dark-mode .exam-card-bar-fill { background: #9D80B3 !important; }
+body.dark-mode .neo-floating-planner-trigger { background: var(--night-raised); border-color: var(--border-color); color: var(--night-accent); }
+body.dark-mode .side-drawer-body [style*="color"] { color: var(--text-muted) !important; }
+body.dark-mode :is(#pomodoro-current-subject-label, #drawer-pomodoro-current-subject-label) strong { background: var(--bg-card) !important; color: var(--night-accent) !important; border-color: var(--border-color) !important; }
+body.dark-mode .side-drawer-body .metric-pill-card { background: var(--night-raised) !important; border-color: var(--border-color) !important; }
+body.dark-mode .countdown-container { background: #20132E; border-color: var(--border-color); }
+body.dark-mode :is(.cd-num, .neo-toast) { color: var(--night-accent); }
+body.dark-mode :is(.stat-bar-track, .pomo-progress-track, .exam-card-bar-track) { background: #20132E; border-color: var(--border-color); }
+body.dark-mode .neo-toast { background: var(--night-raised); border-color: var(--border-color); }
+
+/* Preserve diagram sizes, radii, positions and connecting paths. */
+body.dark-mode .chapter-diagram-dialog { --diagram-accent: var(--night-accent); --diagram-data: #D6C7E4; --diagram-address: #F3DF78; --diagram-control: #BA9AD8; }
+body.dark-mode .chapter-diagram-dialog :is(.diagram-heading, .diagram-detail-heading, .diagram-detail-controls) { background: var(--night-raised); color: var(--text-main); }
+body.dark-mode .chapter-diagram-dialog :is(.diagram-heading h2, .diagram-detail-title) { color: var(--night-accent); }
+body.dark-mode .chapter-diagram-dialog .diagram-heading-badge { background: var(--bg-card); color: var(--night-accent); border-color: var(--border-color); }
+body.dark-mode .chapter-diagram-dialog :is(.diagram-toolbar, .diagram-map-panel, .diagram-detail, .diagram-component, .diagram-view-tab, .diagram-link-number, .diagram-reading-section) { background: var(--bg-card); color: var(--text-main); }
+body.dark-mode .chapter-diagram-dialog :is(.diagram-block-group, .diagram-map-caption, .diagram-component:hover) { background: #352344; }
+body.dark-mode .chapter-diagram-dialog .diagram-viewport { background-image: radial-gradient(#654B7B .7px, transparent .7px); }
+body.dark-mode .chapter-diagram-dialog .diagram-wire-label-bg { fill: var(--bg-card); }
+body.dark-mode .chapter-diagram-dialog :is(.diagram-component[aria-pressed="true"], .diagram-view-tab[aria-selected="true"], .diagram-related-button:hover) { background: var(--night-accent); color: var(--night-ink); }
+body.dark-mode .chapter-diagram-dialog :is(.diagram-fullscreen-button[aria-pressed="true"], .diagram-details-button[aria-expanded="true"]) { background: var(--night-accent); color: var(--night-ink); }
+body.dark-mode .chapter-diagram-dialog .diagram-knowledge-reference { background: var(--bg-main); border-color: var(--border-color); }
+body.dark-mode .chapter-diagram-dialog .diagram-knowledge-reference > summary { background: var(--night-accent); color: var(--night-ink); }
+body.dark-mode .chapter-diagram-dialog .diagram-knowledge-caret { background: #FFF5C2; color: var(--night-ink); border-color: #FFF5C2; }
+body.dark-mode .chapter-diagram-dialog .diagram-knowledge-reference[open] .diagram-knowledge-caret { border-color: var(--night-ink); }
+body.dark-mode .chapter-diagram-dialog .diagram-reading-section h4 { color: var(--night-accent); }
+body.dark-mode .chapter-diagram-dialog .diagram-sheet-toggle { color: var(--text-muted); }
+body.dark-mode .chapter-diagram-dialog .diagram-component[aria-pressed="true"] { outline-color: var(--night-accent); }
+body.dark-mode .chapter-diagram-dialog :is(button, summary):focus-visible { outline-color: var(--night-accent); }
+
+/* Small seasonal details stay outside the reading text and diagram nodes. */
+body.dark-mode :is(.knowledge-hero, .schedule-hero) { position: relative; overflow: hidden; padding-right: 290px; min-height: 220px; }
+body.dark-mode :is(.knowledge-hero, .schedule-hero)::after { content: ''; position: absolute; right: 10px; bottom: 0; width: 275px; height: 215px; background: url('assets/halloween-study.svg') center / contain no-repeat; pointer-events: none; }
+body.dark-mode :is(.knowledge-hero, .schedule-hero)::before { content: ''; position: absolute; left: 0; top: 0; width: 110px; height: 110px; background: url('assets/halloween-web.svg') center / contain no-repeat; opacity: .3; pointer-events: none; }
+body.dark-mode .brand-badge::after { content: ' 🎃'; font-size: .9em; }
+body.dark-mode .chapter-header { position: relative; }
+body.dark-mode .chapter-header::after { content: ''; position: absolute; right: 2px; top: 0; width: 55px; height: 55px; background: url('assets/halloween-web.svg') center / contain no-repeat; transform: scaleX(-1); opacity: .35; pointer-events: none; }
+body.dark-mode .chapter-diagram-dialog .diagram-heading { background-image: url('assets/halloween-web.svg'); background-position: right 110px top; background-size: 90px; background-repeat: no-repeat; }
+@media (max-width: 760px) {
+  body.dark-mode :is(.knowledge-hero, .schedule-hero) { padding-right: 24px; padding-bottom: 125px; min-height: 0; }
+  body.dark-mode :is(.knowledge-hero, .schedule-hero)::after { width: 185px; height: 130px; right: 6px; }
+}

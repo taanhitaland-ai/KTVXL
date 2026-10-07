@@ -3,31 +3,6 @@
 .chapter-diagram-actions > span { font-size:.78rem; font-weight:700; }
 .chapter-diagram-button { white-space:nowrap; }
 body.chapter-diagram-open { overflow:hidden; }
-body.dark-mode .chapter-diagram-dialog { --diagram-data:#E4E4E7; --diagram-address:#C4B5FD; --diagram-control:#93C5FD; }
-body.dark-mode .chapter-diagram-dialog .diagram-toolbar,
-body.dark-mode .chapter-diagram-dialog .diagram-map-panel,
-body.dark-mode .chapter-diagram-dialog .diagram-detail,
-body.dark-mode .chapter-diagram-dialog .diagram-component,
-body.dark-mode .chapter-diagram-dialog .diagram-view-tab,
-body.dark-mode .chapter-diagram-dialog .diagram-link-number,
-body.dark-mode .chapter-diagram-dialog .diagram-reading-section { background:var(--bg-card); color:var(--text-main); }
-body.dark-mode .chapter-diagram-dialog .diagram-block-group,
-body.dark-mode .chapter-diagram-dialog .diagram-knowledge-reference,
-body.dark-mode .chapter-diagram-dialog .diagram-component:hover { background:var(--neo-gray); }
-body.dark-mode .chapter-diagram-dialog .diagram-wire-label-bg { fill:var(--bg-card); }
-body.dark-mode .chapter-diagram-dialog .diagram-heading,
-body.dark-mode .chapter-diagram-dialog .diagram-heading h2,
-body.dark-mode .chapter-diagram-dialog .diagram-heading-badge,
-body.dark-mode .chapter-diagram-dialog .diagram-detail-heading,
-body.dark-mode .chapter-diagram-dialog .diagram-detail-title,
-body.dark-mode .chapter-diagram-dialog .diagram-knowledge-reference > summary,
-body.dark-mode .chapter-diagram-dialog .diagram-knowledge-caret,
-body.dark-mode .chapter-diagram-dialog .diagram-sheet-toggle { color:#121212; }
-body.dark-mode .chapter-diagram-dialog .diagram-component[aria-pressed="true"],
-body.dark-mode .chapter-diagram-dialog .diagram-view-tab[aria-selected="true"],
-body.dark-mode .chapter-diagram-dialog .diagram-related-button:hover { background:var(--diagram-accent); color:#121212; }
-body.dark-mode .chapter-diagram-dialog .diagram-fullscreen-button[aria-pressed="true"],
-body.dark-mode .chapter-diagram-dialog .diagram-details-button[aria-expanded="true"] { background:var(--diagram-accent); color:#121212; }
 .chapter-diagram-dialog { --diagram-accent:var(--neo-yellow); --diagram-data:#121212; --diagram-address:#6D28D9; --diagram-control:#1D4ED8; width:min(1440px,calc(100vw - 40px)); height:min(900px,calc(100dvh - 40px)); max-width:none; max-height:none; margin:auto; padding:0; border:var(--border-width) solid var(--border-color); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); background:var(--bg-main); color:var(--text-main); overflow:hidden; font:inherit; }
 .chapter-diagram-dialog::backdrop { background:rgba(0,0,0,.65); }
 .chapter-diagram-dialog[data-chapter="chap2"] { --diagram-accent:var(--neo-blue); }

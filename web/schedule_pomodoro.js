@@ -805,7 +805,8 @@
 
   function initTheme() {
     const saved = localStorage.getItem(STORAGE_KEY_THEME);
-    if (saved === 'dark') {
+    const requested = new URLSearchParams(location.search).get('theme');
+    if (requested === 'dark' || (requested !== 'light' && saved === 'dark')) {
       document.body.classList.add('dark-mode');
     }
     updateDarkModeBtn();
@@ -972,6 +973,15 @@
   // 15. INITIALIZATION
   function init() {
     initTheme();
+    const preview = new URLSearchParams(location.search);
+    if (preview.get('preview') === 'allhallows' && !preview.has('diagram')) {
+      const subject = preview.get('subject');
+      if (['ktvxl', 'tthcm', 'vldc', 'xstk'].includes(subject)) window.switchSubject(subject);
+      const tab = preview.get('tab') || 'knowledge';
+      if (['practice', 'exam', 'knowledge', 'download', 'schedule'].includes(tab)) {
+        document.getElementById('btn-tab-' + tab)?.click();
+      }
+    }
     updateExamCountdowns();
     setInterval(updateExamCountdowns, 1000);
     initPomodoroUI();

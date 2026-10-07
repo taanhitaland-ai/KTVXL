@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KTVXL by ashv4ni</title>
-  <link rel="stylesheet" href="styles.css?v=6b09166c094b">
-  <link rel="stylesheet" href="chapter_diagrams.css?v=5d9925e57a8d">
+  <link rel="stylesheet" href="styles.css?v=126c6ddf24dc">
+  <link rel="stylesheet" href="chapter_diagrams.css?v=b00efd3cfd30">
+  <link rel="stylesheet" href="dark_theme.css?v=c28390687c20">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23FFE600' stroke='%23000' stroke-width='8'/><text x='50%' y='60%' font-size='42' font-weight='900' text-anchor='middle' fill='%23000'>8051</text></svg>">
   
+  <link rel="stylesheet" href="study_music.css?v=c9d1d7271791">
   <!-- KaTeX Math Formula Rendering -->
   <link rel="stylesheet" href="vendor/katex/katex.min.css?v=505d5f829022">
   <script defer src="vendor/katex/katex.min.js?v=dc84b296ec3e"></script>
@@ -1749,6 +1751,7 @@
       <button class="side-nav-btn active" data-drawer-tab="side-tab-pomo">🍅 Pomodoro</button>
       <button class="side-nav-btn" data-drawer-tab="side-tab-schedule">📅 Lịch Thi</button>
       <button class="side-nav-btn" data-drawer-tab="side-tab-tracker">📊 Đã Học</button>
+      <button class="side-nav-btn" data-drawer-tab="side-tab-music">🎧 Nhạc chill</button>
     </div>
 
     <!-- Drawer Body -->
@@ -1833,8 +1836,51 @@
           <!-- Populated by JS -->
         </div>
       </div>
+      <section id="side-tab-music" class="side-tab-content music-panel" aria-labelledby="music-heading">
+        <div class="music-heading">
+          <div class="music-art" aria-hidden="true">🎃</div>
+          <div><h3 id="music-heading">Nhạc cho góc học đêm</h3><p>Danh sách của bạn · lưu riêng trên máy này</p></div>
+        </div>
+        <div class="music-player">
+          <div id="music-now" class="music-now">Chọn một bài để bắt đầu</div>
+          <a id="music-source" class="music-source" target="_blank" rel="noopener noreferrer" hidden>Mở nguồn nhạc ↗</a>
+          <p id="music-status" class="music-status" role="status" aria-live="polite">Thêm link YouTube hoặc tệp âm thanh bên dưới.</p>
+          <div class="music-transport">
+            <button type="button" id="music-prev" class="neo-btn neo-btn-white" aria-label="Bài trước" disabled>⏮</button>
+            <button type="button" id="music-play" class="neo-btn music-play" aria-label="Phát nhạc" disabled>▶ Phát</button>
+            <button type="button" id="music-next" class="neo-btn neo-btn-white" aria-label="Bài tiếp theo" disabled>⏭</button>
+          </div>
+          <input type="range" id="music-seek" class="music-range" min="0" max="1000" value="0" aria-label="Tua bài nhạc" disabled>
+          <div class="music-time"><span id="music-elapsed">0:00</span><span id="music-duration">0:00</span></div>
+          <div class="music-volume"><label for="music-volume">Âm lượng</label><input type="range" id="music-volume" class="music-range" min="0" max="100" value="35"><output id="music-volume-value" for="music-volume">35%</output></div>
+          <div class="music-modes">
+            <button type="button" id="music-shuffle" class="neo-btn neo-btn-white" aria-pressed="false">⤨ Ngẫu nhiên</button>
+            <button type="button" id="music-repeat" class="neo-btn neo-btn-white" aria-pressed="false">↻ Không lặp</button>
+          </div>
+        </div>
+        <form id="music-add-form" class="music-form">
+          <label for="music-url">Link bài nhạc</label>
+          <input id="music-url" class="music-input" type="url" required maxlength="3000" placeholder="https://youtube.com/watch?v=…" autocomplete="off">
+          <label for="music-title">Tên bài <span class="music-note">(không bắt buộc)</span></label>
+          <input id="music-title" class="music-input" type="text" maxlength="120" placeholder="Ví dụ: Lofi đêm mưa" autocomplete="off">
+          <div class="music-form-actions"><button id="music-add" type="submit" class="neo-btn neo-btn-sm">＋ Thêm bài</button><button id="music-cancel-edit" type="button" class="neo-btn neo-btn-white neo-btn-sm" hidden>Hủy sửa</button></div>
+          <p class="music-note">Nhận link video YouTube hoặc link trực tiếp MP3, M4A, OGG, WAV, AAC, FLAC, WEBM.</p>
+        </form>
+        <div class="music-library-heading"><strong>Danh sách của bạn</strong><span id="music-count" class="music-count">0 bài</span></div>
+        <label for="music-search" class="music-note">Tìm trong danh sách</label>
+        <input id="music-search" type="search" class="music-input" placeholder="Tên bài hoặc nguồn nhạc…" autocomplete="off">
+        <ul id="music-list" class="music-list"></ul>
+        <button type="button" id="music-undo" class="neo-btn neo-btn-white neo-btn-sm" hidden>↶ Hoàn tác xóa bài</button>
+        <div class="music-tools"><button id="music-export" type="button" class="neo-btn neo-btn-white neo-btn-sm">Xuất danh sách</button><button id="music-import" type="button" class="neo-btn neo-btn-white neo-btn-sm">Nhập danh sách</button><input id="music-import-file" type="file" accept=".json,application/json" hidden></div>
+        <p class="music-sources">Tìm cảm hứng: <a href="https://www.youtube.com/results?search_query=lofi+chill+study+music" target="_blank" rel="noopener noreferrer">lofi trên YouTube ↗</a> · <a href="https://pixabay.com/music/search/chill/" target="_blank" rel="noopener noreferrer">nhạc chill trên Pixabay ↗</a><br>Với Pixabay, cần link tệp âm thanh; link trang bài nhạc sẽ không phát trực tiếp.</p>
+      </section>
     </div>
   </aside>
+  <audio id="study-music-audio" preload="none"></audio>
+  <section id="music-video-dock" class="music-video-dock" aria-label="Video nhạc YouTube" hidden>
+    <div class="music-video-heading"><span id="music-video-title">YouTube</span><button type="button" id="music-video-close" aria-label="Tạm dừng và đóng video">✕</button></div>
+    <div id="music-youtube-host" class="music-youtube-host"><div id="music-youtube-player"></div></div>
+  </section>
 
   <!-- Scripts -->
   <script src="data.js?v=ac8b4cec1748"></script>
@@ -1853,6 +1899,8 @@
   <script src="diagram_geometry.js?v=739672278b1f"></script>
   <script src="chapter_diagrams.js?v=5eabb7ab0c73"></script>
   <script src="app.js?v=f1deb50d7347"></script>
-  <script src="schedule_pomodoro.js?v=7e9444eea4d2"></script>
+  <script src="schedule_pomodoro.js?v=019c755a14ed"></script>
+  <script src="music_library.js?v=4fa249c951de"></script>
+  <script src="study_music.js?v=0e07d454532a"></script>
 </body>
 </html>
