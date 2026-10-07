@@ -16,3 +16,9 @@ Thumbs.db
 *.log
 .system_generated/
 scratch/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+

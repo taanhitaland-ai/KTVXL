@@ -678,6 +678,8 @@
       loadMoreBox.appendChild(loadMoreBtn);
       container.appendChild(loadMoreBox);
     }
+
+    renderMath(container);
   }
 
   // Create Question Card DOM
@@ -1034,6 +1036,7 @@
     }
 
     contentEl.innerHTML = html;
+    renderMath(contentEl);
   }
 
   // Setup Knowledge Hub Cards
@@ -1302,6 +1305,7 @@
         container.appendChild(casioCard);
       }
     }
+    renderMath(container);
   }
 
   // Exam Simulator Logic
@@ -1440,6 +1444,8 @@
       const card = createQuestionCard(q, idx + 1, true);
       list.appendChild(card);
     });
+
+    renderMath(list);
   }
 
   function renderExamPalette() {
@@ -1619,6 +1625,9 @@
 
     const firstCard = document.getElementById(`q-card-${examQuestions[0].id}`);
     if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth' });
+
+    const list = document.getElementById('exam-questions-list');
+    if (list) renderMath(list);
   }
 
   function escapeHtml(str) {
@@ -1640,6 +1649,31 @@
     res = res.replace(/\n/g, '<br/>');
     return res;
   }
+
+  // KaTeX Math Formula Rendering Helper
+  function renderMath(container) {
+    const target = container || document.body;
+    if (typeof renderMathInElement === 'function') {
+      try {
+        renderMathInElement(target, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\[', right: '\\]', display: true },
+            { left: '\\(', right: '\\)', display: false }
+          ],
+          throwOnError: false,
+          ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        });
+      } catch (err) {
+        console.warn('KaTeX render error:', err);
+      }
+    }
+  }
+
+  window.addEventListener('load', () => {
+    setTimeout(() => renderMath(), 80);
+  });
 
   // Start app on DOM ready
   if (document.readyState === 'loading') {
