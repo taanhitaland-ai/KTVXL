@@ -109,12 +109,16 @@ async (page) => {
     for(const subject of ['tthcm','vldc','xstk']) {
       await page.locator('#btn-subj-'+subject).click();
       await page.locator('#btn-tab-knowledge').click();
-      assert(await page.locator('.chapter-diagram-button').count()===0,'Map leaked into another subject');
+      const count=subject==='xstk'?8:6;
+      assert(await page.locator('.chapter-diagram-button').count()===count,'Missing diagrams in '+subject);
       const header=page.locator('.chapter-header').first();
       await header.click();
       assert(await header.getAttribute('aria-expanded')==='false','Other chapter collapse changed');
       await header.press('Enter');
       assert(await header.getAttribute('aria-expanded')==='true','Other chapter keyboard control changed');
+      await page.locator('.chapter-diagram-button').first().click();
+      assert(await dialog.getAttribute('data-subject')===subject,'Opened another subject diagram');
+      await close();
     }
     await page.locator('#btn-subj-ktvxl').click();
     await page.locator('#btn-tab-exam').click();

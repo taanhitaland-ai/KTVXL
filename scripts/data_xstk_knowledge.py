@@ -146,7 +146,7 @@ XSTK_KNOWLEDGE_DATA = {
                 {
                     "name": "Kỳ vọng & Phương sai liên tục",
                     "formula": "E(X) = ∫(-∞ đến +∞) x * f(x) dx;  V(X) = ∫(-∞ đến +∞) x^2 * f(x) dx - [E(X)]^2",
-                    "desc": "Nếu f(x) đối xứng qua x = c thì E(X) = c và Mod(X) = Med(X) = c."
+                    "desc": "Nếu mật độ đối xứng qua x = c và kỳ vọng tồn tại thì E(X) = c; c là một trung vị. Mốt không nhất thiết bằng c, trừ khi có thêm điều kiện về dạng mật độ."
                 },
                 {
                     "name": "Phân phối Chuẩn N(μ, σ²)",
@@ -172,7 +172,7 @@ XSTK_KNOWLEDGE_DATA = {
             ],
             "casio_shortcuts": [
                 "Bấm phân phối Chuẩn trực tiếp: MENU -> 7 -> 2 (Normal CD). Nhập Lower, Upper, σ, μ -> [=]. Casio tự tích phân và xuất xác suất chính xác đến 9 chữ số thập phân!",
-                "Ví dụ tính P(X < 5) với X ~ N(3, 4): Lower = -10^99 (nhập -1*10^9), Upper = 5, σ = 2, μ = 3 -> Kết quả = 0.84134."
+                "Ví dụ tính P(X < 5) với X ~ N(3, 4): dùng Lower = -1*10^9 để xấp xỉ -∞, Upper = 5, σ = 2, μ = 3 -> Kết quả ≈ 0.84134."
             ]
         },
         {
@@ -238,12 +238,12 @@ XSTK_KNOWLEDGE_DATA = {
                 {
                     "name": "Các định lý giới hạn trung tâm",
                     "formula": "Nếu σ đã biết: Z = (X̄ - μ) / (σ / √n) ~ N(0, 1);  Nếu σ chưa biết: T = (X̄ - μ) / (S* / √n) ~ t(n - 1)",
-                    "desc": "Cơ sở toán học then chốt để xây dựng khoảng tin cậy và kiểm định giả thuyết."
+                    "desc": "Với mẫu độc lập từ tổng thể chuẩn, Z và T có đúng các phân phối trên. Với tổng thể không chuẩn, chuẩn hóa trung bình dùng xấp xỉ theo định lý giới hạn trung tâm khi các điều kiện phù hợp; T không tự có phân phối Student chỉ vì σ chưa biết."
                 }
             ],
             "magic_rules": [
-                "Phân biệt s (phương sai mẫu) và s* (phương sai mẫu hiệu chỉnh): Đề bài thống kê KMA luôn dùng s* (kí hiệu trong Casio fx-580 là s_x).",
-                "Trong Casio fx-580VNX: σx là độ lệch chuẩn mẫu s (chia cho n), còn sx là độ lệch chuẩn mẫu hiệu chỉnh s* (chia cho n-1). Khi làm bài KMA LUÔN CHỌN sx!",
+                "Phân biệt độ lệch chuẩn s (chia cho n khi tính s²) và s* hiệu chỉnh (chia cho n-1 khi tính s*²). Đọc đúng yêu cầu đề; các công thức suy luận dùng s* khi thay thế σ chưa biết.",
+                "Trong Casio fx-580VNX: σx là độ lệch chuẩn chia cho n, còn sx là độ lệch chuẩn hiệu chỉnh chia cho n-1. Chọn theo đại lượng mà bài yêu cầu.",
                 "Khoảng biến thiên: R = xmax - xmin.",
                 "Nếu khoảng lớp cho dạng [a, b): Lấy giá trị đại diện là trung điểm xi = (a + b) / 2."
             ],
@@ -266,7 +266,7 @@ XSTK_KNOWLEDGE_DATA = {
                 {
                     "name": "Ước lượng kỳ vọng μ (Chưa biết σ², n < 30)",
                     "formula": "μ ∈ (x̄ - ε, x̄ + ε)  với ε = t_(α/2)^(n - 1) * (s* / √n)",
-                    "desc": "t_(α/2)^(n-1) tra bảng phân phối Student với n - 1 bậc tự do."
+                    "desc": "Dùng với mẫu độc lập từ tổng thể chuẩn; t_(α/2)^(n-1) tra bảng Student với n - 1 bậc tự do. Mẫu nhỏ không chuẩn không tự bảo đảm công thức này đúng."
                 },
                 {
                     "name": "Ước lượng kỳ vọng μ (Chưa biết σ², n ≥ 30)",
@@ -318,15 +318,15 @@ XSTK_KNOWLEDGE_DATA = {
                 },
                 {
                     "name": "Quy tắc ra quyết định kiểm định",
-                    "formula": "Nếu Tiêu chuẩn QS ∈ Wα: BÁC BỎ H0 (chấp nhận H1). Nếu Tiêu chuẩn QS ∉ Wα: CHƯA ĐỦ CƠ SỞ BÁC BỎ H0 (chấp nhận H0).",
-                    "desc": "Nếu dùng p-value: p-value < α thì Bác bỏ H0; p-value ≥ α thì Chấp nhận H0."
+                    "formula": "Nếu Tiêu chuẩn QS ∈ Wα: BÁC BỎ H0. Nếu Tiêu chuẩn QS ∉ Wα: CHƯA ĐỦ CƠ SỞ BÁC BỎ H0.",
+                    "desc": "Nếu dùng p-value theo quy ước của chương: p-value < α thì bác bỏ H0; p-value ≥ α thì chưa đủ cơ sở bác bỏ H0. Không bác bỏ không chứng minh H0 đúng."
                 }
             ],
             "magic_rules": [
                 "H0 luôn luôn mang dấu BẰNG (=). Ví dụ H0: μ = μ0 hoặc H0: p = p0.",
                 "Đọc đề bài để chọn H1: Nếu hỏi 'có thay đổi/khác không' -> H1: ≠ (Kiểm định 2 phía, tra u_(α/2)). Nếu hỏi 'có tăng lên/cao hơn không' -> H1: > (Kiểm định phía phải, tra u_α). Nếu hỏi 'có giảm đi/thấp hơn không' -> H1: < (Kiểm định phía trái, tra -u_α).",
                 "Sai lầm loại 1: Bác bỏ H0 khi H0 đúng. Xác suất mắc sai lầm loại 1 chính là mức ý nghĩa α.",
-                "Sai lầm loại 2: Chấp nhận H0 khi H0 sai. Ký hiệu là β. Lực kiểm định là 1 - β."
+                "Sai lầm loại 2: Không bác bỏ H0 khi H0 sai. Ký hiệu là β. Lực kiểm định là 1 - β."
             ],
             "casio_shortcuts": [
                 "Bấm giá trị kiểm định quan sát Z_qs: (x̄ - μ0) / (σ / √n). Lưu ý đóng ngoặc mẫu số hoặc dùng phím phân số [■/□] để tránh lỗi thứ tự phép tính!"

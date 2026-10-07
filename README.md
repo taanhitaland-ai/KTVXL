@@ -52,6 +52,20 @@ Chọn một khối để đọc chức năng và làm nổi các đường nố
 
 Sơ đồ Timer minh họa 89C51 cổ điển 12T; sơ đồ UART minh họa cấu hình Mode 1 dùng Timer 1 Mode 2. Cách dùng Timer 1 và thời điểm đặt TI được đối chiếu với [8051 Hardware Manual](https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/UserGuides/doc4316.pdf) và [ví dụ UART của Keil](https://www.keil.com/support/docs/685.htm).
 
+## Sơ đồ ba môn còn lại
+
+Mỗi chương trong **Tư tưởng Hồ Chí Minh**, **Vật lý đại cương** và **Xác suất thống kê** cũng có nút **Xem đồ thị**. Có 26 sơ đồ bổ sung cho 20 chương, dùng chung thao tác chọn thành phần, làm nổi mũi tên, đi theo liên kết, xem kiến thức gốc và phóng to.
+
+- Tư tưởng Hồ Chí Minh: 7 sơ đồ cho 6 chương, gồm quan hệ lý luận–thực tiễn, các cơ sở hình thành và năm thời kỳ lịch sử, độc lập–CNXH, Đảng–Nhà nước–nhân dân, đoàn kết, văn hóa–đạo đức–con người.
+- Vật lý: 10 sơ đồ cho 6 chương. Chương quang học sóng tách thành giao thoa, Fresnel, khe/cách tử và phân cực; quang học lượng tử tách bức xạ nhiệt và tương tác photon. Các chương còn lại liên kết đại lượng và điều kiện của mô hình.
+- Xác suất thống kê: 9 sơ đồ cho 8 chương. Phân biệt xác suất có điều kiện/Bayes và Bernoulli; liên kết phân phối, đặc trưng, lấy mẫu, ước lượng và kiểm định. Mũi tên biểu thị dữ liệu, phương pháp hoặc điều kiện áp dụng.
+
+Màu sơ đồ lấy từ thẻ chương. Chú giải và phần giải thích thay đổi theo môn, còn sơ đồ CPU giữ nguyên. `web/subject_diagram_data.js` chứa các quan hệ mới; `web/diagram_knowledge.js` chuyển chương dạng công thức thành các mục đọc trong sơ đồ mà không sửa cấu trúc nguồn. Mỗi môn có không gian ID riêng để chương `chap1` của XSTK không trùng với Vi xử lý.
+
+Ví dụ: [Nhà nước và nhân dân](http://127.0.0.1:8765/web/index.html?subject=tthcm&diagram=tthcm_chap4&view=party-state&node=people), [phân cực ánh sáng](http://127.0.0.1:8765/web/index.html?subject=vldc&diagram=2&view=polarization&node=intensity), [Bayes](http://127.0.0.1:8765/web/index.html?subject=xstk&diagram=chap2&view=bayes&node=posterior). Bỏ `subject` trong liên kết cũ vẫn mở Vi xử lý.
+
+Nội dung mới gắn với kiến thức chương sẵn có. Quan hệ năng lượng LC và phân cực được đối chiếu với [OpenStax về LC](https://openstax.org/books/university-physics-volume-2/pages/14-5-oscillations-in-an-lc-circuit) và [phân cực](https://openstax.org/books/university-physics-volume-3/pages/1-7-polarization). Giải thích khoảng tin cậy, kiểm định và các giả định được đối chiếu với [NIST về trung bình](https://www.itl.nist.gov/div898/handbook/eda/section3/eda352.htm), [phương sai](https://www.itl.nist.gov/div898/handbook/eda/section3/eda358.htm) và [hai mẫu](https://www.itl.nist.gov/div898/handbook/eda/section3/eda353.htm). Các mô tả XSTK liên quan đã được sửa để không coi “chưa bác bỏ H₀” là chứng minh H₀ đúng và để nêu điều kiện của phân phối chuẩn/t.
+
 ## Cấu trúc và cập nhật
 
 - `web/`: giao diện nguồn, dữ liệu trình duyệt, 6 mô phỏng Vật lý và 4 mô phỏng Xác suất thống kê.
@@ -110,7 +124,16 @@ playwright-cli -s=kma-diagram run-code --filename scripts/browser_diagram_checks
 playwright-cli -s=kma-diagram eval "window.__KMA_DIAGRAM_REPORT"
 ```
 
-Báo cáo hoàn tất khi `complete: true`. Bộ này kiểm tra 11 sơ đồ, 91 khối và 107 liên kết, điều khiển bằng bàn phím, phóng to, chuyển môn, màn hình điện thoại dọc/ngang, bản Pages và luồng thi thử hiện có. Các kiểm tra Node còn xác nhận hướng liên kết quan trọng (CPU, UART, ngắt), tham chiếu kiến thức và đường nối tránh các khối.
+Báo cáo hoàn tất khi `complete: true`. Bộ này kiểm tra 11 sơ đồ Vi xử lý, điều khiển bằng bàn phím, phóng to, chuyển môn, màn hình điện thoại dọc/ngang, bản Pages và luồng thi thử hiện có. Các kiểm tra Node còn xác nhận hướng liên kết quan trọng, tham chiếu kiến thức và đường nối tránh các khối.
+
+Bộ kiểm tra ba môn bổ sung:
+
+```sh
+playwright-cli -s=kma-diagram run-code --filename scripts/browser_subject_diagram_checks.js
+playwright-cli -s=kma-diagram eval "window.__KMA_SUBJECT_DIAGRAM_REPORT"
+```
+
+Bộ này kiểm tra mọi thành phần và mũi tên trong 26 sơ đồ, nguồn kiến thức, công thức KaTeX, màu chương, điện thoại 320/390 px và màn hình ngang, liên kết trực tiếp trên `web/` và `docs/`, cùng việc giữ các liên kết CPU cũ.
 
 Kết quả chỉ hoàn tất khi báo cáo có `complete: true`. CLI có thể trả lại trạng thái hộp thoại trước khi bộ kiểm tra chạy xong; chờ báo cáo cuối, không chạy bước kế tiếp khi bước chính còn hoạt động. Bộ chính kiểm tra 27 lựa chọn đề, nhập/xóa đáp án, điểm, khóa bài, thoát/chuyển môn và tự nộp khi hết giờ. Bộ bổ sung kiểm tra lưu tiến độ, đánh dấu, kiến thức, PDF, mô phỏng, dữ liệu lưu hỏng và màn hình 390px. Ảnh kiểm tra nằm trong `output/playwright/`, không ghi đè tài nguyên triển khai.
 

@@ -8,7 +8,17 @@
   const detailText = dialog.querySelector('.diagram-detail-text');
   const tabs = dialog.querySelector('.diagram-view-tabs');
   const svgNS = 'http://www.w3.org/2000/svg';
-  let chapter, options, model, world, trigger;
+  let chapter, options, model, world, trigger, subject, chapterModels, sourceSections;
+  function subjectModels(key) {
+    if (key === 'ktvxl') return {label:'Vi xử lý',icon:'⚡',chapters:window.KMA_DIAGRAM_DATA,
+      legend:['Dữ liệu','Địa chỉ','Điều khiển'],incoming:'Nhận từ',outgoing:'Gửi đến',context:'SƠ ĐỒ CHỨC NĂNG'};
+    const registry=window.KMA_SUBJECT_DIAGRAM_DATA;
+    return registry&&Object.hasOwn(registry,key) ? registry[key] : null;
+  }
+  function has(key,id) {
+    const data=subjectModels(key);
+    return !!data&&Object.hasOwn(data.chapters,id);
+  }
   let selected = null, zoom = 1, fitOnResize = true, frame = 0;
   let compact = false;
   const svgElement = (tag, attributes = {}) => {
@@ -31,9 +41,9 @@
     summary.textContent = all ? 'Đọc kiến thức cả chương' : 'Kiến thức liên quan trong chương';
     details.appendChild(summary);
     const content = document.createElement('div');
-    const references = all ? chapter.sections.flatMap((section,s) => section.content.map((_,p)=>[s,p])) : refs;
+    const references = all ? sourceSections.flatMap((section,s) => section.content.map((_,p)=>[s,p])) : refs;
     for (const [sectionIndex,paragraphIndex] of references) {
-      const section = chapter.sections[sectionIndex];
+      const section = sourceSections[sectionIndex];
       if (section && section.content[paragraphIndex]) paragraph(section.content[paragraphIndex],content);
     }
     details.appendChild(content);
@@ -45,7 +55,7 @@
     const group = document.createElement('div');
     group.className = 'diagram-relations';
     const heading = document.createElement('h4');
-    heading.textContent = direction==='in' ? 'Nhận từ' : 'Gửi đến';
+    heading.textContent = direction==='in' ? subject.incoming : subject.outgoing;
     group.appendChild(heading);
     for (const edge of edges) {
       const other = model.nodes.find(node=>node.id === (direction==='in'?edge.from:edge.to));
@@ -85,7 +95,7 @@
       group.classList.toggle('diagram-edge-active',!!key&&connected);
     });
     dialog.querySelector('.diagram-detail-title').textContent = component ? component.label : model.title;
-    dialog.querySelector('.diagram-detail-context').textContent = component ? component.subtitle : 'SƠ ĐỒ CHỨC NĂNG';
+    dialog.querySelector('.diagram-detail-context').textContent = component ? component.subtitle : subject.context;
     detailText.replaceChildren();
     if (component) {
       component.text.forEach(text=>paragraph(text,detailText));
@@ -94,7 +104,7 @@
       if (component.refs.length) relatedKnowledge(component.refs,detailText,false);
     } else {
       paragraph(model.description,detailText);
-      paragraph('Chọn một khối để xem chức năng. Các mũi tên nối với khối đó sẽ nổi bật; bấm “Nhận từ” hoặc “Gửi đến” để đi theo luồng.',detailText);
+      paragraph('Chọn một thành phần để xem giải thích. Các mũi tên liên quan sẽ nổi bật; bấm các liên kết bên dưới để đi sang thành phần khác.',detailText);
       relatedKnowledge([],detailText,true);
     }
     if (options.renderMath) options.renderMath(detailText);
@@ -166,7 +176,7 @@
     world.appendChild(svg);
   }
   function selectView(index) {
-    model=window.KMA_DIAGRAM_DATA[chapter.id].views[index];
+    model=chapterModels.views[index];
     tabs.querySelectorAll('[role="tab"]').forEach((button,i)=>{
       button.setAttribute('aria-selected',String(i===index));
       button.tabIndex=i===index?0:-1;
@@ -202,7 +212,7 @@
   }
   function buildTabs() {
     tabs.replaceChildren();
-    window.KMA_DIAGRAM_DATA[chapter.id].views.forEach((view,index)=>{
+    chapterModels.views.forEach((view,index)=>{
       const button=document.createElement('button');
       button.type='button'; button.className='diagram-view-tab'; button.setAttribute('role','tab');
       button.textContent=view.title; button.dataset.view=view.id;
@@ -281,9 +291,20 @@
     if(trigger&&trigger.isConnected) trigger.focus({preventScroll:true});
   });
   function open(nextChapter,nextOptions) {
-    if(!nextChapter||!Object.hasOwn(window.KMA_DIAGRAM_DATA,nextChapter.id)) return;
+    const subjectKey=nextOptions?.subject||'ktvxl';
+    if(!nextChapter||!has(subjectKey,nextChapter.id)) return;
     if(dialog.open) dialog.close();
     chapter=nextChapter; options=nextOptions||{}; trigger=options.trigger||document.activeElement;
+    subject=subjectModels(subjectKey); chapterModels=subject.chapters[chapter.id];
+    sourceSections=window.KMA_DIAGRAM_KNOWLEDGE(chapter);
+    dialog.dataset.subject=subjectKey;
+    const header=trigger?.closest('.chapter-card')?.querySelector('.chapter-header');
+    dialog.style.setProperty('--diagram-accent',header ? getComputedStyle(header).backgroundColor : 'var(--neo-yellow)');
+    dialog.querySelector('.diagram-heading-badge').textContent=subject.icon+' SƠ ĐỒ KIẾN THỨC • '+subject.label.toUpperCase();
+    dialog.querySelector('#chapter-diagram-help').textContent='Bấm một thành phần để xem giải thích và các liên kết.';
+    ['data','address','control'].forEach((type,index)=>{
+      dialog.querySelector('.legend-'+type).textContent=subject.legend[index];
+    });
     document.getElementById('chapter-diagram-title').textContent=chapter.title;
     dialog.dataset.chapter=String(chapter.id);
     buildTabs();
@@ -294,19 +315,20 @@
     if(document.fonts) document.fonts.ready.then(scheduleLayout);
   }
   function close() { if(dialog.open) dialog.close(); }
-  window.KMA_CHAPTER_DIAGRAMS={open,close};
+  window.KMA_CHAPTER_DIAGRAMS={open,close,has};
   // A review link can open a chapter without changing the normal landing page.
   function openReviewLink() {
     const query=new URLSearchParams(location.search);
     const id=query.get('diagram');
-    if(!Object.hasOwn(window.KMA_DIAGRAM_DATA,id)) return;
+    const subjectKey=query.get('subject')||'ktvxl';
+    if(!has(subjectKey,id)) return;
     requestAnimationFrame(()=>{
-      document.getElementById('btn-subj-ktvxl').click();
+      document.getElementById('btn-subj-'+subjectKey).click();
       document.getElementById('btn-tab-knowledge').click();
       const button=document.querySelector('.chapter-card[data-chapter-id="'+id+'"] .chapter-diagram-button');
       if(!button) return;
       button.click();
-      const index=window.KMA_DIAGRAM_DATA[id].views.findIndex(view=>view.id===query.get('view'));
+      const index=chapterModels.views.findIndex(view=>view.id===query.get('view'));
       if(index>=0) selectView(index);
       if(model.nodes.some(node=>node.id===query.get('node'))) selectNode(query.get('node'));
     });

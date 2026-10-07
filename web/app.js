@@ -1025,7 +1025,8 @@
       card.dataset.chapterId = String(chap.id);
 
       const header = document.createElement('div');
-      header.className = `chapter-header ${typeof chap.id === 'number' ? 'chap' + chap.id : chap.id}`;
+      const chapterTheme = Number.isInteger(chap.num) ? 'chap' + chap.num : typeof chap.id === 'number' ? 'chap' + chap.id : chap.id;
+      header.className = `chapter-header ${chapterTheme}`;
       header.innerHTML = `
         <div>
           <span class="neo-badge" style="background:#000; color:#fff; font-size: 0.75rem; margin-bottom: 4px;">${chap.clo || `CHƯƠNG ${chap.num || chap.id}`}</span>
@@ -1147,11 +1148,11 @@
       }
 
       card.appendChild(header);
-      if (currentSubject === 'ktvxl' && chap.sections && window.KMA_CHAPTER_DIAGRAMS && window.KMA_DIAGRAM_DATA[chap.id]) {
+      if (window.KMA_CHAPTER_DIAGRAMS?.has(currentSubject, chap.id)) {
         const actions = document.createElement('div');
         actions.className = 'chapter-diagram-actions';
         const hint = document.createElement('span');
-        hint.textContent = 'Khám phá các khối và luồng hoạt động';
+        hint.textContent = currentSubject === 'ktvxl' ? 'Khám phá các khối và luồng hoạt động' : 'Khám phá các nội dung và mối liên hệ';
         const diagramButton = document.createElement('button');
         diagramButton.type = 'button';
         diagramButton.className = 'neo-btn neo-btn-sm chapter-diagram-button';
@@ -1159,7 +1160,7 @@
         diagramButton.setAttribute('aria-label', 'Xem đồ thị: ' + chap.title);
         diagramButton.setAttribute('aria-haspopup', 'dialog');
         diagramButton.addEventListener('click', () => window.KMA_CHAPTER_DIAGRAMS.open(chap, {
-          trigger: diagramButton, formatText: formatMarkdownText, renderMath
+          subject: currentSubject, trigger: diagramButton, formatText: formatMarkdownText, renderMath
         }));
         actions.append(hint, diagramButton);
         card.appendChild(actions);
