@@ -7,6 +7,10 @@
   const surface = dialog.querySelector('.diagram-surface');
   const detailText = dialog.querySelector('.diagram-detail-text');
   const tabs = dialog.querySelector('.diagram-view-tabs');
+  const shell = dialog.querySelector('.diagram-shell');
+  const detail = dialog.querySelector('.diagram-detail');
+  const fullscreenButton = dialog.querySelector('[data-diagram-action="fullscreen"]');
+  const detailsButton = dialog.querySelector('[data-diagram-action="details"]');
   const svgNS = 'http://www.w3.org/2000/svg';
   let chapter, options, model, world, trigger, subject, chapterModels, sourceSections;
   function subjectModels(key) {
@@ -21,6 +25,7 @@
   }
   let selected = null, zoom = 1, fitOnResize = true, frame = 0;
   let compact = false;
+  let expanded = false, detailsOpen = false, sheetExpanded = false, fullscreenRequest = 0;
   const svgElement = (tag, attributes = {}) => {
     const element = document.createElementNS(svgNS, tag);
     for (const [key,value] of Object.entries(attributes)) element.setAttribute(key, String(value));
@@ -103,7 +108,7 @@
         selectNode(other.id);
         const target = world.querySelector('[data-node-key="'+other.id+'"]');
         target.focus({preventScroll:true});
-        target.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
+        if(!expanded) target.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
       });
       group.appendChild(button);
     }
@@ -140,6 +145,10 @@
     }
     if (options.renderMath) options.renderMath(detailText);
     detailText.scrollTop = 0;
+    if (expanded) {
+      setDetails(!!component, false);
+      if (component) requestAnimationFrame(keepSelectedVisible);
+    }
   }
 
   function labelPosition(points, width, height, used, otherRoutes) {
@@ -264,13 +273,14 @@
   function applyZoom(value,center) {
     const middleX=(viewport.scrollLeft+viewport.clientWidth/2)/zoom;
     const middleY=(viewport.scrollTop+viewport.clientHeight/2)/zoom;
-    zoom=Math.max(.2,Math.min(1.6,value));
+    const maximum=expanded?2.4:1.6;
+    zoom=Math.max(.2,Math.min(maximum,value));
     world.style.transform='scale('+zoom+')';
     surface.style.width=Math.ceil(model.width*zoom)+'px';
     surface.style.height=Math.ceil(model.height*zoom)+'px';
     dialog.querySelector('.diagram-zoom-value').textContent=Math.round(zoom*100)+'%';
     dialog.querySelector('[data-diagram-action="out"]').disabled=zoom<=.2;
-    dialog.querySelector('[data-diagram-action="in"]').disabled=zoom>=1.6;
+    dialog.querySelector('[data-diagram-action="in"]').disabled=zoom>=maximum;
     if(center) {
       viewport.scrollLeft=middleX*zoom-viewport.clientWidth/2;
       viewport.scrollTop=middleY*zoom-viewport.clientHeight/2;
@@ -278,10 +288,10 @@
   }
   function fit(readable) {
     let value=Math.min(1,(viewport.clientWidth-28)/model.width,(viewport.clientHeight-28)/model.height);
-    if(readable) value=Math.max(compact?.65:.55,value);
+    if(readable) value=Math.max(expanded?(compact?1:.9):(compact?.65:.55),value);
     applyZoom(value,false);
-    viewport.scrollLeft=compact&&readable?Math.max(0,(model.width*zoom-viewport.clientWidth)/2):0;
-    viewport.scrollTop=0;
+    viewport.scrollLeft=(compact||expanded)&&readable?Math.max(0,(model.width*zoom-viewport.clientWidth)/2):0;
+    viewport.scrollTop=expanded&&readable?Math.max(0,(model.height*zoom-viewport.clientHeight)/2):0;
     fitOnResize=true;
   }
   function layout() {
@@ -289,9 +299,176 @@
     const nextCompact=matchMedia('(max-width:760px)').matches;
     const changed=compact!==nextCompact; compact=nextCompact;
     if(fitOnResize||changed) fit(true);
+    if(expanded&&detailsOpen) keepSelectedVisible();
   }
   function scheduleLayout() { cancelAnimationFrame(frame); frame=requestAnimationFrame(layout); }
-  const observer=typeof ResizeObserver!=='undefined'?new ResizeObserver(scheduleLayout):null;
+  function focusSelected() {
+    const target=selected&&world?.querySelector('[data-node-key="'+selected+'"]');
+    (target||detailsButton).focus({preventScroll:true});
+  }
+  function setDetails(open, restoreFocus) {
+    detailsOpen=!!open;
+    dialog.classList.toggle('diagram-details-open',detailsOpen);
+    detailsButton.setAttribute('aria-expanded',String(detailsOpen));
+    detailsButton.setAttribute('aria-label',detailsOpen?'Thu gọn kiến thức đang chọn':'Mở kiến thức đang chọn');
+    detailsButton.title=detailsButton.getAttribute('aria-label');
+    detail.inert=expanded&&!detailsOpen;
+    if (!open) setSheet(false);
+    if (restoreFocus) focusSelected();
+  }
+  function setSheet(open) {
+    sheetExpanded=!!open;
+    dialog.classList.toggle('diagram-sheet-expanded',sheetExpanded);
+    const toggle=dialog.querySelector('[data-diagram-action="sheet"]');
+    toggle.setAttribute('aria-expanded',String(sheetExpanded));
+    toggle.setAttribute('aria-label',sheetExpanded?'Thu nhỏ bảng kiến thức':'Mở rộng bảng kiến thức');
+    toggle.querySelector('.diagram-sheet-toggle-label').textContent=sheetExpanded?'Thu nhỏ':'Mở rộng';
+  }
+  function keepSelectedVisible() {
+    if(!expanded||!selected||!world) return;
+    const target=world.querySelector('[data-node-key="'+selected+'"]');
+    const bounds=viewport.getBoundingClientRect(),box=target.getBoundingClientRect();
+    const panel=detail.getBoundingClientRect();
+    const right=detailsOpen&&!compact?Math.min(bounds.right,panel.left-16):bounds.right;
+    const bottom=detailsOpen&&compact?Math.min(bounds.bottom,panel.top-12):bounds.bottom;
+    const x=box.left+box.width/2, y=box.top+box.height/2;
+    if(box.left<bounds.left+12||box.right>right-12) viewport.scrollLeft+=x-(bounds.left+right)/2;
+    if(box.top<bounds.top+12||box.bottom>bottom-12) viewport.scrollTop+=y-(bounds.top+bottom)/2;
+  }
+  function setExpanded(value) {
+    expanded=!!value;
+    dialog.classList.toggle('diagram-expanded',expanded);
+    fullscreenButton.setAttribute('aria-pressed',String(expanded));
+    fullscreenButton.setAttribute('aria-label',expanded?'Thoát chế độ toàn màn hình':'Mở sơ đồ toàn màn hình');
+    fullscreenButton.querySelector('span').textContent=expanded?'Thu nhỏ':'Toàn màn hình';
+    setDetails(false,false);
+    detail.inert=expanded;
+    dialog.querySelector('.diagram-scroll-hint').textContent=expanded
+      ?'Kéo để di chuyển • Chụm hai ngón hoặc + / − để phóng to • Bấm một khối để mở kiến thức'
+      :'Cuộn hoặc vuốt để di chuyển • + / − để phóng to • Toàn sơ đồ để xem tổng thể';
+    fitOnResize=true;
+    scheduleLayout();
+  }
+  function exitExpanded() {
+    fullscreenRequest++;
+    if(document.fullscreenElement===shell) document.exitFullscreen().catch(()=>{});
+    setExpanded(false);
+  }
+  async function toggleFullscreen() {
+    if(expanded) { exitExpanded(); return; }
+    setExpanded(true);
+    const request=++fullscreenRequest;
+    // Cover the browser viewport even where native fullscreen is unavailable.
+    if(shell.requestFullscreen&&document.fullscreenEnabled) {
+      try {
+        await shell.requestFullscreen();
+        if(request!==fullscreenRequest||!dialog.open) {
+          if(document.fullscreenElement===shell) await document.exitFullscreen();
+        }
+      } catch (_) { /* The expanded layout is the fallback, including iOS. */ }
+    }
+  }
+  document.addEventListener('fullscreenchange',()=>{
+    if(document.fullscreenElement===shell) dialog.dataset.nativeFullscreen='true';
+    else if(dialog.dataset.nativeFullscreen==='true') {
+      delete dialog.dataset.nativeFullscreen;
+      if(expanded) setExpanded(false);
+    }
+    scheduleLayout();
+  });
+  dialog.addEventListener('cancel',event=>{
+    if(expanded) { event.preventDefault(); exitExpanded(); }
+  });
+  detail.addEventListener('toggle',event=>{
+    if(expanded&&compact&&event.target.matches('.diagram-knowledge-reference[open]')) setSheet(true);
+  },true);
+
+  // In the expanded canvas, one finger pans and two fingers zoom the diagram.
+  const pointers=new Map();
+  let pan=null,pinch=null,suppressClickUntil=0;
+  const midpoint=()=>{
+    const [a,b]=[...pointers.values()];
+    return {x:(a.x+b.x)/2,y:(a.y+b.y)/2,distance:Math.hypot(a.x-b.x,a.y-b.y)};
+  };
+  function beginGesture() {
+    pan=pinch=null;
+    if(pointers.size===1) {
+      const point=pointers.values().next().value;
+      pan={...point,left:viewport.scrollLeft,top:viewport.scrollTop};
+    } else if(pointers.size===2) {
+      const middle=midpoint(),bounds=world.getBoundingClientRect();
+      pinch={distance:middle.distance,zoom,x:(middle.x-bounds.left)/zoom,y:(middle.y-bounds.top)/zoom};
+    }
+  }
+  viewport.addEventListener('pointerdown',event=>{
+    if(!expanded||event.button!==0) return;
+    pointers.set(event.pointerId,{x:event.clientX,y:event.clientY});
+    beginGesture();
+  });
+  viewport.addEventListener('pointermove',event=>{
+    if(!expanded||!pointers.has(event.pointerId)) return;
+    pointers.set(event.pointerId,{x:event.clientX,y:event.clientY});
+    if(pointers.size===2&&pinch) {
+      const middle=midpoint();
+      if(pinch.distance<1) return;
+      applyZoom(pinch.zoom*middle.distance/pinch.distance,false);
+      const bounds=world.getBoundingClientRect();
+      viewport.scrollLeft+=bounds.left+pinch.x*zoom-middle.x;
+      viewport.scrollTop+=bounds.top+pinch.y*zoom-middle.y;
+    } else if(pointers.size===1&&pan) {
+      const dx=event.clientX-pan.x,dy=event.clientY-pan.y;
+      if(Math.hypot(dx,dy)<6) return;
+      viewport.scrollLeft=pan.left-dx;
+      viewport.scrollTop=pan.top-dy;
+    } else return;
+    fitOnResize=false;
+    suppressClickUntil=performance.now()+350;
+    viewport.classList.add('diagram-dragging');
+    viewport.setPointerCapture(event.pointerId);
+    event.preventDefault();
+  });
+  function endGesture(event) {
+    pointers.delete(event.pointerId);
+    if(viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+    if(!pointers.size) viewport.classList.remove('diagram-dragging');
+    beginGesture();
+  }
+  viewport.addEventListener('pointerup',endGesture);
+  viewport.addEventListener('pointercancel',endGesture);
+  viewport.addEventListener('pointerleave',event=>{
+    if(!viewport.hasPointerCapture(event.pointerId)) endGesture(event);
+  });
+  viewport.addEventListener('click',event=>{
+    if(performance.now()<suppressClickUntil&&event.detail) { event.preventDefault(); event.stopPropagation(); }
+  },true);
+  let sheetStart=null;
+  const sheetControls=dialog.querySelector('.diagram-detail-controls');
+  sheetControls.addEventListener('pointerdown',event=>{
+    if(!expanded||!compact||event.button!==0||event.target.closest('[data-diagram-action="dismiss-details"]')) return;
+    sheetStart={id:event.pointerId,y:event.clientY};
+  });
+  sheetControls.addEventListener('pointermove',event=>{
+    if(sheetStart?.id===event.pointerId&&Math.abs(event.clientY-sheetStart.y)>6) sheetControls.setPointerCapture(event.pointerId);
+  });
+  sheetControls.addEventListener('pointerup',event=>{
+    if(!sheetStart||sheetStart.id!==event.pointerId) return;
+    const distance=event.clientY-sheetStart.y;
+    sheetStart=null;
+    if(Math.abs(distance)<40) return;
+    suppressClickUntil=performance.now()+350;
+    if(distance<0) setSheet(true);
+    else if(sheetExpanded) setSheet(false);
+    else setDetails(false,true);
+  });
+  sheetControls.addEventListener('pointercancel',()=>{sheetStart=null;});
+  sheetControls.addEventListener('click',event=>{
+    if(performance.now()<suppressClickUntil&&event.detail) {event.preventDefault();event.stopPropagation();}
+  },true);
+  let viewportSize='';
+  const observer=typeof ResizeObserver!=='undefined'?new ResizeObserver(()=>{
+    const size=viewport.clientWidth+'x'+viewport.clientHeight;
+    if(size!==viewportSize) { viewportSize=size; scheduleLayout(); }
+  }):null;
   window.addEventListener('resize',scheduleLayout);
   dialog.addEventListener('keydown',event=>{
     if(event.key!=='Tab') return;
@@ -306,9 +483,14 @@
     if(button) {
       const action=button.dataset.diagramAction;
       if(action==='close') close();
-      else if(action==='fit') { fit(false); fitOnResize=false; }
+      else if(action==='fit') { if(expanded) setDetails(false,false); fit(false); fitOnResize=false; }
       else if(action==='overview') selectNode(null);
-      else { fitOnResize=false; applyZoom(zoom*(action==='in'?1.25:.8),true); }
+      else if(action==='fullscreen') toggleFullscreen();
+      else if(action==='details') { setDetails(!detailsOpen,false); if(detailsOpen) requestAnimationFrame(keepSelectedVisible); }
+      else if(action==='dismiss-details') setDetails(false,true);
+      else if(action==='chapter') { selectNode(null); setDetails(true,false); }
+      else if(action==='sheet') setSheet(!sheetExpanded);
+      else if(action==='in'||action==='out') { fitOnResize=false; applyZoom(zoom*(action==='in'?1.25:.8),true); }
     } else if(event.target===dialog) {
       const b=dialog.getBoundingClientRect();
       if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom) close();
@@ -316,6 +498,9 @@
   });
   dialog.addEventListener('close',()=>{
     if(dialog.open) return;
+    exitExpanded();
+    pointers.clear(); pan=pinch=sheetStart=null;
+    viewport.classList.remove('diagram-dragging');
     document.body.classList.remove('chapter-diagram-open');
     if(observer) observer.disconnect();
     cancelAnimationFrame(frame);
@@ -342,10 +527,11 @@
     dialog.showModal();
     document.body.classList.add('chapter-diagram-open');
     selectView(0);
+    setExpanded(false);
     if(observer) observer.observe(viewport);
     if(document.fonts) document.fonts.ready.then(scheduleLayout);
   }
-  function close() { if(dialog.open) dialog.close(); }
+  function close() { if(dialog.open) { exitExpanded(); dialog.close(); } }
   window.KMA_CHAPTER_DIAGRAMS={open,close,has};
   // A review link can open a chapter without changing the normal landing page.
   function openReviewLink() {
@@ -361,6 +547,7 @@
       button.click();
       const index=chapterModels.views.findIndex(view=>view.id===query.get('view'));
       if(index>=0) selectView(index);
+      if(query.get('fullscreen')==='1') setExpanded(true);
       if(model.nodes.some(node=>node.id===query.get('node'))) selectNode(query.get('node'));
     });
   }

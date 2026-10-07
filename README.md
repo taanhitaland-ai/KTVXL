@@ -50,6 +50,12 @@ Chọn một khối để đọc chức năng và làm nổi các đường nố
 
 [Mở ví dụ CPU và ALU tại máy](http://127.0.0.1:8765/web/index.html?diagram=chap1&view=cpu&node=alu). Các model và tham chiếu kiến thức nằm trong `web/chapter_diagram_data.js`; thêm hay sửa model phải chạy kiểm tra để giữ đường nối hợp lệ và đủ tham chiếu nội dung chương.
 
+Nút **Toàn màn hình** mở sơ đồ trên toàn bộ vùng xem, dùng Fullscreen API khi trình duyệt hỗ trợ; nếu không, giao diện vẫn mở rộng trong trang. Bấm **Thu nhỏ** để trở lại; Escape thoát chế độ mở rộng trước rồi mới đóng sơ đồ. Trong chế độ này, một ngón hoặc chuột kéo sơ đồ, hai ngón chụm để phóng to/thu nhỏ. **Toàn sơ đồ** thu gọn bảng kiến thức và đưa tất cả các khối vào khung nhìn.
+
+Bấm một khối mới mở kiến thức: bảng bên phải trên máy tính, bảng từ đáy lên trên điện thoại. **Mở rộng / Thu nhỏ** hoặc kéo tay cầm thay đổi chiều cao bảng trên điện thoại; **Thu gọn** trả lại diện tích sơ đồ và giữ khối đang chọn. Nút hình quyển sách mở lại kiến thức; **Cả chương** trở về nội dung tổng quan. Các điều khiển và kiến thức giữ màu của chương.
+
+[Demo mở rộng chương 2](http://127.0.0.1:8765/web/index.html?diagram=chap2&fullscreen=1). Tham số `fullscreen=1` mở sẵn giao diện mở rộng; fullscreen của hệ điều hành cần thao tác bấm của người dùng.
+
 Sơ đồ Timer minh họa 89C51 cổ điển 12T; sơ đồ UART minh họa cấu hình Mode 1 dùng Timer 1 Mode 2. Cách dùng Timer 1 và thời điểm đặt TI được đối chiếu với [8051 Hardware Manual](https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/UserGuides/doc4316.pdf) và [ví dụ UART của Keil](https://www.keil.com/support/docs/685.htm).
 
 ## Sơ đồ ba môn còn lại
@@ -136,6 +142,15 @@ playwright-cli -s=kma-diagram eval "window.__KMA_SUBJECT_DIAGRAM_REPORT"
 ```
 
 Bộ này kiểm tra mọi thành phần và mũi tên trong 26 sơ đồ, nguồn kiến thức, công thức KaTeX, màu chương, điện thoại 320/390 px và màn hình ngang, liên kết trực tiếp trên `web/` và `docs/`, cùng việc giữ các liên kết CPU cũ.
+
+Kiểm tra chế độ toàn màn hình dùng Chromium:
+
+```powershell
+playwright-cli -s=kma-fullscreen open http://127.0.0.1:8765/web/index.html
+playwright-cli -s=kma-fullscreen run-code --filename scripts/browser_fullscreen_checks.js
+```
+
+Bộ này kiểm tra fullscreen thật và trường hợp API không khả dụng, thoát bằng Escape, bảng kiến thức theo thiết bị, thao tác kéo/chụm hai ngón, chọn liên kết không bị bảng che, đọc tới đoạn cuối, ba kích thước điện thoại, cả bốn môn và bản `docs/`. Kết quả đạt khi `complete: true`.
 
 Kết quả chỉ hoàn tất khi báo cáo có `complete: true`. CLI có thể trả lại trạng thái hộp thoại trước khi bộ kiểm tra chạy xong; chờ báo cáo cuối, không chạy bước kế tiếp khi bước chính còn hoạt động. Bộ chính kiểm tra 27 lựa chọn đề, nhập/xóa đáp án, điểm, khóa bài, thoát/chuyển môn và tự nộp khi hết giờ. Bộ bổ sung kiểm tra lưu tiến độ, đánh dấu, kiến thức, PDF, mô phỏng, dữ liệu lưu hỏng và màn hình 390px. Ảnh kiểm tra nằm trong `output/playwright/`, không ghi đè tài nguyên triển khai.
 
