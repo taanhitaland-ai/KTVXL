@@ -334,32 +334,59 @@ code, pre, .mono {
   border: var(--border-width) solid #000;
   box-shadow: var(--shadow-main);
   border-radius: var(--radius-md);
-  padding: 18px 24px;
+  padding: 16px 20px;
   margin-bottom: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .filter-row {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
+}
+
+.filter-item-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.filter-source-wrapper {
+  flex-shrink: 0;
+}
+
+#filter-source {
+  max-width: 250px;
+  min-width: 190px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .filter-label {
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
-  min-width: 90px;
+  white-space: nowrap;
+  letter-spacing: -0.2px;
+}
+
+.filter-btn-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .neo-select, .neo-input {
   font-family: inherit;
   font-weight: 700;
-  font-size: 0.9rem;
-  padding: 8px 14px;
+  font-size: 0.88rem;
+  padding: 7px 12px;
   border: 2px solid #000;
   border-radius: 6px;
   box-shadow: 2px 2px 0px #000;
@@ -374,14 +401,15 @@ code, pre, .mono {
 
 .neo-filter-btn {
   font-weight: 800;
-  font-size: 0.82rem;
-  padding: 6px 12px;
+  font-size: 0.78rem;
+  padding: 5px 9px;
   border: 2px solid #000;
   border-radius: 6px;
   box-shadow: 2px 2px 0px #000;
   background: var(--bg-main);
   cursor: pointer;
   transition: all 0.1s ease;
+  white-space: nowrap;
 }
 
 .neo-filter-btn.active {
@@ -392,7 +420,62 @@ code, pre, .mono {
 
 .search-input {
   flex: 1;
-  min-width: 260px;
+  min-width: 240px;
+}
+
+/* Credit Badges & Footer */
+.brand-credit-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: var(--neo-yellow);
+  color: #000;
+  padding: 3px 8px;
+  border: 1.5px solid #000;
+  border-radius: 4px;
+  box-shadow: 1.5px 1.5px 0px #000;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+
+.app-footer {
+  margin-top: 40px;
+  padding: 20px 24px;
+  background: #fff;
+  border: var(--border-width) solid #000;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-main);
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.88rem;
+}
+
+.footer-left {
+  color: #334155;
+  font-weight: 600;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.credit-highlight {
+  background: var(--neo-yellow);
+  color: #000;
+  padding: 2px 8px;
+  border: 1.5px solid #000;
+  border-radius: 4px;
+  box-shadow: 1px 1px 0px #000;
+  font-weight: 900;
 }
 
 /* Question Cards & Split View */
@@ -2405,6 +2488,21 @@ body.dark-mode .side-nav-btn {
 }
 
 body.dark-mode .side-nav-btn.active {
+  background: var(--neo-yellow);
+  color: #000;
+  border-color: #000;
+}
+
+body.dark-mode .app-footer {
+  background: #1E1E24;
+  border-color: #52525B;
+}
+
+body.dark-mode .footer-left {
+  color: #CBD5E1;
+}
+
+body.dark-mode .brand-credit-badge {
   background: var(--neo-yellow);
   color: #000;
   border-color: #000;

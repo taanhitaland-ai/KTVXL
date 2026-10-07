@@ -306,7 +306,8 @@
     const btnGroup = document.querySelector('.filter-btn-group');
     const byChapter = currentSubject !== 'ktvxl';
     if (btnGroup) {
-      btnGroup.previousElementSibling.textContent = byChapter ? 'Chương:' : 'Chuẩn đầu ra:';
+      const secLabel = document.getElementById('filter-secondary-label') || btnGroup.previousElementSibling;
+      if (secLabel) secLabel.textContent = byChapter ? 'Chương:' : 'Chuẩn đầu ra:';
       const entries = byChapter ? Array.from({ length: currentSubject === 'xstk' ? 8 : 6 }, (_, i) => [String(i + 1), 'Chương ' + (i + 1)]) : [['CLO1','CLO1: Tổng quan'],['CLO2','CLO2: Phần cứng & Tập lệnh'],['CLO3','CLO3: Lập trình & Ứng dụng']];
       btnGroup.innerHTML = [['ALL', 'Tất cả'], ...entries].map(([code, text]) => '<button class="neo-filter-btn' + (code === 'ALL' ? ' active' : '') + '" data-clo="' + code + '">' + text + '</button>').join('');
       currentClo = 'ALL';
