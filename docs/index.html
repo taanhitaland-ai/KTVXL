@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KTVXL by ashv4ni</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=43ce7446ee46">
+  <link rel="stylesheet" href="chapter_diagrams.css?v=85f9783770dc">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23FFE600' stroke='%23000' stroke-width='8'/><text x='50%' y='60%' font-size='42' font-weight='900' text-anchor='middle' fill='%23000'>8051</text></svg>">
   
   <!-- KaTeX Math Formula Rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css?v=505d5f829022">
+  <script defer src="vendor/katex/katex.min.js?v=dc84b296ec3e"></script>
+  <script defer src="vendor/katex/auto-render.min.js?v=9cb8dacfc086"></script>
 </head>
 <body>
 
@@ -182,45 +183,10 @@
     <section id="tab-exam" class="tab-pane">
       <!-- Setup Screen -->
       <div id="exam-setup-view" class="exam-setup-box">
-        <span class="neo-badge badge-exam" id="exam-setup-badge" style="font-size: 0.9rem; margin-bottom: 16px;">⏱️ CHUẨN MA TRẬN ĐỀ THI KMA</span>
-        <h2 id="exam-setup-title">PHÒNG THI THỬ TRẮC NGHIỆM KỸ THUẬT VI XỬ LÝ</h2>
-        <p id="exam-setup-desc" style="font-size: 1rem; color: #444; max-width: 600px; margin: 0 auto;">
-          Đề thi gồm đúng <strong>40 câu hỏi</strong> (35 câu trắc nghiệm + 5 câu điền khuyết), thời gian làm bài <strong>60 phút</strong>.
-          Bám sát 100% chuẩn đầu ra CLO1, CLO2, CLO3 của Học viện Kỹ thuật Mật mã.
-        </p>
-
-        <div class="exam-select-grid exam-grid-choices" id="exam-select-grid">
-          <div class="exam-card-choice selected" data-exam-code="1">
-            <div class="neo-badge badge-exam" style="margin-bottom: 8px;">ĐỀ 001</div>
-            <h3 style="font-weight: 800; font-size: 1.1rem;">Đề Thi Chính Thức 001</h3>
-            <p style="font-size: 0.85rem; color: #555; margin-top: 4px;">40 câu • Đầy đủ mạch & mã lệnh</p>
-          </div>
-          <div class="exam-card-choice" data-exam-code="2">
-            <div class="neo-badge badge-exam" style="margin-bottom: 8px;">ĐỀ 002</div>
-            <h3 style="font-weight: 800; font-size: 1.1rem;">Đề Thi Chính Thức 002</h3>
-            <p style="font-size: 0.85rem; color: #555; margin-top: 4px;">40 câu • Đầy đủ mạch & mã lệnh</p>
-          </div>
-          <div class="exam-card-choice" data-exam-code="3">
-            <div class="neo-badge badge-exam" style="margin-bottom: 8px;">ĐỀ 003</div>
-            <h3 style="font-weight: 800; font-size: 1.1rem;">Đề Thi Chính Thức 003</h3>
-            <p style="font-size: 0.85rem; color: #555; margin-top: 4px;">40 câu • Đầy đủ mạch & mã lệnh</p>
-          </div>
-          <div class="exam-card-choice" data-exam-code="4">
-            <div class="neo-badge badge-exam" style="margin-bottom: 8px;">ĐỀ 004</div>
-            <h3 style="font-weight: 800; font-size: 1.1rem;">Đề Thi Chính Thức 004</h3>
-            <p style="font-size: 0.85rem; color: #555; margin-top: 4px;">40 câu • Đầy đủ mạch & mã lệnh</p>
-          </div>
-          <div class="exam-card-choice" data-exam-code="5">
-            <div class="neo-badge badge-exam" style="margin-bottom: 8px;">ĐỀ 005</div>
-            <h3 style="font-weight: 800; font-size: 1.1rem;">Đề Thi Chính Thức 005</h3>
-            <p style="font-size: 0.85rem; color: #555; margin-top: 4px;">40 câu • Đầy đủ mạch & mã lệnh</p>
-          </div>
-          <div class="exam-card-choice" data-exam-code="RANDOM">
-            <div class="neo-badge badge-clo3" style="margin-bottom: 8px;">NGẪU NHIÊN</div>
-            <h3 style="font-weight: 800; font-size: 1.1rem;">Đề Trộn Chuẩn Ma Trận</h3>
-            <p style="font-size: 0.85rem; color: #555; margin-top: 4px;">Trộn 40 câu từ toàn ngân hàng</p>
-          </div>
-        </div>
+        <span class="neo-badge badge-exam" style="font-size: 0.9rem; margin-bottom: 16px;">⏱️ CHỌN ĐỀ THI THỬ</span>
+        <h2 id="exam-setup-title">PHÒNG THI THỬ</h2>
+        <p id="exam-setup-description" class="exam-setup-description" aria-live="polite"></p>
+        <div class="exam-select-grid" id="exam-select-grid" role="group" aria-label="Chọn đề thi"></div>
 
         <button id="btn-start-exam" class="neo-btn neo-btn-green" style="font-size: 1.1rem; padding: 14px 32px;">
           🚀 BẮT ĐẦU LÀM BÀI: <strong>ĐỀ 001</strong> (60:00)
@@ -238,10 +204,13 @@
             <span style="margin-left: 6px; font-weight: 800;">Tiến độ: <span id="exam-progress-text">0/40</span> câu</span>
           </div>
           <div class="exam-timer" id="exam-timer-display">60:00</div>
+          <button id="btn-back-exam" class="neo-btn neo-btn-white" hidden>↩️ Chọn đề khác</button>
           <button id="btn-submit-exam" class="neo-btn neo-btn-red">
             🏁 NỘP BÀI THI
           </button>
         </div>
+
+        <div class="exam-progress-track" aria-hidden="true"><div id="exam-progress-bar"></div></div>
 
         <div class="exam-active-layout">
           <!-- Question stream for exam -->
@@ -250,7 +219,7 @@
           <!-- Question Palette Matrix -->
           <div class="details-panel-container">
             <div class="neo-box" style="padding: 18px;">
-              <h4 id="exam-palette-title" style="font-weight: 900; margin-bottom: 12px; text-transform: uppercase;">BẢNG CÂU HỎI (1 - 40)</h4>
+              <h4 id="exam-palette-title" style="font-weight: 900; margin-bottom: 12px; text-transform: uppercase;">BẢNG CÂU HỎI</h4>
               <div class="palette-grid" id="exam-palette-grid">
                 <!-- 40 buttons -->
               </div>
@@ -290,7 +259,7 @@
         <div>
           <h1 style="color: #000;">TRUNG TÂM XUẤT BẢN & TẢI TÀI LIỆU PDF</h1>
           <p style="font-size: 1.05rem; font-weight: 700; color: #111;">
-            Tải về 2 file tài liệu PDF hoàn chỉnh, chất lượng in ấn cao để học tập và ôn thi offline.
+            Tài liệu PDF của 4 môn để tải về, in và ôn tập offline. Các bản PDF được biên soạn riêng với ngân hàng câu hỏi trên trang.
           </p>
         </div>
       </div>
@@ -465,7 +434,7 @@
       <!-- Module Selector Bar -->
       <div class="sim-nav-bar">
         <button class="sim-nav-btn active" data-sim="young">1. Giao Thoa Khe Young & Bản Mỏng</button>
-        <button class="sim-nav-btn" data-sim="diffraction">2. Nhiễu Xạ Khe Hẹp & Cách Mạng</button>
+        <button class="sim-nav-btn" data-sim="diffraction">2. Nhiễu Xạ Khe Hẹp & Cách Tử</button>
         <button class="sim-nav-btn" data-sim="photoelectric">3. Hiệu Ứng Quang Điện Ngoài</button>
         <button class="sim-nav-btn" data-sim="compton">4. Tán Xạ Compton (Đo bước sóng)</button>
         <button class="sim-nav-btn" data-sim="quantum">5. Hạt Trong Giếng Thế 1D</button>
@@ -558,7 +527,7 @@
         <div class="sim-grid">
           <div class="sim-canvas-card">
             <div class="sim-card-header">
-              <span class="sim-card-title">🔬 Mô Phỏng Nhiễu Xạ Fraunhofer Qua Khe Hẹp & Cách Mạng</span>
+              <span class="sim-card-title">🔬 Mô Phỏng Nhiễu Xạ Fraunhofer Qua Khe Hẹp & Cách Tử</span>
               <span class="neo-badge badge-clo2">Nhiễu Xạ Sóng</span>
             </div>
             <div class="sim-canvas-wrapper">
@@ -573,7 +542,7 @@
                   <input type="radio" name="diff-mode" value="single" checked> 1 Khe hẹp (Single Slit)
                 </label>
                 <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
-                  <input type="radio" name="diff-mode" value="grating"> Cách mạng (Grating)
+                  <input type="radio" name="diff-mode" value="grating"> Cách tử (Grating)
                 </label>
               </div>
 
@@ -598,7 +567,7 @@
               <div id="diff-grating-ctrl" style="display: none;">
                 <div class="sim-slider-row">
                   <div class="sim-slider-label-row">
-                    <span>Chu kỳ cách mạng (d):</span>
+                    <span>Chu kỳ cách tử (d):</span>
                     <span id="val-diff-d" class="sim-val-badge">2.5 µm</span>
                   </div>
                   <input type="range" id="sl-diff-d" class="sim-slider" min="1.0" max="10.0" value="2.5" step="0.2">
@@ -846,9 +815,10 @@
               <div style="margin: 12px 0 8px 0;">
                 <label style="font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 8px;">
                   <input type="checkbox" id="chk-polar-mid" style="width: 18px; height: 18px;">
-                  <span>Chèn thêm kính P_giữa ở góc 45° (Nghịch lý lượng tử)</span>
+                  <span>Chèn thêm kính phân cực giữa ở góc 45°</span>
                 </label>
               </div>
+              <p id="polar-mid-box" style="display: none; font-size: 0.85rem;">Kính giữa đặt ở góc 45° so với kính P₁.</p>
             </div>
 
             <div>
@@ -1622,6 +1592,49 @@
 
   </main>
 
+  <!-- Chapter knowledge diagram -->
+  <dialog id="chapter-diagram-dialog" class="chapter-diagram-dialog" aria-labelledby="chapter-diagram-title" aria-describedby="chapter-diagram-help">
+    <div class="diagram-shell">
+      <header class="diagram-heading">
+        <div>
+          <span class="neo-badge diagram-heading-badge">⚡ SƠ ĐỒ KIẾN THỨC • VI XỬ LÝ</span>
+          <h2 id="chapter-diagram-title"></h2>
+        </div>
+        <button type="button" class="neo-btn neo-btn-white neo-btn-sm" data-diagram-action="close" autofocus>✕ Đóng</button>
+      </header>
+      <div class="diagram-toolbar">
+        <p id="chapter-diagram-help">Bấm vào một khối để xem chức năng và các đường kết nối.</p>
+        <div class="diagram-zoom-controls" role="group" aria-label="Điều chỉnh sơ đồ">
+          <button type="button" class="neo-btn neo-btn-white neo-btn-sm" data-diagram-action="out" aria-label="Thu nhỏ sơ đồ">−</button>
+          <output class="diagram-zoom-value" aria-label="Mức phóng đại">100%</output>
+          <button type="button" class="neo-btn neo-btn-white neo-btn-sm" data-diagram-action="in" aria-label="Phóng to sơ đồ">+</button>
+          <button type="button" class="neo-btn neo-btn-sm" data-diagram-action="fit">Toàn sơ đồ</button>
+          <button type="button" class="neo-btn neo-btn-white neo-btn-sm" data-diagram-action="overview">Bỏ chọn</button>
+        </div>
+      </div>
+      <div class="diagram-view-tabs" role="tablist" aria-label="Các sơ đồ liên kết trong chương"></div>
+      <div class="diagram-workspace">
+        <div class="diagram-map-panel">
+          <div class="diagram-map-caption">
+            <span class="diagram-map-count"></span>
+            <div class="diagram-wire-legend"><span class="legend-data">Dữ liệu</span><span class="legend-address">Địa chỉ</span><span class="legend-control">Điều khiển</span></div>
+          </div>
+          <div class="diagram-viewport" tabindex="0" role="region" aria-label="Sơ đồ chương; cuộn để xem các nhánh">
+            <div class="diagram-surface"></div>
+          </div>
+          <p class="diagram-scroll-hint">Cuộn hoặc vuốt để di chuyển • + / − để phóng to • Toàn sơ đồ để xem tổng thể</p>
+        </div>
+        <aside class="diagram-detail" aria-label="Chi tiết kiến thức đang chọn">
+          <div class="diagram-detail-heading" aria-live="polite" aria-atomic="true">
+            <p class="diagram-detail-context"></p>
+            <h3 class="diagram-detail-title"></h3>
+          </div>
+          <div class="diagram-detail-text"></div>
+        </aside>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Exam Result Modal -->
   <div class="modal-overlay" id="exam-result-modal">
     <div class="result-card neo-box">
@@ -1690,16 +1703,22 @@
   </div>
 
   <!-- Scripts -->
-  <script src="data.js"></script>
-  <script src="tthcm_data.js"></script>
-  <script src="tthcm_knowledge_data.js"></script>
-  <script src="vldc_data.js"></script>
-  <script src="vldc_knowledge_data.js"></script>
-  <script src="vldc_simulations.js"></script>
-  <script src="xstk_data.js"></script>
-  <script src="xstk_knowledge_data.js"></script>
-  <script src="xstk_simulations.js"></script>
-  <script src="app.js"></script>
+  <script src="data.js?v=ac8b4cec1748"></script>
+  <script src="tthcm_data.js?v=79d3fa71f51c"></script>
+  <script src="tthcm_knowledge_data.js?v=cc49c9613640"></script>
+  <script src="vldc_data.js?v=1f74b36c21ac"></script>
+  <script src="vldc_knowledge_data.js?v=574e65188909"></script>
+  <script src="vldc_simulations.js?v=581cb4af261d"></script>
+  <script src="xstk_data.js?v=cfeec4a2587a"></script>
+  <script src="xstk_knowledge_data.js?v=e1ae9e5b3de0"></script>
+  <script src="xstk_simulations.js?v=caa7fe353931"></script>
+  <script src="exam_config.js?v=78582c1a981f"></script>
+  <script src="chapter_diagram_data.js?v=e88e18e56c1e"></script>
+  <script src="subject_diagram_data.js?v=00014c862146"></script>
+  <script src="diagram_knowledge.js?v=543309e08f0a"></script>
+  <script src="diagram_geometry.js?v=739672278b1f"></script>
+  <script src="chapter_diagrams.js?v=045072318431"></script>
+  <script src="app.js?v=90bdc40b4a24"></script>
   <script src="schedule_pomodoro.js"></script>
 </body>
 </html>

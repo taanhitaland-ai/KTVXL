@@ -1,8 +1,10 @@
 import asyncio
 from playwright.async_api import async_playwright
 import os
+from pathlib import Path
 
 async def test_exam_selection():
+    Path('output/playwright').mkdir(parents=True, exist_ok=True)
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         context = await browser.new_context(viewport={'width': 1280, 'height': 800})
@@ -11,8 +13,7 @@ async def test_exam_selection():
         # Auto accept confirm dialogs
         page.on('dialog', lambda dialog: asyncio.create_task(dialog.accept()))
 
-        abs_path = os.path.abspath('web/index.html')
-        await page.goto(f'file://{abs_path}')
+        await page.goto(Path('web/index.html').resolve().as_uri())
         await page.wait_for_timeout(1000)
 
         print('=== TEST 1: KTVXL EXAM SELECTION ===')
@@ -119,7 +120,7 @@ async def test_exam_selection():
 
         cards_vldc = await page.query_selector_all('.exam-card-choice')
         print(f'VLDC cards count: {len(cards_vldc)}')
-        assert len(cards_vldc) == 5, f'Expected 5 cards, got {len(cards_vldc)}'
+        assert len(cards_vldc) == 8, f'Expected 8 cards, got {len(cards_vldc)}'
 
         # Click NOTION_DE_CUOI
         card_de_cuoi = await page.query_selector('.exam-card-choice[data-exam-code="NOTION_DE_CUOI"]')
@@ -149,7 +150,7 @@ async def test_exam_selection():
 
         cards_xstk = await page.query_selector_all('.exam-card-choice')
         print(f'XSTK cards count: {len(cards_xstk)}')
-        assert len(cards_xstk) == 5, f'Expected 5 cards, got {len(cards_xstk)}'
+        assert len(cards_xstk) == 8, f'Expected 8 cards, got {len(cards_xstk)}'
 
         # Click KMA_EXAM_01
         card_xstk1 = await page.query_selector('.exam-card-choice[data-exam-code="KMA_EXAM_01"]')
@@ -161,7 +162,7 @@ async def test_exam_selection():
         assert sel_code == 'KMA_EXAM_01', f'Expected KMA_EXAM_01, got {sel_code}'
 
         # Screenshot of selected cards in XSTK
-        await page.screenshot(path='/home/kali/.gemini/antigravity-cli/brain/162b2260-8bee-42d1-b676-e61ed8c0da0e/screenshot_exam_selection.png')
+        await page.screenshot(path='output/playwright/screenshot_exam_selection.png')
 
         await page.click('#btn-start-exam')
         await page.wait_for_timeout(500)
@@ -171,7 +172,7 @@ async def test_exam_selection():
         assert '01' in exam_title, f'Expected 01 in title: {exam_title}'
 
         # Screenshot of active exam view
-        await page.screenshot(path='/home/kali/.gemini/antigravity-cli/brain/162b2260-8bee-42d1-b676-e61ed8c0da0e/screenshot_exam_active.png')
+        await page.screenshot(path='output/playwright/screenshot_exam_active.png')
 
         await browser.close()
         print('=== ALL EXAM SELECTION TESTS PASSED PERFECTLY! ===')

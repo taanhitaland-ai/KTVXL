@@ -93,9 +93,11 @@
   // =========================================================================
   // INITIALIZATION
   // =========================================================================
+  let labInitialized = false;
   function initXstkLab() {
     const container = document.getElementById('lab-container-xstk');
-    if (!container) return;
+    if (!container || labInitialized) return;
+    labInitialized = true;
 
     setupNavTabs();
     setupLLNControls();
@@ -128,6 +130,11 @@
 
   // Main 60 FPS Animation Loop
   function runAnimationLoop() {
+    const container = document.getElementById('lab-container-xstk');
+    if (document.hidden || container.style.display === 'none' || !document.getElementById('tab-visualize').classList.contains('active')) {
+      XSTK_SIM_STATE.animId = requestAnimationFrame(runAnimationLoop);
+      return;
+    }
     const active = XSTK_SIM_STATE.activeModule;
 
     if (active === 'lln') {
@@ -797,6 +804,7 @@
     if (slA) {
       slA.addEventListener('input', (e) => {
         XSTK_SIM_STATE.normal.a = parseFloat(e.target.value);
+        XSTK_SIM_STATE.normal.b = Math.max(XSTK_SIM_STATE.normal.a, XSTK_SIM_STATE.normal.b);
         const el = document.getElementById('val-norm-a');
         if (el) el.textContent = XSTK_SIM_STATE.normal.a.toFixed(1);
         updateNormalReadouts();
@@ -806,6 +814,7 @@
     if (slB) {
       slB.addEventListener('input', (e) => {
         XSTK_SIM_STATE.normal.b = parseFloat(e.target.value);
+        XSTK_SIM_STATE.normal.a = Math.min(XSTK_SIM_STATE.normal.a, XSTK_SIM_STATE.normal.b);
         const el = document.getElementById('val-norm-b');
         if (el) el.textContent = XSTK_SIM_STATE.normal.b.toFixed(1);
         updateNormalReadouts();
@@ -850,6 +859,14 @@
 
   function updateNormalReadouts() {
     const norm = XSTK_SIM_STATE.normal;
+    // Presets can extend beyond the original slider range when mu or sigma changes.
+    for (const [bound, id] of [['a', 'sl-norm-a'], ['b', 'sl-norm-b']]) {
+      const slider = document.getElementById(id);
+      slider.min = Math.min(-5, Math.floor(norm.a), Math.floor(norm.b));
+      slider.max = Math.max(5, Math.ceil(norm.a), Math.ceil(norm.b));
+      slider.value = norm[bound];
+      document.getElementById('val-norm-' + bound).textContent = norm[bound].toFixed(1);
+    }
     const za = (norm.a - norm.mu) / norm.sigma;
     const zb = (norm.b - norm.mu) / norm.sigma;
     const prob = Math.max(0, normalCDF(zb) - normalCDF(za));

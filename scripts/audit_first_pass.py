@@ -23,7 +23,7 @@ for subj, path in subjects:
         continue
     with open(path, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    
+
     print(f"Checking {subj.upper()}: {len(data)} questions...")
     report['total'] += len(data)
 

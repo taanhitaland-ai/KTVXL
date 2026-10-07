@@ -1,8 +1,10 @@
 const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
+const { pathToFileURL } = require('url');
 
 async function runE2ETests() {
+  fs.mkdirSync('output/playwright', {recursive:true});
   console.log('🧪 Starting Playwright E2E Verification Suite for KTVXL App...');
 
   // 1. Verify PDFs exist
@@ -26,14 +28,14 @@ async function runE2ETests() {
   });
 
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
-  const indexUrl = 'file://' + path.join(process.cwd(), 'web', 'index.html');
+  const indexUrl = pathToFileURL(path.join(process.cwd(), 'web', 'index.html')).href;
   console.log(`Navigating to Web App: ${indexUrl}`);
   await page.goto(indexUrl, { waitUntil: 'networkidle' });
 
   // Test 1: Check Page Title & Header
   const title = await page.title();
   console.log(`Page title: "${title}"`);
-  if (!title.includes('KTVXL')) throw new Error('Invalid page title');
+  if (!title.includes('Vi xử lý')) throw new Error('Invalid page title');
   console.log('✅ Test 1 Passed: App loaded with correct title.');
 
   // Test 2: Check Question Stream populated
@@ -64,7 +66,7 @@ async function runE2ETests() {
   console.log(`✅ Test 4 Passed: Side drawer popped up with explanation (${drawerHasExp}) and Casio tips (${drawerHasCasio}).`);
 
   // Take screenshot of Practice screen
-  const shot1 = path.join(process.cwd(), 'web', 'screenshot_practice.png');
+  const shot1 = path.join(process.cwd(), 'output', 'playwright', 'screenshot_practice.png');
   await page.screenshot({ path: shot1, fullPage: false });
   console.log(`📸 Practice mode screenshot saved: ${shot1}`);
 
@@ -82,7 +84,7 @@ async function runE2ETests() {
   await page.locator('#btn-tab-download').click();
   await page.waitForSelector('#tab-download.active');
   const dlCardsCount = await page.locator('.download-card').count();
-  if (dlCardsCount !== 2) throw new Error('Expected 2 download cards');
+  if (dlCardsCount !== 10) throw new Error('Expected 10 download cards');
   console.log('✅ Test 6 Passed: Download Hub tab verified.');
 
   // Test 7: Test Exam Simulator Tab & 60m Timer
@@ -118,7 +120,7 @@ async function runE2ETests() {
   console.log(`Exam result score: ${scoreVal} / 10`);
 
   // Take screenshot of Exam Result
-  const shot2 = path.join(process.cwd(), 'web', 'screenshot_exam_result.png');
+  const shot2 = path.join(process.cwd(), 'output', 'playwright', 'screenshot_exam_result.png');
   await page.screenshot({ path: shot2, fullPage: false });
   console.log(`📸 Exam result screenshot saved: ${shot2}`);
 

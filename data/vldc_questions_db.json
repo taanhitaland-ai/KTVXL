@@ -7,10 +7,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Để đo bề dày của bản mỏng trong suốt, người ta đặt bản mỏng trước một trong hai khe giao thoa Young. Ánh sáng chiếu vào hệ thống có bước sóng $\\lambda = 0{,}6\\,\\mu\\text{m}$. Chiết suất của bản mỏng $n = 1{,}5$. Người ta quan sát thấy vân sáng chính giữa bị lệch về vị trí vân sáng thứ 5 (ứng với lúc chưa có bản mỏng). Xác định bề dày $e$ của bản mỏng:",
     "options": [
-      "A. e = 6 μm",
-      "B. e = 5 μm",
-      "C. e = 8 μm",
-      "D. e = 4 μm"
+      "A. $e = 6\\,\\mu\\mathrm{m}$",
+      "B. $e = 5\\,\\mu\\mathrm{m}$",
+      "C. $e = 8\\,\\mu\\mathrm{m}$",
+      "D. $e = 4\\,\\mu\\mathrm{m}$"
     ],
     "answer": "A",
     "explanation": "Khi đặt bản mỏng bề dày $e$, chiết suất $n$ trước một khe, quang trình của tia sáng đi qua khe đó tăng thêm $\\Delta L = (n - 1)e$. Độ dịch chuyển của hệ vân trên màn là: $x_0 = \\frac{(n - 1)e D}{a}$. Theo đề bài, vân trung tâm dịch về vị trí vân sáng bậc 5 lúc đầu: $x_0 = 5 i = 5 \\frac{\\lambda D}{a} \\Rightarrow (n - 1)e = 5\\lambda$. Thay số: $(1{,}5 - 1)e = 5 \\times 0{,}6\\,\\mu\\text{m} \\Leftrightarrow 0{,}5 e = 3\\,\\mu\\text{m} \\Rightarrow e = 6\\,\\mu\\text{m}$.",
@@ -29,10 +29,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Trong hiện tượng nhiễu xạ Fraunhofer qua một khe hẹp bề rộng $b = 10\\,\\text{mm}$, biết rằng chùm tia sáng đập vào khe với góc tới $\\alpha = 30^\\circ$ và bước sóng ánh sáng $\\lambda = 0{,}5\\,\\text{mm}$. Góc nhiễu xạ ứng với các cực tiểu nhiễu xạ đầu tiên nằm ở hai bên cực đại giữa là:",
     "options": [
-      "A. 33° và 27°",
-      "B. 33° và 35°",
-      "C. 22° và 27°",
-      "D. 33° và 38°"
+      "A. $33^\\circ$ và $27^\\circ$",
+      "B. $33^\\circ$ và $35^\\circ$",
+      "C. $22^\\circ$ và $27^\\circ$",
+      "D. $33^\\circ$ và $38^\\circ$"
     ],
     "answer": "A",
     "explanation": "Khi chùm tia chiếu xiên góc $\\alpha$ tới khe hẹp, điều kiện cực tiểu nhiễu xạ bậc $k = \\pm 1$ là: $\\sin\\alpha - \\sin\\theta = \\pm \\frac{k\\lambda}{b} = \\pm \\frac{0{,}5}{10} = \\pm 0{,}05$. Do đó $\\sin\\theta = \\sin 30^\\circ \\mp 0{,}05 = 0{,}5 \\mp 0{,}05$. Ta có hai nghiệm: $\\sin\\theta_1 = 0{,}55 \\Rightarrow \\theta_1 = \\arcsin(0{,}55) \\approx 33{,}37^\\circ \\approx 33^\\circ$ và $\\sin\\theta_2 = 0{,}45 \\Rightarrow \\theta_2 = \\arcsin(0{,}45) \\approx 26{,}74^\\circ \\approx 27^\\circ$.",
@@ -51,10 +51,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Chiếu một chùm tia sáng trắng song song vuông góc với một cách tử nhiễu xạ. Dưới một góc nhiễu xạ $35^\\circ$, người ta quan sát thấy hai vạch cực đại ứng với các bước sóng $0{,}63\\,\\mu\\text{m}$ và $0{,}42\\,\\mu\\text{m}$ trùng nhau. Xác định chu kỳ của cách tử biết rằng bậc cực đại đối với vạch thứ hai trong quang phổ của cách tử không lớn hơn 5:",
     "options": [
-      "A. 2,2 μm",
-      "B. 2,0 μm",
-      "C. 2,5 μm",
-      "D. 2,6 μm"
+      "A. $2{,}2\\,\\mu\\mathrm{m}$",
+      "B. $2{,}0\\,\\mu\\mathrm{m}$",
+      "C. $2{,}5\\,\\mu\\mathrm{m}$",
+      "D. $2{,}6\\,\\mu\\mathrm{m}$"
     ],
     "answer": "A",
     "explanation": "Điều kiện cực đại chính của cách tử: $d\\sin\\varphi = k\\lambda$. Vì hai vạch trùng nhau tại góc $\\varphi = 35^\\circ$ nên: $k_1 \\lambda_1 = k_2 \\lambda_2 \\Leftrightarrow k_1 \\times 0{,}63 = k_2 \\times 0{,}42 \\Leftrightarrow \\frac{k_1}{k_2} = \\frac{0{,}42}{0{,}63} = \\frac{2}{3}$. Do bậc cực đại của vạch thứ hai $k_2 \\le 5$ nên cặp bậc nguyên dương thỏa mãn là $k_2 = 3$ và $k_1 = 2$. Chu kỳ cách tử: $d = \\frac{k_1 \\lambda_1}{\\sin\\varphi} = \\frac{2 \\times 0{,}63\\,\\mu\\text{m}}{\\sin 35^\\circ} = \\frac{1{,}26}{0{,}57358} \\approx 2{,}197\\,\\mu\\text{m} \\approx 2{,}2\\,\\mu\\text{m}$.",
@@ -73,10 +73,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Chiếu lần lượt các bức xạ có bước sóng $\\lambda_1$ và $\\lambda_2$ vào catot của một tế bào quang điện, sau đó dùng các hiệu điện thế hãm có độ lớn $U_1$ và $U_2$ để triệt tiêu các dòng quang điện. Coi như đã biết hằng số Planck $h$ và vận tốc ánh sáng $c$. Điện tích electron có thể được tính từ biểu thức nào trong các biểu thức sau:",
     "options": [
-      "A. e = hc(1/λ2 + 1/λ1) / (U2 - U1)",
-      "B. e = hc(1/λ1 - 1/λ2) / (U1 - U2)",
-      "C. e = hc(1/λ1 - 1/λ2) / (U2 + U1)",
-      "D. e = hc(1/λ2 - 1/λ1) / (U2 - U1)"
+      "A. $e = \\frac{hc(1/\\lambda_2 + 1/\\lambda_1)}{U_2-U_1}$",
+      "B. $e = \\frac{hc(1/\\lambda_1 - 1/\\lambda_2)}{U_1-U_2}$",
+      "C. $e = \\frac{hc(1/\\lambda_1 - 1/\\lambda_2)}{U_2+U_1}$",
+      "D. $e = \\frac{hc(1/\\lambda_2 - 1/\\lambda_1)}{U_2-U_1}$"
     ],
     "answer": "D",
     "explanation": "Phương trình Einstein cho hiện tượng quang điện: $e U_1 = \\frac{hc}{\\lambda_1} - A$ và $e U_2 = \\frac{hc}{\\lambda_2} - A$. Lấy phương trình thứ hai trừ phương trình thứ nhất: $e(U_2 - U_1) = hc\\left(\\frac{1}{\\lambda_2} - \\frac{1}{\\lambda_1}\\right) \\Rightarrow e = \\frac{hc\\left(\\frac{1}{\\lambda_2} - \\frac{1}{\\lambda_1}\\right)}{U_2 - U_1}$.",
@@ -95,10 +95,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Số lượng tử chính $n$ có thể nhận các giá trị nào sau đây:",
     "options": [
-      "A. n = 1, 2, 3, 4, ..., n - 1",
-      "B. n = 1, 2, 3, 4, ... (các số nguyên dương)",
-      "C. n = 0, 1, 2, 3, 4, ...",
-      "D. n = 0, ±1, ±2, ±3, ..."
+      "A. $n = 1,2,3,4,\\ldots,n-1$",
+      "B. $n = 1,2,3,4,\\ldots$ (các số nguyên dương)",
+      "C. $n = 0,1,2,3,4,\\ldots$",
+      "D. $n = 0,\\pm1,\\pm2,\\pm3,\\ldots$"
     ],
     "answer": "B",
     "explanation": "Số lượng tử chính $n$ xác định mức năng lượng của electron trong nguyên tử và kích thước của đám mây electron. $n$ nhận các giá trị nguyên dương bắt đầu từ 1: $n = 1, 2, 3, 4, \\dots$ tương ứng với các lớp vỏ $K, L, M, N, \\dots$",
@@ -117,10 +117,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Mômen động lượng của electron khi ở trạng thái 2s có giá trị là:",
     "options": [
-      "A. 0",
-      "B. √6 ℏ",
-      "C. √12 ℏ",
-      "D. √2 ℏ"
+      "A. $0$",
+      "B. $\\sqrt{6}\\,\\hbar$",
+      "C. $\\sqrt{12}\\,\\hbar$",
+      "D. $\\sqrt{2}\\,\\hbar$"
     ],
     "answer": "A",
     "explanation": "Độ lớn mômen động lượng quỹ đạo của electron được xác định bởi số lượng tử orbital $l$: $L = \\sqrt{l(l+1)}\\hbar$. Trạng thái 2s tương ứng với phân lớp s, do đó $l = 0$. Thay vào ta được: $L = \\sqrt{0(0+1)}\\hbar = 0$.",
@@ -139,10 +139,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Phương trình Schrödinger đối với vi hạt chuyển động tự do (thế năng $U(\\vec{r}) = 0$) có dạng:",
     "options": [
-      "A. ΔΨ(r⃗) + (2m / ℏ²) W Ψ(r⃗) = 0",
-      "B. ΔΨ(r⃗) + (2m / ℏ) [W - U(r⃗)] Ψ(r⃗) = 0",
-      "C. ΔΨ(r⃗) + (2m / ℏ) [W + U(r⃗)] Ψ(r⃗) = 0",
-      "D. ΔΨ(r⃗) - (2m / ℏ) W Ψ(r⃗) = 0"
+      "A. $\\Delta\\Psi(\\vec r)+\\frac{2m}{\\hbar^2}W\\Psi(\\vec r)=0$",
+      "B. $\\Delta\\Psi(\\vec r)+\\frac{2m}{\\hbar}[W-U(\\vec r)]\\Psi(\\vec r)=0$",
+      "C. $\\Delta\\Psi(\\vec r)+\\frac{2m}{\\hbar}[W+U(\\vec r)]\\Psi(\\vec r)=0$",
+      "D. $\\Delta\\Psi(\\vec r)-\\frac{2m}{\\hbar}W\\Psi(\\vec r)=0$"
     ],
     "answer": "A",
     "explanation": "Phương trình Schrödinger dừng tổng quát là: $\\Delta\\Psi(\\vec{r}) + \\frac{2m}{\\hbar^2}[W - U(\\vec{r})]\\Psi(\\vec{r}) = 0$. Đối với vi hạt tự do, không chịu tác dụng của trường lực ngoài nên thế năng $U(\\vec{r}) = 0$. Khi đó phương trình trở thành: $\\Delta\\Psi(\\vec{r}) + \\frac{2m}{\\hbar^2} W \\Psi(\\vec{r}) = 0$.",
@@ -161,10 +161,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Quy tắc lựa chọn đối với số lượng tử toàn phần $j$ trong chuyển mức năng lượng bức xạ là:",
     "options": [
-      "A. Δj = 0, ±1 (trừ bước chuyển 0 → 0)",
-      "B. Δj = ±1",
-      "C. Δj = ±n",
-      "D. Δj = 0"
+      "A. $\\Delta j=0,\\pm1$ (trừ bước chuyển $0\\to0$)",
+      "B. $\\Delta j=\\pm1$",
+      "C. $\\Delta j=\\pm n$",
+      "D. $\\Delta j=0$"
     ],
     "answer": "A",
     "explanation": "Theo quy tắc lựa chọn lưỡng cực điện trong cơ học lượng tử, đối với số lượng tử mômen toàn phần $j$, các bước chuyển cho phép phải thỏa mãn $\\Delta j = 0, \\pm 1$ (với điều kiện bổ sung là bước chuyển từ $j = 0 \\to j = 0$ bị cấm).",
@@ -183,10 +183,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Biết các bước sóng trong vùng ánh sáng nhìn thấy của quang phổ vạch hydro gồm vạch đỏ $\\lambda_{32} = 0{,}6563\\,\\mu\\text{m}$, vạch lam $\\lambda_{42} = 0{,}4861\\,\\mu\\text{m}$, vạch chàm $\\lambda_{52} = 0{,}4340\\,\\mu\\text{m}$ và vạch tím $\\lambda_{62} = 0{,}4102\\,\\mu\\text{m}$. Tìm bước sóng khi electron chuyển từ quỹ đạo $n=6$ về $n=3$:",
     "options": [
-      "A. 1,8744 μm",
-      "B. 1,8121 μm",
-      "C. 1,0939 μm",
-      "D. 1,2812 μm"
+      "A. $1{,}8744\\,\\mu\\mathrm{m}$",
+      "B. $1{,}8121\\,\\mu\\mathrm{m}$",
+      "C. $1{,}0939\\,\\mu\\mathrm{m}$",
+      "D. $1{,}2812\\,\\mu\\mathrm{m}$"
     ],
     "answer": "C",
     "explanation": "Theo tiên đề Bohr về hiệu mức năng lượng: $\\Delta E_{63} = E_6 - E_3 = (E_6 - E_2) - (E_3 - E_2) = \\frac{hc}{\\lambda_{62}} - \\frac{hc}{\\lambda_{32}}$. Suy ra: $\\frac{1}{\\lambda_{63}} = \\frac{1}{\\lambda_{62}} - \\frac{1}{\\lambda_{32}}$. Thay số: $\\frac{1}{\\lambda_{63}} = \\frac{1}{0{,}4102} - \\frac{1}{0{,}6563} \\approx 2{,}4378 - 1{,}5237 = 0{,}9141\\,\\mu\\text{m}^{-1} \\Rightarrow \\lambda_{63} = \\frac{1}{0{,}9141} \\approx 1{,}0939\\,\\mu\\text{m}$.",
@@ -205,10 +205,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Một vi hạt tự do có năng lượng xác định, động lượng xác định tương ứng với một sóng phẳng đơn sắc xác định. Phát biểu nào sau đây là SAI?",
     "options": [
-      "A. Động lượng của vi hạt liên hệ với bước sóng theo hệ thức p = h / λ",
-      "B. Động lượng của vi hạt liên hệ với vector sóng theo hệ thức p⃗ = h k⃗",
-      "C. Năng lượng của vi hạt liên hệ với tần số dao động theo hệ thức E = hν",
-      "D. Năng lượng của vi hạt liên hệ với tần số góc theo hệ thức E = ℏω"
+      "A. Động lượng của vi hạt liên hệ với bước sóng theo hệ thức $p=\\frac h\\lambda$",
+      "B. Động lượng của vi hạt liên hệ với vector sóng theo hệ thức $\\vec p=h\\vec k$",
+      "C. Năng lượng của vi hạt liên hệ với tần số dao động theo hệ thức $E=h\\nu$",
+      "D. Năng lượng của vi hạt liên hệ với tần số góc theo hệ thức $E=\\hbar\\omega$"
     ],
     "answer": "B",
     "explanation": "Vector sóng được định nghĩa là $\\vec{k} = \\frac{2\\pi}{\\lambda}\\vec{n}$. Do đó động lượng của vi hạt liên hệ với vector sóng là $\\vec{p} = \\hbar \\vec{k}$ (với $\\hbar = \\frac{h}{2\\pi}$), chứ không phải $h\\vec{k}$. Phát biểu B viết $\\vec{p} = h\\vec{k}$ là sai hằng số $2\\pi$.",
@@ -249,10 +249,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Trong một hiện tượng giao thoa gây bởi khe Young, khi toàn bộ hệ thống đặt trong không khí, người ta đo được khoảng cách của hai vân sáng liên tiếp $i = 1{,}5\\,\\text{mm}$. Nếu đặt toàn bộ hệ thống trong môi trường có chiết suất $n$ thì khoảng cách giữa hai vân sáng liên tiếp là $i' = 1{,}125\\,\\text{mm}$. Giá trị của $n$ là:",
     "options": [
-      "A. n = 2",
-      "B. n = 5/4",
-      "C. n = 4/3",
-      "D. n = 3/2"
+      "A. $n=2$",
+      "B. $n=\\frac54$",
+      "C. $n=\\frac43$",
+      "D. $n=\\frac32$"
     ],
     "answer": "C",
     "explanation": "Khi đặt trong môi trường có chiết suất $n$, bước sóng giảm $n$ lần: $\\lambda' = \\frac{\\lambda}{n}$. Khoảng vân trong môi trường: $i' = \\frac{\\lambda' D}{a} = \\frac{i}{n} \\Rightarrow n = \\frac{i}{i'} = \\frac{1{,}5}{1{,}125} = \\frac{4}{3}$.",
@@ -271,10 +271,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Một chùm tia sáng đơn sắc có bước sóng $\\lambda = 0{,}5\\,\\mu\\text{m}$ được rọi vuông góc với một nêm không khí, biết số vân giao thoa chứa trong $1\\,\\text{cm}$ là $N = 10$. Góc nghiêng $\\alpha$ của nêm là:",
     "options": [
-      "A. α = 2,5.10⁻⁴ rad",
-      "B. α = 1,5.10⁻⁴ rad",
-      "C. α = 2,25.10⁻⁴ rad",
-      "D. α = 1,15.10⁻⁴ rad"
+      "A. $\\alpha = 2{,}5\\times10^{-4}\\,\\mathrm{rad}$",
+      "B. $\\alpha = 1{,}5\\times10^{-4}\\,\\mathrm{rad}$",
+      "C. $\\alpha = 2{,}25\\times10^{-4}\\,\\mathrm{rad}$",
+      "D. $\\alpha = 1{,}15\\times10^{-4}\\,\\mathrm{rad}$"
     ],
     "answer": "C",
     "explanation": "Khoảng cách giữa $N = 10$ vân giao thoa liên tiếp ứng với $N - 1 = 9$ khoảng vân: $L = (N - 1)i = 1\\,\\text{cm} = 10^{-2}\\,\\text{m} \\Rightarrow i = \\frac{10^{-2}}{9}\\,\\text{m}$. Với nêm không khí góc nghiêng $\\alpha$, khoảng vân trên nêm là: $i = \\frac{\\lambda}{2\\alpha} \\Rightarrow \\alpha = \\frac{\\lambda}{2i} = \\frac{(N - 1)\\lambda}{2L} = \\frac{9 \\times 0{,}5 \\times 10^{-6}}{2 \\times 10^{-2}} = 2{,}25 \\times 10^{-4}\\,\\text{rad}$.",
@@ -293,10 +293,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Trong hiện tượng nhiễu xạ qua khe hẹp: Một chùm tia sáng đơn sắc song song bước sóng $\\lambda = 0{,}6\\,\\mu\\text{m}$ được rọi vuông góc với một khe chữ nhật hẹp bề rộng $b = 0{,}1\\,\\text{mm}$. Ngay sau khe có đặt một thấu kính, màn quan sát đặt tại tiêu diện thấu kính cách thấu kính $D = 1\\,\\text{m}$. Bề rộng của vân cực đại giữa là:",
     "options": [
-      "A. 1,3 cm",
-      "B. 1,6 cm",
-      "C. 1,2 cm",
-      "D. 1,4 cm"
+      "A. $1{,}3\\,\\mathrm{cm}$",
+      "B. $1{,}6\\,\\mathrm{cm}$",
+      "C. $1{,}2\\,\\mathrm{cm}$",
+      "D. $1{,}4\\,\\mathrm{cm}$"
     ],
     "answer": "C",
     "explanation": "Cực đại trung tâm của hình nhiễu xạ qua 1 khe hẹp nằm giữa hai cực tiểu đầu tiên $k = \\pm 1$ có góc $\\sin\\theta = \\pm \\frac{\\lambda}{b} \\approx \\pm \\theta$. Bề rộng góc của cực đại giữa là $\\Delta\\theta = \\frac{2\\lambda}{b}$. Bề rộng dài trên màn quan sát: $\\Delta x = D \\Delta\\theta = \\frac{2\\lambda D}{b} = \\frac{2 \\times 0{,}6 \\times 10^{-6} \\times 1}{0{,}1 \\times 10^{-3}} = 1{,}2 \\times 10^{-2}\\,\\text{m} = 1{,}2\\,\\text{cm}$.",
@@ -339,8 +339,8 @@
     "options": [
       "A. Bức xạ điện từ được cấu tạo bởi vô số các hạt gọi là lượng tử ánh sáng hay photon.",
       "B. Cường độ của chùm bức xạ tỷ lệ với tần số của chùm bức xạ đó.",
-      "C. Trong chân không các photon truyền đi với cùng vận tốc c = 3.10⁸ m/s.",
-      "D. Mỗi photon có một năng lượng xác định ε = hν."
+      "C. Trong chân không các photon truyền đi với cùng vận tốc $c=3\\times10^8\\,\\mathrm{m/s}$.",
+      "D. Mỗi photon có một năng lượng xác định $\\varepsilon=h\\nu$."
     ],
     "answer": "B",
     "explanation": "Cường độ của chùm sáng $I$ là năng lượng gửi qua một đơn vị diện tích trong một đơn vị thời gian: $I = N \\times \\varepsilon = N h\\nu$ (với $N$ là mật độ thông lượng hạt photon). Cường độ bức xạ tỷ lệ với số lượng hạt photon chiếu tới chứ không phải tỷ lệ thuận với tần số.",
@@ -357,15 +357,15 @@
     "chapter_id": 1,
     "type": "mcq",
     "source": "NOTION_DE_CUOI",
-    "prompt": "Một mạch dao động điện từ có điện dung  = \frac{0{,}25}{\\pi^2}\\,\\mu\text{F}$, hệ số tự cảm  = 0{,}1\\,\text{H}$ và điện trở thuần  = 0$. Ban đầu hai bản của tụ điện có điện tích cực đại  = 2{,}5 \times 10^{-6}\\,\text{C}$. Lấy $\\pi^2 = 10$. Phương trình dao động điện từ của mạch đối với điện tích $ theo thời gian là:",
+    "prompt": "Một mạch dao động điện từ có điện dung $C = 0{,}25\\,\\mu\\text{F}$, hệ số tự cảm $L = 0{,}1\\,\\text{H}$ và điện trở thuần $R = 0$. Ban đầu hai bản của tụ điện có điện tích cực đại $Q_0 = 2{,}5 \\times 10^{-6}\\,\\text{C}$. Lấy $\\pi^2 = 10$. Phương trình dao động điện từ của mạch đối với điện tích $q$ theo thời gian là:",
     "options": [
-      "A. q = 2,5.10⁻⁶ sin(2000πt - π/2) (C)",
-      "B. q = 2,5.10⁻⁶ cos(2000πt + π) (C)",
-      "C. q = 2,5.10⁻⁶ sin(2000πt) (C)",
-      "D. q = 2,5.10⁻⁶ cos(2000πt) (C)"
+      "A. $q=2{,}5\\times10^{-6}\\sin(2000\\pi t-\\pi/2)\\,\\mathrm C$",
+      "B. $q=2{,}5\\times10^{-6}\\cos(2000\\pi t+\\pi)\\,\\mathrm C$",
+      "C. $q=2{,}5\\times10^{-6}\\sin(2000\\pi t)\\,\\mathrm C$",
+      "D. $q=2{,}5\\times10^{-6}\\cos(2000\\pi t)\\,\\mathrm C$"
     ],
     "answer": "D",
-    "explanation": "Tần số góc dao động riêng của mạch:\n$\\omega = \frac{1}{\\sqrt{LC}} = \frac{1}{\\sqrt{0{,}1 \times \frac{0{,}25}{\\pi^2} \times 10^{-6}}} = \frac{\\pi}{\\sqrt{2{,}5 \times 10^{-8}}} = \frac{10^4 \\pi}{\\sqrt{25}} = 2000\\pi\\,\text{rad/s}$.\nTại thời điểm ban đầu  = 0$, tụ điện tích điện cực đại (0) = Q_0 > 0$, do đó pha ban đầu $\u000barphi = 0$.\nPhương trình dao động điện tích:\n = Q_0 \\cos(\\omega t + \u000barphi) = 2{,}5 \times 10^{-6} \\cos(2000\\pi t)\\,\text{C}$.\nChọn đáp án D.",
+    "explanation": "Tần số góc $\\omega=1/\\sqrt{LC}=1/\\sqrt{0{,}1\\times0{,}25\\times10^{-6}}=2000\\sqrt{10}\\,\\mathrm{rad/s}$. Với quy ước $\\pi^2=10$ của đề, $\\omega=2000\\pi\\,\\mathrm{rad/s}$. Ban đầu $q(0)=Q_0>0$ và tụ tích điện cực đại nên pha ban đầu bằng 0. Do đó $q=2{,}5\\times10^{-6}\\cos(2000\\pi t)\\,\\mathrm C$, chọn D.",
     "methodology": "Điều kiện đầu: tại $t = 0$, $q = Q_0$ thì pha ban đầu bằng 0, hàm chuẩn dạng $\\cos(\\omega t)$.",
     "tips": "Ban đầu đạt cực đại $\\to$ pha ban đầu bằng 0, chọn ngay hàm cos.",
     "num": 17,
@@ -381,10 +381,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Trong mạch dao động điện từ riêng LC, cường độ dòng điện dao động tuần hoàn theo thời gian với chu kỳ $T$. Năng lượng từ trường của cuộn cảm trong mạch biến thiên tuần hoàn theo thời gian với chu kỳ bằng:",
     "options": [
-      "A. T / 2",
-      "B. 2T",
-      "C. T",
-      "D. 3T / 2"
+      "A. $\\frac T2$",
+      "B. $2T$",
+      "C. $T$",
+      "D. $\\frac{3T}{2}$"
     ],
     "answer": "A",
     "explanation": "Dòng điện biến thiên điều hòa $i = I_0 \\cos(\\omega t + \\varphi)$ với chu kỳ $T = \\frac{2\\pi}{\\omega}$. Năng lượng từ trường của cuộn cảm là $W_t = \\frac{1}{2}Li^2 = \\frac{1}{2}LI_0^2 \\cos^2(\\omega t + \\varphi) = \\frac{1}{4}LI_0^2 [1 + \\cos(2\\omega t + 2\\varphi)]$. Do đó năng lượng từ trường biến thiên điều hòa với tần số góc $2\\omega$, tương ứng chu kỳ biến thiên là $T' = \\frac{T}{2}$.",
@@ -403,10 +403,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Biết rằng số Avogadro $N_A = 6{,}023 \\times 10^{23}\\,\\text{mol}^{-1}$. Tìm số nguyên tử có trong $1\\,\\text{g}$ hạt nhân nguyên tử $^{235}_{92}\\text{U}$:",
     "options": [
-      "A. 2,5630.10²⁰ nguyên tử",
-      "B. 3,5630.10²¹ nguyên tử",
-      "C. 2,5630.10²¹ nguyên tử",
-      "D. 3,5630.10²⁰ nguyên tử"
+      "A. $2{,}5630\\times10^{20}\\,\\text{nguyên tử}$",
+      "B. $3{,}5630\\times10^{21}\\,\\text{nguyên tử}$",
+      "C. $2{,}5630\\times10^{21}\\,\\text{nguyên tử}$",
+      "D. $3{,}5630\\times10^{20}\\,\\text{nguyên tử}$"
     ],
     "answer": "C",
     "explanation": "Số mol chất chứa trong $m = 1\\,\\text{g}$ là $n = \\frac{m}{M} = \\frac{1}{235}\\,\\text{mol}$. Số nguyên tử là: $N = n N_A = \\frac{m}{M} N_A = \\frac{1}{235} \\times 6{,}023 \\times 10^{23} \\approx 2{,}5630 \\times 10^{21}$ nguyên tử.",
@@ -425,10 +425,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Hạt electron không vận tốc ban đầu được gia tốc qua một hiệu điện thế $U$. Biết rằng sau khi gia tốc, hạt electron chuyển động ứng với bước sóng De Broglie $\\lambda = 3\\,\\text{Å} = 0{,}3\\,\\text{nm}$. Hiệu điện thế gia tốc $U$ nhận giá trị nào sau đây:",
     "options": [
-      "A. 16,7 V",
-      "B. 0,167 V",
-      "C. 1,67 V",
-      "D. 167 V"
+      "A. $16{,}7\\,\\mathrm{V}$",
+      "B. $0{,}167\\,\\mathrm{V}$",
+      "C. $1{,}67\\,\\mathrm{V}$",
+      "D. $167\\,\\mathrm{V}$"
     ],
     "answer": "A",
     "explanation": "Động năng của electron sau gia tốc: $W_d = eU = \\frac{p^2}{2m} \\Rightarrow p = \\sqrt{2meU}$. Bước sóng De Broglie: $\\lambda = \\frac{h}{p} = \\frac{h}{\\sqrt{2meU}} \\Rightarrow U = \\frac{h^2}{2me\\lambda^2}$. Thay số: $U = \\frac{(6{,}626 \\times 10^{-34})^2}{2 \\times 9{,}1 \\times 10^{-31} \\times 1{,}6 \\times 10^{-19} \\times (3 \\times 10^{-10})^2} = \\frac{4{,}390 \\times 10^{-67}}{2{,}621 \\times 10^{-68}} \\approx 16{,}75\\,\\text{V} \\approx 16{,}7\\,\\text{V}$.",
@@ -447,10 +447,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Trong thí nghiệm giao thoa lưỡng lăng kính Fresnel (góc chiết quang $A$ rất nhỏ, chiết suất $n$, nguồn sáng cách lăng kính $d$, màn quan sát cách lăng kính $D$), khoảng vân quan sát trên màn được tính theo công thức:",
     "options": [
-      "A. i = λD / [2d(n - 1)A]",
-      "B. i = 2d(n - 1)A / (λD)",
-      "C. i = λd / [2D(n - 1)A]",
-      "D. i = 2D(n - 1)A / (λd)"
+      "A. $i=\\frac{\\lambda D}{2d(n-1)A}$",
+      "B. $i=\\frac{2d(n-1)A}{\\lambda D}$",
+      "C. $i=\\frac{\\lambda d}{2D(n-1)A}$",
+      "D. $i=\\frac{2D(n-1)A}{\\lambda d}$"
     ],
     "answer": "A",
     "explanation": "Lưỡng lăng kính Fresnel tạo ra hai ảnh ảo $S_1, S_2$ của nguồn điểm $S$. Góc lệch qua mỗi lăng kính nhỏ là $D_0 = (n - 1)A$. Khoảng cách giữa hai ảnh ảo là $a = 2d D_0 = 2d(n - 1)A$. Khoảng cách từ mặt phẳng chứa 2 nguồn ảo đến màn là $D' \\approx D + d \\approx D$. Khoảng vân giao thoa: $i = \\frac{\\lambda D}{a} = \\frac{\\lambda D}{2d(n - 1)A}$.",
@@ -469,10 +469,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Cho biết khối lượng của electron là $m = 9{,}1 \\times 10^{-31}\\,\\text{kg}$. Bước sóng De Broglie của electron chuyển động với vận tốc $v_1 = 2 \\times 10^6\\,\\text{m/s}$ và $v_2 = 10^8\\,\\text{m/s}$ lần lượt nhận các giá trị xấp xỉ nào sau đây:",
     "options": [
-      "A. 6,86.10⁻¹² m và 364.10⁻¹² m",
-      "B. 686.10⁻¹² m và 3,64.10⁻¹² m",
-      "C. 3,64.10⁻¹² m và 686.10⁻¹² m",
-      "D. 364.10⁻¹² m và 6,86.10⁻¹² m"
+      "A. $6{,}86\\times10^{-12}\\,\\mathrm{m}$ và $364\\times10^{-12}\\,\\mathrm{m}$",
+      "B. $686\\times10^{-12}\\,\\mathrm{m}$ và $3{,}64\\times10^{-12}\\,\\mathrm{m}$",
+      "C. $3{,}64\\times10^{-12}\\,\\mathrm{m}$ và $686\\times10^{-12}\\,\\mathrm{m}$",
+      "D. $364\\times10^{-12}\\,\\mathrm{m}$ và $6{,}86\\times10^{-12}\\,\\mathrm{m}$"
     ],
     "answer": "D",
     "explanation": "Với $v_1 = 2 \\times 10^6\\,\\text{m/s} \\ll c$: $\\lambda_1 = \\frac{h}{m v_1} = \\frac{6{,}626 \\times 10^{-34}}{9{,}1 \\times 10^{-31} \\times 2 \\times 10^6} \\approx 3{,}64 \\times 10^{-10}\\,\\text{m} = 364 \\times 10^{-12}\\,\\text{m}$. Với $v_2 = 10^8\\,\\text{m/s} = c/3$: tính theo thuyết tương đối $p = \\frac{m v}{\\sqrt{1 - v^2/c^2}} = \\frac{9{,}1 \\times 10^{-31} \\times 10^8}{\\sqrt{1 - 1/9}} \\approx 9{,}652 \\times 10^{-23}\\,\\text{kg}\\cdot\\text{m/s}$. Bước sóng tương đối tính: $\\lambda_2 = \\frac{h}{p} \\approx \\frac{6{,}626 \\times 10^{-34}}{9{,}652 \\times 10^{-23}} \\approx 6{,}86 \\times 10^{-12}\\,\\text{m}$.",
@@ -491,10 +491,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Photon có năng lượng ban đầu $E = 250\\,\\text{keV}$ bay đến va chạm với một electron đứng yên và tán xạ theo góc $\\theta = 120^\\circ$ (tán xạ Compton). Năng lượng của photon sau tán xạ là:",
     "options": [
-      "A. 9,1 MeV",
-      "B. 14,5 MeV",
-      "C. 0,91 MeV",
-      "D. 0,145 MeV"
+      "A. $9{,}1\\,\\mathrm{MeV}$",
+      "B. $14{,}5\\,\\mathrm{MeV}$",
+      "C. $0{,}91\\,\\mathrm{MeV}$",
+      "D. $0{,}145\\,\\mathrm{MeV}$"
     ],
     "answer": "D",
     "explanation": "Phương trình Compton cho năng lượng photon tán xạ: $\\frac{1}{E'} - \\frac{1}{E} = \\frac{1}{m_e c^2}(1 - \\cos\\theta)$. Với $m_e c^2 \\approx 511\\,\\text{keV}$ và $\\theta = 120^\\circ \\Rightarrow 1 - \\cos 120^\\circ = 1 - (-0{,}5) = 1{,}5$. Ta có: $\\frac{1}{E'} = \\frac{1}{250} + \\frac{1{,}5}{511} = 0{,}004 + 0{,}002935 = 0{,}006935\\,\\text{keV}^{-1} \\Rightarrow E' = \\frac{1}{0{,}006935} \\approx 144{,}2\\,\\text{keV} \\approx 0{,}145\\,\\text{MeV}$.",
@@ -513,10 +513,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Một mạch dao động cuộn cảm có $L = 5 \\times 10^{-5}\\,\\text{H}$, một tụ điện có điện dung $C = 2\\,\\mu\\text{F}$, hiệu điện thế cực đại trên hai bản tụ điện là $U_0 = 110\\,\\text{V}$. Điện trở của mạch không đáng kể. Xác định giá trị cực đại của từ thông gửi qua mỗi vòng dây khi số vòng dây của cuộn cảm là $N = 20$:",
     "options": [
-      "A. 2,5.10⁻⁵ Wb",
-      "B. 3,5.10⁻⁵ Wb",
-      "C. 4,5.10⁻⁵ Wb",
-      "D. 5,5.10⁻⁵ Wb"
+      "A. $2{,}5\\times10^{-5}\\,\\mathrm{Wb}$",
+      "B. $3{,}5\\times10^{-5}\\,\\mathrm{Wb}$",
+      "C. $4{,}5\\times10^{-5}\\,\\mathrm{Wb}$",
+      "D. $5{,}5\\times10^{-5}\\,\\mathrm{Wb}$"
     ],
     "answer": "D",
     "explanation": "Bảo toàn năng lượng điện từ trong mạch LC: $\\frac{1}{2} C U_0^2 = \\frac{1}{2} L I_0^2 \\Rightarrow I_0 = U_0 \\sqrt{\\frac{C}{L}} = 110 \\sqrt{\\frac{2 \\times 10^{-6}}{5 \\times 10^{-5}}} = 110 \\sqrt{0{,}04} = 110 \\times 0{,}2 = 22\\,\\text{A}$. Từ thông toàn phần qua ống dây là $\\Phi_{\\text{tp}} = L I_0$. Từ thông gửi qua mỗi vòng dây là: $\\Phi_{\\max} = \\frac{L I_0}{N} = \\frac{5 \\times 10^{-5} \\times 22}{20} = 5{,}5 \\times 10^{-5}\\,\\text{Wb}$. (Lưu ý: Đề thi gốc in $20\\,\\mu\\text{F}$ là lỗi in ấn điển hình của tài liệu giáo trình, thông số chuẩn của bài tập này là $C = 2\\,\\mu\\text{F}$ cho nghiệm chẵn).",
@@ -535,10 +535,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Trong dao động điện từ tắt dần (mạch RLC nối tiếp), biên độ điện tích của tụ điện giảm theo hàm số mũ nào của thời gian:",
     "options": [
-      "A. e^(-βt)",
-      "B. e^(-βt / 2)",
-      "C. e^(-2βt)",
-      "D. e^(βt)"
+      "A. $e^{-\\beta t}$",
+      "B. $e^{-\\beta t/2}$",
+      "C. $e^{-2\\beta t}$",
+      "D. $e^{\\beta t}$"
     ],
     "answer": "A",
     "explanation": "Phương trình dao động điện từ tắt dần có dạng: $q(t) = Q_0 e^{-\\beta t} \\cos(\\omega t + \\varphi)$, trong đó $\\beta = \\frac{R}{2L}$ là hệ số tắt dần. Biên độ điện tích giảm theo hàm số mũ $A(t) = Q_0 e^{-\\beta t}$. Do đó số mũ lũy thừa là $-\\beta t$.",
@@ -557,8 +557,8 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Trong thí nghiệm giao thoa khe Young thực hiện trong chân không, người ta đặt sau khe $S_2$ một bản mặt song song có chiết suất $n > 1$. Khi đó vân sáng chính giữa sẽ:",
     "options": [
-      "A. Dịch chuyển về phía S2",
-      "B. Dịch chuyển về phía S1",
+      "A. Dịch chuyển về phía $S_2$",
+      "B. Dịch chuyển về phía $S_1$",
       "C. Không đủ dữ kiện kết luận vì chưa biết bước sóng",
       "D. Không dịch chuyển"
     ],
@@ -579,10 +579,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Chiếu một chùm ánh sáng có bước sóng $\\lambda = 0{,}489\\,\\mu\\text{m}$ lên một tấm kim loại Kali dùng làm catot của tế bào quang điện. Biết công thoát electron của Kali là $A = 2{,}15\\,\\text{eV}$. Vận tốc ban đầu cực đại $v_{0\\max}$ của quang electron và hiệu điện thế hãm $U_h$ có giá trị lần lượt là:",
     "options": [
-      "A. 37.10⁵ m/s và 3,9 V",
-      "B. 37.10⁵ m/s và 0,39 V",
-      "C. 3,7.10⁵ m/s và 0,39 V",
-      "D. 3,7.10⁵ m/s và 3,9 V"
+      "A. $37\\times10^{5}\\,\\mathrm{m/s}$ và $3{,}9\\,\\mathrm{V}$",
+      "B. $37\\times10^{5}\\,\\mathrm{m/s}$ và $0{,}39\\,\\mathrm{V}$",
+      "C. $3{,}7\\times10^{5}\\,\\mathrm{m/s}$ và $0{,}39\\,\\mathrm{V}$",
+      "D. $3{,}7\\times10^{5}\\,\\mathrm{m/s}$ và $3{,}9\\,\\mathrm{V}$"
     ],
     "answer": "C",
     "explanation": "Năng lượng photon chiếu tới: $\\varepsilon = \\frac{hc}{\\lambda} = \\frac{6{,}626 \\times 10^{-34} \\times 3 \\times 10^8}{0{,}489 \\times 10^{-6} \\times 1{,}6 \\times 10^{-19}} \\approx 2{,}538\\,\\text{eV}$. Động năng ban đầu cực đại: $W_{d\\max} = \\varepsilon - A = 2{,}538 - 2{,}15 = 0{,}388\\,\\text{eV} \\approx 0{,}39\\,\\text{eV}$. Hiệu điện thế hãm: $e U_h = W_{d\\max} \\Rightarrow U_h \\approx 0{,}39\\,\\text{V}$. Vận tốc cực đại: $v_{0\\max} = \\sqrt{\\frac{2 W_{d\\max}}{m_e}} = \\sqrt{\\frac{2 \\times 0{,}388 \\times 1{,}6 \\times 10^{-19}}{9{,}1 \\times 10^{-31}}} \\approx 3{,}69 \\times 10^5\\,\\text{m/s} \\approx 3{,}7 \\times 10^5\\,\\text{m/s}$.",
@@ -601,10 +601,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Trong một thí nghiệm giao thoa ánh sáng, người ta đo được khoảng cách từ vân sáng thứ 4 đến vân sáng thứ 10 ở cùng một phía đối với vân sáng trung tâm là $2{,}4\\,\\text{mm}$. Khoảng vân $i$ là:",
     "options": [
-      "A. i = 0,6 mm",
-      "B. i = 4 mm",
-      "C. i = 6 mm",
-      "D. i = 0,4 mm"
+      "A. $i = 0{,}6\\,\\mathrm{mm}$",
+      "B. $i = 4\\,\\mathrm{mm}$",
+      "C. $i = 6\\,\\mathrm{mm}$",
+      "D. $i = 0{,}4\\,\\mathrm{mm}$"
     ],
     "answer": "D",
     "explanation": "Vị trí của vân sáng thứ 4 là $x_4 = 4i$, vân sáng thứ 10 là $x_{10} = 10i$. Khoảng cách giữa hai vân sáng cùng phía là: $\\Delta x = x_{10} - x_4 = (10 - 4)i = 6i = 2{,}4\\,\\text{mm} \\Rightarrow i = \\frac{2{,}4}{6} = 0{,}4\\,\\text{mm}$.",
@@ -624,9 +624,9 @@
     "prompt": "Theo thuyết lượng tử năng lượng Planck, phát biểu nào dưới đây là SAI?",
     "options": [
       "A. Các nguyên tử, phân tử phát xạ hay hấp thụ năng lượng bức xạ điện từ một cách gián đoạn.",
-      "B. Theo công thức Planck, hàm phổ f(ν, T) = ∞ khi ν → ∞.",
+      "B. Theo công thức Planck, hàm phổ $f(\\nu,T)=\\infty$ khi $\\nu\\to\\infty$.",
       "C. Phần năng lượng phát xạ hay hấp thụ luôn là bội số nguyên của một lượng năng lượng nhỏ xác định gọi là lượng tử năng lượng.",
-      "D. Đối với mỗi bức xạ điện từ đơn sắc nhất định, lượng tử năng lượng có giá trị xác định ε = hν."
+      "D. Đối với mỗi bức xạ điện từ đơn sắc nhất định, lượng tử năng lượng có giá trị xác định $\\varepsilon=h\\nu$."
     ],
     "answer": "B",
     "explanation": "Theo công thức Planck, hàm mật độ năng lượng bức xạ đơn sắc $f(\\nu, T) = \\frac{2\\pi h \\nu^3}{c^2} \\frac{1}{e^{h\\nu / kT} - 1}$. Khi tần số $\\nu \\to \\infty$, mẫu số tăng theo hàm số mũ nhanh hơn rất nhiều so với tử số $\\nu^3$, do đó $f(\\nu, T) \\to 0$. Điều này đã giải quyết triệt để 'tai họa tử ngoại' của vật lý cổ điển (công thức Rayleigh-Jeans vốn dự đoán sai lệch $f \\to \\infty$). Do đó phát biểu B là sai.",
@@ -645,10 +645,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Thấu kính trong hệ thống vân tròn Newton có bán kính cong $R = 18\\,\\text{m}$. Chùm sáng đơn sắc tới vuông góc với hệ thống, quan sát các vân giao thoa phản xạ. Biết rằng khoảng cách giữa bán kính vân tối thứ 4 và vân tối thứ 25 bằng $9\\,\\text{mm}$. Bước sóng của ánh sáng tới là:",
     "options": [
-      "A. 0,6 μm",
-      "B. 0,55 μm",
-      "C. 0,4 μm",
-      "D. 0,5 μm"
+      "A. $0{,}6\\,\\mu\\mathrm{m}$",
+      "B. $0{,}55\\,\\mu\\mathrm{m}$",
+      "C. $0{,}4\\,\\mu\\mathrm{m}$",
+      "D. $0{,}5\\,\\mu\\mathrm{m}$"
     ],
     "answer": "D",
     "explanation": "Bán kính vân tối giao thoa phản xạ trong hệ vân tròn Newton: $r_k = \\sqrt{k \\lambda R}$. Theo đề bài: $r_{25} - r_4 = 9\\,\\text{mm} = 9 \\times 10^{-3}\\,\\text{m} \\Leftrightarrow \\sqrt{25\\lambda R} - \\sqrt{4\\lambda R} = (5 - 2)\\sqrt{\\lambda R} = 3\\sqrt{\\lambda R} = 9 \\times 10^{-3}\\,\\text{m}$. Suy ra: $\\sqrt{\\lambda R} = 3 \\times 10^{-3}\\,\\text{m} \\Rightarrow \\lambda R = 9 \\times 10^{-6}\\,\\text{m}^2 \\Rightarrow \\lambda = \\frac{9 \\times 10^{-6}}{18} = 0{,}5 \\times 10^{-6}\\,\\text{m} = 0{,}5\\,\\mu\\text{m}$.",
@@ -667,10 +667,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Một nguồn sáng điểm chiếu ánh sáng đơn sắc bước sóng $\\lambda = 0{,}5\\,\\mu\\text{m}$ vào một lỗ tròn bán kính $r = 1{,}00\\,\\text{mm}$. Khoảng cách từ nguồn sáng tới lỗ tròn $R = 1\\,\\text{m}$. Khoảng cách $b$ từ lỗ tròn tới điểm quan sát để lỗ tròn chứa đúng ba đới cầu Fresnel là:",
     "options": [
-      "A. b = 2 m",
-      "B. b = 1 m",
-      "C. b = 3 m",
-      "D. b = 4 m"
+      "A. $b = 2\\,\\mathrm{m}$",
+      "B. $b = 1\\,\\mathrm{m}$",
+      "C. $b = 3\\,\\mathrm{m}$",
+      "D. $b = 4\\,\\mathrm{m}$"
     ],
     "answer": "A",
     "explanation": "Bán kính của đới cầu Fresnel thứ $k$ đối với sóng cầu: $r_k = \\sqrt{\\frac{k\\lambda R b}{R + b}}$. Khi lỗ tròn chứa đúng $k = 3$ đới Fresnel: $r^2 = \\frac{3\\lambda R b}{R + b}$. Thay số: $(10^{-3})^2 = 10^{-6} = \\frac{3 \\times 0{,}5 \\times 10^{-6} \\times 1 \\times b}{1 + b} = \\frac{1{,}5 \\times 10^{-6} b}{1 + b}$. Rút gọn $10^{-6}$: $1 = \\frac{1{,}5 b}{1 + b} \\Leftrightarrow 1 + b = 1{,}5 b \\Leftrightarrow 0{,}5 b = 1 \\Rightarrow b = 2\\,\\text{m}$.",
@@ -689,10 +689,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Một hạt chuyển động theo phương $x$ trong giếng thế một chiều sâu vô hạn bề rộng $a$ ($U = 0$ khi $0 < x < a$ và $U = \\infty$ khi $x \\le 0, x \\ge a$). Vị trí mà xác suất tìm thấy hạt có năng lượng $E = \\frac{\\pi^2 \\hbar^2}{2ma^2}$ lớn nhất là:",
     "options": [
-      "A. x = a / 2",
-      "B. x = a",
-      "C. x = 0",
-      "D. x = a / 4 hoặc x = 3a / 4"
+      "A. $x=\\frac a2$",
+      "B. $x=a$",
+      "C. $x=0$",
+      "D. $x=\\frac a4$ hoặc $x=\\frac{3a}{4}$"
     ],
     "answer": "A",
     "explanation": "Năng lượng của hạt trong giếng thế 1 chiều là: $E_n = \\frac{n^2 \\pi^2 \\hbar^2}{2ma^2}$ với $n = 1, 2, 3, \\dots$ Với $E = \\frac{\\pi^2 \\hbar^2}{2ma^2}$ tương ứng mức cơ bản $n = 1$. Hàm sóng ở trạng thái cơ bản là: $\\Psi_1(x) = \\sqrt{\\frac{2}{a}} \\sin\\left(\\frac{\\pi x}{a}\\right)$. Mật độ xác suất tìm thấy hạt là $P(x) = |\\Psi_1(x)|^2 = \\frac{2}{a} \\sin^2\\left(\\frac{\\pi x}{a}\\right)$. $P(x)$ đạt cực đại khi $\\sin\\left(\\frac{\\pi x}{a}\\right) = 1 \\Leftrightarrow \\frac{\\pi x}{a} = \\frac{\\pi}{2} \\Rightarrow x = \\frac{a}{2}$.",
@@ -711,10 +711,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Trong một thí nghiệm Young về giao thoa ánh sáng, hai khe cách nhau $2\\,\\text{mm}$, màn quan sát cách hai khe $1\\,\\text{m}$. Khoảng vân đo được là $i = 0{,}2\\,\\text{mm}$. Vị trí vân sáng thứ ba cách vân sáng trung tâm là:",
     "options": [
-      "A. 0,55 mm",
-      "B. 0,60 mm",
-      "C. 0,40 mm",
-      "D. 0,50 mm"
+      "A. $0{,}55\\,\\mathrm{mm}$",
+      "B. $0{,}60\\,\\mathrm{mm}$",
+      "C. $0{,}40\\,\\mathrm{mm}$",
+      "D. $0{,}50\\,\\mathrm{mm}$"
     ],
     "answer": "B",
     "explanation": "Vị trí của vân sáng bậc $k$ trong giao thoa khe Young được xác định theo công thức: $x_s = k i$. Vị trí vân sáng thứ ba tương ứng $k = 3$: $x_3 = 3 i = 3 \\times 0{,}2\\,\\text{mm} = 0{,}60\\,\\text{mm}$.",
@@ -733,10 +733,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Khi kể đến spin, mức năng lượng 2P bị tách thành $2^2P_{1/2}$ và $2^2P_{3/2}$, mức năng lượng 3P bị tách thành $3^2P_{1/2}$ và $3^2P_{3/2}$. Số vạch tối đa có thể tạo thành theo quy tắc chọn lọc $\\Delta j = 0, \\pm 1$ khi electron chuyển mức năng lượng từ 3P về 2P là:",
     "options": [
-      "A. 4",
-      "B. 3",
-      "C. 0",
-      "D. 1"
+      "A. $4$",
+      "B. $3$",
+      "C. $0$",
+      "D. $1$"
     ],
     "answer": "A",
     "explanation": "Theo quy tắc chọn lọc đối với số lượng tử mômen toàn phần $j$: $\\Delta j = 0, \\pm 1$. Các bước chuyển có thể xảy ra giữa các phân mức: (1) từ $3^2P_{3/2}$ ($j=3/2$) xuống $2^2P_{3/2}$ ($j=3/2$) có $\\Delta j = 0$; (2) từ $3^2P_{3/2}$ ($j=3/2$) xuống $2^2P_{1/2}$ ($j=1/2$) có $\\Delta j = -1$; (3) từ $3^2P_{1/2}$ ($j=1/2$) xuống $2^2P_{3/2}$ ($j=3/2$) có $\\Delta j = +1$; (4) từ $3^2P_{1/2}$ ($j=1/2$) xuống $2^2P_{1/2}$ ($j=1/2$) có $\\Delta j = 0$. Cả 4 cặp chuyển mức đều thỏa mãn quy tắc $\\Delta j = 0, \\pm 1$, do đó số vạch tối đa có thể tạo thành là 4 vạch.",
@@ -755,10 +755,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Trong hiện tượng Compton, bước sóng ban đầu của photon là $\\lambda = 0{,}03\\,\\text{Å}$ và vận tốc của electron bắn ra là $v = 0{,}6c$. Độ tăng bước sóng $\\Delta\\lambda$ và góc tán xạ $\\theta$ của photon là:",
     "options": [
-      "A. 0,034 Å và 63°53'",
-      "B. 0,034 Å và 36°40'",
-      "C. 0,0134 Å và 36°40'",
-      "D. 0,0134 Å và 63°53'"
+      "A. $0{,}034\\,\\text{Å}$ và $63^\\circ53^{\\prime}$",
+      "B. $0{,}034\\,\\text{Å}$ và $36^\\circ40^{\\prime}$",
+      "C. $0{,}0134\\,\\text{Å}$ và $36^\\circ40^{\\prime}$",
+      "D. $0{,}0134\\,\\text{Å}$ và $63^\\circ53^{\\prime}$"
     ],
     "answer": "D",
     "explanation": "Động năng của electron tương đối tính sau va chạm: $T_e = m_e c^2\\left(\\frac{1}{\\sqrt{1 - v^2/c^2}} - 1\\right) = m_e c^2\\left(\\frac{1}{\\sqrt{1 - 0{,}36}} - 1\\right) = m_e c^2\\left(\\frac{1}{0{,}8} - 1\\right) = 0{,}25 m_e c^2 \\approx 0{,}25 \\times 511\\,\\text{keV} = 127{,}75\\,\\text{keV}$. Năng lượng ban đầu của photon: $E = \\frac{hc}{\\lambda} = \\frac{12{,}4\\,\\text{keV}\\cdot\\text{Å}}{0{,}03\\,\\text{Å}} \\approx 413{,}3\\,\\text{keV}$. Năng lượng photon sau tán xạ: $E' = E - T_e = 413{,}3 - 127{,}75 = 285{,}55\\,\\text{keV}$. Bước sóng tán xạ: $\\lambda' = \\frac{12{,}4}{285{,}55} \\approx 0{,}0434\\,\\text{Å} \\Rightarrow \\Delta\\lambda = \\lambda' - \\lambda = 0{,}0434 - 0{,}03 = 0{,}0134\\,\\text{Å}$. Góc tán xạ: $\\Delta\\lambda = 2\\lambda_C \\sin^2(\\theta/2) \\Leftrightarrow 0{,}0134 = 2 \\times 0{,}02426 \\sin^2(\\theta/2) \\Rightarrow \\sin(\\theta/2) = \\sqrt{\\frac{0{,}0134}{0{,}0485}} \\approx 0{,}5256 \\Rightarrow \\theta/2 \\approx 31{,}71^\\circ \\Rightarrow \\theta \\approx 63{,}4^\\circ \\approx 63^\\circ 53'$.",
@@ -799,10 +799,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Electron đang ở trạng thái 2s ứng với các số lượng tử chính $n$ và số lượng tử orbital $l$ là bao nhiêu?",
     "options": [
-      "A. n = 2; l = 0",
-      "B. n = 1; l = 0",
-      "C. n = 1; l = 1",
-      "D. n = 2; l = 1"
+      "A. $n=2;\\ l=0$",
+      "B. $n=1;\\ l=0$",
+      "C. $n=1;\\ l=1$",
+      "D. $n=2;\\ l=1$"
     ],
     "answer": "A",
     "explanation": "Ký hiệu trạng thái lượng tử của electron có dạng $n\\ell$: số đứng trước là số lượng tử chính $n = 2$; chữ cái 's' biểu thị số lượng tử orbital $l = 0$ (quy ước: s $\\leftrightarrow l = 0$; p $\\leftrightarrow l = 1$; d $\\leftrightarrow l = 2$; f $\\leftrightarrow l = 3$). Do đó trạng thái 2s ứng với $n = 2, l = 0$.",
@@ -821,10 +821,10 @@
     "source": "NOTION_DE_CUOI",
     "prompt": "Để đo bề dày của một bản mỏng trong suốt, người ta đặt bản mỏng này trước một trong hai khe của máy giao thoa Young. Ánh sáng chiếu vào hệ thống có bước sóng $\\lambda = 0{,}54\\,\\mu\\text{m}$. Chiết suất của bản mỏng là $n$. Người ta quan sát thấy vân sáng giữa bị dịch chuyển về vị trí của vân sáng thứ 5 (ứng với lúc chưa đặt bản). Cho bề dày của bản mỏng là $e = 5{,}4\\,\\mu\\text{m}$. Chiết suất $n$ của bản mỏng là:",
     "options": [
-      "A. n = 5/4",
-      "B. n = 4/3",
-      "C. n = 1,0",
-      "D. n = 1,5"
+      "A. $n=\\frac54$",
+      "B. $n=\\frac43$",
+      "C. $n=1{,}0$",
+      "D. $n=1{,}5$"
     ],
     "answer": "D",
     "explanation": "Khi đặt bản mỏng bề dày $e$, chiết suất $n$ trước một khe, vân sáng trung tâm dịch chuyển một đoạn $x_0 = \\frac{(n - 1)e D}{a} = 5 i = 5 \\frac{\\lambda D}{a}$. Suy ra: $(n - 1)e = 5\\lambda \\Rightarrow n - 1 = \\frac{5\\lambda}{e} = \\frac{5 \\times 0{,}54\\,\\mu\\text{m}}{5{,}4\\,\\mu\\text{m}} = \\frac{2{,}7}{5{,}4} = 0{,}5$. Do đó $n = 1 + 0{,}5 = 1{,}5$.",
@@ -843,10 +843,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Một sóng điện từ có tần số $f = 100\\,\\text{MHz}$ truyền trong chân không với vận tốc $c = 3 \\times 10^8\\,\\text{m/s}$ có bước sóng $\\lambda$ bằng:",
     "options": [
-      "A. λ = 300 m",
-      "B. λ = 3 m",
-      "C. λ = 0,3 m",
-      "D. λ = 30 m"
+      "A. $\\lambda = 300\\,\\mathrm{m}$",
+      "B. $\\lambda = 3\\,\\mathrm{m}$",
+      "C. $\\lambda = 0{,}3\\,\\mathrm{m}$",
+      "D. $\\lambda = 30\\,\\mathrm{m}$"
     ],
     "answer": "B",
     "explanation": "Bước sóng của sóng điện từ liên hệ với vận tốc truyền sóng và tần số theo hệ thức: $\\lambda = \\frac{c}{f} = \\frac{3 \\times 10^8\\,\\text{m/s}}{100 \\times 10^6\\,\\text{Hz}} = 3\\,\\text{m}$.",
@@ -909,10 +909,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Cho cách tử nhiễu xạ có chu kỳ $d = 2\\,\\mu\\text{m}$. Bước sóng cực đại $\\lambda_{\\max}$ có thể quan sát được trong quang phổ cho bởi cách tử đó khi chiếu vuông góc là:",
     "options": [
-      "A. λmax = 6 μm",
-      "B. λmax = 2 μm",
-      "C. λmax = 1 μm",
-      "D. λmax = 4 μm"
+      "A. $\\lambda_{\\max} = 6\\,\\mu\\mathrm{m}$",
+      "B. $\\lambda_{\\max} = 2\\,\\mu\\mathrm{m}$",
+      "C. $\\lambda_{\\max} = 1\\,\\mu\\mathrm{m}$",
+      "D. $\\lambda_{\\max} = 4\\,\\mu\\mathrm{m}$"
     ],
     "answer": "B",
     "explanation": "Điều kiện cực đại chính của cách tử khi chiếu chùm tia vuông góc: $d \\sin\\varphi = k \\lambda$. Vì góc nhiễu xạ $\\varphi \\le 90^\\circ \\implies \\sin\\varphi \\le 1$, nên bước sóng quan sát được thỏa mãn: $\\lambda = \\frac{d \\sin\\varphi}{k} \\le \\frac{d}{k}$. Bước sóng cực đại quan sát được ứng với bậc cực đại nhỏ nhất $k = 1$ khi $\\sin\\varphi = 1$: $\\lambda_{\\max} = \\frac{d}{1} = d = 2\\,\\mu\\text{m}$.",
@@ -933,7 +933,7 @@
     "options": [
       "A. Giảm đi 2 lần",
       "B. Không thay đổi",
-      "C. Giảm đi √2 lần",
+      "C. Giảm đi $\\sqrt2$ lần",
       "D. Tăng lên 2 lần"
     ],
     "answer": "D",
@@ -997,10 +997,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Chiếu một chùm sáng đơn sắc có bước sóng $\\lambda$ theo phương vuông góc với mặt dưới của nêm không khí góc nghiêng $\\alpha$ rất nhỏ. Cạnh nêm là vân tối bậc 0. Vị trí của vân tối thứ 10 cách cạnh nêm một khoảng:",
     "options": [
-      "A. x = 5α / λ",
-      "B. x = 10α / λ",
-      "C. x = 5λ / α",
-      "D. x = 10λ / α"
+      "A. $x=\\frac{5\\alpha}{\\lambda}$",
+      "B. $x=\\frac{10\\alpha}{\\lambda}$",
+      "C. $x=\\frac{5\\lambda}{\\alpha}$",
+      "D. $x=\\frac{10\\lambda}{\\alpha}$"
     ],
     "answer": "C",
     "explanation": "Đối với nêm không khí (chiết suất $n = 1$), điều kiện vân tối thứ $k$ tại vị trí có bề dày $d_k$ là: $2d_k + \\frac{\\lambda}{2} = (k + 0{,}5)\\lambda \\Rightarrow 2d_k = k\\lambda \\Rightarrow d_k = k \\frac{\\lambda}{2}$. Vì góc nghiêng $\\alpha$ rất nhỏ nên bề dày liên hệ với khoảng cách $x$ tới cạnh nêm theo hệ thức: $d = x \\alpha \\Rightarrow x_k = \\frac{d_k}{\\alpha} = k \\frac{\\lambda}{2\\alpha}$. Với vân tối thứ $10$ ($k = 10$): $x_{10} = 10 \\frac{\\lambda}{2\\alpha} = 5 \\frac{\\lambda}{\\alpha}$.",
@@ -1019,10 +1019,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Trong giao thoa khe Young, gọi khoảng cách giữa hai khe là $a$, khoảng cách từ mặt phẳng chứa hai khe đến màn quan sát là $D$, bước sóng ánh sáng là $\\lambda$. Khoảng vân giao thoa $i$ được xác định bằng công thức:",
     "options": [
-      "A. i = λ / (aD)",
-      "B. i = λa / D",
-      "C. i = aD / λ",
-      "D. i = λD / a"
+      "A. $i=\\frac{\\lambda}{aD}$",
+      "B. $i=\\frac{\\lambda a}{D}$",
+      "C. $i=\\frac{aD}{\\lambda}$",
+      "D. $i=\\frac{\\lambda D}{a}$"
     ],
     "answer": "D",
     "explanation": "Khoảng cách giữa hai vân sáng hoặc hai vân tối liên tiếp trên màn quan sát được gọi là khoảng vân $i$, có biểu thức: $i = \\frac{\\lambda D}{a}$ (trong một số giáo trình ký hiệu khoảng cách giữa hai khe là $l$ thì $i = \\frac{\\lambda D}{l}$).",
@@ -1041,10 +1041,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Xét một hệ thống cho vân tròn Newton đặt trong không khí, ánh sáng đơn sắc có bước sóng $\\lambda = 0{,}56\\,\\mu\\text{m}$ chiếu vuông góc với bản thủy tinh. Bề dày của lớp không khí ứng với vân sáng đầu tiên ($k = 1$) là:",
     "options": [
-      "A. 0,28 μm",
-      "B. 0,14 mm",
-      "C. 0,28 mm",
-      "D. 0,14 μm"
+      "A. $0{,}28\\,\\mu\\mathrm{m}$",
+      "B. $0{,}14\\,\\mathrm{mm}$",
+      "C. $0{,}28\\,\\mathrm{mm}$",
+      "D. $0{,}14\\,\\mu\\mathrm{m}$"
     ],
     "answer": "D",
     "explanation": "Hiệu quang trình của hai tia phản xạ qua màng không khí bề dày $d$ là: $\\Delta L = 2d + \\frac{\\lambda}{2}$. Điều kiện vân sáng: $\\Delta L = k\\lambda \\Leftrightarrow 2d + \\frac{\\lambda}{2} = k\\lambda \\Rightarrow d_s = (2k - 1)\\frac{\\lambda}{4}$. Ứng với vân sáng đầu tiên $k = 1$: $d_1 = \\frac{\\lambda}{4} = \\frac{0{,}56\\,\\mu\\text{m}}{4} = 0{,}14\\,\\mu\\text{m}$.",
@@ -1063,7 +1063,7 @@
     "source": "NOTION_TEST_100",
     "prompt": "Chọn câu đúng nhất về hệ số hấp thụ đơn sắc $a(\\nu, T)$ của các vật:",
     "options": [
-      "A. Hệ số hấp thụ đơn sắc tỷ lệ với tỷ số của năng thông hấp thụ và năng thông gửi tới vật, và luôn có giá trị a ≤ 1.",
+      "A. Hệ số hấp thụ đơn sắc tỷ lệ với tỷ số của năng thông hấp thụ và năng thông gửi tới vật, và luôn có giá trị $a\\le1$.",
       "B. Hệ số hấp thụ đơn sắc có thể lớn hơn 1 đối với các vật đen.",
       "C. Hệ số hấp thụ đơn sắc có giá trị lớn nhất bằng 2 khi có giao thoa.",
       "D. Khi bức xạ gửi tới vật đen tuyệt đối thì nó chỉ bị hấp thụ một phần nhỏ."
@@ -1129,10 +1129,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Trong hình ảnh nhiễu xạ qua 5 khe hẹp có chu kỳ cách tử $d = 5b$ (với $b$ là bề rộng một khe), các vạch cực đại chính nào của hệ khe sẽ bị triệt tiêu (biến mất) do trùng với cực tiểu của một khe?",
     "options": [
-      "A. Các bậc k = ±5, ±10, ±15,...",
-      "B. Các bậc k = ±1, ±2, ±3,...",
-      "C. Các bậc k = ±2, ±4, ±6,...",
-      "D. Các bậc k = ±3, ±6, ±9,..."
+      "A. Các bậc $k=\\pm5,\\pm10,\\pm15,\\ldots$",
+      "B. Các bậc $k=\\pm1,\\pm2,\\pm3,\\ldots$",
+      "C. Các bậc $k=\\pm2,\\pm4,\\pm6,\\ldots$",
+      "D. Các bậc $k=\\pm3,\\pm6,\\pm9,\\ldots$"
     ],
     "answer": "A",
     "explanation": "Vị trí cực đại chính của cách tử: $d \\sin\\varphi = k \\lambda$. Vị trí cực tiểu nhiễu xạ của một khe bề rộng $b$: $b \\sin\\varphi = m \\lambda$ ($m = \\pm 1, \\pm 2, \\dots$). Tại góc $\\varphi$ mà cực tiểu của một khe xuất hiện, mỗi khe đều cho cường độ bằng 0, do đó cực đại chính của cách tử tại góc đó bị triệt tiêu: $\\frac{k}{m} = \\frac{d}{b} = 5 \\implies k = 5m = \\pm 5, \\pm 10, \\pm 15, \\dots$",
@@ -1195,10 +1195,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Giới hạn quang điện của kim loại làm catot của tế bào quang điện là $\\lambda_0 = 0{,}5\\,\\mu\\text{m}$. Cho $h = 6{,}625 \\times 10^{-34}\\,\\text{Js}$, $c = 3 \\times 10^8\\,\\text{m/s}$, $e = 1{,}6 \\times 10^{-19}\\,\\text{C}$. Khi chiếu ánh sáng đơn sắc $\\lambda = 0{,}36\\,\\mu\\text{m}$ vào catot thì hiệu điện thế hãm $U_h$ có độ lớn bằng:",
     "options": [
-      "A. 2,14 V",
-      "B. 0,97 V",
-      "C. 1,55 V",
-      "D. 0,48 V"
+      "A. $2{,}14\\,\\mathrm{V}$",
+      "B. $0{,}97\\,\\mathrm{V}$",
+      "C. $1{,}55\\,\\mathrm{V}$",
+      "D. $0{,}48\\,\\mathrm{V}$"
     ],
     "answer": "B",
     "explanation": "Phương trình Einstein: $e U_h = hc\\left(\\frac{1}{\\lambda} - \\frac{1}{\\lambda_0}\\right)$. Ta có: $U_h = \\frac{hc}{e}\\left(\\frac{1}{\\lambda} - \\frac{1}{\\lambda_0}\\right)$. Với $\\frac{hc}{e} \\approx 1{,}242 \\times 10^{-6}\\,\\text{V}\\cdot\\text{m} = 1{,}242\\,\\text{eV}\\cdot\\mu\\text{m}$: $U_h = 1{,}242 \\left(\\frac{1}{0{,}36} - \\frac{1}{0{,}5}\\right) = 1{,}242 \\times (2{,}778 - 2{,}0) = 1{,}242 \\times 0{,}778 \\approx 0{,}966\\,\\text{V} \\approx 0{,}97\\,\\text{V}$.",
@@ -1217,10 +1217,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Nguồn sáng đơn sắc bước sóng $\\lambda = 600\\,\\text{nm}$ chiếu sáng hai khe Young cách nhau $a = 1\\,\\text{mm}$. Màn quan sát cách mặt phẳng hai khe $D = 1\\,\\text{m}$. Khoảng vân $i$ trên màn là:",
     "options": [
-      "A. 0,45 mm",
-      "B. 0,5 mm",
-      "C. 0,6 mm",
-      "D. 0,9 mm"
+      "A. $0{,}45\\,\\mathrm{mm}$",
+      "B. $0{,}5\\,\\mathrm{mm}$",
+      "C. $0{,}6\\,\\mathrm{mm}$",
+      "D. $0{,}9\\,\\mathrm{mm}$"
     ],
     "answer": "C",
     "explanation": "Khoảng vân giao thoa: $i = \\frac{\\lambda D}{a} = \\frac{600 \\times 10^{-9}\\,\\text{m} \\times 1\\,\\text{m}}{10^{-3}\\,\\text{m}} = 6 \\times 10^{-4}\\,\\text{m} = 0{,}6\\,\\text{mm}$.",
@@ -1239,10 +1239,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Xác định bước sóng của bức xạ tia X chiếu tới trong hiện tượng tán xạ Compton, biết rằng động năng cực đại của electron giật lùi bắn ra là $T_{\\max} = 0{,}19\\,\\text{MeV}$ (cho bước sóng Compton $\\lambda_C = 2{,}426\\,\\text{pm}$):",
     "options": [
-      "A. λ = 2,8 pm",
-      "B. λ = 2,6 pm",
-      "C. λ = 3,7 pm",
-      "D. λ = 3,9 pm"
+      "A. $\\lambda = 2{,}8\\,\\mathrm{pm}$",
+      "B. $\\lambda = 2{,}6\\,\\mathrm{pm}$",
+      "C. $\\lambda = 3{,}7\\,\\mathrm{pm}$",
+      "D. $\\lambda = 3{,}9\\,\\mathrm{pm}$"
     ],
     "answer": "C",
     "explanation": "Động năng của electron đạt cực đại khi photon tán xạ ngược hướng $\\theta = 180^\\circ \\implies \\Delta\\lambda = 2\\lambda_C$. Khi đó năng lượng photon sau tán xạ đạt cực tiểu: $E'_{\\min} = \\frac{E}{1 + \\frac{2E}{m_e c^2}}$. Động năng cực đại của electron là: $T_{\\max} = E - E'_{\\min} = \\frac{2E^2}{m_e c^2 + 2E}$. Với $T_{\\max} = 0{,}19\\,\\text{MeV}$ và $m_e c^2 = 0{,}511\\,\\text{MeV}$, phương trình là: $2E^2 - 0{,}38 E - 0{,}19 \\times 0{,}511 = 0 \\Leftrightarrow 2E^2 - 0{,}38 E - 0{,}09709 = 0$. Nghiệm dương: $E = \\frac{0{,}38 + \\sqrt{0{,}38^2 + 8 \\times 0{,}09709}}{4} = \\frac{0{,}38 + \\sqrt{0{,}1444 + 0{,}7767}}{4} = \\frac{0{,}38 + 0{,}9597}{4} \\approx 0{,}335\\,\\text{MeV} = 335\\,\\text{keV}$. Bước sóng của tia X tới: $\\lambda = \\frac{hc}{E} = \\frac{1240\\,\\text{keV}\\cdot\\text{pm}}{335\\,\\text{keV}} \\approx 3{,}7\\,\\text{pm}$.",
@@ -1327,10 +1327,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Tính động lượng của electron giật lùi khi photon có bước sóng ban đầu $\\lambda = 5\\,\\text{pm}$ va chạm với electron đứng yên và tán xạ vuông góc (góc tán xạ $\\theta = 90^\\circ$):",
     "options": [
-      "A. 1,8.10⁻²⁴ kg·m/s",
-      "B. 1,6.10⁻²² kg·m/s",
-      "C. 1,8.10⁻²² kg·m/s",
-      "D. 1,6.10⁻²⁴ kg·m/s"
+      "A. $1{,}8\\times10^{-24}\\,\\mathrm{kg}\\cdot\\mathrm{m/s}$",
+      "B. $1{,}6\\times10^{-22}\\,\\mathrm{kg}\\cdot\\mathrm{m/s}$",
+      "C. $1{,}8\\times10^{-22}\\,\\mathrm{kg}\\cdot\\mathrm{m/s}$",
+      "D. $1{,}6\\times10^{-24}\\,\\mathrm{kg}\\cdot\\mathrm{m/s}$"
     ],
     "answer": "B",
     "explanation": "Động lượng photon tới: $p_1 = \\frac{h}{\\lambda} = \\frac{6{,}626 \\times 10^{-34}}{5 \\times 10^{-12}} = 1{,}325 \\times 10^{-22}\\,\\text{kg}\\cdot\\text{m/s}$. Bước sóng photon sau tán xạ góc $90^\\circ$: $\\lambda' = \\lambda + \\lambda_C (1 - \\cos 90^\\circ) = 5 + 2{,}426 = 7{,}426\\,\\text{pm}$. Động lượng photon tán xạ: $p_2 = \\frac{h}{\\lambda'} = \\frac{6{,}626 \\times 10^{-34}}{7{,}426 \\times 10^{-12}} \\approx 0{,}892 \\times 10^{-22}\\,\\text{kg}\\cdot\\text{m/s}$. Vì góc tán xạ giữa hai photon là $90^\\circ$, định luật bảo toàn động lượng $\\vec{p}_e = \\vec{p}_1 - \\vec{p}_2$ cho độ lớn động lượng electron: $p_e = \\sqrt{p_1^2 + p_2^2} = 10^{-22} \\times \\sqrt{1{,}325^2 + 0{,}892^2} = 10^{-22} \\times \\sqrt{1{,}7556 + 0{,}7957} = 10^{-22} \\times \\sqrt{2{,}551} \\approx 1{,}597 \\times 10^{-22}\\,\\text{kg}\\cdot\\text{m/s} \\approx 1{,}6 \\times 10^{-22}\\,\\text{kg}\\cdot\\text{m/s}$.",
@@ -1369,17 +1369,17 @@
     "chapter_id": 2,
     "type": "mcq",
     "source": "NOTION_TEST_100",
-    "prompt": "Cho một cách tử nhiễu xạ có chu kỳ  = 2\\,\\mu\text{m}$. Sau cách tử đặt một thấu kính hội tụ có tiêu cự $. Trên mặt phẳng tiêu của thấu kính đặt màn quan sát. Khoảng cách giữa hai vạch cực đại quang phổ bậc nhất ( = 1$) ứng với hai bước sóng $\\lambda_1 = 0{,}4404\\,\\mu\text{m}$ và $\\lambda_2 = 0{,}4047\\,\\mu\text{m}$ trên màn bằng $\\Delta x = 1\\,\text{cm}$. Tiêu cự $ của thấu kính là:",
+    "prompt": "Cho một cách tử nhiễu xạ có chu kỳ $d=2\\,\\mu\\mathrm m$. Sau cách tử đặt một thấu kính hội tụ có tiêu cự $f$. Trên mặt phẳng tiêu của thấu kính đặt màn quan sát. Khoảng cách giữa hai vạch cực đại quang phổ bậc nhất ($k=1$) ứng với hai bước sóng $\\lambda_1=0{,}4404\\,\\mu\\mathrm m$ và $\\lambda_2=0{,}4047\\,\\mu\\mathrm m$ trên màn bằng $\\Delta x=1\\,\\mathrm{cm}$. Tiêu cự $f$ của thấu kính là:",
     "options": [
-      "A. f = 0,65 m",
-      "B. f = 0,56 m",
-      "C. f = 0,45 m",
-      "D. f = 0,72 m"
+      "A. $f = 0{,}65\\,\\mathrm{m}$",
+      "B. $f = 0{,}56\\,\\mathrm{m}$",
+      "C. $f = 0{,}45\\,\\mathrm{m}$",
+      "D. $f = 0{,}72\\,\\mathrm{m}$"
     ],
     "answer": "B",
-    "explanation": "Góc nhiễu xạ cực đại bậc nhất thỏa mãn công thức cách tử: \\sin\u000barphi = k\\lambda = \\lambda$.\nVì góc $\u000barphi$ nhỏ nên $\\sin\u000barphi \u0007pprox \tan\u000barphi = \frac{x}{f} \\Rightarrow x = f \frac{\\lambda}{d}$.\nKhoảng cách giữa hai vạch quang phổ bậc 1 trên tiêu diện thấu kính:\n$\\Delta x = x_1 - x_2 = f \frac{\\lambda_1 - \\lambda_2}{d} \\Rightarrow f = \frac{d \\Delta x}{\\lambda_1 - \\lambda_2}$.\nThay số với $\\Delta x = 1\\,\text{cm} = 10^{-2}\\,\text{m}$:\n = \frac{2 \times 10^{-6}\\,\text{m} \times 10^{-2}\\,\text{m}}{(0{,}4404 - 0{,}4047) \times 10^{-6}\\,\text{m}} = \frac{2 \times 10^{-2}}{0{,}0357} \u0007pprox 0{,}56\\,\text{m}$.\nChọn đáp án B.",
+    "explanation": "Cực đại bậc nhất thỏa mãn $d\\sin\\varphi=\\lambda$. Với xấp xỉ góc nhỏ, $\\sin\\varphi\\approx\\tan\\varphi=x/f$, nên $x\\approx f\\lambda/d$. Suy ra $\\Delta x\\approx f(\\lambda_1-\\lambda_2)/d$. Với $\\Delta x=1\\,\\mathrm{cm}=10^{-2}\\,\\mathrm m$, ta có $f\\approx d\\Delta x/(\\lambda_1-\\lambda_2)=2\\times10^{-2}/0{,}0357\\approx0{,}56\\,\\mathrm m$. Chọn B.",
     "methodology": "Độ phân tán góc của cách tử: $D_{\\varphi} = \\frac{d\\varphi}{d\\lambda} = \\frac{k}{d\\cos\\varphi}$. Độ phân tán dài: $D_l = f D_{\\varphi} \\approx \\frac{kf}{d} \\implies \\Delta x = f \\frac{k\\Delta\\lambda}{d}$.",
-    "tips": "Casio: $2 \\times 10^{-5} \\div 0{,}0357 \\approx 0{,}56\\,\\text{m}$.",
+    "tips": "Tính $2\\times10^{-2}/0{,}0357\\approx0{,}56\\,\\mathrm m$; đổi $1\\,\\mathrm{cm}$ thành $10^{-2}\\,\\mathrm m$.",
     "num": 63,
     "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "Bài tập tính toán",
@@ -1393,7 +1393,7 @@
     "source": "NOTION_TEST_100",
     "prompt": "Theo giả thuyết lượng tử Planck, phân tử và nguyên tử của các chất hấp thụ và phát xạ năng lượng bức xạ điện từ như thế nào?",
     "options": [
-      "A. Hấp thụ và bức xạ năng lượng một cách gián đoạn theo từng lượng tử năng lượng ε = hν.",
+      "A. Hấp thụ và bức xạ năng lượng một cách gián đoạn theo từng lượng tử năng lượng $\\varepsilon=h\\nu$.",
       "B. Hấp thụ gián đoạn nhưng bức xạ liên tục.",
       "C. Bức xạ gián đoạn nhưng hấp thụ liên tục.",
       "D. Hấp thụ và bức xạ hoàn toàn liên tục ở mọi nhiệt độ."
@@ -1415,10 +1415,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Biểu thức của định luật Stefan-Boltzmann đối với năng suất phát xạ toàn phần của vật đen tuyệt đối là:",
     "options": [
-      "A. R(T) = σ T³",
-      "B. R(T) = σ T⁴",
-      "C. R(T) = σ T⁵",
-      "D. R(T) = σ² T⁴"
+      "A. $R(T)=\\sigma T^3$",
+      "B. $R(T)=\\sigma T^4$",
+      "C. $R(T)=\\sigma T^5$",
+      "D. $R(T)=\\sigma^2T^4$"
     ],
     "answer": "B",
     "explanation": "Định luật Stefan-Boltzmann phát biểu rằng: Năng suất phát xạ toàn phần $R(T)$ của vật đen tuyệt đối tỷ lệ thuận với lũy thừa bậc 4 của nhiệt độ tuyệt đối $T$: $R(T) = \\sigma T^4$, trong đó $\\sigma \\approx 5{,}67 \\times 10^{-8}\\,\\text{W}/(\\text{m}^2\\cdot\\text{K}^4)$ là hằng số Stefan-Boltzmann.",
@@ -1459,10 +1459,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Cho $h = 6{,}625 \\times 10^{-34}\\,\\text{Js}$ và $c = 3 \\times 10^8\\,\\text{m/s}$. Động lượng của một photon có tần số $\\nu = 6 \\times 10^{14}\\,\\text{Hz}$ là:",
     "options": [
-      "A. 11.10⁻²⁷ kg·m/s",
-      "B. 13,25.10⁻²⁸ kg·m/s",
-      "C. 11.10⁻²⁸ kg·m/s",
-      "D. 13,25.10⁻²⁷ kg·m/s"
+      "A. $11\\times10^{-27}\\,\\mathrm{kg}\\cdot\\mathrm{m/s}$",
+      "B. $13{,}25\\times10^{-28}\\,\\mathrm{kg}\\cdot\\mathrm{m/s}$",
+      "C. $11\\times10^{-28}\\,\\mathrm{kg}\\cdot\\mathrm{m/s}$",
+      "D. $13{,}25\\times10^{-27}\\,\\mathrm{kg}\\cdot\\mathrm{m/s}$"
     ],
     "answer": "B",
     "explanation": "Động lượng của photon liên hệ với tần số và vận tốc truyền ánh sáng theo công thức: $p = \\frac{\\varepsilon}{c} = \\frac{h\\nu}{c} = \\frac{6{,}625 \\times 10^{-34} \\times 6 \\times 10^{14}}{3 \\times 10^8} = 13{,}25 \\times 10^{-28}\\,\\text{kg}\\cdot\\text{m/s}$.",
@@ -1569,10 +1569,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Bước sóng $\\lambda_m$ ứng với năng suất phát xạ cực đại của vật đen tuyệt đối có nhiệt độ bằng thân nhiệt cơ thể người ($37^\\circ\\text{C}$) là bao nhiêu (cho hằng số Wien $b = 2{,}898 \\times 10^{-3}\\,\\text{m}\\cdot\\text{K}$):",
     "options": [
-      "A. 39 μm",
-      "B. 9,3 μm",
-      "C. 3,9 μm",
-      "D. 93 μm"
+      "A. $39\\,\\mu\\mathrm{m}$",
+      "B. $9{,}3\\,\\mu\\mathrm{m}$",
+      "C. $3{,}9\\,\\mu\\mathrm{m}$",
+      "D. $93\\,\\mu\\mathrm{m}$"
     ],
     "answer": "B",
     "explanation": "Đổi nhiệt độ thân nhiệt sang độ Kelvin: $T = 37 + 273{,}15 = 310{,}15\\,\\text{K}$. Theo định luật dời chỗ Wien: $\\lambda_m T = b \\Rightarrow \\lambda_m = \\frac{b}{T} = \\frac{2{,}898 \\times 10^{-3}\\,\\text{m}\\cdot\\text{K}}{310{,}15\\,\\text{K}} \\approx 9{,}344 \\times 10^{-6}\\,\\text{m} = 9{,}34\\,\\mu\\text{m} \\approx 9{,}3\\,\\mu\\text{m}$ (nằm trong vùng hồng ngoại).",
@@ -1591,10 +1591,10 @@
     "source": "NOTION_TEST_100",
     "prompt": "Trong chân không, một chùm ánh sáng đơn sắc có tần số $f = 5 \\times 10^{14}\\,\\text{Hz}$. Khi truyền vào trong nước có chiết suất $n = 1{,}33$, chu kỳ dao động của sóng ánh sáng này là:",
     "options": [
-      "A. T = 0,2.10⁻¹⁵ s",
-      "B. T = 2.10⁻¹⁵ s",
-      "C. T = 0,5.10⁻¹⁵ s",
-      "D. T = 5.10⁻¹⁵ s"
+      "A. $T = 0{,}2\\times10^{-15}\\,\\mathrm{s}$",
+      "B. $T = 2\\times10^{-15}\\,\\mathrm{s}$",
+      "C. $T = 0{,}5\\times10^{-15}\\,\\mathrm{s}$",
+      "D. $T = 5\\times10^{-15}\\,\\mathrm{s}$"
     ],
     "answer": "B",
     "explanation": "Khi sóng ánh sáng truyền qua bất kỳ môi trường nào (kể cả nước chiết suất $n = 1{,}33$), tần số $f$ và chu kỳ $T$ của sóng đều không đổi. Chu kỳ dao động là: $T = \\frac{1}{f} = \\frac{1}{5 \\times 10^{14}\\,\\text{Hz}} = 0{,}2 \\times 10^{-14}\\,\\text{s} = 2 \\times 10^{-15}\\,\\text{s}$.",
@@ -1635,7 +1635,7 @@
     "source": "NOTION_GIAK_2025",
     "prompt": "Giả thuyết De Broglie khẳng định rằng mọi vi hạt chuyển động đều có:",
     "options": [
-      "A. Lưỡng tính sóng - hạt, vừa mang động lượng p vừa có bước sóng liên kết λ = h/p.",
+      "A. Lưỡng tính sóng - hạt, vừa mang động lượng p vừa có bước sóng liên kết $\\lambda=\\frac hp$.",
       "B. Năng lượng cố định và chuyển động theo quỹ đạo tròn xác định.",
       "C. Vận tốc không đổi trong mọi trường hợp bằng vận tốc ánh sáng.",
       "D. Năng lượng và động lượng không có bất kỳ liên hệ nào với đặc trưng sóng."
@@ -1663,7 +1663,7 @@
       "D. Hàm sóng chỉ cần liên tục, không đòi hỏi tính đơn trị."
     ],
     "answer": "A",
-    "explanation": "Để hàm sóng $\\Psi(\u000bec{r}, t)$ có ý nghĩa vật lý (xác định mật độ xác suất tìm hạt $|\\Psi|^2$), hàm sóng phải thỏa mãn các điều kiện tiêu chuẩn:\n1. Đơn trị: Tại mỗi điểm trong không gian chỉ có một giá trị xác định duy nhất.\n2. Hữu hạn: Tích phân mật độ xác suất trên toàn không gian bằng 1 (điều kiện chuẩn hóa), nên $\\Psi$ không thể tiến tới vô cùng.\n3. Liên tục và có các đạo hàm riêng bậc nhất liên tục trên toàn không gian (để mật độ dòng xác suất bảo toàn và phương trình Schrödinger có nghiệm vật lý).\nChọn đáp án A.",
+    "explanation": "Để hàm sóng $\\Psi(\\vec{r}, t)$ có ý nghĩa vật lý (xác định mật độ xác suất tìm hạt $|\\Psi|^2$), hàm sóng phải thỏa mãn các điều kiện tiêu chuẩn:\n1. Đơn trị: Tại mỗi điểm trong không gian chỉ có một giá trị xác định duy nhất.\n2. Hữu hạn: Tích phân mật độ xác suất trên toàn không gian bằng 1 (điều kiện chuẩn hóa), nên $\\Psi$ không thể tiến tới vô cùng.\n3. Liên tục và có các đạo hàm riêng bậc nhất liên tục trên toàn không gian (để mật độ dòng xác suất bảo toàn và phương trình Schrödinger có nghiệm vật lý).\nChọn đáp án A.",
     "methodology": "3 điều kiện tiêu chuẩn của hàm sóng: Đơn trị, Hữu hạn, Liên tục (cả hàm sóng và đạo hàm bậc nhất).",
     "tips": "Ghi nhớ: 'Đơn trị - Hữu hạn - Liên tục'.",
     "num": 76,
@@ -1679,8 +1679,8 @@
     "source": "NOTION_GIAK_2025",
     "prompt": "Hiệu ứng đường ngầm (tunnel effect) trong cơ học lượng tử chứng minh hiện tượng nào sau đây:",
     "options": [
-      "A. Vi hạt có xác suất khác không xuyên qua được hàng rào thế năng dù năng lượng toàn phần E nhỏ hơn chiều cao rào thế U₀.",
-      "B. Vi hạt luôn bị phản xạ hoàn toàn khi gặp rào thế năng có độ cao U₀ > E.",
+      "A. Vi hạt có xác suất khác không xuyên qua được hàng rào thế năng dù năng lượng toàn phần E nhỏ hơn chiều cao rào thế $U_0$.",
+      "B. Vi hạt luôn bị phản xạ hoàn toàn khi gặp rào thế năng có độ cao $U_0>E$.",
       "C. Vi hạt chỉ có thể chuyển động trong đường hầm thẳng tắp với vận tốc không đổi.",
       "D. Năng lượng của vi hạt bị triệt tiêu hoàn toàn khi đi vào bên trong rào thế."
     ],
@@ -1701,7 +1701,7 @@
     "source": "NOTION_GIAK_2025",
     "prompt": "Hệ thức bất định Heisenberg $\\Delta x \\cdot \\Delta p_x \\ge \\frac{\\hbar}{2}$ khẳng định điều gì?",
     "options": [
-      "A. Không thể đồng thời xác định chính xác tuyệt đối cả tọa độ x và độ lớn động lượng px của một vi hạt.",
+      "A. Không thể đồng thời xác định chính xác tuyệt đối cả tọa độ x và độ lớn động lượng $p_x$ của một vi hạt.",
       "B. Vận tốc của vi hạt luôn luôn biến thiên hỗn loạn không thể đo lường.",
       "C. Vị trí của vi hạt hoàn toàn không thể xác định được trong bất kỳ thí nghiệm nào.",
       "D. Do dụng cụ đo lường có sai số kỹ thuật chế tạo không hoàn hảo."
@@ -1723,10 +1723,10 @@
     "source": "NOTION_GIAK_2025",
     "prompt": "Để mô tả trạng thái của một vi hạt, cơ học lượng tử sử dụng đại lượng nào sau đây:",
     "options": [
-      "A. Hàm sóng Ψ(r⃗, t) với ý nghĩa thống kê của bình phương biên độ |Ψ|²",
-      "B. Phương trình quỹ đạo chuyển động r⃗ = r⃗(t) của cơ học Newton",
-      "C. Vector vận tốc tức thời v⃗(t)",
-      "D. Vector gia tốc toàn phần a⃗(t)"
+      "A. Hàm sóng $\\Psi(\\vec r,t)$ với ý nghĩa thống kê của bình phương biên độ $|\\Psi|^2$",
+      "B. Phương trình quỹ đạo chuyển động $\\vec r=\\vec r(t)$ của cơ học Newton",
+      "C. Vector vận tốc tức thời $\\vec v(t)$",
+      "D. Vector gia tốc toàn phần $\\vec a(t)$"
     ],
     "answer": "A",
     "explanation": "Trong cơ học lượng tử, do hệ thức bất định, vi hạt không có quỹ đạo chuyển động xác định. Trạng thái của vi hạt được mô tả hoàn toàn bởi hàm sóng $\\Psi(\\vec{r}, t)$. Theo luận giải thống kê của Max Born, bình phương môđun hàm sóng $P(\\vec{r}, t) = |\\Psi(\\vec{r}, t)|^2$ biểu thị mật độ xác suất tìm thấy vi hạt tại vị trí $\\vec{r}$ ở thời điểm $t$.",
@@ -1767,10 +1767,10 @@
     "source": "NOTION_DE_CUONG",
     "prompt": "Năng lượng liên kết của electron với hạt nhân nguyên tử Hydro ở trạng thái cơ bản không kích thích $^1_1\\text{H}$ (năng lượng ion hóa) bằng $13{,}6\\,\\text{eV}$. Khối lượng của nguyên tử Hydro nhỏ hơn tổng khối lượng của một proton và một electron tự do một lượng $\\Delta m$ bằng bao nhiêu:",
     "options": [
-      "A. 2,42.10⁻³⁵ kg",
-      "B. 1,67.10⁻²⁷ kg",
-      "C. 9,11.10⁻³¹ kg",
-      "D. 2,42.10⁻³² kg"
+      "A. $2{,}42\\times10^{-35}\\,\\mathrm{kg}$",
+      "B. $1{,}67\\times10^{-27}\\,\\mathrm{kg}$",
+      "C. $9{,}11\\times10^{-31}\\,\\mathrm{kg}$",
+      "D. $2{,}42\\times10^{-32}\\,\\mathrm{kg}$"
     ],
     "answer": "A",
     "explanation": "Theo hệ thức tương đương khối lượng - năng lượng của Einstein: $\\Delta E = \\Delta m \\cdot c^2 \\implies \\Delta m = \\frac{\\Delta E}{c^2}$. Đổi năng lượng sang Joule: $\\Delta E = 13{,}6\\,\\text{eV} = 13{,}6 \\times 1{,}602 \\times 10^{-19}\\,\\text{J} \\approx 2{,}179 \\times 10^{-18}\\,\\text{J}$. Độ hụt khối là: $\\Delta m = \\frac{2{,}179 \\times 10^{-18}}{(3 \\times 10^8)^2} = \\frac{2{,}179 \\times 10^{-18}}{9 \\times 10^{16}} \\approx 2{,}421 \\times 10^{-35}\\,\\text{kg}$.",
@@ -1789,10 +1789,10 @@
     "source": "NOTION_DE_CUONG",
     "prompt": "Xác định năng lượng cực tiểu cần thiết để bứt một proton ra khỏi hạt nhân $^{19}_9\\text{F}$. Biết rằng năng lượng liên kết của hạt nhân $^{19}_9\\text{F}$ là $147{,}8\\,\\text{MeV}$ và của hạt nhân $^{18}_8\\text{O}$ là $139{,}8\\,\\text{MeV}$:",
     "options": [
-      "A. 8,0 MeV",
-      "B. 7,78 MeV",
-      "C. 14,78 MeV",
-      "D. 13,98 MeV"
+      "A. $8{,}0\\,\\mathrm{MeV}$",
+      "B. $7{,}78\\,\\mathrm{MeV}$",
+      "C. $14{,}78\\,\\mathrm{MeV}$",
+      "D. $13{,}98\\,\\mathrm{MeV}$"
     ],
     "answer": "A",
     "explanation": "Phản ứng bứt 1 proton: $^{19}_9\\text{F} + \\Delta E \\to ^{18}_8\\text{O} + ^1_1\\text{p}$. Năng lượng cần thiết để tách proton ra khỏi hạt nhân bằng độ chênh lệch năng lượng liên kết giữa hạt nhân ban đầu và hạt nhân còn lại: $\\Delta E = E_{\\text{lk}}(^{19}_9\\text{F}) - E_{\\text{lk}}(^{18}_8\\text{O}) = 147{,}8\\,\\text{MeV} - 139{,}8\\,\\text{MeV} = 8{,}0\\,\\text{MeV}$.",
@@ -1811,10 +1811,10 @@
     "source": "NOTION_DE_CUONG",
     "prompt": "Hai vạch quang phổ có bước sóng ngắn nhất và dài nhất của dãy Lyman trong quang phổ hydro tương ứng với bước sóng vạch biên $\\lambda_\\infty = 0{,}0912\\,\\mu\\text{m}$ và vạch đầu $\\lambda_{21} = 0{,}1216\\,\\mu\\text{m}$. Bước sóng vạch đỏ $H_\\alpha$ ($\\lambda_{32}$) trong dãy Balmer liên hệ với hai vạch trên và có giá trị là:",
     "options": [
-      "A. 0,6563 μm",
-      "B. 0,4861 μm",
-      "C. 0,4340 μm",
-      "D. 0,4102 μm"
+      "A. $0{,}6563\\,\\mu\\mathrm{m}$",
+      "B. $0{,}4861\\,\\mu\\mathrm{m}$",
+      "C. $0{,}4340\\,\\mu\\mathrm{m}$",
+      "D. $0{,}4102\\,\\mu\\mathrm{m}$"
     ],
     "answer": "A",
     "explanation": "Theo hệ thức chuyển mức năng lượng Bohr: $E_3 - E_2 = (E_3 - E_1) - (E_2 - E_1) \\implies \\frac{1}{\\lambda_{32}} = \\frac{1}{\\lambda_{31}} - \\frac{1}{\\lambda_{21}}$. Với $\\lambda_{31} = 0{,}1026\\,\\mu\\text{m}$ và $\\lambda_{21} = 0{,}1216\\,\\mu\\text{m}$: $\\frac{1}{\\lambda_{32}} = \\frac{1}{0{,}1026} - \\frac{1}{0{,}1216} \\approx 9{,}7466 - 8{,}2237 = 1{,}5229\\,\\mu\\text{m}^{-1} \\implies \\lambda_{32} = \\frac{1}{1{,}5229} \\approx 0{,}6566\\,\\mu\\text{m} \\approx 0{,}6563\\,\\mu\\text{m}$ (vạch đỏ $H_\\alpha$).",
@@ -1833,10 +1833,10 @@
     "source": "NOTION_DE_CUONG",
     "prompt": "Lớp lượng tử ứng với số lượng tử chính $n = 3$ (lớp M) chứa tối đa bao nhiêu electron theo nguyên lý loại trừ Pauli?",
     "options": [
-      "A. 18 electron",
-      "B. 8 electron",
-      "C. 32 electron",
-      "D. 9 electron"
+      "A. $18\\,\\text{electron}$",
+      "B. $8\\,\\text{electron}$",
+      "C. $32\\,\\text{electron}$",
+      "D. $9\\,\\text{electron}$"
     ],
     "answer": "A",
     "explanation": "Theo nguyên lý Pauli, số electron tối đa trong một lớp có số lượng tử chính $n$ là $N_{\\max} = 2n^2$. Với $n = 3$: $N_{\\max} = 2 \\times 3^2 = 2 \\times 9 = 18$ electron (gồm phân lớp $3s$ có 2e, $3p$ có 6e, $3d$ có 10e).",
@@ -1849,15 +1849,15 @@
   },
   {
     "id": "vldc_ch1_006",
-    "chapter": "Dao động và sóng điện từ",
-    "chapter_id": 1,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Để đo bề dày e của một bản mỏng trong suốt (chiết suất n = 1.5), người ta đặt bản mỏng trước một trong hai khe của máy giao thoa Young. Ánh sáng chiếu vào có bước sóng λ = 0.6 µm. Khi đặt bản mỏng vào, hệ vân bị dịch chuyển một đoạn bằng 10 khoảng vân. Bề dày e của bản mỏng là:",
     "options": [
-      "A. 12.0 µm",
-      "B. 6.0 µm",
-      "C. 15.0 µm",
-      "D. 9.0 µm"
+      "A. $12.0 µm$",
+      "B. $6.0 µm$",
+      "C. $15.0 µm$",
+      "D. $9.0 µm$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "12.0 µm",
@@ -1865,7 +1865,7 @@
     "methodology": "Công thức đo bề dày bản mỏng bằng giao thoa khe Young: e = (k * λ) / (n - 1) khi hệ vân dịch chuyển k khoảng vân.",
     "tips": "Mẹo nhớ: Mỗi lần vân dịch 1 khoảng vân, quang lộ tăng đúng 1 bước sóng λ: (n - 1)e = k*λ.",
     "num": 85,
-    "chapter_title": "Chương 1: Dao động và sóng điện từ",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -1873,15 +1873,15 @@
   },
   {
     "id": "vldc_ch1_007",
-    "chapter": "Dao động và sóng điện từ",
-    "chapter_id": 1,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Chiếu chùm ánh sáng đơn sắc có bước sóng λ = 0.6 µm vuông góc với một nêm không khí. Quan sát trong ánh sáng phản xạ, người ta thấy trên 1 cm chiều dài của mặt nêm có 20 khoảng vân. Góc nghiêng α giữa hai mặt nêm bằng bao nhiêu?",
     "options": [
-      "A. 6 × 10⁻⁴ rad",
-      "B. 3 × 10⁻⁴ rad",
-      "C. 1.2 × 10⁻³ rad",
-      "D. 1.5 × 10⁻⁴ rad"
+      "A. $6 × 10^{-4}\\,\\mathrm{rad}$",
+      "B. $3 × 10^{-4}\\,\\mathrm{rad}$",
+      "C. $1.2 × 10^{-3}\\,\\mathrm{rad}$",
+      "D. $1.5 × 10^{-4}\\,\\mathrm{rad}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "6 × 10⁻⁴ rad",
@@ -1889,7 +1889,7 @@
     "methodology": "Khoảng vân của nêm góc nghiêng α: i = λ / (2*n*α). Với nêm không khí n = 1 nên i = λ / (2α).",
     "tips": "Nhớ công thức: α = λ / (2*i). Góc nêm tỉ lệ nghịch với khoảng vân (nêm càng dốc thì vân càng sít nhau).",
     "num": 86,
-    "chapter_title": "Chương 1: Dao động và sóng điện từ",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -1897,23 +1897,23 @@
   },
   {
     "id": "vldc_ch1_008",
-    "chapter": "Dao động và sóng điện từ",
-    "chapter_id": 1,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Trong thí nghiệm vân tròn Newton tạo bởi thấu kính phẳng - lồi đặt trên bản thủy tinh phẳng, bán kính mặt cong thấu kính là R = 10 m, chiếu ánh sáng bước sóng λ = 0.5 µm. Bán kính của vân tối thứ 4 trong chùm tia phản xạ bằng bao nhiêu?",
     "options": [
-      "A. 4.47 mm",
-      "B. 3.16 mm",
-      "C. 2.00 mm",
-      "D. 5.25 mm"
+      "A. $4.47\\,\\mathrm{mm}$",
+      "B. $3.16\\,\\mathrm{mm}$",
+      "C. $2.00\\,\\mathrm{mm}$",
+      "D. $5.25\\,\\mathrm{mm}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "4.47 mm",
     "explanation": "Trong ánh sáng phản xạ, bán kính vân tối thứ k của vân tròn Newton được tính bởi công thức:\nrk = √(k * R * λ).\nVới k = 4, R = 10 m, λ = 0.5 µm = 0.5 × 10⁻⁶ m:\nr4 = √(4 * 10 * 0.5 × 10⁻⁶) = √(20 × 10⁻⁶) = √(2 × 10⁻⁵) ≈ 4.472 × 10⁻³ m = 4.47 mm.",
     "methodology": "Vân tròn Newton phản xạ: Vân tối rk = √(k*R*λ), Vân sáng rk = √((k - 0.5)*R*λ). Tâm hệ vân k = 0 luôn là điểm tối.",
-    "tips": "Bấm Casio: √(4 * 10 * 0.5 * 10^-6) = 4.47*10^-3 m = 4.47 mm.",
+    "tips": "Bấm Casio: $\\sqrt{4\\times10\\times0.5\\times10^{-6}}=4.47\\times10^{-3}\\,\\mathrm{m}=4.47\\,\\mathrm{mm}$.",
     "num": 87,
-    "chapter_title": "Chương 1: Dao động và sóng điện từ",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -1921,8 +1921,8 @@
   },
   {
     "id": "vldc_ch1_009",
-    "chapter": "Dao động và sóng điện từ",
-    "chapter_id": 1,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Tại sao cạnh của nêm không khí và tâm của hệ vân tròn Newton quan sát trong ánh sáng phản xạ luôn luôn là vân tối?",
     "options": [
@@ -1937,7 +1937,7 @@
     "methodology": "Nguyên lý phản xạ sóng: Sóng phản xạ từ môi trường chiết quang kém sang môi trường chiết quang hơn bị đảo pha π (cộng thêm λ/2 vào quang lộ).",
     "tips": "Quy tắc vàng: Phản xạ trên mặt chiết quang hơn ⇒ Mất nửa bước sóng (λ/2) ⇒ Tâm tiếp xúc d = 0 luôn TỐI.",
     "num": 88,
-    "chapter_title": "Chương 1: Dao động và sóng điện từ",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -1950,16 +1950,16 @@
     "type": "mcq",
     "prompt": "Chiếu ánh sáng đơn sắc bước sóng λ = 0.5 µm từ một nguồn điểm đặt cách lỗ tròn 2 m. Sau lỗ tròn 2 m đặt một màn quan sát. Bán kính của lỗ tròn bằng bao nhiêu để tâm màn quan sát đạt độ sáng cực đại đầu tiên?",
     "options": [
-      "A. 0.707 mm",
-      "B. 1.000 mm",
-      "C. 0.500 mm",
-      "D. 1.414 mm"
+      "A. $0.707\\,\\mathrm{mm}$",
+      "B. $1.000\\,\\mathrm{mm}$",
+      "C. $0.500\\,\\mathrm{mm}$",
+      "D. $1.414\\,\\mathrm{mm}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "0.707 mm",
     "explanation": "Độ sáng tại tâm đạt cực đại đầu tiên khi lỗ tròn chứa đúng 1 đới cầu Fresnel (m = 1, đới lẻ).\nCông thức bán kính đới cầu Fresnel thứ m:\nrm = √((m * a * b * λ) / (a + b)).\nVới a = 2 m, b = 2 m, λ = 0.5 µm = 0.5 × 10⁻⁶ m, m = 1:\nr1 = √((1 * 2 * 2 * 0.5 × 10⁻⁶) / (2 + 2)) = √(2 × 10⁻⁶ / 4) = √(0.5 × 10⁻⁶) = √(5 × 10⁻⁷) ≈ 0.707 × 10⁻³ m = 0.707 mm.",
     "methodology": "Lỗ tròn: m lẻ ⇒ tâm sáng; m chẵn ⇒ tâm tối. Cực đại đầu tiên tương ứng m = 1.",
-    "tips": "Bấm Casio: √( (2*2*0.5*10^-6) / 4 ) = 7.071*10^-4 m = 0.707 mm.",
+    "tips": "Bấm Casio: $\\sqrt{\\frac{2\\times2\\times0.5\\times10^{-6}}4}=7.071\\times10^{-4}\\,\\mathrm{m}=0.707\\,\\mathrm{mm}$.",
     "num": 89,
     "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
@@ -1974,10 +1974,10 @@
     "type": "mcq",
     "prompt": "Một chùm tia sáng đơn sắc song song bước sóng λ = 0.5 µm chiếu vuông góc vào một khe hẹp có bề rộng b = 0.1 mm. Đặt thấu kính hội tụ tiêu cự f = 1 m ngay sau khe để thu ảnh nhiễu xạ trên màn. Bề rộng của vân cực đại giữa bằng bao nhiêu?",
     "options": [
-      "A. 10 mm",
-      "B. 5 mm",
-      "C. 20 mm",
-      "D. 2 mm"
+      "A. $10\\,\\mathrm{mm}$",
+      "B. $5\\,\\mathrm{mm}$",
+      "C. $20\\,\\mathrm{mm}$",
+      "D. $2\\,\\mathrm{mm}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "10 mm",
@@ -1998,10 +1998,10 @@
     "type": "mcq",
     "prompt": "Một cách tử nhiễu xạ phẳng có chu kỳ d = 2 µm. Chiếu vuông góc vào cách tử chùm sáng đơn sắc bước sóng λ = 0.5 µm. Tổng số cực đại chính quan sát được trên màn là:",
     "options": [
-      "A. 9",
-      "B. 8",
-      "C. 7",
-      "D. 4"
+      "A. $9$",
+      "B. $8$",
+      "C. $7$",
+      "D. $4$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "9",
@@ -2041,15 +2041,15 @@
   },
   {
     "id": "vldc_ch3_019",
-    "chapter": "Quang học lượng tử",
-    "chapter_id": 3,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Chiếu chùm ánh sáng tự nhiên có cường độ I_tn qua hệ thống gồm hai kính phân cực phẳng có quang trục hợp với nhau một góc α = 60°. Bỏ qua sự hấp thụ ánh sáng của bản kính. Cường độ chùm sáng sau khi đi qua hai kính bằng:",
     "options": [
-      "A. 0.125 I_tn",
-      "B. 0.250 I_tn",
-      "C. 0.500 I_tn",
-      "D. 0.0625 I_tn"
+      "A. $0.125 I_tn$",
+      "B. $0.250 I_tn$",
+      "C. $0.500 I_tn$",
+      "D. $0.0625 I_tn$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "0.125 I_tn",
@@ -2057,7 +2057,7 @@
     "methodology": "Định luật Malus: I = I0 * cos²(α). Ánh sáng tự nhiên qua kính 1 giảm 1/2.",
     "tips": "Bấm Casio: 0.5 * cos(60)² = 0.125 = 1/8.",
     "num": 93,
-    "chapter_title": "Chương 3: Quang học lượng tử",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2065,15 +2065,15 @@
   },
   {
     "id": "vldc_ch3_020",
-    "chapter": "Quang học lượng tử",
-    "chapter_id": 3,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Tia sáng truyền từ không khí vào một bản thủy tinh có chiết suất n = √3. Để tia phản xạ là ánh sáng phân cực toàn phần thì góc tới i phải bằng bao nhiêu?",
     "options": [
-      "A. 60°",
-      "B. 30°",
-      "C. 45°",
-      "D. 53°"
+      "A. $60^\\circ$",
+      "B. $30^\\circ$",
+      "C. $45^\\circ$",
+      "D. $53^\\circ$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "60°",
@@ -2081,7 +2081,7 @@
     "methodology": "Định luật Brewster: tan(iB) = n2 / n1. Khi đó iB + r = 90°.",
     "tips": "Nhớ nhanh: tan(60°) = √3 ≈ 1.732; tan(45°) = 1; tan(30°) = 1/√3.",
     "num": 94,
-    "chapter_title": "Chương 3: Quang học lượng tử",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2089,23 +2089,23 @@
   },
   {
     "id": "vldc_ch4_012",
-    "chapter": "Cơ học lượng tử",
-    "chapter_id": 4,
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
     "type": "mcq",
     "prompt": "Nhiệt độ tuyệt đối của một vật đen tuyệt đối tăng từ T1 = 1000 K lên T2 = 2000 K. Năng suất phát xạ toàn phần R của vật đó tăng lên bao nhiêu lần?",
     "options": [
-      "A. 16 lần",
-      "B. 4 lần",
-      "C. 8 lần",
-      "D. 2 lần"
+      "A. $16$ lần",
+      "B. $4$ lần",
+      "C. $8$ lần",
+      "D. $2$ lần"
     ],
     "correct_answer": "A",
     "correct_answer_text": "16 lần",
     "explanation": "Theo định luật Stefan - Boltzmann, năng suất phát xạ toàn phần của vật đen tuyệt đối tỉ lệ thuận với lũy thừa 4 của nhiệt độ tuyệt đối:\nR = σ * T⁴.\nDo đó tỉ số năng suất phát xạ khi nhiệt độ tăng từ T1 lên T2 là:\nR2 / R1 = (T2 / T1)⁴ = (2000 / 1000)⁴ = 2⁴ = 16 lần.",
     "methodology": "Định luật Stefan-Boltzmann: R ∝ T⁴. Nhiệt độ tăng k lần thì năng suất phát xạ tăng k⁴ lần.",
-    "tips": "Bấm máy: 2^4 = 16 lần.",
+    "tips": "Bấm máy: $2^4=16$ lần.",
     "num": 95,
-    "chapter_title": "Chương 4: Cơ học lượng tử",
+    "chapter_title": "Chương 3: Quang học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2113,23 +2113,23 @@
   },
   {
     "id": "vldc_ch4_013",
-    "chapter": "Cơ học lượng tử",
-    "chapter_id": 4,
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
     "type": "mcq",
     "prompt": "Bước sóng ứng với năng suất phát xạ cực đại của Mặt Trời là λm = 0.50 µm. Coi Mặt Trời phát xạ như vật đen tuyệt đối. Biết hằng số Wien b = 2.898 × 10⁻³ m·K. Nhiệt độ bề mặt Mặt Trời xấp xỉ bằng:",
     "options": [
-      "A. 5796 K",
-      "B. 6200 K",
-      "C. 5400 K",
-      "D. 4800 K"
+      "A. $5796 K$",
+      "B. $6200 K$",
+      "C. $5400 K$",
+      "D. $4800 K$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "5796 K",
     "explanation": "Theo định luật dịch chuyển Wien:\nλm * T = b ⇒ T = b / λm.\nVới b = 2.898 × 10⁻³ m·K, λm = 0.50 µm = 0.50 × 10⁻⁶ m:\nT = (2.898 × 10⁻³) / (0.50 × 10⁻⁶) = 5796 K.",
     "methodology": "Định luật dịch chuyển Wien: T = b / λm.",
-    "tips": "Bấm Casio: 2.898*10^-3 / (0.5*10^-6) = 5796 K.",
+    "tips": "Bấm Casio: $\\frac{2.898\\times10^{-3}}{0.5\\times10^{-6}}=5796\\,\\mathrm{K}$.",
     "num": 96,
-    "chapter_title": "Chương 4: Cơ học lượng tử",
+    "chapter_title": "Chương 3: Quang học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2137,15 +2137,15 @@
   },
   {
     "id": "vldc_ch4_014",
-    "chapter": "Cơ học lượng tử",
-    "chapter_id": 4,
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
     "type": "mcq",
     "prompt": "Chiếu chùm bức xạ có bước sóng λ = 0.2 µm vào tấm kim loại có công thoát electron A = 3.2 eV. Cho h = 6.625 × 10⁻³⁴ J·s, c = 3 × 10⁸ m/s, 1 eV = 1.6 × 10⁻¹⁹ J. Hiệu điện thế hãm Uh để triệt tiêu dòng quang điện bằng:",
     "options": [
-      "A. 3.01 V",
-      "B. 4.25 V",
-      "C. 1.85 V",
-      "D. 6.21 V"
+      "A. $3.01\\,\\mathrm{V}$",
+      "B. $4.25\\,\\mathrm{V}$",
+      "C. $1.85\\,\\mathrm{V}$",
+      "D. $6.21\\,\\mathrm{V}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "3.01 V",
@@ -2153,7 +2153,7 @@
     "methodology": "Công thức Einstein: e*Uh = hc/λ - A. Chuyển hết sang eV để tính Uh = ε(eV) - A(eV).",
     "tips": "Mẹo siêu nhanh: ε(eV) = 1.242 / λ(µm). Với λ = 0.2 µm ⇒ ε = 1.242 / 0.2 = 6.21 eV. Uh = 6.21 - 3.2 = 3.01 V.",
     "num": 97,
-    "chapter_title": "Chương 4: Cơ học lượng tử",
+    "chapter_title": "Chương 3: Quang học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2161,15 +2161,15 @@
   },
   {
     "id": "vldc_ch4_015",
-    "chapter": "Cơ học lượng tử",
-    "chapter_id": 4,
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
     "type": "mcq",
     "prompt": "Trong hiện tượng tán xạ Compton, photon tới tán xạ trên electron tự do đứng yên và bay lệch đi một góc θ = 90°. Bước sóng Compton của electron là λc = 0.0243 Å. Độ tăng bước sóng Δλ của photon tán xạ bằng:",
     "options": [
-      "A. 0.0243 Å",
-      "B. 0.0486 Å",
-      "C. 0.0121 Å",
-      "D. 0.0364 Å"
+      "A. $0.0243\\,\\text{Å}$",
+      "B. $0.0486\\,\\text{Å}$",
+      "C. $0.0121\\,\\text{Å}$",
+      "D. $0.0364\\,\\text{Å}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "0.0243 Å",
@@ -2177,7 +2177,7 @@
     "methodology": "Công thức Compton: Δλ = λc * (1 - cos θ) = 2*λc * sin²(θ/2). Khi θ = 90° thì Δλ = λc. Khi θ = 180° thì Δλ = 2*λc.",
     "tips": "Nhớ mốc góc: θ = 60° ⇒ Δλ = 0.5*λc; θ = 90° ⇒ Δλ = λc; θ = 180° ⇒ Δλ = 2*λc.",
     "num": 98,
-    "chapter_title": "Chương 4: Cơ học lượng tử",
+    "chapter_title": "Chương 3: Quang học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2185,15 +2185,15 @@
   },
   {
     "id": "vldc_ch5_011",
-    "chapter": "Vật lý nguyên tử",
-    "chapter_id": 5,
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
     "type": "mcq",
     "prompt": "Hạt electron không vận tốc đầu được gia tốc qua hiệu điện thế U = 100 V. Bước sóng De Broglie của electron sau khi gia tốc xấp xỉ bằng:",
     "options": [
-      "A. 1.23 Å",
-      "B. 0.123 Å",
-      "C. 12.27 Å",
-      "D. 2.45 Å"
+      "A. $1.23\\,\\text{Å}$",
+      "B. $0.123\\,\\text{Å}$",
+      "C. $12.27\\,\\text{Å}$",
+      "D. $2.45\\,\\text{Å}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "1.23 Å",
@@ -2201,7 +2201,7 @@
     "methodology": "Công thức De Broglie cho electron phi tương đối tính: λ = 12.27 / √U (Å).",
     "tips": "Mẹo Casio siêu tốc: Gõ 12.27 / √100 = 1.227 Å.",
     "num": 99,
-    "chapter_title": "Chương 5: Vật lý nguyên tử",
+    "chapter_title": "Chương 4: Cơ học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2209,15 +2209,15 @@
   },
   {
     "id": "vldc_ch5_012",
-    "chapter": "Vật lý nguyên tử",
-    "chapter_id": 5,
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
     "type": "mcq",
     "prompt": "Một hạt vi mô chuyển động trong giếng thế năng một chiều sâu vô hạn có bề rộng a. Năng lượng ở trạng thái cơ bản là E1 = 2 eV. Năng lượng cần cung cấp để hạt nhảy từ trạng thái cơ bản (n = 1) lên trạng thái kích thích thứ nhất (n = 2) là:",
     "options": [
-      "A. 6 eV",
-      "B. 8 eV",
-      "C. 4 eV",
-      "D. 12 eV"
+      "A. $6 eV$",
+      "B. $8 eV$",
+      "C. $4 eV$",
+      "D. $12 eV$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "6 eV",
@@ -2225,7 +2225,7 @@
     "methodology": "Mức năng lượng giếng thế: En = n² * E1. Năng lượng kích thích: ΔE = (n2² - n1²)*E1.",
     "tips": "Mẹo tính: (2² - 1²) * 2 = 3 * 2 = 6 eV.",
     "num": 100,
-    "chapter_title": "Chương 5: Vật lý nguyên tử",
+    "chapter_title": "Chương 4: Cơ học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2233,15 +2233,15 @@
   },
   {
     "id": "vldc_ch5_013",
-    "chapter": "Vật lý nguyên tử",
-    "chapter_id": 5,
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
     "type": "mcq",
     "prompt": "Hạt chuyển động trong giếng thế một chiều sâu vô hạn bề rộng a ở trạng thái cơ bản (n = 1). Mật độ xác suất tìm thấy hạt đạt giá trị lớn nhất tại vị trí nào trong giếng?",
     "options": [
-      "A. Chính giữa giếng (x = a / 2)",
-      "B. Tại hai mép thành giếng (x = 0 và x = a)",
+      "A. Chính giữa giếng ($x=\\frac a2$)",
+      "B. Tại hai mép thành giếng ($x=0$ và $x=a$)",
       "C. Mật độ xác suất bằng nhau ở mọi điểm trong giếng",
-      "D. Tại x = a / 4 và x = 3a / 4"
+      "D. Tại $x=\\frac a4$ và $x=\\frac{3a}{4}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "Chính giữa giếng (x = a / 2)",
@@ -2249,7 +2249,7 @@
     "methodology": "Mật độ xác suất |ψn(x)|² tỉ lệ với sin²(n*π*x/a). Với n = 1, cực đại duy nhất tại x = a/2.",
     "tips": "Nắm bản chất: Ở n = 1, hạt có xu hướng tập trung nhiều nhất ở trung tâm x = a/2.",
     "num": 101,
-    "chapter_title": "Chương 5: Vật lý nguyên tử",
+    "chapter_title": "Chương 4: Cơ học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2257,8 +2257,8 @@
   },
   {
     "id": "vldc_ch6_005",
-    "chapter": "Vật lý hạt nhân",
-    "chapter_id": 6,
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
     "type": "mcq",
     "prompt": "Theo mẫu nguyên tử Bo của nguyên tử Hydro, electron chuyển từ quỹ đạo có mức năng lượng n = 3 về quỹ đạo n = 2 thì phát ra bức xạ thuộc dãy nào và ở vùng ánh sáng nào?",
     "options": [
@@ -2273,7 +2273,7 @@
     "methodology": "Ghi nhớ quy ước dãy quang phổ: Về 1 = Lyman (Tử ngoại), Về 2 = Balmer (Khả kiến), Về 3 = Paschen (Hồng ngoại).",
     "tips": "Câu thần chú: '1 Ly Tử - 2 Ban Nhìn - 3 Pát Hồng'.",
     "num": 102,
-    "chapter_title": "Chương 6: Vật lý hạt nhân",
+    "chapter_title": "Chương 5: Vật lý nguyên tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2286,16 +2286,16 @@
     "type": "mcq",
     "prompt": "Chất phóng xạ Poloni ²¹⁰Po có chu kỳ bán rã T = 138 ngày. Ban đầu có m0 = 10 g Poloni. Sau thời gian t = 414 ngày, khối lượng Poloni còn lại chưa bị phân rã là:",
     "options": [
-      "A. 1.25 g",
-      "B. 2.50 g",
-      "C. 0.625 g",
-      "D. 5.00 g"
+      "A. $1.25 g$",
+      "B. $2.50 g$",
+      "C. $0.625 g$",
+      "D. $5.00 g$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "1.25 g",
     "explanation": "Số chu kỳ bán rã đã trôi qua:\nk = t / T = 414 / 138 = 3 chu kỳ.\nTheo định luật phân rã phóng xạ, khối lượng chất phóng xạ còn lại sau k chu kỳ là:\nm(t) = m0 * 2^(-k) = m0 / 2^k = 10 g / 2³ = 10 / 8 = 1.25 g.",
     "methodology": "Định luật phóng xạ: m = m0 / 2^(t/T).",
-    "tips": "Bấm Casio: 10 / (2^3) = 1.25 g.",
+    "tips": "Bấm Casio: $\\frac{10}{2^3}=1.25\\,\\mathrm{g}$.",
     "num": 103,
     "chapter_title": "Chương 6: Vật lý hạt nhân",
     "question_type": "mcq",
@@ -2310,10 +2310,10 @@
     "type": "mcq",
     "prompt": "Trong thí nghiệm khe Young, cho khoảng cách hai khe a = 2 mm, khoảng cách đến màn D = 2 m. Chiếu ánh sáng có bước sóng λ = 0.5 µm. Tính khoảng vân giao thoa i (nhập giá trị theo đơn vị mm, chỉ điền số):",
     "options": [
-      "A. 0,5 mm",
-      "B. 0,25 mm",
-      "C. 1,0 mm",
-      "D. 0,75 mm"
+      "A. $0{,}5\\,\\mathrm{mm}$",
+      "B. $0{,}25\\,\\mathrm{mm}$",
+      "C. $1{,}0\\,\\mathrm{mm}$",
+      "D. $0{,}75\\,\\mathrm{mm}$"
     ],
     "correct_answer": "0.5",
     "correct_answer_text": "0.5 mm",
@@ -2334,10 +2334,10 @@
     "type": "mcq",
     "prompt": "Cho công thoát của kim loại Natri là A = 2.484 eV. Cho h = 6.625 × 10⁻³⁴ J·s, c = 3 × 10⁸ m/s, 1 eV = 1.6 × 10⁻¹⁹ J. Tính giới hạn quang điện λ0 của Natri (nhập giá trị theo đơn vị µm, làm tròn 2 chữ số thập phân):",
     "options": [
-      "A. 0,5 μm",
-      "B. 0,6 μm",
-      "C. 0,4 μm",
-      "D. 0,35 μm"
+      "A. $0{,}5\\,\\mu\\mathrm{m}$",
+      "B. $0{,}6\\,\\mu\\mathrm{m}$",
+      "C. $0{,}4\\,\\mu\\mathrm{m}$",
+      "D. $0{,}35\\,\\mu\\mathrm{m}$"
     ],
     "correct_answer": "0.5",
     "correct_answer_text": "0.50 µm",
@@ -2353,8 +2353,8 @@
   },
   {
     "id": "vldc_ch1_011",
-    "chapter": "Dao động và sóng điện từ",
-    "chapter_id": 1,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Trong thí nghiệm khe Young (a = 1 mm, D = 2 m, λ = 0.6 µm), nếu nhúng toàn bộ hệ thống vào trong nước có chiết suất n = 4/3 thì khoảng vân i' thay đổi như thế nào?",
     "options": [
@@ -2369,7 +2369,7 @@
     "methodology": "Khoảng vân trong môi trường chiết suất n: i' = i / n. Môi trường càng chiết quang thì vân càng sít nhau.",
     "tips": "Mẹo nhanh: i' = i / n = 1.2 / 1.333 = 0.9 mm.",
     "num": 106,
-    "chapter_title": "Chương 1: Dao động và sóng điện từ",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2377,15 +2377,15 @@
   },
   {
     "id": "vldc_ch1_012",
-    "chapter": "Dao động và sóng điện từ",
-    "chapter_id": 1,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Để đo chiết suất của một chất khí, người ta đặt một ống thủy tinh dài l = 10 cm chứa khí đó trước một trong hai khe của máy giao thoa Young (λ = 0.5 µm). Khi hút hết khí ra khỏi ống (tạo chân không), người ta thấy hệ vân dịch chuyển đúng 100 khoảng vân. Chiết suất n của chất khí đó bằng:",
     "options": [
-      "A. 1.0005",
-      "B. 1.0050",
-      "C. 1.0001",
-      "D. 1.0025"
+      "A. $1.0005$",
+      "B. $1.0050$",
+      "C. $1.0001$",
+      "D. $1.0025$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "1.0005",
@@ -2393,7 +2393,7 @@
     "methodology": "Đo chiết suất khí bằng ống khí Young: n = 1 + (k * λ) / l.",
     "tips": "Bấm Casio: 1 + (100 * 0.5e-6) / 0.1 = 1.0005.",
     "num": 107,
-    "chapter_title": "Chương 1: Dao động và sóng điện từ",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2401,15 +2401,15 @@
   },
   {
     "id": "vldc_ch1_013",
-    "chapter": "Dao động và sóng điện từ",
-    "chapter_id": 1,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Một màng xà phòng mỏng có chiết suất n = 1.33 được rọi bằng ánh sáng trắng dưới góc tới r = 30° trong màng. Để màng có màu phản xạ sáng rõ nhất với bước sóng λ = 0.6 µm thì bề dày nhỏ nhất của màng phải bằng:",
     "options": [
-      "A. 0.130 µm",
-      "B. 0.225 µm",
-      "C. 0.113 µm",
-      "D. 0.300 µm"
+      "A. $0.130 µm$",
+      "B. $0.225 µm$",
+      "C. $0.113 µm$",
+      "D. $0.300 µm$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "0.130 µm",
@@ -2417,7 +2417,7 @@
     "methodology": "Màng mỏng phản xạ có đổi pha λ/2: 2nd cos(r) = (k - 0.5)λ cho cực đại sáng. d_min = λ / (4 n cos r).",
     "tips": "Bấm máy: 0.6 / (4 * 1.33 * cos(30°)) = 0.1302 µm.",
     "num": 108,
-    "chapter_title": "Chương 1: Dao động và sóng điện từ",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2425,14 +2425,14 @@
   },
   {
     "id": "vldc_ch1_014",
-    "chapter": "Dao động và sóng điện từ",
-    "chapter_id": 1,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Trong thí nghiệm vân tròn Newton, người ta đổ một chất lỏng trong suốt có chiết suất n = 1.44 vào khoảng không gian giữa thấu kính và bản thủy tinh phẳng. Khi đó bán kính các vân giao thoa thay đổi như thế nào?",
     "options": [
-      "A. Giảm đi 1.2 lần (r' = r / 1.2)",
-      "B. Tăng lên 1.2 lần (r' = 1.2 * r)",
-      "C. Giảm đi 1.44 lần (r' = r / 1.44)",
+      "A. Giảm đi 1.2 lần ($r'=\\frac r{1.2}$)",
+      "B. Tăng lên 1.2 lần ($r'=1.2r$)",
+      "C. Giảm đi 1.44 lần ($r'=\\frac r{1.44}$)",
       "D. Không đổi vì bán kính mặt cong R không đổi"
     ],
     "correct_answer": "A",
@@ -2441,7 +2441,7 @@
     "methodology": "Vân tròn Newton có môi trường chiết suất n: r' = r / √n.",
     "tips": "Nhớ: Bán kính vân tỉ lệ nghịch với căn bậc hai của chiết suất: r' = r / √1.44 = r / 1.2.",
     "num": 109,
-    "chapter_title": "Chương 1: Dao động và sóng điện từ",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2449,15 +2449,15 @@
   },
   {
     "id": "vldc_ch1_015",
-    "chapter": "Dao động và sóng điện từ",
-    "chapter_id": 1,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Trong giao thoa kế Michelson, khi dịch chuyển một trong hai gương phẳng một đoạn d = 0.03 mm thì quan sát thấy hệ vân giao thoa dịch chuyển 100 vân. Bước sóng của chùm ánh sáng đơn sắc dùng trong thí nghiệm là:",
     "options": [
-      "A. 0.60 µm",
-      "B. 0.50 µm",
-      "C. 0.30 µm",
-      "D. 0.75 µm"
+      "A. $0.60 µm$",
+      "B. $0.50 µm$",
+      "C. $0.30 µm$",
+      "D. $0.75 µm$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "0.60 µm",
@@ -2465,7 +2465,7 @@
     "methodology": "Giao thoa kế Michelson: Quang lộ thay đổi 2d. Công thức: 2d = N * λ.",
     "tips": "Bấm máy: 2 * 0.03 / 100 = 0.0006 mm = 0.6 µm.",
     "num": 110,
-    "chapter_title": "Chương 1: Dao động và sóng điện từ",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2478,16 +2478,16 @@
     "type": "mcq",
     "prompt": "Chiếu sóng phẳng đơn sắc bước sóng λ = 0.5 µm vuông góc vào một màn chắn có lỗ tròn. Điểm quan sát M nằm trên trục đối xứng cách màn b = 1 m. Bán kính đới cầu Fresnel thứ 4 nhìn từ điểm M bằng bao nhiêu?",
     "options": [
-      "A. 1.414 mm",
-      "B. 1.000 mm",
-      "C. 2.000 mm",
-      "D. 0.707 mm"
+      "A. $1.414\\,\\mathrm{mm}$",
+      "B. $1.000\\,\\mathrm{mm}$",
+      "C. $2.000\\,\\mathrm{mm}$",
+      "D. $0.707\\,\\mathrm{mm}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "1.414 mm",
     "explanation": "Trường hợp sóng phẳng (nguồn ở vô cực a → ∞), công thức bán kính đới cầu Fresnel thứ k là:\nrk = √(k * b * λ).\nVới k = 4, b = 1 m, λ = 0.5 µm = 0.5 × 10⁻⁶ m:\nr4 = √(4 * 1 * 0.5 × 10⁻⁶) = √(2 × 10⁻⁶) = √2 × 10⁻³ m ≈ 1.414 mm.",
     "methodology": "Sóng phẳng đới Fresnel: rk = √(k*b*λ). Với sóng cầu: rk = √(k*a*b*λ / (a+b)).",
-    "tips": "Bấm Casio: √(4 * 1 * 0.5e-6) = 1.414*10^-3 m = 1.414 mm.",
+    "tips": "Bấm Casio: $\\sqrt{4\\times1\\times0.5\\times10^{-6}}=1.414\\times10^{-3}\\,\\mathrm{m}=1.414\\,\\mathrm{mm}$.",
     "num": 111,
     "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
@@ -2502,10 +2502,10 @@
     "type": "mcq",
     "prompt": "Một cách tử nhiễu xạ có chu kỳ d = 4 µm. Chiếu ánh sáng trắng có bước sóng từ 0.4 µm (tím) đến 0.76 µm (đỏ) vuông góc vào cách tử. Góc lệch ứng với vạch đỏ bậc 1 (k = 1, λ = 0.76 µm) bằng bao nhiêu?",
     "options": [
-      "A. 10.95°",
-      "B. 5.74°",
-      "C. 15.20°",
-      "D. 22.40°"
+      "A. $10.95^\\circ$",
+      "B. $5.74^\\circ$",
+      "C. $15.20^\\circ$",
+      "D. $22.40^\\circ$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "10.95°",
@@ -2526,10 +2526,10 @@
     "type": "mcq",
     "prompt": "Một cách tử có 500 vạch trên 1 mm chiều dài. Chiếu chùm tia đơn sắc bước sóng λ = 0.6 µm vuông góc với cách tử. Bậc cực đại lớn nhất có thể quan sát được qua cách tử này là:",
     "options": [
-      "A. 3",
-      "B. 4",
-      "C. 2",
-      "D. 5"
+      "A. $3$",
+      "B. $4$",
+      "C. $2$",
+      "D. $5$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "3",
@@ -2550,10 +2550,10 @@
     "type": "mcq",
     "prompt": "Chiếu chùm tia X có bước sóng λ = 0.154 nm vào bề mặt của một tinh thể có khoảng cách giữa các mặt phẳng nguyên tử d = 0.282 nm. Góc phản xạ Bragg θ ứng với cực đại nhiễu xạ bậc 1 (k = 1) bằng:",
     "options": [
-      "A. 15.84°",
-      "B. 32.70°",
-      "C. 8.25°",
-      "D. 24.10°"
+      "A. $15.84^\\circ$",
+      "B. $32.70^\\circ$",
+      "C. $8.25^\\circ$",
+      "D. $24\\times10^\\circ$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "15.84°",
@@ -2569,15 +2569,15 @@
   },
   {
     "id": "vldc_ch3_021",
-    "chapter": "Quang học lượng tử",
-    "chapter_id": 3,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Góc giới hạn phản xạ toàn phần của kim cương trong không khí là igh = 24.4°. Góc Brewster iB khi chiếu ánh sáng từ không khí vào kim cương bằng bao nhiêu?",
     "options": [
-      "A. 67.5°",
-      "B. 45.0°",
-      "C. 60.0°",
-      "D. 72.3°"
+      "A. $67.5^\\circ$",
+      "B. $45.0^\\circ$",
+      "C. $60.0^\\circ$",
+      "D. $72.3^\\circ$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "67.5°",
@@ -2585,7 +2585,7 @@
     "methodology": "Liên hệ góc toàn phần và Brewster: n = 1/sin(igh); tan(iB) = n.",
     "tips": "Bấm Casio: n = 1/sin(24.4°) = 2.4208; shift tan(2.4208) = 67.55°.",
     "num": 115,
-    "chapter_title": "Chương 3: Quang học lượng tử",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2593,15 +2593,15 @@
   },
   {
     "id": "vldc_ch3_022",
-    "chapter": "Quang học lượng tử",
-    "chapter_id": 3,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Chiếu chùm ánh sáng tự nhiên qua hệ 3 kính phân cực lý tưởng. Kính thứ nhất và kính thứ ba bắt chéo nhau (góc giữa hai quang trục là 90°). Kính thứ hai đặt ở giữa có quang trục hợp với kính thứ nhất một góc 45°. Cường độ ánh sáng thoát ra sau kính thứ ba so với cường độ ánh sáng tự nhiên ban đầu bằng:",
     "options": [
-      "A. 1/8 (12.5%)",
-      "B. 1/4 (25%)",
-      "C. 0 (bị tắt hoàn toàn)",
-      "D. 1/16 (6.25%)"
+      "A. $1/8 (12.5%)$",
+      "B. $1/4 (25%)$",
+      "C. $0 (bị tắt hoàn toàn)$",
+      "D. $1/16 (6.25%)$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "1/8 (12.5%)",
@@ -2609,7 +2609,7 @@
     "methodology": "Hiện tượng phục hồi ánh sáng qua kính phân cực trung gian: I_out = (I_tn / 2) * cos²(α1) * cos²(α2).",
     "tips": "Bấm Casio: 0.5 * cos(45)² * cos(45)² = 0.5 * 0.5 * 0.5 = 1/8.",
     "num": 116,
-    "chapter_title": "Chương 3: Quang học lượng tử",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2617,15 +2617,15 @@
   },
   {
     "id": "vldc_ch4_017",
-    "chapter": "Cơ học lượng tử",
-    "chapter_id": 4,
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
     "type": "mcq",
     "prompt": "Dây tóc vonfram của một bóng đèn sợi đốt có diện tích phát xạ S = 0.5 cm² và nhiệt độ hoạt động T = 2500 K. Giả sử hệ số hấp thụ trung bình của vonfram ở nhiệt độ này là ε = 0.35, cho σ = 5.67 × 10⁻⁸ W/(m²·K⁴). Công suất bức xạ của dây tóc bóng đèn xấp xỉ bằng:",
     "options": [
-      "A. 38.7 W",
-      "B. 110.5 W",
-      "C. 55.4 W",
-      "D. 77.2 W"
+      "A. $38.7 W$",
+      "B. $110.5 W$",
+      "C. $55.4 W$",
+      "D. $77.2 W$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "38.7 W",
@@ -2633,7 +2633,7 @@
     "methodology": "Công suất bức xạ vật không đen tuyệt đối: P = ε * S * σ * T⁴.",
     "tips": "Bấm Casio: 0.35 * 0.5e-4 * 5.67e-8 * 2500^4 = 38.76 W.",
     "num": 117,
-    "chapter_title": "Chương 4: Cơ học lượng tử",
+    "chapter_title": "Chương 3: Quang học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2641,15 +2641,15 @@
   },
   {
     "id": "vldc_ch4_018",
-    "chapter": "Cơ học lượng tử",
-    "chapter_id": 4,
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
     "type": "mcq",
     "prompt": "Trong hiện tượng quang điện ngoài, quả cầu kim loại cô lập có giới hạn quang điện λ0 = 0.3 µm được chiếu bằng ánh sáng đơn sắc bước sóng λ = 0.2 µm. Điện thế cực đại V_max mà quả cầu tích được là:",
     "options": [
-      "A. 2.07 V",
-      "B. 4.14 V",
-      "C. 1.03 V",
-      "D. 6.21 V"
+      "A. $2.07\\,\\mathrm{V}$",
+      "B. $4.14\\,\\mathrm{V}$",
+      "C. $1.03\\,\\mathrm{V}$",
+      "D. $6.21\\,\\mathrm{V}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "2.07 V",
@@ -2657,7 +2657,7 @@
     "methodology": "Điện thế cực đại của vật dẫn cô lập khi quang điện: V_max = Uh = (ε - A) / e.",
     "tips": "Bấm nhanh: V_max = 1.242 * (1/0.2 - 1/0.3) = 1.242 * (5 - 3.333) = 2.07 V.",
     "num": 118,
-    "chapter_title": "Chương 4: Cơ học lượng tử",
+    "chapter_title": "Chương 3: Quang học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2665,15 +2665,15 @@
   },
   {
     "id": "vldc_ch4_019",
-    "chapter": "Cơ học lượng tử",
-    "chapter_id": 4,
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
     "type": "mcq",
     "prompt": "Trong tán xạ Compton, photon tới có năng lượng E = 0.511 MeV (bằng năng lượng nghỉ của electron m0*c²). Tán xạ ngược trở lại một góc θ = 180°. Động năng truyền cho electron giật lùi bằng:",
     "options": [
-      "A. 0.341 MeV",
-      "B. 0.170 MeV",
-      "C. 0.511 MeV",
-      "D. 0.255 MeV"
+      "A. $0.341\\,\\mathrm{MeV}$",
+      "B. $0.170\\,\\mathrm{MeV}$",
+      "C. $0.511\\,\\mathrm{MeV}$",
+      "D. $0.255\\,\\mathrm{MeV}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "0.341 MeV",
@@ -2681,7 +2681,7 @@
     "methodology": "Tán xạ Compton góc 180°: λ' = λ + 2λc. Bảo toàn năng lượng: Ke = E - E'.",
     "tips": "Mẹo nhanh: Khi E = m0 c² thì λ = λc. Góc 180° ⇒ λ' = 3λc ⇒ E' = E/3 ⇒ Ke = 2E/3 = 2/3 * 0.511 = 0.341 MeV.",
     "num": 119,
-    "chapter_title": "Chương 4: Cơ học lượng tử",
+    "chapter_title": "Chương 3: Quang học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2689,8 +2689,8 @@
   },
   {
     "id": "vldc_ch5_014",
-    "chapter": "Vật lý nguyên tử",
-    "chapter_id": 5,
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
     "type": "mcq",
     "prompt": "Hạt proton và hạt electron có cùng động năng Wđ. Tỉ số giữa bước sóng De Broglie của electron và proton (λ_e / λ_p) bằng bao nhiêu? Biết khối lượng proton mp ≈ 1836 me.",
     "options": [
@@ -2705,7 +2705,7 @@
     "methodology": "Tỉ số bước sóng De Broglie cùng động năng tỉ lệ nghịch với căn bậc hai khối lượng: λ1/λ2 = √(m2/m1).",
     "tips": "Bấm Casio: √1836 = 42.848.",
     "num": 120,
-    "chapter_title": "Chương 5: Vật lý nguyên tử",
+    "chapter_title": "Chương 4: Cơ học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2713,15 +2713,15 @@
   },
   {
     "id": "vldc_ch5_015",
-    "chapter": "Vật lý nguyên tử",
-    "chapter_id": 5,
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
     "type": "mcq",
     "prompt": "Thời gian sống trung bình của nguyên tử ở trạng thái kích thích là τ = 10⁻⁸ s. Độ rộng tự nhiên của mức năng lượng này (độ bất định năng lượng ΔE) theo hệ thức Heisenberg xấp xỉ bằng:",
     "options": [
-      "A. 6.6 × 10⁻⁸ eV",
-      "B. 4.1 × 10⁻¹⁵ eV",
-      "C. 1.05 × 10⁻²⁶ eV",
-      "D. 3.2 × 10⁻⁶ eV"
+      "A. $6.6 × 10^{-8} eV$",
+      "B. $4.1 × 10^{-15} eV$",
+      "C. $1.05 × 10^{-26} eV$",
+      "D. $3.2 × 10^{-6} eV$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "6.6 × 10⁻⁸ eV",
@@ -2729,7 +2729,7 @@
     "methodology": "Hệ thức Heisenberg: ΔE * Δt ≈ ħ. Đổi Joule sang eV bằng cách chia cho 1.6e-19.",
     "tips": "Bấm Casio: (1.055e-34 / 1e-8) / 1.6e-19 = 6.59e-8 eV.",
     "num": 121,
-    "chapter_title": "Chương 5: Vật lý nguyên tử",
+    "chapter_title": "Chương 4: Cơ học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2737,15 +2737,15 @@
   },
   {
     "id": "vldc_ch5_016",
-    "chapter": "Vật lý nguyên tử",
-    "chapter_id": 5,
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
     "type": "mcq",
     "prompt": "Hạt chuyển động trong giếng thế năng 1 chiều sâu vô hạn bề rộng a ở trạng thái dừng n = 2. Xác suất tìm thấy hạt trong khoảng từ x = 0 đến x = a/2 (nửa bên trái giếng) bằng:",
     "options": [
-      "A. 50% (0.5)",
-      "B. 25% (0.25)",
-      "C. 100% (1.0)",
-      "D. 0%"
+      "A. $50% (0.5)$",
+      "B. $25% (0.25)$",
+      "C. $100% (1.0)$",
+      "D. $0%$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "50% (0.5)",
@@ -2753,7 +2753,7 @@
     "methodology": "Tính chất đối xứng của giếng thế sâu vô hạn: Xác suất tìm hạt ở nửa giếng luôn bằng 0.5 đối với mọi số lượng tử n.",
     "tips": "Quy tắc đối xứng: Giếng cân xứng nên xác suất ở mỗi nửa luôn là 0.5 (50%).",
     "num": 122,
-    "chapter_title": "Chương 5: Vật lý nguyên tử",
+    "chapter_title": "Chương 4: Cơ học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2761,15 +2761,15 @@
   },
   {
     "id": "vldc_ch6_007",
-    "chapter": "Vật lý hạt nhân",
-    "chapter_id": 6,
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
     "type": "mcq",
     "prompt": "Bước sóng dài nhất trong dãy Balmer của quang phổ nguyên tử Hydro ứng với sự chuyển mức năng lượng nào của electron?",
     "options": [
-      "A. Từ n = 3 về n = 2 (Vạch Hα)",
-      "B. Từ n = 4 về n = 2 (Vạch Hβ)",
-      "C. Từ n = ∞ về n = 2",
-      "D. Từ n = 2 về n = 1"
+      "A. Từ $n=3$ về $n=2$ (Vạch $H_\\alpha$)",
+      "B. Từ $n=4$ về $n=2$ (Vạch $H_\\beta$)",
+      "C. Từ $n=\\infty$ về $n=2$",
+      "D. Từ $n=2$ về $n=1$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "Từ n = 3 về n = 2 (Vạch Hα)",
@@ -2777,7 +2777,7 @@
     "methodology": "Quy tắc bước sóng quang phổ: λ_max ứng với hiệu mức nhỏ nhất (kế cận), λ_min ứng với n = ∞.",
     "tips": "Nhớ: λ lớn nhất ⇔ ΔE nhỏ nhất ⇔ mức kế cận (3 → 2).",
     "num": 123,
-    "chapter_title": "Chương 6: Vật lý hạt nhân",
+    "chapter_title": "Chương 5: Vật lý nguyên tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2809,15 +2809,15 @@
   },
   {
     "id": "vldc_ch1_016",
-    "chapter": "Dao động và sóng điện từ",
-    "chapter_id": 1,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Một nêm không khí được tạo bởi hai bản thủy tinh phẳng dài l = 10 cm, một đầu tiếp xúc, đầu kia kẹp một sợi tóc có đường kính d = 20 µm. Chiếu ánh sáng đơn sắc bước sóng λ = 0.5 µm vuông góc với mặt nêm. Khoảng cách giữa hai vân tối liên tiếp trên mặt nêm bằng:",
     "options": [
-      "A. 1.25 mm",
-      "B. 2.50 mm",
-      "C. 0.625 mm",
-      "D. 5.00 mm"
+      "A. $1.25\\,\\mathrm{mm}$",
+      "B. $2.50\\,\\mathrm{mm}$",
+      "C. $0.625\\,\\mathrm{mm}$",
+      "D. $5.00\\,\\mathrm{mm}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "1.25 mm",
@@ -2825,7 +2825,7 @@
     "methodology": "Khoảng vân nêm không khí: i = λ * l / (2d).",
     "tips": "Bấm Casio: 0.5e-6 * 0.1 / (2 * 20e-6) = 1.25e-3 m = 1.25 mm.",
     "num": 125,
-    "chapter_title": "Chương 1: Dao động và sóng điện từ",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2833,15 +2833,15 @@
   },
   {
     "id": "vldc_ch1_017",
-    "chapter": "Dao động và sóng điện từ",
-    "chapter_id": 1,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Trong thí nghiệm vân tròn Newton, bán kính vân tối thứ 5 quan sát được trong ánh sáng phản xạ là r5 = 3 mm. Bán kính của vân tối thứ 20 bằng:",
     "options": [
-      "A. 6 mm",
-      "B. 12 mm",
-      "C. 9 mm",
-      "D. 4.24 mm"
+      "A. $6\\,\\mathrm{mm}$",
+      "B. $12\\,\\mathrm{mm}$",
+      "C. $9\\,\\mathrm{mm}$",
+      "D. $4.24\\,\\mathrm{mm}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "6 mm",
@@ -2849,7 +2849,7 @@
     "methodology": "Tỉ số bán kính vân tròn Newton: r_m / r_n = √(m / n).",
     "tips": "Mẹo nhẩm: Bậc k tăng 4 lần thì bán kính tăng √4 = 2 lần: 3 * 2 = 6 mm.",
     "num": 126,
-    "chapter_title": "Chương 1: Dao động và sóng điện từ",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2862,10 +2862,10 @@
     "type": "mcq",
     "prompt": "Chiếu đồng thời hai bức xạ đơn sắc λ1 = 0.4 µm và λ2 = 0.6 µm vuông góc vào một cách tử nhiễu xạ. Vạch cực đại bậc mấy của λ1 sẽ trùng với một vạch cực đại của λ2 ở vị trí gần vân trung tâm nhất?",
     "options": [
-      "A. Bậc 3 của λ1 trùng với bậc 2 của λ2",
-      "B. Bậc 2 của λ1 trùng với bậc 3 của λ2",
-      "C. Bậc 4 của λ1 trùng với bậc 3 của λ2",
-      "D. Bậc 5 của λ1 trùng với bậc 4 của λ2"
+      "A. Bậc 3 của $\\lambda_1$ trùng với bậc 2 của $\\lambda_2$",
+      "B. Bậc 2 của $\\lambda_1$ trùng với bậc 3 của $\\lambda_2$",
+      "C. Bậc 4 của $\\lambda_1$ trùng với bậc 3 của $\\lambda_2$",
+      "D. Bậc 5 của $\\lambda_1$ trùng với bậc 4 của $\\lambda_2$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "Bậc 3 của λ1 trùng với bậc 2 của λ2",
@@ -2886,10 +2886,10 @@
     "type": "mcq",
     "prompt": "Chiếu chùm sáng đơn sắc bước sóng λ = 0.5 µm qua một khe hẹp bề rộng b = 0.05 mm. Góc nhiễu xạ ứng với cực tiểu nhiễu xạ thứ hai (k = 2) bằng:",
     "options": [
-      "A. 0.02 rad (≈ 1.15°)",
-      "B. 0.01 rad (≈ 0.57°)",
-      "C. 0.04 rad (≈ 2.30°)",
-      "D. 0.005 rad (≈ 0.29°)"
+      "A. $0.02 rad (≈ 1.15^\\circ)$",
+      "B. $0.01 rad (≈ 0.57^\\circ)$",
+      "C. $0.04 rad (≈ 2.30^\\circ)$",
+      "D. $0.005 rad (≈ 0.29^\\circ)$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "0.02 rad (≈ 1.15°)",
@@ -2905,15 +2905,15 @@
   },
   {
     "id": "vldc_ch3_023",
-    "chapter": "Quang học lượng tử",
-    "chapter_id": 3,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Bản một phần tư bước sóng (λ/4) trong quang học có tác dụng gì?",
     "options": [
-      "A. Tạo ra hiệu quang lộ giữa tia thường (o) và tia bất thường (e) đúng bằng λ/4 (hiệu pha π/2), dùng để biến ánh sáng phân cực thẳng thành phân cực tròn hoặc elip",
+      "A. Tạo ra hiệu quang lộ giữa tia thường (o) và tia bất thường (e) đúng bằng $\\lambda/4$ (hiệu pha $\\pi/2$), dùng để biến ánh sáng phân cực thẳng thành phân cực tròn hoặc elip",
       "B. Làm giảm cường độ ánh sáng đi 4 lần",
       "C. Quay mặt phẳng dao động của ánh sáng phân cực đi một góc 90°",
-      "D. Lọc bỏ 3/4 bước sóng trong quang phổ ánh sáng trắng"
+      "D. Lọc bỏ $\\frac34$ bước sóng trong quang phổ ánh sáng trắng"
     ],
     "correct_answer": "A",
     "correct_answer_text": "Tạo ra hiệu quang lộ giữa tia thường (o) và tia bất thường (e) đúng bằng λ/4 (hiệu pha π/2), dùng để biến ánh sáng phân cực thẳng thành phân cực tròn hoặc elip",
@@ -2921,7 +2921,7 @@
     "methodology": "Bản λ/4 tạo độ lệch pha Δφ = π/2 ⇒ biến phân cực thẳng thành phân cực tròn/elip. Bản λ/2 tạo độ lệch pha Δφ = π ⇒ quay mặt phẳng phân cực đi góc 2θ.",
     "tips": "Nhớ: Bản λ/4 = lệch pha 90° (π/2) = phân cực TRÒN / ELIP.",
     "num": 129,
-    "chapter_title": "Chương 3: Quang học lượng tử",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2929,15 +2929,15 @@
   },
   {
     "id": "vldc_ch3_024",
-    "chapter": "Quang học lượng tử",
-    "chapter_id": 3,
+    "chapter": "Quang học sóng",
+    "chapter_id": 2,
     "type": "mcq",
     "prompt": "Khi chiếu tia sáng từ không khí tới mặt nước (chiết suất n = 1.33) dưới góc tới Brewster iB, góc khúc xạ r trong nước bằng:",
     "options": [
-      "A. 36.9°",
-      "B. 53.1°",
-      "C. 45.0°",
-      "D. 30.0°"
+      "A. $36.9^\\circ$",
+      "B. $53.1^\\circ$",
+      "C. $45.0^\\circ$",
+      "D. $30.0^\\circ$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "36.9°",
@@ -2945,7 +2945,7 @@
     "methodology": "Định luật Brewster: iB + r = 90°. tan(iB) = n2 / n1.",
     "tips": "Bấm Casio: iB = arctan(1.33) = 53.06° ⇒ r = 90 - 53.06 = 36.94°.",
     "num": 130,
-    "chapter_title": "Chương 3: Quang học lượng tử",
+    "chapter_title": "Chương 2: Quang học sóng",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2953,23 +2953,23 @@
   },
   {
     "id": "vldc_ch4_020",
-    "chapter": "Cơ học lượng tử",
-    "chapter_id": 4,
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
     "type": "mcq",
     "prompt": "Một nguồn sáng đơn sắc phát ra bức xạ bước sóng λ = 0.4 µm với công suất P = 2 W. Số lượng photon do nguồn phát ra trong mỗi giây bằng bao nhiêu?",
     "options": [
-      "A. 4.02 × 10¹⁸ photon/s",
-      "B. 2.01 × 10¹⁸ photon/s",
-      "C. 8.05 × 10¹⁸ photon/s",
-      "D. 1.25 × 10¹⁹ photon/s"
+      "A. $4.02 × 10^{18} photon/s$",
+      "B. $2.01 × 10^{18} photon/s$",
+      "C. $8.05 × 10^{18} photon/s$",
+      "D. $1.25 × 10^{19} photon/s$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "4.02 × 10¹⁸ photon/s",
     "explanation": "Năng lượng của mỗi hạt photon:\nε = (h * c) / λ = (6.625 × 10⁻³⁴ * 3 × 10⁸) / (0.4 × 10⁻⁶) = 4.969 × 10⁻¹⁹ J.\nSố lượng photon phát ra trong mỗi giây:\nN = P / ε = 2 W / (4.969 × 10⁻¹⁹ J) ≈ 4.025 × 10¹⁸ photon/s.",
     "methodology": "Số photon phát ra mỗi giây: N = P / ε = (P * λ) / (h * c).",
-    "tips": "Bấm Casio: 2 * 0.4e-6 / (6.625e-34 * 3e8) = 4.025*10^18.",
+    "tips": "Bấm Casio: $\\frac{2\\times0.4\\times10^{-6}}{6.625\\times10^{-34}\\times3\\times10^8}=4.025\\times10^{18}$.",
     "num": 131,
-    "chapter_title": "Chương 4: Cơ học lượng tử",
+    "chapter_title": "Chương 3: Quang học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -2977,23 +2977,23 @@
   },
   {
     "id": "vldc_ch4_021",
-    "chapter": "Cơ học lượng tử",
-    "chapter_id": 4,
+    "chapter": "Quang học lượng tử",
+    "chapter_id": 3,
     "type": "mcq",
     "prompt": "Kim loại Canxi có công thoát electron A = 2.71 eV. Khi chiếu bức xạ có photon mang năng lượng ε = 4.50 eV vào Canxi, vận tốc ban đầu cực đại của electron quang điện bứt ra bằng:",
     "options": [
-      "A. 7.93 × 10⁵ m/s",
-      "B. 5.62 × 10⁵ m/s",
-      "C. 1.25 × 10⁶ m/s",
-      "D. 3.45 × 10⁵ m/s"
+      "A. $7.93 × 10^{5}\\,\\mathrm{m/s}$",
+      "B. $5.62 × 10^{5}\\,\\mathrm{m/s}$",
+      "C. $1.25 × 10^{6}\\,\\mathrm{m/s}$",
+      "D. $3.45 × 10^{5}\\,\\mathrm{m/s}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "7.93 × 10⁵ m/s",
     "explanation": "Động năng ban đầu cực đại của electron quang điện:\nW0max = ε - A = 4.50 eV - 2.71 eV = 1.79 eV.\nĐổi sang Joule: W0max = 1.79 * 1.6 × 10⁻¹⁹ J = 2.864 × 10⁻¹⁹ J.\nMặt khác: W0max = 0.5 * me * v0max² (với khối lượng electron me = 9.109 × 10⁻³¹ kg):\nv0max = √(2 * W0max / me) = √(2 * 2.864 × 10⁻¹⁹ / 9.109 × 10⁻³¹) = √(6.288 × 10¹¹) ≈ 7.93 × 10⁵ m/s.",
     "methodology": "Phương trình Einstein: 0.5*m*v0max² = ε - A. v0max = √(2 * (ε - A) / me).",
-    "tips": "Bấm Casio: √( 2 * 1.79 * 1.6e-19 / 9.109e-31 ) = 7.93*10^5 m/s.",
+    "tips": "Bấm Casio: $\\sqrt{\\frac{2\\times1.79\\times1.6\\times10^{-19}}{9.109\\times10^{-31}}}=7.93\\times10^5\\,\\mathrm{m/s}$.",
     "num": 132,
-    "chapter_title": "Chương 4: Cơ học lượng tử",
+    "chapter_title": "Chương 3: Quang học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -3001,15 +3001,15 @@
   },
   {
     "id": "vldc_ch5_017",
-    "chapter": "Vật lý nguyên tử",
-    "chapter_id": 5,
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
     "type": "mcq",
     "prompt": "Tính bước sóng De Broglie của một quả bóng khối lượng m = 0.2 kg đang chuyển động với vận tốc v = 20 m/s. Kết quả này giải thích điều gì về vật lý cổ điển và lượng tử?",
     "options": [
-      "A. λ ≈ 1.66 × 10⁻³⁴ m; bước sóng quá nhỏ so với kích thước vật thể vĩ mô nên tính chất sóng không thể hiện trong thế giới đời thường",
-      "B. λ ≈ 1.66 × 10⁻¹⁰ m; quả bóng thể hiện rõ hiện tượng giao thoa khi bay qua cửa sổ",
-      "C. λ ≈ 6.63 × 10⁻³⁴ m; vận tốc quả bóng biến thiên liên tục dạng sóng",
-      "D. λ = 0 m; chỉ các hạt mang điện tích mới có sóng De Broglie"
+      "A. $\\lambda\\approx1.66\\times10^{-34}\\,\\mathrm m$; bước sóng quá nhỏ so với kích thước vật thể vĩ mô nên tính chất sóng không thể hiện trong thế giới đời thường",
+      "B. $\\lambda\\approx1.66\\times10^{-10}\\,\\mathrm m$; quả bóng thể hiện rõ hiện tượng giao thoa khi bay qua cửa sổ",
+      "C. $\\lambda\\approx6.63\\times10^{-34}\\,\\mathrm m$; vận tốc quả bóng biến thiên liên tục dạng sóng",
+      "D. $\\lambda = 0 m; chỉ các hạt mang điện tích mới có sóng De Broglie$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "λ ≈ 1.66 × 10⁻³⁴ m; bước sóng quá nhỏ so với kích thước vật thể vĩ mô nên tính chất sóng không thể hiện trong thế giới đời thường",
@@ -3017,7 +3017,7 @@
     "methodology": "Bước sóng De Broglie cho vật thể vĩ mô: λ = h / (m*v) ~ 10⁻³⁴ m (không quan sát được tính sóng).",
     "tips": "Hiểu bản chất: Vật vĩ mô có khối lượng lớn ⇒ mẫu số m*v lớn ⇒ λ cực nhỏ ⇒ chỉ quan sát thấy tính hạt cổ điển.",
     "num": 133,
-    "chapter_title": "Chương 5: Vật lý nguyên tử",
+    "chapter_title": "Chương 4: Cơ học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -3025,15 +3025,15 @@
   },
   {
     "id": "vldc_ch5_018",
-    "chapter": "Vật lý nguyên tử",
-    "chapter_id": 5,
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
     "type": "mcq",
     "prompt": "Một electron chuyển động trong giếng thế 1 chiều sâu vô hạn bề rộng a = 1 nm. Năng lượng ở trạng thái cơ bản là E1 = 0.376 eV. Năng lượng ở trạng thái dừng n = 3 bằng:",
     "options": [
-      "A. 3.384 eV",
-      "B. 1.128 eV",
-      "C. 1.504 eV",
-      "D. 6.016 eV"
+      "A. $3.384 eV$",
+      "B. $1.128 eV$",
+      "C. $1.504 eV$",
+      "D. $6.016 eV$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "3.384 eV",
@@ -3041,7 +3041,7 @@
     "methodology": "Mức năng lượng giếng thế: En = n² * E1.",
     "tips": "Bấm Casio: 9 * 0.376 = 3.384 eV.",
     "num": 134,
-    "chapter_title": "Chương 5: Vật lý nguyên tử",
+    "chapter_title": "Chương 4: Cơ học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -3049,14 +3049,14 @@
   },
   {
     "id": "vldc_ch5_019",
-    "chapter": "Vật lý nguyên tử",
-    "chapter_id": 5,
+    "chapter": "Cơ học lượng tử",
+    "chapter_id": 4,
     "type": "mcq",
     "prompt": "Trong cơ học lượng tử, hàm sóng ψ(x, y, z, t) của một hạt phải thỏa mãn các điều kiện chuẩn mực nào sau đây?",
     "options": [
-      "A. Phải đơn trị, liên tục, hữu hạn trên toàn miền xác định và thỏa mãn điều kiện chuẩn hóa tích phân |ψ|² dV = 1",
+      "A. Phải đơn trị, liên tục, hữu hạn trên toàn miền xác định và thỏa mãn điều kiện chuẩn hóa tích phân $|\\psi|^2\\,dV=1$",
       "B. Phải luôn luôn là số thực và đạo hàm bậc hai luôn bằng 0",
-      "C. Phải triệt tiêu ở mọi điểm khi t = 0",
+      "C. Phải triệt tiêu ở mọi điểm khi $t=0$",
       "D. Chỉ cần liên tục tại gốc tọa độ, không cần hữu hạn ở vô cực"
     ],
     "correct_answer": "A",
@@ -3065,7 +3065,7 @@
     "methodology": "4 điều kiện chuẩn mực của hàm sóng: Đơn trị, Liên tục, Hữu hạn, Chuẩn hóa.",
     "tips": "Mẹo nhớ: 'Đơn - Liên - Hữu - Chuẩn'.",
     "num": 135,
-    "chapter_title": "Chương 5: Vật lý nguyên tử",
+    "chapter_title": "Chương 4: Cơ học lượng tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -3073,15 +3073,15 @@
   },
   {
     "id": "vldc_ch6_009",
-    "chapter": "Vật lý hạt nhân",
-    "chapter_id": 6,
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
     "type": "mcq",
     "prompt": "Bán kính quỹ đạo Bo thứ nhất của nguyên tử Hydro là r0 = 0.53 Å. Khi electron chuyển động trên quỹ đạo dừng M (n = 3), bán kính quỹ đạo dừng r3 bằng:",
     "options": [
-      "A. 4.77 Å",
-      "B. 1.59 Å",
-      "C. 2.12 Å",
-      "D. 8.48 Å"
+      "A. $4.77\\,\\text{Å}$",
+      "B. $1.59\\,\\text{Å}$",
+      "C. $2.12\\,\\text{Å}$",
+      "D. $8.48\\,\\text{Å}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "4.77 Å",
@@ -3089,7 +3089,7 @@
     "methodology": "Bán kính Bo: rn = n² * r0. Thứ tự quỹ đạo: K(1), L(2), M(3), N(4), O(5), P(6).",
     "tips": "Bấm Casio: 9 * 0.53 = 4.77 Å.",
     "num": 136,
-    "chapter_title": "Chương 6: Vật lý hạt nhân",
+    "chapter_title": "Chương 5: Vật lý nguyên tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -3097,15 +3097,15 @@
   },
   {
     "id": "vldc_ch6_010",
-    "chapter": "Vật lý hạt nhân",
-    "chapter_id": 6,
+    "chapter": "Vật lý nguyên tử",
+    "chapter_id": 5,
     "type": "mcq",
     "prompt": "Nguyên tử Hydro đang ở trạng thái cơ bản (n = 1, E1 = -13.6 eV) hấp thụ một photon và nhảy lên mức năng lượng n = 3. Năng lượng của photon bị hấp thụ bằng:",
     "options": [
-      "A. 12.09 eV",
-      "B. 10.20 eV",
-      "C. 1.51 eV",
-      "D. 13.60 eV"
+      "A. $12.09 eV$",
+      "B. $10.20 eV$",
+      "C. $1.51 eV$",
+      "D. $13.60 eV$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "12.09 eV",
@@ -3113,7 +3113,7 @@
     "methodology": "Tiên đề hấp thụ/phát xạ photon của Bo: ε = En - Em = 13.6 * (1/m² - 1/n²).",
     "tips": "Bấm Casio: 13.6 * (1 - 1/9) = 13.6 * 8/9 = 12.0888 eV.",
     "num": 137,
-    "chapter_title": "Chương 6: Vật lý hạt nhân",
+    "chapter_title": "Chương 5: Vật lý nguyên tử",
     "question_type": "mcq",
     "source": "VLDC_STANDARD",
     "source_title": "Ngân Hàng Giáo Trình ĐHBK",
@@ -3126,10 +3126,10 @@
     "type": "mcq",
     "prompt": "Hạt nhân Heli ⁴₂He có khối lượng m_He = 4.0015 u. Khối lượng proton mp = 1.00728 u, khối lượng neutron mn = 1.00866 u. Cho 1 u = 931.5 MeV/c². Năng lượng liên kết của hạt nhân Heli xấp xỉ bằng:",
     "options": [
-      "A. 28.3 MeV",
-      "B. 7.07 MeV",
-      "C. 14.1 MeV",
-      "D. 56.6 MeV"
+      "A. $28.3\\,\\mathrm{MeV}$",
+      "B. $7.07\\,\\mathrm{MeV}$",
+      "C. $14.1\\,\\mathrm{MeV}$",
+      "D. $56.6\\,\\mathrm{MeV}$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "28.3 MeV",
@@ -3150,16 +3150,16 @@
     "type": "mcq",
     "prompt": "Độ phóng xạ ban đầu của một mẫu chất phóng xạ là H0 = 1000 Bq. Biết chu kỳ bán rã của chất này là T = 10 ngày. Sau thời gian t = 30 ngày, độ phóng xạ của mẫu còn lại bằng:",
     "options": [
-      "A. 125 Bq",
-      "B. 250 Bq",
-      "C. 333 Bq",
-      "D. 62.5 Bq"
+      "A. $125 Bq$",
+      "B. $250 Bq$",
+      "C. $333 Bq$",
+      "D. $62.5 Bq$"
     ],
     "correct_answer": "A",
     "correct_answer_text": "125 Bq",
     "explanation": "Độ phóng xạ giảm theo thời gian cùng quy luật với số hạt phóng xạ:\nH(t) = H0 * 2^(-t / T).\nVới t = 30 ngày, T = 10 ngày ⇒ số chu kỳ bán rã k = 30 / 10 = 3:\nH(30) = H0 / 2³ = 1000 / 8 = 125 Bq.",
     "methodology": "Quy luật độ phóng xạ: H = H0 / 2^(t/T).",
-    "tips": "Bấm Casio: 1000 / (2^3) = 125 Bq.",
+    "tips": "Bấm Casio: $\\frac{1000}{2^3}=125\\,\\mathrm{Bq}$.",
     "num": 139,
     "chapter_title": "Chương 6: Vật lý hạt nhân",
     "question_type": "mcq",
@@ -3174,10 +3174,10 @@
     "type": "mcq",
     "prompt": "Trong thí nghiệm khe Young, cho a = 1 mm, D = 1.5 m. Chiếu chùm sáng bước sóng λ = 0.6 µm. Bề rộng trường giao thoa trên màn đo được L = 18 mm. Tính tổng số vân sáng quan sát được trên màn (chỉ điền số nguyên):",
     "options": [
-      "A. 21 vân",
-      "B. 19 vân",
-      "C. 20 vân",
-      "D. 22 vân"
+      "A. $21$ vân",
+      "B. $19$ vân",
+      "C. $20$ vân",
+      "D. $22$ vân"
     ],
     "correct_answer": "21",
     "correct_answer_text": "21 vân sáng",
@@ -3198,10 +3198,10 @@
     "type": "mcq",
     "prompt": "Một vật đen tuyệt đối có bước sóng bức xạ cực đại là λm = 1.449 µm. Biết hằng số Wien b = 2.898 × 10⁻³ m·K. Tính nhiệt độ tuyệt đối T của vật đen đó (nhập giá trị theo Kelvin, chỉ điền số nguyên):",
     "options": [
-      "A. 2000 K",
-      "B. 1500 K",
-      "C. 2500 K",
-      "D. 3000 K"
+      "A. $2000 K$",
+      "B. $1500 K$",
+      "C. $2500 K$",
+      "D. $3000 K$"
     ],
     "correct_answer": "2000",
     "correct_answer_text": "2000 K",
@@ -3222,10 +3222,10 @@
     "type": "mcq",
     "prompt": "Tính bước sóng De Broglie của hạt electron được gia tốc qua hiệu điện thế U = 25 V (nhập giá trị theo đơn vị Ångström, làm tròn đến 2 chữ số thập phân):",
     "options": [
-      "A. 2,45 Å",
-      "B. 1,23 Å",
-      "C. 3,64 Å",
-      "D. 0,85 Å"
+      "A. $2{,}45\\,\\text{Å}$",
+      "B. $1{,}23\\,\\text{Å}$",
+      "C. $3{,}64\\,\\text{Å}$",
+      "D. $0{,}85\\,\\text{Å}$"
     ],
     "correct_answer": "2.45",
     "correct_answer_text": "2.45 Å",

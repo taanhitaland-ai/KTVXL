@@ -117,21 +117,25 @@
   // -------------------------------------------------------------------
   // INITIALIZATION & TAB SWITCHER
   // -------------------------------------------------------------------
+  let labInitialized = false;
   function initLab() {
+    if (labInitialized) return;
+    labInitialized = true;
     setupModuleSwitchers();
     setupControls();
     startAnimationLoop();
   }
 
   function setupModuleSwitchers() {
-    const btns = document.querySelectorAll('.sim-nav-btn');
+    const container = document.getElementById('lab-container-vldc');
+    const btns = container.querySelectorAll('.sim-nav-btn');
     btns.forEach(btn => {
       btn.addEventListener('click', () => {
         btns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const mod = btn.getAttribute('data-sim');
         SIM_STATE.activeModule = mod;
-        document.querySelectorAll('.sim-view-pane').forEach(p => p.classList.remove('active'));
+        container.querySelectorAll('.sim-view-pane').forEach(p => p.classList.remove('active'));
         const pane = document.getElementById(`sim-pane-${mod}`);
         if (pane) pane.classList.add('active');
       });
@@ -352,10 +356,12 @@
       const elP = document.getElementById('out-diff-phi');
       if (elP) elP.textContent = phi1.toFixed(3) + '°';
     } else {
-      const kmax = Math.floor((d * 1e-6) / (lambda * 1e-9));
+      const kmax = Math.floor(d * 1000 / lambda + 1e-10);
       const total = 2 * kmax + 1;
-      const elK = document.getElementById('out-diff-kmax');
+      const elK = document.getElementById('out-diff-phi');
       if (elK) elK.textContent = `k_max = ${kmax} (Tổng ${total} cực đại)`;
+      const elW = document.getElementById('out-diff-w0');
+      if (elW) elW.textContent = '— (chế độ cách tử)';
     }
   }
 
@@ -442,8 +448,10 @@
   // -------------------------------------------------------------------
   function startAnimationLoop() {
     function loop() {
-      SIM_STATE.time += 0.03;
-      renderActiveModule();
+      if (!document.hidden && document.getElementById('tab-visualize').classList.contains('active') && document.getElementById('lab-container-vldc').style.display !== 'none') {
+        SIM_STATE.time += 0.03;
+        renderActiveModule();
+      }
       SIM_STATE.animId = requestAnimationFrame(loop);
     }
     loop();
@@ -656,7 +664,7 @@
 
   // 3. PHOTOELECTRIC EFFECT CANVAS
   function drawPhotoelectricCanvas() {
-    const canvas = document.getElementById('cv-photo');
+    const canvas = document.getElementById('cv-photoelectric');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const W = canvas.width, H = canvas.height;
@@ -905,18 +913,19 @@
 
   // 6. POLARIZATION & MALUS LAW CANVAS
   function drawPolarizationCanvas() {
-    const canvas = document.getElementById('cv-polar');
+    const canvas = document.getElementById('cv-polarization');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const W = canvas.width, H = canvas.height;
     ctx.clearRect(0, 0, W, H);
 
-    const { alpha } = SIM_STATE.polar;
+    const { alpha, hasMiddle, middleAlpha } = SIM_STATE.polar;
     const rad = (alpha * Math.PI) / 180;
     const midY = H / 2;
 
     const p1X = 140;
     const p2X = W - 180;
+    const middleX = (p1X + p2X) / 2;
 
     // 1. Unpolarized light entering from left
     ctx.strokeStyle = '#64748B';
@@ -925,7 +934,9 @@
       ctx.beginPath();
       ctx.arc(x, midY, 14, 0, Math.PI * 2);
       ctx.moveTo(x - 14, midY); ctx.lineTo(x + 14, midY);
-      ctx.moveTo(x, midY - 14); ctx.lineTo(x, midY + 14);
+      const angle = hasMiddle && x > middleX ? middleAlpha * Math.PI / 180 : 0;
+      ctx.moveTo(x - 14 * Math.sin(angle), midY - 14 * Math.cos(angle));
+      ctx.lineTo(x + 14 * Math.sin(angle), midY + 14 * Math.cos(angle));
       ctx.stroke();
     }
     ctx.fillStyle = '#000';
@@ -957,6 +968,24 @@
     }
     ctx.fillText('Phân cực thẳng (I₁ = I₀/2)', p1X + 30, midY - 24);
 
+    if (hasMiddle) {
+      ctx.save();
+      ctx.translate(middleX, midY);
+      ctx.fillStyle = '#DCFCE7';
+      ctx.fillRect(-8, -60, 16, 120);
+      ctx.strokeStyle = '#000';
+      ctx.strokeRect(-8, -60, 16, 120);
+      ctx.rotate(-middleAlpha * Math.PI / 180);
+      ctx.strokeStyle = '#16A34A';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(0, -50); ctx.lineTo(0, 50);
+      ctx.stroke();
+      ctx.restore();
+      ctx.fillStyle = '#000';
+      ctx.fillText('Kính giữa 45°', middleX - 40, midY + 80);
+    }
+
     // 3. Analyzer P2 (Rotatable by angle alpha)
     ctx.save();
     ctx.translate(p2X, midY);
@@ -979,7 +1008,10 @@
     ctx.fillText(`Kính phân tích P₂ (Góc α = ${alpha}°)`, p2X - 60, midY - 70);
 
     // 4. Output beam
-    const intensityRatio = 0.5 * Math.pow(Math.cos(rad), 2);
+    const middleRad = middleAlpha * Math.PI / 180;
+    const intensityRatio = hasMiddle
+      ? 0.5 * Math.pow(Math.cos(middleRad), 2) * Math.pow(Math.cos(rad - middleRad), 2)
+      : 0.5 * Math.pow(Math.cos(rad), 2);
     ctx.fillStyle = `rgba(245, 158, 11, ${intensityRatio * 2})`;
     ctx.fillRect(p2X + 20, midY - 16, 80, 32);
     ctx.strokeStyle = '#000';

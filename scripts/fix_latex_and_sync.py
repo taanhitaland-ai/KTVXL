@@ -20,7 +20,7 @@ def fix():
     # 2. XSTK fixes
     with open('data/xstk_questions_db.json', 'r', encoding='utf-8') as f:
         xstk = json.load(f)
-    
+
     q_map = {q['id']: q for q in xstk}
 
     # xstk_ch2_008

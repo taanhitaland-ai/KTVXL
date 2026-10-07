@@ -1,11 +1,12 @@
 import sys
 import os
 import time
+from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 def run_tests():
-    html_path = os.path.abspath("web/index.html")
-    file_url = f"file://{html_path}"
+    file_url = Path('web/index.html').resolve().as_uri()
+    Path('output/playwright').mkdir(parents=True, exist_ok=True)
     print(f"Testing URL: {file_url}")
 
     with sync_playwright() as p:
@@ -60,8 +61,8 @@ def run_tests():
         print("Side panel successfully loaded detailed step-by-step solution!")
 
         # Screenshot practice arena
-        page.screenshot(path="web/screenshot_vldc_practice.png")
-        print("Captured: web/screenshot_vldc_practice.png")
+        page.screenshot(path="output/playwright/screenshot_vldc_practice.png")
+        print("Captured: output/playwright/screenshot_vldc_practice.png")
 
         print("\n--- 4. Testing Knowledge Hub (VLDC) ---")
         page.locator("#btn-tab-knowledge").click()
@@ -73,8 +74,8 @@ def run_tests():
 
         # Check magic keywords & casio tables
         knowledge_html = page.inner_html("#knowledge-chapters-container")
-        assert "Từ Khóa Vàng" in knowledge_html
-        assert "SỔ TAY CASIO" in knowledge_html
+        assert "Từ khóa &amp; Mẹo nhận diện" in knowledge_html or "Từ khóa & Mẹo nhận diện" in knowledge_html
+        assert "Casio" in knowledge_html
         print("Knowledge Hub successfully rendered 6 chapters + Từ khóa vàng + Sổ tay Casio!")
 
         print("\n--- 5. Testing Interactive Physics Lab (Mô Phỏng Trực Quan) ---")
@@ -106,8 +107,8 @@ def run_tests():
         print(f"Plate fringe shift: {plate_shift}")
         assert "khoảng vân" in plate_shift
 
-        page.screenshot(path="web/screenshot_vldc_sim_young.png")
-        print("Captured: web/screenshot_vldc_sim_young.png")
+        page.screenshot(path="output/playwright/screenshot_vldc_sim_young.png")
+        print("Captured: output/playwright/screenshot_vldc_sim_young.png")
 
         # Test Switch to Photoelectric
         page.locator('button[data-sim="photoelectric"]').click()
@@ -118,8 +119,8 @@ def run_tests():
         print(f"Photoelectric stopping potential: {photo_uh}")
         assert "V" in photo_uh
 
-        page.screenshot(path="web/screenshot_vldc_sim_photo.png")
-        print("Captured: web/screenshot_vldc_sim_photo.png")
+        page.screenshot(path="output/playwright/screenshot_vldc_sim_photo.png")
+        print("Captured: output/playwright/screenshot_vldc_sim_photo.png")
 
         # Test Switch to Compton
         page.locator('button[data-sim="compton"]').click()
@@ -135,8 +136,8 @@ def run_tests():
         print(f"Quantum Box energy E_n: {quantum_en}")
         assert "eV" in quantum_en
 
-        page.screenshot(path="web/screenshot_vldc_sim_quantum.png")
-        print("Captured: web/screenshot_vldc_sim_quantum.png")
+        page.screenshot(path="output/playwright/screenshot_vldc_sim_quantum.png")
+        print("Captured: output/playwright/screenshot_vldc_sim_quantum.png")
 
         # Test Switch to Polarization
         page.locator('button[data-sim="polarization"]').click()
@@ -149,7 +150,8 @@ def run_tests():
         page.locator("#btn-tab-exam").click()
         page.wait_for_timeout(500)
 
-        # Start Exam
+        # Explicitly choose the random 40-question exam.
+        page.locator('.exam-card-choice[data-exam-code="RANDOM"]').click()
         page.locator("#btn-start-exam").click()
         page.wait_for_timeout(500)
 
@@ -184,8 +186,8 @@ def run_tests():
         print(f"Exam score: {score}/10")
         assert float(score) >= 0.0
 
-        page.screenshot(path="web/screenshot_vldc_exam_result.png")
-        print("Captured: web/screenshot_vldc_exam_result.png")
+        page.screenshot(path="output/playwright/screenshot_vldc_exam_result.png")
+        print("Captured: output/playwright/screenshot_vldc_exam_result.png")
 
         print("\n--- 7. Checking PDF Download Cards ---")
         page.locator("#btn-close-modal").click()
@@ -194,7 +196,7 @@ def run_tests():
 
         dl_cards = page.locator(".download-card")
         print(f"Total download cards: {dl_cards.count()}")
-        assert dl_cards.count() >= 6
+        assert dl_cards.count() == 10
 
         print("\nAll 7 test suites passed with 0 errors!")
         if errors:

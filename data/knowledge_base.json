@@ -156,13 +156,13 @@
           "content": [
             "Giao tiếp UART trên 89C51 truyền không đồng bộ, song công toàn phần (Full Duplex) qua 2 chân **RxD (P3.0)** và **TxD (P3.1)**.",
             "**Thanh ghi đệm SBUF (99H)**: Gồm 2 thanh ghi vật lý riêng biệt cùng tên: ghi vào SBUF là phát dữ liệu qua TxD; đọc từ SBUF là nhận dữ liệu từ RxD.",
-            "**Thanh ghi điều khiển SCON (98H - Có định địa chỉ bit)**:\n- SM0, SM1: Chọn chế độ truyền (Mode 0: thanh ghi dịch 8 bit; **Mode 1: UART 8 bit baud thay đổi**; Mode 2: UART 9 bit baud cố định; Mode 3: UART 9 bit baud thay đổi).\n- REN (bit 4): Cho phép nhận dữ liệu (= 1 cho phép nhận, = 0 cấm nhận).\n- TI (bit 1): Cờ ngắt truyền, vi điều khiển tự set lên 1 khi truyền xong Stop bit. **Phải xóa bằng phần mềm: `CLR TI`**.\n- RI (bit 0): Cờ ngắt nhận, tự set lên 1 khi nhận xong Stop bit. **Phải xóa bằng phần mềm: `CLR RI`**."
+            "**Thanh ghi điều khiển SCON (98H - Có định địa chỉ bit)**:\n- SM0, SM1: Chọn chế độ truyền (Mode 0: thanh ghi dịch 8 bit; **Mode 1: UART 8 bit baud thay đổi**; Mode 2: UART 9 bit baud cố định; Mode 3: UART 9 bit baud thay đổi).\n- REN (bit 4): Cho phép nhận dữ liệu (= 1 cho phép nhận, = 0 cấm nhận).\n- TI (bit 1): Cờ ngắt truyền, Mode 0 đặt TI ở cuối bit dữ liệu thứ 8; Mode 1/2/3 đặt TI ở đầu bit Stop. **Phải xóa bằng phần mềm: `CLR TI`**.\n- RI (bit 0): Cờ ngắt nhận, đặt khi nhận được dữ liệu hợp lệ theo chế độ đang dùng. **Phải xóa bằng phần mềm: `CLR RI`**."
           ]
         },
         {
           "title": "2. Công thức tính Tốc độ Baud & Bảng giá trị TH1 chuẩn",
           "content": [
-            "Để tạo tốc độ Baud chuẩn, **Timer 1 luôn được cấu hình ở Chế độ 2 (8 bit auto-reload)**: `MOV TMOD, #20H`.",
+            "Trong cấu hình thường dùng cho UART Mode 1/3, **Timer 1 được đặt ở Chế độ 2 (8 bit auto-reload)**: `MOV TMOD, #20H`.",
             "**Công thức Baud Rate**:\nBaud = (2^SMOD * F_osc) / (384 * (256 - TH1))\nTrong đó bit SMOD nằm trong thanh ghi PCON (mặc định SMOD = 0).",
             "**Bảng tra cứu tốc độ Baud chuẩn (F_osc = 11.0592 MHz, SMOD = 0)**:\n- **9600 Baud**: 256 - TH1 = 3 -> TH1 = -3 = FDH\n- **4800 Baud**: 256 - TH1 = 6 -> TH1 = -6 = FAH\n- **2400 Baud**: 256 - TH1 = 12 -> TH1 = -12 = F4H\n- **1200 Baud**: 256 - TH1 = 24 -> TH1 = -24 = E8H",
             "**Quy trình truyền ký tự**:\n1. Khởi tạo Timer 1 Mode 2: `MOV TMOD, #20H`\n2. Nạp tốc độ Baud: `MOV TH1, #-3` (cho 9600 baud)\n3. Cấu hình UART: `MOV SCON, #50H` (Mode 1, REN=1)\n4. Bật Timer 1: `SETB TR1`\n5. Ghi ký tự vào SBUF: `MOV SBUF, A`\n6. Chờ truyền xong: `JNB TI, $`\n7. Xóa cờ truyền: `CLR TI`"
@@ -222,7 +222,7 @@
           "title": "3. Mẹo nhớ nhanh Tốc độ Baud & Mẹo loại trừ trắc nghiệm",
           "content": [
             "**Tốc độ Baud (với thạch anh 11.0592 MHz)**: Nhớ công thức TH1 = -28800 / Baud:\n- 9600 -> -3 = FDH\n- 4800 -> -6 = FAH\n- 2400 -> -12 = F4H\n- 1200 -> -24 = E8H",
-            "**Mẹo loại trừ lệnh Hợp ngữ SAI**:\n- Hai toán hạng không được cùng là ô nhớ (Ví dụ: `MOV 30H, 40H` là SAI; phải qua A).\n- Không có lệnh `MOV @R2, A` (chỉ dùng `@R0` và `@R1`).\n- Không có lệnh `INC DPTR` byte thấp đơn lẻ, chỉ có `INC DPTR` cả 16 bit.\n- Không có lệnh `MOV DPTR, A` (chỉ có `MOV DPTR, #data16`)."
+            "**Mẹo kiểm tra lệnh Hợp ngữ**:\n- 8051 hỗ trợ `MOV direct, direct`: `MOV 30H, 40H` hợp lệ, sao chép nội dung địa chỉ 40H vào địa chỉ 30H. Không cần đi qua A.\n- Không có lệnh `MOV @R2, A` (chỉ dùng `@R0` và `@R1`).\n- Không có lệnh `INC DPTR` byte thấp đơn lẻ, chỉ có `INC DPTR` cả 16 bit.\n- Không có lệnh `MOV DPTR, A` (chỉ có `MOV DPTR, #data16`)."
           ]
         }
       ]

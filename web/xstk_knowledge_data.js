@@ -1,4 +1,3 @@
-// XSTK Knowledge Base (Auto-generated)
 window.XSTK_KNOWLEDGE_DATA = {
   "subject": "Xác Suất Thống Kê",
   "code": "XSTK_KMA",
@@ -12,22 +11,22 @@ window.XSTK_KNOWLEDGE_DATA = {
       "core_formulas": [
         {
           "name": "Hoán vị, Chỉnh hợp, Tổ hợp",
-          "formula": "Pn = n!,  A(k, n) = n! / (n - k)!,  C(k, n) = n! / (k! * (n - k)!)",
+          "formula": "$P_n=n!;\\quad A_n^k=\\frac{n!}{(n-k)!};\\quad C_n^k=\\frac{n!}{k!(n-k)!}$",
           "desc": "Hoán vị sắp xếp n phần tử. Chỉnh hợp chọn k từ n có xếp thứ tự. Tổ hợp chọn k từ n không phân biệt thứ tự."
         },
         {
           "name": "Định nghĩa xác suất cổ điển",
-          "formula": "P(A) = m / n = |A| / |Ω|",
+          "formula": "$P(A)=\\frac mn=\\frac{|A|}{|\\Omega|}$",
           "desc": "Trong đó n = |Ω| là tổng số biến cố đồng khả năng, m = |A| là số biến cố thuận lợi cho A. 0 ≤ P(A) ≤ 1."
         },
         {
           "name": "Biến cố đối lập & Xung khắc",
-          "formula": "P(A_bar) = 1 - P(A);  Nếu A, B xung khắc: P(A ∪ B) = P(A) + P(B)",
+          "formula": "$P(\\overline A)=1-P(A)$. Nếu $A,B$ xung khắc: $P(A\\cup B)=P(A)+P(B)$",
           "desc": "A và A_bar không bao giờ cùng xảy ra nhưng một trong hai chắc chắn xảy ra: A ∪ A_bar = Ω, A ∩ A_bar = ∅."
         },
         {
           "name": "Xác suất hình học",
-          "formula": "P(A) = Mes(g) / Mes(G)",
+          "formula": "$P(A)=\\frac{\\operatorname{Mes}(g)}{\\operatorname{Mes}(G)}$",
           "desc": "Mes là độ đo (độ dài L, diện tích S, thể tích V). Thường gặp ở bài toán gặp gỡ, chọn ngẫu nhiên 2 số trên đoạn [0, T]."
         }
       ],
@@ -52,27 +51,27 @@ window.XSTK_KNOWLEDGE_DATA = {
       "core_formulas": [
         {
           "name": "Công thức cộng xác suất tổng quát",
-          "formula": "P(A ∪ B) = P(A) + P(B) - P(AB)",
+          "formula": "$P(A\\cup B)=P(A)+P(B)-P(AB)$",
           "desc": "Cho 3 biến cố: P(A∪B∪C) = P(A)+P(B)+P(C) - P(AB)-P(BC)-P(CA) + P(ABC)."
         },
         {
           "name": "Xác suất có điều kiện & Công thức nhân",
-          "formula": "P(A|B) = P(AB) / P(B)  =>  P(AB) = P(B) * P(A|B)",
+          "formula": "$P(A\\mid B)=\\frac{P(AB)}{P(B)}\\ \\Rightarrow\\ P(AB)=P(B)P(A\\mid B)$",
           "desc": "Nếu A và B độc lập: P(A|B) = P(A) và P(AB) = P(A) * P(B)."
         },
         {
           "name": "Công thức xác suất đầy đủ",
-          "formula": "P(A) = Σ [P(Hi) * P(A | Hi)]  (với {Hi} là hệ đầy đủ)",
+          "formula": "$P(A)=\\sum_i P(H_i)P(A\\mid H_i)$ với $\\{H_i\\}$ là hệ đầy đủ",
           "desc": "Hệ {Hi} xung khắc từng đôi và có tổng bằng không gian mẫu: Σ P(Hi) = 1."
         },
         {
           "name": "Công thức Bayes (xác suất hậu nghiệm)",
-          "formula": "P(Hk | A) = [P(Hk) * P(A | Hk)] / P(A) = [P(Hk) * P(A | Hk)] / [Σ P(Hi) * P(A | Hi)]",
+          "formula": "$P(H_k\\mid A)=\\frac{P(H_k)P(A\\mid H_k)}{P(A)}=\\frac{P(H_k)P(A\\mid H_k)}{\\sum_i P(H_i)P(A\\mid H_i)}$",
           "desc": "Dùng để đánh giá lại xác suất của nguyên nhân Hk khi biết kết quả biến cố A đã xảy ra."
         },
         {
           "name": "Công thức Bernoulli",
-          "formula": "Pn(k) = C(k, n) * p^k * q^(n - k)  (với q = 1 - p)",
+          "formula": "$P_n(k)=C_n^k p^k q^{n-k}$ với $q=1-p$",
           "desc": "Xác suất trong n phép thử độc lập có đúng k lần biến cố A xuất hiện với xác suất mỗi lần là p. Số có khả năng nhất k0 thỏa: np - q ≤ k0 ≤ np + p."
         }
       ],
@@ -96,22 +95,22 @@ window.XSTK_KNOWLEDGE_DATA = {
       "core_formulas": [
         {
           "name": "Kỳ vọng & Phương sai rời rạc",
-          "formula": "E(X) = Σ xi * pi;  V(X) = E(X^2) - [E(X)]^2 = Σ xi^2 * pi - [E(X)]^2",
+          "formula": "$E(X)=\\sum_i x_i p_i;\\quad V(X)=E(X^2)-[E(X)]^2=\\sum_i x_i^2p_i-[E(X)]^2$",
           "desc": "Độ lệch chuẩn: σ(X) = √V(X). Tính chất: E(aX + b) = aE(X) + b; V(aX + b) = a^2 * V(X). Nếu X, Y độc lập: V(X ± Y) = V(X) + V(Y)."
         },
         {
           "name": "Phân phối Nhị thức B(n, p)",
-          "formula": "P(X = k) = C(k, n) * p^k * (1 - p)^(n - k);  E(X) = n*p,  V(X) = n*p*(1 - p)",
+          "formula": "$P(X=k)=C_n^k p^k(1-p)^{n-k};\\quad E(X)=np;\\quad V(X)=np(1-p)$",
           "desc": "Số lần thành công trong n phép thử Bernoulli độc lập."
         },
         {
           "name": "Phân phối Poisson P(λ)",
-          "formula": "P(X = k) = (λ^k * e^(-λ)) / k!;  E(X) = λ,  V(X) = λ",
+          "formula": "$P(X=k)=\\frac{\\lambda^k e^{-\\lambda}}{k!};\\quad E(X)=V(X)=\\lambda$",
           "desc": "Mô hình hóa số sự kiện hiếm xảy ra trong khoảng thời gian hoặc không gian nhất định. Nhị thức xấp xỉ Poisson khi n lớn, p nhỏ: λ = n*p."
         },
         {
           "name": "Phân phối Siêu bội H(N, M, n)",
-          "formula": "P(X = k) = [C(k, M) * C(n - k, N - M)] / C(n, N);  E(X) = n * (M / N)",
+          "formula": "$P(X=k)=\\frac{C_M^k C_{N-M}^{n-k}}{C_N^n};\\quad E(X)=n\\frac MN$",
           "desc": "Lấy không hoàn lại n phần tử từ tập N phần tử có chứa M phần tử mang dấu hiệu A."
         }
       ],
@@ -135,27 +134,27 @@ window.XSTK_KNOWLEDGE_DATA = {
       "core_formulas": [
         {
           "name": "Mối quan hệ f(x) và F(x)",
-          "formula": "F(x) = ∫(-∞ đến x) f(t) dt;  f(x) = F'(x);  ∫(-∞ đến +∞) f(x) dx = 1",
+          "formula": "$F(x)=\\int_{-\\infty}^x f(t)\\,dt;\\quad f(x)=F'(x);\\quad \\int_{-\\infty}^{+\\infty}f(x)\\,dx=1$",
           "desc": "Xác suất rơi vào khoảng: P(a ≤ X ≤ b) = F(b) - F(a) = ∫(a đến b) f(x) dx. Với biến liên tục: P(X = c) = 0."
         },
         {
           "name": "Kỳ vọng & Phương sai liên tục",
-          "formula": "E(X) = ∫(-∞ đến +∞) x * f(x) dx;  V(X) = ∫(-∞ đến +∞) x^2 * f(x) dx - [E(X)]^2",
-          "desc": "Nếu f(x) đối xứng qua x = c thì E(X) = c và Mod(X) = Med(X) = c."
+          "formula": "$E(X)=\\int_{-\\infty}^{+\\infty}xf(x)\\,dx;\\quad V(X)=\\int_{-\\infty}^{+\\infty}x^2f(x)\\,dx-[E(X)]^2$",
+          "desc": "Nếu mật độ đối xứng qua x = c và kỳ vọng tồn tại thì E(X) = c; c là một trung vị. Mốt không nhất thiết bằng c, trừ khi có thêm điều kiện về dạng mật độ."
         },
         {
           "name": "Phân phối Chuẩn N(μ, σ²)",
-          "formula": "f(x) = [1 / (σ*√(2π))] * exp(-(x - μ)^2 / (2σ^2));  E(X) = μ,  V(X) = σ^2",
+          "formula": "$f(x)=\\frac1{\\sigma\\sqrt{2\\pi}}e^{-(x-\\mu)^2/(2\\sigma^2)};\\quad E(X)=\\mu;\\quad V(X)=\\sigma^2$",
           "desc": "Quy chuẩn hóa Z = (X - μ) / σ ~ N(0, 1). P(a ≤ X ≤ b) = Φ((b - μ)/σ) - Φ((a - μ)/σ)."
         },
         {
           "name": "Quy tắc 3-Sigma (3σ)",
-          "formula": "P(|X - μ| < 3σ) = 2*Φ(3) - 1 ≈ 0.9973 (99.73%)",
+          "formula": "$P(|X-\\mu|<3\\sigma)=2\\Phi(3)-1\\approx0.9973\\ (99.73\\%)$",
           "desc": "Hầu như toàn bộ giá trị của phân phối chuẩn đều nằm trong khoảng (μ - 3σ, μ + 3σ)."
         },
         {
           "name": "Phân phối Đều U(a, b) & Phân phối Mũ Exp(λ)",
-          "formula": "U(a,b): E(X)=(a+b)/2, V(X)=(b-a)^2/12.  Exp(λ): f(x)=λ*e^(-λx), E(X)=1/λ, V(X)=1/λ^2",
+          "formula": "$U(a,b):\\ E(X)=\\frac{a+b}2,\\ V(X)=\\frac{(b-a)^2}{12}$. $\\operatorname{Exp}(\\lambda):\\ f(x)=\\lambda e^{-\\lambda x},\\ E(X)=\\frac1\\lambda,\\ V(X)=\\frac1{\\lambda^2}$",
           "desc": "Phân phối mũ có tính chất 'không nhớ': P(X > s + t | X > s) = P(X > t)."
         }
       ],
@@ -167,7 +166,7 @@ window.XSTK_KNOWLEDGE_DATA = {
       ],
       "casio_shortcuts": [
         "Bấm phân phối Chuẩn trực tiếp: MENU -> 7 -> 2 (Normal CD). Nhập Lower, Upper, σ, μ -> [=]. Casio tự tích phân và xuất xác suất chính xác đến 9 chữ số thập phân!",
-        "Ví dụ tính P(X < 5) với X ~ N(3, 4): Lower = -10^99 (nhập -1*10^9), Upper = 5, σ = 2, μ = 3 -> Kết quả = 0.84134."
+        "Ví dụ tính P(X < 5) với X ~ N(3, 4): dùng Lower = -1*10^9 để xấp xỉ -∞, Upper = 5, σ = 2, μ = 3 -> Kết quả ≈ 0.84134."
       ]
     },
     {
@@ -179,22 +178,22 @@ window.XSTK_KNOWLEDGE_DATA = {
       "core_formulas": [
         {
           "name": "Phân phối xác suất biên",
-          "formula": "P(X = xi) = pi = Σj pij;   P(Y = yj) = qj = Σi pij;   ΣΣ pij = 1",
+          "formula": "$P(X=x_i)=p_i=\\sum_j p_{ij};\\quad P(Y=y_j)=q_j=\\sum_i p_{ij};\\quad \\sum_i\\sum_j p_{ij}=1$",
           "desc": "Tính xác suất lề bằng cách cộng các phần tử theo hàng hoặc theo cột của bảng phân phối đồng thời."
         },
         {
           "name": "Điều kiện độc lập của X và Y",
-          "formula": "P(X = xi, Y = yj) = P(X = xi) * P(Y = yj)  với mọi i, j",
+          "formula": "$P(X=x_i,Y=y_j)=P(X=x_i)P(Y=y_j)$ với mọi $i,j$",
           "desc": "Nếu chỉ cần 1 ô không thỏa mãn tích xác suất lề thì X và Y phụ thuộc ngẫu nhiên."
         },
         {
           "name": "Hiệp phương sai Cov(X, Y)",
-          "formula": "Cov(X, Y) = E(XY) - E(X) * E(Y) = ΣΣ (xi * yj * pij) - E(X) * E(Y)",
+          "formula": "$\\operatorname{Cov}(X,Y)=E(XY)-E(X)E(Y)=\\sum_i\\sum_j x_i y_j p_{ij}-E(X)E(Y)$",
           "desc": "Nếu X, Y độc lập thì Cov(X, Y) = 0 (chiều ngược lại chưa chắc đúng). Cov(X, X) = V(X)."
         },
         {
           "name": "Hệ số tương quan ρXY (hoặc rXY)",
-          "formula": "ρXY = Cov(X, Y) / [σ(X) * σ(Y)]   (-1 ≤ ρXY ≤ 1)",
+          "formula": "$\\rho_{XY}=\\frac{\\operatorname{Cov}(X,Y)}{\\sigma(X)\\sigma(Y)};\\quad -1\\le\\rho_{XY}\\le1$",
           "desc": "|ρXY| đo lường mức độ liên hệ tuyến tính. |ρXY| = 1: quan hệ tuyến tính hoàn toàn Y = aX + b. ρXY = 0: không tương quan tuyến tính."
         }
       ],
@@ -217,28 +216,28 @@ window.XSTK_KNOWLEDGE_DATA = {
       "core_formulas": [
         {
           "name": "Trung bình mẫu & Phương sai mẫu hiệu chỉnh",
-          "formula": "x̄ = (1/n) * Σ ni*xi;   s*^2 = [1 / (n - 1)] * Σ ni * (xi - x̄)^2 = [n / (n - 1)] * s^2",
+          "formula": "$\\bar x=\\frac1n\\sum_i n_ix_i;\\quad s_*^2=\\frac1{n-1}\\sum_i n_i(x_i-\\bar x)^2=\\frac n{n-1}s^2$",
           "desc": "s*^2 là ước lượng không chệch của phương sai tổng thể σ^2. Khi n lớn (n ≥ 30), s*^2 xấp xỉ s^2."
         },
         {
           "name": "Công thức tính nhanh phương sai mẫu",
-          "formula": "s^2 = (1/n) * Σ ni*xi^2 - (x̄)^2;   s*^2 = [n / (n - 1)] * [ (1/n)*Σ ni*xi^2 - (x̄)^2 ]",
+          "formula": "$s^2=\\frac1n\\sum_i n_ix_i^2-\\bar x^2;\\quad s_*^2=\\frac n{n-1}\\left(\\frac1n\\sum_i n_ix_i^2-\\bar x^2\\right)$",
           "desc": "Công thức rút gọn kinh điển dùng khi tính toán thủ công hoặc bấm máy Casio."
         },
         {
           "name": "Tỷ lệ mẫu F (hoặc p̂)",
-          "formula": "f = m / n",
+          "formula": "$f=\\frac mn$",
           "desc": "m là số phần tử trong mẫu mang dấu hiệu A, n là kích thước mẫu. E(F) = p, V(F) = p*(1 - p)/n."
         },
         {
           "name": "Các định lý giới hạn trung tâm",
-          "formula": "Nếu σ đã biết: Z = (X̄ - μ) / (σ / √n) ~ N(0, 1);  Nếu σ chưa biết: T = (X̄ - μ) / (S* / √n) ~ t(n - 1)",
-          "desc": "Cơ sở toán học then chốt để xây dựng khoảng tin cậy và kiểm định giả thuyết."
+          "formula": "Nếu $\\sigma$ đã biết: $Z=\\frac{\\bar X-\\mu}{\\sigma/\\sqrt n}\\sim N(0,1)$. Nếu $\\sigma$ chưa biết: $T=\\frac{\\bar X-\\mu}{S_*/\\sqrt n}\\sim t_{n-1}$",
+          "desc": "Với mẫu độc lập từ tổng thể chuẩn, Z và T có đúng các phân phối trên. Với tổng thể không chuẩn, chuẩn hóa trung bình dùng xấp xỉ theo định lý giới hạn trung tâm khi các điều kiện phù hợp; T không tự có phân phối Student chỉ vì σ chưa biết."
         }
       ],
       "magic_rules": [
-        "Phân biệt s (phương sai mẫu) và s* (phương sai mẫu hiệu chỉnh): Đề bài thống kê KMA luôn dùng s* (kí hiệu trong Casio fx-580 là s_x).",
-        "Trong Casio fx-580VNX: σx là độ lệch chuẩn mẫu s (chia cho n), còn sx là độ lệch chuẩn mẫu hiệu chỉnh s* (chia cho n-1). Khi làm bài KMA LUÔN CHỌN sx!",
+        "Phân biệt độ lệch chuẩn s (chia cho n khi tính s²) và s* hiệu chỉnh (chia cho n-1 khi tính s*²). Đọc đúng yêu cầu đề; các công thức suy luận dùng s* khi thay thế σ chưa biết.",
+        "Trong Casio fx-580VNX: σx là độ lệch chuẩn chia cho n, còn sx là độ lệch chuẩn hiệu chỉnh chia cho n-1. Chọn theo đại lượng mà bài yêu cầu.",
         "Khoảng biến thiên: R = xmax - xmin.",
         "Nếu khoảng lớp cho dạng [a, b): Lấy giá trị đại diện là trung điểm xi = (a + b) / 2."
       ],
@@ -255,27 +254,27 @@ window.XSTK_KNOWLEDGE_DATA = {
       "core_formulas": [
         {
           "name": "Ước lượng kỳ vọng μ (Đã biết σ²)",
-          "formula": "μ ∈ (x̄ - ε, x̄ + ε)  với ε = u_(α/2) * (σ / √n)",
+          "formula": "$\\mu\\in(\\bar x-\\varepsilon,\\bar x+\\varepsilon)$ với $\\varepsilon=u_{\\alpha/2}\\frac\\sigma{\\sqrt n}$",
           "desc": "u_(α/2) là giá trị tới hạn chuẩn. Với độ tin cậy 95% (α = 0.05): u_0.025 = 1.96. Với 99%: u_0.005 = 2.58."
         },
         {
           "name": "Ước lượng kỳ vọng μ (Chưa biết σ², n < 30)",
-          "formula": "μ ∈ (x̄ - ε, x̄ + ε)  với ε = t_(α/2)^(n - 1) * (s* / √n)",
-          "desc": "t_(α/2)^(n-1) tra bảng phân phối Student với n - 1 bậc tự do."
+          "formula": "$\\mu\\in(\\bar x-\\varepsilon,\\bar x+\\varepsilon)$ với $\\varepsilon=t_{\\alpha/2}^{n-1}\\frac{s_*}{\\sqrt n}$",
+          "desc": "Dùng với mẫu độc lập từ tổng thể chuẩn; t_(α/2)^(n-1) tra bảng Student với n - 1 bậc tự do. Mẫu nhỏ không chuẩn không tự bảo đảm công thức này đúng."
         },
         {
           "name": "Ước lượng kỳ vọng μ (Chưa biết σ², n ≥ 30)",
-          "formula": "μ ∈ (x̄ - ε, x̄ + ε)  với ε = u_(α/2) * (s* / √n)",
+          "formula": "$\\mu\\in(\\bar x-\\varepsilon,\\bar x+\\varepsilon)$ với $\\varepsilon=u_{\\alpha/2}\\frac{s_*}{\\sqrt n}$",
           "desc": "Khi mẫu lớn n ≥ 30, phân phối Student xấp xỉ phân phối chuẩn N(0, 1)."
         },
         {
           "name": "Ước lượng tỷ lệ p của tổng thể",
-          "formula": "p ∈ (f - ε, f + ε)  với ε = u_(α/2) * √[f * (1 - f) / n]",
+          "formula": "$p\\in(f-\\varepsilon,f+\\varepsilon)$ với $\\varepsilon=u_{\\alpha/2}\\sqrt{\\frac{f(1-f)}n}$",
           "desc": "f = m/n là tỷ lệ mẫu. Điều kiện áp dụng: n ≥ 30, n*f ≥ 5 và n*(1 - f) ≥ 5."
         },
         {
           "name": "Xác định kích thước mẫu tối thiểu n",
-          "formula": "Cho kỳ vọng: n ≥ (u_(α/2) * s* / ε)^2;   Cho tỷ lệ: n ≥ (u_(α/2))^2 * f*(1 - f) / ε^2",
+          "formula": "Cho kỳ vọng: $n\\ge\\left(\\frac{u_{\\alpha/2}s_*}\\varepsilon\\right)^2$. Cho tỷ lệ: $n\\ge\\frac{u_{\\alpha/2}^2 f(1-f)}{\\varepsilon^2}$",
           "desc": "Nếu chưa biết f thì lấy f*(1 - f) đạt cực đại tại f = 0.5 (f*(1-f) = 0.25). Làm tròn lên số nguyên kế tiếp."
         }
       ],
@@ -298,30 +297,30 @@ window.XSTK_KNOWLEDGE_DATA = {
       "core_formulas": [
         {
           "name": "Kiểm định giả thuyết về kỳ vọng μ (σ đã biết)",
-          "formula": "Z_qs = (x̄ - μ0) / (σ / √n);  H1: μ ≠ μ0 => Wα = {|Z| > u_(α/2)}",
+          "formula": "$Z_{\\mathrm{qs}}=\\frac{\\bar x-\\mu_0}{\\sigma/\\sqrt n};\\quad H_1:\\mu\\ne\\mu_0\\ \\Rightarrow\\ W_\\alpha=\\{|Z|>u_{\\alpha/2}\\}$",
           "desc": "Đối thuyết 1 phía: H1: μ > μ0 => Wα = {Z > uα};  H1: μ < μ0 => Wα = {Z < -uα}."
         },
         {
           "name": "Kiểm định giả thuyết về kỳ vọng μ (σ chưa biết, n < 30)",
-          "formula": "T_qs = (x̄ - μ0) / (s* / √n);  H1: μ ≠ μ0 => Wα = {|T| > t_(α/2)^(n - 1)}",
+          "formula": "$T_{\\mathrm{qs}}=\\frac{\\bar x-\\mu_0}{s_*/\\sqrt n};\\quad H_1:\\mu\\ne\\mu_0\\ \\Rightarrow\\ W_\\alpha=\\{|T|>t_{\\alpha/2}^{n-1}\\}$",
           "desc": "Đối thuyết 1 phía: H1: μ > μ0 => Wα = {T > t_α^(n - 1)};  H1: μ < μ0 => Wα = {T < -t_α^(n - 1)}."
         },
         {
           "name": "Kiểm định giả thuyết về tỷ lệ p",
-          "formula": "Z_qs = (f - p0) / √[p0 * (1 - p0) / n];  H1: p ≠ p0 => Wα = {|Z| > u_(α/2)}",
+          "formula": "$Z_{\\mathrm{qs}}=\\frac{f-p_0}{\\sqrt{p_0(1-p_0)/n}};\\quad H_1:p\\ne p_0\\ \\Rightarrow\\ W_\\alpha=\\{|Z|>u_{\\alpha/2}\\}$",
           "desc": "Chú ý dưới dấu căn mẫu số là p0 * (1 - p0) chứ không phải f * (1 - f)."
         },
         {
           "name": "Quy tắc ra quyết định kiểm định",
-          "formula": "Nếu Tiêu chuẩn QS ∈ Wα: BÁC BỎ H0 (chấp nhận H1). Nếu Tiêu chuẩn QS ∉ Wα: CHƯA ĐỦ CƠ SỞ BÁC BỎ H0 (chấp nhận H0).",
-          "desc": "Nếu dùng p-value: p-value < α thì Bác bỏ H0; p-value ≥ α thì Chấp nhận H0."
+          "formula": "Nếu tiêu chuẩn quan sát $\\in W_\\alpha$: BÁC BỎ $H_0$. Nếu tiêu chuẩn quan sát $\\notin W_\\alpha$: CHƯA ĐỦ CƠ SỞ BÁC BỎ $H_0$.",
+          "desc": "Nếu dùng p-value theo quy ước của chương: p-value < α thì bác bỏ H0; p-value ≥ α thì chưa đủ cơ sở bác bỏ H0. Không bác bỏ không chứng minh H0 đúng."
         }
       ],
       "magic_rules": [
         "H0 luôn luôn mang dấu BẰNG (=). Ví dụ H0: μ = μ0 hoặc H0: p = p0.",
         "Đọc đề bài để chọn H1: Nếu hỏi 'có thay đổi/khác không' -> H1: ≠ (Kiểm định 2 phía, tra u_(α/2)). Nếu hỏi 'có tăng lên/cao hơn không' -> H1: > (Kiểm định phía phải, tra u_α). Nếu hỏi 'có giảm đi/thấp hơn không' -> H1: < (Kiểm định phía trái, tra -u_α).",
         "Sai lầm loại 1: Bác bỏ H0 khi H0 đúng. Xác suất mắc sai lầm loại 1 chính là mức ý nghĩa α.",
-        "Sai lầm loại 2: Chấp nhận H0 khi H0 sai. Ký hiệu là β. Lực kiểm định là 1 - β."
+        "Sai lầm loại 2: Không bác bỏ H0 khi H0 sai. Ký hiệu là β. Lực kiểm định là 1 - β."
       ],
       "casio_shortcuts": [
         "Bấm giá trị kiểm định quan sát Z_qs: (x̄ - μ0) / (σ / √n). Lưu ý đóng ngoặc mẫu số hoặc dùng phím phân số [■/□] để tránh lỗi thứ tự phép tính!"

@@ -22,6 +22,7 @@ from scripts.solvers.latex_helper import latexify_text, fix_isolated_dollars
 from scripts.data_xstk_part1 import RAW_QUESTIONS_PART1
 from scripts.data_xstk_part2 import RAW_QUESTIONS_PART2
 from scripts.data_xstk_knowledge import XSTK_KNOWLEDGE_DATA
+from normalize_statistics import normalize_xstk_questions, normalize_xstk_knowledge
 
 os.makedirs('data', exist_ok=True)
 os.makedirs('web/data', exist_ok=True)
@@ -83,6 +84,8 @@ def main():
         processed_q = create_q(raw_q, idx)
         processed_questions.append(processed_q)
 
+    normalize_xstk_questions(processed_questions)
+    normalize_xstk_knowledge(XSTK_KNOWLEDGE_DATA)
     # Validate answers distribution
     ans_dist = {'A': 0, 'B': 0, 'C': 0, 'D': 0}
     for q in processed_questions:

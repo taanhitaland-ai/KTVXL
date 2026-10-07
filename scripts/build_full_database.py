@@ -114,8 +114,8 @@ def solve_question(q):
         tips = "Chữ 'L' ở cuối các lệnh ANL, ORL, XRL đại diện cho 'Logic'."
     elif num == 16:
         ans = "A"
-        exp = "Trong tập lệnh 8051, không được phép chuyển trực tiếp dữ liệu giữa hai ô nhớ RAM nội mà không thông qua thanh ghi tích lũy A (ví dụ `MOV 30H, 40H` là lệnh SAI); đồng thời thanh ghi chỉ số gián tiếp chỉ hỗ trợ R0 và R1 (`MOV @R2, A` là lệnh SAI)."
-        meth = "Các lỗi cú pháp kinh điển: Không chuyển trực tiếp ô nhớ sang ô nhớ, không dùng @R2 đến @R7 (chỉ có @R0, @R1)."
+        exp = "8051 hỗ trợ MOV direct, direct: `MOV 30H, 40H` hợp lệ, chuyển nội dung địa chỉ 40H vào địa chỉ 30H. Định địa chỉ gián tiếp RAM nội chỉ hỗ trợ R0 và R1, nên `MOV @R2, A` là lệnh sai."
+        meth = "Đối chiếu dạng toán hạng với tập lệnh 8051. MOV direct, direct hợp lệ; địa chỉ gián tiếp chỉ dùng @R0 hoặc @R1."
         tips = "Quy tắc 8051: Định địa chỉ gián tiếp chỉ chấp nhận R0 và R1 (con trỏ byte nội)."
     elif num == 17:
         ans = "A"

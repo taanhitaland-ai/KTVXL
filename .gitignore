@@ -22,3 +22,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Local browser checks
+.playwright-cli/
+output/playwright/
+

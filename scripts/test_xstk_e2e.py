@@ -1,11 +1,12 @@
 import sys
 import os
 import time
+from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 def run_tests():
-    html_path = os.path.abspath("web/index.html")
-    file_url = f"file://{html_path}"
+    file_url = Path('web/index.html').resolve().as_uri()
+    Path('output/playwright').mkdir(parents=True, exist_ok=True)
     print(f"Testing URL: {file_url}")
 
     with sync_playwright() as p:
@@ -58,21 +59,22 @@ def run_tests():
         assert "Lời Giải Chi Tiết" in panel_content or "Phương Pháp Giải" in panel_content
         print("Side panel successfully loaded detailed step-by-step solution!")
 
-        # Test Chapter Filter (Chương 4: 22 câu)
+        # Compare the chapter filter with the current database.
         btn_chap4 = page.locator('.filter-btn-group button[data-clo="4"]')
         if btn_chap4.is_visible():
             btn_chap4.click()
             page.wait_for_timeout(400)
             chap4_count = page.locator(".question-card").count()
             print(f"Chapter 4 filtered questions: {chap4_count}")
-            assert chap4_count == 22, f"Expected 22 questions for Chapter 4, got {chap4_count}"
+            expected_count = page.evaluate('window.XSTK_QUESTIONS_DATA.filter(q => q.chapter_id === 4).length')
+            assert chap4_count == expected_count, f"Expected {expected_count} questions for Chapter 4, got {chap4_count}"
             # Reset to ALL
             page.locator('.filter-btn-group button[data-clo="ALL"]').click()
             page.wait_for_timeout(300)
 
         # Screenshot practice arena
-        page.screenshot(path="web/screenshot_xstk_practice.png")
-        print("Captured: web/screenshot_xstk_practice.png")
+        page.screenshot(path="output/playwright/screenshot_xstk_practice.png")
+        print("Captured: output/playwright/screenshot_xstk_practice.png")
 
         print("\n--- 3. Testing Knowledge Hub (XSTK 8 Chapters & Casio Handbook) ---")
         page.locator("#btn-tab-knowledge").click()
@@ -88,8 +90,8 @@ def run_tests():
         assert "SỔ TAY CASIO" in knowledge_html
         print("Knowledge Hub successfully rendered 8 chapters + Sổ tay Casio fx-580VNX!")
 
-        page.screenshot(path="web/screenshot_xstk_knowledge.png")
-        print("Captured: web/screenshot_xstk_knowledge.png")
+        page.screenshot(path="output/playwright/screenshot_xstk_knowledge.png")
+        print("Captured: output/playwright/screenshot_xstk_knowledge.png")
 
         print("\n--- 4. Testing Interactive Probability & Statistics Lab ---")
         page.locator("#btn-tab-visualize").click()
@@ -109,8 +111,8 @@ def run_tests():
         print(f"LLN trials after +100: {n_val}")
         assert int(n_val.replace(',', '')) >= 100
 
-        page.screenshot(path="web/screenshot_xstk_sim_lln.png")
-        print("Captured: web/screenshot_xstk_sim_lln.png")
+        page.screenshot(path="output/playwright/screenshot_xstk_sim_lln.png")
+        print("Captured: output/playwright/screenshot_xstk_sim_lln.png")
 
         # Module 2: Galton Board
         print("Testing Module 2: Galton Board & CLT...")
@@ -124,8 +126,8 @@ def run_tests():
         print(f"Galton total balls after drop: {total_balls}")
         assert int(total_balls.replace(',', '')) >= 1000
 
-        page.screenshot(path="web/screenshot_xstk_sim_galton.png")
-        print("Captured: web/screenshot_xstk_sim_galton.png")
+        page.screenshot(path="output/playwright/screenshot_xstk_sim_galton.png")
+        print("Captured: output/playwright/screenshot_xstk_sim_galton.png")
 
         # Module 3: Normal Bell Curve
         print("Testing Module 3: Normal Distribution Bell Curve...")
@@ -141,8 +143,8 @@ def run_tests():
         print(f"3-Sigma coverage percent: {pct_val}")
         assert "99.7" in pct_val
 
-        page.screenshot(path="web/screenshot_xstk_sim_normal.png")
-        print("Captured: web/screenshot_xstk_sim_normal.png")
+        page.screenshot(path="output/playwright/screenshot_xstk_sim_normal.png")
+        print("Captured: output/playwright/screenshot_xstk_sim_normal.png")
 
         # Module 4: Confidence Interval 95%
         print("Testing Module 4: Confidence Interval 95%...")
@@ -158,8 +160,8 @@ def run_tests():
         print(f"CI total samples: {ci_total}, Coverage rate: {ci_pct}")
         assert int(ci_total.replace(',', '')) >= 100
 
-        page.screenshot(path="web/screenshot_xstk_sim_ci.png")
-        print("Captured: web/screenshot_xstk_sim_ci.png")
+        page.screenshot(path="output/playwright/screenshot_xstk_sim_ci.png")
+        print("Captured: output/playwright/screenshot_xstk_sim_ci.png")
 
         print("\n--- 5. Testing Exam Simulator (XSTK 40 Questions) ---")
         page.locator("#btn-tab-exam").click()
@@ -202,8 +204,8 @@ def run_tests():
         print(f"Breakdown 1: {clo1_text}")
         assert "Chương 1-3" in clo1_text
 
-        page.screenshot(path="web/screenshot_xstk_exam_result.png")
-        print("Captured: web/screenshot_xstk_exam_result.png")
+        page.screenshot(path="output/playwright/screenshot_xstk_exam_result.png")
+        print("Captured: output/playwright/screenshot_xstk_exam_result.png")
 
         # Close Modal
         page.locator("#btn-close-modal").click()
@@ -217,8 +219,8 @@ def run_tests():
         print(f"Total download cards: {download_cards.count()}")
         assert download_cards.count() >= 10, f"Expected at least 10 cards, got {download_cards.count()}"
 
-        page.screenshot(path="web/screenshot_xstk_download.png")
-        print("Captured: web/screenshot_xstk_download.png")
+        page.screenshot(path="output/playwright/screenshot_xstk_download.png")
+        print("Captured: output/playwright/screenshot_xstk_download.png")
 
         print("\n=== ALL XSTK E2E TESTS PASSED SUCCESSFULLY! ===")
         browser.close()
