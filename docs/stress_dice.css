@@ -1,0 +1,429 @@
+/* ═══════════════════════════════════════════════════════════════
+   GÓC XẢ STRESS: TUNG XÚC XẮC 3D (STRESS RELIEF 3D DICE)
+   ═══════════════════════════════════════════════════════════════ */
+
+.stress-relief-card {
+  margin-top: 18px;
+  background: #fff;
+  border: var(--border-width) solid #000;
+  box-shadow: var(--shadow-main);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.stress-header {
+  background: var(--neo-yellow);
+  padding: 10px 14px;
+  border-bottom: var(--border-width) solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.stress-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 900;
+  font-size: 0.88rem;
+  letter-spacing: -0.2px;
+}
+
+.stress-icon {
+  font-size: 1.15rem;
+  display: inline-block;
+  animation: diceWiggle 3s ease-in-out infinite;
+}
+
+@keyframes diceWiggle {
+  0%, 80%, 100% { transform: rotate(0deg); }
+  85% { transform: rotate(-12deg); }
+  90% { transform: rotate(14deg); }
+  95% { transform: rotate(-8deg); }
+}
+
+.stress-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stress-mini-btn {
+  background: #fff;
+  border: 1.5px solid #000;
+  border-radius: 4px;
+  box-shadow: 1.5px 1.5px 0 #000;
+  padding: 3px 7px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  line-height: 1.2;
+}
+
+.stress-mini-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 2.5px 2.5px 0 #000;
+  background: #fffdf0;
+}
+
+.stress-mini-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0 0 0 #000;
+}
+
+.stress-body {
+  padding: 16px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFDF9;
+  transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.3s ease;
+}
+
+.stress-relief-card.collapsed .stress-body {
+  display: none;
+}
+
+.stress-relief-card.collapsed .stress-header {
+  border-bottom: 0;
+}
+
+/* 3D Stage */
+.dice-stage {
+  perspective: 700px;
+  width: 100%;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  cursor: pointer;
+  position: relative;
+  background: radial-gradient(circle at center, rgba(255, 230, 0, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 8px;
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+  margin-bottom: 12px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.dice-stage:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+  background: radial-gradient(circle at center, rgba(255, 230, 0, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.dice-stage:hover .dice-cube {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+}
+
+.dice-wrapper {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  transform-style: preserve-3d;
+}
+
+/* Realistic Dynamic Shadow */
+.dice-shadow {
+  position: absolute;
+  top: 60px;
+  left: 2px;
+  width: 48px;
+  height: 14px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 72%);
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.dice-wrapper.rolling .dice-shadow {
+  animation: diceShadowBounce 1.1s cubic-bezier(0.2, 0.85, 0.3, 1) forwards;
+}
+
+@keyframes diceShadowBounce {
+  0% { transform: scale(1); opacity: 0.5; }
+  25% { transform: scale(0.45); opacity: 0.15; }
+  55% { transform: scale(1.2); opacity: 0.65; }
+  72% { transform: scale(0.7); opacity: 0.28; }
+  86% { transform: scale(1.05); opacity: 0.55; }
+  100% { transform: scale(1); opacity: 0.45; }
+}
+
+/* 3D Cube */
+.dice-cube {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1.1s cubic-bezier(0.18, 0.9, 0.28, 1.05);
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+.dice-wrapper.rolling .dice-cube {
+  animation: diceCubeBounce 1.1s cubic-bezier(0.2, 0.85, 0.3, 1) forwards;
+}
+
+@keyframes diceCubeBounce {
+  0% { top: 0; }
+  25% { top: -42px; }
+  55% { top: 0; }
+  72% { top: -14px; }
+  86% { top: 0; }
+  94% { top: -4px; }
+  100% { top: 0; }
+}
+
+/* 6 Faces */
+.dice-face {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background: #FFFDF9;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 6px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* 3D Translations for 52px cube (half is 26px) */
+.dice-face.face-1 { transform: rotateY(0deg) translateZ(26px); }
+.dice-face.face-6 { transform: rotateX(180deg) translateZ(26px); }
+.dice-face.face-2 { transform: rotateX(90deg) translateZ(26px); }
+.dice-face.face-5 { transform: rotateX(-90deg) translateZ(26px); }
+.dice-face.face-3 { transform: rotateY(-90deg) translateZ(26px); }
+.dice-face.face-4 { transform: rotateY(90deg) translateZ(26px); }
+
+/* Pips */
+.pip {
+  display: block;
+  width: 9px;
+  height: 9px;
+  background: #111;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.7), 0 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+.pip.red {
+  background: #E53935;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.face-1 .pip {
+  grid-column: 2;
+  grid-row: 2;
+  width: 14px;
+  height: 14px;
+}
+
+/* Face 2 */
+.face-2 .pip:nth-child(1) { grid-column: 1; grid-row: 1; }
+.face-2 .pip:nth-child(2) { grid-column: 3; grid-row: 3; }
+
+/* Face 3 */
+.face-3 .pip:nth-child(1) { grid-column: 1; grid-row: 1; }
+.face-3 .pip:nth-child(2) { grid-column: 2; grid-row: 2; }
+.face-3 .pip:nth-child(3) { grid-column: 3; grid-row: 3; }
+
+/* Face 4 */
+.face-4 .pip:nth-child(1) { grid-column: 1; grid-row: 1; }
+.face-4 .pip:nth-child(2) { grid-column: 3; grid-row: 1; }
+.face-4 .pip:nth-child(3) { grid-column: 1; grid-row: 3; }
+.face-4 .pip:nth-child(4) { grid-column: 3; grid-row: 3; }
+
+/* Face 5 */
+.face-5 .pip:nth-child(1) { grid-column: 1; grid-row: 1; }
+.face-5 .pip:nth-child(2) { grid-column: 3; grid-row: 1; }
+.face-5 .pip:nth-child(3) { grid-column: 2; grid-row: 2; }
+.face-5 .pip:nth-child(4) { grid-column: 1; grid-row: 3; }
+.face-5 .pip:nth-child(5) { grid-column: 3; grid-row: 3; }
+
+/* Face 6 */
+.face-6 .pip:nth-child(1) { grid-column: 1; grid-row: 1; }
+.face-6 .pip:nth-child(2) { grid-column: 3; grid-row: 1; }
+.face-6 .pip:nth-child(3) { grid-column: 1; grid-row: 2; }
+.face-6 .pip:nth-child(4) { grid-column: 3; grid-row: 2; }
+.face-6 .pip:nth-child(5) { grid-column: 1; grid-row: 3; }
+.face-6 .pip:nth-child(6) { grid-column: 3; grid-row: 3; }
+
+/* Result and Quotes */
+.stress-result-wrap {
+  text-align: center;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.stress-score-badge {
+  display: inline-block;
+  background: #FFE600;
+  border: 1.5px solid #000;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 0.88rem;
+  box-shadow: 2px 2px 0 #000;
+  margin-bottom: 6px;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stress-score-badge.pop {
+  animation: scorePop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scorePop {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+
+.stress-quote {
+  font-size: 0.82rem;
+  color: #444;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.stress-btn-row {
+  width: 100%;
+}
+
+.stress-roll-btn {
+  width: 100%;
+  font-weight: 900;
+  font-size: 0.92rem;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--neo-yellow);
+  box-shadow: var(--shadow-main);
+  transition: all 0.15s ease;
+}
+
+.stress-roll-btn:hover {
+  transform: translate(-1.5px, -1.5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stress-roll-btn:active {
+  transform: translate(1.5px, 1.5px);
+  box-shadow: var(--shadow-sm);
+}
+
+.stress-roll-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Sparkle celebration for double numbers or lucky 7 */
+.dice-stage.celebrate::after {
+  content: '✨';
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.4rem;
+  animation: celebrateSparkle 0.8s ease-out forwards;
+}
+
+.dice-stage.celebrate::before {
+  content: '🎉';
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  font-size: 1.4rem;
+  animation: celebrateSparkle 0.8s ease-out forwards;
+}
+
+@keyframes celebrateSparkle {
+  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1.3) rotate(20deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 0; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DARK MODE COMPATIBILITY
+   ═══════════════════════════════════════════════════════════════ */
+body.dark-mode .stress-relief-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-main);
+  box-shadow: var(--shadow-main);
+}
+
+body.dark-mode .stress-header {
+  background: var(--night-raised);
+  border-color: var(--border-color);
+  color: var(--night-accent);
+}
+
+body.dark-mode .stress-mini-btn {
+  background: var(--night-raised);
+  border-color: var(--border-color);
+  color: var(--text-main);
+  box-shadow: 1.5px 1.5px 0 #10091B;
+}
+
+body.dark-mode .stress-mini-btn:hover {
+  background: var(--night-hover);
+  color: var(--night-accent);
+}
+
+body.dark-mode .stress-body {
+  background: var(--bg-card);
+}
+
+body.dark-mode .dice-stage {
+  background: radial-gradient(circle at center, rgba(243, 223, 120, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .dice-stage:hover {
+  background: radial-gradient(circle at center, rgba(243, 223, 120, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+  border-color: var(--night-accent);
+}
+
+body.dark-mode .dice-face {
+  background: #F4EAFB;
+  border-color: #251335;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .dice-shadow {
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 72%);
+}
+
+body.dark-mode .stress-score-badge {
+  background: var(--night-accent);
+  color: var(--night-ink);
+  border-color: var(--border-color);
+  box-shadow: 2px 2px 0 #10091B;
+}
+
+body.dark-mode .stress-quote {
+  color: var(--text-muted);
+}
+
+body.dark-mode .stress-roll-btn {
+  background: var(--night-accent);
+  color: var(--night-ink);
+  border-color: var(--border-color);
+}
