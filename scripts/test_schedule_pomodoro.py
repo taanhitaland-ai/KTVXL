@@ -75,6 +75,10 @@ def run_tests():
             assert "PHÚT" in cd_text
             assert "GIÂY" in cd_text
 
+            if card_id == "xstk":
+                assert "TỰ LUẬN" in card_text, "XSTK card does not state TỰ LUẬN"
+                print("  [XSTK] Format confirmed: TỰ LUẬN (Làm bài trên giấy)")
+
         # Capture Screenshot of Schedule Grid
         page.screenshot(path="web/screenshot_exam_schedule_tab.png")
         print("Captured: web/screenshot_exam_schedule_tab.png")
@@ -85,7 +89,7 @@ def run_tests():
         assert time_display.inner_text() == "25:00", f"Expected 25:00, got {time_display.inner_text()}"
 
         # Test Preset Switch to 45 mins
-        btn_45 = page.locator('.pomo-preset-btn[data-minutes="45"]')
+        btn_45 = page.locator('#pomodoro-main-box .pomo-preset-btn[data-minutes="45"]')
         btn_45.click()
         page.wait_for_timeout(200)
         assert time_display.inner_text() == "45:00", f"Expected 45:00, got {time_display.inner_text()}"
@@ -100,7 +104,7 @@ def run_tests():
         print("Custom 35 min test: PASS")
 
         # Test Subject Selector Chip: Select XSTK
-        chip_xstk = page.locator('.pomo-subj-btn[data-subj="xstk"]')
+        chip_xstk = page.locator('#pomodoro-main-box .pomo-subj-btn[data-subj="xstk"]')
         chip_xstk.click()
         page.wait_for_timeout(200)
         label_text = page.locator("#pomodoro-current-subject-label").inner_text()
@@ -131,12 +135,12 @@ def run_tests():
         # 5. Test Study Tracker & Quick Add
         print("\n--- 5. Testing Study Tracker & Daily Logs ---")
         # Add 15 mins to KTVXL
-        btn_add_ktvxl = page.locator('.stat-add-btn[data-subj="ktvxl"][data-add="15"]')
+        btn_add_ktvxl = page.locator('#study-tracker-box .stat-add-btn[data-subj="ktvxl"][data-add="15"]')
         btn_add_ktvxl.click()
         page.wait_for_timeout(300)
 
         # Add 30 mins to XSTK
-        btn_add_xstk = page.locator('.stat-add-btn[data-subj="xstk"][data-add="30"]')
+        btn_add_xstk = page.locator('#study-tracker-box .stat-add-btn[data-subj="xstk"][data-add="30"]')
         btn_add_xstk.click()
         page.wait_for_timeout(300)
 
@@ -161,7 +165,7 @@ def run_tests():
         # 6. Test Quick Jump to Subject Practice
         print("\n--- 6. Testing Quick Jump from Exam Card to Practice ---")
         # Click Jump to VLDC Practice
-        jump_vldc = page.locator('.btn-jump-subject-practice[data-subject="vldc"]')
+        jump_vldc = page.locator('#exam-card-vldc .btn-jump-subject-practice[data-subject="vldc"]')
         jump_vldc.click()
         page.wait_for_timeout(800)
 
@@ -171,6 +175,90 @@ def run_tests():
         brand_title = page.locator("#app-brand-title").inner_text()
         print(f"Active Brand Title after jump: {brand_title}")
         assert "VẬT LÝ ĐẠI CƯƠNG" in brand_title, "Did not switch to VLDC subject"
+
+        # 7. Test Fixed Right Side Drawer
+        print("\n--- 7. Testing Fixed Right Side Drawer & Tabs ---")
+        drawer = page.locator("#side-planner-drawer")
+        assert not drawer.evaluate("el => el.classList.contains('open')"), "Drawer should initially be closed"
+
+        # Open via floating trigger
+        floating_btn = page.locator("#btn-floating-planner")
+        assert floating_btn.is_visible(), "Floating planner button is missing"
+        floating_btn.click()
+        page.wait_for_timeout(400)
+        assert drawer.evaluate("el => el.classList.contains('open')"), "Drawer did not open on floating trigger click"
+        print("Side Drawer open via floating button: PASS")
+
+        # Test tab switching in drawer: Lịch Thi
+        btn_side_schedule = page.locator('.side-nav-btn[data-drawer-tab="side-tab-schedule"]')
+        btn_side_schedule.click()
+        page.wait_for_timeout(300)
+        drawer_schedule = page.locator("#side-tab-schedule")
+        assert drawer_schedule.evaluate("el => el.classList.contains('active')"), "Schedule tab in drawer not active"
+
+        # Verify XSTK card in drawer has TỰ LUẬN
+        drawer_xstk = page.locator("#drawer-exam-card-xstk")
+        assert drawer_xstk.is_visible(), "XSTK drawer card missing"
+        assert "TỰ LUẬN" in drawer_xstk.inner_text(), "Drawer XSTK does not state TỰ LUẬN"
+        print("Side Drawer schedule tab & XSTK TỰ LUẬN: PASS")
+
+        # Test tab switching in drawer: Đã Học
+        btn_side_tracker = page.locator('.side-nav-btn[data-drawer-tab="side-tab-tracker"]')
+        btn_side_tracker.click()
+        page.wait_for_timeout(300)
+        drawer_tracker = page.locator("#side-tab-tracker")
+        assert drawer_tracker.evaluate("el => el.classList.contains('active')"), "Tracker tab in drawer not active"
+        print("Side Drawer study tracker tab: PASS")
+
+        # Test tab switching back to Pomodoro
+        btn_side_pomo = page.locator('.side-nav-btn[data-drawer-tab="side-tab-pomo"]')
+        btn_side_pomo.click()
+        page.wait_for_timeout(300)
+        drawer_pomo = page.locator("#side-tab-pomo")
+        assert drawer_pomo.evaluate("el => el.classList.contains('active')"), "Pomodoro tab in drawer not active"
+
+        # Test Pin drawer
+        btn_pin = page.locator("#btn-pin-side-drawer")
+        btn_pin.click()
+        page.wait_for_timeout(300)
+        is_pinned = page.evaluate("() => document.body.classList.contains('planner-pinned')")
+        assert is_pinned, "Body does not have planner-pinned class"
+        print("Side Drawer Pinning test: PASS")
+
+        # Capture Screenshot with Side Drawer Open
+        page.screenshot(path="web/screenshot_side_drawer_open.png")
+        print("Captured: web/screenshot_side_drawer_open.png")
+
+        # 8. Test Dark Mode
+        print("\n--- 8. Testing Neo-brutalism Dark Mode ---")
+        btn_dark_mode = page.locator("#btn-toggle-dark-mode")
+        assert btn_dark_mode.is_visible(), "Dark mode toggle button is missing"
+        btn_dark_mode.click()
+        page.wait_for_timeout(400)
+
+        is_dark = page.evaluate("() => document.body.classList.contains('dark-mode')")
+        assert is_dark, "Body does not have dark-mode class after clicking toggle"
+        print("Dark Mode enabled: PASS")
+
+        # Capture Dark Mode Screenshot
+        page.screenshot(path="web/screenshot_dark_mode.png")
+        print("Captured: web/screenshot_dark_mode.png")
+
+        # Toggle back to light mode
+        btn_dark_mode.click()
+        page.wait_for_timeout(300)
+        is_dark_after = page.evaluate("() => document.body.classList.contains('dark-mode')")
+        assert not is_dark_after, "Body still has dark-mode class after toggling back"
+        print("Dark Mode toggle back: PASS")
+
+        # Unpin and close drawer
+        btn_pin.click()
+        page.wait_for_timeout(300)
+        btn_close_drawer = page.locator("#btn-close-side-drawer")
+        btn_close_drawer.click()
+        page.wait_for_timeout(300)
+        assert not drawer.evaluate("el => el.classList.contains('open')"), "Drawer did not close"
+        print("Side Drawer Close test: PASS")
 
         print("\n=== ALL SCHEDULE, POMODORO & STUDY TRACKER TESTS PASSED 100%! ===")
         if errors:
