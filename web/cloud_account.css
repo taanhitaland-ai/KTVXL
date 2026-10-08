@@ -272,12 +272,12 @@ body.dark-mode .sync-google-button:hover {
 .sync-guest-notice {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 15px 18px;
-  margin: 0 0 22px;
+  gap: 12px;
+  padding: 8px 14px;
+  margin: 0 0 16px;
   border: 2px solid #000;
-  border-radius: 10px;
-  box-shadow: 3px 3px 0 #000;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0 #000;
   background: #fff1a8;
   color: #181318;
 }
@@ -285,15 +285,15 @@ body.dark-mode .sync-google-button:hover {
   display: none;
 }
 .sync-guest-symbol {
-  width: 35px;
-  height: 35px;
+  width: 26px;
+  height: 26px;
   display: grid;
   place-items: center;
-  border: 2px solid #000;
-  border-radius: 9px;
+  border: 1.5px solid #000;
+  border-radius: 6px;
   background: var(--neo-yellow);
   color: #251335;
-  font-size: 22px;
+  font-size: 16px;
   flex-shrink: 0;
 }
 .sync-guest-copy {
@@ -302,27 +302,31 @@ body.dark-mode .sync-google-button:hover {
 }
 .sync-guest-copy strong {
   font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 12px;
-  line-height: 1.65;
+  font-size: 11px;
+  line-height: 1.4;
+  display: block;
 }
 .sync-guest-copy p {
   font-family: system-ui, sans-serif;
-  font-size: 12px;
-  line-height: 1.7;
-  margin: 3px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 1px 0 0;
 }
 .sync-guest-notice .sync-btn {
   font-size: 11px;
   white-space: nowrap;
-  padding: 8px 12px;
+  padding: 5px 10px;
+  height: 28px;
 }
 .sync-guest-dismiss {
-  align-self: flex-start;
+  align-self: center;
   background: transparent;
   border: 0;
   color: inherit;
-  padding: 2px 0 2px 5px;
+  padding: 4px;
+  font-size: 14px;
   cursor: pointer;
+  line-height: 1;
 }
 body.dark-mode .sync-guest-notice {
   background: #291b3b;

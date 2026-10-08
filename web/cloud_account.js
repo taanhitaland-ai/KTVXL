@@ -960,7 +960,7 @@
     streakButton.hidden = true;
     streakButton.setAttribute("aria-haspopup", "dialog");
     streakButton.setAttribute("aria-controls", "study-streak-dialog");
-    document.querySelector(".stats-bar").append(authButton, streakButton);
+    (document.querySelector(".header-utility-group") || document.querySelector(".stats-bar")).append(authButton, streakButton);
     initStreakDialog();
     dialog = el("dialog", "sync-account-dialog");
     dialog.id = "sync-account-dialog";

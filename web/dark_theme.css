@@ -152,3 +152,25 @@ body.dark-mode .inline-exp-section.exp-method { background: #382531; }
 body.dark-mode .inline-exp-section.exp-casio { background: #2E2042; }
 body.dark-mode .inline-exp-sec-title { color: var(--night-accent); }
 body.dark-mode .inline-exp-sec-body { color: var(--text-main); }
+
+/* Reorganized clean header & ticker dark mode */
+body.dark-mode .header-bottom-row { border-color: rgba(255, 255, 255, 0.12); }
+body.dark-mode .header-utility-group :is(button, .neo-btn, .sync-auth-trigger, .lb-trigger, .streak-trigger) {
+  background: var(--night-raised) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: 2px 2px 0 #10091B !important;
+}
+body.dark-mode .header-utility-group :is(button, .neo-btn, .sync-auth-trigger, .lb-trigger, .streak-trigger):hover {
+  background: var(--night-hover) !important;
+  color: var(--night-accent) !important;
+}
+body.dark-mode .exam-alert-ticker {
+  background: #2D1B3E;
+  border-color: var(--border-color);
+  color: var(--text-main);
+  box-shadow: 0 1px 0 #10091B;
+}
+body.dark-mode .ticker-text {
+  color: var(--text-main);
+}

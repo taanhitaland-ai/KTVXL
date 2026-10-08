@@ -361,7 +361,7 @@
     trigger.id = "leaderboard-trigger";
     trigger.setAttribute("aria-haspopup", "dialog");
     trigger.setAttribute("aria-controls", "leaderboard-dialog");
-    document.querySelector(".stats-bar").append(trigger);
+    (document.querySelector(".header-utility-group") || document.querySelector(".stats-bar")).append(trigger);
     const promo = el("section", "lb-promo");
     promo.setAttribute("aria-label", "Bảng xếp hạng Pomodoro");
     const copy = el("div", "lb-promo-copy");

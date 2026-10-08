@@ -125,10 +125,10 @@
     loadSavedState();
     currentExamCode = selectedExamCodes[subject];
     const subjectData = { ktvxl: window.KTVXL_QUESTIONS, tthcm: window.TTHCM_QUESTIONS_DATA, vldc: window.VLDC_QUESTIONS_DATA, xstk: window.XSTK_QUESTIONS_DATA };
-    const subjectLabels = { ktvxl: '⚡ VI XỬ LÝ', tthcm: '📕 TƯ TƯỞNG HCM', vldc: '⚛️ VẬT LÝ ĐẠI CƯƠNG', xstk: '🎲 XÁC SUẤT THỐNG KÊ' };
+    const subjectLabels = { ktvxl: '⚡ Vi Xử Lý', tthcm: '📕 Tư Tưởng HCM', vldc: '⚛️ Vật Lý ĐC', xstk: '🎲 XS Thống Kê' };
     for (const [key, label] of Object.entries(subjectLabels)) {
       const btn = document.getElementById('btn-subj-' + key);
-      if (btn) btn.textContent = label + ' (' + (subjectData[key] || []).length + ' câu)';
+      if (btn) btn.textContent = label + ' (' + (subjectData[key] || []).length + ')';
     }
     document.title = examConfig.subjects[subject].name + ' • Ôn luyện KMA';
 
