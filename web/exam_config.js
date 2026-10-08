@@ -11,7 +11,7 @@
 
   const sources = {
     tthcm: [
-      ['TTHCM_FULL_A', 'ĐỀ GỐC', 'Ngân hàng đề gốc (Full ĐA A)', 40],
+      ['TTHCM_FULL_A', 'ĐỀ GỐC', 'Ngân hàng đề gốc (Đã random đáp án)', 40],
       ['TTHCM_DE_132', 'MÃ ĐỀ 132', 'Bộ câu hỏi mã đề 132', 40],
       ['TTHCM_DE_651', 'MÃ ĐỀ 651', 'Đề thi mẫu 651 KTMM'],
       ['TTHCM_DE_CUONG', 'ĐỀ CƯƠNG', 'Đề cương ATTT KMA 2019', 40]

@@ -92,7 +92,7 @@ body.dark-mode :is(.exam-time-row, .pomo-status-meta) { color: var(--text-muted)
 body.dark-mode :is(.exam-schedule-card, .exam-card-icon) { border-color: var(--border-color) !important; }
 body.dark-mode .exam-card-icon { background: var(--night-raised) !important; }
 body.dark-mode .exam-card-bar-fill { background: #9D80B3 !important; }
-body.dark-mode .neo-floating-planner-trigger { background: var(--night-raised); border-color: var(--border-color); color: var(--night-accent); }
+body.dark-mode :is(.neo-floating-planner-trigger, .neo-floating-leaderboard-trigger, .neo-floating-notes-trigger, #leaderboard-trigger, #btn-floating-notes) { background: var(--night-raised); border-color: var(--border-color); color: var(--night-accent); }
 body.dark-mode .side-drawer-body [style*="color"] { color: var(--text-muted) !important; }
 body.dark-mode :is(#pomodoro-current-subject-label, #drawer-pomodoro-current-subject-label) strong { background: var(--bg-card) !important; color: var(--night-accent) !important; border-color: var(--border-color) !important; }
 body.dark-mode .side-drawer-body .metric-pill-card { background: var(--night-raised) !important; border-color: var(--border-color) !important; }
@@ -175,16 +175,24 @@ body.dark-mode .ticker-text {
   color: var(--text-main);
 }
 
-body.dark-mode :is(.neo-floating-planner-trigger, .neo-floating-leaderboard-trigger, #leaderboard-trigger) {
+body.dark-mode :is(.neo-floating-planner-trigger, .neo-floating-leaderboard-trigger, .neo-floating-notes-trigger, #leaderboard-trigger, #btn-floating-notes) {
   background: var(--night-raised) !important;
   border-color: var(--border-color) !important;
   color: var(--night-accent) !important;
   box-shadow: -3px 3px 0 #10091B !important;
 }
 
-body.dark-mode :is(.neo-floating-planner-trigger, .neo-floating-leaderboard-trigger, #leaderboard-trigger):hover {
+body.dark-mode :is(.neo-floating-planner-trigger, .neo-floating-leaderboard-trigger, .neo-floating-notes-trigger, #leaderboard-trigger, #btn-floating-notes):hover {
   background: var(--night-hover) !important;
   box-shadow: -5px 5px 0 #10091B !important;
+}
+
+body.dark-mode :is(.planner-trigger-text, .leaderboard-trigger-text, .notes-trigger-text) strong {
+  color: var(--night-accent) !important;
+}
+
+body.dark-mode :is(.planner-trigger-text, .leaderboard-trigger-text, .notes-trigger-text) small {
+  color: var(--text-muted) !important;
 }
 
 body.dark-mode .practice-navigator-card {
