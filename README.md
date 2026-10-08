@@ -48,9 +48,11 @@ Nút chuông **Cập nhật** mở lịch sử tính năng mới và sửa lỗi
 
 Lần đầu đăng nhập, ứng dụng hỏi có mang dữ liệu khách vào tài khoản hay không. Chỉ nhập những bản ghi chưa có trên tài khoản, giữ bản khách tại máy và tôn trọng ghi chú đã xóa. Mỗi tài khoản có vùng nhớ đệm và hàng đợi riêng. Khi chưa gửi được, thay đổi được giữ tại máy để thử lại; trạng thái **Đã đồng bộ** xác nhận lượt trao đổi đã thành công. Hai bản sửa khác nhau của cùng ghi chú được giữ để người dùng chọn hoặc gộp, không tự ghi đè.
 
-Trong **Tài khoản**, đặt biệt danh và chọn có hiện trên bảng xếp hạng hay không. Bảng lọc Hôm nay/Tuần này/Tháng này theo giờ Việt Nam; tuần bắt đầu thứ Hai. Chỉ cộng phút của phiên tập trung đã đủ thời gian và hoàn tất trên máy chủ. Giờ nghỉ, phiên bỏ dở và phút cộng thủ công không cộng hạng. Cùng số phút có cùng hạng. Bảng thật không có dữ liệu mẫu; demo độc lập mới hiện chip **DỮ LIỆU MẪU**.
+Trong **Tài khoản**, đặt biệt danh. Người có thời gian Pomodoro tự động xuất hiện trên bảng. Bảng lọc Hôm nay/Tuần này/Tháng này theo giờ Việt Nam; tuần bắt đầu thứ Hai. Cộng số phút thực tế máy chủ ghi nhận khi kết thúc hoặc dừng phiên, kể cả kết thúc sớm; làm tròn xuống và không vượt thời lượng đặt. Giờ nghỉ và phút cộng thủ công không cộng hạng. Cùng số phút có cùng hạng. Bảng thật không có dữ liệu mẫu; demo độc lập mới hiện chip **DỮ LIỆU MẪU**.
 
-Máy chủ kiểm tra thời gian, giới hạn một phiên đang chạy cho mỗi tài khoản và chống cộng lại khi gửi lại yêu cầu. Cơ chế này không chứng minh người dùng thực sự chú ý học và không thay thế hệ thống chống gian lận chuyên biệt. Đóng/tải lại trang hủy phiên chưa hoàn tất khi ứng dụng mở lại; thời gian đã ghi trong nhật ký cá nhân vẫn được giữ.
+Nút ngọn lửa trên thanh trạng thái hiện số ngày của chuỗi học hiện tại, ẩn khi chưa có chuỗi. Bấm nút để mở riêng bản đồ nhiệt của tháng hiện tại. Mỗi môn có màu riêng; bấm ngày để xem số phút từng môn và giờ thi đã có trong lịch. Năm cấp chuỗi đạt ở 1, 2, 3, 5 và 7 ngày học liên tiếp. Ngày thi không tự tạo phút học hay tăng chuỗi. Đồng hồ Pomodoro tính thời gian thực khi tab chạy nền, tiếp tục sau tải lại trong cùng tab và giữ yêu cầu hoàn tất để thử lại nếu mất phản hồi.
+
+Máy chủ kiểm tra thời gian, giới hạn một phiên đang chạy cho mỗi tài khoản và chống cộng lại khi gửi lại yêu cầu. Cơ chế này không chứng minh người dùng thực sự chú ý học và không thay thế hệ thống chống gian lận chuyên biệt. Tải lại trang khôi phục phiên đang học trên thiết bị đó. Yêu cầu kết thúc được lưu trước khi gửi và thử lại nếu mất kết nối; gửi lại không cộng đôi. Đồng hồ tính theo thời gian thực để tab nền không làm chậm bộ đếm.
 
 Đăng nhập cần trang HTTP/HTTPS và URL được cho phép, không dùng `file://`. Chi tiết cấu hình, migration và kiểm tra phân quyền nằm trong [supabase/README.md](supabase/README.md). [Quyền riêng tư](https://taanhitaland-ai.github.io/KTVXL/privacy.html) mô tả dữ liệu lưu và phạm vi công khai.
 
@@ -176,6 +178,8 @@ Bộ này kiểm tra fullscreen thật và trường hợp API không khả dụ
 Kết quả chỉ hoàn tất khi báo cáo có `complete: true`. CLI có thể trả lại trạng thái hộp thoại trước khi bộ kiểm tra chạy xong; chờ báo cáo cuối, không chạy bước kế tiếp khi bước chính còn hoạt động. Bộ chính kiểm tra 27 lựa chọn đề, nhập/xóa đáp án, điểm, khóa bài, thoát/chuyển môn và tự nộp khi hết giờ. Bộ bổ sung kiểm tra lưu tiến độ, đánh dấu, kiến thức, PDF, mô phỏng, dữ liệu lưu hỏng và màn hình 390px. Ảnh kiểm tra nằm trong `output/playwright/`, không ghi đè tài nguyên triển khai.
 
 Các kiểm tra Python/Node cũ vẫn có trong `scripts/` để tham khảo và cần Playwright tương ứng. Bộ CLI và các lệnh kiểm tra cơ bản ở trên là luồng kiểm tra hiện tại.
+
+`scripts/browser_cloud_sync_checks.js` kiểm tra đồng bộ bằng tài khoản giả và xác nhận phản hồi không dựng lại câu hỏi vừa trả lời. `scripts/browser_focus_reliability_checks.js` dùng fixture riêng để kiểm tra phiên 60 phút, tải lại, kết thúc sớm, mất phản hồi khi bắt đầu/hoàn tất, bộ lọc BXH và điện thoại; chạy bằng `run-code --filename` trên máy chủ 8765. Cả hai tạo context độc lập, không đăng nhập Google hay ghi database thật.
 
 ## Đóng góp
 

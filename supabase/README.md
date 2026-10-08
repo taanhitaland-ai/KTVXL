@@ -4,7 +4,7 @@ Trang tĩnh vẫn triển khai bằng GitHub Pages (`master/docs`). Database và
 
 ## Khởi tạo dự án mới
 
-1. Tạo Supabase project thuộc tài khoản chủ dự án. Chạy `migrations/202610080001_study_sync.sql` một lần trong SQL Editor. Migration mở transaction, tạo bảng, RLS và các RPC; không chạy lại trên schema đã có.
+1. Tạo Supabase project thuộc tài khoản chủ dự án. Chạy `migrations/202610080001_study_sync.sql` một lần trong SQL Editor, sau đó `migrations/202610080002_focus_reliability.sql`. Migration 001 tạo bảng, RLS và RPC; không chạy lại trên schema đã có. Với project hiện tại, chỉ cần migration 002 trước khi triển khai frontend mới.
 2. Trong Google Auth Platform tạo Web OAuth client. Authorized origins là origin của Pages và các máy chủ thử. Redirect URI là `https://PROJECT_REF.supabase.co/auth/v1/callback`.
 3. Trong Supabase Auth → Google bật provider, nhập Client ID và Client Secret trực tiếp trong dashboard. Không đưa Client Secret, mật khẩu database, `service_role` hoặc secret API key vào mã nguồn.
 4. Auth → URL Configuration: Site URL là URL Pages; Redirect URLs chứa chính xác URL index của Pages và từng bản HTTP cục bộ cần thử. Đổi cổng hoặc đường dẫn thì cập nhật danh sách.
@@ -13,14 +13,14 @@ Trang tĩnh vẫn triển khai bằng GitHub Pages (`master/docs`). Database và
 
 ## Schema và quyền
 
-- `study_profiles`: biệt danh, lựa chọn tham gia bảng. Mặc định không tham gia.
+- `study_profiles`: biệt danh; mặc định có tên trên bảng khi có phút Pomodoro (migration 002).
 - `study_records`: bản ghi theo `kind|subject|id` cho đáp án, dấu sao, ghi chú và nhật ký phút học; version phục vụ xử lý xung đột. Giá trị `null` là dấu xóa.
 - `study_sync_receipts`: ID thao tác và nội dung yêu cầu, để gửi lại không gây cộng/lưu trùng. Dùng lại cùng ID với nội dung khác bị từ chối.
 - `focus_sessions`: phiên tập trung với thời điểm, trạng thái và số phút được máy chủ ghi nhận.
 
-RLS bật ở cả bốn bảng. Người đăng nhập chỉ đọc dữ liệu của mình; client không có quyền ghi bảng trực tiếp. Các RPC riêng kiểm tra `auth.uid()`, nội dung, giới hạn và quyền sở hữu; dùng search path cố định. `study_leaderboard` là RPC công khai, chỉ trả dữ liệu xếp hạng của người đã tham gia và dòng riêng khi có phiên đăng nhập. Không trả email, đáp án hay nội dung ghi chú.
+RLS bật ở cả bốn bảng. Người đăng nhập chỉ đọc dữ liệu của mình; client không có quyền ghi bảng trực tiếp. Các RPC riêng kiểm tra `auth.uid()`, nội dung, giới hạn và quyền sở hữu; dùng search path cố định. `study_leaderboard` là RPC công khai, chỉ trả dữ liệu xếp hạng của người có phút Pomodoro và dòng riêng khi có phiên đăng nhập. Không trả email, đáp án hay nội dung ghi chú.
 
-Giới hạn: ghi chú 2.000 ký tự, biệt danh 32 ký tự, 25.000 bản ghi/tài khoản, 200 thao tác/request, phiên xếp hạng 1–180 phút. Phiên cá nhân dài hơn vẫn có thể bấm tại máy nhưng không ghi nhận lên bảng. Chỉ một phiên active/tài khoản. Phiên active quá 24 giờ được hủy trước khi mở phiên mới.
+Giới hạn: ghi chú 2.000 ký tự, biệt danh 32 ký tự, 25.000 bản ghi/tài khoản, 200 thao tác/request, phiên xếp hạng 1–300 phút (migration 002). Chỉ một phiên active/tài khoản. Phiên active quá 24 giờ được hủy trước khi mở phiên mới.
 
 ## Lưu tại máy
 
@@ -32,9 +32,9 @@ Ghi chú xung đột chặn các thao tác tiếp của chính ghi chú đó đ�
 
 ## Kiểm tra
 
-`npm ci && npm test` bao gồm kiểm tra chuẩn hóa/phép chiếu dữ liệu và chạy migration trên PostgreSQL WASM (PGlite) với hai tài khoản để kiểm tra phân quyền, idempotency, xung đột, timer và opt-out. `scripts/browser_cloud_sync_checks.js` chạy trên một context thử độc lập, mock RPC, để kiểm tra hàng đợi khi đang gửi, mất kết nối, xung đột, nhiều tab và bảo toàn bài thi. Không dùng context Google thật cho script này.
+`npm ci && npm test` bao gồm kiểm tra chuẩn hóa/phép chiếu dữ liệu và chạy migration trên PostgreSQL WASM (PGlite) với hai tài khoản để kiểm tra phân quyền, idempotency, xung đột, timer, thời gian thực, ghi nhận phiên sớm và tham gia tự động. `scripts/browser_cloud_sync_checks.js` chạy trên một context thử độc lập, mock RPC, để kiểm tra hàng đợi khi đang gửi, mất kết nối, xung đột, nhiều tab và bảo toàn bài thi. Không dùng context Google thật cho script này.
 
-Migration cần được kiểm tra trên PostgreSQL/Supabase riêng với ít nhất hai users: anon không đọc bảng/RPC riêng; A không đọc/ghi dữ liệu B; retry không cộng đôi; sửa ghi chú lỗi version giữ hai bản; timer chưa đủ thời gian không hoàn tất; phút thủ công không vào bảng; opt-out ẩn người dùng.
+Migration cần được kiểm tra trên PostgreSQL/Supabase riêng với ít nhất hai users: anon không đọc bảng/RPC riêng; A không đọc/ghi dữ liệu B; retry không cộng đôi; sửa ghi chú lỗi version giữ hai bản; timer chỉ cộng phút thực tế máy chủ đo được; phút thủ công không vào bảng; tài khoản có phút tự động có hạng.
 
 Kiểm tra tích hợp thực tế: đăng nhập cùng Google ở hai origin có vùng lưu riêng, sửa note/answer/star ở hai chiều, chạy đủ một phiên Pomodoro và đối chiếu bảng. Không thay đồng hồ browser để giả lập thời gian máy chủ.
 

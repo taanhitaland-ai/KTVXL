@@ -93,11 +93,7 @@
     if (member.id === api().getState().user) item.classList.add("lb-is-me");
     const rank = el("span", "lb-rank", String(member.rank));
     rank.setAttribute("aria-label", "Hạng " + member.rank);
-    const avatar = el(
-      "span",
-      "lb-avatar",
-      initial(member.nickname),
-    );
+    const avatar = el("span", "lb-avatar", initial(member.nickname));
     avatar.setAttribute("aria-hidden", "true");
     avatar.style.setProperty("--avatar-color", avatarColor(member.nickname));
     const identity = el("div", "lb-identity");
@@ -120,16 +116,21 @@
     item.append(rank, avatar, identity, score);
     return item;
   }
+  let lastRanking = "";
   function render() {
     if (!dialog) return;
     const data = current();
+    const signature = JSON.stringify([data, period, subject, completing]);
+    if (signature === lastRanking) return;
+    lastRanking = signature;
     podium.replaceChildren();
     list.replaceChildren();
     personal.replaceChildren();
     caption.textContent = "Giờ Việt Nam";
     const isDemo = api().isDemo !== false;
     demoChip.hidden = !isDemo;
-    demoButton.parentElement.hidden = !isDemo;
+    demoButton.parentElement.hidden =
+      !isDemo || typeof api().completeDemoFocus !== "function";
     periods
       .querySelectorAll("button")
       .forEach((btn) =>
@@ -148,11 +149,7 @@
       }
       card.dataset.member = member.id;
       if (index === 0) card.append(crown());
-      const avatar = el(
-        "span",
-        "lb-podium-avatar",
-        initial(member.nickname),
-      );
+      const avatar = el("span", "lb-podium-avatar", initial(member.nickname));
       avatar.style.setProperty("--avatar-color", avatarColor(member.nickname));
       card.append(
         el("span", "lb-podium-rank", "#" + member.rank),
@@ -173,7 +170,9 @@
           "lb-empty",
           data.loading
             ? "Đang tải bảng xếp hạng…"
-            : "Chưa có phiên học trong khoảng thời gian này.",
+            : data.failed
+              ? "Chưa tải được dữ liệu. Hãy bấm làm mới."
+              : "Chưa có phiên học trong khoảng thời gian này.",
         ),
       );
     if (!data.me) {
@@ -186,25 +185,6 @@
         copy,
         button("Đăng nhập Google", "sync-btn sync-primary", signIn),
       );
-    } else if (!data.me.joined) {
-      const copy = el("div", "lb-personal-copy");
-      copy.append(
-        el("strong", "", "Bạn · Chưa tham gia"),
-        el(
-          "p",
-          "",
-          L.formatMinutes(data.me.minutes) +
-            " · " +
-            data.me.sessions +
-            " phiên",
-        ),
-      );
-      personal.append(
-        copy,
-        button("Tham gia xếp hạng", "sync-btn sync-primary", () =>
-          api().setRankingParticipation(true),
-        ),
-      );
     } else {
       const rank = el(
         "strong",
@@ -215,11 +195,7 @@
         "aria-label",
         data.me.rank ? "Hạng của bạn: " + data.me.rank : "Bạn chưa có hạng",
       );
-      const avatar = el(
-        "span",
-        "lb-avatar",
-        initial(data.me.nickname),
-      );
+      const avatar = el("span", "lb-avatar", initial(data.me.nickname));
       avatar.setAttribute("aria-hidden", "true");
       avatar.style.setProperty("--avatar-color", avatarColor(data.me.nickname));
       const copy = el("div", "lb-personal-copy");
@@ -309,7 +285,21 @@
       render();
     });
     const selectWrap = el("span", "lb-select-wrap");
-    const arrow = el("span", "lb-select-arrow", "⌄");
+    const arrow = el("span", "lb-select-arrow");
+    const chevron = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "svg",
+    );
+    chevron.setAttribute("viewBox", "0 0 16 16");
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M4 6l4 4 4-4");
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", "currentColor");
+    path.setAttribute("stroke-width", "2");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("stroke-linejoin", "round");
+    chevron.append(path);
+    arrow.append(chevron);
     arrow.setAttribute("aria-hidden", "true");
     selectWrap.append(select, arrow);
     label.append(selectWrap);
@@ -325,7 +315,7 @@
       el(
         "p",
         "",
-        "Chỉ tính phút của phiên tập trung đã hoàn tất. Giờ nghỉ và phút cộng thủ công không cộng vào xếp hạng. Người có cùng số phút giữ cùng thứ hạng.",
+        "Tự động tính số phút tập trung thực tế khi bạn kết thúc hoặc dừng phiên Pomodoro, kể cả kết thúc sớm. Không tính giờ nghỉ và phút cộng thủ công. Người có cùng số phút giữ cùng thứ hạng.",
       ),
     );
     const demo = el("div", "lb-demo-controls");
@@ -341,6 +331,12 @@
     );
     const filterBar = el("div", "lb-filter-bar");
     filterBar.append(filters);
+    const refresh = button("↻ Làm mới", "lb-refresh", () => {
+      api().refreshRanking?.();
+      render();
+    });
+    refresh.setAttribute("aria-label", "Làm mới bảng xếp hạng");
+    filters.append(refresh);
     top.append(filterBar);
     main.append(caption, podium, list, rules, demo);
     dialog.append(top, main, personal);
@@ -383,7 +379,11 @@
     if (new URLSearchParams(location.search).get("panel") === "leaderboard")
       open(trigger);
   }
-  window.addEventListener("kma:cloud-updated", render);
+  const refreshVisible = () => {
+    if (dialog?.open) render();
+  };
+  window.addEventListener("kma:cloud-updated", refreshVisible);
+  window.addEventListener("kma:ranking-updated", refreshVisible);
   window.KMA_LEADERBOARD_PREVIEW = { open, refresh: render };
   document.addEventListener("DOMContentLoaded", () => setTimeout(init, 0));
 })();

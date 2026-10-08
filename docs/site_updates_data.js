@@ -1,5 +1,8 @@
 /* Add a new stable ID for each release; never reuse IDs already marked as read. */
 window.KMA_SITE_UPDATES = [
+  { id: '2026-10-08-streak-focus-reliability', date: '08/10/2026', title: 'Chuỗi học theo môn & Pomodoro ổn định hơn',
+    added: ['Chuỗi học có 5 cấp ở mốc 1, 2, 3, 5 và 7 ngày liên tiếp; bấm ngọn lửa trên thanh trạng thái để mở cửa sổ chuỗi riêng, chưa có chuỗi thì nút ẩn.', 'Bản đồ nhiệt trong tháng có màu riêng từng môn, đánh dấu ngày thi; bấm ngày để xem thời gian từng môn và lịch thi.', 'Tự động có tên trên bảng xếp hạng khi tài khoản có phút Pomodoro; thêm nút làm mới bảng.'],
+    fixed: ['Phản hồi đồng bộ không dựng lại câu hỏi khi tiến trình không thay đổi.', 'Đồng hồ tính thời gian thực khi tab chạy nền; tải lại trang tiếp tục phiên đang học.', 'Kết thúc sớm ghi nhận số phút thực tế; giữ yêu cầu hoàn tất để thử lại khi mất mạng và tránh cộng đôi.'] },
   { id: '2026-10-08-google-sync-leaderboard', date: '08/10/2026', title: 'Đăng nhập Google, đồng bộ & bảng xếp hạng tập trung',
     added: ['Đăng nhập Google để mang câu đã làm, dấu sao, ghi chú và lịch sử học sang thiết bị khác.', 'Chọn mang theo dữ liệu trước khi đăng nhập; giữ bản khách và xử lý ghi chú đổi ở hai nơi.', 'Bảng xếp hạng Pomodoro thật theo ngày, tuần, tháng và môn học; tự chọn tham gia bằng biệt danh.'],
     fixed: ['Thiết kế lại bảng xếp hạng sáng/tối, bục vàng/bạc/đồng, thanh tiến độ và dòng của bạn cố định.', 'Chỉ tính phiên tập trung đủ thời gian trên máy chủ, chống cộng lại khi gửi lại yêu cầu.', 'Đồng bộ tiến trình giữ bộ lọc và không làm gián đoạn bài thi đang làm.'] },

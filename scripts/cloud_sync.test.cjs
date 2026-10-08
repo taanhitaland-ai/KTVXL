@@ -148,3 +148,34 @@ test("HTML in notes remains literal data and never becomes markup", () => {
     text,
   );
 });
+
+test("equivalent payloads ignore JSON property order, star order and unchanged note timestamps", () => {
+  assert.equal(
+    M.samePayload(
+      "kma_user_answers_ktvxl_v2",
+      '{"a":{"answer":"A","isCorrect":true},"b":{"answer":"B","isCorrect":false}}',
+      '{"b":{"isCorrect":false,"answer":"B"},"a":{"isCorrect":true,"answer":"A"}}',
+    ),
+    true,
+  );
+  assert.equal(
+    M.samePayload("kma_starred_questions_ktvxl_v2", '["a","b"]', '["b","a"]'),
+    true,
+  );
+  assert.equal(
+    M.samePayload(
+      key,
+      encode([note("same")]),
+      encode([{ ...note("same"), updatedAt: 42 }]),
+    ),
+    true,
+  );
+  assert.equal(
+    M.samePayload(
+      "kma_user_answers_ktvxl_v2",
+      '{"a":{"answer":"A","isCorrect":true}}',
+      '{"a":{"answer":"B","isCorrect":false}}',
+    ),
+    false,
+  );
+});

@@ -16,7 +16,12 @@ async (page) => {
     failAfterWrite = false;
   const clone = (x) => JSON.parse(JSON.stringify(x));
   const profile = { nickname: "Người thử", leaderboard_opt_in: false };
-  const snapshot = () => ({ records: clone(records), profile });
+  const snapshot = () => ({
+    records: Object.fromEntries(
+      Object.entries(clone(records)).sort(([a], [b]) => a.localeCompare(b)),
+    ),
+    profile,
+  });
   const assert = (ok, text) => {
     if (!ok) throw new Error(text);
   };
@@ -219,6 +224,42 @@ async (page) => {
       records["study|ktvxl|2026-10-08"].value === 1,
       "Lost response retry doubled study minutes",
     );
+    await tab.evaluate(() => {
+      localStorage.setItem(
+        "kma_user_answers_ktvxl_v2",
+        JSON.stringify({
+          DE001_Q02: { answer: "B", isCorrect: false },
+          DE001_Q01: { answer: "A", isCorrect: true },
+        }),
+      );
+      window.refreshSavedProgress();
+      window.__ackCard = document.querySelector("#q-card-DE001_Q01");
+      const refresh = window.refreshSavedProgress;
+      window.__ackRepaints = 0;
+      window.refreshSavedProgress = () => {
+        window.__ackRepaints++;
+        refresh();
+      };
+    });
+    await tab.evaluate(() => KMA_ACCOUNT.sync());
+    assert(
+      await tab.evaluate(
+        () =>
+          window.__ackRepaints === 0 &&
+          window.__ackCard === document.querySelector("#q-card-DE001_Q01"),
+      ),
+      "Sync ACK repainted equivalent answers",
+    );
+    await tab.locator('#q-card-DE001_Q01 .option-btn[data-letter="B"]').click();
+    await tab.evaluate(() => KMA_ACCOUNT.sync());
+    assert(
+      await tab.evaluate(
+        () =>
+          window.__ackRepaints === 0 &&
+          window.__ackCard === document.querySelector("#q-card-DE001_Q01"),
+      ),
+      "Answering a question replaced the current card after sync",
+    );
 
     records[rid] = {
       ...records[rid],
@@ -334,6 +375,7 @@ async (page) => {
         "filters",
         "active exam",
         "cross-tab cache",
+        "stable cards after answer and reordered sync acknowledgment",
       ],
       errors,
     };

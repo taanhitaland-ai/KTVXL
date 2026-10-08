@@ -129,6 +129,19 @@
       return a.text === b.text && a.color === b.color;
     return JSON.stringify(a) === JSON.stringify(b);
   }
+  function samePayload(key, before, after) {
+    if (before === after) return true;
+    if (before === null || after === null) return false;
+    const a = flatten(key, before),
+      b = flatten(key, after);
+    const ids = Object.keys(a);
+    return (
+      ids.length === Object.keys(b).length &&
+      ids.every(
+        (id) => b[id] && equivalent(a[id].value, b[id].value, a[id].kind),
+      )
+    );
+  }
   function diff(key, before, after, versions) {
     const old = flatten(key, before),
       next = flatten(key, after),
@@ -288,5 +301,6 @@
     parse,
     rid,
     operationId,
+    samePayload,
   };
 });

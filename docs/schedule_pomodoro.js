@@ -20,103 +20,8 @@
   // Vật lý đại cương 2: 7h, 8h, 9h T4 21/10/2026
   // Giáo dục thể chất 3: 7h T5 22/10/2026
   // Toán xác suất thống kê: 13h, 15h T6 23/10/2026 (HÌNH THỨC: TỰ LUẬN)
-  const EXAM_SCHEDULE = [
-    {
-      id: 'ktvxl',
-      name: 'Kỹ thuật vi xử lý',
-      shortName: 'Vi xử lý',
-      subjectKey: 'ktvxl',
-      dateStr: 'Thứ Ba, 13/10/2026',
-      timeStr: '13h00, 14h00',
-      targetDate: new Date(2026, 9, 13, 13, 0, 0),
-      icon: '⚡',
-      badgeBg: '#FFE600',
-      badgeColor: '#000',
-      themeBorder: '#F59E0B',
-      duration: '60 phút (40 câu trắc nghiệm)',
-      format: 'Trắc nghiệm máy tính chuẩn Học viện KMA',
-      notes: 'Trọng tâm: Họ 8051/89C51, Thanh ghi SFR, Timer TMOD/TCON, Cổng P0-P3, UART SCON/SBUF, Lệnh Assembly và Sơ đồ giải mã 74LS138.',
-      hasSystemSubject: true
-    },
-    {
-      id: 'tthcm',
-      name: 'Tư tưởng Hồ Chí Minh',
-      shortName: 'Tư tưởng HCM',
-      subjectKey: 'tthcm',
-      dateStr: 'Thứ Hai, 19/10/2026',
-      timeStr: '13h00, 15h00',
-      targetDate: new Date(2026, 9, 19, 13, 0, 0),
-      icon: '📕',
-      badgeBg: '#EF4444',
-      badgeColor: '#FFF',
-      themeBorder: '#DC2626',
-      duration: '90 - 120 phút',
-      format: 'Trắc nghiệm lý luận chính trị chuẩn KMA',
-      notes: 'Trọng tâm: Cơ sở hình thành tư tưởng, Vấn đề dân tộc & cách mạng giải phóng dân tộc, CNXH và con đường quá độ, Đại đoàn kết, Đạo đức cách mạng.',
-      hasSystemSubject: true
-    },
-    {
-      id: 'vldc',
-      name: 'Vật lý đại cương 2',
-      shortName: 'Vật lý ĐC 2',
-      subjectKey: 'vldc',
-      dateStr: 'Thứ Tư, 21/10/2026',
-      timeStr: '7h00, 8h00, 9h00',
-      targetDate: new Date(2026, 9, 21, 7, 0, 0),
-      icon: '⚛️',
-      badgeBg: '#3B82F6',
-      badgeColor: '#FFF',
-      themeBorder: '#2563EB',
-      duration: '60 phút (40 câu)',
-      format: 'Trắc nghiệm Quang học sóng & Vật lý lượng tử',
-      notes: 'Trọng tâm: Giao thoa 2 khe Young & bản mỏng chắn khe, Giao thoa nêm không khí / vân tròn Newton, Nhiễu xạ Fraunhofer & cách tử, Hiệu ứng quang điện ngoài, Tán xạ Compton, Hạt trong giếng thế 1D, Định luật Malus.',
-      hasSystemSubject: true
-    },
-    {
-      id: 'gdtc',
-      name: 'Giáo dục thể chất 3',
-      shortName: 'GDTC 3',
-      subjectKey: 'gdtc',
-      dateStr: 'Thứ Năm, 22/10/2026',
-      timeStr: '7h00 sáng',
-      targetDate: new Date(2026, 9, 22, 7, 0, 0),
-      icon: '🏃',
-      badgeBg: '#10B981',
-      badgeColor: '#FFF',
-      themeBorder: '#059669',
-      duration: 'Theo ca thi thực hành',
-      format: 'Kiểm tra thể lực & kỹ thuật thực hành',
-      notes: 'Chuẩn bị trang phục thể thao nghiêm túc, giày chạy đạt chuẩn, mang theo thẻ sinh viên và khởi động kỹ 15 phút trước giờ thi.',
-      hasSystemSubject: false
-    },
-    {
-      id: 'xstk',
-      name: 'Toán xác suất thống kê',
-      shortName: 'Xác suất thống kê',
-      subjectKey: 'xstk',
-      dateStr: 'Thứ Sáu, 23/10/2026',
-      timeStr: '13h00, 15h00',
-      targetDate: new Date(2026, 9, 23, 13, 0, 0),
-      icon: '🎲',
-      badgeBg: '#059669',
-      badgeColor: '#FFF',
-      themeBorder: '#047857',
-      duration: '90 phút (Làm bài Tự luận trên giấy thi)',
-      format: 'TỰ LUẬN (Được sử dụng Casio fx-580VNX & bảng tra thống kê)',
-      notes: 'HÌNH THỨC: TỰ LUẬN. Được mang máy tính Casio fx-580VNX, bảng tra phân phối chuẩn Φ(u) & phân phối Student. Trọng tâm: Công thức xác suất đầy đủ - Bayes, Bernoulli, Biến ngẫu nhiên rời rạc & liên tục, Ước lượng khoảng tin cậy, Bài toán kiểm định giả thuyết thống kê.',
-      hasSystemSubject: true
-    }
-  ];
-
-  // 2. MÔN HỌC QUẢN LÝ THỜI GIAN
-  const STUDY_SUBJECTS = [
-    { key: 'ktvxl', name: 'Kỹ thuật vi xử lý', icon: '⚡', color: '#FFE600', textColor: '#000' },
-    { key: 'tthcm', name: 'Tư tưởng Hồ Chí Minh', icon: '📕', color: '#EF4444', textColor: '#FFF' },
-    { key: 'vldc', name: 'Vật lý đại cương 2', icon: '⚛️', color: '#3B82F6', textColor: '#FFF' },
-    { key: 'xstk', name: 'Toán xác suất thống kê', icon: '🎲', color: '#059669', textColor: '#FFF' },
-    { key: 'gdtc', name: 'Giáo dục thể chất 3', icon: '🏃', color: '#10B981', textColor: '#FFF' },
-    { key: 'other', name: 'Môn khác & Tự học', icon: '📚', color: '#8B5CF6', textColor: '#FFF' }
-  ];
+  const EXAM_SCHEDULE = window.KMA_STUDY_SCHEDULE.exams;
+  const STUDY_SUBJECTS = window.KMA_STUDY_SCHEDULE.subjects;
 
   // 3. STORAGE KEYS
   const STORAGE_KEY_STUDY_LOGS = 'kma_study_logs_v1';
@@ -134,16 +39,14 @@
     selectedSubject: 'ktvxl',
     completedSessions: 0,
     soundEnabled: true,
-    elapsedSecondsInSession: 0
+    elapsedSecondsInSession: 0,
+    runningSince: null,
+    loggedMinutes: 0
   };
 
   // 5. HELPER FORMAT TIME
   function getTodayKey() {
-    const d = new Date();
-    const y = d.getFullYear();
-    const m = String(d.getMonth() + 1).padStart(2, '0');
-    const day = String(d.getDate()).padStart(2, '0');
-    return `${y}-${m}-${day}`;
+    return window.KMA_STREAK_MODEL.dayKey();
   }
 
   function formatMinutes(mins) {
@@ -174,10 +77,10 @@
     }
   }
 
-  function recordStudyTime(subjectKey, minutesToAdd) {
+  function recordStudyTime(subjectKey, minutesToAdd, dateKey = getTodayKey()) {
     if (!subjectKey || minutesToAdd <= 0) return;
     const logs = getStudyLogs();
-    const today = getTodayKey();
+    const today = dateKey;
     if (!logs[today]) {
       logs[today] = {};
     }
@@ -400,11 +303,11 @@
     const startBtnClass = pomodoroState.isRunning ? 'neo-btn neo-btn-yellow' : 'neo-btn neo-btn-green';
 
     if (btnStart) {
-      btnStart.innerHTML = startBtnHtml;
+      if (btnStart.textContent !== startBtnHtml) btnStart.textContent = startBtnHtml;
       btnStart.className = startBtnClass;
     }
     if (drawerBtnStart) {
-      drawerBtnStart.innerHTML = startBtnHtml;
+      if (drawerBtnStart.textContent !== startBtnHtml) drawerBtnStart.textContent = startBtnHtml;
       drawerBtnStart.className = startBtnClass;
     }
 
@@ -526,6 +429,8 @@
   }
 
   let startingPomodoro = false, pomodoroGeneration = 0;
+  const timerWriter = sessionStorage.getItem('kma_timer_writer') || crypto.randomUUID();
+  sessionStorage.setItem('kma_timer_writer', timerWriter);
   function selectPomodoroSubject(subject) {
     if (subject === pomodoroState.selectedSubject) return;
     if (pomodoroState.isRunning || pomodoroState.elapsedSecondsInSession > 0 || startingPomodoro) resetPomodoro();
@@ -542,7 +447,12 @@
       const generation = pomodoroGeneration;
       startingPomodoro = true;
       try {
-        await window.KMA_ACCOUNT.focusStart(pomodoroState.selectedSubject, Math.ceil(pomodoroState.totalSeconds / 60));
+        const data = await window.KMA_ACCOUNT.focusStart(pomodoroState.selectedSubject, Math.ceil(pomodoroState.totalSeconds / 60));
+        if (data?.duration_minutes && generation === pomodoroGeneration) {
+          const elapsed = serverElapsed(data);
+          if (!pomodoroState.elapsedSecondsInSession) pomodoroState.loggedMinutes = Math.floor(elapsed / 60);
+          pomodoroState.elapsedSecondsInSession = elapsed;
+        }
       } catch (_) {
         showToastNotification('Phiên này vẫn lưu vào lịch sử học tại máy. Chưa ghi nhận được vào bảng xếp hạng; hãy kiểm tra tài khoản.');
       } finally { startingPomodoro = false; }
@@ -552,35 +462,100 @@
       }
     }
     pomodoroState.isRunning = true;
+    pomodoroState.runningSince = Date.now();
+    persistTimer();
+    startTimerInterval();
     renderPomodoroDisplay();
+  }
 
-    if (pomodoroState.intervalId) clearInterval(pomodoroState.intervalId);
-
-    pomodoroState.intervalId = setInterval(() => {
-      if (pomodoroState.remainingSeconds > 0) {
-        pomodoroState.remainingSeconds--;
-        pomodoroState.elapsedSecondsInSession++;
-
-        if (pomodoroState.mode === 'focus' && pomodoroState.elapsedSecondsInSession % 60 === 0) {
-          recordStudyTime(pomodoroState.selectedSubject, 1);
-        }
-
-        renderPomodoroDisplay();
-      } else {
-        finishPomodoroSession();
+  function persistTimer() {
+    const key = window.KMA_ACCOUNT?.timerStorageKey() || 'kma_cloud_v1:guest:timer';
+    localStorage.setItem(key, JSON.stringify({ ...pomodoroState, intervalId: null, writer: timerWriter }));
+  }
+  function reconcileTimer(now = Date.now()) {
+    const clock = window.KMA_POMODORO_CLOCK.sample(pomodoroState, now);
+    pomodoroState.remainingSeconds = clock.remaining;
+    if (pomodoroState.mode === 'focus' && clock.minutes > pomodoroState.loggedMinutes) {
+      const byDay = new Map();
+      for (let minute = pomodoroState.loggedMinutes + 1; minute <= clock.minutes; minute++) {
+        const instant = pomodoroState.runningSince == null ? now :
+          Math.min(now, pomodoroState.runningSince + (minute * 60 - pomodoroState.elapsedSecondsInSession) * 1000);
+        const key = window.KMA_STREAK_MODEL.dayKey(instant);
+        byDay.set(key, (byDay.get(key) || 0) + 1);
       }
+      for (const [key, minutes] of byDay) recordStudyTime(pomodoroState.selectedSubject, minutes, key);
+      pomodoroState.loggedMinutes = clock.minutes;
+      persistTimer();
+    }
+    return clock;
+  }
+  function startTimerInterval() {
+    if (pomodoroState.intervalId) clearInterval(pomodoroState.intervalId);
+    pomodoroState.intervalId = setInterval(() => {
+      reconcileTimer();
+      renderPomodoroDisplay();
+      if (pomodoroState.remainingSeconds === 0) finishPomodoroSession();
     }, 1000);
   }
+  function stopTimer() {
+    const clock = reconcileTimer();
+    pomodoroState.elapsedSecondsInSession = clock.elapsed;
+    pomodoroState.runningSince = null;
+    pomodoroState.isRunning = false;
+    if (pomodoroState.intervalId) clearInterval(pomodoroState.intervalId);
+    pomodoroState.intervalId = null;
+    persistTimer();
+    document.title = 'KTVXL by ashv4ni & henise';
+    renderPomodoroDisplay();
+  }
+  function restoreCloudFocus(data) {
+    const key = window.KMA_ACCOUNT.timerStorageKey();
+    let saved; try {
+      const value = JSON.parse(localStorage.getItem(key));
+      if (value.writer !== timerWriter) return;
+      saved = window.KMA_POMODORO_CLOCK.restore(value);
+    } catch (_) {}
+    if (!saved || saved.mode !== 'focus' || saved.selectedSubject !== data.subject || saved.totalSeconds !== data.duration_minutes * 60) return;
+    Object.assign(pomodoroState, saved);
+    const elapsed = serverElapsed(data);
+    pomodoroState.elapsedSecondsInSession = elapsed;
+    pomodoroState.isRunning = data.state === 'running';
+    pomodoroState.runningSince = pomodoroState.isRunning ? Date.now() : null;
+    reconcileTimer();
+    renderSubjectSelector();
+    renderPomodoroDisplay();
+    persistTimer();
+    if (pomodoroState.isRunning) startTimerInterval();
+  }
+  function serverElapsed(data) {
+    return Math.min(data.duration_minutes * 60, Math.max(0, Number(data.server_elapsed) ||
+      Number(data.elapsed_seconds) + (data.state === 'running' ? Math.max(0, (Date.now() - Date.parse(data.resumed_at)) / 1000) : 0) || 0));
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (!pomodoroState.isRunning) return;
+    reconcileTimer();
+    persistTimer();
+    renderPomodoroDisplay();
+    if (pomodoroState.remainingSeconds === 0) finishPomodoroSession();
+  });
+  window.addEventListener('pagehide', () => { if (pomodoroState.isRunning) { reconcileTimer(); persistTimer(); } });
+  window.addEventListener('storage', event => {
+    if (event.key !== window.KMA_ACCOUNT?.timerStorageKey() || !pomodoroState.isRunning) return;
+    let value; try { value = JSON.parse(event.newValue); } catch (_) { return; }
+    if (value?.isRunning && value.writer !== timerWriter) {
+      // Another tab took over this same server session. Stop only this display.
+      pomodoroState.elapsedSecondsInSession = window.KMA_POMODORO_CLOCK.elapsed(pomodoroState);
+      pomodoroState.isRunning = false;
+      pomodoroState.runningSince = null;
+      clearInterval(pomodoroState.intervalId);
+      pomodoroState.intervalId = null;
+      renderPomodoroDisplay();
+    }
+  });
 
   function pausePomodoro() {
     if (pomodoroState.isRunning && pomodoroState.mode === 'focus') window.KMA_ACCOUNT?.focusPause().catch(() => {});
-    pomodoroState.isRunning = false;
-    if (pomodoroState.intervalId) {
-      clearInterval(pomodoroState.intervalId);
-      pomodoroState.intervalId = null;
-    }
-    document.title = 'KTVXL by ashv4ni & henise';
-    renderPomodoroDisplay();
+    stopTimer();
   }
 
   function resetPomodoro() {
@@ -589,39 +564,47 @@
     window.KMA_ACCOUNT?.focusCancel().catch(() => {});
     pomodoroState.remainingSeconds = pomodoroState.totalSeconds;
     pomodoroState.elapsedSecondsInSession = 0;
+    pomodoroState.loggedMinutes = 0;
+    persistTimer();
     renderPomodoroDisplay();
   }
 
-  function setPomodoroDuration(minutes, mode = 'focus') {
+  function setPomodoroDuration(minutes, mode = 'focus', cancel = true) {
     pomodoroGeneration++;
-    pausePomodoro();
-    window.KMA_ACCOUNT?.focusCancel().catch(() => {});
+    stopTimer();
+    if (cancel) window.KMA_ACCOUNT?.focusCancel().catch(() => {});
     pomodoroState.mode = mode;
     pomodoroState.durationMinutes = minutes;
     pomodoroState.totalSeconds = minutes * 60;
     pomodoroState.remainingSeconds = minutes * 60;
     pomodoroState.elapsedSecondsInSession = 0;
+    pomodoroState.loggedMinutes = 0;
+    persistTimer();
     renderPomodoroDisplay();
   }
 
+  let finishingPomodoro = false;
   function finishPomodoroSession() {
-    pausePomodoro();
+    if (finishingPomodoro) return;
+    finishingPomodoro = true;
+    stopTimer();
     playCompletionChime();
 
     if (pomodoroState.mode === 'focus') {
       window.KMA_ACCOUNT?.focusFinish().catch(() => {
-        showToastNotification('Phiên kết thúc sớm hoặc chưa đồng bộ, nên chưa được cộng vào bảng xếp hạng.');
+        showToastNotification('Đã giữ phiên học để thử ghi nhận lại khi kết nối ổn định.');
       });
       pomodoroState.completedSessions++;
       const subj = STUDY_SUBJECTS.find(s => s.key === pomodoroState.selectedSubject);
       const subjName = subj ? subj.name : 'Môn học';
 
       showToastNotification(`🎉 Tuyệt vời! Bạn vừa hoàn thành 1 phiên Pomodoro môn "${subjName}"! Nghỉ ngơi một chút nhé.`);
-      setPomodoroDuration(5, 'shortBreak');
+      setPomodoroDuration(5, 'shortBreak', false);
     } else {
       showToastNotification(`☕ Đã hết giờ nghỉ ngơi! Sẵn sàng bước vào phiên tập trung mới nào!`);
-      setPomodoroDuration(25, 'focus');
+      setPomodoroDuration(25, 'focus', false);
     }
+    finishingPomodoro = false;
   }
 
   // 10. TOAST NOTIFICATION VỚI NEOBRUTALISM STYLE
@@ -1024,6 +1007,7 @@
 
   window.KMA_SCHEDULE_POMODORO = {
     recordStudyTime,
+    restoreCloudFocus,
     renderStudyStats,
     getTodayStats,
     setPomodoroDuration,

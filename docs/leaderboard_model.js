@@ -37,7 +37,7 @@
         session.endedAt > now ||
         !Number.isInteger(session.minutes) ||
         session.minutes < 1 ||
-        session.minutes > 180 ||
+        session.minutes > 300 ||
         !subjects.includes(session.subject)
       )
         continue;

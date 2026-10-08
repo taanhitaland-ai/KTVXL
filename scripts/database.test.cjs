@@ -35,5 +35,14 @@ const fs=require('node:fs'),assert=require('node:assert/strict'),{randomUUID}=re
  assert.deepEqual((await rpc('study_leaderboard',['today','xstk'])).rows,[]);
  await db.exec("reset role;set role anon;select set_config('request.jwt.claim.sub','',false);");assert.equal((await rpc('study_leaderboard',['week','all'])).rows.length,1);await denied(()=>rpc('study_snapshot'));await denied(()=>db.query('select * from public.study_profiles'));
  await login(a);await rpc('study_set_profile',['Người học A',false]);assert.deepEqual((await rpc('study_leaderboard',['today','all'])).rows,[]);
- console.log('PASS: PostgreSQL migration, RLS account isolation, anonymous restrictions, validated sync, note conflicts/tombstones, idempotency, server timer, leaderboard opt-in and subject filters.');await db.close();
+ await db.exec('reset role');
+ const correction=fs.readFileSync(path.join(__dirname,'../supabase/admin/set_personal_study_time.sql'),'utf8').replace('00000000-0000-0000-0000-000000000000',a).replace("'2026-10-07'",`'${day}'`);
+ await db.exec(correction);await login(a);assert.equal((await rpc('study_snapshot')).records[study.rid].value,900,'Dry run changed data');
+ await db.exec('reset role');await db.exec(correction.replace(/rollback;\s*$/,'commit;'));
+ await login(a);const corrected=(await rpc('study_snapshot')).records[study.rid];assert.equal(corrected.value,90);
+ await db.exec('reset role');await db.exec(correction.replace(/rollback;\s*$/,'commit;'));await login(a);
+ assert.equal((await rpc('study_snapshot')).records[study.rid].version,corrected.version,'Repeat correction increments version');
+ await rpc('study_set_profile',['Người học A',true]);assert.equal((await rpc('study_leaderboard',['today','all'])).rows[0].minutes,1,'Correction leaked into board');
+ await login(b);assert.equal((await rpc('study_snapshot')).records[study.rid],undefined,'Correction leaked into another account');
+ console.log('PASS: PostgreSQL migration, RLS isolation, validated sync, idempotency, server timer, leaderboard filters, and private admin correction dry-run/rerun.');await db.close();
 })().catch(e=>{console.error(e.message);process.exitCode=1;});

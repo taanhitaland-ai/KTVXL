@@ -34,7 +34,10 @@
     lastSync,
     error = false;
   let authButton,
-    statusButton,
+    streakButton,
+    streakDialog,
+    streakContent,
+    streakCache,
     dialog,
     modalBody,
     toast,
@@ -45,7 +48,9 @@
   const outboxPrefix = () => ns + user + ":op:";
   let versions = M.parse(get(ns + user + ":versions"), {}),
     rankingCache = new Map(),
-    rankingRequests = new Set();
+    rankingRequests = new Set(),
+    rankingTimes = new Map(),
+    rankingRevision = 0;
   const appKey = (key) => M.keys.includes(key);
   function queue() {
     if (!user) return [];
@@ -67,6 +72,7 @@
     return all;
   }
   function addOperations(operations) {
+    if (!operations.length) return;
     const pending = queue();
     let sequence = Math.max(
       Date.now(),
@@ -99,6 +105,7 @@
     const previous = get(bucket() + key);
     set(bucket() + key, value);
     capture(key, previous, String(value));
+    if (key === "kma_study_logs_v1") renderStreakTrigger();
   };
   Storage.prototype.removeItem = function (key) {
     if (this !== localStorage || !appKey(key))
@@ -106,6 +113,7 @@
     const previous = get(bucket() + key);
     remove(bucket() + key);
     capture(key, previous, null);
+    if (key === "kma_study_logs_v1") renderStreakTrigger();
   };
   async function rpc(name, args = {}) {
     const { data, error: failure } = await client.rpc(name, args);
@@ -121,7 +129,7 @@
       changed = [];
     for (const [key, value] of Object.entries(payload)) {
       const before = get(bucket() + key);
-      if (before === value) continue;
+      if (M.samePayload(key, before, value)) continue;
       set(bucket() + key, value);
       changed.push([key, before, value]);
     }
@@ -270,25 +278,23 @@
   function renderStatus() {
     if (!ready) return;
     updateNoteCaptions();
-    authButton.replaceChildren(
-      user
-        ? el("span", "sync-avatar", profile.nickname?.slice(0, 1) || "B")
-        : googleIcon(),
-      el("span", "", user ? "Tài khoản" : "Đăng nhập"),
-    );
-    statusButton.textContent = stateLabel();
+    const authLabel = (user || "guest") + "|" + profile.nickname;
+    if (authButton.dataset.identity !== authLabel) {
+      authButton.dataset.identity = authLabel;
+      authButton.replaceChildren(
+        user
+          ? el("span", "sync-avatar", profile.nickname?.slice(0, 1) || "B")
+          : googleIcon(),
+        el("span", "", user ? "Tài khoản" : "Đăng nhập"),
+      );
+    }
+    renderStreakTrigger();
     const studyCaption = document.getElementById("study-storage-caption");
-    if (studyCaption)
-      studyCaption.textContent = user
-        ? "Lưu theo tài khoản · Tự đồng bộ"
-        : "Lưu tự động trong máy";
-    statusButton.dataset.state = conflicts.length
-      ? "conflict"
-      : error || busy || queue().length
-        ? "pending"
-        : user
-          ? "done"
-          : "guest";
+    const captionText = user
+      ? "Lưu theo tài khoản · Tự đồng bộ"
+      : "Lưu tự động trong máy";
+    if (studyCaption && studyCaption.textContent !== captionText)
+      studyCaption.textContent = captionText;
     guestNotice.hidden =
       !!user || get(ns + "guest-notice-dismissed") === "true";
   }
@@ -397,32 +403,20 @@
     input.id = "sync-nickname";
     input.maxLength = 32;
     input.value = profile.nickname;
-    const participation = el("label", "sync-participation"),
-      check = el("input");
-    check.type = "checkbox";
-    check.id = "sync-share-ranking";
-    check.checked = profile.leaderboard_opt_in;
-    participation.append(
-      check,
-      el("span", "", "Hiện tôi trên bảng xếp hạng Pomodoro"),
-    );
     const save = button("Lưu hồ sơ", "sync-btn sync-secondary");
     save.type = "submit";
     save.disabled = true;
     const changed = () =>
       (save.disabled =
-        !input.value.trim() ||
-        (input.value.trim() === profile.nickname &&
-          check.checked === profile.leaderboard_opt_in));
+        !input.value.trim() || input.value.trim() === profile.nickname);
     input.addEventListener("input", changed);
-    check.addEventListener("change", changed);
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       save.disabled = true;
       try {
         profile = await rpc("study_set_profile", {
           p_nickname: input.value.trim().normalize("NFC"),
-          p_joined: check.checked,
+          p_joined: true,
         });
         rankingCache.clear();
         notify("Đã lưu hồ sơ");
@@ -435,11 +429,10 @@
     form.append(
       label,
       input,
-      participation,
       el(
         "p",
         "sync-info",
-        "Chỉ biệt danh và thời gian tập trung được công khai khi bạn tham gia.",
+        "Có thời gian Pomodoro là bạn tự động có tên trên bảng xếp hạng. Chỉ biệt danh và thời gian học được công khai; tiến trình và ghi chú vẫn riêng tư.",
       ),
       save,
     );
@@ -466,6 +459,83 @@
       }),
     );
     modalBody.append(actions);
+  }
+  function showStreak() {
+    if (!streakDialog || !window.KMA_STREAK) return;
+    renderStreakContent();
+    if (!streakDialog.open) streakDialog.showModal();
+  }
+  function renderStreakContent() {
+    const selectedDay = streakContent.querySelector(
+      '.streak-day[aria-pressed="true"]',
+    )?.dataset.date;
+    const logs = M.parse(localStorage.getItem("kma_study_logs_v1"), {});
+    streakContent.replaceChildren(
+      window.KMA_STREAK.render(logs, { selectedDay }),
+    );
+  }
+  function renderStreakTrigger() {
+    if (!ready || !window.KMA_STREAK || !window.KMA_STREAK_MODEL) return;
+    const raw = localStorage.getItem("kma_study_logs_v1");
+    const today = window.KMA_STREAK_MODEL.dayKey();
+    if (streakCache?.raw === raw && streakCache.today === today) return;
+    const data = window.KMA_STREAK_MODEL.build(M.parse(raw, {}));
+    streakCache = { raw, today };
+    streakButton.hidden = !data.streak;
+    const label = data.streak ? `${data.streak} ngày` : "";
+    const signature = `${label}|${data.tier.key}`;
+    if (streakButton.dataset.signature !== signature) {
+      streakButton.dataset.signature = signature;
+      streakButton.replaceChildren(
+        ...(data.streak
+          ? [window.KMA_STREAK.flame(data.tier), el("span", "", label)]
+          : []),
+      );
+      streakButton.setAttribute(
+        "aria-label",
+        `Xem chuỗi học: ${data.streak} ngày liên tiếp`,
+      );
+      streakButton.title = data.streak
+        ? `${data.tier.name} · ${data.streak} ngày liên tiếp`
+        : "";
+    }
+    if (streakDialog.open) renderStreakContent();
+  }
+  function initStreakDialog() {
+    streakDialog = el("dialog", "sync-account-dialog study-streak-dialog");
+    streakDialog.id = "study-streak-dialog";
+    streakDialog.setAttribute("aria-labelledby", "study-streak-title");
+    const body = el("div", "sync-modal-body"),
+      lead = el("div", "sync-lead");
+    const title = el("h2", "", "Chuỗi học của bạn");
+    title.id = "study-streak-title";
+    lead.append(
+      el("span", "sync-kicker", "GIỮ NHỊP HỌC MỖI NGÀY"),
+      title,
+      el("p", "", "Một chút mỗi ngày, tiến thêm một bước."),
+    );
+    streakContent = el("div", "streak-dialog-content");
+    body.append(lead, streakContent);
+    const close = button("✕", "sync-dialog-close", () => streakDialog.close());
+    close.setAttribute("aria-label", "Đóng chuỗi học");
+    streakDialog.append(close, body);
+    document.body.append(streakDialog);
+    streakDialog.addEventListener("close", () =>
+      (streakButton.hidden ? authButton : streakButton).focus({
+        preventScroll: true,
+      }),
+    );
+    streakDialog.addEventListener("click", (event) => {
+      if (event.target !== streakDialog) return;
+      const rect = streakDialog.getBoundingClientRect();
+      if (
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom
+      )
+        streakDialog.close();
+    });
   }
   async function offerImport() {
     if (!user || get(ns + user + ":guest-decision")) return;
@@ -597,15 +667,46 @@
   }
   function getRankingSnapshot(period = "week", subject = "all") {
     const key = period + "|" + subject;
-    if (!rankingCache.has(key) && !rankingRequests.has(key)) {
+    if (
+      (!rankingCache.has(key) ||
+        Date.now() - (rankingTimes.get(key) || 0) > 15000) &&
+      !rankingRequests.has(key)
+    ) {
+      const revision = rankingRevision;
       rankingRequests.add(key);
       rpc("study_leaderboard", { p_period: period, p_subject: subject })
         .then((data) => {
+          if (revision !== rankingRevision) return;
           rankingCache.set(key, data);
-          window.dispatchEvent(new CustomEvent("kma:cloud-updated"));
+          rankingTimes.set(key, Date.now());
+          window.dispatchEvent(new CustomEvent("kma:ranking-updated"));
         })
-        .catch(() => notify("Chưa tải được bảng xếp hạng."))
-        .finally(() => rankingRequests.delete(key));
+        .catch(() => {
+          if (revision !== rankingRevision) return;
+          if (!rankingCache.has(key))
+            rankingCache.set(key, {
+              remote: true,
+              rows: [],
+              me: user
+                ? {
+                    id: user,
+                    nickname: profile.nickname,
+                    joined: true,
+                    minutes: 0,
+                    sessions: 0,
+                    rank: null,
+                  }
+                : null,
+              failed: true,
+            });
+          rankingTimes.set(key, Date.now());
+          window.dispatchEvent(new CustomEvent("kma:ranking-updated"));
+          notify("Chưa tải được bảng xếp hạng. Bấm làm mới để thử lại.");
+        })
+        .finally(() => {
+          rankingRequests.delete(key);
+          if (revision !== rankingRevision) getRankingSnapshot(period, subject);
+        });
     }
     return (
       rankingCache.get(key) || {
@@ -625,6 +726,15 @@
       }
     );
   }
+  function refreshRanking() {
+    rankingRevision++;
+    rankingTimes.clear();
+    for (const key of rankingCache.keys()) {
+      const [period, subject] = key.split("|");
+      getRankingSnapshot(period, subject);
+    }
+    window.dispatchEvent(new CustomEvent("kma:ranking-updated"));
+  }
   async function setRankingParticipation(value) {
     if (!user) {
       openAccount();
@@ -641,42 +751,182 @@
       notify("Chưa lưu được lựa chọn.");
     }
   }
-  // Timer invokes these hooks directly. No client-supplied total is accepted as credit.
+  // Persist finalization before sending: a lost response must never turn finish into cancel.
   let focusId = null,
-    focusSubject = null;
+    focusSubject = null,
+    focusMinutes = null;
+  const focusKey = () => ns + user + ":active-focus";
+  const finishKey = () => ns + user + ":pending-focus-finishes";
+  const finishIntentKey = () => ns + user + ":focus-finish-intent";
+  function rememberFocus(data) {
+    focusId = data?.id || null;
+    focusSubject = data?.subject || focusSubject;
+    focusMinutes = data?.duration_minutes || focusMinutes;
+    if (focusId)
+      set(
+        focusKey(),
+        JSON.stringify({
+          id: focusId,
+          subject: focusSubject,
+          minutes: focusMinutes,
+        }),
+      );
+    else remove(focusKey());
+  }
+  function pendingFinishes() {
+    const ids = M.parse(get(finishKey()), []);
+    return Array.isArray(ids)
+      ? [
+          ...new Set(
+            ids
+              .slice(0, 200)
+              .filter(
+                (id) => typeof id === "string" && /^[0-9a-f-]{36}$/.test(id),
+              ),
+          ),
+        ]
+      : [];
+  }
+  async function flushFocusFinishes() {
+    if (!authenticated) return;
+    const intent = M.parse(get(finishIntentKey()), null);
+    if (intent) {
+      // Recover a start request whose response was lost, before finalizing it.
+      const active = await rpc("study_focus_current");
+      if (!active) {
+        remove(finishIntentKey());
+        remove(focusKey());
+        notify(
+          "Phiên này chưa bắt đầu được trên máy chủ; thời gian vẫn giữ trong lịch sử cá nhân.",
+        );
+      } else {
+        if (
+          active.subject !== intent.subject ||
+          active.duration_minutes !== intent.minutes
+        )
+          throw new Error("Different active focus session");
+        rememberFocus(active);
+        set(
+          finishKey(),
+          JSON.stringify([...new Set([...pendingFinishes(), active.id])]),
+        );
+        remove(finishIntentKey());
+      }
+    }
+    for (const id of pendingFinishes()) {
+      const data = await rpc("study_focus_action", {
+        p_id: id,
+        p_action: "finish",
+      });
+      if (!["completed", "cancelled"].includes(data.state))
+        throw new Error("Focus not finished");
+      set(
+        finishKey(),
+        JSON.stringify(pendingFinishes().filter((value) => value !== id)),
+      );
+      if (id === focusId) rememberFocus(null);
+      refreshRanking();
+    }
+  }
   async function focusStart(subject, minutes) {
-    if (!user || !authenticated) return;
-    if (focusId && focusSubject === subject) {
+    if (!user || !authenticated) return null;
+    await flushFocusFinishes();
+    if (!Number.isInteger(minutes) || minutes < 1 || minutes > 300)
+      throw new Error("Invalid focus duration");
+    if (focusId && (focusSubject !== subject || focusMinutes !== minutes))
+      await focusAction("cancel");
+    if (focusId) {
       const data = await rpc("study_focus_action", {
         p_id: focusId,
         p_action: "resume",
       });
-      if (data.state === "running") return;
-      focusId = null;
+      if (data.state === "running") return data;
+      rememberFocus(null);
     }
-    if (focusId)
-      await rpc("study_focus_action", { p_id: focusId, p_action: "cancel" });
+    focusSubject = subject;
+    focusMinutes = minutes;
+    set(focusKey(), JSON.stringify({ subject, minutes, pendingStart: true }));
     const data = await rpc("study_focus_start", {
       p_subject: subject,
       p_minutes: minutes,
     });
-    focusId = data.id;
     focusSubject = subject;
-    set(ns + user + ":active-focus", focusId);
+    focusMinutes = minutes;
+    rememberFocus(data);
+    return data;
   }
   async function focusAction(action) {
-    if (!focusId || !authenticated) return;
+    if (!authenticated) return null;
+    if (!focusId) {
+      if (action === "finish" && focusSubject && focusMinutes) {
+        set(
+          finishIntentKey(),
+          JSON.stringify({ subject: focusSubject, minutes: focusMinutes }),
+        );
+        await flushFocusFinishes();
+        return null;
+      }
+      if (!focusSubject || !focusMinutes) return null;
+      const active = await rpc("study_focus_current");
+      if (!active) return null;
+      if (
+        active.subject !== focusSubject ||
+        active.duration_minutes !== focusMinutes
+      )
+        throw new Error("Different active focus session");
+      rememberFocus(active);
+    }
+    const id = focusId;
+    if (action === "finish") {
+      set(
+        finishKey(),
+        JSON.stringify([...new Set([...pendingFinishes(), id])]),
+      );
+      await flushFocusFinishes();
+      return { state: "completed" };
+    }
+    // A pending finish is immutable; resetting the UI cannot discard it.
+    if (pendingFinishes().includes(id)) return null;
     const data = await rpc("study_focus_action", {
-      p_id: focusId,
+      p_id: id,
       p_action: action,
     });
     if (["completed", "cancelled"].includes(data.state)) {
-      focusId = null;
-      focusSubject = null;
-      remove(ns + user + ":active-focus");
-      rankingCache.clear();
-      window.dispatchEvent(new CustomEvent("kma:cloud-updated"));
+      rememberFocus(null);
+      refreshRanking();
     }
+    return data;
+  }
+  async function restoreFocus() {
+    const raw = get(focusKey());
+    const saved = M.parse(raw, null);
+    if (
+      saved &&
+      ["ktvxl", "tthcm", "vldc", "xstk", "gdtc", "other"].includes(
+        saved.subject,
+      ) &&
+      Number.isInteger(saved.minutes) &&
+      saved.minutes >= 1 &&
+      saved.minutes <= 300
+    ) {
+      focusId = saved.id;
+      focusSubject = saved.subject;
+      focusMinutes = saved.minutes;
+    } else if (/^[0-9a-f-]{36}$/.test(raw || "")) focusId = raw;
+    await flushFocusFinishes();
+    // Restore a timer only on a device that was running it; other tabs stay idle.
+    if (!get(timerStorageKey())) return;
+    const data = await rpc("study_focus_current");
+    if (data) {
+      rememberFocus(data);
+      window.KMA_SCHEDULE_POMODORO?.restoreCloudFocus(data);
+    } else {
+      rememberFocus(null);
+      remove(timerStorageKey());
+    }
+  }
+  function timerStorageKey() {
+    return ns + (user || "guest") + ":timer";
   }
   async function resumeAuth(session) {
     const next = session?.user?.id || null;
@@ -694,15 +944,10 @@
     await sync();
     if (initializedAccount === next) return;
     initializedAccount = next;
-    const abandoned = get(ns + user + ":active-focus");
-    if (abandoned && !focusId) {
-      try {
-        await rpc("study_focus_action", {
-          p_id: abandoned,
-          p_action: "cancel",
-        });
-        remove(ns + user + ":active-focus");
-      } catch (_) {}
+    try {
+      await restoreFocus();
+    } catch (_) {
+      /* Keep the durable pointer until the server is available. */
     }
     await offerImport();
   }
@@ -710,10 +955,13 @@
     authButton = button("", "sync-auth-trigger", openAccount);
     authButton.id = "sync-account-button";
     authButton.setAttribute("aria-haspopup", "dialog");
-    statusButton = button("", "sync-status-trigger", openAccount);
-    statusButton.id = "sync-status-button";
-    statusButton.setAttribute("aria-live", "polite");
-    document.querySelector(".stats-bar").append(authButton, statusButton);
+    streakButton = button("", "streak-trigger", showStreak);
+    streakButton.id = "study-streak-trigger";
+    streakButton.hidden = true;
+    streakButton.setAttribute("aria-haspopup", "dialog");
+    streakButton.setAttribute("aria-controls", "study-streak-dialog");
+    document.querySelector(".stats-bar").append(authButton, streakButton);
+    initStreakDialog();
     dialog = el("dialog", "sync-account-dialog");
     dialog.id = "sync-account-dialog";
     dialog.setAttribute("aria-labelledby", "sync-modal-title");
@@ -767,7 +1015,19 @@
     document.querySelector(".main-content").prepend(guestNotice);
     ready = true;
     renderStatus();
-    new MutationObserver(updateNoteCaptions).observe(document.body, {
+    new MutationObserver((mutations) => {
+      if (
+        mutations.some((m) =>
+          [...m.addedNodes].some(
+            (n) =>
+              n.nodeType === 1 &&
+              (n.matches?.(".note-caption") ||
+                n.querySelector?.(".note-caption")),
+          ),
+        )
+      )
+        updateNoteCaptions();
+    }).observe(document.body, {
       childList: true,
       subtree: true,
     });
@@ -781,13 +1041,17 @@
         setTimeout(() => resumeAuth(session), 0);
     });
     setInterval(() => {
+      renderStreakTrigger();
       if (document.visibilityState === "visible" && authenticated) sync();
-      rankingCache.clear();
-      window.dispatchEvent(new CustomEvent("kma:cloud-updated"));
+      if (authenticated && (pendingFinishes().length || get(finishIntentKey())))
+        focusTask(flushFocusFinishes).catch(() => {});
+      if (document.getElementById("leaderboard-dialog")?.open) refreshRanking();
     }, 15000);
   }
   window.addEventListener("online", scheduleSync);
+  document.addEventListener("visibilitychange", renderStreakTrigger);
   window.addEventListener("storage", (event) => {
+    if (event.key === "kma_study_logs_v1") renderStreakTrigger();
     if (event.key === ownerKey && event.newValue !== user) location.reload();
     if (user && event.key?.startsWith(ns + user + ":op:")) scheduleSync();
     const prefix = bucket();
@@ -815,7 +1079,10 @@
   };
   window.KMA_ACCOUNT = {
     isDemo: false,
+    timerStorageKey,
+    refreshRanking,
     openAccount,
+    openStreak: showStreak,
     sync,
     getRankingSnapshot,
     setRankingParticipation,
