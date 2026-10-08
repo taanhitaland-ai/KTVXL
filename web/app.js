@@ -253,9 +253,9 @@
     renderPracticeQuestions();
     setupKnowledgeHub();
     updateStatsBar();
-    document.getElementById('panel-q-title').textContent = '💡 CHỌN CÂU HỎI ĐỂ XEM LỜI GIẢI';
+    document.getElementById('panel-q-title').textContent = '💡 PHƯƠNG PHÁP & MẸO NHỚ';
     document.getElementById('panel-q-badge').textContent = 'Đang xem';
-    document.getElementById('panel-content').innerHTML = '<div class="panel-placeholder"><p>📚 ' + escapeHtml(examConfig.subjects[subject].name) + '</p><p>Bấm vào câu hỏi để xem lời giải và mẹo nhớ.</p></div>';
+    document.getElementById('panel-content').innerHTML = '<div class="panel-placeholder"><p>📚 ' + escapeHtml(examConfig.subjects[subject].name) + '</p><p>Bấm vào câu hỏi để xem phương pháp và mẹo nhớ.</p></div>';
   }
 
   function updateFilterUI() {
@@ -709,7 +709,10 @@
         starBtn.title = starredQuestions.has(q.id) ? 'Bỏ đánh dấu' : 'Gắn sao câu hỏi này';
         if (currentStatus === 'STARRED') renderPracticeQuestions();
       });
-      metaHeader.appendChild(starBtn);
+      const actions = document.createElement('div');
+      actions.className = 'q-meta-actions';
+      actions.appendChild(starBtn);
+      metaHeader.appendChild(actions);
     }
 
     card.appendChild(metaHeader);
@@ -886,11 +889,18 @@
     // Click card to highlight active card without auto-opening explanation
     card.addEventListener('click', (e) => {
       if (isExamMode) return;
-      if (!e.target.closest('button, input, img, .card-inline-explanation')) {
+      if (!e.target.closest('button, input, textarea, img, .card-inline-explanation, .note-editor, .q-note-preview')) {
         highlightActiveCard(card);
       }
     });
 
+    if (!isExamMode && window.KMA_QUESTION_NOTES) {
+      const noteButton = window.KMA_QUESTION_NOTES.attach(card, currentSubject, q, () => {
+        openSideDetails(q);
+        highlightActiveCard(card);
+      });
+      if (noteButton) card.querySelector('.q-meta-actions').prepend(noteButton);
+    }
     return card;
   }
 
@@ -980,7 +990,7 @@
       }
     });
 
-    // Auto display explanation both inline inside card and in side panel
+    // Show the explanation inline; the side panel holds methods and memory tips.
     const inlineExp = card.querySelector('.card-inline-explanation');
     if (inlineExp) {
       inlineExp.style.display = 'block';
@@ -1022,7 +1032,7 @@
     feedbackEl.className = `fib-feedback ${isCorrect ? 'correct' : 'wrong'}`;
     feedbackEl.textContent = isCorrect ? 'ĐÚNG ✅' : `SAI ❌ (Đ.Á: ${q.answer})`;
 
-    // Auto display explanation both inline inside card and in side panel
+    // Show the explanation inline; the side panel holds methods and memory tips.
     const inlineExp = card.querySelector('.card-inline-explanation');
     if (inlineExp) {
       inlineExp.style.display = 'block';
@@ -1042,35 +1052,26 @@
 
     if (!titleEl || !contentEl) return;
 
-    titleEl.textContent = `💡 LỜI GIẢI • CÂU ${q.num}`;
+    titleEl.textContent = `💡 PHƯƠNG PHÁP • CÂU ${q.num}`;
     badgeEl.textContent = q.source_title || q.exam_title || q.source || 'Chi Tiết';
 
-    let html = `
-      <div class="panel-section sec-exp">
-        <div class="panel-section-title">
-          <span>💡 Lời Giải Chi Tiết</span>
-        </div>
-        <div class="panel-text">
-          <p style="margin-bottom: 8px;"><strong>Đáp án đúng: <span class="neo-badge badge-correct" style="font-size: 0.85rem;">${escapeHtml(q.answer)}</span></strong></p>
-          <p>${formatMarkdownText(q.explanation || 'Chưa có lời giải chi tiết.')}</p>
-        </div>
-      </div>
-    `;
+    let html = '';
+    const methodContent = q.methodology || q.solution_method;
 
-    if (q.methodology) {
+    if (methodContent) {
       html += `
         <div class="panel-section sec-meth">
           <div class="panel-section-title">
             <span>📐 Phương Pháp Làm Dạng Bài</span>
           </div>
           <div class="panel-text">
-            <p>${formatMarkdownText(q.methodology)}</p>
+            <p>${formatMarkdownText(methodContent)}</p>
           </div>
         </div>
       `;
     }
 
-    const tipContent = q.tips_casio || q.tips;
+    const tipContent = q.tips_casio || q.tips || q.casio_tip;
     if (tipContent) {
       const tipHeader = currentSubject === 'tthcm' ? 'Mẹo Nhớ Nhanh & Mốc Năm' : (currentSubject === 'vldc' ? 'Mẹo Casio fx-580VNX & Công Thức Giải Nhanh' : 'Mẹo Nhớ & Mẹo Bấm Máy Casio fx-580VNX');
       html += `
@@ -1085,7 +1086,7 @@
       `;
     }
 
-    contentEl.innerHTML = html;
+    contentEl.innerHTML = html || '<div class="panel-placeholder"><p>Câu này chưa có phương pháp hoặc mẹo riêng.</p></div>';
     renderMath(contentEl);
   }
 
@@ -1705,7 +1706,7 @@
 
   function escapeHtml(str) {
     if (str === null || str === undefined) return '';
-    return String(str)
+    return String(str).normalize('NFC')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
@@ -1717,7 +1718,7 @@
     if (str === null || str === undefined) return '';
     // Keep math intact: Markdown's emphasis markers must not split formulas.
     const math = [];
-    let text = String(str).replace(/\$\$[\s\S]*?\$\$|\$[^$\n]+?\$|\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]/g, value => {
+    let text = String(str).normalize('NFC').replace(/\$\$[\s\S]*?\$\$|\$[^$\n]+?\$|\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]/g, value => {
       math.push(escapeHtml(value));
       return '\u0000MATH' + (math.length - 1) + '\u0000';
     });
@@ -1741,7 +1742,8 @@
             { left: '\\(', right: '\\)', display: false }
           ],
           throwOnError: false,
-          ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+          ignoredClasses: ['q-note-card', 'q-note-preview', 'note-editor']
         });
       } catch (err) {
         console.warn('KaTeX render error:', err);

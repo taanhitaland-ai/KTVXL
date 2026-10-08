@@ -2309,7 +2309,7 @@
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Cân thử 50 quả cam thu được trọng lượng trung bình mẫu X̄ = 200,2 g và phương sai hiệu chỉnh ŝ^2 = 68,33 g^2 (ŝ ≈ 8,266 g). Tìm khoảng tin cậy 95% cho trọng lượng trung bình của một quả cam (biết z0,025 = 1,96):",
+    "prompt": "Cân thử 50 quả cam thu được trọng lượng trung bình mẫu X̄ = 200,2 g và phương sai hiệu chỉnh ŝ^2 = 68,33 g^2 (ŝ ≈ 8,266 g). Tìm khoảng tin cậy 95% cho trọng lượng trung bình của một quả cam (biết z0,025 = 1,96):",
     "options": [
       "A. $[197{,}91;\\quad  202{,}49]$ g",
       "B. $[196{,}50;\\quad  203{,}90]$ g",
@@ -2332,7 +2332,7 @@
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Cân nặng mẫu n = 140 vật nuôi có X̄ ≈ 35,49 kg và độ lệch chuẩn mẫu hiệu chỉnh ŝ ≈ 13,742 kg. Khoảng tin cậy 95% cho cân nặng trung bình là [33,21; 37,77] kg với độ chính xác ε ≈ 2,28 kg. Nếu muốn tăng độ chính xác lên gấp đôi (tức ε' = ε / 2) thì cần quan sát bao nhiêu con?",
+    "prompt": "Cân nặng mẫu n = 140 vật nuôi có X̄ ≈ 35,49 kg và độ lệch chuẩn mẫu hiệu chỉnh ŝ ≈ 13,742 kg. Khoảng tin cậy 95% cho cân nặng trung bình là [33,21; 37,77] kg với độ chính xác ε ≈ 2,28 kg. Nếu muốn tăng độ chính xác lên gấp đôi (tức ε' = ε / 2) thì cần quan sát bao nhiêu con?",
     "options": [
       "A. $280$ con",
       "B. $560$ con",
@@ -2355,7 +2355,7 @@
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Khảo sát mức tiêu hao xăng của n = 30 xe cùng loại được X̄ = 10,133 lít/100km và ŝ = 0,235 lít. Tìm khoảng tin cậy 95% cho mức tiêu hao xăng trung bình (z0,025 = 1,96):",
+    "prompt": "Khảo sát mức tiêu hao xăng của n = 30 xe cùng loại được X̄ = 10,133 lít/100km và ŝ = 0,235 lít. Tìm khoảng tin cậy 95% cho mức tiêu hao xăng trung bình (z0,025 = 1,96):",
     "options": [
       "A. $[10{,}00;\\quad  10{,}26]$ lít",
       "B. $[10{,}08;\\quad  10{,}18]$ lít",
@@ -2378,7 +2378,7 @@
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Đo kích thước n = 200 chi tiết máy thu được X̄ = 841,8 cm và ŝ ≈ 12,02 cm. Khoảng tin cậy 95% cho kích thước trung bình của chi tiết máy là:",
+    "prompt": "Đo kích thước n = 200 chi tiết máy thu được X̄ = 841,8 cm và ŝ ≈ 12,02 cm. Khoảng tin cậy 95% cho kích thước trung bình của chi tiết máy là:",
     "options": [
       "A. $[839{,}50;\\quad  844{,}10]$ cm",
       "B. $[840{,}80;\\quad  842{,}80]$ cm",
@@ -2401,7 +2401,7 @@
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Khảo sát doanh số n = 100 hộ kinh doanh được X̄ = 10,74 triệu đồng và ŝ ≈ 0,262 triệu. Đồng thời có 17 hộ có doanh số từ 11 triệu đồng trở lên. Khoảng tin cậy 95% cho tỷ lệ hộ có doanh số từ 11 triệu trở lên là:",
+    "prompt": "Khảo sát doanh số n = 100 hộ kinh doanh được X̄ = 10,74 triệu đồng và ŝ ≈ 0,262 triệu. Đồng thời có 17 hộ có doanh số từ 11 triệu đồng trở lên. Khoảng tin cậy 95% cho tỷ lệ hộ có doanh số từ 11 triệu trở lên là:",
     "options": [
       "A. $[9{,}64\\%;\\quad  24{,}36\\%]$",
       "B. $[11{,}20\\%;\\quad  22{,}80\\%]$",
@@ -2424,7 +2424,7 @@
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Theo dõi năng suất lúa ở n = 365 điểm gặt thử nghiệm được X̄ = 34,79 tạ/ha và ŝ ≈ 2,08 tạ/ha. Với độ tin cậy 95%, năng suất lúa trung bình thấp nhất và cao nhất ước lượng được là:",
+    "prompt": "Theo dõi năng suất lúa ở n = 365 điểm gặt thử nghiệm được X̄ = 34,79 tạ/ha và ŝ ≈ 2,08 tạ/ha. Với độ tin cậy 95%, năng suất lúa trung bình thấp nhất và cao nhất ước lượng được là:",
     "options": [
       "A. Thấp nhất: 34,20 tạ/ha; Cao nhất: 35,38 tạ/ha",
       "B. Thấp nhất: 34,58 tạ/ha; Cao nhất: 35,01 tạ/ha",
@@ -2447,7 +2447,7 @@
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Đo hàm lượng kẽm trong tóc của n = 35 bệnh nhân được X̄ = 194,49 ppm và ŝ = 3,45 ppm. Khoảng tin cậy 95% cho hàm lượng kẽm trung bình là:",
+    "prompt": "Đo hàm lượng kẽm trong tóc của n = 35 bệnh nhân được X̄ = 194,49 ppm và ŝ = 3,45 ppm. Khoảng tin cậy 95% cho hàm lượng kẽm trung bình là:",
     "options": [
       "A. $[192{,}80;\\quad  196{,}18]$ ppm",
       "B. $[193{,}80;\\quad  195{,}18]$ ppm",
@@ -2470,7 +2470,7 @@
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Khảo sát năng suất cây trồng ở n = 36 điểm thí nghiệm được X̄ = 56,53 tạ/ha và ŝ = 5,32 tạ/ha. Độ chính xác hiện tại là ε ≈ 1,74 tạ/ha. Muốn độ chính xác của ước lượng đạt ε' <= 1 tạ/ha thì cần thu hoạch thêm bao nhiêu điểm thí nghiệm nữa?",
+    "prompt": "Khảo sát năng suất cây trồng ở n = 36 điểm thí nghiệm được X̄ = 56,53 tạ/ha và ŝ = 5,32 tạ/ha. Độ chính xác hiện tại là ε ≈ 1,74 tạ/ha. Muốn độ chính xác của ước lượng đạt ε' <= 1 tạ/ha thì cần thu hoạch thêm bao nhiêu điểm thí nghiệm nữa?",
     "options": [
       "A. Thu hoạch thêm 55 điểm",
       "B. Thu hoạch thêm 82 điểm",
@@ -2493,7 +2493,7 @@
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Gia công thử n = 16 chi tiết máy (mẫu nhỏ, giả thiết tuân theo phân phối chuẩn) được thời gian trung bình X̄ = 14,4375 phút và ŝ = 0,602 phút. Tìm khoảng tin cậy 95% cho thời gian gia công trung bình (biết t0,025(15) = 2,131):",
+    "prompt": "Gia công thử n = 16 chi tiết máy (mẫu nhỏ, giả thiết tuân theo phân phối chuẩn) được thời gian trung bình X̄ = 14,4375 phút và ŝ = 0,602 phút. Tìm khoảng tin cậy 95% cho thời gian gia công trung bình (biết t0,025(15) = 2,131):",
     "options": [
       "A. $[14{,}12;\\quad  14{,}76]$ phút",
       "B. $[14{,}05;\\quad  14{,}82]$ phút",
@@ -2976,7 +2976,7 @@
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Tại sao trong công thức phương sai mẫu hiệu chỉnh ŝ^2 (sample variance), người ta chia cho (n - 1) thay vì chia cho n?",
+    "prompt": "Tại sao trong công thức phương sai mẫu hiệu chỉnh ŝ^2 (sample variance), người ta chia cho (n - 1) thay vì chia cho n?",
     "options": [
       "A. Để làm tăng độ chính xác của mẫu quan sát",
       "B. Để đảm bảo $\\hat s^2$ là ước lượng không chệch (unbiased estimator) của phương sai tổng thể $\\sigma^2$",
@@ -3022,7 +3022,7 @@
     "source": "KMA_STANDARD",
     "source_title": "Ngân Hàng Bài Tập Chuẩn KMA",
     "question_type": "Bài tập tính toán",
-    "prompt": "Khảo sát một mẫu cỡ n = 25 từ phân phối chuẩn thu được phương sai mẫu hiệu chỉnh ŝ^2 = 4. Khoảng tin cậy cho phương sai tổng thể σ^2 được xây dựng dựa trên quy luật phân phối xác suất nào?",
+    "prompt": "Khảo sát một mẫu cỡ n = 25 từ phân phối chuẩn thu được phương sai mẫu hiệu chỉnh ŝ^2 = 4. Khoảng tin cậy cho phương sai tổng thể σ^2 được xây dựng dựa trên quy luật phân phối xác suất nào?",
     "options": [
       "A. Phân phối chuẩn chuẩn hóa $N(0,1)$",
       "B. Phân phối Student t với 24 bậc tự do",

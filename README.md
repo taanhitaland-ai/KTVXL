@@ -13,7 +13,7 @@ Trang đã công bố: [GitHub Pages](https://taanhitaland-ai.github.io/KTVXL/).
 
 ## Chạy trên máy
 
-Mở `web/index.html` hoặc `docs/index.html` bằng Chrome/Edge. Dữ liệu câu hỏi và thư viện hiển thị công thức đều nằm trong dự án, nên không cần máy chủ hay CDN để luyện tập. Phông chữ Google là tùy chọn, có phông chữ dự phòng.
+Mở `web/index.html` hoặc `docs/index.html` bằng Chrome/Edge. Dữ liệu câu hỏi và thư viện hiển thị công thức đều nằm trong dự án, nên không cần máy chủ hay CDN để luyện tập. Tiêu đề câu hỏi dùng Be Vietnam Pro được đóng gói tại máy, có đầy đủ dấu tiếng Việt. Dữ liệu hiển thị được chuẩn hóa NFC; các phông chữ Google còn lại là tùy chọn và có phông chữ dự phòng.
 
 Để kiểm tra đường dẫn và tải PDF qua HTTP, chạy từ thư mục dự án với Python 3.10 trở lên:
 
@@ -33,6 +33,14 @@ Mở [bản nguồn](http://127.0.0.1:8765/web/index.html) hoặc [bản GitHub 
 - Đáp án điền kết quả trong bài thi tự ghi nhận khi nhập. Sau khi nộp hoặc hết giờ, bài làm được khóa; có thể xem lại lời giải hoặc chọn đề khác.
 
 Lịch sử luyện tập và câu đánh dấu được lưu theo từng môn trên trình duyệt. Bài thi đang làm được cảnh báo khi thoát hoặc tải lại trang; bài thi chưa nộp không được khôi phục sau khi đóng trang.
+
+## Ghi chú cá nhân và thông báo cập nhật
+
+Ở **Luyện tập**, nhấn **✎** cạnh nút gắn sao của câu hỏi để viết ghi chú. Thẻ ghi chú nằm ngay dưới câu hỏi trên máy tính và điện thoại. Bấm vào thẻ hoặc nút bút để chuyển chính thẻ đó thành ô nhập; cột phải chỉ hiển thị phương pháp và mẹo nhớ. Chọn một trong sáu màu, nhấn **Lưu ghi chú** hoặc **Ctrl/⌘ + Enter**. Nội dung đã lưu hiện thành một thẻ màu dưới đáp án, thu gọn sau ba dòng với nút **Xem thêm**. Câu chưa có note chỉ hiện nút bút; màu giấy nhớ thay đổi theo giao diện sáng/tối. Thông báo **✓ Đã lưu** tự ẩn sau hai giây. Nút Lưu chỉ bật khi có thay đổi. Xóa yêu cầu xác nhận và có thể hoàn tác; thao tác **Làm lại từ đầu** chỉ xóa lịch sử trả lời, giữ ghi chú.
+
+Ghi chú lưu theo môn và ID câu hỏi trong trình duyệt hiện tại (`kma_question_notes_v1`), không gửi tới máy chủ. Không tự khôi phục bản nháp chưa lưu sau khi đóng trang. Chỉ hiển thị văn bản thuần, giới hạn 2.000 ký tự; màu, ID và dữ liệu lưu được kiểm tra trước khi sử dụng. Khi không lưu được, ô nhập giữ nguyên nội dung và báo lỗi.
+
+Nút chuông **Cập nhật** mở lịch sử tính năng mới và sửa lỗi. Trạng thái đã đọc lưu riêng trên trình duyệt. Để thêm một bản cập nhật, thêm mục mới vào đầu `web/site_updates_data.js` với `id` mới, ngày, tiêu đề và các danh sách `added` / `fixed`; giữ nguyên ID các bản cũ rồi chạy bước đồng bộ bên dưới.
 
 ## Sơ đồ Vi xử lý
 

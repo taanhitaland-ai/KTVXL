@@ -2212,6 +2212,9 @@ code, pre, .mono {
   .subject-toggle-btn { flex: 1 1 45%; white-space: normal; }
 }
 @media (max-width: 600px) {
+  .filter-item-wrapper { flex-wrap: wrap; max-width: 100%; min-width: 0; }
+  .filter-btn-group { min-width: 0; max-width: 100%; }
+  #filter-source { min-width: 0; max-width: 100%; }
   .pomodoro-card, .tracker-card { min-width: 0; padding: 16px; }
   .pomo-header, .pomo-custom-row, .pomo-main-controls { flex-wrap: wrap; }
   .tracker-metrics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
@@ -2401,3 +2404,7 @@ body.planner-pinned .side-planner-drawer {
   padding: 8px 10px;
   margin-bottom: 8px;
 }
+
+/* Vietnamese prompts: use complete local glyph sets and avoid synthetic bold. */
+.q-title{font-family:'Be Vietnam Pro','Plus Jakarta Sans',sans-serif;font-weight:800;line-height:1.65;font-synthesis:none}
+.q-title strong{font-weight:800}
