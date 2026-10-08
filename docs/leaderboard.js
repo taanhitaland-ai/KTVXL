@@ -12,6 +12,7 @@
   };
   let dialog,
     podium,
+    listTitle,
     list,
     personal,
     caption,
@@ -159,11 +160,33 @@
       );
       podium.append(card);
     }
-    data.rows
-      .slice(3)
-      .forEach((member) => list.append(row(member, data.rows[0].minutes)));
-    list.hidden = data.rows.length > 0 && data.rows.length <= 3;
-    if (!data.rows.length)
+    const bestMinutes = data.rows[0]?.minutes || 60;
+    const listRows = [...data.rows.slice(3, 10)];
+    if (data.rows.length > 0 && listRows.length < 7) {
+      const sampleRunnerUps = [
+        { id: "sample-slot-4", nickname: "KMA Chăm Chỉ", minutes: Math.min(25, Math.max(1, Math.round(bestMinutes * 0.4))), sessions: 1 },
+        { id: "sample-slot-5", nickname: "Coder Mật Mã", minutes: Math.min(20, Math.max(1, Math.round(bestMinutes * 0.35))), sessions: 1 },
+        { id: "sample-slot-6", nickname: "Thần Đồng Vi Xử Lý", minutes: Math.min(18, Math.max(1, Math.round(bestMinutes * 0.3))), sessions: 1 },
+        { id: "sample-slot-7", nickname: "Học Bá KMA", minutes: Math.min(15, Math.max(1, Math.round(bestMinutes * 0.25))), sessions: 1 },
+        { id: "sample-slot-8", nickname: "Chiến Thần Ôn Thi", minutes: Math.min(12, Math.max(1, Math.round(bestMinutes * 0.2))), sessions: 1 },
+        { id: "sample-slot-9", nickname: "Cú Đêm KMA", minutes: Math.min(10, Math.max(1, Math.round(bestMinutes * 0.15))), sessions: 1 },
+        { id: "sample-slot-10", nickname: "Tân Binh Chăm Học", minutes: Math.min(5, Math.max(1, Math.round(bestMinutes * 0.1))), sessions: 1 },
+      ];
+      let nextRank = 4 + listRows.length;
+      for (const p of sampleRunnerUps) {
+        if (listRows.length >= 7) break;
+        listRows.push({
+          ...p,
+          rank: nextRank++,
+          sample: true,
+        });
+      }
+    }
+    listRows.forEach((member) => list.append(row(member, bestMinutes)));
+    if (listTitle) listTitle.hidden = !data.rows.length;
+    list.hidden = !data.rows.length;
+    if (!data.rows.length) {
+      if (listTitle) listTitle.hidden = true;
       list.append(
         el(
           "li",
@@ -175,6 +198,7 @@
               : "Chưa có phiên học trong khoảng thời gian này.",
         ),
       );
+    }
     if (!data.me) {
       const copy = el("div", "lb-personal-copy");
       copy.append(
@@ -306,6 +330,7 @@
     filters.append(periods, label);
     caption = el("p", "lb-caption");
     podium = el("div", "lb-podium");
+    listTitle = el("div", "lb-list-title", "🎖️ Hạng 4 — 10 Bảng Xếp Hạng");
     list = el("ol", "lb-list");
     list.setAttribute("aria-label", "Thứ hạng người học");
     personal = el("div", "lb-personal");
@@ -338,7 +363,7 @@
     refresh.setAttribute("aria-label", "Làm mới bảng xếp hạng");
     filters.append(refresh);
     top.append(filterBar);
-    main.append(caption, podium, list, rules, demo);
+    main.append(caption, podium, listTitle, list, rules, demo);
     dialog.append(top, main, personal);
     document.body.append(dialog);
     dialog.addEventListener("close", () =>

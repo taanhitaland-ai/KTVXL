@@ -229,3 +229,77 @@ body.dark-mode .practice-nav-btn.status-wrong {
 body.dark-mode .practice-nav-btn.is-active {
   outline-color: var(--night-accent);
 }
+
+/* Quick Knowledge Notes Dark Theme */
+body.dark-mode :is(.side-notes-drawer) {
+  background: #241433;
+  border-color: var(--border-color);
+  color: #F8FAFC;
+}
+
+body.dark-mode .side-notes-drawer .side-drawer-header {
+  background: #5B21B6;
+  color: #FFF;
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .notes-filter-tabs {
+  background: #180D24;
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .notes-tab-btn {
+  background: #2E1844;
+  color: #DDD6FE;
+  border-color: var(--border-color);
+}
+
+body.dark-mode .notes-tab-btn.active {
+  background: #8B5CF6;
+  color: #FFF;
+}
+
+body.dark-mode .notes-create-card,
+body.dark-mode .quick-note-item {
+  background: #2D1A3F;
+  border-color: var(--border-color);
+  color: #F8FAFC;
+}
+
+body.dark-mode .notes-input,
+body.dark-mode .notes-textarea,
+body.dark-mode .notes-search-input {
+  background: #1E102E;
+  border-color: #4C2E6D;
+  color: #F8FAFC;
+}
+
+body.dark-mode .notes-count-badge {
+  background: #2E1844;
+  color: #DDD6FE;
+  border-color: var(--border-color);
+}
+
+body.dark-mode .note-item-title {
+  color: #F8FAFC;
+}
+
+body.dark-mode .note-item-content {
+  color: #E2E8F0;
+}
+
+body.dark-mode .note-mini-btn {
+  background: #3B2054;
+  border-color: #4C2E6D;
+  color: #F8FAFC;
+}
+
+body.dark-mode .notes-empty-state {
+  background: #1E102E;
+  border-color: #4C2E6D;
+  color: #DDD6FE;
+}
+
+body.dark-mode .notes-empty-state p {
+  color: #94A3B8;
+}

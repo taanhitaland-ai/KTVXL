@@ -299,6 +299,17 @@ body.dark-mode .lb-eyebrow {
 .lb-podium-empty::before {
   display: none;
 }
+.lb-list-title {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--lb-muted);
+  margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 .lb-list {
   list-style: none;
   margin: 0;
