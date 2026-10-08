@@ -183,6 +183,7 @@ code, pre, .mono {
   align-items: center;
   gap: 6px;
   flex-wrap: wrap;
+  margin-left: auto;
 }
 
 .header-utility-group :is(button, .neo-btn, .sync-auth-trigger, .lb-trigger, .streak-trigger) {
@@ -2325,8 +2326,11 @@ code, pre, .mono {
     justify-content: space-between;
   }
   .header-utility-group {
-    justify-content: flex-start;
-    gap: 5px;
+    margin-left: 0 !important;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 6px;
+    flex-wrap: wrap;
   }
   .header-bottom-row {
     flex-direction: column;
@@ -2346,8 +2350,19 @@ code, pre, .mono {
   }
   .neo-floating-planner-trigger {
     top: auto !important;
-    bottom: 80px !important;
+    bottom: 74px !important;
     right: 0 !important;
+    padding: 4px 8px !important;
+    font-size: 0.75rem !important;
+  }
+  .neo-floating-leaderboard-trigger,
+  #leaderboard-trigger.neo-floating-leaderboard-trigger,
+  #leaderboard-trigger {
+    top: auto !important;
+    bottom: 24px !important;
+    right: 0 !important;
+    padding: 4px 8px !important;
+    font-size: 0.75rem !important;
   }
 }
 @media (max-width: 600px) {
@@ -2394,7 +2409,7 @@ code, pre, .mono {
 .neo-floating-planner-trigger {
   position: fixed;
   right: 0;
-  top: 240px;
+  top: 230px;
   z-index: 990;
   display: flex;
   align-items: center;
@@ -2415,6 +2430,44 @@ code, pre, .mono {
 .neo-floating-planner-trigger:hover {
   transform: translateX(-4px);
   box-shadow: -5px 5px 0px #000;
+}
+
+/* Floating Trigger Button for Leaderboard (Persistent Right Docked Tab) */
+.neo-floating-leaderboard-trigger,
+#leaderboard-trigger.neo-floating-leaderboard-trigger,
+#leaderboard-trigger {
+  position: fixed;
+  right: 0;
+  top: 295px;
+  z-index: 990;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--neo-green);
+  color: #000;
+  border: var(--border-width) solid #000;
+  border-right: none;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  box-shadow: -3px 3px 0px #000;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.82rem;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.neo-floating-leaderboard-trigger:hover,
+#leaderboard-trigger.neo-floating-leaderboard-trigger:hover,
+#leaderboard-trigger:hover {
+  transform: translateX(-4px);
+  box-shadow: -5px 5px 0px #000;
+}
+
+.leaderboard-trigger-icon {
+  font-size: 1.15rem;
 }
 
 .planner-trigger-icon {
@@ -2556,3 +2609,129 @@ body.planner-pinned .side-planner-drawer {
 /* Vietnamese prompts: use complete local glyph sets and avoid synthetic bold. */
 .q-title{font-family:'Be Vietnam Pro','Plus Jakarta Sans',sans-serif;font-weight:800;line-height:1.65;font-synthesis:none}
 .q-title strong{font-weight:800}
+
+/* ============================================================
+   PRACTICE QUESTIONS NAVIGATOR (MỤC LỤC CÂU HỎI TRANG HIỆN TẠI)
+   ============================================================ */
+.practice-navigator-card {
+  background: #FFF;
+  border: var(--border-width) solid #000;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-main);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.nav-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1.5px dashed rgba(0, 0, 0, 0.15);
+}
+
+.nav-card-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: -0.3px;
+}
+
+.nav-card-icon {
+  font-size: 1.1rem;
+}
+
+.nav-status-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.nav-summary-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border: 1.5px solid #000;
+  border-radius: 4px;
+  box-shadow: 1px 1px 0 #000;
+  background: #F1F5F9;
+  color: #1F2937;
+}
+
+.nav-summary-pill.pill-correct {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.nav-summary-pill.pill-wrong {
+  background: #FEE2E2;
+  color: #B91C1C;
+}
+
+.practice-nav-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(34px, 1fr));
+  gap: 6px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 4px 2px;
+}
+
+.practice-nav-btn {
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.78rem;
+  background: #FFF;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 6px;
+  box-shadow: 2px 2px 0 #000;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.practice-nav-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 #000;
+}
+
+.practice-nav-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.practice-nav-btn.status-unanswered {
+  background: #FFF;
+  color: #000;
+}
+
+.practice-nav-btn.status-correct {
+  background: var(--neo-green) !important;
+  color: #000 !important;
+}
+
+.practice-nav-btn.status-wrong {
+  background: var(--neo-red) !important;
+  color: #FFF !important;
+}
+
+.practice-nav-btn.is-active {
+  outline: 3px solid var(--neo-yellow);
+  outline-offset: 1px;
+  transform: scale(1.05);
+}

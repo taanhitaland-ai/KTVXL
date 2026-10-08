@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KTVXL by ashv4ni &amp; henise</title>
   <link rel="stylesheet" href="vendor/fonts/be-vietnam-pro.css?v=64620ee3a752">
-  <link rel="stylesheet" href="styles.css?v=21fb5bb268ed">
+  <link rel="stylesheet" href="styles.css?v=02c9fe9cabb0">
   <link rel="stylesheet" href="chapter_diagrams.css?v=b00efd3cfd30">
-  <link rel="stylesheet" href="dark_theme.css?v=75dafbdb0c96">
+  <link rel="stylesheet" href="dark_theme.css?v=86bf3d69be0a">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23FFE600' stroke='%23000' stroke-width='8'/><text x='50%' y='60%' font-size='42' font-weight='900' text-anchor='middle' fill='%23000'>8051</text></svg>">
   
   <link rel="stylesheet" href="study_music.css?v=2f9e07c2fda1">
@@ -27,9 +27,9 @@
   <script src="pomodoro_clock.js?v=dd29bde3d585"></script>
   <script src="study_streak_model.js?v=a45846b6e12a"></script>
   <script src="study_streak.js?v=76683caffd3a"></script>
-  <script src="cloud_account.js?v=4b5699111d2a"></script>
+  <script src="cloud_account.js?v=9756f83414c7"></script>
   <script src="leaderboard_model.js?v=575a9a2e8b35"></script>
-  <script src="leaderboard.js?v=eccac107f183"></script>
+  <script src="leaderboard.js?v=8302b6634b1e"></script>
 </head>
 <body>
 
@@ -62,7 +62,7 @@
           </div>
         </div>
 
-        <!-- Global Utilities Cluster -->
+        <!-- Global Utilities Cluster (Order from Right to Left: Tài khoản, Sáng/Tối, Cập nhật, Chuỗi) -->
         <div class="header-utility-group" id="header-utilities">
           <button id="btn-site-updates" type="button" class="neo-btn neo-btn-sm neo-btn-white site-updates-trigger" aria-haspopup="dialog" aria-controls="site-updates-dialog" aria-expanded="false" title="Nhật ký cập nhật">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
@@ -70,9 +70,6 @@
           </button>
           <button id="btn-toggle-dark-mode" class="neo-btn neo-btn-sm neo-btn-white" title="Chuyển chế độ Sáng / Tối (Dark Mode)">
             🌙 <span>Tối</span>
-          </button>
-          <button id="btn-toggle-side-planner" class="neo-btn neo-btn-sm neo-btn-yellow" title="Mở thanh Pomodoro & Lịch thi bên phải">
-            🍅 <span>Bấm Giờ</span>
           </button>
         </div>
       </div>
@@ -91,12 +88,6 @@
           </button>
           <button class="nav-tab-btn" data-tab="tab-knowledge" id="btn-tab-knowledge">
             📖 Kiến Thức Trọng Tâm
-          </button>
-          <button class="nav-tab-btn" data-tab="tab-download" id="btn-tab-download">
-            📥 Tải File PDF
-          </button>
-          <button class="nav-tab-btn" data-tab="tab-schedule" id="btn-tab-schedule" style="background: #FEF08A; color: #000;">
-            📅 Lịch Thi & Pomodoro
           </button>
         </nav>
 
@@ -223,55 +214,35 @@
             </div>
           </div>
 
-          <!-- Stress Relief 3D Dice Box -->
-          <div class="stress-relief-card" id="stress-relief-box">
-            <div class="stress-header">
-              <div class="stress-title-wrap">
-                <span class="stress-icon">🎲</span>
-                <span class="stress-title">GÓC XẢ STRESS • TUNG XÚC XẮC</span>
+          <!-- Practice Question Navigator / Mục lục các câu hỏi trong đề -->
+          <div class="practice-navigator-card neo-box" id="practice-navigator-card">
+            <div class="nav-card-header">
+              <div class="nav-card-title-wrap">
+                <span class="nav-card-icon">📋</span>
+                <span class="nav-card-title">MỤC LỤC CÂU HỎI</span>
               </div>
-              <div class="stress-actions">
-                <button type="button" id="btn-dice-sound" class="stress-mini-btn" title="Bật/Tắt âm thanh" aria-label="Bật hoặc tắt âm thanh">🔊</button>
-                <button type="button" id="btn-toggle-dice-dicecount" class="stress-mini-btn" title="Chuyển 1 hoặc 2 xúc xắc">2 🎲</button>
-                <button type="button" id="btn-toggle-stress-collapse" class="stress-mini-btn" title="Thu gọn/Mở rộng" aria-label="Thu gọn hoặc mở rộng">▼</button>
-              </div>
+              <span class="neo-badge badge-exam" id="practice-nav-total-badge">0 câu</span>
             </div>
-            <div class="stress-body" id="stress-body">
-              <div class="dice-stage" id="dice-stage" title="Bấm vào đây để tung xúc xắc!">
-                <div class="dice-wrapper" id="dice-wrap-1">
-                  <div class="dice-shadow" id="dice-shadow-1"></div>
-                  <div class="dice-cube" id="dice-cube-1" data-val="6">
-                    <div class="dice-face face-1"><span class="pip pip-center red"></span></div>
-                    <div class="dice-face face-2"><span class="pip pip-tl"></span><span class="pip pip-br"></span></div>
-                    <div class="dice-face face-3"><span class="pip pip-tl"></span><span class="pip pip-center"></span><span class="pip pip-br"></span></div>
-                    <div class="dice-face face-4"><span class="pip pip-tl"></span><span class="pip pip-tr"></span><span class="pip pip-bl"></span><span class="pip pip-br"></span></div>
-                    <div class="dice-face face-5"><span class="pip pip-tl"></span><span class="pip pip-tr"></span><span class="pip pip-center red"></span><span class="pip pip-bl"></span><span class="pip pip-br"></span></div>
-                    <div class="dice-face face-6"><span class="pip pip-tl"></span><span class="pip pip-tr"></span><span class="pip pip-ml"></span><span class="pip pip-mr"></span><span class="pip pip-bl"></span><span class="pip pip-br"></span></div>
-                  </div>
-                </div>
-                <div class="dice-wrapper" id="dice-wrap-2">
-                  <div class="dice-shadow" id="dice-shadow-2"></div>
-                  <div class="dice-cube" id="dice-cube-2" data-val="6">
-                    <div class="dice-face face-1"><span class="pip pip-center red"></span></div>
-                    <div class="dice-face face-2"><span class="pip pip-tl"></span><span class="pip pip-br"></span></div>
-                    <div class="dice-face face-3"><span class="pip pip-tl"></span><span class="pip pip-center"></span><span class="pip pip-br"></span></div>
-                    <div class="dice-face face-4"><span class="pip pip-tl"></span><span class="pip pip-tr"></span><span class="pip pip-bl"></span><span class="pip pip-br"></span></div>
-                    <div class="dice-face face-5"><span class="pip pip-tl"></span><span class="pip pip-tr"></span><span class="pip pip-center red"></span><span class="pip pip-bl"></span><span class="pip pip-br"></span></div>
-                    <div class="dice-face face-6"><span class="pip pip-tl"></span><span class="pip pip-tr"></span><span class="pip pip-ml"></span><span class="pip pip-mr"></span><span class="pip pip-bl"></span><span class="pip pip-br"></span></div>
-                  </div>
-                </div>
-              </div>
-              <div class="stress-result-wrap">
-                <div class="stress-score-badge" id="stress-score">🎲 Nhấn để ném!</div>
-                <p class="stress-quote" id="stress-quote">Ném xúc xắc để xả stress & nhận quẻ may mắn ôn thi hôm nay ✨</p>
-              </div>
-              <div class="stress-btn-row">
-                <button type="button" id="btn-roll-dice" class="neo-btn neo-btn-yellow stress-roll-btn">
-                  🎲 NÉM XÚC XẮC
-                </button>
-              </div>
+
+            <!-- Summary status chips -->
+            <div class="nav-status-summary">
+              <span class="nav-summary-pill pill-unanswered" title="Chưa làm">
+                ⚪ <span id="nav-stat-unanswered">0</span> Chưa làm
+              </span>
+              <span class="nav-summary-pill pill-correct" title="Làm đúng">
+                ✅ <span id="nav-stat-correct">0</span> Đúng
+              </span>
+              <span class="nav-summary-pill pill-wrong" title="Làm sai">
+                ❌ <span id="nav-stat-wrong">0</span> Sai
+              </span>
+            </div>
+
+            <!-- Scrollable Question Palette -->
+            <div class="practice-nav-palette" id="practice-nav-grid" role="region" aria-label="Mục lục các câu hỏi trong đề">
+              <!-- Grid will be rendered dynamically by app.js -->
             </div>
           </div>
+          <div id="stress-relief-box" style="display: none;" hidden></div>
         </div>
       </div>
     </section>
@@ -1830,6 +1801,14 @@
     </span>
   </button>
 
+  <!-- Persistent Floating Trigger Button for Leaderboard -->
+  <button id="leaderboard-trigger" class="neo-floating-leaderboard-trigger" title="Xem Bảng Xếp Hạng">
+    <span class="leaderboard-trigger-icon">🏆</span>
+    <span class="leaderboard-trigger-text">
+      <strong>Xếp Hạng</strong>
+    </span>
+  </button>
+
   <!-- Persistent Fixed Right Side Drawer -->
   <aside id="side-planner-drawer" class="side-planner-drawer" aria-label="Thanh công cụ Pomodoro và Lịch thi">
     <!-- Header -->
@@ -2012,7 +1991,7 @@
   <script src="question_notes.js?v=f89ffb09ba14"></script>
   <script src="site_updates_data.js?v=adb88c8ef6ff"></script>
   <script src="site_updates.js?v=b3d947d39cac"></script>
-  <script src="app.js?v=bf6ea56be26f"></script>
+  <script src="app.js?v=8900fcedb984"></script>
   <script src="schedule_pomodoro.js?v=7edb7b8a92d5"></script>
   <script src="music_library.js?v=4fa249c951de"></script>
   <script src="study_music.js?v=7e38c5e1bb49"></script>

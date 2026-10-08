@@ -959,8 +959,11 @@
     streakButton.id = "study-streak-trigger";
     streakButton.hidden = true;
     streakButton.setAttribute("aria-haspopup", "dialog");
-    streakButton.setAttribute("aria-controls", "study-streak-dialog");
-    (document.querySelector(".header-utility-group") || document.querySelector(".stats-bar")).append(authButton, streakButton);
+    const headerGroup = document.querySelector(".header-utility-group") || document.querySelector(".stats-bar");
+    if (headerGroup) {
+      headerGroup.prepend(streakButton);
+      headerGroup.append(authButton);
+    }
     initStreakDialog();
     dialog = el("dialog", "sync-account-dialog");
     dialog.id = "sync-account-dialog";

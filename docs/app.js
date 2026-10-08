@@ -595,6 +595,7 @@
           <p style="color: #666; margin-top: 6px;">Vui lòng thử chọn bộ lọc khác hoặc xóa từ khóa tìm kiếm.</p>
         </div>
       `;
+      renderPracticeNavigator([]);
       return;
     }
 
@@ -635,6 +636,103 @@
     }
 
     renderMath(container);
+    renderPracticeNavigator(displayList);
+  }
+
+  // Practice Question Navigator (Mục lục các câu trong trang hiện tại)
+  function renderPracticeNavigator(displayList) {
+    const navGrid = document.getElementById('practice-nav-grid');
+    const badgeTotal = document.getElementById('practice-nav-total-badge');
+    const statUnanswered = document.getElementById('nav-stat-unanswered');
+    const statCorrect = document.getElementById('nav-stat-correct');
+    const statWrong = document.getElementById('nav-stat-wrong');
+    if (!navGrid) return;
+
+    if (!displayList || displayList.length === 0) {
+      navGrid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; color: #888; font-size: 0.82rem; padding: 12px; font-weight: 700;">Không có câu hỏi phù hợp</div>';
+      if (badgeTotal) badgeTotal.textContent = '0 câu';
+      if (statUnanswered) statUnanswered.textContent = '0';
+      if (statCorrect) statCorrect.textContent = '0';
+      if (statWrong) statWrong.textContent = '0';
+      return;
+    }
+
+    if (badgeTotal) badgeTotal.textContent = `${displayList.length} câu`;
+
+    let countUnanswered = 0;
+    let countCorrect = 0;
+    let countWrong = 0;
+
+    navGrid.innerHTML = '';
+
+    displayList.forEach((q, idx) => {
+      const qNum = idx + 1;
+      const userState = userAnswers[q.id];
+      let status = 'unanswered';
+      if (userState) {
+        if (userState.isCorrect) {
+          status = 'correct';
+          countCorrect++;
+        } else {
+          status = 'wrong';
+          countWrong++;
+        }
+      } else {
+        countUnanswered++;
+      }
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = `practice-nav-btn status-${status}`;
+      btn.id = `nav-btn-${q.id}`;
+      btn.textContent = qNum;
+      btn.title = `Câu ${qNum}: ${status === 'correct' ? 'Làm đúng ✅' : (status === 'wrong' ? 'Làm sai ❌' : 'Chưa làm ⚪')}`;
+
+      btn.addEventListener('click', () => {
+        const targetCard = document.getElementById(`q-card-${q.id}`);
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          highlightActiveCard(targetCard);
+          openSideDetails(q);
+        }
+        navGrid.querySelectorAll('.practice-nav-btn').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+      });
+
+      navGrid.appendChild(btn);
+    });
+
+    if (statUnanswered) statUnanswered.textContent = countUnanswered;
+    if (statCorrect) statCorrect.textContent = countCorrect;
+    if (statWrong) statWrong.textContent = countWrong;
+  }
+
+  function updatePracticeNavigatorItem(qId, isCorrect) {
+    const btn = document.getElementById(`nav-btn-${qId}`);
+    if (btn) {
+      btn.classList.remove('status-unanswered', 'status-correct', 'status-wrong');
+      btn.classList.add(isCorrect ? 'status-correct' : 'status-wrong');
+      btn.title = `Câu ${btn.textContent}: ${isCorrect ? 'Làm đúng ✅' : 'Làm sai ❌'}`;
+    }
+    updatePracticeNavigatorCounts();
+  }
+
+  function updatePracticeNavigatorCounts() {
+    const navGrid = document.getElementById('practice-nav-grid');
+    if (!navGrid) return;
+    const allBtns = navGrid.querySelectorAll('.practice-nav-btn');
+    let correct = 0, wrong = 0, unanswered = 0;
+    allBtns.forEach(btn => {
+      if (btn.classList.contains('status-correct')) correct++;
+      else if (btn.classList.contains('status-wrong')) wrong++;
+      else unanswered++;
+    });
+    const statUnanswered = document.getElementById('nav-stat-unanswered');
+    const statCorrect = document.getElementById('nav-stat-correct');
+    const statWrong = document.getElementById('nav-stat-wrong');
+    if (statUnanswered) statUnanswered.textContent = unanswered;
+    if (statCorrect) statCorrect.textContent = correct;
+    if (statWrong) statWrong.textContent = wrong;
   }
 
   // Create Question Card DOM
@@ -955,6 +1053,8 @@
     card.classList.add('active-selected');
     if (card.id.startsWith('exam-')) {
       document.querySelectorAll('.palette-btn').forEach(btn => btn.classList.toggle('current', btn.id === 'palette-btn-' + card.dataset.questionId));
+    } else {
+      document.querySelectorAll('.practice-nav-btn').forEach(btn => btn.classList.toggle('is-active', btn.id === 'nav-btn-' + card.dataset.questionId));
     }
   }
 
@@ -998,6 +1098,7 @@
       if (showExpBtn) showExpBtn.innerHTML = getExpBtnText(true);
     }
 
+    updatePracticeNavigatorItem(q.id, isCorrect);
     openSideDetails(q);
     highlightActiveCard(card);
   }
@@ -1040,6 +1141,7 @@
       if (showExpBtn) showExpBtn.innerHTML = getExpBtnText(true);
     }
 
+    updatePracticeNavigatorItem(q.id, isCorrect);
     openSideDetails(q);
     highlightActiveCard(card);
   }

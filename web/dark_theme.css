@@ -174,3 +174,58 @@ body.dark-mode .exam-alert-ticker {
 body.dark-mode .ticker-text {
   color: var(--text-main);
 }
+
+body.dark-mode :is(.neo-floating-planner-trigger, .neo-floating-leaderboard-trigger, #leaderboard-trigger) {
+  background: var(--night-raised) !important;
+  border-color: var(--border-color) !important;
+  color: var(--night-accent) !important;
+  box-shadow: -3px 3px 0 #10091B !important;
+}
+
+body.dark-mode :is(.neo-floating-planner-trigger, .neo-floating-leaderboard-trigger, #leaderboard-trigger):hover {
+  background: var(--night-hover) !important;
+  box-shadow: -5px 5px 0 #10091B !important;
+}
+
+body.dark-mode .practice-navigator-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-main);
+  box-shadow: var(--shadow-main);
+}
+body.dark-mode .nav-card-header {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .nav-summary-pill {
+  background: var(--night-raised);
+  color: var(--text-muted);
+  border-color: var(--border-color);
+  box-shadow: 1px 1px 0 #10091B;
+}
+body.dark-mode .nav-summary-pill.pill-correct {
+  background: #1B4332;
+  color: #A6C99B;
+}
+body.dark-mode .nav-summary-pill.pill-wrong {
+  background: #553042;
+  color: #FFD6DC;
+}
+body.dark-mode .practice-nav-btn.status-unanswered {
+  background: var(--night-raised);
+  color: var(--text-main);
+  border-color: var(--border-color);
+  box-shadow: 2px 2px 0 #10091B;
+}
+body.dark-mode .practice-nav-btn.status-correct {
+  background: #2D6A4F !important;
+  color: #E8F5E9 !important;
+  border-color: var(--border-color) !important;
+}
+body.dark-mode .practice-nav-btn.status-wrong {
+  background: #7B1E2B !important;
+  color: #FFF !important;
+  border-color: var(--border-color) !important;
+}
+body.dark-mode .practice-nav-btn.is-active {
+  outline-color: var(--night-accent);
+}

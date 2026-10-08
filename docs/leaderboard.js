@@ -355,13 +355,19 @@
       )
         dialog.close();
     });
-    const trigger = button("🏆 Xếp hạng", "lb-trigger", (event) =>
-      open(event.currentTarget),
-    );
-    trigger.id = "leaderboard-trigger";
+    let trigger = document.getElementById("leaderboard-trigger");
+    if (!trigger) {
+      trigger = button("🏆 Xếp hạng", "lb-trigger neo-floating-leaderboard-trigger", (event) =>
+        open(event.currentTarget),
+      );
+      trigger.id = "leaderboard-trigger";
+      document.body.append(trigger);
+    } else {
+      trigger.classList.add("lb-trigger");
+      trigger.addEventListener("click", (event) => open(event.currentTarget));
+    }
     trigger.setAttribute("aria-haspopup", "dialog");
     trigger.setAttribute("aria-controls", "leaderboard-dialog");
-    (document.querySelector(".header-utility-group") || document.querySelector(".stats-bar")).append(trigger);
     const promo = el("section", "lb-promo");
     promo.setAttribute("aria-label", "Bảng xếp hạng Pomodoro");
     const copy = el("div", "lb-promo-copy");
