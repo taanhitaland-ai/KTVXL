@@ -818,10 +818,12 @@
     // Prompt Box
     const promptBox = document.createElement('div');
     promptBox.className = 'q-prompt-box';
+    if (!isExamMode) promptBox.dataset.hlRoot = window.KMA_HIGHLIGHTS_STORE.key(currentSubject, 'practice', q.id, 'prompt');
 
     const promptTitle = document.createElement('div');
     promptTitle.className = 'q-title';
     promptTitle.innerHTML = `<strong>Câu ${displayIndex}.</strong> ${formatMarkdownText(q.prompt)}`;
+    promptTitle.firstElementChild.setAttribute('data-hl-ignore', '');
     promptBox.appendChild(promptTitle);
 
     // Extra lines / Code
@@ -879,8 +881,9 @@
 
         optBtn.innerHTML = `
           <span class="option-letter">${letter}</span>
-          <span style="flex: 1;">${formatMarkdownText(cleanOptText)}</span>
+          <span class="q-option-text" style="flex: 1;">${formatMarkdownText(cleanOptText)}</span>
         `;
+        if (!isExamMode) optBtn.querySelector('.q-option-text').dataset.hlRoot = window.KMA_HIGHLIGHTS_STORE.key(currentSubject, 'practice', q.id, 'option-' + letter.toLowerCase());
 
         // Check if already answered
         if (userState) {
@@ -893,6 +896,9 @@
         }
 
         optBtn.addEventListener('click', () => {
+          // Selecting answer text to highlight it must not submit an answer.
+          const selection = window.getSelection();
+          if (!isExamMode && selection?.toString().trim() && optBtn.contains(selection.anchorNode)) return;
           handleSelectMCQ(q, letter, card, optsGrid, isExamMode);
         });
 
@@ -999,6 +1005,11 @@
       });
       if (noteButton) card.querySelector('.q-meta-actions').prepend(noteButton);
     }
+    if (!isExamMode) card.querySelectorAll('.inline-exp-sec-body').forEach(body => {
+      const section = body.closest('.inline-exp-section');
+      const part = section.classList.contains('exp-main') ? 'explanation' : section.classList.contains('exp-method') ? 'method' : 'tip';
+      body.dataset.hlRoot = window.KMA_HIGHLIGHTS_STORE.key(currentSubject, 'practice', q.id, part);
+    });
     return card;
   }
 
@@ -1189,6 +1200,11 @@
     }
 
     contentEl.innerHTML = html || '<div class="panel-placeholder"><p>Câu này chưa có phương pháp hoặc mẹo riêng.</p></div>';
+    contentEl.querySelectorAll('.panel-text').forEach(body => {
+      const method = body.closest('.sec-meth');
+      const part = method ? (methodContent === q.solution_method ? 'method' : 'methodology') : (tipContent === q.casio_tip ? 'tip' : 'side-tip');
+      body.dataset.hlRoot = window.KMA_HIGHLIGHTS_STORE.key(currentSubject, 'practice', q.id, part);
+    });
     renderMath(contentEl);
   }
 
@@ -1490,6 +1506,10 @@
       `;
       container.appendChild(casioCard);
     }
+    container.querySelectorAll('.chapter-body').forEach((body, index) => {
+      const id = body.closest('.chapter-card').dataset.chapterId || 'extra-' + index;
+      body.dataset.hlRoot = window.KMA_HIGHLIGHTS_STORE.key(currentSubject, 'knowledge', id);
+    });
     container.querySelectorAll('.chapter-header').forEach(header => {
       const body = header.closest('.chapter-card').querySelector('.chapter-body');
       if (!body) return;
@@ -1851,6 +1871,7 @@
         console.warn('KaTeX render error:', err);
       }
     }
+    window.KMA_TEXT_HIGHLIGHTS?.mount(target);
   }
 
   window.addEventListener('load', () => {

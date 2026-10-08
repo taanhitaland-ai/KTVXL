@@ -717,14 +717,3 @@ body.dark-mode .lb-dialog :is(button, select, summary):focus-visible {
     display: inline-block;
   }
 }
-.lb-refresh {
-  background: transparent;
-  border: 0;
-  padding: 6px 0;
-  color: inherit;
-  font:
-    700 11px "Be Vietnam Pro",
-    sans-serif;
-  text-decoration: underline;
-  cursor: pointer;
-}

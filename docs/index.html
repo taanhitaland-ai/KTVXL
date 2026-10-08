@@ -13,13 +13,14 @@
   <link rel="stylesheet" href="study_music.css?v=2f9e07c2fda1">
   <link rel="stylesheet" href="stress_dice.css?v=d925212b1781">
   <link rel="stylesheet" href="study_notes_updates.css?v=e4c9468d0b6e">
+  <link rel="stylesheet" href="text_highlights.css?v=64afd86a0164">
   <!-- KaTeX Math Formula Rendering -->
   <link rel="stylesheet" href="vendor/katex/katex.min.css?v=505d5f829022">
   <script defer src="vendor/katex/katex.min.js?v=dc84b296ec3e"></script>
   <script defer src="vendor/katex/auto-render.min.js?v=9cb8dacfc086"></script>
   <link rel="stylesheet" href="cloud_account.css?v=863383cdf754">
   <link rel="stylesheet" href="study_streak.css?v=62796319bae2">
-  <link rel="stylesheet" href="leaderboard.css?v=dd376eebe7b2">
+  <link rel="stylesheet" href="leaderboard.css?v=e63c65fc8d65">
   <script src="vendor/supabase/supabase.js?v=d6a5c4414a5d"></script>
   <script src="cloud_config.js?v=ae6d75b48a2d"></script>
   <script src="cloud_sync_model.js?v=9c1b456db713"></script>
@@ -29,7 +30,7 @@
   <script src="study_streak.js?v=76683caffd3a"></script>
   <script src="cloud_account.js?v=9756f83414c7"></script>
   <script src="leaderboard_model.js?v=575a9a2e8b35"></script>
-  <script src="leaderboard.js?v=c639eebdfbab"></script>
+  <script src="leaderboard.js?v=f77d485a2da7"></script>
 </head>
 <body>
 
@@ -192,6 +193,7 @@
       </div>
 
       <!-- Practice Arena Split Layout -->
+      <p class="highlight-hint"><strong>Tô màu để nhớ:</strong> bôi đen chữ rồi bấm cây cọ. Phím 1–6 chọn màu, Enter dùng màu gần nhất, Esc đóng.</p>
       <div class="arena-layout">
         <!-- Left: Questions Stream -->
         <div class="questions-stream" id="questions-container">
@@ -316,6 +318,7 @@
         </a>
       </div>
 
+      <p class="highlight-hint"><strong>Tô màu để nhớ:</strong> bôi đen chữ rồi bấm cây cọ. Phím 1–6 chọn màu, Enter dùng màu gần nhất, Esc đóng.</p>
       <div class="knowledge-grid" id="knowledge-chapters-container">
         <!-- Dynamically populated from knowledge_base.json -->
       </div>
@@ -2069,9 +2072,11 @@
   <script src="chapter_diagrams.js?v=5eabb7ab0c73"></script>
   <script src="question_notes_store.js?v=9024f9cbe03e"></script>
   <script src="question_notes.js?v=f89ffb09ba14"></script>
-  <script src="site_updates_data.js?v=adb88c8ef6ff"></script>
+  <script src="text_highlights_store.js?v=f396ef55b61e"></script>
+  <script src="text_highlights.js?v=b46a8faf0527"></script>
+  <script src="site_updates_data.js?v=579ebb0ad55f"></script>
   <script src="site_updates.js?v=b3d947d39cac"></script>
-  <script src="app.js?v=8900fcedb984"></script>
+  <script src="app.js?v=fdabc9f464fe"></script>
   <script src="schedule_pomodoro.js?v=7edb7b8a92d5"></script>
   <script src="quick_notes.js?v=0df60202b0f3"></script>
   <script src="music_library.js?v=4fa249c951de"></script>

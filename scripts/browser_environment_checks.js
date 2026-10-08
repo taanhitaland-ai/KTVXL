@@ -59,7 +59,7 @@ async (page) => {
     await remote.tab.locator("#leaderboard-trigger").click();
     for (const size of [3,4,10,1,0]) {
       count = size;
-      await remote.tab.getByRole("button",{name:"Làm mới bảng xếp hạng",exact:true}).click();
+      await remote.tab.evaluate(() => KMA_ACCOUNT.refreshRanking());
       await remote.tab.waitForFunction(expected => {
         const top = document.querySelectorAll(".lb-podium-card[data-member]").length;
         const rows = document.querySelectorAll(".lb-row").length;
@@ -70,7 +70,7 @@ async (page) => {
       checks.push(size + " real participants render exactly their own rows");
     }
     count = 10;
-    await remote.tab.getByRole("button",{name:"Làm mới bảng xếp hạng",exact:true}).click();
+    await remote.tab.evaluate(() => KMA_ACCOUNT.refreshRanking());
     await remote.tab.locator("#lb-subject").selectOption("ktvxl");
     await remote.tab.waitForFunction(() => document.querySelectorAll(".lb-podium-card[data-member]").length === 1 && document.querySelectorAll(".lb-row").length === 0);
     await remote.tab.locator("#lb-subject").selectOption("all");

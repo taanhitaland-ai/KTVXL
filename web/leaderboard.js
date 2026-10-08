@@ -350,12 +350,6 @@
     );
     const filterBar = el("div", "lb-filter-bar");
     filterBar.append(filters);
-    const refresh = button("↻ Làm mới", "lb-refresh", () => {
-      api().refreshRanking?.();
-      render();
-    });
-    refresh.setAttribute("aria-label", "Làm mới bảng xếp hạng");
-    filters.append(refresh);
     top.append(filterBar);
     main.append(caption, podium, listTitle, list, rules, demo);
     dialog.append(top, main, personal);

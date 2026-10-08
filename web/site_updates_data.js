@@ -1,5 +1,8 @@
 /* Add a new stable ID for each release; never reuse IDs already marked as read. */
 window.KMA_SITE_UPDATES = [
+  { id: '2026-10-09-paper-highlights', date: '09/10/2026', title: 'Highlight tài liệu với 6 màu giấy nhớ',
+    added: ['Tô màu đề bài, đáp án, lời giải và Kiến thức trọng tâm ở cả bốn môn: bôi đen từ 2 ký tự, bấm cây cọ rồi chọn màu.', 'Sáu màu Cần nhớ, Hay nhầm, Khó, Đã hiểu, Cần hỏi và Mẹo hay; bấm đoạn đã tô để đổi màu hoặc xóa. Phím 1–6 chọn màu, Enter dùng màu gần nhất, Esc đóng.', 'Highlight được lưu riêng trên trình duyệt đang dùng và hiện lại khi tải trang; hiện chưa đồng bộ qua tài khoản Google.'],
+    fixed: ['Cây cọ chỉ mở dải màu, không tự chọn hoặc tô vàng khi chưa chọn màu; giữ vùng chọn sau khi tô.', 'Nền giấy nhớ bo mềm sáng/tối, nét nhấn theo màu và dải màu nở mượt; đặt dưới vùng chọn trên cảm ứng, tự tránh mép màn hình.', 'Bỏ nút Làm mới khỏi bảng xếp hạng để thanh chức năng gọn hơn.'] },
   { id: '2026-10-08-streak-focus-reliability', date: '08/10/2026', title: 'Chuỗi học theo môn & Pomodoro ổn định hơn',
     added: ['Chuỗi học có 5 cấp ở mốc 1, 2, 3, 5 và 7 ngày liên tiếp; bấm ngọn lửa trên thanh trạng thái để mở cửa sổ chuỗi riêng, chưa có chuỗi thì nút ẩn.', 'Bản đồ nhiệt trong tháng có màu riêng từng môn, đánh dấu ngày thi; bấm ngày để xem thời gian từng môn và lịch thi.', 'Tự động có tên trên bảng xếp hạng khi tài khoản có phút Pomodoro; thêm nút làm mới bảng.'],
     fixed: ['Phản hồi đồng bộ không dựng lại câu hỏi khi tiến trình không thay đổi.', 'Đồng hồ tính thời gian thực khi tab chạy nền; tải lại trang tiếp tục phiên đang học.', 'Kết thúc sớm ghi nhận số phút thực tế; giữ yêu cầu hoàn tất để thử lại khi mất mạng và tránh cộng đôi.'] },
