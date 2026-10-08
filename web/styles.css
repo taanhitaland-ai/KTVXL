@@ -133,6 +133,7 @@ code, pre, .mono {
 
 .header-container {
   max-width: 1400px;
+  min-width: 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -146,6 +147,7 @@ code, pre, .mono {
   justify-content: space-between;
   gap: 14px;
   flex-wrap: wrap;
+  min-width: 0;
 }
 
 .header-brand-wrap {
@@ -153,6 +155,8 @@ code, pre, .mono {
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .logo-area {
@@ -231,6 +235,7 @@ code, pre, .mono {
   gap: 12px;
   padding-top: 6px;
   border-top: 1.5px dashed rgba(0,0,0,0.15);
+  min-width: 0;
 }
 
 .nav-tabs {
@@ -239,7 +244,8 @@ code, pre, .mono {
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 2px;
+  min-width: 0;
+  padding: 2px 3px 4px;
 }
 
 .nav-tab-btn {
@@ -258,6 +264,7 @@ code, pre, .mono {
   gap: 5px;
   white-space: nowrap;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .nav-tab-btn:hover {
@@ -432,7 +439,8 @@ code, pre, .mono {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  flex-shrink: 0;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .filter-source-wrapper {
@@ -464,6 +472,7 @@ code, pre, .mono {
   align-items: center;
   flex-wrap: wrap;
   gap: 5px;
+  min-width: 0;
 }
 
 .neo-select, .neo-input {
@@ -2325,6 +2334,12 @@ code, pre, .mono {
   .header-brand-wrap {
     justify-content: space-between;
   }
+  .nav-tabs {
+    justify-content: flex-start;
+  }
+  .filter-item-wrapper {
+    flex-wrap: wrap;
+  }
   .header-utility-group {
     margin-left: 0 !important;
     width: 100%;
@@ -2375,9 +2390,30 @@ code, pre, .mono {
   }
 }
 @media (max-width: 600px) {
-  .filter-item-wrapper { flex-wrap: wrap; max-width: 100%; min-width: 0; }
-  .filter-btn-group { min-width: 0; max-width: 100%; }
-  #filter-source { min-width: 0; max-width: 100%; }
+  .header-brand-wrap { flex-direction: column; align-items: stretch; gap: 8px; }
+  .header-utility-group { justify-content: flex-start; }
+  .header-utility-group :is(button, .neo-btn, .sync-auth-trigger, .streak-trigger) { height: 38px !important; }
+  .nav-tabs { flex-wrap: wrap; gap: 6px; overflow: visible; white-space: normal; }
+  .nav-tab-btn {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 0;
+    min-height: 40px;
+    height: auto;
+    padding: 7px 8px;
+    white-space: normal;
+    line-height: 1.35;
+    text-align: center;
+    justify-content: center;
+  }
+  .nav-tab-btn span { flex-shrink: 0; }
+  .filter-item-wrapper { width: 100%; gap: 6px; }
+  .filter-label { width: 100%; }
+  .filter-btn-group { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 6px; }
+  .neo-filter-btn { min-width: 0; min-height: 36px; height: auto; white-space: normal; line-height: 1.4; justify-content: center; text-align: center; }
+  .filter-status-wrapper .neo-filter-btn:last-child { grid-column: 1 / -1; }
+  #filter-source { min-width: 0; max-width: 100%; width: 100%; height: 38px; }
+  .filter-row-secondary #search-input { flex-basis: 100%; height: 38px; }
+  #btn-reset-progress { margin-left: auto; min-height: 36px; }
   .pomodoro-card, .tracker-card { min-width: 0; padding: 16px; }
   .pomo-header, .pomo-custom-row, .pomo-main-controls { flex-wrap: wrap; }
   .tracker-metrics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
@@ -2392,15 +2428,20 @@ code, pre, .mono {
   .nav-tab-btn { max-width: 100%; }
   .brand-title { font-size: 1.1rem; overflow-wrap: anywhere; }
   .subject-toggle-group {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
     width: 100%;
-    padding: 2px;
+    min-width: 0;
+    gap: 4px;
+    padding: 4px;
   }
   .subject-toggle-btn {
-    flex: 0 0 auto;
-    white-space: nowrap;
+    min-width: 0;
+    min-height: 38px;
+    white-space: normal;
+    line-height: 1.4;
+    padding: 5px 6px;
   }
   .search-input { min-width: 0; width: 100%; }
   .exam-setup-box { padding: 20px 14px; }
@@ -3188,4 +3229,41 @@ body.notes-pinned .side-notes-drawer {
 .notes-toast-msg.visible {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
+}
+
+/* Keep phone controls inside the viewport, including the open planner. */
+@media (max-width: 600px) {
+  body { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+  #btn-floating-planner,
+  #leaderboard-trigger.neo-floating-leaderboard-trigger,
+  #btn-floating-notes.neo-floating-notes-trigger {
+    top: auto !important;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
+    width: calc(33.333% - 13.333px);
+    padding: 4px 5px !important;
+    gap: 4px;
+    font-size: 0.72rem !important;
+    min-height: 44px;
+    justify-content: center;
+    border: var(--border-width) solid #000;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-main);
+  }
+  #btn-floating-planner { left: 12px; right: auto !important; }
+  #leaderboard-trigger.neo-floating-leaderboard-trigger { left: calc(33.333% + 6.667px); right: auto !important; }
+  #btn-floating-notes.neo-floating-notes-trigger { right: 12px !important; }
+  .side-planner-drawer, .side-notes-drawer { width: 390px; max-width: calc(100vw - 8px); height: 100dvh; }
+  .side-drawer-header { gap: 8px; padding: 12px; }
+  .side-drawer-title { min-width: 0; font-size: 0.9rem; }
+  .side-drawer-actions { flex-shrink: 0; }
+  .side-drawer-actions .neo-btn { padding: 6px 8px; min-height: 36px; }
+  .side-drawer-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .side-nav-btn { min-width: 0; min-height: 36px; }
+  .side-drawer-body { min-width: 0; min-height: 0; padding: 12px; padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+  .side-tab-content { min-width: 0; }
+  .side-notes-drawer .side-drawer-header { gap: 8px; padding: 12px; }
+  .notes-drawer-body { min-width: 0; min-height: 0; padding: 12px; }
+  .notes-create-header, .notes-create-footer { flex-wrap: wrap; }
+  .notes-create-header > * { min-width: 0; max-width: 100%; }
+  .notes-search-input { min-width: 0; }
 }
