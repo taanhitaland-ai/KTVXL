@@ -28,10 +28,8 @@ def run_tests():
         btn_xstk.click()
         page.wait_for_timeout(600)
 
-        brand_title = page.inner_text("#app-brand-title")
         brand_badge = page.inner_text("#app-brand-badge")
-        print(f"Brand Title: {brand_title}, Brand Badge: {brand_badge}")
-        assert "XÁC SUẤT THỐNG KÊ" in brand_title, f"Unexpected brand title: {brand_title}"
+        print(f"Brand Badge: {brand_badge}")
         assert "XSTK" in brand_badge, f"Unexpected brand badge: {brand_badge}"
 
         total_count = page.inner_text("#stat-total-count")

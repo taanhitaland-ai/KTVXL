@@ -172,9 +172,9 @@ def run_tests():
         # Check that active tab is practice and subject is VLDC
         active_tab = page.locator(".tab-pane.active")
         assert active_tab.get_attribute("id") == "tab-practice", "Did not switch to tab-practice"
-        brand_title = page.locator("#app-brand-title").inner_text()
-        print(f"Active Brand Title after jump: {brand_title}")
-        assert "VẬT LÝ ĐẠI CƯƠNG" in brand_title, "Did not switch to VLDC subject"
+        brand_badge = page.locator("#app-brand-badge").inner_text()
+        print(f"Active Brand Badge after jump: {brand_badge}")
+        assert "VLDC" in brand_badge, "Did not switch to VLDC subject"
 
         # 7. Test Fixed Right Side Drawer
         print("\n--- 7. Testing Fixed Right Side Drawer & Tabs ---")
