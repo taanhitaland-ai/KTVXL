@@ -68,8 +68,8 @@ test('XSTK chapter groups match probability and statistics content', () => {
   assert.equal(exams.select('xstk', data.xstk, 'XSTK_STAT').length, 32);
 });
 
-test('revised fill-in answers accept the corrected value and reject the stale key', () => {
-  const normalize = value => String(value).trim().toUpperCase().replace(/H$/, '');
+test('revised answers preserve corrected values after conversion to four-choice questions', () => {
+  const normalize = value => String(value).trim().toUpperCase().replace(/H$/, '').replace(/^([01]+)B$/, '$1');
   for (const [id, correct, stale] of [
     ['DE001_Q23','C.7','58'], ['PART_11_Q12','20','00'],
     ['PART_11_Q58','5B','80'], ['PART_11_Q65','40','81'],
@@ -77,15 +77,22 @@ test('revised fill-in answers accept the corrected value and reject the stale ke
     ['PART_11_Q68','1011','85'], ['PART_13_Q21','13','40']
   ]) {
     const q = data.ktvxl.find(q => q.id === id);
-    assert.equal(q.type, 'fib', id);
-    assert.equal(normalize(q.answer), normalize(correct), id);
-    assert.ok(q.acceptable_answers.some(value => normalize(value) === normalize(correct)), id);
-    assert.ok(!q.acceptable_answers.some(value => normalize(value) === normalize(stale)), id);
+    const answerValue = q.type === 'mcq' ? q.options[q.answer.charCodeAt(0)-65] : q.answer;
+    assert.equal(normalize(answerValue), normalize(correct), id);
+    assert.notEqual(normalize(answerValue), normalize(stale), id);
+    if (id.startsWith('PART_')) {
+      assert.equal(q.type, 'mcq', id);
+      assert.equal(q.options.length, 4, id);
+      assert.deepEqual(q.acceptable_answers, [q.answer], id);
+    } else {
+      assert.equal(q.type, 'fib', id);
+      assert.ok(q.acceptable_answers.some(value => normalize(value) === normalize(correct)), id);
+      assert.ok(!q.acceptable_answers.some(value => normalize(value) === normalize(stale)), id);
+    }
   }
   const q = data.ktvxl.find(q => q.id === 'PART_11_Q54');
   assert.equal(q.type, 'mcq');
-  assert.equal(q.answer, 'D');
-  assert.match(q.options[3], /CY=0, P=0/);
+  assert.equal(q.options[q.answer.charCodeAt(0)-65], 'CY=0, P=0');
 });
 
 test('revised probability keys match calculations from the stated distributions', () => {

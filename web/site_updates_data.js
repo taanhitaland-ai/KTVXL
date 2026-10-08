@@ -1,5 +1,8 @@
 /* Add a new stable ID for each release; never reuse IDs already marked as read. */
 window.KMA_SITE_UPDATES = [
+  { id: '2026-10-09-vixuly-practice-review', date: '09/10/2026', title: 'Rà soát Vi xử lý Part 9–18',
+    added: ['Chuyển 191 câu dạng điền trong Part 9–18 sang trắc nghiệm 4 phương án, một đáp án đúng; giữ nguyên ID câu hỏi.'],
+    fixed: ['Rà soát 546 câu: sửa đề, lựa chọn và lời giải về lệnh 8051, cờ trạng thái, RAM, timer và UART; bổ sung dữ kiện và mã chương trình ở các câu lỗi.', 'Giữ ghi chú, dấu sao và lịch sử cũ. Những câu đã thay đổi đề hoặc phương án nên làm lại; các tệp PDF cũ chưa được cập nhật.'] },
   { id: '2026-10-09-paper-highlights', date: '09/10/2026', title: 'Highlight tài liệu với 6 màu giấy nhớ',
     added: ['Tô màu đề bài, đáp án, lời giải và Kiến thức trọng tâm ở cả bốn môn: bôi đen từ 2 ký tự, bấm cây cọ rồi chọn màu.', 'Sáu màu Cần nhớ, Hay nhầm, Khó, Đã hiểu, Cần hỏi và Mẹo hay; bấm đoạn đã tô để đổi màu hoặc xóa. Phím 1–6 chọn màu, Enter dùng màu gần nhất, Esc đóng.', 'Highlight được lưu riêng trên trình duyệt đang dùng và hiện lại khi tải trang; hiện chưa đồng bộ qua tài khoản Google.'],
     fixed: ['Cây cọ chỉ mở dải màu, không tự chọn hoặc tô vàng khi chưa chọn màu; giữ vùng chọn sau khi tô.', 'Nền giấy nhớ bo mềm sáng/tối, nét nhấn theo màu và dải màu nở mượt; đặt dưới vùng chọn trên cảm ứng, tự tránh mép màn hình.', 'Bỏ nút Làm mới khỏi bảng xếp hạng để thanh chức năng gọn hơn.'] },

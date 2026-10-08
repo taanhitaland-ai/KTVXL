@@ -12971,22 +12971,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 4,
     "title": "Part 9 - Câu 4",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào sau đây gán giá trị 0x0A cho MY_CONST?",
+    "prompt": "Trong hợp ngữ 8051, khai báo nào gán hằng số 0AH cho tên MY_CONST?",
     "extra_lines": [],
     "options": [
-      "MY_CONST ORG 0x0A",
-      "MY_CONST EQU 0x0A",
-      "MY_CONST DW 0x0A",
-      "MY_CONST DB 0x0A"
+      "MY_CONST ORG 0AH",
+      "MY_CONST EQU 0AH",
+      "MY_CONST DW 0AH",
+      "MY_CONST DB 0AH"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Chỉ thị hợp ngữ EQU (Equate) được dùng để định nghĩa một tên hằng số hoặc gán một giá trị cố định cho một ký hiệu (ví dụ: MY_CONST EQU 0AH).",
-    "methodology": "Khai báo hằng số trong Assembly 8051: Sử dụng chỉ thị EQU.",
-    "tips_casio": "Gán hằng số -> Dùng chỉ thị EQU.",
+    "explanation": "EQU gán giá trị cho ký hiệu ở thời điểm hợp dịch; không dành ô dữ liệu như DB/DW và không đổi bộ đếm vị trí như ORG.",
+    "methodology": "EQU gán giá trị cho ký hiệu ở thời điểm hợp dịch; không dành ô dữ liệu như DB/DW và không đổi bộ đếm vị trí như ORG.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -12999,23 +12999,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 5,
     "title": "Part 9 - Câu 5",
-    "prompt": "Trong tập lệnh của hệ thống 89C51, direct dùng để biểu diễn: Địa chỉ toán hạng nguồn 16bit Địa chỉ toán hạng đích 16bit Dữ liệu toán hạng đích 16bit Dữ liệu toán hạng nguồn 16bit",
+    "prompt": "Trong tập lệnh của hệ thống 89C51, direct dùng để biểu diễn:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "địa chỉ",
-    "acceptable_answers": [
-      "địa chỉ",
-      "ĐỊA CHỈ",
-      "Địa chỉ",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Địa chỉ trực tiếp 8 bit của RAM nội hoặc SFR",
+      "Địa chỉ chương trình 16 bit",
+      "Hằng số dữ liệu 16 bit",
+      "Độ dời tương đối 8 bit"
     ],
-    "explanation": "direct trong cú pháp lệnh 8051 biểu diễn địa chỉ trực tiếp 8-bit của ô nhớ RAM nội (00H - 7FH) hoặc thanh ghi SFR (80H - FFH).",
-    "methodology": "direct: Địa chỉ trực tiếp 8-bit.",
-    "tips_casio": "direct -> Địa chỉ trực tiếp.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "direct là trường địa chỉ 8 bit: 00H–7FH truy xuất RAM nội, 80H–FFH truy xuất SFR, không phải dữ liệu tức thời hay địa chỉ 16 bit.",
+    "methodology": "direct là trường địa chỉ 8 bit: 00H–7FH truy xuất RAM nội, 80H–FFH truy xuất SFR, không phải dữ liệu tức thời hay địa chỉ 16 bit.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13028,23 +13027,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 6,
     "title": "Part 9 - Câu 6",
-    "prompt": "Một lệnh đầy đủ của ngôn ngữ assembly gồm các phần (xếp theo thứ tự): Nhãn lệnh, mã lệnh, toán hạng và ghi chú. Mã lệnh, nhãn lệnh, toán hạng và ghi chú. Nhãn lệnh, toán hạng, mã lệnh và ghi chu. Toán hạng, mã lệnh, nhãn lệnh và ghi chú.",
+    "prompt": "Một lệnh đầy đủ của ngôn ngữ assembly gồm các phần (xếp theo thứ tự):",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "nhãn lệnh, mã lệnh, toán hạng và ghi chú",
-    "acceptable_answers": [
-      "nhãn lệnh, mã lệnh, toán hạng và ghi chú",
-      "NHÃN LỆNH, MÃ LỆNH, TOÁN HẠNG VÀ GHI CHÚ",
-      "Nhãn lệnh, mã lệnh, toán hạng và ghi chú",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Nhãn lệnh, mã lệnh, toán hạng và ghi chú.",
+      "Mã lệnh, nhãn lệnh, toán hạng và ghi chú.",
+      "Nhãn lệnh, toán hạng, mã lệnh và ghi chu.",
+      "Toán hạng, mã lệnh, nhãn lệnh và ghi chú."
     ],
-    "explanation": "Một dòng lệnh Assembly chuẩn gồm 4 trường theo thứ tự: Nhãn lệnh (Label:) -> Mã thao tác (Opcode) -> Các toán hạng (Operands) -> Ghi chú (;Comment).",
-    "methodology": "Cấu trúc dòng lệnh ASM: [Nhãn:] [Mã lệnh] [Toán hạng] [;Ghi chú].",
-    "tips_casio": "Thứ tự: Nhãn lệnh -> Mã lệnh -> Toán hạng -> Ghi chú.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Cấu trúc thông thường: nhãn ở đầu, tiếp theo mã gợi nhớ, toán hạng, rồi chú thích sau dấu chấm phẩy.",
+    "methodology": "Cấu trúc thông thường: nhãn ở đầu, tiếp theo mã gợi nhớ, toán hạng, rồi chú thích sau dấu chấm phẩy.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13057,23 +13055,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 7,
     "title": "Part 9 - Câu 7",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ADD thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh số học Lệnh truyền dữ liệu Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ADD thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh số học",
+      "Lệnh truyền dữ liệu",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "ADD thuộc nhóm số học. ",
+    "methodology": "ADD thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13089,19 +13086,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào sau đây định nghĩa một từ với giá trị 0x1234?",
     "extra_lines": [],
     "options": [
-      "MY_WORD EQU 0x1234",
-      "MY_WORD ORG 0x1234",
-      "MY_WORD DW 0x1234",
-      "MY_WORD DB 0x1234"
+      "MY_WORD EQU 1234H",
+      "MY_WORD ORG 1234H",
+      "MY_WORD DW 1234H",
+      "MY_WORD DB 1234H"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Chỉ thị DW (Define Word) dùng để định nghĩa một từ dữ liệu 16-bit (2 byte) trong bộ nhớ chương trình.",
-    "methodology": "DW = Define Word (định nghĩa từ 16-bit); DB = Define Byte (định nghĩa byte 8-bit).",
-    "tips_casio": "Một từ dữ liệu (16-bit) -> Dùng chỉ thị DW.",
+    "explanation": "DW khai báo word (16 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "methodology": "DW khai báo word (16 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13114,23 +13111,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 9,
     "title": "Part 9 - Câu 9",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RR thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh điều khiển chương trình Lệnh số học Lệnh xử lý bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RR thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học",
+      "Lệnh xử lý bit"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "RR thuộc nhóm logic và xoay bit. ",
+    "methodology": "RR thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13143,23 +13139,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 10,
     "title": "Part 9 - Câu 10",
-    "prompt": "Để khai báo một địa chỉ bộ nhớ trong Assembly 89C51, cú pháp nào sau đây là đúng? MOV A, %R0 MOV A, @R0 MOV A, \\$R0 MOV A, #R0",
+    "prompt": "Lệnh nào đọc RAM nội vào A bằng định địa chỉ gián tiếp qua R0?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "truyền dữ liệu",
-    "acceptable_answers": [
-      "truyền dữ liệu",
-      "TRUYỀN DỮ LIỆU",
-      "Truyền dữ liệu",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "MOV A, %R0",
+      "MOV A, @R0",
+      "MOV A, \\$R0",
+      "MOV A, #R0"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "@R0 đọc RAM nội tại địa chỉ chứa trong R0; R0 phải trỏ vào 00H–7FH trên AT89C51.",
+    "methodology": "@R0 đọc RAM nội tại địa chỉ chứa trong R0; R0 phải trỏ vào 00H–7FH trên AT89C51.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13172,23 +13167,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 11,
     "title": "Part 9 - Câu 11",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh INC thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh truyền dữ liệu Lệnh số học Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh INC thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh truyền dữ liệu",
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "INC thuộc nhóm số học. ",
+    "methodology": "INC thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13207,16 +13201,16 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "SWAP",
       "INC",
       "CPL",
-      "C. XCH"
+      "XCH"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "INC tăng toán hạng lên 1, thuộc nhóm số học. SWAP là xoay nibble, CPL là đảo bit, XCH là trao đổi dữ liệu.",
+    "methodology": "INC tăng toán hạng lên 1, thuộc nhóm số học. SWAP là xoay nibble, CPL là đảo bit, XCH là trao đổi dữ liệu.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13229,23 +13223,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 13,
     "title": "Part 9 - Câu 13",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh CLP P1.0 thuộc nhóm lệnh gì? Lệnh số học Lệnh xử lý bit Lệnh tính toán logic và dịch bit Lệnh truyền dữ liệu",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh CPL P1.0 thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "xử lý bit",
-    "acceptable_answers": [
-      "xử lý bit",
-      "XỬ LÝ BIT",
-      "Xử lý bit",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh số học",
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit",
+      "Lệnh truyền dữ liệu"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "CPL thuộc nhóm xử lý bit. ",
+    "methodology": "CPL thuộc nhóm xử lý bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13258,23 +13251,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 14,
     "title": "Part 9 - Câu 14",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh LJMP thuộc nhóm lệnh gì? Lệnh số học Lệnh điều khiển chương trình Lệnh xử lý bit Lệnh tính toán logic và dịch bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh LJMP thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
-    "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình",
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "LJMP thuộc nhóm điều khiển chương trình. ",
+    "methodology": "LJMP thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13287,23 +13279,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 15,
     "title": "Part 9 - Câu 15",
-    "prompt": "Ký tự nào sau đây được sử dụng để biểu thị một hằng số ký tự trong Assembly trên 89C51? \" ' # %",
+    "prompt": "Trong lệnh MOV A, #'K', phần nào biểu diễn hằng ký tự K?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "'",
-    "acceptable_answers": [
-      "'",
-      "'",
-      "'",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Dấu nháy đơn: 'K'",
+      "Dấu # đứng một mình",
+      "Dấu %",
+      "Dấu ;"
     ],
-    "explanation": "Trong hợp ngữ 8051, một hằng số ký tự ASCII được đặt trong cặp dấu nháy đơn ' (ví dụ: 'A', '1').",
-    "methodology": "Biểu diễn ký tự: Đặt trong dấu nháy đơn ' '.",
-    "tips_casio": "Hằng số ký tự -> Dấu nháy đơn ' .",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Trong ví dụ MOV A, #'K', K được bao bởi nháy đơn; # đánh dấu toán hạng tức thời. Nêu rõ ví dụ để không phủ nhận cú pháp chuỗi dùng nháy kép của assembler.",
+    "methodology": "Trong ví dụ MOV A, #'K', K được bao bởi nháy đơn; # đánh dấu toán hạng tức thời. Nêu rõ ví dụ để không phủ nhận cú pháp chuỗi dùng nháy kép của assembler.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13316,23 +13307,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 16,
     "title": "Part 9 - Câu 16",
-    "prompt": "Từ khóa nào dùng để gán một giá trị cho một tên trong assembly của 89C51? ORG DB DW EQU",
+    "prompt": "Từ khóa nào dùng để gán một giá trị cho một tên trong assembly của 89C51?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "equ",
+    "options": [
+      "ORG",
+      "DB",
+      "DW",
+      "EQU"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "equ",
-      "EQU",
-      "Equ",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Chỉ thị hợp ngữ EQU (Equate) được dùng để định nghĩa một tên hằng số hoặc gán một giá trị cố định cho một ký hiệu (ví dụ: MY_CONST EQU 0AH).",
-    "methodology": "Khai báo hằng số trong Assembly 8051: Sử dụng chỉ thị EQU.",
-    "tips_casio": "Gán hằng số -> Dùng chỉ thị EQU.",
+    "explanation": "EQU gán giá trị cho ký hiệu ở thời điểm hợp dịch; không dành ô dữ liệu như DB/DW và không đổi bộ đếm vị trí như ORG.",
+    "methodology": "EQU gán giá trị cho ký hiệu ở thời điểm hợp dịch; không dành ô dữ liệu như DB/DW và không đổi bộ đếm vị trí như ORG.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13345,23 +13335,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 17,
     "title": "Part 9 - Câu 17",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh CLR P1.0 thuộc nhóm lệnh gì? Lệnh điều khiển chương trình Lệnh xử lý bit Lệnh truyền dữ liệu Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh CLR P1.0 thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "xử lý bit",
-    "acceptable_answers": [
-      "xử lý bit",
-      "XỬ LÝ BIT",
-      "Xử lý bit",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh điều khiển chương trình",
+      "Lệnh xử lý bit",
+      "Lệnh truyền dữ liệu",
+      "Lệnh số học"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "CLR thuộc nhóm xử lý bit. ",
+    "methodology": "CLR thuộc nhóm xử lý bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13374,23 +13363,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 18,
     "title": "Part 9 - Câu 18",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh JNZ thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh tính toán logic và dịch bit Lệnh điều khiển chương trình Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh JNZ thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
-    "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "JNZ thuộc nhóm điều khiển chương trình. ",
+    "methodology": "JNZ thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13407,7 +13395,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "extra_lines": [],
     "options": [
       "Lệnh xử lý bit",
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh truyền dữ liệu",
       "Lệnh số học"
     ],
@@ -13416,9 +13404,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "JNB thuộc nhóm xử lý bit. JNB kiểm tra bit rồi nhảy nếu bit bằng 0.",
+    "methodology": "JNB thuộc nhóm xử lý bit. JNB kiểm tra bit rồi nhảy nếu bit bằng 0.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13431,23 +13419,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 20,
     "title": "Part 9 - Câu 20",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DIV thuộc nhóm lệnh gì? Lệnh số học Lệnh điều khiển chương trình Lệnh tính toán logic và dịch bit Lệnh truyền dữ liệu",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DIV thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình",
+      "Lệnh logic và xoay bit",
+      "Lệnh truyền dữ liệu"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "DIV thuộc nhóm số học. ",
+    "methodology": "DIV thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13460,23 +13447,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 21,
     "title": "Part 9 - Câu 21",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh PUSH thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh truyền dữ liệu Lệnh logic và dịch bit Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh PUSH thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "truyền dữ liệu",
-    "acceptable_answers": [
-      "truyền dữ liệu",
-      "TRUYỀN DỮ LIỆU",
-      "Truyền dữ liệu",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh truyền dữ liệu",
+      "Lệnh logic và xoay bit",
+      "Lệnh số học"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "PUSH thuộc nhóm truyền dữ liệu. ",
+    "methodology": "PUSH thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13489,23 +13475,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 22,
     "title": "Part 9 - Câu 22",
-    "prompt": "Trong Assembly trên 89C51, ký tự nào được sử dụng để biểu thị một hằng số thập lục phân? 0x # \\$ %",
+    "prompt": "Theo cú pháp hậu tố số của assembler A51, hậu tố nào biểu thị một hằng số thập lục phân?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "h",
-    "acceptable_answers": [
-      "h",
+    "options": [
       "H",
-      "H",
-      "A",
+      "D",
       "B",
-      "C",
-      "D"
+      "#"
     ],
-    "explanation": "Hằng số thập lục phân (Hexadecimal) trong Assembly 8051 được biểu thị bằng hậu tố chữ H ở cuối số (ví dụ: 0FFH, 12H).",
-    "methodology": "Hậu tố Hex: Chữ H.",
-    "tips_casio": "Thập lục phân (Hex) -> Ký tự H ở cuối.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "methodology": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13518,23 +13503,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 23,
     "title": "Part 9 - Câu 23",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RRC thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh xử lý bit Lệnh điều khiển chương trình Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RRC thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh xử lý bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "RRC thuộc nhóm logic và xoay bit. ",
+    "methodology": "RRC thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13547,23 +13531,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 24,
     "title": "Part 9 - Câu 24",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ANL thuộc nhóm lệnh gì? Lệnh số học Lệnh xử lý bit Lệnh tính toán logic và dịch bit Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ANL A, R0 thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh số học",
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "ANL thuộc nhóm logic và xoay bit. Ở đây toán hạng là A và R0: AND cả byte; ANL C, bit là dạng xử lý bit khác.",
+    "methodology": "ANL thuộc nhóm logic và xoay bit. Ở đây toán hạng là A và R0: AND cả byte; ANL C, bit là dạng xử lý bit khác.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13576,23 +13559,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 25,
     "title": "Part 9 - Câu 25",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ORL thuộc nhóm lệnh gì? Lệnh số học Lệnh điều khiển chương trình Lệnh xử lý bit Lệnh tính toán logic và dịch bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ORL A, R0 thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
+    "options": [
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình",
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "explanation": "ORL thuộc nhóm logic và xoay bit. Ở đây ORL A, R0 là OR cả byte; ORL C, bit là dạng xử lý bit khác.",
+    "methodology": "ORL thuộc nhóm logic và xoay bit. Ở đây ORL A, R0 là OR cả byte; ORL C, bit là dạng xử lý bit khác.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13605,23 +13587,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 26,
     "title": "Part 9 - Câu 26",
-    "prompt": "Trong tập lệnh của hệ thống 89C51, rel dùng để biểu diễn: Dữ liệu tương đối được sử dụng trong các lệnh nhảy có điều kiện và không điềukiện Địa chỉ tương đối được sử dụng trong các lệnh nhảy có điều kiện và không điềukiện Toán hạng tương đối được sử dụng trong các lệnh nhảy có điều kiện và khôngđiều kiện Địa chỉ tuyệt đối được sử dụng trong các lệnh nhảy có điều kiện và không điềukiện",
+    "prompt": "Trong tập lệnh của hệ thống 89C51, rel dùng để biểu diễn:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "địa chỉ tương đối",
-    "acceptable_answers": [
-      "địa chỉ tương đối",
-      "ĐỊA CHỈ TƯƠNG ĐỐI",
-      "Địa chỉ tương đối",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Địa chỉ tuyệt đối 16 bit",
+      "Độ dời có dấu 8 bit, tính từ lệnh kế tiếp",
+      "Hằng số dữ liệu 8 bit",
+      "Địa chỉ trực tiếp SFR"
     ],
-    "explanation": "Toán hạng rel (relative) dùng để biểu diễn một địa chỉ tương đối 8-bit có dấu, có phạm vi nhảy từ -128 byte đến +127 byte so với lệnh kế tiếp.",
-    "methodology": "rel = Relative offset (địa chỉ tương đối 8-bit).",
-    "tips_casio": "rel -> Địa chỉ tương đối.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "rel là độ dời -128 đến +127 byte so với PC sau khi đã tăng qua lệnh nhảy.",
+    "methodology": "rel là độ dời -128 đến +127 byte so với PC sau khi đã tăng qua lệnh nhảy.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13647,9 +13628,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "XCH trao đổi byte giữa A và toán hạng, thuộc nhóm truyền dữ liệu.",
+    "methodology": "XCH trao đổi byte giữa A và toán hạng, thuộc nhóm truyền dữ liệu.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13675,9 +13656,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Trong ngôn ngữ hợp ngữ Assembly của họ 8051, một dòng chú thích (comment) luôn bắt đầu bằng dấu chấm phẩy ';' và kéo dài đến hết dòng.",
-    "methodology": "Dấu chú thích chuẩn: Dấu chấm phẩy ';'.",
-    "tips_casio": "Dòng chú thích bắt đầu bằng dấu chấm phẩy ';'.",
+    "explanation": "Dấu ; bắt đầu phần chú thích trong mã nguồn Assembly A51.",
+    "methodology": "Dấu ; bắt đầu phần chú thích trong mã nguồn Assembly A51.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13690,23 +13671,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 29,
     "title": "Part 9 - Câu 29",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh XCHD thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh truyền dữ liệu Lệnh điều khiển chương trình Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh XCHD thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "truyền dữ liệu",
-    "acceptable_answers": [
-      "truyền dữ liệu",
-      "TRUYỀN DỮ LIỆU",
-      "Truyền dữ liệu",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh truyền dữ liệu",
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "XCHD thuộc nhóm truyền dữ liệu. ",
+    "methodology": "XCHD thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13723,7 +13703,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "extra_lines": [],
     "options": [
       "Lệnh số học",
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh xử lý bit",
       "Lệnh truyền dữ liệu"
     ],
@@ -13732,9 +13712,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "JBC thuộc nhóm xử lý bit. JBC kiểm tra bit, xóa bit và nhảy nếu bit ban đầu bằng 1.",
+    "methodology": "JBC thuộc nhóm xử lý bit. JBC kiểm tra bit, xóa bit và nhảy nếu bit ban đầu bằng 1.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13747,23 +13727,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 31,
     "title": "Part 9 - Câu 31",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RLC thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh điều khiển chương trìn Lệnh số học Lệnh xử lý bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RLC thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh điều khiển chương trìn",
+      "Lệnh số học",
+      "Lệnh xử lý bit"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "RLC thuộc nhóm logic và xoay bit. ",
+    "methodology": "RLC thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13779,19 +13758,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào trong số các lệnh sau đây thuộc nhóm lệnh logic của vi điều khiển 89C51:",
     "extra_lines": [],
     "options": [
-      "XCH",
-      "INC",
-      "CPL",
-      "SWAP"
+      "XCH A, R0",
+      "INC A",
+      "CPL P1.0",
+      "SWAP A"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "SWAP A hoán đổi hai nibble, thuộc nhóm logic và xoay bit. CPL P1.0 là xử lý một bit; XCH là truyền dữ liệu; INC là số học.",
+    "methodology": "SWAP A hoán đổi hai nibble, thuộc nhóm logic và xoay bit. CPL P1.0 là xử lý một bit; XCH là truyền dữ liệu; INC là số học.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13804,23 +13783,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 33,
     "title": "Part 9 - Câu 33",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MUL thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh xử lý bit Lệnh số học Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MUL thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh xử lý bit",
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MUL thuộc nhóm số học. ",
+    "methodology": "MUL thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13833,23 +13811,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 34,
     "title": "Part 9 - Câu 34",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh SJMP thuộc nhóm lệnh gì? Lệnh điều khiển chương trình Lệnh số học Lệnh xử lý bit Lệnh tính toán logic và dịch bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh SJMP thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
-    "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học",
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "SJMP thuộc nhóm điều khiển chương trình. ",
+    "methodology": "SJMP thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13862,23 +13839,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 35,
     "title": "Part 9 - Câu 35",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh NOP thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh xử lý bit Lệnh điều khiển chương trình Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh NOP thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh xử lý bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "NOP thuộc nhóm điều khiển chương trình. NOP không thay đổi dữ liệu nhưng vẫn tiến PC và tiêu tốn một chu kỳ máy.",
+    "methodology": "NOP thuộc nhóm điều khiển chương trình. NOP không thay đổi dữ liệu nhưng vẫn tiến PC và tiêu tốn một chu kỳ máy.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13891,23 +13867,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 36,
     "title": "Part 9 - Câu 36",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh XRL là thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh số học Lệnh điều khiển chương trình Lệnh xử lý bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh XRL A, R0 là thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình",
+      "Lệnh xử lý bit"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "XRL thuộc nhóm logic và xoay bit. ",
+    "methodology": "XRL thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13920,23 +13895,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 37,
     "title": "Part 9 - Câu 37",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RET thuộc nhóm lệnh gì? Lệnh điều khiển chương trình Lệnh xử lý bit Lệnh tính toán logic và dịch bit Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RET thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
-    "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh điều khiển chương trình",
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit",
+      "Lệnh số học"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "RET thuộc nhóm điều khiển chương trình. ",
+    "methodology": "RET thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13949,23 +13923,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 38,
     "title": "Part 9 - Câu 38",
-    "prompt": "Để khai báo một địa chỉ trong Assembly trên 89C51, ký tự nào thường được sử dụng? # % @ \\$",
+    "prompt": "Trong toán hạng @R0 của lệnh MOV A, @R0, ký tự nào đánh dấu định địa chỉ gián tiếp?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "#",
+      "%",
+      "@",
+      "\\$"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "@ biểu thị định địa chỉ gián tiếp, ví dụ MOV A, @R0. # biểu thị dữ liệu tức thời.",
+    "methodology": "@ biểu thị định địa chỉ gián tiếp, ví dụ MOV A, @R0. # biểu thị dữ liệu tức thời.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -13987,13 +13960,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "SWAP"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "CJNE so sánh và nhảy khi khác nhau, thuộc nhóm điều khiển chương trình.",
+    "methodology": "CJNE so sánh và nhảy khi khác nhau, thuộc nhóm điều khiển chương trình.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14006,23 +13979,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 40,
     "title": "Part 9 - Câu 40",
-    "prompt": "Ký tự nào sau đây được sử dụng để biểu thị một hằng số thập phân trong Assembly trên 89C51? (1 Điểm) % 0d # \\$",
+    "prompt": "Theo cú pháp hậu tố số của assembler A51, hậu tố nào biểu thị một hằng số thập phân?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "d",
-    "acceptable_answers": [
-      "d",
+    "options": [
+      "H",
       "D",
-      "D",
-      "A",
       "B",
-      "C",
-      "D"
+      "#"
     ],
-    "explanation": "Hằng số thập phân (Decimal) có thể thêm hậu tố chữ D hoặc không cần hậu tố (ví dụ: 100 hoặc 100D).",
-    "methodology": "Hậu tố thập phân: Chữ D.",
-    "tips_casio": "Thập phân -> Ký tự D.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "methodology": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14035,23 +14007,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 41,
     "title": "Part 9 - Câu 41",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh POP thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh logic và dịch bit Lệnh truyền dữ liệu Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh POP thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "truyền dữ liệu",
-    "acceptable_answers": [
-      "truyền dữ liệu",
-      "TRUYỀN DỮ LIỆU",
-      "Truyền dữ liệu",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit",
+      "Lệnh truyền dữ liệu",
+      "Lệnh số học"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "POP thuộc nhóm truyền dữ liệu. ",
+    "methodology": "POP thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14064,23 +14035,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 42,
     "title": "Part 9 - Câu 42",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DA thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh điều khiển chương trình Lệnh số học Lệnh tính toán logic và dịch bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DA thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học",
+      "Lệnh logic và xoay bit"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "DA thuộc nhóm số học. ",
+    "methodology": "DA thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14093,23 +14063,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 43,
     "title": "Part 9 - Câu 43",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MOVX thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh số học Lệnh truyền dữ liệu Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MOVX thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "truyền dữ liệu",
-    "acceptable_answers": [
-      "truyền dữ liệu",
-      "TRUYỀN DỮ LIỆU",
-      "Truyền dữ liệu",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh số học",
+      "Lệnh truyền dữ liệu",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MOVX thuộc nhóm truyền dữ liệu. ",
+    "methodology": "MOVX thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14122,23 +14091,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 44,
     "title": "Part 9 - Câu 44",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DEC thuộc nhóm lệnh gì? Lệnh điều khiển chương trình Lệnh truyền dữ liệu Lệnh xử lý bit Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DEC thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
+    "options": [
+      "Lệnh điều khiển chương trình",
+      "Lệnh truyền dữ liệu",
+      "Lệnh xử lý bit",
+      "Lệnh số học"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "explanation": "DEC thuộc nhóm số học. ",
+    "methodology": "DEC thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14151,23 +14119,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 45,
     "title": "Part 9 - Câu 45",
-    "prompt": "Phương pháp xác định hình thức truy xuất của một toán hạng trên 89C51 được gọi là: Mã gợi nhớ Địa chỉ Assembly. Mã lệnh Chế độ địa chỉ",
+    "prompt": "Phương pháp xác định hình thức truy xuất của một toán hạng trên 89C51 được gọi là:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "chế độ định địa chỉ",
+    "options": [
+      "Mã gợi nhớ",
+      "Địa chỉ Assembly.",
+      "Mã lệnh",
+      "Chế độ địa chỉ"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "chế độ định địa chỉ",
-      "CHẾ ĐỘ ĐỊNH ĐỊA CHỈ",
-      "Chế độ định địa chỉ",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Phương pháp xác định cách thức CPU tìm nạp và truy xuất toán hạng của một câu lệnh được gọi là Chế độ định địa chỉ (Addressing Mode).",
-    "methodology": "Khái niệm Chế độ định địa chỉ: Phương pháp xác định toán hạng.",
-    "tips_casio": "Cách truy xuất toán hạng -> Chế độ định địa chỉ.",
+    "explanation": "Chế độ định địa chỉ mô tả cách tìm toán hạng: tức thời, thanh ghi, trực tiếp, gián tiếp hoặc chỉ số.",
+    "methodology": "Chế độ định địa chỉ mô tả cách tìm toán hạng: tức thời, thanh ghi, trực tiếp, gián tiếp hoặc chỉ số.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14180,23 +14147,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 46,
     "title": "Part 9 - Câu 46",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MOV thuộc nhóm lệnh gì? Lệnh điều khiển chương trình Lệnh xử lý bit Lệnh số học Lệnh truyền dữ liệu",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MOV thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "truyền dữ liệu",
+    "options": [
+      "Lệnh điều khiển chương trình",
+      "Lệnh xử lý bit",
+      "Lệnh số học",
+      "Lệnh truyền dữ liệu"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "truyền dữ liệu",
-      "TRUYỀN DỮ LIỆU",
-      "Truyền dữ liệu",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "explanation": "MOV thuộc nhóm truyền dữ liệu. ",
+    "methodology": "MOV thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14209,23 +14175,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 47,
     "title": "Part 9 - Câu 47",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MOV thuộc nhóm lệnh gì? Lệnh truyền dữ liệu Lệnh tính toán logic và dịch bit Lệnh số học Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MOV thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "truyền dữ liệu",
-    "acceptable_answers": [
-      "truyền dữ liệu",
-      "TRUYỀN DỮ LIỆU",
-      "Truyền dữ liệu",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh truyền dữ liệu",
+      "Lệnh logic và xoay bit",
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "MOV thuộc nhóm truyền dữ liệu. ",
+    "methodology": "MOV thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14238,23 +14203,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 48,
     "title": "Part 9 - Câu 48",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh SETB P1.3 thuộc nhóm lệnh gì? Lệnh điều khiển chương trình Lệnh số học Lệnh tính toán logic và dịch bit Lệnh xử lý bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh SETB P1.3 thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "xử lý bit",
+    "options": [
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học",
+      "Lệnh logic và xoay bit",
+      "Lệnh xử lý bit"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "xử lý bit",
-      "XỬ LÝ BIT",
-      "Xử lý bit",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "SETB thuộc nhóm xử lý bit. ",
+    "methodology": "SETB thuộc nhóm xử lý bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14273,16 +14237,16 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Lệnh xử lý bit",
       "Lệnh số học",
       "Lệnh truyền dữ liệu",
-      "Lệnh tính toán logic và dịch bit"
+      "Lệnh logic và xoay bit"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "JB thuộc nhóm xử lý bit. JB kiểm tra bit rồi nhảy nếu bit bằng 1.",
+    "methodology": "JB thuộc nhóm xử lý bit. JB kiểm tra bit rồi nhảy nếu bit bằng 1.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14295,23 +14259,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 50,
     "title": "Part 9 - Câu 50",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh CJNE thuộc nhóm lệnh gì? Lệnh điều khiển chương trình Lệnh xử lý bit Lệnh số học Lệnh tính toán logic và dịch bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh CJNE thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
-    "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh điều khiển chương trình",
+      "Lệnh xử lý bit",
+      "Lệnh số học",
+      "Lệnh logic và xoay bit"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "CJNE thuộc nhóm điều khiển chương trình. ",
+    "methodology": "CJNE thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14324,23 +14287,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 51,
     "title": "Part 9 - Câu 51",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DJNZ thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh số học Lệnh tính toán logic và dịch bit Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DJNZ thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh số học",
+      "Lệnh logic và xoay bit",
+      "Lệnh điều khiển chương trình"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "explanation": "DJNZ thuộc nhóm điều khiển chương trình. ",
+    "methodology": "DJNZ thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14356,19 +14318,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào trong số các lệnh sau đây thuộc nhóm lệnh xử lý bit của vi điều khiển 89C51:",
     "extra_lines": [],
     "options": [
-      "INC",
-      "XCH",
-      "SWAP",
-      "CPL"
+      "INC A",
+      "XCH A, R0",
+      "SWAP A",
+      "CPL P1.0"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "CPL P1.0 đảo một bit của cổng P1. Viết rõ toán hạng để phân biệt với CPL A (đảo cả byte).",
+    "methodology": "CPL P1.0 đảo một bit của cổng P1. Viết rõ toán hạng để phân biệt với CPL A (đảo cả byte).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14381,7 +14343,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 53,
     "title": "Part 9 - Câu 53",
-    "prompt": "Trong tập lệnh của hệ thống 89C51, những thanh ghi nào có thể được sử dụng làm thanh ghi con trỏ lệnh:",
+    "prompt": "Trong tập lệnh của hệ thống 89C51, những thanh ghi nào có thể được sử dụng làm con trỏ địa chỉ gián tiếp RAM nội (@Ri):",
     "extra_lines": [],
     "options": [
       "R3, R4",
@@ -14390,13 +14352,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "R0, R1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Trong 8051, chỉ có hai thanh ghi R0 và R1 (cùng với DPTR cho bộ nhớ ngoài) được phép sử dụng làm con trỏ định địa chỉ gián tiếp (ký hiệu @R0, @R1).",
-    "methodology": "Thanh ghi con trỏ định địa chỉ gián tiếp: R0 và R1.",
-    "tips_casio": "Con trỏ gián tiếp RAM nội = R0 và R1.",
+    "explanation": "Chỉ R0 và R1 dùng được trong dạng @Ri để định địa chỉ gián tiếp RAM nội. Con trỏ lệnh thực sự là PC.",
+    "methodology": "Chỉ R0 và R1 dùng được trong dạng @Ri để định địa chỉ gián tiếp RAM nội. Con trỏ lệnh thực sự là PC.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14409,23 +14371,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 54,
     "title": "Part 9 - Câu 54",
-    "prompt": "Ký tự nào sau đây được sử dụng để biểu thị một hằng số nhị phân trong Assembly trên 89C51? (1 Điểm) # 0b \\$ %",
+    "prompt": "Theo cú pháp hậu tố số của assembler A51, hậu tố nào biểu thị một hằng số nhị phân?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "b",
-    "acceptable_answers": [
-      "b",
+    "options": [
+      "H",
+      "D",
       "B",
-      "B",
-      "A",
-      "B",
-      "C",
-      "D"
+      "#"
     ],
-    "explanation": "Hằng số nhị phân (Binary) trong Assembly 8051 được nhận biết bởi hậu tố chữ B ở cuối chuỗi bit (ví dụ: 10101010B).",
-    "methodology": "Hậu tố nhị phân: Chữ B.",
-    "tips_casio": "Nhị phân -> Ký tự B ở cuối.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "methodology": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14438,23 +14399,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 55,
     "title": "Part 9 - Câu 55",
-    "prompt": "Để khai báo một nhãn (label) trong Assembly, ký tự nào thường được sử dụng? # ; : \\$",
+    "prompt": "Để khai báo một nhãn (label) trong Assembly, ký tự nào thường được sử dụng?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "#",
+      ";",
+      ":",
+      "\\$"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "Nhãn được viết trước lệnh và kết thúc bằng dấu :, ví dụ LOOP: INC A.",
+    "methodology": "Nhãn được viết trước lệnh và kết thúc bằng dấu :, ví dụ LOOP: INC A.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14467,23 +14427,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 56,
     "title": "Part 9 - Câu 56",
-    "prompt": "Trong tập lệnh của hệ thống 89C51, addr16 dùng để biểu diễn: Địa chỉ toán hạng 16bit Địa chỉ toán hạng 8bit Địa chỉ toán hạng nguồn 16bit Địa chỉ toán hạng đích 16bit",
+    "prompt": "Trong tập lệnh của hệ thống 89C51, addr16 dùng để biểu diễn:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "16bit",
-    "acceptable_answers": [
-      "16bit",
-      "16BIT",
-      "16bit",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Địa chỉ đích 16 bit trong không gian mã",
+      "Địa chỉ RAM trực tiếp 8 bit",
+      "Hằng số dữ liệu 16 bit",
+      "Độ dời tương đối 8 bit"
     ],
-    "explanation": "addr16 biểu diễn địa chỉ tuyệt đối 16-bit, cho phép truy xuất đến bất kỳ địa chỉ nào trong toàn bộ không gian $64\\,\\text{KB}$ của bộ nhớ chương trình.",
-    "methodology": "addr16: Địa chỉ tuyệt đối 16-bit trong $64\\,\\text{KB}$.",
-    "tips_casio": "addr16 -> Địa chỉ tuyệt đối 16 bit.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "LJMP/LCALL dùng địa chỉ đích 16 bit, cho phép đích ở bất kỳ vị trí nào trong không gian mã 64 KiB.",
+    "methodology": "LJMP/LCALL dùng địa chỉ đích 16 bit, cho phép đích ở bất kỳ vị trí nào trong không gian mã 64 KiB.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14496,23 +14455,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 57,
     "title": "Part 9 - Câu 57",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh SETB P1 thuộc nhóm lệnh gì? Lệnh số học Lệnh xử lý bit Lệnh điều khiển chương trình Lệnh tính toán logic và dịch bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh SETB P1.0 thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "xử lý bit",
-    "acceptable_answers": [
-      "xử lý bit",
-      "XỬ LÝ BIT",
-      "Xử lý bit",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh số học",
+      "Lệnh xử lý bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh logic và xoay bit"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "SETB thuộc nhóm xử lý bit. ",
+    "methodology": "SETB thuộc nhóm xử lý bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14525,23 +14483,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 58,
     "title": "Part 9 - Câu 58",
-    "prompt": "Trong tập lệnh của hệ thống 89C51, addr11 dùng để biểu diễn: Địa chỉ toán hạng đích 11bit Địa chỉ toán hạng nguồn 11bit Dữ liệu toán hạng nguồn 11bit Dữ liệu toán hạng đích 11bit",
+    "prompt": "Trong tập lệnh của hệ thống 89C51, addr11 dùng để biểu diễn:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "2k",
-    "acceptable_answers": [
-      "2k",
-      "2K",
-      "2k",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Hằng số dữ liệu 11 bit",
+      "Địa chỉ nguồn RAM 11 bit",
+      "Địa chỉ đích 11 bit của AJMP/ACALL",
+      "Độ dời có dấu 11 bit"
     ],
-    "explanation": "addr11 dùng để biểu diễn địa chỉ tuyệt đối 11-bit, chỉ có thể nhảy trong phạm vi cùng trang khối $2\\,\\text{KB}$ của bộ nhớ chương trình.",
-    "methodology": "addr11: Địa chỉ 11-bit trong cùng khối $2\\,\\text{KB}$.",
-    "tips_casio": "addr11 -> Khối $2\\,\\text{KB}$.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "AJMP/ACALL mã hóa 11 bit địa chỉ đích; 5 bit cao lấy từ PC của lệnh kế tiếp. Đích phải cùng trang 2 KiB với lệnh kế tiếp.",
+    "methodology": "AJMP/ACALL mã hóa 11 bit địa chỉ đích; 5 bit cao lấy từ PC của lệnh kế tiếp. Đích phải cùng trang 2 KiB với lệnh kế tiếp.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14554,23 +14511,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 59,
     "title": "Part 9 - Câu 59",
-    "prompt": "Từ khóa nào dùng để định nghĩa một byte dữ liệu trong assembly của 8051? DW ORG DB EQU",
+    "prompt": "Từ khóa nào dùng để định nghĩa một byte dữ liệu trong assembly của 8051?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "equ",
-    "acceptable_answers": [
-      "equ",
-      "EQU",
-      "Equ",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "DW",
+      "ORG",
+      "DB",
+      "EQU"
     ],
-    "explanation": "Chỉ thị hợp ngữ EQU (Equate) được dùng để định nghĩa một tên hằng số hoặc gán một giá trị cố định cho một ký hiệu (ví dụ: MY_CONST EQU 0AH).",
-    "methodology": "Khai báo hằng số trong Assembly 8051: Sử dụng chỉ thị EQU.",
-    "tips_casio": "Gán hằng số -> Dùng chỉ thị EQU.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "DB khai báo byte (8 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "methodology": "DB khai báo byte (8 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14583,23 +14539,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 60,
     "title": "Part 9 - Câu 60",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh CLP P1 thuộc nhóm lệnh gì? Lệnh số học Lệnh xử lý bit Lệnh tính toán logic và dịch bit Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh CPL P1.0 thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "xử lý bit",
-    "acceptable_answers": [
-      "xử lý bit",
-      "XỬ LÝ BIT",
-      "Xử lý bit",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh số học",
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "CPL thuộc nhóm xử lý bit. ",
+    "methodology": "CPL thuộc nhóm xử lý bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14612,23 +14567,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 61,
     "title": "Part 9 - Câu 61",
-    "prompt": "Trình biên dịch cho ngôn ngữ Assembly có chức năng: (A) Kiểm tra (C) Biên dịch từ tập tin nguồn dạng ASCII sang tập tin mã dạng DEC (D) Cả hai đáp án A và B đều sai. (B) Biên dịch từ tập tin nguồn dạng ASCII sang tập tin mã dạng BIN",
+    "prompt": "Trình biên dịch cho ngôn ngữ Assembly có chức năng:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "mã máy",
-    "acceptable_answers": [
-      "mã máy",
-      "MÃ MÁY",
-      "Mã máy",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Chuyển mã nguồn Assembly thành mã máy",
+      "Chuyển mã máy thành văn bản tiếng Việt",
+      "Chạy mã nguồn như chương trình Python",
+      "Chỉ kiểm tra chính tả"
     ],
-    "explanation": "Trình biên dịch/hợp dịch (Assembler) có chức năng dịch mã nguồn ngôn ngữ Assembly thành mã máy nhị phân (Machine Code) để CPU có thể nạp và thực thi.",
-    "methodology": "Chức năng Assembler: Dịch Hợp ngữ thành Mã máy.",
-    "tips_casio": "Trình biên dịch ASM -> Tạo mã máy nhị phân.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Assembler phân tích mã nguồn Assembly và sinh mã máy/đối tượng; chỉ thị DB/DW/EQU không phải lệnh CPU thực thi.",
+    "methodology": "Assembler phân tích mã nguồn Assembly và sinh mã máy/đối tượng; chỉ thị DB/DW/EQU không phải lệnh CPU thực thi.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14641,23 +14595,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 62,
     "title": "Part 9 - Câu 62",
-    "prompt": "Từ khóa nào dùng để định nghĩa một từ dữ liệu trong assembly của 89C51? DW ORG QU DB",
+    "prompt": "Từ khóa nào dùng để định nghĩa một từ dữ liệu trong assembly của 89C51?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "dw",
-    "acceptable_answers": [
-      "dw",
+    "options": [
       "DW",
-      "Dw",
-      "A",
-      "B",
-      "C",
-      "D"
+      "ORG",
+      "QU",
+      "DB"
     ],
-    "explanation": "Chỉ thị DW (Define Word) dùng để định nghĩa một từ dữ liệu 16-bit (2 byte) trong bộ nhớ chương trình.",
-    "methodology": "DW = Define Word (định nghĩa từ 16-bit); DB = Define Byte (định nghĩa byte 8-bit).",
-    "tips_casio": "Một từ dữ liệu (16-bit) -> Dùng chỉ thị DW.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "DW khai báo word (16 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "methodology": "DW khai báo word (16 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14670,23 +14623,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 63,
     "title": "Part 9 - Câu 63",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RL thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh số học Lệnh tính toán logic và dịch bit Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RL thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh số học",
+      "Lệnh logic và xoay bit",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "RL thuộc nhóm logic và xoay bit. ",
+    "methodology": "RL thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14702,19 +14654,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào sau đây định nghĩa một byte với giá trị 0x55?",
     "extra_lines": [],
     "options": [
-      "MY_BYTE ORG 0x55",
-      "MY_BYTE EQU 0x55",
-      "MY_BYTE DB 0x55",
-      "MY_BYTE DW 0x55"
+      "MY_BYTE ORG 55H",
+      "MY_BYTE EQU 55H",
+      "MY_BYTE DB 55H",
+      "MY_BYTE DW 55H"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Chỉ thị DB (Define Byte) dùng để định nghĩa một byte dữ liệu 8-bit hoặc một chuỗi ký tự trong bộ nhớ chương trình.",
-    "methodology": "DB = Define Byte (định nghĩa byte 8-bit).",
-    "tips_casio": "Byte dữ liệu -> Dùng chỉ thị DB.",
+    "explanation": "DB khai báo byte (8 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "methodology": "DB khai báo byte (8 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14727,23 +14679,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 65,
     "title": "Part 9 - Câu 65",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ADDC thuộc nhóm lệnh gì? Lệnh truyền dữ liệu Lệnh điều khiển chương trình Lệnh tính toán logic và dịch bit Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ADDC thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
+    "options": [
+      "Lệnh truyền dữ liệu",
+      "Lệnh điều khiển chương trình",
+      "Lệnh logic và xoay bit",
+      "Lệnh số học"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "explanation": "ADDC thuộc nhóm số học. ",
+    "methodology": "ADDC thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14756,23 +14707,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 66,
     "title": "Part 9 - Câu 66",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh LCALL thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh số học Lệnh truyền dữ liệu Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh LCALL thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh số học",
+      "Lệnh truyền dữ liệu",
+      "Lệnh điều khiển chương trình"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "explanation": "LCALL thuộc nhóm điều khiển chương trình. ",
+    "methodology": "LCALL thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14785,23 +14735,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 67,
     "title": "Part 9 - Câu 67",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh SWAP thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh số học Lệnh xử lý bit Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh SWAP thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh số học",
+      "Lệnh xử lý bit",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "SWAP thuộc nhóm logic và xoay bit. ",
+    "methodology": "SWAP thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14814,23 +14763,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 68,
     "title": "Part 9 - Câu 68",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RETI thuộc nhóm lệnh gì? Lệnh điều khiển chương trình Lệnh tính toán logic và dịch bit Lệnh số học Lệnh xử lý bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RETI thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
-    "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh điều khiển chương trình",
+      "Lệnh logic và xoay bit",
+      "Lệnh số học",
+      "Lệnh xử lý bit"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "RETI thuộc nhóm điều khiển chương trình. ",
+    "methodology": "RETI thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14843,7 +14791,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 69,
     "title": "Part 9 - Câu 69",
-    "prompt": "Để khai báo một địa chỉ bộ nhớ trực tiếp trong Assembly 89C51, cú pháp nào sau đây là đúng?",
+    "prompt": "Lệnh nào đọc nội dung ô RAM nội địa chỉ 30H vào A bằng định địa chỉ trực tiếp?",
     "extra_lines": [],
     "options": [
       "MOV A, #30H",
@@ -14852,13 +14800,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "MOV A, \\$30H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "Không có # nên 30H là địa chỉ RAM nội. MOV A, #30H chỉ nạp hằng số 30H.",
+    "methodology": "Không có # nên 30H là địa chỉ RAM nội. MOV A, #30H chỉ nạp hằng số 30H.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14871,23 +14819,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 70,
     "title": "Part 9 - Câu 70",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh XCH thuộc nhóm lệnh gì? Lệnh truyền dữ liệu Lệnh tính toán logic và dịch bit Lệnh truyền dữ liệu Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh XCH thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "truyền dữ liệu",
-    "acceptable_answers": [
-      "truyền dữ liệu",
-      "TRUYỀN DỮ LIỆU",
-      "Truyền dữ liệu",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh số học",
+      "Lệnh xử lý bit",
+      "Lệnh truyền dữ liệu",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "XCH thuộc nhóm truyền dữ liệu. ",
+    "methodology": "XCH thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14900,23 +14847,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 71,
     "title": "Part 9 - Câu 71",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh JMP thuộc nhóm lệnh gì? Lệnh số học Lệnh xử lý bit Lệnh điều khiển chương trình Lệnh truyền dữ liệu",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh JMP thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
-    "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh số học",
+      "Lệnh xử lý bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh truyền dữ liệu"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "JMP thuộc nhóm điều khiển chương trình. ",
+    "methodology": "JMP thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14929,23 +14875,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 72,
     "title": "Part 9 - Câu 72",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh SUBB thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh truyền dữ liệu Lệnh số học Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh SUBB thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh truyền dữ liệu",
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "SUBB thuộc nhóm số học. ",
+    "methodology": "SUBB thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14958,23 +14903,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 73,
     "title": "Part 9 - Câu 73",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh AJMP thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh điều khiển chương trình Lệnh số học Lệnh xử lý bit Không bao giờ tiết lộ mật khẩu của bạn. Báo cáo lạm dụng Nội dung này được tạo bởi chủ sở hữu của biểu mẫu. Dữ liệu bạn gửi sẽ được gửi đến chủ sở hữu biểu mẫu. Microsoft không chịu trách nhiệm về quyền riêng tư hoặc thực tiễn bảo mật của khách hàng, bao gồm cả các biện pháp bảo mật của chủ sở hữu biểu mẫu này. Không bao giờ đưa ra mật khẩu của bạn. Microsoft Forms | Các cuộc khảo sát, câu đố và cuộc thăm dò do AI cung cấp Tạo biểu mẫu riêng của tôi Chủ sở hữu của biểu mẫu này chưa cung cấp tuyên bố về quyền riêng tư về cách họ sẽ sử dụng dữ liệu phản hồi của bạn. Không cung cấp thông tin cá nhân hoặc thông tin nhạy cảm. | Quyền riêng tư về Sức khỏe Người tiêu dùng | Điều khoản sử dụng",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh AJMP thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
-    "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học",
+      "Lệnh xử lý bit"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "AJMP thuộc nhóm điều khiển chương trình. ",
+    "methodology": "AJMP thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -14992,7 +14936,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "options": [
       "Lệnh số học",
       "Lệnh truyền dữ liệu",
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh điều khiển chương trình"
     ],
     "type": "mcq",
@@ -15000,9 +14944,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "explanation": "ADDC thuộc nhóm số học. ",
+    "methodology": "ADDC thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15020,7 +14964,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "options": [
       "Lệnh xử lý bit",
       "Lệnh điều khiển chương trình",
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh số học"
     ],
     "type": "mcq",
@@ -15028,9 +14972,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "explanation": "AJMP thuộc nhóm điều khiển chương trình. ",
+    "methodology": "AJMP thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15043,23 +14987,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 6,
     "title": "Part 9 - Câu 6",
-    "prompt": "Từ khóa nào dùng để định nghĩa một từ dữ liệu trong assembly của 89C51? DB DW QU ORG",
+    "prompt": "Từ khóa nào dùng để định nghĩa một từ dữ liệu trong assembly của 89C51?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "dw",
-    "acceptable_answers": [
-      "dw",
+    "options": [
+      "DB",
       "DW",
-      "Dw",
-      "A",
-      "B",
-      "C",
-      "D"
+      "QU",
+      "ORG"
     ],
-    "explanation": "Chỉ thị DW (Define Word) dùng để định nghĩa một từ dữ liệu 16-bit (2 byte) trong bộ nhớ chương trình.",
-    "methodology": "DW = Define Word (định nghĩa từ 16-bit); DB = Define Byte (định nghĩa byte 8-bit).",
-    "tips_casio": "Một từ dữ liệu (16-bit) -> Dùng chỉ thị DW.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "DW khai báo word (16 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "methodology": "DW khai báo word (16 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15085,9 +15028,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "CLR thuộc nhóm xử lý bit. ",
+    "methodology": "CLR thuộc nhóm xử lý bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15106,16 +15049,16 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Lệnh xử lý bit",
       "Lệnh số học",
       "Lệnh điều khiển chương trình",
-      "Lệnh tính toán logic và dịch bit"
+      "Lệnh logic và xoay bit"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "explanation": "DJNZ thuộc nhóm điều khiển chương trình. ",
+    "methodology": "DJNZ thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15128,23 +15071,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 9,
     "title": "Part 9 - Câu 9",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RRC thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh xử lý bit Lệnh điều khiển chương trình Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RRC thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh xử lý bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "RRC thuộc nhóm logic và xoay bit. ",
+    "methodology": "RRC thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15157,23 +15099,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 10,
     "title": "Part 9 - Câu 10",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh JMP thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh số học Lệnh truyền dữ liệu Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh JMP thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh số học",
+      "Lệnh truyền dữ liệu",
+      "Lệnh điều khiển chương trình"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "explanation": "JMP thuộc nhóm điều khiển chương trình. ",
+    "methodology": "JMP thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15186,23 +15127,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 11,
     "title": "Part 9 - Câu 11",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh XCH thuộc nhóm lệnh gì? Lệnh truyền dữ liệu Lệnh tính toán logic và dịch bit Lệnh truyền dữ liệu Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh XCH thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "truyền dữ liệu",
-    "acceptable_answers": [
-      "truyền dữ liệu",
-      "TRUYỀN DỮ LIỆU",
-      "Truyền dữ liệu",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh số học",
+      "Lệnh xử lý bit",
+      "Lệnh truyền dữ liệu",
+      "Lệnh điều khiển chương trình"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "XCH thuộc nhóm truyền dữ liệu. ",
+    "methodology": "XCH thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15218,19 +15158,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào trong số các lệnh sau đây thuộc nhóm lệnh logic của vi điều khiển 89C51:",
     "extra_lines": [],
     "options": [
-      "SWAP",
-      "INC",
-      "XCH",
-      "CPL"
+      "XCH A, R0",
+      "INC A",
+      "CPL P1.0",
+      "SWAP A"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "SWAP A hoán đổi hai nibble, thuộc nhóm logic và xoay bit. CPL P1.0 là xử lý một bit; XCH là truyền dữ liệu; INC là số học.",
+    "methodology": "SWAP A hoán đổi hai nibble, thuộc nhóm logic và xoay bit. CPL P1.0 là xử lý một bit; XCH là truyền dữ liệu; INC là số học.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15246,19 +15186,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào trong số các lệnh sau đây thuộc nhóm lệnh xử lý bit của vi điều khiển 89C51:",
     "extra_lines": [],
     "options": [
-      "SWAP",
-      "CPL",
-      "XCH",
-      "INC"
+      "INC A",
+      "XCH A, R0",
+      "SWAP A",
+      "CPL P1.0"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "CPL P1.0 đảo một bit của cổng P1. Viết rõ toán hạng để phân biệt với CPL A (đảo cả byte).",
+    "methodology": "CPL P1.0 đảo một bit của cổng P1. Viết rõ toán hạng để phân biệt với CPL A (đảo cả byte).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15271,23 +15211,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 14,
     "title": "Part 9 - Câu 14",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MUL thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh điều khiển chương trình Lệnh tính toán logic và dịch bit Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MUL thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh logic và xoay bit",
+      "Lệnh số học"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "explanation": "MUL thuộc nhóm số học. ",
+    "methodology": "MUL thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15300,22 +15239,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 15,
     "title": "Part 9 - Câu 15",
-    "prompt": "Ký tự nào sau đây được sử dụng để biểu thị một hằng số nhị phân trong Assembly trên 89C51?",
+    "prompt": "Theo cú pháp hậu tố số của assembler A51, hậu tố nào biểu thị một hằng số nhị phân?",
     "extra_lines": [],
     "options": [
-      "#",
-      "\\$",
-      "%",
-      "0b"
+      "H",
+      "D",
+      "B",
+      "#"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "C",
     "acceptable_answers": [
-      "D"
+      "C"
     ],
-    "explanation": "Hằng số nhị phân (Binary) trong Assembly 8051 được nhận biết bởi hậu tố chữ B ở cuối chuỗi bit (ví dụ: 10101010B).",
-    "methodology": "Hậu tố nhị phân: Chữ B.",
-    "tips_casio": "Nhị phân -> Ký tự B ở cuối.",
+    "explanation": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "methodology": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15328,23 +15267,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 16,
     "title": "Part 9 - Câu 16",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ANL thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh tính toán logic và dịch bit Lệnh điều khiển chương trình Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ANL A, R0 thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "ANL thuộc nhóm logic và xoay bit. Ở đây toán hạng là A và R0: AND cả byte; ANL C, bit là dạng xử lý bit khác.",
+    "methodology": "ANL thuộc nhóm logic và xoay bit. Ở đây toán hạng là A và R0: AND cả byte; ANL C, bit là dạng xử lý bit khác.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15357,23 +15295,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 17,
     "title": "Part 9 - Câu 17",
-    "prompt": "Trong tập lệnh của hệ thống 89C51, direct dùng để biểu diễn: Địa chỉ toán hạng đích 16bit Dữ liệu toán hạng nguồn 16bit Dữ liệu toán hạng đích 16bit Địa chỉ toán hạng nguồn 16bit",
+    "prompt": "Trong tập lệnh của hệ thống 89C51, direct dùng để biểu diễn:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "địa chỉ",
-    "acceptable_answers": [
-      "địa chỉ",
-      "ĐỊA CHỈ",
-      "Địa chỉ",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Địa chỉ trực tiếp 8 bit của RAM nội hoặc SFR",
+      "Địa chỉ chương trình 16 bit",
+      "Hằng số dữ liệu 16 bit",
+      "Độ dời tương đối 8 bit"
     ],
-    "explanation": "direct trong cú pháp lệnh 8051 biểu diễn địa chỉ trực tiếp 8-bit của ô nhớ RAM nội (00H - 7FH) hoặc thanh ghi SFR (80H - FFH).",
-    "methodology": "direct: Địa chỉ trực tiếp 8-bit.",
-    "tips_casio": "direct -> Địa chỉ trực tiếp.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "direct là trường địa chỉ 8 bit: 00H–7FH truy xuất RAM nội, 80H–FFH truy xuất SFR, không phải dữ liệu tức thời hay địa chỉ 16 bit.",
+    "methodology": "direct là trường địa chỉ 8 bit: 00H–7FH truy xuất RAM nội, 80H–FFH truy xuất SFR, không phải dữ liệu tức thời hay địa chỉ 16 bit.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15395,13 +15332,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "XCH"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "XCH trao đổi byte giữa A và toán hạng, thuộc nhóm truyền dữ liệu.",
+    "methodology": "XCH trao đổi byte giữa A và toán hạng, thuộc nhóm truyền dữ liệu.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15414,7 +15351,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 19,
     "title": "Part 9 - Câu 19",
-    "prompt": "Trong tập lệnh của hệ thống 89C51, những thanh ghi nào có thể được sử dụng làm thanh ghi con trỏ lệnh:",
+    "prompt": "Trong tập lệnh của hệ thống 89C51, những thanh ghi nào có thể được sử dụng làm con trỏ địa chỉ gián tiếp RAM nội (@Ri):",
     "extra_lines": [],
     "options": [
       "R1, R2",
@@ -15423,13 +15360,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "R0, R1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Trong 8051, chỉ có hai thanh ghi R0 và R1 (cùng với DPTR cho bộ nhớ ngoài) được phép sử dụng làm con trỏ định địa chỉ gián tiếp (ký hiệu @R0, @R1).",
-    "methodology": "Thanh ghi con trỏ định địa chỉ gián tiếp: R0 và R1.",
-    "tips_casio": "Con trỏ gián tiếp RAM nội = R0 và R1.",
+    "explanation": "Chỉ R0 và R1 dùng được trong dạng @Ri để định địa chỉ gián tiếp RAM nội. Con trỏ lệnh thực sự là PC.",
+    "methodology": "Chỉ R0 và R1 dùng được trong dạng @Ri để định địa chỉ gián tiếp RAM nội. Con trỏ lệnh thực sự là PC.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15442,23 +15379,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 20,
     "title": "Part 9 - Câu 20",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RL thuộc nhóm lệnh gì? Lệnh điều khiển chương trình Lệnh tính toán logic và dịch bit Lệnh số học Lệnh xử lý bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RL thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh điều khiển chương trình",
+      "Lệnh logic và xoay bit",
+      "Lệnh số học",
+      "Lệnh xử lý bit"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "RL thuộc nhóm logic và xoay bit. ",
+    "methodology": "RL thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15484,9 +15420,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "explanation": "MOVX thuộc nhóm truyền dữ liệu. ",
+    "methodology": "MOVX thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15499,23 +15435,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 22,
     "title": "Part 9 - Câu 22",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DIV thuộc nhóm lệnh gì? Lệnh điều khiển chương trình Lệnh truyền dữ liệu Lệnh tính toán logic và dịch bit Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DIV thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
+    "options": [
+      "Lệnh điều khiển chương trình",
+      "Lệnh truyền dữ liệu",
+      "Lệnh logic và xoay bit",
+      "Lệnh số học"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "explanation": "DIV thuộc nhóm số học. ",
+    "methodology": "DIV thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15528,23 +15463,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 23,
     "title": "Part 9 - Câu 23",
-    "prompt": "Trình biên dịch cho ngôn ngữ Assembly có chức năng: (C) Biên dịch từ tập tin nguồn dạng ASCII sang tập tin mã dạng DEC (B) Biên dịch từ tập tin nguồn dạng ASCII sang tập tin mã dạng BIN (D) Cả hai đáp án A và B đều sai. (A) Kiểm tra",
+    "prompt": "Trình biên dịch cho ngôn ngữ Assembly có chức năng:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "mã máy",
-    "acceptable_answers": [
-      "mã máy",
-      "MÃ MÁY",
-      "Mã máy",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Chuyển mã nguồn Assembly thành mã máy",
+      "Chuyển mã máy thành văn bản tiếng Việt",
+      "Chạy mã nguồn như chương trình Python",
+      "Chỉ kiểm tra chính tả"
     ],
-    "explanation": "Trình biên dịch/hợp dịch (Assembler) có chức năng dịch mã nguồn ngôn ngữ Assembly thành mã máy nhị phân (Machine Code) để CPU có thể nạp và thực thi.",
-    "methodology": "Chức năng Assembler: Dịch Hợp ngữ thành Mã máy.",
-    "tips_casio": "Trình biên dịch ASM -> Tạo mã máy nhị phân.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Assembler phân tích mã nguồn Assembly và sinh mã máy/đối tượng; chỉ thị DB/DW/EQU không phải lệnh CPU thực thi.",
+    "methodology": "Assembler phân tích mã nguồn Assembly và sinh mã máy/đối tượng; chỉ thị DB/DW/EQU không phải lệnh CPU thực thi.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15557,23 +15491,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 24,
     "title": "Part 9 - Câu 24",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RETI thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh tính toán logic và dịch bit Lệnh số học Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RETI thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit",
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "explanation": "RETI thuộc nhóm điều khiển chương trình. ",
+    "methodology": "RETI thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15599,9 +15532,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "explanation": "MOV thuộc nhóm truyền dữ liệu. ",
+    "methodology": "MOV thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15614,23 +15547,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 26,
     "title": "Part 9 - Câu 26",
-    "prompt": "Từ khóa nào dùng để định nghĩa một byte dữ liệu trong assembly của 8051? ORG DB EQU DW",
+    "prompt": "Từ khóa nào dùng để định nghĩa một byte dữ liệu trong assembly của 8051?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "equ",
-    "acceptable_answers": [
-      "equ",
+    "options": [
+      "ORG",
+      "DB",
       "EQU",
-      "Equ",
-      "A",
-      "B",
-      "C",
-      "D"
+      "DW"
     ],
-    "explanation": "Chỉ thị hợp ngữ EQU (Equate) được dùng để định nghĩa một tên hằng số hoặc gán một giá trị cố định cho một ký hiệu (ví dụ: MY_CONST EQU 0AH).",
-    "methodology": "Khai báo hằng số trong Assembly 8051: Sử dụng chỉ thị EQU.",
-    "tips_casio": "Gán hằng số -> Dùng chỉ thị EQU.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "DB khai báo byte (8 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "methodology": "DB khai báo byte (8 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15649,16 +15581,16 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Lệnh số học",
       "Lệnh điều khiển chương trình",
       "Lệnh xử lý bit",
-      "Lệnh tính toán logic và dịch bit"
+      "Lệnh logic và xoay bit"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "SETB thuộc nhóm xử lý bit. ",
+    "methodology": "SETB thuộc nhóm xử lý bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15684,9 +15616,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Trong ngôn ngữ hợp ngữ Assembly của họ 8051, một dòng chú thích (comment) luôn bắt đầu bằng dấu chấm phẩy ';' và kéo dài đến hết dòng.",
-    "methodology": "Dấu chú thích chuẩn: Dấu chấm phẩy ';'.",
-    "tips_casio": "Dòng chú thích bắt đầu bằng dấu chấm phẩy ';'.",
+    "explanation": "Dấu ; bắt đầu phần chú thích trong mã nguồn Assembly A51.",
+    "methodology": "Dấu ; bắt đầu phần chú thích trong mã nguồn Assembly A51.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15699,22 +15631,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 29,
     "title": "Part 9 - Câu 29",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh XRL là thuộc nhóm lệnh gì?",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh XRL A, R0 là thuộc nhóm lệnh gì?",
     "extra_lines": [],
     "options": [
       "Lệnh điều khiển chương trình",
       "Lệnh xử lý bit",
       "Lệnh số học",
-      "Lệnh tính toán logic và dịch bit"
+      "Lệnh logic và xoay bit"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "explanation": "XRL thuộc nhóm logic và xoay bit. ",
+    "methodology": "XRL thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15736,13 +15668,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "CJNE"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "CJNE so sánh và nhảy khi khác nhau, thuộc nhóm điều khiển chương trình.",
+    "methodology": "CJNE so sánh và nhảy khi khác nhau, thuộc nhóm điều khiển chương trình.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15760,7 +15692,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "options": [
       "Lệnh xử lý bit",
       "Lệnh số học",
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh điều khiển chương trình"
     ],
     "type": "mcq",
@@ -15768,9 +15700,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "explanation": "SJMP thuộc nhóm điều khiển chương trình. ",
+    "methodology": "SJMP thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15783,23 +15715,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 32,
     "title": "Part 9 - Câu 32",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RR thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh số học Lệnh điều khiển chương trình Lệnh xử lý bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RR thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình",
+      "Lệnh xử lý bit"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "RR thuộc nhóm logic và xoay bit. ",
+    "methodology": "RR thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15812,23 +15743,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 33,
     "title": "Part 9 - Câu 33",
-    "prompt": "Từ khóa nào dùng để gán một giá trị cho một tên trong assembly của 89C51? DW DB EQU ORG",
+    "prompt": "Từ khóa nào dùng để gán một giá trị cho một tên trong assembly của 89C51?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "equ",
-    "acceptable_answers": [
-      "equ",
+    "options": [
+      "DW",
+      "DB",
       "EQU",
-      "Equ",
-      "A",
-      "B",
-      "C",
-      "D"
+      "ORG"
     ],
-    "explanation": "Chỉ thị hợp ngữ EQU (Equate) được dùng để định nghĩa một tên hằng số hoặc gán một giá trị cố định cho một ký hiệu (ví dụ: MY_CONST EQU 0AH).",
-    "methodology": "Khai báo hằng số trong Assembly 8051: Sử dụng chỉ thị EQU.",
-    "tips_casio": "Gán hằng số -> Dùng chỉ thị EQU.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "EQU gán giá trị cho ký hiệu ở thời điểm hợp dịch; không dành ô dữ liệu như DB/DW và không đổi bộ đếm vị trí như ORG.",
+    "methodology": "EQU gán giá trị cho ký hiệu ở thời điểm hợp dịch; không dành ô dữ liệu như DB/DW và không đổi bộ đếm vị trí như ORG.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15844,19 +15774,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào sau đây định nghĩa một từ với giá trị 0x1234?",
     "extra_lines": [],
     "options": [
-      "MY_WORD ORG 0x1234",
-      "MY_WORD DW 0x1234",
-      "MY_WORD DB 0x1234",
-      "MY_WORD EQU 0x1234"
+      "MY_WORD ORG 1234H",
+      "MY_WORD DW 1234H",
+      "MY_WORD DB 1234H",
+      "MY_WORD EQU 1234H"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Chỉ thị DW (Define Word) dùng để định nghĩa một từ dữ liệu 16-bit (2 byte) trong bộ nhớ chương trình.",
-    "methodology": "DW = Define Word (định nghĩa từ 16-bit); DB = Define Byte (định nghĩa byte 8-bit).",
-    "tips_casio": "Một từ dữ liệu (16-bit) -> Dùng chỉ thị DW.",
+    "explanation": "DW khai báo word (16 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "methodology": "DW khai báo word (16 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15869,23 +15799,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 35,
     "title": "Part 9 - Câu 35",
-    "prompt": "Một lệnh đầy đủ của ngôn ngữ assembly gồm các phần (xếp theo thứ tự): Nhãn lệnh, toán hạng, mã lệnh và ghi chu. Toán hạng, mã lệnh, nhãn lệnh và ghi chú. Mã lệnh, nhãn lệnh, toán hạng và ghi chú. Nhãn lệnh, mã lệnh, toán hạng và ghi chú.",
+    "prompt": "Một lệnh đầy đủ của ngôn ngữ assembly gồm các phần (xếp theo thứ tự):",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "nhãn lệnh, mã lệnh, toán hạng và ghi chú",
+    "options": [
+      "Nhãn lệnh, toán hạng, mã lệnh và ghi chu.",
+      "Toán hạng, mã lệnh, nhãn lệnh và ghi chú.",
+      "Mã lệnh, nhãn lệnh, toán hạng và ghi chú.",
+      "Nhãn lệnh, mã lệnh, toán hạng và ghi chú."
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "nhãn lệnh, mã lệnh, toán hạng và ghi chú",
-      "NHÃN LỆNH, MÃ LỆNH, TOÁN HẠNG VÀ GHI CHÚ",
-      "Nhãn lệnh, mã lệnh, toán hạng và ghi chú",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Một dòng lệnh Assembly chuẩn gồm 4 trường theo thứ tự: Nhãn lệnh (Label:) -> Mã thao tác (Opcode) -> Các toán hạng (Operands) -> Ghi chú (;Comment).",
-    "methodology": "Cấu trúc dòng lệnh ASM: [Nhãn:] [Mã lệnh] [Toán hạng] [;Ghi chú].",
-    "tips_casio": "Thứ tự: Nhãn lệnh -> Mã lệnh -> Toán hạng -> Ghi chú.",
+    "explanation": "Cấu trúc thông thường: nhãn ở đầu, tiếp theo mã gợi nhớ, toán hạng, rồi chú thích sau dấu chấm phẩy.",
+    "methodology": "Cấu trúc thông thường: nhãn ở đầu, tiếp theo mã gợi nhớ, toán hạng, rồi chú thích sau dấu chấm phẩy.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15898,11 +15827,11 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 36,
     "title": "Part 9 - Câu 36",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh CLP P1 thuộc nhóm lệnh gì?",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh CPL P1.0 thuộc nhóm lệnh gì?",
     "extra_lines": [],
     "options": [
       "Lệnh xử lý bit",
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh số học",
       "Lệnh điều khiển chương trình"
     ],
@@ -15911,9 +15840,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "CPL thuộc nhóm xử lý bit. ",
+    "methodology": "CPL thuộc nhóm xử lý bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15926,7 +15855,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 37,
     "title": "Part 9 - Câu 37",
-    "prompt": "Để khai báo một địa chỉ bộ nhớ trực tiếp trong Assembly 89C51, cú pháp nào sau đây là đúng?",
+    "prompt": "Lệnh nào đọc nội dung ô RAM nội địa chỉ 30H vào A bằng định địa chỉ trực tiếp?",
     "extra_lines": [],
     "options": [
       "MOV A, #30H",
@@ -15935,13 +15864,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "MOV A, 30H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "Không có # nên 30H là địa chỉ RAM nội. MOV A, #30H chỉ nạp hằng số 30H.",
+    "methodology": "Không có # nên 30H là địa chỉ RAM nội. MOV A, #30H chỉ nạp hằng số 30H.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15958,7 +15887,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "extra_lines": [],
     "options": [
       "Lệnh xử lý bit",
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh số học",
       "Lệnh điều khiển chương trình"
     ],
@@ -15967,9 +15896,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "explanation": "SWAP thuộc nhóm logic và xoay bit. ",
+    "methodology": "SWAP thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -15988,16 +15917,16 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Lệnh điều khiển chương trình",
       "Lệnh số học",
       "Lệnh truyền dữ liệu",
-      "Lệnh tính toán logic và dịch bit"
+      "Lệnh logic và xoay bit"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "explanation": "SUBB thuộc nhóm số học. ",
+    "methodology": "SUBB thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16013,7 +15942,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh MOV thuộc nhóm lệnh gì?",
     "extra_lines": [],
     "options": [
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh điều khiển chương trình",
       "Lệnh số học",
       "Lệnh truyền dữ liệu"
@@ -16023,9 +15952,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "explanation": "MOV thuộc nhóm truyền dữ liệu. ",
+    "methodology": "MOV thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16041,7 +15970,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh JNB P1.3, label thuộc nhóm lệnh gì?",
     "extra_lines": [],
     "options": [
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh số học",
       "Lệnh truyền dữ liệu",
       "Lệnh xử lý bit"
@@ -16051,9 +15980,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "JNB thuộc nhóm xử lý bit. JNB kiểm tra bit rồi nhảy nếu bit bằng 0.",
+    "methodology": "JNB thuộc nhóm xử lý bit. JNB kiểm tra bit rồi nhảy nếu bit bằng 0.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16066,23 +15995,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 42,
     "title": "Part 9 - Câu 42",
-    "prompt": "Trong tập lệnh của hệ thống 89C51, addr11 dùng để biểu diễn: Dữ liệu toán hạng nguồn 11bit Địa chỉ toán hạng đích 11bit Dữ liệu toán hạng đích 11bit Địa chỉ toán hạng nguồn 11bit",
+    "prompt": "Trong tập lệnh của hệ thống 89C51, addr11 dùng để biểu diễn:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "2k",
-    "acceptable_answers": [
-      "2k",
-      "2K",
-      "2k",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Hằng số dữ liệu 11 bit",
+      "Địa chỉ nguồn RAM 11 bit",
+      "Địa chỉ đích 11 bit của AJMP/ACALL",
+      "Độ dời có dấu 11 bit"
     ],
-    "explanation": "addr11 dùng để biểu diễn địa chỉ tuyệt đối 11-bit, chỉ có thể nhảy trong phạm vi cùng trang khối $2\\,\\text{KB}$ của bộ nhớ chương trình.",
-    "methodology": "addr11: Địa chỉ 11-bit trong cùng khối $2\\,\\text{KB}$.",
-    "tips_casio": "addr11 -> Khối $2\\,\\text{KB}$.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "AJMP/ACALL mã hóa 11 bit địa chỉ đích; 5 bit cao lấy từ PC của lệnh kế tiếp. Đích phải cùng trang 2 KiB với lệnh kế tiếp.",
+    "methodology": "AJMP/ACALL mã hóa 11 bit địa chỉ đích; 5 bit cao lấy từ PC của lệnh kế tiếp. Đích phải cùng trang 2 KiB với lệnh kế tiếp.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16095,22 +16023,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 43,
     "title": "Part 9 - Câu 43",
-    "prompt": "Ký tự nào sau đây được sử dụng để biểu thị một hằng số thập phân trong Assembly trên 89C51?",
+    "prompt": "Theo cú pháp hậu tố số của assembler A51, hậu tố nào biểu thị một hằng số thập phân?",
     "extra_lines": [],
     "options": [
-      "%",
-      "\\$",
-      "#",
-      "0d"
+      "H",
+      "D",
+      "B",
+      "#"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "B",
     "acceptable_answers": [
-      "D"
+      "B"
     ],
-    "explanation": "Hằng số thập phân (Decimal) có thể thêm hậu tố chữ D hoặc không cần hậu tố (ví dụ: 100 hoặc 100D).",
-    "methodology": "Hậu tố thập phân: Chữ D.",
-    "tips_casio": "Thập phân -> Ký tự D.",
+    "explanation": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "methodology": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16123,12 +16051,12 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 44,
     "title": "Part 9 - Câu 44",
-    "prompt": "Trong Assembly trên 89C51, ký tự nào được sử dụng để biểu thị một hằng số thập lục phân?",
+    "prompt": "Theo cú pháp hậu tố số của assembler A51, hậu tố nào biểu thị một hằng số thập lục phân?",
     "extra_lines": [],
     "options": [
-      "\\$",
-      "0x",
-      "%",
+      "H",
+      "D",
+      "B",
       "#"
     ],
     "type": "mcq",
@@ -16136,9 +16064,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Hằng số thập lục phân (Hexadecimal) trong Assembly 8051 được biểu thị bằng hậu tố chữ H ở cuối số (ví dụ: 0FFH, 12H).",
-    "methodology": "Hậu tố Hex: Chữ H.",
-    "tips_casio": "Thập lục phân (Hex) -> Ký tự H ở cuối.",
+    "explanation": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "methodology": "Trong cú pháp số có hậu tố của A51: H là hệ 16, D là hệ 10, B là hệ 2. Số không có hậu tố mặc định là thập phân; hằng hex bắt đầu bằng A–F phải thêm chữ số 0 phía trước.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16157,16 +16085,16 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Lệnh xử lý bit",
       "Lệnh điều khiển chương trình",
       "Lệnh số học",
-      "Lệnh tính toán logic và dịch bit"
+      "Lệnh logic và xoay bit"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "explanation": "LJMP thuộc nhóm điều khiển chương trình. ",
+    "methodology": "LJMP thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16179,22 +16107,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 46,
     "title": "Part 9 - Câu 46",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh SETB P1 thuộc nhóm lệnh gì?",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh SETB P1.0 thuộc nhóm lệnh gì?",
     "extra_lines": [],
     "options": [
       "Lệnh điều khiển chương trình",
       "Lệnh xử lý bit",
       "Lệnh số học",
-      "Lệnh tính toán logic và dịch bit"
+      "Lệnh logic và xoay bit"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "SETB thuộc nhóm xử lý bit. ",
+    "methodology": "SETB thuộc nhóm xử lý bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16207,23 +16135,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 47,
     "title": "Part 9 - Câu 47",
-    "prompt": "Trong tập lệnh của hệ thống 89C51, addr16 dùng để biểu diễn: Địa chỉ toán hạng đích 16bit Địa chỉ toán hạng 8bit Địa chỉ toán hạng 16bit Địa chỉ toán hạng nguồn 16bit",
+    "prompt": "Trong tập lệnh của hệ thống 89C51, addr16 dùng để biểu diễn:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "16bit",
-    "acceptable_answers": [
-      "16bit",
-      "16BIT",
-      "16bit",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Địa chỉ đích 16 bit trong không gian mã",
+      "Địa chỉ RAM trực tiếp 8 bit",
+      "Hằng số dữ liệu 16 bit",
+      "Độ dời tương đối 8 bit"
     ],
-    "explanation": "addr16 biểu diễn địa chỉ tuyệt đối 16-bit, cho phép truy xuất đến bất kỳ địa chỉ nào trong toàn bộ không gian $64\\,\\text{KB}$ của bộ nhớ chương trình.",
-    "methodology": "addr16: Địa chỉ tuyệt đối 16-bit trong $64\\,\\text{KB}$.",
-    "tips_casio": "addr16 -> Địa chỉ tuyệt đối 16 bit.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "LJMP/LCALL dùng địa chỉ đích 16 bit, cho phép đích ở bất kỳ vị trí nào trong không gian mã 64 KiB.",
+    "methodology": "LJMP/LCALL dùng địa chỉ đích 16 bit, cho phép đích ở bất kỳ vị trí nào trong không gian mã 64 KiB.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16236,23 +16163,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 48,
     "title": "Part 9 - Câu 48",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh NOP thuộc nhóm lệnh gì? Lệnh điều khiển chương trình Lệnh số học Lệnh xử lý bit Lệnh tính toán logic và dịch bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh NOP thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học",
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "NOP thuộc nhóm điều khiển chương trình. NOP không thay đổi dữ liệu nhưng vẫn tiến PC và tiêu tốn một chu kỳ máy.",
+    "methodology": "NOP thuộc nhóm điều khiển chương trình. NOP không thay đổi dữ liệu nhưng vẫn tiến PC và tiêu tốn một chu kỳ máy.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16265,23 +16191,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 49,
     "title": "Part 9 - Câu 49",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh POP thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh logic và dịch bit Lệnh số học Lệnh truyền dữ liệu",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh POP thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "truyền dữ liệu",
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit",
+      "Lệnh số học",
+      "Lệnh truyền dữ liệu"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "truyền dữ liệu",
-      "TRUYỀN DỮ LIỆU",
-      "Truyền dữ liệu",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "explanation": "POP thuộc nhóm truyền dữ liệu. ",
+    "methodology": "POP thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16294,23 +16219,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 50,
     "title": "Part 9 - Câu 50",
-    "prompt": "Để khai báo một nhãn (label) trong Assembly, ký tự nào thường được sử dụng? # ; : \\$",
+    "prompt": "Để khai báo một nhãn (label) trong Assembly, ký tự nào thường được sử dụng?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "#",
+      ";",
+      ":",
+      "\\$"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "Nhãn được viết trước lệnh và kết thúc bằng dấu :, ví dụ LOOP: INC A.",
+    "methodology": "Nhãn được viết trước lệnh và kết thúc bằng dấu :, ví dụ LOOP: INC A.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16327,7 +16251,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "extra_lines": [],
     "options": [
       "Lệnh xử lý bit",
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh truyền dữ liệu",
       "Lệnh số học"
     ],
@@ -16336,9 +16260,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "JBC thuộc nhóm xử lý bit. JBC kiểm tra bit, xóa bit và nhảy nếu bit ban đầu bằng 1.",
+    "methodology": "JBC thuộc nhóm xử lý bit. JBC kiểm tra bit, xóa bit và nhảy nếu bit ban đầu bằng 1.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16364,9 +16288,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "explanation": "LCALL thuộc nhóm điều khiển chương trình. ",
+    "methodology": "LCALL thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16379,23 +16303,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 53,
     "title": "Part 9 - Câu 53",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RLC thuộc nhóm lệnh gì? Lệnh điều khiển chương trìn Lệnh xử lý bit Lệnh số học Lệnh tính toán logic và dịch bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RLC thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
+    "options": [
+      "Lệnh điều khiển chương trìn",
+      "Lệnh xử lý bit",
+      "Lệnh số học",
+      "Lệnh logic và xoay bit"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "explanation": "RLC thuộc nhóm logic và xoay bit. ",
+    "methodology": "RLC thuộc nhóm logic và xoay bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16417,13 +16340,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Mã lệnh"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Phương pháp xác định cách thức CPU tìm nạp và truy xuất toán hạng của một câu lệnh được gọi là Chế độ định địa chỉ (Addressing Mode).",
-    "methodology": "Khái niệm Chế độ định địa chỉ: Phương pháp xác định toán hạng.",
-    "tips_casio": "Cách truy xuất toán hạng -> Chế độ định địa chỉ.",
+    "explanation": "Chế độ định địa chỉ mô tả cách tìm toán hạng: tức thời, thanh ghi, trực tiếp, gián tiếp hoặc chỉ số.",
+    "methodology": "Chế độ định địa chỉ mô tả cách tìm toán hạng: tức thời, thanh ghi, trực tiếp, gián tiếp hoặc chỉ số.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16436,7 +16359,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 55,
     "title": "Part 9 - Câu 55",
-    "prompt": "Để khai báo một địa chỉ bộ nhớ trong Assembly 89C51, cú pháp nào sau đây là đúng?",
+    "prompt": "Lệnh nào đọc RAM nội vào A bằng định địa chỉ gián tiếp qua R0?",
     "extra_lines": [],
     "options": [
       "MOV A, @R0",
@@ -16449,9 +16372,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "@R0 đọc RAM nội tại địa chỉ chứa trong R0; R0 phải trỏ vào 00H–7FH trên AT89C51.",
+    "methodology": "@R0 đọc RAM nội tại địa chỉ chứa trong R0; R0 phải trỏ vào 00H–7FH trên AT89C51.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16477,9 +16400,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "explanation": "XCHD thuộc nhóm truyền dữ liệu. ",
+    "methodology": "XCHD thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16492,10 +16415,10 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 57,
     "title": "Part 9 - Câu 57",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh CLP P1.0 thuộc nhóm lệnh gì?",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh CPL P1.0 thuộc nhóm lệnh gì?",
     "extra_lines": [],
     "options": [
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh xử lý bit",
       "Lệnh truyền dữ liệu",
       "Lệnh số học"
@@ -16505,9 +16428,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "CPL thuộc nhóm xử lý bit. ",
+    "methodology": "CPL thuộc nhóm xử lý bit. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16520,7 +16443,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 58,
     "title": "Part 9 - Câu 58",
-    "prompt": "Để khai báo một địa chỉ trong Assembly trên 89C51, ký tự nào thường được sử dụng?",
+    "prompt": "Trong toán hạng @R0 của lệnh MOV A, @R0, ký tự nào đánh dấu định địa chỉ gián tiếp?",
     "extra_lines": [],
     "options": [
       "#",
@@ -16529,13 +16452,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "@"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "@ biểu thị định địa chỉ gián tiếp, ví dụ MOV A, @R0. # biểu thị dữ liệu tức thời.",
+    "methodology": "@ biểu thị định địa chỉ gián tiếp, ví dụ MOV A, @R0. # biểu thị dữ liệu tức thời.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16548,23 +16471,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 59,
     "title": "Part 9 - Câu 59",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RET thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh điều khiển chương trình Lệnh xử lý bit Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh RET thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
-    "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh xử lý bit",
+      "Lệnh số học"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "RET thuộc nhóm điều khiển chương trình. ",
+    "methodology": "RET thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16577,23 +16499,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 60,
     "title": "Part 9 - Câu 60",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào sau đây gán giá trị 0x0A cho MY_CONST? (1 Point) MY_CONST DB 0x0A MY_CONST DW 0x0A MY_CONST EQU 0x0A MY_CONST ORG 0x0A",
+    "prompt": "Trong hợp ngữ 8051, khai báo nào gán hằng số 0AH cho tên MY_CONST?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "equ",
-    "acceptable_answers": [
-      "equ",
-      "EQU",
-      "Equ",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "MY_CONST DB 0AH",
+      "MY_CONST DW 0AH",
+      "MY_CONST EQU 0AH",
+      "MY_CONST ORG 0AH"
     ],
-    "explanation": "Chỉ thị hợp ngữ EQU (Equate) được dùng để định nghĩa một tên hằng số hoặc gán một giá trị cố định cho một ký hiệu (ví dụ: MY_CONST EQU 0AH).",
-    "methodology": "Khai báo hằng số trong Assembly 8051: Sử dụng chỉ thị EQU.",
-    "tips_casio": "Gán hằng số -> Dùng chỉ thị EQU.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "EQU gán giá trị cho ký hiệu ở thời điểm hợp dịch; không dành ô dữ liệu như DB/DW và không đổi bộ đếm vị trí như ORG.",
+    "methodology": "EQU gán giá trị cho ký hiệu ở thời điểm hợp dịch; không dành ô dữ liệu như DB/DW và không đổi bộ đếm vị trí như ORG.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16609,19 +16530,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào sau đây định nghĩa một byte với giá trị 0x55?",
     "extra_lines": [],
     "options": [
-      "MY_BYTE DB 0x55",
-      "MY_BYTE DW 0x55",
-      "MY_BYTE ORG 0x55",
-      "MY_BYTE EQU 0x55"
+      "MY_BYTE DB 55H",
+      "MY_BYTE DW 55H",
+      "MY_BYTE ORG 55H",
+      "MY_BYTE EQU 55H"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Chỉ thị DB (Define Byte) dùng để định nghĩa một byte dữ liệu 8-bit hoặc một chuỗi ký tự trong bộ nhớ chương trình.",
-    "methodology": "DB = Define Byte (định nghĩa byte 8-bit).",
-    "tips_casio": "Byte dữ liệu -> Dùng chỉ thị DB.",
+    "explanation": "DB khai báo byte (8 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "methodology": "DB khai báo byte (8 bit) dữ liệu. EQU chỉ định nghĩa hằng ký hiệu; ORG thiết lập vị trí mã.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16634,23 +16555,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 62,
     "title": "Part 9 - Câu 62",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh JNZ thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh xử lý bit Lệnh số học Lệnh điều khiển chương trình",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh JNZ thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "điều khiển chương trình",
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh xử lý bit",
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "điều khiển chương trình",
-      "ĐIỀU KHIỂN CHƯƠNG TRÌNH",
-      "Điều khiển chương trình",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "explanation": "JNZ thuộc nhóm điều khiển chương trình. ",
+    "methodology": "JNZ thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16663,23 +16583,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 63,
     "title": "Part 9 - Câu 63",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DEC thuộc nhóm lệnh gì? Lệnh xử lý bit Lệnh truyền dữ liệu Lệnh điều khiển chương trình Lệnh số học",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DEC thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
+    "options": [
+      "Lệnh xử lý bit",
+      "Lệnh truyền dữ liệu",
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
       "D"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "explanation": "DEC thuộc nhóm số học. ",
+    "methodology": "DEC thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16695,7 +16614,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh PUSH thuộc nhóm lệnh gì?",
     "extra_lines": [],
     "options": [
-      "Lệnh logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh truyền dữ liệu",
       "Lệnh số học",
       "Lệnh xử lý bit"
@@ -16705,9 +16624,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh này sao chép, di chuyển dữ liệu giữa các thanh ghi, ô nhớ RAM nội, RAM ngoại, ROM và ngăn xếp mà không làm thay đổi giá trị số học, do đó thuộc nhóm Lệnh Truyền dữ liệu (Data Transfer).",
-    "methodology": "Nhóm lệnh truyền dữ liệu: MOV, MOVX, MOVC, PUSH, POP, XCH, XCHD.",
-    "tips_casio": "MOV/MOVX/MOVC/PUSH/POP/XCH -> Lệnh truyền dữ liệu.",
+    "explanation": "PUSH thuộc nhóm truyền dữ liệu. ",
+    "methodology": "PUSH thuộc nhóm truyền dữ liệu. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16720,23 +16639,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 65,
     "title": "Part 9 - Câu 65",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ORL thuộc nhóm lệnh gì? Lệnh tính toán logic và dịch bit Lệnh số học Lệnh điều khiển chương trình Lệnh xử lý bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ORL A, R0 thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "logic",
-    "acceptable_answers": [
-      "logic",
-      "LOGIC",
-      "Logic",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh logic và xoay bit",
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình",
+      "Lệnh xử lý bit"
     ],
-    "explanation": "Lệnh này thực hiện các phép toán logic từng bit (AND, OR, XOR, đảo, xóa, quay/dịch bit, hoán chuyển nibble), do đó thuộc nhóm Lệnh Logic và Dịch bit.",
-    "methodology": "Nhóm lệnh logic: ANL, ORL, XRL, CPL A, CLR A, RL, RLC, RR, RRC, SWAP.",
-    "tips_casio": "ANL/ORL/XRL/RL/RR/SWAP -> Lệnh logic và dịch bit.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "ORL thuộc nhóm logic và xoay bit. Ở đây ORL A, R0 là OR cả byte; ORL C, bit là dạng xử lý bit khác.",
+    "methodology": "ORL thuộc nhóm logic và xoay bit. Ở đây ORL A, R0 là OR cả byte; ORL C, bit là dạng xử lý bit khác.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16749,22 +16667,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 66,
     "title": "Part 9 - Câu 66",
-    "prompt": "Ký tự nào sau đây được sử dụng để biểu thị một hằng số ký tự trong Assembly trên 89C51?",
+    "prompt": "Trong lệnh MOV A, #'K', phần nào biểu diễn hằng ký tự K?",
     "extra_lines": [],
     "options": [
-      "\"",
-      "%",
-      "'",
-      "#"
+      "Dấu nháy đơn: 'K'",
+      "Dấu # đứng một mình",
+      "Dấu %",
+      "Dấu ;"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "A",
     "acceptable_answers": [
-      "C"
+      "A"
     ],
-    "explanation": "Trong hợp ngữ 8051, một hằng số ký tự ASCII được đặt trong cặp dấu nháy đơn ' (ví dụ: 'A', '1').",
-    "methodology": "Biểu diễn ký tự: Đặt trong dấu nháy đơn ' '.",
-    "tips_casio": "Hằng số ký tự -> Dấu nháy đơn ' .",
+    "explanation": "Trong ví dụ MOV A, #'K', K được bao bởi nháy đơn; # đánh dấu toán hạng tức thời. Nêu rõ ví dụ để không phủ nhận cú pháp chuỗi dùng nháy kép của assembler.",
+    "methodology": "Trong ví dụ MOV A, #'K', K được bao bởi nháy đơn; # đánh dấu toán hạng tức thời. Nêu rõ ví dụ để không phủ nhận cú pháp chuỗi dùng nháy kép của assembler.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16777,23 +16695,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 67,
     "title": "Part 9 - Câu 67",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DA thuộc nhóm lệnh gì? Lệnh số học Lệnh điều khiển chương trình Lệnh xử lý bit Lệnh tính toán logic và dịch bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh DA thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh số học",
+      "Lệnh điều khiển chương trình",
+      "Lệnh xử lý bit",
+      "Lệnh logic và xoay bit"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "DA thuộc nhóm số học. ",
+    "methodology": "DA thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16806,23 +16723,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 68,
     "title": "Part 9 - Câu 68",
-    "prompt": "Trong tập lệnh của hệ thống 89C51, rel dùng để biểu diễn: Dữ liệu tương đối được sử dụng trong các lệnh nhảy có điều kiện và không điềukiện Toán hạng tương đối được sử dụng trong các lệnh nhảy có điều kiện và khôngđiều kiện Địa chỉ tuyệt đối được sử dụng trong các lệnh nhảy có điều kiện và không điềukiện Địa chỉ tương đối được sử dụng trong các lệnh nhảy có điều kiện và không điềukiện",
+    "prompt": "Trong tập lệnh của hệ thống 89C51, rel dùng để biểu diễn:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "địa chỉ tương đối",
-    "acceptable_answers": [
-      "địa chỉ tương đối",
-      "ĐỊA CHỈ TƯƠNG ĐỐI",
-      "Địa chỉ tương đối",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Địa chỉ tuyệt đối 16 bit",
+      "Độ dời có dấu 8 bit, tính từ lệnh kế tiếp",
+      "Hằng số dữ liệu 8 bit",
+      "Địa chỉ trực tiếp SFR"
     ],
-    "explanation": "Toán hạng rel (relative) dùng để biểu diễn một địa chỉ tương đối 8-bit có dấu, có phạm vi nhảy từ -128 byte đến +127 byte so với lệnh kế tiếp.",
-    "methodology": "rel = Relative offset (địa chỉ tương đối 8-bit).",
-    "tips_casio": "rel -> Địa chỉ tương đối.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "rel là độ dời -128 đến +127 byte so với PC sau khi đã tăng qua lệnh nhảy.",
+    "methodology": "rel là độ dời -128 đến +127 byte so với PC sau khi đã tăng qua lệnh nhảy.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16835,23 +16751,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 69,
     "title": "Part 9 - Câu 69",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ADD thuộc nhóm lệnh gì? Lệnh truyền dữ liệu Lệnh điều khiển chương trình Lệnh số học Lệnh tính toán logic và dịch bit",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh ADD thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh truyền dữ liệu",
+      "Lệnh điều khiển chương trình",
+      "Lệnh số học",
+      "Lệnh logic và xoay bit"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "ADD thuộc nhóm số học. ",
+    "methodology": "ADD thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16869,17 +16784,17 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "options": [
       "SWAP",
       "CPL",
-      "C. XCH",
+      "XCH",
       "INC"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Phân tích cú pháp và chức năng của câu lệnh theo chuẩn tập lệnh họ vi điều khiển 8051.",
-    "methodology": "Xác định mã thao tác Opcode và tra cứu nhóm lệnh tương ứng.",
-    "tips_casio": "Phân biệt 5 nhóm lệnh: Số học, Logic, Truyền dữ liệu, Xử lý bit, Điều khiển chương trình.",
+    "explanation": "INC tăng toán hạng lên 1, thuộc nhóm số học. SWAP là xoay nibble, CPL là đảo bit, XCH là trao đổi dữ liệu.",
+    "methodology": "INC tăng toán hạng lên 1, thuộc nhóm số học. SWAP là xoay nibble, CPL là đảo bit, XCH là trao đổi dữ liệu.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16892,23 +16807,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 9: Tập Lệnh Hợp Ngữ 8051 & Khai Báo ASM",
     "num": 71,
     "title": "Part 9 - Câu 71",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh INC thuộc nhóm lệnh gì? Lệnh số học Lệnh xử lý bit Lệnh điều khiển chương trình Lệnh truyền dữ liệu",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh INC thuộc nhóm lệnh gì?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "số học",
-    "acceptable_answers": [
-      "số học",
-      "SỐ HỌC",
-      "Số học",
-      "A",
-      "B",
-      "C",
-      "D"
+    "options": [
+      "Lệnh số học",
+      "Lệnh xử lý bit",
+      "Lệnh điều khiển chương trình",
+      "Lệnh truyền dữ liệu"
     ],
-    "explanation": "Lệnh này thực hiện phép tính cộng, trừ, nhân, chia, tăng, giảm hoặc hiệu chỉnh số học, do đó thuộc nhóm Lệnh Số học (Arithmetic Instructions).",
-    "methodology": "Nhóm lệnh số học 8051: ADD, ADDC, SUBB, INC, DEC, MUL, DIV, DA A.",
-    "tips_casio": "ADD/ADDC/SUBB/INC/DEC/MUL/DIV -> Lệnh số học.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "INC thuộc nhóm số học. ",
+    "methodology": "INC thuộc nhóm số học. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16927,16 +16841,16 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Lệnh số học",
       "Lệnh truyền dữ liệu",
       "Lệnh xử lý bit",
-      "Lệnh tính toán logic và dịch bit"
+      "Lệnh logic và xoay bit"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Lệnh này thao tác trực tiếp trên các bit cờ đơn lẻ (đặt bit, xóa bit, đảo bit, kiểm tra rẽ nhánh theo bit), do đó thuộc nhóm Lệnh Xử lý Bit (Boolean Variable Manipulation).",
-    "methodology": "Nhóm lệnh xử lý bit: SETB, CLR bit, CPL bit, JB, JNB, JBC.",
-    "tips_casio": "Thao tác trên bit đơn lẻ -> Lệnh xử lý bit.",
+    "explanation": "JB thuộc nhóm xử lý bit. JB kiểm tra bit rồi nhảy nếu bit bằng 1.",
+    "methodology": "JB thuộc nhóm xử lý bit. JB kiểm tra bit rồi nhảy nếu bit bằng 1.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16954,7 +16868,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "options": [
       "Lệnh số học",
       "Lệnh điều khiển chương trình",
-      "Lệnh tính toán logic và dịch bit",
+      "Lệnh logic và xoay bit",
       "Lệnh xử lý bit"
     ],
     "type": "mcq",
@@ -16962,9 +16876,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh này thay đổi tuần tự thực thi của thanh ghi PC (nhảy, gọi hàm, rẽ nhánh, lặp), do đó thuộc nhóm Lệnh Điều khiển chương trình (Program Control / Branching).",
-    "methodology": "Nhóm lệnh điều khiển: JMP, CALL, RET, JZ, JNZ, CJNE, DJNZ.",
-    "tips_casio": "Nhảy / Gọi chương trình con -> Lệnh điều khiển chương trình.",
+    "explanation": "CJNE thuộc nhóm điều khiển chương trình. ",
+    "methodology": "CJNE thuộc nhóm điều khiển chương trình. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Tập lệnh hợp ngữ 8051 & Các chế độ định địa chỉ",
@@ -16990,9 +16904,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Cú pháp hợp ngữ di chuyển hằng số tức thời 7FH (có tiền tố '#') vào ô nhớ trực tiếp 7FH trong RAM nội là `MOV 7FH, #7FH`.",
-    "methodology": "Định vị toán hạng: Toán hạng nguồn là giá trị tức thời -> bắt buộc có dấu '#'; toán hạng đích là địa chỉ ô nhớ 7FH.",
-    "tips_casio": "Di chuyển giá trị tức thời -> Phải có dấu '#': MOV 7FH, #7FH.",
+    "explanation": "MOV direct,#data ghi hằng 7FH vào RAM nội 7FH.",
+    "methodology": "MOV direct,#data ghi hằng 7FH vào RAM nội 7FH.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17018,9 +16932,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Lệnh sao chép nội dung từ thanh ghi R0 vào thanh ghi tích lũy A có cú pháp chuẩn là `MOV A, R0` (toán hạng đích là A đứng trước, toán hạng nguồn là R0 đứng sau).",
-    "methodology": "Quy tắc cú pháp 8051: MOV đích, nguồn. Chuyển R0 vào A -> MOV A, R0.",
-    "tips_casio": "Đích đứng trước, nguồn đứng sau: MOV A, R0.",
+    "explanation": "MOV A,R0 sao chép byte trong R0, không đọc ô nhớ do R0 trỏ tới.",
+    "methodology": "MOV A,R0 sao chép byte trong R0, không đọc ô nhớ do R0 trỏ tới.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17046,9 +16960,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Lệnh so sánh và nhảy nếu không bằng (Compare and Jump if Not Equal) giữa thanh ghi Rn với một số tức thời có cú pháp chuẩn: `CJNE Rn, #data, rel`. Ở đây so sánh R0 với hằng số 00H: `CJNE R0, #00H, rel`.",
-    "methodology": "Cú pháp CJNE: CJNE Rn, #data, rel.",
-    "tips_casio": "So sánh với hằng số -> Dấu '#' trước số 00H: CJNE R0, #00H, rel.",
+    "explanation": "CJNE Rn,#data,rel so sánh thanh ghi với hằng tức thời; #00H là hằng 0.",
+    "methodology": "CJNE Rn,#data,rel so sánh thanh ghi với hằng tức thời; #00H là hằng 0.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17074,9 +16988,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "So sánh thanh ghi A với hằng số 200 (hệ thập phân, không có chữ H) và nhảy đến nhãn PROM1 nếu không bằng: `CJNE A, #200, PROM1`.",
-    "methodology": "Hằng số thập phân trong Assembly không có hậu tố H. Toán hạng đích là A.",
-    "tips_casio": "Hằng số 200 viết dạng tức thời: #200 -> CJNE A, #200, PROM1.",
+    "explanation": "200 không có H là thập phân, nằm trong 0–255; 200H = 512, vượt quá byte.",
+    "methodology": "200 không có H là thập phân, nằm trong 0–255; 200H = 512, vượt quá byte.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17102,9 +17016,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Trong tập lệnh của họ 8051, con trỏ dữ liệu DPTR 16-bit chỉ có duy nhất lệnh tăng `INC DPTR`, hoàn toàn KHÔNG CÓ lệnh giảm `DEC DPTR`. Muốn giảm DPTR lập trình viên phải cộng bù 2 hoặc trừ thủ công.",
-    "methodology": "Quy tắc kinh điển 8051: DPTR chỉ có INC DPTR, không có DEC DPTR.",
-    "tips_casio": "Lệnh SAI kinh điển = DEC DPTR.",
+    "explanation": "8051 có INC DPTR nhưng không có DEC DPTR.",
+    "methodology": "8051 có INC DPTR nhưng không có DEC DPTR.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17130,9 +17044,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh nhảy dài `LJMP addr16` (Long Jump) sử dụng địa chỉ đích 16-bit, cho phép nhảy không điều kiện đến bất kỳ vị trí nào trong toàn bộ không gian $64\\,\\text{KB}$ bộ nhớ chương trình.",
-    "methodology": "Phân biệt lệnh nhảy: SJMP (-128..+127B), AJMP (trong khối $2\\,\\text{KB}$), LJMP (toàn bộ $64\\,\\text{KB}$).",
-    "tips_casio": "Nhảy trong không gian $64\\,\\text{KB}$ -> LJMP (Long Jump).",
+    "explanation": "LJMP có địa chỉ đích 16 bit, bao phủ không gian mã 64 KiB.",
+    "methodology": "LJMP có địa chỉ đích 16 bit, bao phủ không gian mã 64 KiB.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17158,9 +17072,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Thanh ghi tích lũy A là thanh ghi 8-bit, chỉ có khả năng lưu trữ giá trị hằng số tức thời tối đa là 8-bit (00H đến 0FFH, hoặc 0 đến 255). Giá trị #FF0H là số 12-bit (vượt quá 8-bit), do đó lệnh `MOV A, #FF0H` là lệnh SAI cú pháp.",
-    "methodology": "Kiểm tra kích thước toán hạng: Thanh ghi 8-bit chỉ nhận giá trị từ 00H đến 0FFH.",
-    "tips_casio": "FF0H vượt quá 8-bit của thanh ghi A -> Lệnh SAI.",
+    "explanation": "FF0H = 4080, vượt quá toán hạng tức thời 8 bit của MOV A,#data.",
+    "methodology": "FF0H = 4080, vượt quá toán hạng tức thời 8 bit của MOV A,#data.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17173,22 +17087,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 11,
     "title": "Part 10 - Câu 11",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào trong số các lệnh sau đây là lệnh SAI:",
+    "prompt": "Với các tên SFR chuẩn của A51, nhận định nào đúng về MOV A, ACC; MOV A, PSW; MOV A, SBUF; MOV A, TH0?",
     "extra_lines": [],
     "options": [
-      "MOV A, ACC",
-      "MOV A, PSW",
-      "MOV A, SBUF",
-      "MOV A, TH0"
+      "Chỉ MOV A, ACC sai",
+      "Chỉ MOV A, PSW sai",
+      "Chỉ MOV A, TH0 sai",
+      "Cả bốn lệnh đều hợp lệ"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Trong tập lệnh 8051, thanh ghi tích lũy A và ACC là một. Tập lệnh không hỗ trợ lệnh `MOV A, ACC` (vừa định địa chỉ thanh ghi vừa định địa chỉ trực tiếp cho cùng một thanh ghi), lệnh này là dư thừa và không hợp lệ.",
-    "methodology": "Các lệnh hợp lệ: MOV A, PSW; MOV A, SBUF; MOV A, TH0. Lệnh SAI: MOV A, ACC.",
-    "tips_casio": "MOV A, ACC là lệnh SAI.",
+    "explanation": "ACC là tên SFR của A tại E0H. MOV A,ACC dùng dạng MOV A,direct (E5 E0), hợp lệ; các SFR PSW, SBUF, TH0 cũng đọc được bằng dạng này.",
+    "methodology": "ACC là tên SFR của A tại E0H. MOV A,ACC dùng dạng MOV A,direct (E5 E0), hợp lệ; các SFR PSW, SBUF, TH0 cũng đọc được bằng dạng này.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17214,9 +17128,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh `JZ rel` (Jump if Zero) kiểm tra nội dung thanh ghi tích lũy A, nếu A = 00H thì thực hiện nhảy tương đối đến nhãn rel.",
-    "methodology": "Lệnh nhảy kiểm tra A: JZ (A = 0); JNZ (A khác 0).",
-    "tips_casio": "A bằng 0 -> JZ (Jump if Zero).",
+    "explanation": "JZ kiểm tra trực tiếp A = 0; 8051 không có cờ Z riêng.",
+    "methodology": "JZ kiểm tra trực tiếp A = 0; 8051 không có cờ Z riêng.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17229,7 +17143,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 13,
     "title": "Part 10 - Câu 13",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nhảy nào trong số các lệnh sau đây có tầm nhảy đến phải ở trong cùng khối 2KB của bộ nhớ chương trình:",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nhảy nào trong số các lệnh sau đây có tầm nhảy đến phải ở trong cùng khối 2KB của bộ nhớ chương trình: (Tính trang theo địa chỉ lệnh kế tiếp.)",
     "extra_lines": [],
     "options": [
       "RJMP",
@@ -17242,9 +17156,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh nhảy tuyệt đối `AJMP addr11` (Absolute Jump) mã hóa địa chỉ đích bằng 11-bit, cho phép nhảy đến bất kỳ địa chỉ nào nằm trong cùng khối trang $2\\,\\text{KB}$ (2^$11\\,\\text{Byte}$ = $2048\\,\\text{Byte}$) của bộ nhớ chương trình.",
-    "methodology": "Tầm nhảy $2\\,\\text{KB}$: AJMP (11-bit address).",
-    "tips_casio": "Trong cùng khối $2\\,\\text{KB}$ -> AJMP.",
+    "explanation": "AJMP có đích cùng trang 2 KiB với địa chỉ của lệnh kế tiếp, không phải luôn cùng trang với byte đầu của AJMP.",
+    "methodology": "AJMP có đích cùng trang 2 KiB với địa chỉ của lệnh kế tiếp, không phải luôn cùng trang với byte đầu của AJMP.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17270,9 +17184,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Lệnh `SWAP A` hoán chuyển nội dung giữa nibble thấp (bit D0-D3) và nibble cao (bit D4-D7) của thanh ghi A (ví dụ: A đang chứa 12H thì sau SWAP A sẽ là 21H).",
-    "methodology": "Đổi chỗ 2 nibble (4-bit) của A: Lệnh SWAP A.",
-    "tips_casio": "Hoán chuyển 2 nibble -> Lệnh SWAP.",
+    "explanation": "SWAP A đổi chỗ nibble cao và thấp.",
+    "methodology": "SWAP A đổi chỗ nibble cao và thấp.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17285,18 +17199,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 15,
     "title": "Part 10 - Câu 15",
-    "prompt": "Dòng lệnh nào dưới đây đưa bit cao nhất của R0 về 0: ORL R0, #80H ORL R0, #7FH ANL R0, #FFH ANL R0, #7FH",
+    "prompt": "Đang dùng bank thanh ghi 0. Lệnh hợp lệ nào xóa bit 7 của R0 và giữ nguyên 7 bit còn lại?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "ANL R0, #7FH",
+    "options": [
+      "ORL 00H, #80H",
+      "ORL 00H, #7FH",
+      "ANL 00H, #0FFH",
+      "ANL 00H, #7FH"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "ANL R0, #7FH",
       "D"
     ],
-    "explanation": "Giá trị 7FH có biểu diễn nhị phân là 0111_1111b (bit cao nhất D7 bằng 0, tất cả các bit còn lại bằng 1). Khi thực hiện phép AND logic với 7FH, bit D7 của R0 chắc chắn bị xóa về 0 trong khi các bit khác giữ nguyên.",
-    "methodology": "Muốn xóa bit nào về 0: Dùng lệnh AND (ANL) với mặt nạ có bit đó bằng 0. 7FH = 0111_1111b xóa bit 7.",
-    "tips_casio": "Đưa bit cao nhất về 0 -> ANL với #7FH.",
+    "explanation": "Bank 0 có R0 ở RAM 00H. AND với 7FH xóa bit 7, giữ các bit khác. ANL R0,#data không có trong tập lệnh 8051.",
+    "methodology": "Bank 0 có R0 ở RAM 00H. AND với 7FH xóa bit 7, giữ các bit khác. ANL R0,#data không có trong tập lệnh 8051.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17309,18 +17227,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 16,
     "title": "Part 10 - Câu 16",
-    "prompt": "Lệnh assembly của 89C51 “MOV DPTR, #1000H” sẽ: Nạp giá trị 10H vào thanh ghi DPH và 00H vào thanh ghi DPL Sao chép nội dung trong ô nhớ có địa chỉ 1000H vào thanh ghi DPTR Sao chép nội dung trong thanh ghi DPTR vào ô nhớ có địa chỉ 1000H Nạp giá trị 00H vào thanh ghi DPH và 10H vào thanh ghi DPL",
+    "prompt": "Lệnh assembly của 89C51 “MOV DPTR, #1000H” sẽ:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "Nạp giá trị 10H vào thanh ghi DPH và 00H vào thanh ghi DPL",
-    "acceptable_answers": [
+    "options": [
       "Nạp giá trị 10H vào thanh ghi DPH và 00H vào thanh ghi DPL",
+      "Sao chép nội dung trong ô nhớ có địa chỉ 1000H vào thanh ghi DPTR",
+      "Sao chép nội dung trong thanh ghi DPTR vào ô nhớ có địa chỉ 1000H",
+      "Nạp giá trị 00H vào thanh ghi DPH và 10H vào thanh ghi DPL"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thanh ghi con trỏ dữ liệu DPTR 16-bit gồm 2 byte: DPH (byte cao) và DPL (byte thấp). Lệnh `MOV DPTR, #1000H` nạp byte cao 10H vào DPH và byte thấp 00H vào DPL.",
-    "methodology": "Cơ chế nạp DPTR: 1000H -> DPH = 10H, DPL = 00H.",
-    "tips_casio": "1000H: Byte cao 10H vào DPH, byte thấp 00H vào DPL.",
+    "explanation": "DPTR = DPH:DPL. 1000H tách thành DPH=10H và DPL=00H.",
+    "methodology": "DPTR = DPH:DPL. 1000H tách thành DPH=10H và DPL=00H.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17346,9 +17268,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Lệnh `JNZ rel` (Jump if Not Zero) kiểm tra thanh ghi tích lũy A, nếu A khác 0 (A != 00H) thì thực hiện nhảy tương đối đến nhãn rel.",
-    "methodology": "Nhảy nếu A khác 0: JNZ rel.",
-    "tips_casio": "Khác 0 -> JNZ (Jump if Not Zero).",
+    "explanation": "JNZ nhảy khi A khác 0.",
+    "methodology": "JNZ nhảy khi A khác 0.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17374,9 +17296,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Phép toán XOR logic trong hợp ngữ 8051 sử dụng mã gợi nhớ XRL. Khi thực hiện giữa thanh ghi A và một hằng số tức thời (#data), cú pháp là `XRL A, #data`.",
-    "methodology": "XOR logic tức thời: XRL A, #data.",
-    "tips_casio": "XOR = XRL; Số tức thời = #data -> XRL A, #data.",
+    "explanation": "XRL là XOR; #data là dữ liệu tức thời.",
+    "methodology": "XRL là XOR; #data là dữ liệu tức thời.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17389,18 +17311,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 19,
     "title": "Part 10 - Câu 19",
-    "prompt": "Lệnh assembly của 89C51 “INC A” sẽ cộng thêm 1 vào: Thanh ghi DPTR Thanh ghi tích luỹ A Thanh ghi tích luỹ B Thanh ghi IP",
+    "prompt": "Lệnh assembly của 89C51 “INC A” sẽ cộng thêm 1 vào:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "Thanh ghi tích luỹ A",
-    "acceptable_answers": [
+    "options": [
+      "Thanh ghi DPTR",
       "Thanh ghi tích luỹ A",
+      "Thanh ghi tích luỹ B",
+      "Thanh ghi IP"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh `INC A` (Increment Accumulator) thực hiện tăng nội dung thanh ghi tích lũy A lên 1 đơn vị: A = A + 1.",
-    "methodology": "Toán hạng của INC A: Thanh ghi tích lũy A.",
-    "tips_casio": "INC A -> Tăng thanh ghi tích lũy A.",
+    "explanation": "INC A tăng A một đơn vị theo modulo 256, không làm thay đổi CY.",
+    "methodology": "INC A tăng A một đơn vị theo modulo 256, không làm thay đổi CY.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17422,13 +17348,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "RET"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Lệnh `RET` (Return from Subroutine) là lệnh trở về từ một chương trình con thông thường được gọi bởi ACALL hoặc LCALL, bằng cách lấy 2 byte địa chỉ trở về từ đỉnh ngăn xếp nạp lại vào thanh ghi PC.",
-    "methodology": "Trở về từ chương trình con: RET. (RETI là trở về từ chương trình phục vụ ngắt).",
-    "tips_casio": "Chương trình con -> RET; Chương trình ngắt -> RETI.",
+    "explanation": "RET lấy địa chỉ trở về từ stack. RETI dành cho trình phục vụ ngắt.",
+    "methodology": "RET lấy địa chỉ trở về từ stack. RETI dành cho trình phục vụ ngắt.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17441,18 +17367,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 21,
     "title": "Part 10 - Câu 21",
-    "prompt": "Lệnh assembly của 89C51 “DEC R0” thực hiện: Giảm nội dung trong R0 đi 1 Tăng nội dung trong R1 lên 1 Giảm nội dung trong R1 lên 1 Tăng nội dung trong R0 lên 1",
+    "prompt": "Lệnh assembly của 89C51 “DEC R0” thực hiện:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "Giảm nội dung trong R0 đi 1",
-    "acceptable_answers": [
+    "options": [
       "Giảm nội dung trong R0 đi 1",
+      "Tăng nội dung trong R1 lên 1",
+      "Giảm nội dung trong R1 lên 1",
+      "Tăng nội dung trong R0 lên 1"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
       "A"
     ],
-    "explanation": "Lệnh `DEC R0` (Decrement R0) giảm nội dung của thanh ghi R0 đi 1 đơn vị: R0 = R0 - 1.",
-    "methodology": "DEC R0: Giảm R0 đi 1.",
-    "tips_casio": "DEC = Decrement (Giảm đi 1).",
+    "explanation": "DEC R0 giảm R0 một đơn vị theo modulo 256.",
+    "methodology": "DEC R0 giảm R0 một đơn vị theo modulo 256.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17468,19 +17398,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào trong số các lệnh sau đây là lệnh SAI:",
     "extra_lines": [],
     "options": [
-      "MOV B0H, A",
+      "MOV 0B0H, A",
       "MOV A, #0B0H",
       "MOV #0B0H, A",
-      "MOV A, B0H"
+      "MOV A, 0B0H"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Trong kiến trúc tập lệnh vi xử lý, toán hạng đích (đứng trước dấu phẩy) là nơi lưu trữ kết quả, bắt buộc phải là thanh ghi hoặc ô nhớ. Một hằng số tức thời (#0B0H) là giá trị cố định, không thể làm nơi lưu dữ liệu. Do đó `MOV #0B0H, A` là lệnh SAI cú pháp.",
-    "methodology": "Quy tắc cú pháp: Toán hạng đích KHÔNG BAO GIỜ có dấu '#'.",
-    "tips_casio": "Đích có dấu '#' là sai ngay lập tức!",
+    "explanation": "Đích MOV không thể là hằng tức thời #0B0H.",
+    "methodology": "Đích MOV không thể là hằng tức thời #0B0H.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17506,9 +17436,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh `JNC PROM1` (Jump if Not Carry) kiểm tra cờ nhớ CY trong thanh ghi PSW. Nếu CY = 0 (không có cờ nhớ) thì nhảy đến nhãn PROM1.",
-    "methodology": "Nhảy nếu CY = 0: JNC (Jump if No Carry).",
-    "tips_casio": "CY = 0 -> JNC.",
+    "explanation": "JNC nhảy khi CY=0.",
+    "methodology": "JNC nhảy khi CY=0.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17534,9 +17464,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Lệnh nhảy đến địa chỉ rel nếu cờ nhớ bằng 0 (CY = 0) là lệnh `JNC rel` (Jump if Not Carry).",
-    "methodology": "CY = 0 -> JNC rel.",
-    "tips_casio": "Cờ nhớ bằng 0 -> JNC.",
+    "explanation": "JNC nhảy khi cờ nhớ CY=0.",
+    "methodology": "JNC nhảy khi cờ nhớ CY=0.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17549,18 +17479,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 25,
     "title": "Part 10 - Câu 25",
-    "prompt": "Lệnh nào dưới đây cho phép bit thấp nhất của cổng P1 lên 1: ORL P1, #80H SETB 90H ORL P1, #0FFH ANL P1, #80H",
+    "prompt": "Lệnh nào dưới đây cho phép bit thấp nhất của cổng P1 lên 1 và giữ nguyên các bit còn lại:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "SETB 90H",
-    "acceptable_answers": [
+    "options": [
+      "ORL P1, #80H",
       "SETB 90H",
+      "ORL P1, #0FFH",
+      "ANL P1, #80H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
       "B"
     ],
-    "explanation": "Cổng P1 có địa chỉ SFR là 90H. Chân P1.0 (bit thấp nhất) có địa chỉ định vị bit trực tiếp là 90H. Do đó lệnh `SETB 90H` đặt bit P1.0 lên mức logic 1.",
-    "methodology": "Địa chỉ bit của P1.0: 90H. Đặt lên 1: SETB 90H.",
-    "tips_casio": "Bit thấp nhất của P1 (P1.0) = bit 90H -> SETB 90H.",
+    "explanation": "Bit địa chỉ 90H là P1.0. SETB 90H chỉ đặt bit này, còn ORL P1,#0FFH đặt cả 8 bit.",
+    "methodology": "Bit địa chỉ 90H là P1.0. SETB 90H chỉ đặt bit này, còn ORL P1,#0FFH đặt cả 8 bit.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17573,7 +17507,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 26,
     "title": "Part 10 - Câu 26",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nhảy đến địa chỉ rel nếu nội dung cờ 0 (cờ zero) bằng 0:",
+    "prompt": "Lệnh nào nhảy tới rel nếu thanh ghi A khác 0?",
     "extra_lines": [],
     "options": [
       "JC rel",
@@ -17586,9 +17520,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Cờ Zero (cờ 0) bằng 0 tương ứng với trạng thái kết quả khác 0 (A != 00H). Lệnh nhảy khi A khác 0 là `JNZ rel` (Jump if Not Zero).",
-    "methodology": "Zero flag = 0 -> Kết quả khác 0 -> JNZ.",
-    "tips_casio": "Cờ zero = 0 -> JNZ rel.",
+    "explanation": "8051 không có cờ Z. JNZ nhảy khi A khác 0.",
+    "methodology": "8051 không có cờ Z. JNZ nhảy khi A khác 0.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17601,22 +17535,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 27,
     "title": "Part 10 - Câu 27",
-    "prompt": "Lệnh assembly của 89C51 dùng để sao chép nội dung trong ô nhớ có địa chỉ 85H vào thanh ghi",
+    "prompt": "Lệnh assembly của 89C51 dùng để sao chép nội dung trong ô nhớ có địa chỉ 35H vào thanh ghi A.",
     "extra_lines": [],
     "options": [
-      "MOV #85H, A",
-      "MOV A, #85H",
-      "MOV 85H, A",
-      "MOV A, 85H"
+      "MOV #35H, A",
+      "MOV A, #35H",
+      "MOV 35H, A",
+      "MOV A, 35H"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Để sao chép nội dung từ một ô nhớ RAM nội hoặc thanh ghi SFR trực tiếp (địa chỉ 85H, chính là DPH) vào thanh ghi tích lũy A, ta dùng lệnh `MOV A, 85H` (định địa chỉ trực tiếp).",
-    "methodology": "Sao chép ô nhớ direct vào A: MOV A, direct -> MOV A, 85H.",
-    "tips_casio": "Từ ô nhớ 85H vào A: MOV A, 85H (không có dấu #).",
+    "explanation": "MOV A,direct đọc byte tại địa chỉ trực tiếp; sửa 85H (SFR không được định nghĩa trên AT89C51) thành RAM 35H.",
+    "methodology": "MOV A,direct đọc byte tại địa chỉ trực tiếp; sửa 85H (SFR không được định nghĩa trên AT89C51) thành RAM 35H.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17629,7 +17563,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 28,
     "title": "Part 10 - Câu 28",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh so sánh nội dung trong ô nhớ 00H với một hằng số có giá trị 00H và nhảy đến địa chỉ rel nếu nội dung của chúng không bằng nhau (ở chế độ mặc định):",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh so sánh nội dung trong ô nhớ 00H với một hằng số có giá trị 00H và nhảy đến địa chỉ rel nếu nội dung của chúng không bằng nhau (ở chế độ mặc định): Giả sử bank thanh ghi 0 đang được chọn.",
     "extra_lines": [],
     "options": [
       "CJNE #00H, R0, rel",
@@ -17642,9 +17576,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Ở chế độ mặc định sau Reset (Bank 0), ô nhớ RAM nội địa chỉ 00H chính là thanh ghi R0. Lệnh so sánh nội dung thanh ghi R0 với hằng số 00H và nhảy nếu khác nhau là `CJNE R0, #00H, rel`.",
-    "methodology": "Bank 0: Ô nhớ 00H = R0. So sánh với hằng số #00H: CJNE R0, #00H, rel.",
-    "tips_casio": "Ô nhớ 00H là R0 -> CJNE R0, #00H, rel.",
+    "explanation": "Ở bank 0, R0 ánh xạ RAM 00H; CJNE R0,#00H,rel là dạng lệnh hợp lệ.",
+    "methodology": "Ở bank 0, R0 ánh xạ RAM 00H; CJNE R0,#00H,rel là dạng lệnh hợp lệ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17670,9 +17604,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Khi thực thi lệnh gọi chương trình con `LCALL`, CPU tự động cất địa chỉ trở về 16-bit của lệnh kế tiếp vào ngăn xếp (2 thao tác PUSH liên tiếp), làm cho giá trị của con trỏ ngăn xếp SP tăng lên 2: SP = SP + 2. Các lệnh LJMP, ADD, MOVC không làm thay đổi SP.",
-    "methodology": "Lệnh thay đổi SP: PUSH, POP, ACALL, LCALL, RET, RETI.",
-    "tips_casio": "Gọi chương trình con (LCALL) cất PC vào ngăn xếp -> Thay đổi SP.",
+    "explanation": "LCALL đẩy địa chỉ trở về lên stack, làm SP tăng 2.",
+    "methodology": "LCALL đẩy địa chỉ trở về lên stack, làm SP tăng 2.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17685,7 +17619,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 30,
     "title": "Part 10 - Câu 30",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh nào gọi chương trình tới chương con có địa chỉ 1000H",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh nào gọi chương trình tới chương con có địa chỉ 1000H Yêu cầu gọi được từ bất kỳ trang mã nào trong không gian 64 KiB.",
     "extra_lines": [],
     "options": [
       "SJMP 1000H",
@@ -17698,9 +17632,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Để gọi chương trình con tại địa chỉ 16-bit bất kỳ trong không gian bộ nhớ (như 1000H), ta dùng lệnh gọi dài `LCALL 1000H` (Long Call).",
-    "methodology": "Gọi chương trình con: Dùng CALL (LCALL hoặc ACALL). LCALL hỗ trợ địa chỉ 16-bit toàn dải.",
-    "tips_casio": "Gọi chương trình con tới 1000H: LCALL 1000H.",
+    "explanation": "LCALL gọi đích 16 bit; thêm điều kiện bất kỳ trang mã để loại ACALL chỉ gọi trong cùng trang 2 KiB.",
+    "methodology": "LCALL gọi đích 16 bit; thêm điều kiện bất kỳ trang mã để loại ACALL chỉ gọi trong cùng trang 2 KiB.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17713,18 +17647,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 31,
     "title": "Part 10 - Câu 31",
-    "prompt": "Lệnh assembly của 89C51 “MOV A, B” sẽ: Nạp giá trị 0AH vào thanh ghi B Sao chép nội dung trong thanh ghi A vào thanh ghi B Nạp giá trị 0BH vào thanh ghi A Sao chép nội dung trong thanh ghi B vào thanh ghi A",
+    "prompt": "Lệnh assembly của 89C51 “MOV A, B” sẽ:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "Sao chép nội dung trong thanh ghi B vào thanh ghi A",
+    "options": [
+      "Nạp giá trị 0AH vào thanh ghi B",
+      "Sao chép nội dung trong thanh ghi A vào thanh ghi B",
+      "Nạp giá trị 0BH vào thanh ghi A",
+      "Sao chép nội dung trong thanh ghi B vào thanh ghi A"
+    ],
+    "type": "mcq",
+    "answer": "D",
     "acceptable_answers": [
-      "Sao chép nội dung trong thanh ghi B vào thanh ghi A",
       "D"
     ],
-    "explanation": "Lệnh `MOV A, B` sao chép (copy) giá trị hiện tại trong thanh ghi B (toán hạng nguồn) đưa vào thanh ghi tích lũy A (toán hạng đích), nội dung thanh ghi B không bị thay đổi.",
-    "methodology": "MOV A, B: Sao chép từ B vào A.",
-    "tips_casio": "Nguồn B -> Đích A: Sao chép nội dung thanh ghi B vào thanh ghi A.",
+    "explanation": "Toán hạng đích đứng trước: A nhận nội dung B.",
+    "methodology": "Toán hạng đích đứng trước: A nhận nội dung B.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17737,18 +17675,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 32,
     "title": "Part 10 - Câu 32",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh đọc bộ nhớ dữ liệu ngoài: MOV @DPTR, A MOV A, DPTR MOVX A, @DPTR MOVX @DPTR, A",
+    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh đọc bộ nhớ dữ liệu ngoài:",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "MOVX A, @DPTR",
-    "acceptable_answers": [
+    "options": [
+      "MOV @DPTR, A",
+      "MOV A, DPTR",
       "MOVX A, @DPTR",
+      "MOVX @DPTR, A"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
       "C"
     ],
-    "explanation": "Lệnh đọc dữ liệu từ bộ nhớ RAM ngoài vào thanh ghi tích lũy A thông qua con trỏ dữ liệu DPTR 16-bit là lệnh `MOVX A, @DPTR`.",
-    "methodology": "Đọc RAM ngoài: MOVX A, @DPTR (chữ 'X' là eXternal).",
-    "tips_casio": "Đọc RAM ngoài -> MOVX A, @DPTR.",
+    "explanation": "MOVX A,@DPTR đọc RAM dữ liệu ngoài; MOVC dành cho bộ nhớ mã.",
+    "methodology": "MOVX A,@DPTR đọc RAM dữ liệu ngoài; MOVC dành cho bộ nhớ mã.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17764,19 +17706,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào trong số các lệnh sau đây là lệnh SAI:",
     "extra_lines": [],
     "options": [
-      "POP R0",
+      "POP ACC",
       "POP DPL",
-      "POP R1",
-      "POP A"
+      "POP 00H",
+      "POP #30H"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Trong tập lệnh 8051, lệnh POP chỉ hỗ trợ chế độ định địa chỉ trực tiếp: `POP direct`. Thanh ghi tích lũy A không thể dùng tên gợi nhớ 'A' trong lệnh POP mà bắt buộc phải dùng địa chỉ trực tiếp của nó là `POP 0E0H` hoặc `POP ACC`. Vì vậy `POP A` là lệnh SAI cú pháp.",
-    "methodology": "Lỗi cú pháp kinh điển: Không có lệnh PUSH A hay POP A, chỉ có PUSH ACC / POP ACC.",
-    "tips_casio": "POP A là lệnh SAI (phải viết là POP ACC).",
+    "explanation": "POP chỉ nhận địa chỉ trực tiếp làm đích. ACC, DPL, 00H là địa chỉ trực tiếp hợp lệ; hằng #30H không thể là đích.",
+    "methodology": "POP chỉ nhận địa chỉ trực tiếp làm đích. ACC, DPL, 00H là địa chỉ trực tiếp hợp lệ; hằng #30H không thể là đích.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17789,7 +17731,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 34,
     "title": "Part 10 - Câu 34",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nhảy nào trong số các lệnh sau đây có tầm nhảy đến là 128 byte trước lệnh và 127 byte sau lệnh:",
+    "prompt": "Lệnh nào dùng độ dời có dấu -128..+127 byte, tính từ địa chỉ của lệnh kế tiếp?",
     "extra_lines": [],
     "options": [
       "LJMP",
@@ -17802,9 +17744,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh nhảy ngắn `SJMP rel` (Short Jump) sử dụng độ dời tương đối 8-bit có dấu (khoảng giá trị từ -128 đến +127 byte so với địa chỉ của lệnh kế tiếp).",
-    "methodology": "Tầm nhảy 8-bit có dấu (-128 đến +127 byte): SJMP.",
-    "tips_casio": "Tầm nhảy -128 đến +127 byte -> SJMP (Short Jump).",
+    "explanation": "SJMP dùng độ dời -128..+127 byte từ PC của lệnh kế tiếp.",
+    "methodology": "SJMP dùng độ dời -128..+127 byte từ PC của lệnh kế tiếp.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17830,9 +17772,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Lệnh ghi dữ liệu từ thanh ghi tích lũy A ra bộ nhớ dữ liệu bên ngoài (RAM ngoài) tại địa chỉ do con trỏ DPTR chỉ định là `MOVX @DPTR, A`.",
-    "methodology": "Ghi ra RAM ngoài: MOVX @DPTR, A.",
-    "tips_casio": "Ghi ra RAM ngoài -> MOVX @DPTR, A.",
+    "explanation": "MOVX @DPTR,A ghi A vào RAM dữ liệu ngoài.",
+    "methodology": "MOVX @DPTR,A ghi A vào RAM dữ liệu ngoài.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17858,9 +17800,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Lệnh giảm nội dung thanh ghi Rn đi 1 và nhảy đến địa chỉ tương đối nếu giá trị sau khi giảm khác 0 có cú pháp là `DJNZ Rn, rel`. Với thanh ghi R0: `DJNZ R0, rel`.",
-    "methodology": "DJNZ = Decrement and Jump if Not Zero. Cú pháp: DJNZ R0, rel.",
-    "tips_casio": "Giảm và nhảy nếu khác 0 -> DJNZ R0, rel.",
+    "explanation": "DJNZ giảm R0 rồi kiểm tra kết quả; nhảy khi kết quả khác 0.",
+    "methodology": "DJNZ giảm R0 rồi kiểm tra kết quả; nhảy khi kết quả khác 0.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17876,7 +17818,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nào trong số các lệnh sau đây là lệnh SAI:",
     "extra_lines": [],
     "options": [
-      "MOV 255, A",
+      "MOV 127, A",
       "MOV A, #255",
       "MOV #255, A",
       "MOV A, #0FFH"
@@ -17886,9 +17828,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Toán hạng đích (đứng trước) không thể là một hằng số tức thời (#255). Do đó lệnh `MOV #255, A` là lệnh SAI cú pháp.",
-    "methodology": "Toán hạng đích không thể chứa tiền tố '#'.",
-    "tips_casio": "Đích mang dấu '#' -> Lệnh SAI.",
+    "explanation": "Hằng #255 không thể làm toán hạng đích; 255 thập phân vẫn nằm trong phạm vi byte.",
+    "methodology": "Hằng #255 không thể làm toán hạng đích; 255 thập phân vẫn nằm trong phạm vi byte.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17914,9 +17856,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Lệnh cất (lưu trữ) dữ liệu từ một ô nhớ/thanh ghi vào vùng nhớ ngăn xếp trong 8051 là lệnh `PUSH direct`.",
-    "methodology": "Cất vào ngăn xếp: PUSH; Lấy ra: POP.",
-    "tips_casio": "Cất vào ngăn xếp -> Lệnh PUSH.",
+    "explanation": "PUSH direct tăng SP rồi cất byte vào RAM stack.",
+    "methodology": "PUSH direct tăng SP rồi cất byte vào RAM stack.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17929,22 +17871,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 39,
     "title": "Part 10 - Câu 39",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, câu lệnh nào thực hiện kiểm tra vùng địa chỉ theo bit tại ô nhớ 30H, nếu (30H) ≠ 0, thực hiện xóa nội dung ô nhớ 30H và nhảy tới thực hiện chương trình PROM1:",
+    "prompt": "Lệnh nào kiểm tra bit có địa chỉ bit 30H; nếu bit này bằng 1 thì xóa bit và nhảy tới PROM1?",
     "extra_lines": [],
     "options": [
       "JNZ PROM1",
       "JZ PROM1",
       "JC PROM1",
-      "JBC PROM1"
+      "JBC 30H, PROM1"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Lệnh `JBC bit, rel` (Jump if Bit is set and Clear bit) kiểm tra bit chỉ định: Nếu bit = 1 thì xóa bit về 0 và thực hiện nhảy đến nhãn đích PROM1.",
-    "methodology": "JBC = Jump if Bit set and Clear bit.",
-    "tips_casio": "Kiểm tra bit = 1, xóa bit và nhảy -> JBC.",
+    "explanation": "30H ở toán hạng bit chỉ bit 0 của byte RAM 26H, không phải toàn bộ byte RAM 30H. JBC kiểm tra bit; nếu bằng 1 thì xóa bit và nhảy.",
+    "methodology": "30H ở toán hạng bit chỉ bit 0 của byte RAM 26H, không phải toàn bộ byte RAM 30H. JBC kiểm tra bit; nếu bằng 1 thì xóa bit và nhảy.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17970,9 +17912,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Để chuyển dữ liệu từ ô nhớ RAM nội được trỏ bởi thanh ghi R0 vào thanh ghi A, ta sử dụng chế độ định địa chỉ gián tiếp qua con trỏ với cú pháp `MOV A, @R0`.",
-    "methodology": "Chuyển dữ liệu RAM nội qua con trỏ: MOV A, @R0 (hoặc @R1).",
-    "tips_casio": "Trỏ qua thanh ghi R0 -> Dùng ký hiệu '@': MOV A, @R0.",
+    "explanation": "MOV A,@R0 đọc RAM nội; MOVX đọc RAM ngoài.",
+    "methodology": "MOV A,@R0 đọc RAM nội; MOVX đọc RAM ngoài.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -17985,7 +17927,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 10: Lệnh Số Học, Logic & Điều Khiển Rẽ Nhánh",
     "num": 41,
     "title": "Part 10 - Câu 41",
-    "prompt": "Trong ngôn ngữ assembly trên vi điều khiển 89C51, lệnh nhảy đến địa chỉ rel nếu nội dung cờ 0 (cờ zero) bằng 1:",
+    "prompt": "Lệnh nào nhảy tới rel nếu thanh ghi A bằng 0?",
     "extra_lines": [],
     "options": [
       "JNC rel",
@@ -17998,9 +17940,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Cờ Zero (cờ 0) bằng 1 khi kết quả trong thanh ghi A bằng 0. Lệnh nhảy tương ứng là `JZ rel` (Jump if Zero).",
-    "methodology": "Cờ 0 = 1 -> A = 0 -> JZ rel.",
-    "tips_casio": "Cờ 0 bằng 1 -> JZ rel.",
+    "explanation": "8051 không có cờ Z. JZ nhảy khi A bằng 0.",
+    "methodology": "8051 không có cờ Z. JZ nhảy khi A bằng 0.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -18026,9 +17968,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Lệnh `DJNZ direct, rel` giảm nội dung ô nhớ trực tiếp direct đi 1 và nhảy nếu khác 0. Với ô nhớ 40H: `DJNZ 40H, PROM1`.",
-    "methodology": "Giảm ô nhớ 40H và nhảy nếu khác 0: DJNZ 40H, PROM1.",
-    "tips_casio": "DJNZ ô nhớ 40H -> DJNZ 40H, PROM1.",
+    "explanation": "DJNZ direct,rel giảm byte RAM 40H rồi nhảy nếu khác 0.",
+    "methodology": "DJNZ direct,rel giảm byte RAM 40H rồi nhảy nếu khác 0.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -18054,9 +17996,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Lệnh nhảy đến địa chỉ rel nếu cờ nhớ khác 0 (CY = 1) là lệnh `JC rel` (Jump if Carry).",
-    "methodology": "CY = 1 -> JC rel.",
-    "tips_casio": "Cờ nhớ khác 0 (CY=1) -> JC rel.",
+    "explanation": "JC nhảy khi CY=1.",
+    "methodology": "JC nhảy khi CY=1.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -18082,9 +18024,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Lệnh lấy dữ liệu ra khỏi vùng nhớ ngăn xếp (Stack) và chuyển vào một ô nhớ trực tiếp là lệnh `POP direct`.",
-    "methodology": "Lấy ra từ ngăn xếp: Lệnh POP.",
-    "tips_casio": "Lấy dữ liệu ra khỏi ngăn xếp -> POP.",
+    "explanation": "POP direct lấy byte từ đỉnh stack rồi giảm SP.",
+    "methodology": "POP direct lấy byte từ đỉnh stack rồi giảm SP.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -18102,7 +18044,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "options": [
       "CJNE A,3FH, rel",
       "CJNE 3FH, A, rel",
-      "C. CJNE #3FH, A, rel",
+      "CJNE #3FH, A, rel",
       "CJNE A, #3FH, rel"
     ],
     "type": "mcq",
@@ -18110,9 +18052,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Cú pháp so sánh nội dung thanh ghi A với ô nhớ trực tiếp 3FH và nhảy nếu không bằng là: `CJNE A, direct, rel` -> `CJNE A, 3FH, rel`.",
-    "methodology": "So sánh A với ô nhớ 3FH: CJNE A, 3FH, rel (không có dấu # vì so sánh với nội dung ô nhớ).",
-    "tips_casio": "Nội dung ô nhớ 3FH -> Không có dấu #: CJNE A, 3FH, rel.",
+    "explanation": "CJNE A,direct,rel so sánh A với byte tại 3FH; #3FH sẽ so sánh với hằng 3FH.",
+    "methodology": "CJNE A,direct,rel so sánh A với byte tại 3FH; #3FH sẽ so sánh với hằng 3FH.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Chức năng các lệnh hợp ngữ 8051 & Rẽ nhánh",
@@ -18125,22 +18067,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 4,
     "title": "Part 11 - Câu 4",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #92H MOV R0, #89H ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #92H",
+      "MOV R0, #89H",
+      "ADD A, R0"
+    ],
     "options": [
+      "CY=0, AC=0",
       "CY=0, AC=1",
       "CY=1, AC=0",
-      "CY=1, AC=1",
-      "CY=0, AC=0"
+      "CY=1, AC=1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "C",
     "acceptable_answers": [
-      "B"
+      "C"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (92H) và toán hạng (89H): kết quả A = 1BH. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 92 ADD 89 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #92H: A=92H; MOV R0, #89H: A=92H; ADD A, R0: 92H + 89H = 283 → A=1BH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #92H: A=92H; MOV R0, #89H: A=92H; ADD A, R0: 92H + 89H = 283 → A=1BH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18153,22 +18099,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 5,
     "title": "Part 11 - Câu 5",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #8BH MOV R0, #0B4H CLR CADDC A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #8BH",
+      "MOV R0, #0B4H",
+      "CLR C",
+      "ADDC A, R0"
+    ],
     "options": [
-      "AC=1, OV=1",
       "AC=0, OV=0",
+      "AC=0, OV=1",
       "AC=1, OV=0",
-      "AC=0, OV=1"
+      "AC=1, OV=1"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "B",
     "acceptable_answers": [
-      "D"
+      "B"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (8BH) và toán hạng (B4H): kết quả A = 3FH. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 8B ADD B4 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #8BH: A=8BH; MOV R0, #0B4H: A=8BH; CLR C: A=8BH; ADDC A, R0: 8BH + B4H + CY(0) = 319 → A=3FH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #8BH: A=8BH; MOV R0, #0B4H: A=8BH; CLR C: A=8BH; ADDC A, R0: 8BH + B4H + CY(0) = 319 → A=3FH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18181,22 +18132,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 6,
     "title": "Part 11 - Câu 6",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #25H MOV R0, #7DH ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #25H",
+      "MOV R0, #7DH",
+      "ADD A, R0"
+    ],
     "options": [
       "AC=0, OV=0",
-      "AC=1, OV=1",
       "AC=0, OV=1",
-      "AC=1, OV=0"
+      "AC=1, OV=0",
+      "AC=1, OV=1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (25H) và toán hạng (7DH): kết quả A = A2H. Phân tích cờ trạng thái: CY=0, AC=1, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 25 ADD 7D để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #25H: A=25H; MOV R0, #7DH: A=25H; ADD A, R0: 25H + 7DH = 162 → A=A2H. Kết quả: CY=0, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #25H: A=25H; MOV R0, #7DH: A=25H; ADD A, R0: 25H + 7DH = 162 → A=A2H. Kết quả: CY=0, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18209,22 +18164,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 7,
     "title": "Part 11 - Câu 7",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #12H MOV R0, #0ACH SETB CSUBB A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #12H",
+      "MOV R0, #0ACH",
+      "SETB C",
+      "SUBB A, R0"
+    ],
     "options": [
-      "CY=1, OV=1",
       "CY=0, OV=0",
+      "CY=0, OV=1",
       "CY=1, OV=0",
-      "CY=0, OV=1"
+      "CY=1, OV=1"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (12H) và toán hạng (ACH): kết quả A = 65H. Phân tích cờ trạng thái: CY=1, AC=1, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 12 SUB AC để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #12H: A=12H; MOV R0, #0ACH: A=12H; SETB C: A=12H; SUBB A, R0: 12H - ACH - CY(1) = -155 → A=65H. Kết quả: CY=1, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #12H: A=12H; MOV R0, #0ACH: A=12H; SETB C: A=12H; SUBB A, R0: 12H - ACH - CY(1) = -155 → A=65H. Kết quả: CY=1, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18237,22 +18197,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 8,
     "title": "Part 11 - Câu 8",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0C3H MOV R0, #0AAH ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0C3H",
+      "MOV R0, #0AAH",
+      "ADD A, R0"
+    ],
     "options": [
-      "CY=1, AC=1",
+      "CY=0, AC=0",
       "CY=0, AC=1",
       "CY=1, AC=0",
-      "CY=0, AC=0"
+      "CY=1, AC=1"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (C3H) và toán hạng (AAH): kết quả A = 6DH. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập C3 ADD AA để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0C3H: A=C3H; MOV R0, #0AAH: A=C3H; ADD A, R0: C3H + AAH = 365 → A=6DH. Kết quả: CY=1, AC=0, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0C3H: A=C3H; MOV R0, #0AAH: A=C3H; ADD A, R0: C3H + AAH = 365 → A=6DH. Kết quả: CY=1, AC=0, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18265,20 +18229,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 9,
     "title": "Part 11 - Câu 9",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: ADDC A, 40H thì nội dung trong thanh ghi A sẽ là_________H.",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: ADDC A, 40H thì nội dung trong thanh ghi A sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "80",
-    "acceptable_answers": [
-      "80",
-      "80H",
-      "80",
-      "80h"
+    "options": [
+      "20H",
+      "1FH",
+      "1EH",
+      "0FH"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (5BH) và toán hạng (C3H): kết quả A = 1EH. Phân tích cờ trạng thái: CY=1, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5B ADD C3 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "ADDC A, 40H: 5BH + C3H + CY(1) = 287 → A=1FH. A sau lệnh = 1FH. ",
+    "methodology": "ADDC A, 40H: 5BH + C3H + CY(1) = 287 → A=1FH. A sau lệnh = 1FH. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18291,20 +18257,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 10,
     "title": "Part 11 - Câu 10",
-    "prompt": "Trên vi điều khiển 89C51 biết (A)=50H, (R1)=10H, (R2)=20H, (R3)=30H, (30H)=4FH, sau khi thực thi lệnh ADD A, R3 thì nội dung trong thanh ghi A sẽ là________ H.",
+    "prompt": "Trên vi điều khiển 89C51 biết (A)=50H, (R1)=10H, (R2)=20H, (R3)=30H, (30H)=4FH, sau khi thực thi lệnh ADD A, R3 thì nội dung trong thanh ghi A sẽ là? H.",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "04",
-    "acceptable_answers": [
-      "04",
-      "04H",
-      "04",
-      "04h"
+    "options": [
+      "7FH",
+      "80H",
+      "81H",
+      "90H"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (50H) và toán hạng (4FH): kết quả A = 9FH. Phân tích cờ trạng thái: CY=0, AC=0, OV=1, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 50 ADD 4F để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "ADD A, R3: 50H + 30H = 128 → A=80H. A sau lệnh = 80H. ",
+    "methodology": "ADD A, R3: 50H + 30H = 128 → A=80H. A sau lệnh = 80H. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18317,20 +18285,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 11,
     "title": "Part 11 - Câu 11",
-    "prompt": "Trên vi điều khiển 89C51 biết (A)=94H, (30H)=8DH, PSW=41H sau khi thực hiện lệnh SUBB A, 30H thì nội dung trong thanh ghi PSW sẽ là_________H.",
+    "prompt": "Trên vi điều khiển 89C51 biết (A)=94H, (30H)=8DH, PSW=41H sau khi thực hiện lệnh SUBB A, 30H thì nội dung trong thanh ghi PSW sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "41",
-    "acceptable_answers": [
-      "41",
+    "options": [
+      "42H",
       "41H",
-      "41",
-      "41h"
+      "40H",
+      "51H"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (94H) và toán hạng (8DH): kết quả A = 7H. Phân tích cờ trạng thái: CY=0, AC=1, OV=0, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 94 SUB 8D để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "SUBB A, 30H: 94H - 8DH - CY(0) = 7 → A=07H. PSW sau lệnh = 41H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "methodology": "SUBB A, 30H: 94H - 8DH - CY(0) = 7 → A=07H. PSW sau lệnh = 41H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18343,18 +18313,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 12,
     "title": "Part 11 - Câu 12",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=30H, (A)=20H, sau khi thực thi lệnh: MOV @R1, A thì nội dung trong thanh ghi A sẽ là________H. Viết nội dung dưới dạng số hexa, ví dụ nội dung là 0AH thì viết 0A",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=30H, (A)=20H, sau khi thực thi lệnh: MOV @R1, A thì nội dung trong thanh ghi A sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "20",
-    "acceptable_answers": [
-      "20",
-      "20H"
+    "options": [
+      "1FH",
+      "20H",
+      "21H",
+      "30H"
     ],
-    "explanation": "Lệnh MOV @R1, A ghi nội dung trong thanh ghi A vào ô nhớ RAM nội có địa chỉ lưu trong R1 (ô nhớ 30H). Lệnh này không làm thay đổi nội dung thanh ghi A, do đó sau lệnh nội dung trong thanh ghi A vẫn là 20H.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "MOV @R1, A sao chép A vào RAM nội qua R1; nội dung A vẫn là 20H.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV @R1, A: A=20H. A sau lệnh = 20H. ",
+    "methodology": "MOV @R1, A: A=20H. A sau lệnh = 20H. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18367,20 +18341,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 13,
     "title": "Part 11 - Câu 13",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: ADD A, 40H thì nội dung trong thanh ghi A sẽ là_________H. Viết nội dung dưới dạng số hexa, ví dụ nội dung là 0AH thì viết 0A",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: ADD A, 40H thì nội dung trong thanh ghi A sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "80",
-    "acceptable_answers": [
-      "80",
-      "80H",
-      "80",
-      "80h"
+    "options": [
+      "0EH",
+      "1DH",
+      "1EH",
+      "1FH"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (5BH) và toán hạng (C3H): kết quả A = 1EH. Phân tích cờ trạng thái: CY=1, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5B ADD C3 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "ADD A, 40H: 5BH + C3H = 286 → A=1EH. A sau lệnh = 1EH. ",
+    "methodology": "ADD A, 40H: 5BH + C3H = 286 → A=1EH. A sau lệnh = 1EH. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18393,22 +18369,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 14,
     "title": "Part 11 - Câu 14",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV R0, #0AAH MOV A, #0C3H ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV R0, #0AAH",
+      "MOV A, #0C3H",
+      "ADD A, R0"
+    ],
     "options": [
       "CY=0, AC=0",
-      "CY=1, AC=0",
       "CY=0, AC=1",
+      "CY=1, AC=0",
       "CY=1, AC=1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "C",
     "acceptable_answers": [
-      "B"
+      "C"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (C3H) và toán hạng (AAH): kết quả A = 6DH. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập C3 ADD AA để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV R0, #0AAH: A=00H; MOV A, #0C3H: A=C3H; ADD A, R0: C3H + AAH = 365 → A=6DH. Kết quả: CY=1, AC=0, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV R0, #0AAH: A=00H; MOV A, #0C3H: A=C3H; ADD A, R0: C3H + AAH = 365 → A=6DH. Kết quả: CY=1, AC=0, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18421,22 +18401,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 15,
     "title": "Part 11 - Câu 15",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #83H MOV R0, #49H SETB CADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #83H",
+      "MOV R0, #49H",
+      "SETB C",
+      "ADD A, R0"
+    ],
     "options": [
       "AC=0, OV=0",
+      "AC=0, OV=1",
       "AC=1, OV=0",
-      "AC=1, OV=1",
-      "AC=0, OV=1"
+      "AC=1, OV=1"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (83H) và toán hạng (49H): kết quả A = CCH. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 83 ADD 49 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #83H: A=83H; MOV R0, #49H: A=83H; SETB C: A=83H; ADD A, R0: 83H + 49H = 204 → A=CCH. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #83H: A=83H; MOV R0, #49H: A=83H; SETB C: A=83H; ADD A, R0: 83H + 49H = 204 → A=CCH. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18449,22 +18434,28 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 16,
     "title": "Part 11 - Câu 16",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0A7H MOV R0, #2FH CLR CADDC A, R0 SETB C",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0A7H",
+      "MOV R0, #2FH",
+      "CLR C",
+      "ADDC A, R0",
+      "SETB C"
+    ],
     "options": [
-      "AC=1, OV=0",
-      "AC=0, OV=1",
       "AC=0, OV=0",
+      "AC=0, OV=1",
+      "AC=1, OV=0",
       "AC=1, OV=1"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (A7H) và toán hạng (2FH): kết quả A = D7H. Phân tích cờ trạng thái: CY=0, AC=1, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập A7 ADD 2F để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0A7H: A=A7H; MOV R0, #2FH: A=A7H; CLR C: A=A7H; ADDC A, R0: A7H + 2FH + CY(0) = 214 → A=D6H; SETB C: A=D6H. Kết quả: CY=1, AC=1, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0A7H: A=A7H; MOV R0, #2FH: A=A7H; CLR C: A=A7H; ADDC A, R0: A7H + 2FH + CY(0) = 214 → A=D6H; SETB C: A=D6H. Kết quả: CY=1, AC=1, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18477,22 +18468,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 17,
     "title": "Part 11 - Câu 17",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0C5H MOV R0, #0B6H ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0C5H",
+      "MOV R0, #0B6H",
+      "ADD A, R0"
+    ],
     "options": [
-      "CY=0, AC=1",
       "CY=0, AC=0",
-      "CY=1, AC=1",
-      "CY=1, AC=0"
+      "CY=0, AC=1",
+      "CY=1, AC=0",
+      "CY=1, AC=1"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "C",
     "acceptable_answers": [
-      "D"
+      "C"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (C5H) và toán hạng (B6H): kết quả A = 7BH. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập C5 ADD B6 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0C5H: A=C5H; MOV R0, #0B6H: A=C5H; ADD A, R0: C5H + B6H = 379 → A=7BH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0C5H: A=C5H; MOV R0, #0B6H: A=C5H; ADD A, R0: C5H + B6H = 379 → A=7BH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18505,22 +18500,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 18,
     "title": "Part 11 - Câu 18",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0C3H MOV R0, #5FH ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0C3H",
+      "MOV R0, #5FH",
+      "ADD A, R0"
+    ],
     "options": [
-      "OV=1, CY=1",
+      "OV=0, CY=0",
       "OV=0, CY=1",
       "OV=1, CY=0",
-      "OV=0, CY=0"
+      "OV=1, CY=1"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (C3H) và toán hạng (5FH): kết quả A = 22H. Phân tích cờ trạng thái: CY=1, AC=1, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập C3 ADD 5F để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0C3H: A=C3H; MOV R0, #5FH: A=C3H; ADD A, R0: C3H + 5FH = 290 → A=22H. Kết quả: CY=1, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0C3H: A=C3H; MOV R0, #5FH: A=C3H; ADD A, R0: C3H + 5FH = 290 → A=22H. Kết quả: CY=1, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18533,20 +18532,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 19,
     "title": "Part 11 - Câu 19",
-    "prompt": "Trên vi điều khiển 89C51 biết (A) =AEH, (R1)=81H, PSW=81H sau khi thực hiện lệnh SUBB A, R1 thì thì nội dung trong các cờ CY, AC, OV và P sẽ là_________B.",
+    "prompt": "Trên vi điều khiển 89C51 biết (A) =AEH, (R1)=81H, PSW=81H sau khi thực hiện lệnh SUBB A, R1 thì thì nội dung trong các cờ CY, AC, OV và P sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "05",
-    "acceptable_answers": [
-      "05",
-      "05H",
-      "05",
-      "05h"
+    "options": [
+      "10001B",
+      "0010B",
+      "0001B",
+      "0000B"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (AEH) và toán hạng (40H): kết quả A = 6EH. Phân tích cờ trạng thái: CY=0, AC=0, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập AE SUB 40 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "A sau lệnh = 2CH; CY, AC, OV, P theo đúng thứ tự = 0001. SUBB A, R1: AEH - 81H - CY(1) = 44 → A=2CH",
+    "methodology": "A sau lệnh = 2CH; CY, AC, OV, P theo đúng thứ tự = 0001. SUBB A, R1: AEH - 81H - CY(1) = 44 → A=2CH",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18559,20 +18560,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 20,
     "title": "Part 11 - Câu 20",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #22H MOV R0, #0B5H ADD A, R0 (1 Point) OV=1, CY=1 OV=1, CY=0 OV=0, CY=0 OV=0, CY=1",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #22H",
+      "MOV R0, #0B5H",
+      "ADD A, R0"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (22H) và toán hạng (B5H): kết quả A = D7H. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 22 ADD B5 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "options": [
+      "OV=0, CY=0",
+      "OV=0, CY=1",
+      "OV=1, CY=0",
+      "OV=1, CY=1"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "MOV A, #22H: A=22H; MOV R0, #0B5H: A=22H; ADD A, R0: 22H + B5H = 215 → A=D7H. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #22H: A=22H; MOV R0, #0B5H: A=22H; ADD A, R0: 22H + B5H = 215 → A=D7H. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18585,22 +18592,28 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 21,
     "title": "Part 11 - Câu 21",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0FFH MOV R0, #01H SETB CSUBB A, R0 CLR C",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0FFH",
+      "MOV R0, #01H",
+      "SETB C",
+      "SUBB A, R0",
+      "CLR C"
+    ],
     "options": [
       "CY=0, AC=0",
-      "CY=1, AC=0",
       "CY=0, AC=1",
-      "CY=1, AC=0"
+      "CY=1, AC=0",
+      "CY=1, AC=1"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (FFH) và toán hạng (1H): kết quả A = FDH. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập FF SUB 1 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0FFH: A=FFH; MOV R0, #01H: A=FFH; SETB C: A=FFH; SUBB A, R0: FFH - 01H - CY(1) = 253 → A=FDH; CLR C: A=FDH. Kết quả: CY=0, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0FFH: A=FFH; MOV R0, #01H: A=FFH; SETB C: A=FFH; SUBB A, R0: FFH - 01H - CY(1) = 253 → A=FDH; CLR C: A=FDH. Kết quả: CY=0, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18613,20 +18626,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 22,
     "title": "Part 11 - Câu 22",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=DBH, (40H)=C4H, (PSW)=81H sau khi thực thi lệnh: XCHD A, @R1 thì nội dung trong ô nhớ 40H sẽ là_________H. Viết nội dung dưới dạng số hexa, ví dụ nội dung là 0AH thì viết 0A",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=DBH, (40H)=C4H, (PSW)=81H sau khi thực thi lệnh: XCHD A, @R1 thì nội dung trong ô nhớ 40H sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "80",
-    "acceptable_answers": [
-      "80",
-      "80H",
-      "80",
-      "80h"
+    "options": [
+      "CAH",
+      "DBH",
+      "CCH",
+      "CBH"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (DBH) và toán hạng (C4H): kết quả A = 9FH. Phân tích cờ trạng thái: CY=1, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập DB ADD C4 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "XCHD A, @R1: A=D4H. 40H sau lệnh = CBH. ",
+    "methodology": "XCHD A, @R1: A=D4H. 40H sau lệnh = CBH. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18639,22 +18654,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 23,
     "title": "Part 11 - Câu 23",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #5FH MOV R0, #5BH ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #5FH",
+      "MOV R0, #5BH",
+      "ADD A, R0"
+    ],
     "options": [
       "OV=0, CY=0",
+      "OV=0, CY=1",
       "OV=1, CY=0",
-      "OV=1, CY=1",
-      "OV=0, CY=1"
+      "OV=1, CY=1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "C",
     "acceptable_answers": [
-      "B"
+      "C"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (5FH) và toán hạng (5BH): kết quả A = BAH. Phân tích cờ trạng thái: CY=0, AC=1, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5F ADD 5B để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #5FH: A=5FH; MOV R0, #5BH: A=5FH; ADD A, R0: 5FH + 5BH = 186 → A=BAH. Kết quả: CY=0, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #5FH: A=5FH; MOV R0, #5BH: A=5FH; ADD A, R0: 5FH + 5BH = 186 → A=BAH. Kết quả: CY=0, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18667,20 +18686,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 24,
     "title": "Part 11 - Câu 24",
-    "prompt": "Trên vi điều khiển 89C51 biết (A) =AEH, (R1)=81H, PSW=66H sau khi thực hiện lệnh ADDC A, R1 thì thì nội dung trong các cờ CY, AC, OV và P sẽ là_________B.",
+    "prompt": "Trên vi điều khiển 89C51 biết (A) =AEH, (R1)=81H, PSW=66H sau khi thực hiện lệnh ADDC A, R1 thì thì nội dung trong các cờ CY, AC, OV và P sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "options": [
+      "1010B",
+      "11011B",
+      "1100B",
+      "1011B"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (AEH) và toán hạng (40H): kết quả A = EEH. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập AE ADD 40 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "A sau lệnh = 2FH; CY, AC, OV, P theo đúng thứ tự = 1011. ADDC A, R1: AEH + 81H + CY(0) = 303 → A=2FH",
+    "methodology": "A sau lệnh = 2FH; CY, AC, OV, P theo đúng thứ tự = 1011. ADDC A, R1: AEH + 81H + CY(0) = 303 → A=2FH",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18693,20 +18714,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 25,
     "title": "Part 11 - Câu 25",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=50H, (A)=A7H, (50H)=D8H, (PSW)=81H sau khi thực thi lệnh: XCHD A, 50H thì nội dung trong thanh ghi A sẽ là_________H. Viết nội dung dưới dạng số hexa, ví dụ nội dung là 0AH thì viết 0A",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=50H, (A)=A7H, (50H)=D8H, (PSW)=81H sau khi thực thi lệnh: XCHD A, @R1 thì nội dung trong thanh ghi A sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "85",
-    "acceptable_answers": [
-      "85",
-      "85H",
-      "85",
-      "85h"
+    "options": [
+      "B8H",
+      "A7H",
+      "A8H",
+      "A9H"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (A7H) và toán hạng (D8H): kết quả A = 7FH. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập A7 ADD D8 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "XCHD A, @R1: A=A8H. A sau lệnh = A8H. ",
+    "methodology": "XCHD A, @R1: A=A8H. A sau lệnh = A8H. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18719,20 +18742,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 26,
     "title": "Part 11 - Câu 26",
-    "prompt": "Trên vi điều khiển 89C51 biết (R0)=60H, (60H)=72H, sau khi thực thi lệnh: MOV 60H, @R0 thì nội dung trong thanh ghi R0 sẽ là_________H. (1 Point) 60",
+    "prompt": "Trên vi điều khiển 89C51 biết (R0)=60H, (60H)=72H, sau khi thực thi lệnh: MOV 60H, @R0 thì nội dung trong thanh ghi R0 sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "05",
-    "acceptable_answers": [
-      "05",
-      "05H",
-      "05",
-      "05h"
+    "options": [
+      "5FH",
+      "60H",
+      "61H",
+      "70H"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (5BH) và toán hạng (72H): kết quả A = CDH. Phân tích cờ trạng thái: CY=0, AC=0, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5B ADD 72 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV 60H, @R0: A=00H. R0 sau lệnh = 60H. ",
+    "methodology": "MOV 60H, @R0: A=00H. R0 sau lệnh = 60H. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18745,8 +18770,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 27,
     "title": "Part 11 - Câu 27",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #12H MOV R0, #65H SETB C SUBB A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #12H",
+      "MOV R0, #65H",
+      "SETB C",
+      "SUBB A, R0"
+    ],
     "options": [
       "AC=0, OV=0",
       "AC=0, OV=1",
@@ -18758,9 +18788,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (12H) và toán hạng (65H): kết quả A = ACH. Phân tích cờ trạng thái: CY=1, AC=1, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 12 SUB 65 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #12H: A=12H; MOV R0, #65H: A=12H; SETB C: A=12H; SUBB A, R0: 12H - 65H - CY(1) = -84 → A=ACH. Kết quả: CY=1, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #12H: A=12H; MOV R0, #65H: A=12H; SETB C: A=12H; SUBB A, R0: 12H - 65H - CY(1) = -84 → A=ACH. Kết quả: CY=1, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18773,22 +18803,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 28,
     "title": "Part 11 - Câu 28",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #8BH MOV R0, #0B4H CLR CADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #8BH",
+      "MOV R0, #0B4H",
+      "CLR C",
+      "ADD A, R0"
+    ],
     "options": [
-      "CY=1, OV=0",
+      "CY=0, OV=0",
       "CY=0, OV=1",
-      "CY=1, OV=1",
-      "CY=0, OV=0"
+      "CY=1, OV=0",
+      "CY=1, OV=1"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "D",
     "acceptable_answers": [
-      "C"
+      "D"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (8BH) và toán hạng (B4H): kết quả A = 3FH. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 8B ADD B4 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #8BH: A=8BH; MOV R0, #0B4H: A=8BH; CLR C: A=8BH; ADD A, R0: 8BH + B4H = 319 → A=3FH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #8BH: A=8BH; MOV R0, #0B4H: A=8BH; CLR C: A=8BH; ADD A, R0: 8BH + B4H = 319 → A=3FH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18801,22 +18836,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 29,
     "title": "Part 11 - Câu 29",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #12H MOV R0, #0FEH SETB CSUBB A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #12H",
+      "MOV R0, #0FEH",
+      "SETB C",
+      "SUBB A, R0"
+    ],
     "options": [
+      "OV=0, AC=0",
       "OV=0, AC=1",
-      "OV=1, AC=1",
       "OV=1, AC=0",
-      "OV=0, AC=0"
+      "OV=1, AC=1"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (12H) và toán hạng (FEH): kết quả A = 13H. Phân tích cờ trạng thái: CY=1, AC=1, OV=0, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 12 SUB FE để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #12H: A=12H; MOV R0, #0FEH: A=12H; SETB C: A=12H; SUBB A, R0: 12H - FEH - CY(1) = -237 → A=13H. Kết quả: CY=1, AC=1, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #12H: A=12H; MOV R0, #0FEH: A=12H; SETB C: A=12H; SUBB A, R0: 12H - FEH - CY(1) = -237 → A=13H. Kết quả: CY=1, AC=1, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18829,22 +18869,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 30,
     "title": "Part 11 - Câu 30",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0F7H MOV R0, #0C5H ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0F7H",
+      "MOV R0, #0C5H",
+      "ADD A, R0"
+    ],
     "options": [
-      "OV=0, CY=1",
-      "OV=1, CY=1",
       "OV=0, CY=0",
-      "OV=1, CY=0"
+      "OV=0, CY=1",
+      "OV=1, CY=0",
+      "OV=1, CY=1"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (F7H) và toán hạng (C5H): kết quả A = BCH. Phân tích cờ trạng thái: CY=1, AC=0, OV=0, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập F7 ADD C5 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0F7H: A=F7H; MOV R0, #0C5H: A=F7H; ADD A, R0: F7H + C5H = 444 → A=BCH. Kết quả: CY=1, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0F7H: A=F7H; MOV R0, #0C5H: A=F7H; ADD A, R0: F7H + C5H = 444 → A=BCH. Kết quả: CY=1, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18857,22 +18901,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 31,
     "title": "Part 11 - Câu 31",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #45H MOV R0, #0ADH SETB CSUBB A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #45H",
+      "MOV R0, #0ADH",
+      "SETB C",
+      "SUBB A, R0"
+    ],
     "options": [
-      "CY=0, P=1",
-      "CY=1, P=1",
       "CY=0, P=0",
-      "CY=1, P=0"
+      "CY=0, P=1",
+      "CY=1, P=0",
+      "CY=1, P=1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (45H) và toán hạng (ADH): kết quả A = 97H. Phân tích cờ trạng thái: CY=1, AC=1, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 45 SUB AD để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #45H: A=45H; MOV R0, #0ADH: A=45H; SETB C: A=45H; SUBB A, R0: 45H - ADH - CY(1) = -105 → A=97H. Kết quả: CY=1, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #45H: A=45H; MOV R0, #0ADH: A=45H; SETB C: A=45H; SUBB A, R0: 45H - ADH - CY(1) = -105 → A=97H. Kết quả: CY=1, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18885,20 +18934,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 32,
     "title": "Part 11 - Câu 32",
-    "prompt": "Trên vi điều khiển 89C51 biết (A) =AEH, (R1)=81H, PSW=81H sau khi thực hiện lệnh ADDC A, R1 thì nội dung trong thanh ghi PSW sẽ là_________H.",
+    "prompt": "Trên vi điều khiển 89C51 biết (A) =AEH, (R1)=81H, PSW=81H sau khi thực hiện lệnh ADDC A, R1 thì nội dung trong thanh ghi PSW sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "options": [
+      "D4H",
+      "C3H",
+      "C4H",
+      "C5H"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (AEH) và toán hạng (40H): kết quả A = EEH. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập AE ADD 40 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "ADDC A, R1: AEH + 81H + CY(1) = 304 → A=30H. PSW sau lệnh = C4H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "methodology": "ADDC A, R1: AEH + 81H + CY(1) = 304 → A=30H. PSW sau lệnh = C4H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18911,20 +18962,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 33,
     "title": "Part 11 - Câu 33",
-    "prompt": "Trên vi điều khiển 89C51 biết (A) =AEH, (R1)=81H, PSW=81H, (81H)=C3H sau khi thực hiện lệnh ADDC A, @R1 thì nội dung trong thanh ghi A sẽ là_________H.",
+    "prompt": "Trên vi điều khiển 89C51 biết (A) =AEH, (R1)=61H, PSW=81H, (61H)=C3H sau khi thực hiện lệnh ADDC A, @R1 thì nội dung trong thanh ghi A sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "C4",
-    "acceptable_answers": [
-      "C4",
-      "C4H",
-      "c4",
-      "c4h"
+    "options": [
+      "73H",
+      "62H",
+      "71H",
+      "72H"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (AEH) và toán hạng (C3H): kết quả A = 71H. Phân tích cờ trạng thái: CY=1, AC=1, OV=1, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập AE ADD C3 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "ADDC A, @R1: AEH + C3H + CY(1) = 370 → A=72H. A sau lệnh = 72H. ",
+    "methodology": "ADDC A, @R1: AEH + C3H + CY(1) = 370 → A=72H. A sau lệnh = 72H. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18937,12 +18990,17 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 34,
     "title": "Part 11 - Câu 34",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #5CH MOV R0, #9FH SETB C SUBB A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #5CH",
+      "MOV R0, #9FH",
+      "SETB C",
+      "SUBB A, R0"
+    ],
     "options": [
       "CY=0, AC=0",
-      "CY=1, AC=0",
       "CY=0, AC=1",
+      "CY=1, AC=0",
       "CY=1, AC=1"
     ],
     "type": "mcq",
@@ -18950,9 +19008,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (5CH) và toán hạng (9FH): kết quả A = BCH. Phân tích cờ trạng thái: CY=1, AC=1, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5C SUB 9F để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #5CH: A=5CH; MOV R0, #9FH: A=5CH; SETB C: A=5CH; SUBB A, R0: 5CH - 9FH - CY(1) = -68 → A=BCH. Kết quả: CY=1, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #5CH: A=5CH; MOV R0, #9FH: A=5CH; SETB C: A=5CH; SUBB A, R0: 5CH - 9FH - CY(1) = -68 → A=BCH. Kết quả: CY=1, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18965,22 +19023,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 35,
     "title": "Part 11 - Câu 35",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #8BH MOV R0, #0B4H ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #8BH",
+      "MOV R0, #0B4H",
+      "ADD A, R0"
+    ],
     "options": [
-      "AC=1, OV=0",
       "AC=0, OV=0",
       "AC=0, OV=1",
+      "AC=1, OV=0",
       "AC=1, OV=1"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "B",
     "acceptable_answers": [
-      "C"
+      "B"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (8BH) và toán hạng (B4H): kết quả A = 3FH. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 8B ADD B4 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #8BH: A=8BH; MOV R0, #0B4H: A=8BH; ADD A, R0: 8BH + B4H = 319 → A=3FH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #8BH: A=8BH; MOV R0, #0B4H: A=8BH; ADD A, R0: 8BH + B4H = 319 → A=3FH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -18993,22 +19055,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 36,
     "title": "Part 11 - Câu 36",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0AAH MOV R0, #01H ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0AAH",
+      "MOV R0, #01H",
+      "ADD A, R0"
+    ],
     "options": [
-      "AC=1, P=1",
-      "AC=1, P=0",
+      "AC=0, P=0",
       "AC=0, P=1",
-      "AC=0, P=0"
+      "AC=1, P=0",
+      "AC=1, P=1"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "B",
     "acceptable_answers": [
-      "C"
+      "B"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (AAH) và toán hạng (1H): kết quả A = ABH. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập AA ADD 1 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0AAH: A=AAH; MOV R0, #01H: A=AAH; ADD A, R0: AAH + 01H = 171 → A=ABH. Kết quả: CY=0, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0AAH: A=AAH; MOV R0, #01H: A=AAH; ADD A, R0: AAH + 01H = 171 → A=ABH. Kết quả: CY=0, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19021,22 +19087,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 37,
     "title": "Part 11 - Câu 37",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #1FH MOV R0, #0CDH SETB CSUBB A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #1FH",
+      "MOV R0, #0CDH",
+      "SETB C",
+      "SUBB A, R0"
+    ],
     "options": [
       "CY=0, OV=0",
-      "CY=1, OV=1",
+      "CY=0, OV=1",
       "CY=1, OV=0",
-      "CY=0, OV=1"
+      "CY=1, OV=1"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (1FH) và toán hạng (CDH): kết quả A = 51H. Phân tích cờ trạng thái: CY=1, AC=0, OV=0, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 1F SUB CD để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #1FH: A=1FH; MOV R0, #0CDH: A=1FH; SETB C: A=1FH; SUBB A, R0: 1FH - CDH - CY(1) = -175 → A=51H. Kết quả: CY=1, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #1FH: A=1FH; MOV R0, #0CDH: A=1FH; SETB C: A=1FH; SUBB A, R0: 1FH - CDH - CY(1) = -175 → A=51H. Kết quả: CY=1, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19049,22 +19120,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 38,
     "title": "Part 11 - Câu 38",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0C3H MOV R0, #0AAH ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0C3H",
+      "MOV R0, #0AAH",
+      "ADD A, R0"
+    ],
     "options": [
-      "AC=0, OV=1",
       "AC=0, OV=0",
-      "AC=1, OV=1",
-      "AC=1, OV=0"
+      "AC=0, OV=1",
+      "AC=1, OV=0",
+      "AC=1, OV=1"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (C3H) và toán hạng (AAH): kết quả A = 6DH. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập C3 ADD AA để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0C3H: A=C3H; MOV R0, #0AAH: A=C3H; ADD A, R0: C3H + AAH = 365 → A=6DH. Kết quả: CY=1, AC=0, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0C3H: A=C3H; MOV R0, #0AAH: A=C3H; ADD A, R0: C3H + AAH = 365 → A=6DH. Kết quả: CY=1, AC=0, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19077,20 +19152,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 39,
     "title": "Part 11 - Câu 39",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: SUBB A, 40H thì nội dung trong thanh ghi PSW sẽ là_________H.",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: SUBB A, 40H thì nội dung trong thanh ghi PSW sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "85",
-    "acceptable_answers": [
-      "85",
-      "85H",
-      "85",
-      "85h"
+    "options": [
+      "84H",
+      "95H",
+      "86H",
+      "85H"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (5BH) và toán hạng (C3H): kết quả A = 98H. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5B SUB C3 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "SUBB A, 40H: 5BH - C3H - CY(1) = -105 → A=97H. PSW sau lệnh = 85H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "methodology": "SUBB A, 40H: 5BH - C3H - CY(1) = -105 → A=97H. PSW sau lệnh = 85H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19103,12 +19180,16 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 40,
     "title": "Part 11 - Câu 40",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0AAH MOV R0, #0BDH ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0AAH",
+      "MOV R0, #0BDH",
+      "ADD A, R0"
+    ],
     "options": [
-      "AC=1, P=0",
-      "AC=0, P=1",
       "AC=0, P=0",
+      "AC=0, P=1",
+      "AC=1, P=0",
       "AC=1, P=1"
     ],
     "type": "mcq",
@@ -19116,9 +19197,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (AAH) và toán hạng (BDH): kết quả A = 67H. Phân tích cờ trạng thái: CY=1, AC=1, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập AA ADD BD để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0AAH: A=AAH; MOV R0, #0BDH: A=AAH; ADD A, R0: AAH + BDH = 359 → A=67H. Kết quả: CY=1, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0AAH: A=AAH; MOV R0, #0BDH: A=AAH; ADD A, R0: AAH + BDH = 359 → A=67H. Kết quả: CY=1, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19131,22 +19212,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 41,
     "title": "Part 11 - Câu 41",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0A7H MOV R0, #2FH ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0A7H",
+      "MOV R0, #2FH",
+      "ADD A, R0"
+    ],
     "options": [
-      "AC=1, OV=1",
-      "AC=1, OV=0",
+      "AC=0, OV=0",
       "AC=0, OV=1",
-      "AC=0, OV=0"
+      "AC=1, OV=0",
+      "AC=1, OV=1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "C",
     "acceptable_answers": [
-      "B"
+      "C"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (A7H) và toán hạng (2FH): kết quả A = D6H. Phân tích cờ trạng thái: CY=0, AC=1, OV=0, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập A7 ADD 2F để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0A7H: A=A7H; MOV R0, #2FH: A=A7H; ADD A, R0: A7H + 2FH = 214 → A=D6H. Kết quả: CY=0, AC=1, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0A7H: A=A7H; MOV R0, #2FH: A=A7H; ADD A, R0: A7H + 2FH = 214 → A=D6H. Kết quả: CY=0, AC=1, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19159,22 +19244,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 42,
     "title": "Part 11 - Câu 42",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #57H MOV R0, #89H SETB CY ADDC A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #57H",
+      "MOV R0, #89H",
+      "SETB C",
+      "ADDC A, R0"
+    ],
     "options": [
       "CY=0, AC=0",
-      "CY=1, AC=1",
       "CY=0, AC=1",
-      "CY=1, AC=0"
+      "CY=1, AC=0",
+      "CY=1, AC=1"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "B",
     "acceptable_answers": [
-      "C"
+      "B"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (57H) và toán hạng (89H): kết quả A = E1H. Phân tích cờ trạng thái: CY=0, AC=1, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 57 ADD 89 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #57H: A=57H; MOV R0, #89H: A=57H; SETB C: A=57H; ADDC A, R0: 57H + 89H + CY(1) = 225 → A=E1H. Kết quả: CY=0, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #57H: A=57H; MOV R0, #89H: A=57H; SETB C: A=57H; ADDC A, R0: 57H + 89H + CY(1) = 225 → A=E1H. Kết quả: CY=0, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19187,22 +19277,28 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 43,
     "title": "Part 11 - Câu 43",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0A7H MOV R0, #2FH CLR CADDC A, R0 SETB C",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0A7H",
+      "MOV R0, #2FH",
+      "CLR C",
+      "ADDC A, R0",
+      "SETB C"
+    ],
     "options": [
+      "P=0, CY=0",
       "P=0, CY=1",
-      "P=1, CY=1",
       "P=1, CY=0",
-      "P=0, CY=0"
+      "P=1, CY=1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Khởi tạo A = A7H, R0 = 2FH, CLR C (CY = 0). Sau lệnh ADDC A, R0: A = A7H + 2FH + 0 = D6H = 11010110b. Số bit 1 của A là 5 (lẻ), nên cờ chẵn lẻ P = 1. Lệnh tiếp theo SETB C đặt cờ nhớ CY = 1. Do đó trạng thái cuối cùng là P = 1, CY = 1. Chọn đáp án B.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập A7 ADD 2F để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0A7H: A=A7H; MOV R0, #2FH: A=A7H; CLR C: A=A7H; ADDC A, R0: A7H + 2FH + CY(0) = 214 → A=D6H; SETB C: A=D6H. Kết quả: CY=1, AC=1, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0A7H: A=A7H; MOV R0, #2FH: A=A7H; CLR C: A=A7H; ADDC A, R0: A7H + 2FH + CY(0) = 214 → A=D6H; SETB C: A=D6H. Kết quả: CY=1, AC=1, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19215,22 +19311,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 44,
     "title": "Part 11 - Câu 44",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0FFH MOV R0, #01H ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0FFH",
+      "MOV R0, #01H",
+      "ADD A, R0"
+    ],
     "options": [
-      "AC=1, P=0",
+      "AC=0, P=0",
       "AC=0, P=1",
-      "AC=1, P=1",
-      "AC=0, P=0"
+      "AC=1, P=0",
+      "AC=1, P=1"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (FFH) và toán hạng (1H): kết quả A = 0H. Phân tích cờ trạng thái: CY=1, AC=1, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập FF ADD 1 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0FFH: A=FFH; MOV R0, #01H: A=FFH; ADD A, R0: FFH + 01H = 256 → A=00H. Kết quả: CY=1, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0FFH: A=FFH; MOV R0, #01H: A=FFH; ADD A, R0: FFH + 01H = 256 → A=00H. Kết quả: CY=1, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19243,22 +19343,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 45,
     "title": "Part 11 - Câu 45",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0B2H MOV R0, #4DH SETB CSUBB A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0B2H",
+      "MOV R0, #4DH",
+      "SETB C",
+      "SUBB A, R0"
+    ],
     "options": [
-      "CY=1, AC=1",
       "CY=0, AC=0",
+      "CY=0, AC=1",
       "CY=1, AC=0",
-      "CY=0, AC=1"
+      "CY=1, AC=1"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "B",
     "acceptable_answers": [
-      "D"
+      "B"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (B2H) và toán hạng (4DH): kết quả A = 64H. Phân tích cờ trạng thái: CY=0, AC=1, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập B2 SUB 4D để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0B2H: A=B2H; MOV R0, #4DH: A=B2H; SETB C: A=B2H; SUBB A, R0: B2H - 4DH - CY(1) = 100 → A=64H. Kết quả: CY=0, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0B2H: A=B2H; MOV R0, #4DH: A=B2H; SETB C: A=B2H; SUBB A, R0: B2H - 4DH - CY(1) = 100 → A=64H. Kết quả: CY=0, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19271,22 +19376,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 46,
     "title": "Part 11 - Câu 46",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0C3H MOV R0, #0AAH ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0C3H",
+      "MOV R0, #0AAH",
+      "ADD A, R0"
+    ],
     "options": [
-      "CY=0, AC=1",
       "CY=0, AC=0",
-      "CY=1, AC=1",
-      "CY=1, AC=0"
+      "CY=0, AC=1",
+      "CY=1, AC=0",
+      "CY=1, AC=1"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "C",
     "acceptable_answers": [
-      "D"
+      "C"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (C3H) và toán hạng (AAH): kết quả A = 6DH. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập C3 ADD AA để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0C3H: A=C3H; MOV R0, #0AAH: A=C3H; ADD A, R0: C3H + AAH = 365 → A=6DH. Kết quả: CY=1, AC=0, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0C3H: A=C3H; MOV R0, #0AAH: A=C3H; ADD A, R0: C3H + AAH = 365 → A=6DH. Kết quả: CY=1, AC=0, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19299,19 +19408,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 47,
     "title": "Part 11 - Câu 47",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=A8H, (PSW)=76H sau khi thực thi lệnh: ADD A, 40H thì nội dung trong các cờ CY, AC, OV và P sẽ là_________B. Viết nội dung dưới dạng số nhị phân, ví dụ nội dung là 0000B thì viết 0000",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=A8H, (PSW)=76H sau khi thực thi lệnh: ADD A, 40H thì nội dung trong các cờ CY, AC, OV và P sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "1100",
-    "acceptable_answers": [
-      "1100",
+    "options": [
+      "11100B",
+      "1011B",
       "1100B",
-      "1100b"
+      "1101B"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (5BH) và toán hạng (A8H): kết quả A = 3H. Phân tích cờ trạng thái: CY=1, AC=1, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5B ADD A8 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "A sau lệnh = 03H; CY, AC, OV, P theo đúng thứ tự = 1100. ADD A, 40H: 5BH + A8H = 259 → A=03H",
+    "methodology": "A sau lệnh = 03H; CY, AC, OV, P theo đúng thứ tự = 1100. ADD A, 40H: 5BH + A8H = 259 → A=03H",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19324,22 +19436,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 48,
     "title": "Part 11 - Câu 48",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #83H MOV R0, #49H ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #83H",
+      "MOV R0, #49H",
+      "ADD A, R0"
+    ],
     "options": [
       "AC=0, OV=0",
-      "AC=1, OV=1",
       "AC=0, OV=1",
-      "AC=1, OV=0"
+      "AC=1, OV=0",
+      "AC=1, OV=1"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (83H) và toán hạng (49H): kết quả A = CCH. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 83 ADD 49 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #83H: A=83H; MOV R0, #49H: A=83H; ADD A, R0: 83H + 49H = 204 → A=CCH. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #83H: A=83H; MOV R0, #49H: A=83H; ADD A, R0: 83H + 49H = 204 → A=CCH. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19352,22 +19468,28 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 49,
     "title": "Part 11 - Câu 49",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #1FH MOV R0, #0CDH SETB C SUBB A, R0 SETB C",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #1FH",
+      "MOV R0, #0CDH",
+      "SETB C",
+      "SUBB A, R0",
+      "SETB C"
+    ],
     "options": [
       "P=0, OV=0",
       "P=0, OV=1",
-      "P=1, OV=1",
-      "P=1, OV=0"
+      "P=1, OV=0",
+      "P=1, OV=1"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "C",
     "acceptable_answers": [
-      "D"
+      "C"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (1FH) và toán hạng (CDH): kết quả A = 51H. Phân tích cờ trạng thái: CY=1, AC=0, OV=0, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 1F SUB CD để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #1FH: A=1FH; MOV R0, #0CDH: A=1FH; SETB C: A=1FH; SUBB A, R0: 1FH - CDH - CY(1) = -175 → A=51H; SETB C: A=51H. Kết quả: CY=1, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #1FH: A=1FH; MOV R0, #0CDH: A=1FH; SETB C: A=1FH; SUBB A, R0: 1FH - CDH - CY(1) = -175 → A=51H; SETB C: A=51H. Kết quả: CY=1, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19380,22 +19502,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 50,
     "title": "Part 11 - Câu 50",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #25H MOV R0, #7DH ADDC A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "CLR C",
+      "MOV A, #25H",
+      "MOV R0, #7DH",
+      "ADDC A, R0"
+    ],
     "options": [
-      "CY=1, P=1",
       "CY=0, P=0",
+      "CY=0, P=1",
       "CY=1, P=0",
-      "CY=0, P=1"
+      "CY=1, P=1"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "B",
     "acceptable_answers": [
-      "D"
+      "B"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (25H) và toán hạng (7DH): kết quả A = A2H. Phân tích cờ trạng thái: CY=0, AC=1, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 25 ADD 7D để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "CLR C: A=00H; MOV A, #25H: A=25H; MOV R0, #7DH: A=25H; ADDC A, R0: 25H + 7DH + CY(0) = 162 → A=A2H. Kết quả: CY=0, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "CLR C: A=00H; MOV A, #25H: A=25H; MOV R0, #7DH: A=25H; ADDC A, R0: 25H + 7DH + CY(0) = 162 → A=A2H. Kết quả: CY=0, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19408,22 +19535,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 51,
     "title": "Part 11 - Câu 51",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #57H MOV R0, #89H SETB CY ADDC A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #57H",
+      "MOV R0, #89H",
+      "SETB C",
+      "ADDC A, R0"
+    ],
     "options": [
       "OV=0, P=0",
+      "OV=0, P=1",
       "OV=1, P=0",
-      "OV=1, P=1",
-      "OV=0, P=1"
+      "OV=1, P=1"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (57H) và toán hạng (89H): kết quả A = E1H. Phân tích cờ trạng thái: CY=0, AC=1, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 57 ADD 89 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #57H: A=57H; MOV R0, #89H: A=57H; SETB C: A=57H; ADDC A, R0: 57H + 89H + CY(1) = 225 → A=E1H. Kết quả: CY=0, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #57H: A=57H; MOV R0, #89H: A=57H; SETB C: A=57H; ADDC A, R0: 57H + 89H + CY(1) = 225 → A=E1H. Kết quả: CY=0, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19436,22 +19568,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 52,
     "title": "Part 11 - Câu 52",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #0C4H MOV R0, #75H CLR CADDC A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0C4H",
+      "MOV R0, #75H",
+      "CLR C",
+      "ADDC A, R0"
+    ],
     "options": [
+      "P=0, CY=0",
       "P=0, CY=1",
-      "P=1, CY=1",
       "P=1, CY=0",
-      "P=0, CY=0"
+      "P=1, CY=1"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (C4H) và toán hạng (75H): kết quả A = 39H. Phân tích cờ trạng thái: CY=1, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập C4 ADD 75 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #0C4H: A=C4H; MOV R0, #75H: A=C4H; CLR C: A=C4H; ADDC A, R0: C4H + 75H + CY(0) = 313 → A=39H. Kết quả: CY=1, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0C4H: A=C4H; MOV R0, #75H: A=C4H; CLR C: A=C4H; ADDC A, R0: C4H + 75H + CY(0) = 313 → A=39H. Kết quả: CY=1, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19464,20 +19601,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 53,
     "title": "Part 11 - Câu 53",
-    "prompt": "Trên vi điều khiển 89C51 biết (A)=94H, (90H)=6DH, PSW=55H sau khi thực hiện lệnh ADD A, 90H thì nội dung trong thanh ghi PSW sẽ là_________H.",
+    "prompt": "Trên vi điều khiển 89C51 biết (A)=94H, (90H)=6DH, PSW=55H sau khi thực hiện lệnh ADD A, 90H thì nội dung trong thanh ghi PSW sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "C1",
-    "acceptable_answers": [
-      "C1",
+    "options": [
+      "D0H",
       "C1H",
-      "c1",
-      "c1h"
+      "D2H",
+      "D1H"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (94H) và toán hạng (6DH): kết quả A = 1H. Phân tích cờ trạng thái: CY=1, AC=1, OV=0, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 94 ADD 6D để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "ADD A, 90H: 94H + 6DH = 257 → A=01H. PSW sau lệnh = D1H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "methodology": "ADD A, 90H: 94H + 6DH = 257 → A=01H. PSW sau lệnh = D1H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19490,22 +19629,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 54,
     "title": "Part 11 - Câu 54",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây: MOV A, #0FEH; MOV R0, #012H; SETB C; SUBB A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #0FEH",
+      "MOV R0, #012H",
+      "SETB C",
+      "SUBB A, R0"
+    ],
     "options": [
-      "CY=1, P=0",
+      "CY=0, P=0",
       "CY=0, P=1",
-      "CY=1, P=1",
-      "CY=0, P=0"
+      "CY=1, P=0",
+      "CY=1, P=1"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "A",
     "acceptable_answers": [
-      "D"
+      "A"
     ],
-    "explanation": "Lệnh SETB C đặt CY = 1. Sau đó thực hiện SUBB A, R0: A = 0FEH - 12H - 1 = EBH = 11101011b. Vì FEH > 13H nên không phát sinh mượn ở bit 7, do đó CY = 0. Kết quả EBH có 6 bit 1 (chẵn), nên cờ chẵn lẻ P = 0. Trạng thái cờ là CY = 0, P = 0. Chọn đáp án D.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "FEH - 12H - 1 = EBH. Không mượn ở bit 7 nên CY = 0; EBH có 6 bit 1 nên P = 0.",
+    "explanation": "MOV A, #0FEH: A=FEH; MOV R0, #012H: A=FEH; SETB C: A=FEH; SUBB A, R0: FEH - 12H - CY(1) = 235 → A=EBH. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #0FEH: A=FEH; MOV R0, #012H: A=FEH; SETB C: A=FEH; SUBB A, R0: FEH - 12H - CY(1) = 235 → A=EBH. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19518,22 +19662,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 55,
     "title": "Part 11 - Câu 55",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #53H MOV R0, #12H ADDC A, R0 CLR C",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #53H",
+      "MOV R0, #12H",
+      "ADDC A, R0",
+      "CLR C"
+    ],
     "options": [
-      "CY=1, AC=0",
       "CY=0, AC=0",
-      "CY=1, AC=1",
-      "CY=0, AC=1"
+      "CY=0, AC=1",
+      "CY=1, AC=0",
+      "CY=1, AC=1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "A",
     "acceptable_answers": [
-      "B"
+      "A"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (53H) và toán hạng (12H): kết quả A = 65H. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 53 ADD 12 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #53H: A=53H; MOV R0, #12H: A=53H; ADDC A, R0: 53H + 12H + CY(0) = 101 → A=65H; CLR C: A=65H. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #53H: A=53H; MOV R0, #12H: A=53H; ADDC A, R0: 53H + 12H + CY(0) = 101 → A=65H; CLR C: A=65H. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19546,20 +19695,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 56,
     "title": "Part 11 - Câu 56",
-    "prompt": "Trên vi điều khiển 89C51 biết (A)=94H, (30H)=8DH, PSW=41H sau khi thực hiện lệnh ADD A, 30H thì nội dung trong thanh ghi PSW sẽ là_________H.",
+    "prompt": "Trên vi điều khiển 89C51 biết (A)=94H, (30H)=8DH, PSW=41H sau khi thực hiện lệnh ADD A, 30H thì nội dung trong thanh ghi PSW sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "C4",
-    "acceptable_answers": [
-      "C4",
+    "options": [
       "C4H",
-      "c4",
-      "c4h"
+      "C5H",
+      "D4H",
+      "C3H"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (94H) và toán hạng (8DH): kết quả A = 21H. Phân tích cờ trạng thái: CY=1, AC=1, OV=1, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 94 ADD 8D để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "ADD A, 30H: 94H + 8DH = 289 → A=21H. PSW sau lệnh = C4H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "methodology": "ADD A, 30H: 94H + 8DH = 289 → A=21H. PSW sau lệnh = C4H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19572,22 +19723,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 57,
     "title": "Part 11 - Câu 57",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #00H MOV R0, #01H CLR CSUBB A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #00H",
+      "MOV R0, #01H",
+      "CLR C",
+      "SUBB A, R0"
+    ],
     "options": [
       "CY=0, AC=0",
-      "CY=1, AC=1",
+      "CY=0, AC=1",
       "CY=1, AC=0",
-      "CY=0, AC=1"
+      "CY=1, AC=1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (0H) và toán hạng (1H): kết quả A = FFH. Phân tích cờ trạng thái: CY=1, AC=1, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 0 SUB 1 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #00H: A=00H; MOV R0, #01H: A=00H; CLR C: A=00H; SUBB A, R0: 00H - 01H - CY(0) = -1 → A=FFH. Kết quả: CY=1, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #00H: A=00H; MOV R0, #01H: A=00H; CLR C: A=00H; SUBB A, R0: 00H - 01H - CY(0) = -1 → A=FFH. Kết quả: CY=1, AC=1, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19600,18 +19756,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 58,
     "title": "Part 11 - Câu 58",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: XCH A, R1 thì nội dung trong thanh ghi R1 sẽ là_________H. Viết nội dung dưới dạng số hexa, ví dụ nội dung là 0AH thì viết 0A",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: XCH A, R1 thì nội dung trong thanh ghi R1 sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "5B",
-    "acceptable_answers": [
-      "5B",
-      "5BH"
+    "options": [
+      "4BH",
+      "5CH",
+      "5BH",
+      "5AH"
     ],
-    "explanation": "Lệnh XCH A, R1 hoán đổi trực tiếp nội dung giữa thanh ghi tích lũy A và thanh ghi R1. Trước lệnh: A = 5BH, R1 = 40H. Sau khi thực thi lệnh: thanh ghi R1 nhận giá trị cũ của A là 5BH (và A nhận giá trị 40H).",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "XCH A, R1 hoán đổi hai giá trị: R1 nhận giá trị A cũ là 5BH.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "XCH A, R1: A=40H. R1 sau lệnh = 5BH. ",
+    "methodology": "XCH A, R1: A=40H. R1 sau lệnh = 5BH. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19624,20 +19784,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 59,
     "title": "Part 11 - Câu 59",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: SUBB A, @R1 thì nội dung trong thanh ghi PSW sẽ là_________H.",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: SUBB A, @R1 thì nội dung trong thanh ghi PSW sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "85",
-    "acceptable_answers": [
-      "85",
+    "options": [
+      "86H",
       "85H",
-      "85",
-      "85h"
+      "84H",
+      "95H"
     ],
-    "explanation": "Thực hiện phép tính SUBB giữa A (5BH) và toán hạng (C3H): kết quả A = 98H. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5B SUB C3 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "SUBB A, @R1: 5BH - C3H - CY(1) = -105 → A=97H. PSW sau lệnh = 85H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "methodology": "SUBB A, @R1: 5BH - C3H - CY(1) = -105 → A=97H. PSW sau lệnh = 85H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19650,22 +19812,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 60,
     "title": "Part 11 - Câu 60",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #52H MOV R0, #12H ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #52H",
+      "MOV R0, #12H",
+      "ADD A, R0"
+    ],
     "options": [
-      "CY=1, AC=0",
       "CY=0, AC=0",
       "CY=0, AC=1",
+      "CY=1, AC=0",
       "CY=1, AC=1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "A",
     "acceptable_answers": [
-      "B"
+      "A"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (52H) và toán hạng (12H): kết quả A = 64H. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 52 ADD 12 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #52H: A=52H; MOV R0, #12H: A=52H; ADD A, R0: 52H + 12H = 100 → A=64H. Kết quả: CY=0, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #52H: A=52H; MOV R0, #12H: A=52H; ADD A, R0: 52H + 12H = 100 → A=64H. Kết quả: CY=0, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19678,22 +19844,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 61,
     "title": "Part 11 - Câu 61",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #87H MOV R0, #78H ADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #87H",
+      "MOV R0, #78H",
+      "ADD A, R0"
+    ],
     "options": [
+      "AC=0, P=0",
       "AC=0, P=1",
       "AC=1, P=0",
-      "AC=1, P=1",
-      "AC=0, P=0"
+      "AC=1, P=1"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "A",
     "acceptable_answers": [
-      "D"
+      "A"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (87H) và toán hạng (78H): kết quả A = FFH. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 87 ADD 78 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #87H: A=87H; MOV R0, #78H: A=87H; ADD A, R0: 87H + 78H = 255 → A=FFH. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #87H: A=87H; MOV R0, #78H: A=87H; ADD A, R0: 87H + 78H = 255 → A=FFH. Kết quả: CY=0, AC=0, OV=0, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19706,22 +19876,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 62,
     "title": "Part 11 - Câu 62",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #25H MOV R0, #7DH ADDC A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "CLR C",
+      "MOV A, #25H",
+      "MOV R0, #7DH",
+      "ADDC A, R0"
+    ],
     "options": [
       "AC=0, OV=0",
       "AC=0, OV=1",
-      "AC=1, OV=1",
-      "AC=1, OV=0"
+      "AC=1, OV=0",
+      "AC=1, OV=1"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "D",
     "acceptable_answers": [
-      "C"
+      "D"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (25H) và toán hạng (7DH): kết quả A = A2H. Phân tích cờ trạng thái: CY=0, AC=1, OV=1, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 25 ADD 7D để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "CLR C: A=00H; MOV A, #25H: A=25H; MOV R0, #7DH: A=25H; ADDC A, R0: 25H + 7DH + CY(0) = 162 → A=A2H. Kết quả: CY=0, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "CLR C: A=00H; MOV A, #25H: A=25H; MOV R0, #7DH: A=25H; ADDC A, R0: 25H + 7DH + CY(0) = 162 → A=A2H. Kết quả: CY=0, AC=1, OV=1, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19734,20 +19909,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 63,
     "title": "Part 11 - Câu 63",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: ADD A, 40H thì nội dung trong thanh ghi PSW sẽ là_________H.",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: ADD A, 40H thì nội dung trong thanh ghi PSW sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "80",
-    "acceptable_answers": [
-      "80",
-      "80H",
-      "80",
-      "80h"
+    "options": [
+      "81H",
+      "90H",
+      "7FH",
+      "80H"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (5BH) và toán hạng (C3H): kết quả A = 1EH. Phân tích cờ trạng thái: CY=1, AC=0, OV=0, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 5B ADD C3 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "ADD A, 40H: 5BH + C3H = 286 → A=1EH. PSW sau lệnh = 80H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "methodology": "ADD A, 40H: 5BH + C3H = 286 → A=1EH. PSW sau lệnh = 80H. Giữ các bit PSW không bị lệnh số học tác động; cập nhật CY/AC/OV và P theo A.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19760,8 +19937,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 64,
     "title": "Part 11 - Câu 64",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #027H MOV R1, #0C5H CLR CADDC A, R1",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #027H",
+      "MOV R1, #0C5H",
+      "CLR C",
+      "ADDC A, R1"
+    ],
     "options": [
       "OV=0, CY=0",
       "OV=0, CY=1",
@@ -19773,9 +19955,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thực hiện phép tính ADDC giữa A (27H) và toán hạng (C5H): kết quả A = ECH. Phân tích cờ trạng thái: CY=0, AC=0, OV=0, P=1.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 27 ADD C5 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #027H: A=27H; MOV R1, #0C5H: A=27H; CLR C: A=27H; ADDC A, R1: 27H + C5H + CY(0) = 236 → A=ECH. Kết quả: CY=0, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #027H: A=27H; MOV R1, #0C5H: A=27H; CLR C: A=27H; ADDC A, R1: 27H + C5H + CY(0) = 236 → A=ECH. Kết quả: CY=0, AC=0, OV=0, P=1. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19788,18 +19970,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 65,
     "title": "Part 11 - Câu 65",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: XCH A, R1 thì nội dung trong thanh ghi A sẽ là_________H. Viết nội dung dưới dạng số hexa, ví dụ nội dung là 0AH thì viết 0A",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: XCH A, R1 thì nội dung trong thanh ghi A sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "40",
-    "acceptable_answers": [
-      "40",
-      "40H"
+    "options": [
+      "50H",
+      "3FH",
+      "40H",
+      "41H"
     ],
-    "explanation": "Lệnh XCH A, R1 hoán đổi nội dung giữa thanh ghi tích lũy A và thanh ghi R1. Trước lệnh: A = 5BH, R1 = 40H. Sau khi thực thi lệnh: thanh ghi A nhận giá trị cũ của R1 là 40H.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "XCH A, R1 hoán đổi hai giá trị: A nhận giá trị R1 cũ là 40H.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "XCH A, R1: A=40H. A sau lệnh = 40H. ",
+    "methodology": "XCH A, R1: A=40H. A sau lệnh = 40H. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19812,18 +19998,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 66,
     "title": "Part 11 - Câu 66",
-    "prompt": "Trên vi điều khiển 89C51 biết (A)=50H, (R1)=10H, (R2)=20H, (R3)=30H, (30H)=4FH, sau khi thực thi lệnh MOV R2, 30H thì nội dung trong thanh ghi R2 sẽ là________ H.",
+    "prompt": "Trên vi điều khiển 89C51 biết (A)=50H, (R1)=10H, (R2)=20H, (R3)=30H, (30H)=4FH, sau khi thực thi lệnh MOV R2, 30H thì nội dung trong thanh ghi R2 sẽ là? H.",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "4F",
-    "acceptable_answers": [
-      "4F",
-      "4FH"
+    "options": [
+      "50H",
+      "4FH",
+      "4EH",
+      "5FH"
     ],
-    "explanation": "Lệnh MOV R2, 30H sử dụng chế độ định địa chỉ trực tiếp để sao chép nội dung ô nhớ RAM 30H vào thanh ghi R2. Theo đề bài ô nhớ 30H chứa giá trị 4FH, do đó sau lệnh thanh ghi R2 có giá trị 4FH.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "MOV R2, 30H đọc nội dung RAM nội ở địa chỉ 30H (4FH) vào R2.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV R2, 30H: A=50H. R2 sau lệnh = 4FH. ",
+    "methodology": "MOV R2, 30H: A=50H. R2 sau lệnh = 4FH. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19836,18 +20026,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 67,
     "title": "Part 11 - Câu 67",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=60H, (60H)=72H, sau khi thực thi lệnh: MOV 40H, @R1 thì nội dung trong ô nhớ 40H sẽ là_________H. Viết nội dung dưới dạng số hexa, ví dụ nội dung là 0AH thì viết 0A",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=60H, (60H)=72H, sau khi thực thi lệnh: MOV 40H, @R1 thì nội dung trong ô nhớ 40H sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "72",
-    "acceptable_answers": [
-      "72",
-      "72H"
+    "options": [
+      "62H",
+      "71H",
+      "72H",
+      "73H"
     ],
-    "explanation": "Lệnh MOV 40H, @R1 sử dụng chế độ định địa chỉ gián tiếp qua thanh ghi con trỏ R1. Vì R1 = 60H nên lệnh sẽ đọc nội dung ô nhớ 60H (chứa 72H) và ghi vào ô nhớ 40H. Sau lệnh ô nhớ 40H chứa giá trị 72H.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "MOV 40H, @R1 sao chép nội dung RAM nội ở địa chỉ R1 trỏ tới (72H) vào địa chỉ 40H.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MOV 40H, @R1: A=00H. 40H sau lệnh = 72H. ",
+    "methodology": "MOV 40H, @R1: A=00H. 40H sau lệnh = 72H. ",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19860,18 +20054,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 68,
     "title": "Part 11 - Câu 68",
-    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: SUBB A, @R1 thì nội dung trong các cờ CY, AC, OV và P sẽ là_________B.",
+    "prompt": "Trên vi điều khiển 89C51 biết (R1)=40H, (A)=5BH, (40H)=C3H, (PSW)=81H sau khi thực thi lệnh: SUBB A, @R1 thì nội dung trong các cờ CY, AC, OV và P sẽ là?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "1011",
-    "acceptable_answers": [
-      "1011",
-      "1011B"
+    "options": [
+      "1100B",
+      "1011B",
+      "1010B",
+      "11011B"
     ],
-    "explanation": "Thực hiện phép trừ có mượn SUBB A, @R1 với A = 5BH, [40H] = C3H, CY ban đầu = 1 (do PSW = 81H). Kết quả A = 5BH - C3H - 1 = 97H. Phân tích cờ: do 5BH < C4H nên phát sinh mượn từ bit 7 (CY = 1); nibble thấp BH - 3H - 1 = 7H không cần mượn (AC = 0); phép trừ có dấu bị tràn (OV = 1); kết quả 97H = 10010111b có 5 bit 1 lẻ (P = 1). Bốn cờ CY, AC, OV, P là 1011b.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Tính 5BH - C3H - 1 = 97H; CY = 1, AC = 0, OV = 1, P = 1. Điền 1011 theo thứ tự CY, AC, OV, P.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "A sau lệnh = 97H; CY, AC, OV, P theo đúng thứ tự = 1011. SUBB A, @R1: 5BH - C3H - CY(1) = -105 → A=97H",
+    "methodology": "A sau lệnh = 97H; CY, AC, OV, P theo đúng thứ tự = 1011. SUBB A, @R1: 5BH - C3H - CY(1) = -105 → A=97H",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19884,22 +20082,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 11: Trạng Thái Cờ PSW & Phép Tính Số Học",
     "num": 69,
     "title": "Part 11 - Câu 69",
-    "prompt": "Cho biết trạng thái các cờ sau khi vi điều khiển 89C51 thực hiện đoạn mã Assembler dưới đây:MOV A, #8BH MOV R0, #0B4H CLR CADD A, R0",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, trạng thái các cờ được hỏi là gì?",
+    "extra_lines": [
+      "MOV A, #8BH",
+      "MOV R0, #0B4H",
+      "CLR C",
+      "ADD A, R0"
+    ],
     "options": [
-      "P=0, AC=1",
-      "P=0, AC=1",
       "P=0, AC=0",
-      "P=1, AC=0"
+      "P=0, AC=1",
+      "P=1, AC=0",
+      "P=1, AC=1"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "A",
     "acceptable_answers": [
-      "C"
+      "A"
     ],
-    "explanation": "Thực hiện phép tính ADD giữa A (8BH) và toán hạng (B4H): kết quả A = 3FH. Phân tích cờ trạng thái: CY=1, AC=0, OV=1, P=0.",
-    "methodology": "Phương pháp phân tích cờ PSW: CY báo tràn số 8-bit (kết quả > FFH hoặc < 0), AC báo nhớ từ bit 3 sang bit 4, OV báo tràn số có dấu, P kiểm tra tính chẵn lẻ của số lượng bit 1 trong thanh ghi A.",
-    "tips_casio": "Casio 580VNX: MENU 3 (Base-N) -> Nhập 8B ADD B4 để kiểm tra kết quả và đếm số bit 1 ở dạng BIN.",
+    "explanation": "MOV A, #8BH: A=8BH; MOV R0, #0B4H: A=8BH; CLR C: A=8BH; ADD A, R0: 8BH + B4H = 319 → A=3FH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "methodology": "MOV A, #8BH: A=8BH; MOV R0, #0B4H: A=8BH; CLR C: A=8BH; ADD A, R0: 8BH + B4H = 319 → A=3FH. Kết quả: CY=1, AC=0, OV=1, P=0. CY là nhớ/mượn; AC là nhớ/mượn nibble; OV là tràn có dấu; P bằng 1 khi A có số bit 1 lẻ.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Thanh ghi cờ PSW (CY, AC, OV, P) & Phép toán Assembly",
@@ -19912,20 +20115,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 4,
     "title": "Part 12 - Câu 4",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #30H MOV R1, #0F0H MOV @R1, A MOV A, @R1Nội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "30",
-    "acceptable_answers": [
-      "30",
-      "30H",
-      "30",
-      "30h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #30H",
+      "MOV R1, #70H",
+      "MOV @R1, A",
+      "MOV A, @R1"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 30H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "2FH",
+      "30H",
+      "31H",
+      "20H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV A, #30H: A=30H; MOV R1, #70H: A=30H; MOV @R1, A: A=30H; MOV A, @R1: A=30H. Sau khi kết thúc đoạn lệnh, A = 30H (48 thập phân).",
+    "methodology": "MOV A, #30H: A=30H; MOV R1, #70H: A=30H; MOV @R1, A: A=30H; MOV A, @R1: A=30H. Sau khi kết thúc đoạn lệnh, A = 30H (48 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -19938,20 +20148,29 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 5,
     "title": "Part 12 - Câu 5",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV R0, #7EH MOV 7EH, #00H MOV 7FH, #40H INC @R0INC R0INC @R0Nội dung trong ô nhớ có địa chỉ 7FH sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "41",
-    "acceptable_answers": [
-      "41",
-      "41H",
-      "41",
-      "41h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, ô nhớ RAM nội 7FH có giá trị nào?",
+    "extra_lines": [
+      "MOV R0, #7EH",
+      "MOV 7EH, #00H",
+      "MOV 7FH, #40H",
+      "INC @R0",
+      "INC R0",
+      "INC @R0"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 41H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "40H",
+      "51H",
+      "42H",
+      "41H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV R0, #7EH: A=00H; MOV 7EH, #00H: A=00H; MOV 7FH, #40H: A=00H; INC @R0: A=00H; INC R0: A=00H; INC @R0: A=00H. Sau khi kết thúc đoạn lệnh, 7FH = 41H (65 thập phân).",
+    "methodology": "MOV R0, #7EH: A=00H; MOV 7EH, #00H: A=00H; MOV 7FH, #40H: A=00H; INC @R0: A=00H; INC R0: A=00H; INC @R0: A=00H. Sau khi kết thúc đoạn lệnh, 7FH = 41H (65 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -19964,20 +20183,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 6,
     "title": "Part 12 - Câu 6",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #93H MOV R0, #77H ADD A, R0 ADDC A, R0Nội dung trong thanh ghi R0 sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "77",
-    "acceptable_answers": [
-      "77",
-      "77H",
-      "77",
-      "77h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi R0 có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #93H",
+      "MOV R0, #77H",
+      "ADD A, R0",
+      "ADDC A, R0"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 77H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "76H",
+      "67H",
+      "78H",
+      "77H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV A, #93H: A=93H; MOV R0, #77H: A=93H; ADD A, R0: 93H + 77H = 266 → A=0AH; ADDC A, R0: 0AH + 77H + CY(1) = 130 → A=82H. Sau khi kết thúc đoạn lệnh, R0 = 77H (119 thập phân).",
+    "methodology": "MOV A, #93H: A=93H; MOV R0, #77H: A=93H; ADD A, R0: 93H + 77H = 266 → A=0AH; ADDC A, R0: 0AH + 77H + CY(1) = 130 → A=82H. Sau khi kết thúc đoạn lệnh, R0 = 77H (119 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -19990,20 +20216,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 7,
     "title": "Part 12 - Câu 7",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau: SETB CMOV A, #0C9H MOV R2, #54H SUBB A, R2Nội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "74",
-    "acceptable_answers": [
-      "74",
-      "74H",
-      "74",
-      "74h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "SETB C",
+      "MOV A, #0C9H",
+      "MOV R2, #54H",
+      "SUBB A, R2"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 74H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "74H",
+      "75H",
+      "64H",
+      "73H"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "SETB C: A=00H; MOV A, #0C9H: A=C9H; MOV R2, #54H: A=C9H; SUBB A, R2: C9H - 54H - CY(1) = 116 → A=74H. Sau khi kết thúc đoạn lệnh, A = 74H (116 thập phân).",
+    "methodology": "SETB C: A=00H; MOV A, #0C9H: A=C9H; MOV R2, #54H: A=C9H; SUBB A, R2: C9H - 54H - CY(1) = 116 → A=74H. Sau khi kết thúc đoạn lệnh, A = 74H (116 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20016,12 +20249,17 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 8,
     "title": "Part 12 - Câu 8",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #25H LOOP: DEC A JNZ LOOP ENDNội dung trong thanh ghi A sau khi thực hiện đoạn chương trình trên:",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #25H",
+      "LOOP: DEC A",
+      "JNZ LOOP",
+      "END"
+    ],
     "options": [
-      "25H",
-      "26H",
-      "24H",
+      "01H",
+      "10H",
+      "FFH",
       "00H"
     ],
     "type": "mcq",
@@ -20029,9 +20267,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 00H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "explanation": "MOV A, #25H: A=25H; DEC A: A=24H; JNZ LOOP: A=24H; DEC A: A=23H; JNZ LOOP: A=23H; DEC A: A=22H; JNZ LOOP: A=22H; DEC A: A=21H. Sau khi kết thúc đoạn lệnh, A = 00H (0 thập phân).",
+    "methodology": "MOV A, #25H: A=25H; DEC A: A=24H; JNZ LOOP: A=24H; DEC A: A=23H; JNZ LOOP: A=23H; DEC A: A=22H; JNZ LOOP: A=22H; DEC A: A=21H. Sau khi kết thúc đoạn lệnh, A = 00H (0 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20044,20 +20282,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 9,
     "title": "Part 12 - Câu 9",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #55H SUBB A, #56HNội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là:___________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "FF",
-    "acceptable_answers": [
-      "FF",
-      "FFH",
-      "ff",
-      "ffh"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "CLR C",
+      "MOV A, #55H",
+      "SUBB A, #56H"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là FFH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "00H",
+      "FFH",
+      "FEH",
+      "EFH"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "CLR C: A=00H; MOV A, #55H: A=55H; SUBB A, #56H: 55H - 56H - CY(0) = -1 → A=FFH. Sau khi kết thúc đoạn lệnh, A = FFH (255 thập phân).",
+    "methodology": "CLR C: A=00H; MOV A, #55H: A=55H; SUBB A, #56H: 55H - 56H - CY(0) = -1 → A=FFH. Sau khi kết thúc đoạn lệnh, A = FFH (255 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20070,20 +20314,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 10,
     "title": "Part 12 - Câu 10",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV R0, #7FH MOV 7EH, #0ADH MOV 7FH, #26HDEC R0 MOV A, 7FH XRL A, @R0 MOV R0, A XRL A, #7FHNội dung trong ô nhớ có địa chỉ A sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV R0, #7FH",
+      "MOV 7EH, #0ADH",
+      "MOV 7FH, #26H",
+      "DEC R0",
+      "MOV A, 7FH",
+      "XRL A, @R0",
+      "MOV R0, A",
+      "XRL A, #7FH"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 00H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "F3H",
+      "F4H",
+      "F5H",
+      "E4H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV R0, #7FH: A=00H; MOV 7EH, #0ADH: A=00H; MOV 7FH, #26H: A=00H; DEC R0: A=00H; MOV A, 7FH: A=26H; XRL A, @R0: A=8BH; MOV R0, A: A=8BH; XRL A, #7FH: A=F4H. Sau khi kết thúc đoạn lệnh, A = F4H (244 thập phân).",
+    "methodology": "MOV R0, #7FH: A=00H; MOV 7EH, #0ADH: A=00H; MOV 7FH, #26H: A=00H; DEC R0: A=00H; MOV A, 7FH: A=26H; XRL A, @R0: A=8BH; MOV R0, A: A=8BH; XRL A, #7FH: A=F4H. Sau khi kết thúc đoạn lệnh, A = F4H (244 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20096,20 +20351,25 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 11,
     "title": "Part 12 - Câu 11",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV P3, #55H CLR P3.2Nội dung trong thanh ghi P3 sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "51",
-    "acceptable_answers": [
-      "51",
-      "51H",
-      "51",
-      "51h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi P3 có giá trị nào? Giả sử các chân cổng không bị tải ngoài ép mức logic; hỏi giá trị latch.",
+    "extra_lines": [
+      "MOV P3, #55H",
+      "CLR P3.2"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 51H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "41H",
+      "52H",
+      "51H",
+      "50H"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MOV P3, #55H: A=00H; CLR P3.2: A=00H. Sau khi kết thúc đoạn lệnh, P3 = 51H (81 thập phân).",
+    "methodology": "MOV P3, #55H: A=00H; CLR P3.2: A=00H. Sau khi kết thúc đoạn lệnh, P3 = 51H (81 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20122,22 +20382,29 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 12,
     "title": "Part 12 - Câu 12",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #18H JB AC7, SKIP MOV A, #0FFH SJMP EXIT SKIP: CLR A EXIT: SJMP \\$Nội dung trong thanh ghi A sau khi thực hiện đoạn chương trình trên:",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #18H",
+      "JB ACC.7, SKIP",
+      "MOV A, #0FFH",
+      "SJMP EXIT",
+      "SKIP: CLR A",
+      "EXIT: SJMP $"
+    ],
     "options": [
-      "Cả 3 đáp án đều sai",
-      "18H",
-      "0FFH",
-      "00H"
+      "EFH",
+      "00H",
+      "FFH",
+      "FEH"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là FFH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "explanation": "MOV A, #18H: A=18H; JB ACC.7, SKIP: A=18H; MOV A, #0FFH: A=FFH; SJMP EXIT: A=FFH. Sau khi kết thúc đoạn lệnh, A = FFH (255 thập phân).",
+    "methodology": "MOV A, #18H: A=18H; JB ACC.7, SKIP: A=18H; MOV A, #0FFH: A=FFH; SJMP EXIT: A=FFH. Sau khi kết thúc đoạn lệnh, A = FFH (255 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20150,20 +20417,25 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 13,
     "title": "Part 12 - Câu 13",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #00H DEC ANội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "FF",
-    "acceptable_answers": [
-      "FF",
-      "FFH",
-      "ff",
-      "ffh"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #00H",
+      "DEC A"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là FFH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "FFH",
+      "FEH",
+      "EFH",
+      "00H"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "MOV A, #00H: A=00H; DEC A: A=FFH. Sau khi kết thúc đoạn lệnh, A = FFH (255 thập phân).",
+    "methodology": "MOV A, #00H: A=00H; DEC A: A=FFH. Sau khi kết thúc đoạn lệnh, A = FFH (255 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20176,20 +20448,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 14,
     "title": "Part 12 - Câu 14",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau: MOV P3, #5BHCPL P3.1 CPL P3.2Nội dung trong thanh ghi P3 sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "5D",
-    "acceptable_answers": [
-      "5D",
-      "5DH",
-      "5d",
-      "5dh"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi P3 có giá trị nào? Giả sử các chân cổng không bị tải ngoài ép mức logic; hỏi giá trị latch.",
+    "extra_lines": [
+      "MOV P3, #5BH",
+      "CPL P3.1",
+      "CPL P3.2"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 5DH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "5DH",
+      "5CH",
+      "4DH",
+      "5EH"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "MOV P3, #5BH: A=00H; CPL P3.1: A=00H; CPL P3.2: A=00H. Sau khi kết thúc đoạn lệnh, P3 = 5DH (93 thập phân).",
+    "methodology": "MOV P3, #5BH: A=00H; CPL P3.1: A=00H; CPL P3.2: A=00H. Sau khi kết thúc đoạn lệnh, P3 = 5DH (93 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20202,20 +20480,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 15,
     "title": "Part 12 - Câu 15",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau: MOV A, #0C5HSWAP A ADD A, #32HNội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ________H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "8E",
-    "acceptable_answers": [
-      "8E",
-      "8EH",
-      "8e",
-      "8eh"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0C5H",
+      "SWAP A",
+      "ADD A, #32H"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 8EH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "8FH",
+      "9EH",
+      "8DH",
+      "8EH"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV A, #0C5H: A=C5H; SWAP A: A=5CH; ADD A, #32H: 5CH + 32H = 142 → A=8EH. Sau khi kết thúc đoạn lệnh, A = 8EH (142 thập phân).",
+    "methodology": "MOV A, #0C5H: A=C5H; SWAP A: A=5CH; ADD A, #32H: 5CH + 32H = 142 → A=8EH. Sau khi kết thúc đoạn lệnh, A = 8EH (142 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20228,20 +20512,29 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 16,
     "title": "Part 12 - Câu 16",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV R0, #7EH MOV 7EH, #00H MOV 7FH, #40H INC @R0INC R0 INC @R0Nội dung trong thanh ghi R0 sau khi thực hiện đoạn mã trên là: ________H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "7F",
-    "acceptable_answers": [
-      "7F",
-      "7FH",
-      "7f",
-      "7fh"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi R0 có giá trị nào?",
+    "extra_lines": [
+      "MOV R0, #7EH",
+      "MOV 7EH, #00H",
+      "MOV 7FH, #40H",
+      "INC @R0",
+      "INC R0",
+      "INC @R0"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 7FH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "7FH",
+      "7EH",
+      "6FH",
+      "80H"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "MOV R0, #7EH: A=00H; MOV 7EH, #00H: A=00H; MOV 7FH, #40H: A=00H; INC @R0: A=00H; INC R0: A=00H; INC @R0: A=00H. Sau khi kết thúc đoạn lệnh, R0 = 7FH (127 thập phân).",
+    "methodology": "MOV R0, #7EH: A=00H; MOV 7EH, #00H: A=00H; MOV 7FH, #40H: A=00H; INC @R0: A=00H; INC R0: A=00H; INC @R0: A=00H. Sau khi kết thúc đoạn lệnh, R0 = 7FH (127 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20254,22 +20547,30 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 17,
     "title": "Part 12 - Câu 17",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #0FFH ADD A, #2 JNZ SKIP ADDC A, #03H SJMP EXITSKIP: ADDC, #02H EXIT: SJMP \\$Nội dung thanh ghi A sau khi thực hiện đoạn chương trình trên:",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0FFH",
+      "ADD A, #2",
+      "JNZ SKIP",
+      "ADDC A, #03H",
+      "SJMP EXIT",
+      "SKIP: ADDC A, #02H",
+      "EXIT: SJMP $"
+    ],
     "options": [
-      "02H",
-      "05H",
+      "03H",
       "04H",
-      "0FFH"
+      "05H",
+      "14H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 03H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "explanation": "MOV A, #0FFH: A=FFH; ADD A, #2: FFH + 02H = 257 → A=01H; JNZ SKIP: A=01H; ADDC A, #02H: 01H + 02H + CY(1) = 4 → A=04H. Sau khi kết thúc đoạn lệnh, A = 04H (4 thập phân).",
+    "methodology": "MOV A, #0FFH: A=FFH; ADD A, #2: FFH + 02H = 257 → A=01H; JNZ SKIP: A=01H; ADDC A, #02H: 01H + 02H + CY(1) = 4 → A=04H. Sau khi kết thúc đoạn lệnh, A = 04H (4 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20282,22 +20583,30 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 18,
     "title": "Part 12 - Câu 18",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #0FFH ADD A, #2JZ SKIP ADDC A, #02H SJMP EXITSKIP: ADDC, #01H EXIT: SJMP \\$Nội dung trong thanh ghi A sau khi thực hiện đoạn chương trình trên:",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0FFH",
+      "ADD A, #2",
+      "JZ SKIP",
+      "ADDC A, #02H",
+      "SJMP EXIT",
+      "SKIP: ADDC A, #01H",
+      "EXIT: SJMP $"
+    ],
     "options": [
+      "05H",
+      "14H",
       "03H",
-      "02H",
-      "04H",
-      "0FFH"
+      "04H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 05H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "explanation": "MOV A, #0FFH: A=FFH; ADD A, #2: FFH + 02H = 257 → A=01H; JZ SKIP: A=01H; ADDC A, #02H: 01H + 02H + CY(1) = 4 → A=04H; SJMP EXIT: A=04H. Sau khi kết thúc đoạn lệnh, A = 04H (4 thập phân).",
+    "methodology": "MOV A, #0FFH: A=FFH; ADD A, #2: FFH + 02H = 257 → A=01H; JZ SKIP: A=01H; ADDC A, #02H: 01H + 02H + CY(1) = 4 → A=04H; SJMP EXIT: A=04H. Sau khi kết thúc đoạn lệnh, A = 04H (4 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20310,20 +20619,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 19,
     "title": "Part 12 - Câu 19",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #0C3H MOV R0, #0AAH ADD A, R0Nội dung trong thanh ghi R0 sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "7E",
-    "acceptable_answers": [
-      "7E",
-      "7EH",
-      "7e",
-      "7eh"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi R0 có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0C3H",
+      "MOV R0, #0AAH",
+      "ADD A, R0"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 7EH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "BAH",
+      "A9H",
+      "AAH",
+      "ABH"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MOV A, #0C3H: A=C3H; MOV R0, #0AAH: A=C3H; ADD A, R0: C3H + AAH = 365 → A=6DH. Sau khi kết thúc đoạn lệnh, R0 = AAH (170 thập phân).",
+    "methodology": "MOV A, #0C3H: A=C3H; MOV R0, #0AAH: A=C3H; ADD A, R0: C3H + AAH = 365 → A=6DH. Sau khi kết thúc đoạn lệnh, R0 = AAH (170 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20336,20 +20651,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 20,
     "title": "Part 12 - Câu 20",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau: CLR CMOV A, #0FFH MOV B, #05H SUBB A,BNội dung trong thanh ghi B sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "3A",
-    "acceptable_answers": [
-      "3A",
-      "3AH",
-      "3a",
-      "3ah"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi B có giá trị nào?",
+    "extra_lines": [
+      "CLR C",
+      "MOV A, #0FFH",
+      "MOV B, #05H",
+      "SUBB A,B"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 3AH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "04H",
+      "15H",
+      "06H",
+      "05H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "CLR C: A=00H; MOV A, #0FFH: A=FFH; MOV B, #05H: A=FFH; SUBB A,B: FFH - 05H - CY(0) = 250 → A=FAH. Sau khi kết thúc đoạn lệnh, B = 05H (5 thập phân).",
+    "methodology": "CLR C: A=00H; MOV A, #0FFH: A=FFH; MOV B, #05H: A=FFH; SUBB A,B: FFH - 05H - CY(0) = 250 → A=FAH. Sau khi kết thúc đoạn lệnh, B = 05H (5 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20362,20 +20684,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 21,
     "title": "Part 12 - Câu 21",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV R0, #7EH MOV 7EH, #55H MOV 7FH, #4FH INC R0MOV A, 7EH ORL A, @R0 MOV R0, A ORL A, 7EHNội dung trong thanh ghi R0 sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "7C",
-    "acceptable_answers": [
-      "7C",
-      "7CH",
-      "7c",
-      "7ch"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi R0 có giá trị nào?",
+    "extra_lines": [
+      "MOV R0, #7EH",
+      "MOV 7EH, #55H",
+      "MOV 7FH, #4FH",
+      "INC R0",
+      "MOV A, 7EH",
+      "ORL A, @R0",
+      "MOV R0, A",
+      "ORL A, 7EH"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 7CH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "4FH",
+      "60H",
+      "5FH",
+      "5EH"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MOV R0, #7EH: A=00H; MOV 7EH, #55H: A=00H; MOV 7FH, #4FH: A=00H; INC R0: A=00H; MOV A, 7EH: A=55H; ORL A, @R0: A=5FH; MOV R0, A: A=5FH; ORL A, 7EH: A=5FH. Sau khi kết thúc đoạn lệnh, R0 = 5FH (95 thập phân).",
+    "methodology": "MOV R0, #7EH: A=00H; MOV 7EH, #55H: A=00H; MOV 7FH, #4FH: A=00H; INC R0: A=00H; MOV A, 7EH: A=55H; ORL A, @R0: A=5FH; MOV R0, A: A=5FH; ORL A, 7EH: A=5FH. Sau khi kết thúc đoạn lệnh, R0 = 5FH (95 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20388,20 +20721,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 22,
     "title": "Part 12 - Câu 22",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #0F4H MOV B, #0FH ADD A,BNội dung trong thanh ghi B sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "03",
-    "acceptable_answers": [
-      "03",
-      "03H",
-      "03",
-      "03h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi B có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0F4H",
+      "MOV B, #0FH",
+      "ADD A,B"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 03H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "0EH",
+      "1FH",
+      "10H",
+      "0FH"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV A, #0F4H: A=F4H; MOV B, #0FH: A=F4H; ADD A,B: F4H + 0FH = 259 → A=03H. Sau khi kết thúc đoạn lệnh, B = 0FH (15 thập phân).",
+    "methodology": "MOV A, #0F4H: A=F4H; MOV B, #0FH: A=F4H; ADD A,B: F4H + 0FH = 259 → A=03H. Sau khi kết thúc đoạn lệnh, B = 0FH (15 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20414,20 +20753,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 23,
     "title": "Part 12 - Câu 23",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #0FFH MOV R0, #0F0H XRL A, R0Nội dung trong thanh ghi R0 sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "15",
-    "acceptable_answers": [
-      "15",
-      "15H",
-      "15",
-      "15h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi R0 có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0FFH",
+      "MOV R0, #0F0H",
+      "XRL A, R0"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 15H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "F1H",
+      "E0H",
+      "EFH",
+      "F0H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV A, #0FFH: A=FFH; MOV R0, #0F0H: A=FFH; XRL A, R0: A=0FH. Sau khi kết thúc đoạn lệnh, R0 = F0H (240 thập phân).",
+    "methodology": "MOV A, #0FFH: A=FFH; MOV R0, #0F0H: A=FFH; XRL A, R0: A=0FH. Sau khi kết thúc đoạn lệnh, R0 = F0H (240 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20440,20 +20785,25 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 24,
     "title": "Part 12 - Câu 24",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #0FFH INC ANội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0FFH",
+      "INC A"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 00H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "01H",
+      "10H",
+      "FFH",
+      "00H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV A, #0FFH: A=FFH; INC A: A=00H. Sau khi kết thúc đoạn lệnh, A = 00H (0 thập phân).",
+    "methodology": "MOV A, #0FFH: A=FFH; INC A: A=00H. Sau khi kết thúc đoạn lệnh, A = 00H (0 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20466,20 +20816,28 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 25,
     "title": "Part 12 - Câu 25",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau: MOV A, #5AH MOV 5AH, A XRL 5AH, #0DBH CPL A XRL 5AH, ANội dung trong ô nhớ có địa chỉ 5AH sau khi thực hiện đoạn mã trên là: ________H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "45",
-    "acceptable_answers": [
-      "45",
-      "45H",
-      "45",
-      "45h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, ô nhớ RAM nội 5AH có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #5AH",
+      "MOV 5AH, A",
+      "XRL 5AH, #0DBH",
+      "CPL A",
+      "XRL 5AH, A"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 45H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "25H",
+      "34H",
+      "23H",
+      "24H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV A, #5AH: A=5AH; MOV 5AH, A: A=5AH; XRL 5AH, #0DBH: A=5AH; CPL A: A=A5H; XRL 5AH, A: A=A5H. Sau khi kết thúc đoạn lệnh, 5AH = 24H (36 thập phân).",
+    "methodology": "MOV A, #5AH: A=5AH; MOV 5AH, A: A=5AH; XRL 5AH, #0DBH: A=5AH; CPL A: A=A5H; XRL 5AH, A: A=A5H. Sau khi kết thúc đoạn lệnh, 5AH = 24H (36 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20492,20 +20850,25 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 26,
     "title": "Part 12 - Câu 26",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau: MOV A, #0C5HSWAP ANội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "5C",
-    "acceptable_answers": [
-      "5C",
-      "5CH",
-      "5c",
-      "5ch"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0C5H",
+      "SWAP A"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 5CH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "5BH",
+      "5CH",
+      "5DH",
+      "4CH"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV A, #0C5H: A=C5H; SWAP A: A=5CH. Sau khi kết thúc đoạn lệnh, A = 5CH (92 thập phân).",
+    "methodology": "MOV A, #0C5H: A=C5H; SWAP A: A=5CH. Sau khi kết thúc đoạn lệnh, A = 5CH (92 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20518,20 +20881,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 27,
     "title": "Part 12 - Câu 27",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV P2, #00H CPL P2.1 CPL P2.0 CPL P2.7Nội dung trong thanh ghi P2 sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi P2 có giá trị nào? Giả sử các chân cổng không bị tải ngoài ép mức logic; hỏi giá trị latch.",
+    "extra_lines": [
+      "MOV P2, #00H",
+      "CPL P2.1",
+      "CPL P2.0",
+      "CPL P2.7"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 00H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "83H",
+      "82H",
+      "93H",
+      "84H"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "MOV P2, #00H: A=00H; CPL P2.1: A=00H; CPL P2.0: A=00H; CPL P2.7: A=00H. Sau khi kết thúc đoạn lệnh, P2 = 83H (131 thập phân).",
+    "methodology": "MOV P2, #00H: A=00H; CPL P2.1: A=00H; CPL P2.0: A=00H; CPL P2.7: A=00H. Sau khi kết thúc đoạn lệnh, P2 = 83H (131 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20544,20 +20914,25 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 28,
     "title": "Part 12 - Câu 28",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau: MOV A, #0B6H RL ANội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "6D",
-    "acceptable_answers": [
-      "6D",
-      "6DH",
-      "6d",
-      "6dh"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0B6H",
+      "RL A"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 6DH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "6DH",
+      "6CH",
+      "7DH",
+      "6EH"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "MOV A, #0B6H: A=B6H; RL A: A=6DH. Sau khi kết thúc đoạn lệnh, A = 6DH (109 thập phân).",
+    "methodology": "MOV A, #0B6H: A=B6H; RL A: A=6DH. Sau khi kết thúc đoạn lệnh, A = 6DH (109 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20570,22 +20945,28 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 29,
     "title": "Part 12 - Câu 29",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV R1, #3 MOV A, #17 LOOP: SETB C SUBB A, #2 DJNZ R1, LOOPNội dung trong thanh ghi A sau khi thực hiện đoạn chương trình trên:",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV R1, #3",
+      "MOV A, #17",
+      "LOOP: SETB C",
+      "SUBB A, #2",
+      "DJNZ R1, LOOP"
+    ],
     "options": [
-      "17",
-      "11",
-      "10",
-      "8"
+      "07H",
+      "08H",
+      "09H",
+      "18H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 25H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "explanation": "MOV R1, #3: A=00H; MOV A, #17: A=11H; SETB C: A=11H; SUBB A, #2: 11H - 02H - CY(1) = 14 → A=0EH; DJNZ R1, LOOP: A=0EH; SETB C: A=0EH; SUBB A, #2: 0EH - 02H - CY(1) = 11 → A=0BH; DJNZ R1, LOOP: A=0BH. Sau khi kết thúc đoạn lệnh, A = 08H (8 thập phân).",
+    "methodology": "MOV R1, #3: A=00H; MOV A, #17: A=11H; SETB C: A=11H; SUBB A, #2: 11H - 02H - CY(1) = 14 → A=0EH; DJNZ R1, LOOP: A=0EH; SETB C: A=0EH; SUBB A, #2: 0EH - 02H - CY(1) = 11 → A=0BH; DJNZ R1, LOOP: A=0BH. Sau khi kết thúc đoạn lệnh, A = 08H (8 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20598,20 +20979,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 30,
     "title": "Part 12 - Câu 30",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #0A3H ADD A, #0E6H RRC ANội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "0A",
-    "acceptable_answers": [
-      "0A",
-      "0AH",
-      "0a",
-      "0ah"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0A3H",
+      "ADD A, #0E6H",
+      "RRC A"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 0AH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "C5H",
+      "D4H",
+      "C3H",
+      "C4H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV A, #0A3H: A=A3H; ADD A, #0E6H: A3H + E6H = 393 → A=89H; RRC A: A=C4H. Sau khi kết thúc đoạn lệnh, A = C4H (196 thập phân).",
+    "methodology": "MOV A, #0A3H: A=A3H; ADD A, #0E6H: A3H + E6H = 393 → A=89H; RRC A: A=C4H. Sau khi kết thúc đoạn lệnh, A = C4H (196 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20624,20 +21011,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 31,
     "title": "Part 12 - Câu 31",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV R0, #7EHMOV 7EH, #55H MOV 7FH, #4FH INC R0MOV A, 7EH ORL A, @R0 MOV R0, A ORL A, 7EHNội dung của ô nhớ 7EH sau khi thực hiện đoạn mã trên là: ________H. (1 Point) 55",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "FF",
-    "acceptable_answers": [
-      "FF",
-      "FFH",
-      "ff",
-      "ffh"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, ô nhớ RAM nội 7EH có giá trị nào?",
+    "extra_lines": [
+      "MOV R0, #7EH",
+      "MOV 7EH, #55H",
+      "MOV 7FH, #4FH",
+      "INC R0",
+      "MOV A, 7EH",
+      "ORL A, @R0",
+      "MOV R0, A",
+      "ORL A, 7EH"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là FFH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "56H",
+      "55H",
+      "54H",
+      "45H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV R0, #7EH: A=00H; MOV 7EH, #55H: A=00H; MOV 7FH, #4FH: A=00H; INC R0: A=00H; MOV A, 7EH: A=55H; ORL A, @R0: A=5FH; MOV R0, A: A=5FH; ORL A, 7EH: A=5FH. Sau khi kết thúc đoạn lệnh, 7EH = 55H (85 thập phân).",
+    "methodology": "MOV R0, #7EH: A=00H; MOV 7EH, #55H: A=00H; MOV 7FH, #4FH: A=00H; INC R0: A=00H; MOV A, 7EH: A=55H; ORL A, @R0: A=5FH; MOV R0, A: A=5FH; ORL A, 7EH: A=5FH. Sau khi kết thúc đoạn lệnh, 7EH = 55H (85 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20650,20 +21048,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 32,
     "title": "Part 12 - Câu 32",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #77H MOV B, #07H DIV ABNội dung trong thanh ghi B sau khi thực hiện đoạn mã trên là: ___________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "5B",
-    "acceptable_answers": [
-      "5B",
-      "5BH",
-      "5b",
-      "5bh"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi B có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #77H",
+      "MOV B, #07H",
+      "DIV AB"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 5BH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "01H",
+      "10H",
+      "FFH",
+      "00H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV A, #77H: A=77H; MOV B, #07H: A=77H; DIV AB: A=11H. Sau khi kết thúc đoạn lệnh, B = 00H (0 thập phân).",
+    "methodology": "MOV A, #77H: A=77H; MOV B, #07H: A=77H; DIV AB: A=11H. Sau khi kết thúc đoạn lệnh, B = 00H (0 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20676,20 +21080,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 33,
     "title": "Part 12 - Câu 33",
-    "prompt": "Cho đoạn mã Assembly sau:MOV A, #0F0H MOV B, #0E2H ORL A, BNội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ___________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "F2",
-    "acceptable_answers": [
-      "F2",
-      "F2H",
-      "f2",
-      "f2h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0F0H",
+      "MOV B, #0E2H",
+      "ORL A, B"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là F2H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "F1H",
+      "F2H",
+      "F3H",
+      "E2H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV A, #0F0H: A=F0H; MOV B, #0E2H: A=F0H; ORL A, B: A=F2H. Sau khi kết thúc đoạn lệnh, A = F2H (242 thập phân).",
+    "methodology": "MOV A, #0F0H: A=F0H; MOV B, #0E2H: A=F0H; ORL A, B: A=F2H. Sau khi kết thúc đoạn lệnh, A = F2H (242 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20702,20 +21112,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 34,
     "title": "Part 12 - Câu 34",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #0C3H MOV 20H, #77H ADD A, 20H ADDC A, 20HNội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ________H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0C3H",
+      "MOV 20H, #77H",
+      "ADD A, 20H",
+      "ADDC A, 20H"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 00H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "B1H",
+      "B2H",
+      "B3H",
+      "A2H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV A, #0C3H: A=C3H; MOV 20H, #77H: A=C3H; ADD A, 20H: C3H + 77H = 314 → A=3AH; ADDC A, 20H: 3AH + 77H + CY(1) = 178 → A=B2H. Sau khi kết thúc đoạn lệnh, A = B2H (178 thập phân).",
+    "methodology": "MOV A, #0C3H: A=C3H; MOV 20H, #77H: A=C3H; ADD A, 20H: C3H + 77H = 314 → A=3AH; ADDC A, 20H: 3AH + 77H + CY(1) = 178 → A=B2H. Sau khi kết thúc đoạn lệnh, A = B2H (178 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20728,20 +21145,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 35,
     "title": "Part 12 - Câu 35",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV P1, #0ABH MOV C, P1.0 ANL C, P1.6 MOV P1.5, CNội dung trong thanh ghi P1 sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi P1 có giá trị nào? Giả sử các chân cổng không bị tải ngoài ép mức logic; hỏi giá trị latch.",
+    "extra_lines": [
+      "MOV P1, #0ABH",
+      "MOV C, P1.0",
+      "ANL C, P1.6",
+      "MOV P1.5, C"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 00H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "8CH",
+      "8BH",
+      "8AH",
+      "9BH"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV P1, #0ABH: A=00H; MOV C, P1.0: A=00H; ANL C, P1.6: A=00H; MOV P1.5, C: A=00H. Sau khi kết thúc đoạn lệnh, P1 = 8BH (139 thập phân).",
+    "methodology": "MOV P1, #0ABH: A=00H; MOV C, P1.0: A=00H; ANL C, P1.6: A=00H; MOV P1.5, C: A=00H. Sau khi kết thúc đoạn lệnh, P1 = 8BH (139 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20754,20 +21178,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 36,
     "title": "Part 12 - Câu 36",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #0C3H MOV R0, #55H ANL A, R0Nội dung trong thanh ghi R0 sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "41",
-    "acceptable_answers": [
-      "41",
-      "41H",
-      "41",
-      "41h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi R0 có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0C3H",
+      "MOV R0, #55H",
+      "ANL A, R0"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 41H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "54H",
+      "45H",
+      "56H",
+      "55H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV A, #0C3H: A=C3H; MOV R0, #55H: A=C3H; ANL A, R0: A=41H. Sau khi kết thúc đoạn lệnh, R0 = 55H (85 thập phân).",
+    "methodology": "MOV A, #0C3H: A=C3H; MOV R0, #55H: A=C3H; ANL A, R0: A=41H. Sau khi kết thúc đoạn lệnh, R0 = 55H (85 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20780,20 +21210,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 37,
     "title": "Part 12 - Câu 37",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #77H MOV B, #07H DIV ABNội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ___________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "11",
-    "acceptable_answers": [
-      "11",
-      "11H",
-      "11",
-      "11h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #77H",
+      "MOV B, #07H",
+      "DIV AB"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 11H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "10H",
+      "01H",
+      "12H",
+      "11H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV A, #77H: A=77H; MOV B, #07H: A=77H; DIV AB: A=11H. Sau khi kết thúc đoạn lệnh, A = 11H (17 thập phân).",
+    "methodology": "MOV A, #77H: A=77H; MOV B, #07H: A=77H; DIV AB: A=11H. Sau khi kết thúc đoạn lệnh, A = 11H (17 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20806,20 +21242,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 38,
     "title": "Part 12 - Câu 38",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV P1, #0ABH MOV C, P1.0 ANL C, /P1.6 MOV P1.4, CNội dung trong thanh ghi P1 sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi P1 có giá trị nào? Giả sử các chân cổng không bị tải ngoài ép mức logic; hỏi giá trị latch.",
+    "extra_lines": [
+      "MOV P1, #0ABH",
+      "MOV C, P1.0",
+      "ANL C, /P1.6",
+      "MOV P1.4, C"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 00H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "BAH",
+      "ABH",
+      "BCH",
+      "BBH"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV P1, #0ABH: A=00H; MOV C, P1.0: A=00H; ANL C, /P1.6: A=00H; MOV P1.4, C: A=00H. Sau khi kết thúc đoạn lệnh, P1 = BBH (187 thập phân).",
+    "methodology": "MOV P1, #0ABH: A=00H; MOV C, P1.0: A=00H; ANL C, /P1.6: A=00H; MOV P1.4, C: A=00H. Sau khi kết thúc đoạn lệnh, P1 = BBH (187 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20832,20 +21275,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 39,
     "title": "Part 12 - Câu 39",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV P2, #5BH CPL P2.0 SETB P2.7Nội dung trong thanh ghi P3 sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "55",
-    "acceptable_answers": [
-      "55",
-      "55H",
-      "55",
-      "55h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi P2 có giá trị nào? Giả sử các chân cổng không bị tải ngoài ép mức logic; hỏi giá trị latch.",
+    "extra_lines": [
+      "MOV P2, #5BH",
+      "CPL P2.0",
+      "SETB P2.7"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 55H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "CAH",
+      "D9H",
+      "DAH",
+      "DBH"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MOV P2, #5BH: A=00H; CPL P2.0: A=00H; SETB P2.7: A=00H. Sau khi kết thúc đoạn lệnh, P2 = DAH (218 thập phân).",
+    "methodology": "MOV P2, #5BH: A=00H; CPL P2.0: A=00H; SETB P2.7: A=00H. Sau khi kết thúc đoạn lệnh, P2 = DAH (218 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20858,20 +21307,28 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 40,
     "title": "Part 12 - Câu 40",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #7FH MOV R0, #26H MOV 26H, #0AAH ADD A, 26H ADDC A, @R0Nội dung trong ô nhớ có địa chỉ 26H sau khi thực hiện đoạn mã trên là: ________H. (1 Point) AA",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, ô nhớ RAM nội 26H có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #7FH",
+      "MOV R0, #26H",
+      "MOV 26H, #0AAH",
+      "ADD A, 26H",
+      "ADDC A, @R0"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 00H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "A9H",
+      "AAH",
+      "ABH",
+      "BAH"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV A, #7FH: A=7FH; MOV R0, #26H: A=7FH; MOV 26H, #0AAH: A=7FH; ADD A, 26H: 7FH + AAH = 297 → A=29H; ADDC A, @R0: 29H + AAH + CY(1) = 212 → A=D4H. Sau khi kết thúc đoạn lệnh, 26H = AAH (170 thập phân).",
+    "methodology": "MOV A, #7FH: A=7FH; MOV R0, #26H: A=7FH; MOV 26H, #0AAH: A=7FH; ADD A, 26H: 7FH + AAH = 297 → A=29H; ADDC A, @R0: 29H + AAH + CY(1) = 212 → A=D4H. Sau khi kết thúc đoạn lệnh, 26H = AAH (170 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20884,20 +21341,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 41,
     "title": "Part 12 - Câu 41",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau: MOV A, #52H ADD A, #7BH RLC ANội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "30",
-    "acceptable_answers": [
-      "30",
-      "30H",
-      "30",
-      "30h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #52H",
+      "ADD A, #7BH",
+      "RLC A"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 30H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "9BH",
+      "8AH",
+      "99H",
+      "9AH"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV A, #52H: A=52H; ADD A, #7BH: 52H + 7BH = 205 → A=CDH; RLC A: A=9AH. Sau khi kết thúc đoạn lệnh, A = 9AH (154 thập phân).",
+    "methodology": "MOV A, #52H: A=52H; ADD A, #7BH: 52H + 7BH = 205 → A=CDH; RLC A: A=9AH. Sau khi kết thúc đoạn lệnh, A = 9AH (154 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20910,20 +21373,28 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 42,
     "title": "Part 12 - Câu 42",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #5AH MOV 5AH, A ANL 5AH, #0BDH CPL AANL 5AH, ANội dung trong ô nhớ có địa chỉ 5AH sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "08",
-    "acceptable_answers": [
-      "08",
-      "08H",
-      "08",
-      "08h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, ô nhớ RAM nội 5AH có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #5AH",
+      "MOV 5AH, A",
+      "ANL 5AH, #0BDH",
+      "CPL A",
+      "ANL 5AH, A"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 08H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "FFH",
+      "00H",
+      "01H",
+      "10H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV A, #5AH: A=5AH; MOV 5AH, A: A=5AH; ANL 5AH, #0BDH: A=5AH; CPL A: A=A5H; ANL 5AH, A: A=A5H. Sau khi kết thúc đoạn lệnh, 5AH = 00H (0 thập phân).",
+    "methodology": "MOV A, #5AH: A=5AH; MOV 5AH, A: A=5AH; ANL 5AH, #0BDH: A=5AH; CPL A: A=A5H; ANL 5AH, A: A=A5H. Sau khi kết thúc đoạn lệnh, 5AH = 00H (0 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20936,20 +21407,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 43,
     "title": "Part 12 - Câu 43",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #30H MOV R1, #0F0H MOV @R1, A MOV A, @R1Nội dung trong thanh ghi R1 sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "30",
-    "acceptable_answers": [
-      "30",
-      "30H",
-      "30",
-      "30h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi R1 có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #30H",
+      "MOV R1, #70H",
+      "MOV @R1, A",
+      "MOV A, @R1"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 30H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "60H",
+      "6FH",
+      "70H",
+      "71H"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MOV A, #30H: A=30H; MOV R1, #70H: A=30H; MOV @R1, A: A=30H; MOV A, @R1: A=30H. Sau khi kết thúc đoạn lệnh, R1 = 70H (112 thập phân).",
+    "methodology": "MOV A, #30H: A=30H; MOV R1, #70H: A=30H; MOV @R1, A: A=30H; MOV A, @R1: A=30H. Sau khi kết thúc đoạn lệnh, R1 = 70H (112 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20962,20 +21440,29 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 44,
     "title": "Part 12 - Câu 44",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV R0, #7FH MOV 7EH, #00H MOV 7FH, #40H DEC @R0DEC R0 DEC @R0Nội dung trong ô nhớ có địa chỉ 7FH sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, ô nhớ RAM nội 7FH có giá trị nào?",
+    "extra_lines": [
+      "MOV R0, #7FH",
+      "MOV 7EH, #00H",
+      "MOV 7FH, #40H",
+      "DEC @R0",
+      "DEC R0",
+      "DEC @R0"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 00H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "3EH",
+      "2FH",
+      "40H",
+      "3FH"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV R0, #7FH: A=00H; MOV 7EH, #00H: A=00H; MOV 7FH, #40H: A=00H; DEC @R0: A=00H; DEC R0: A=00H; DEC @R0: A=00H. Sau khi kết thúc đoạn lệnh, 7FH = 3FH (63 thập phân).",
+    "methodology": "MOV R0, #7FH: A=00H; MOV 7EH, #00H: A=00H; MOV 7FH, #40H: A=00H; DEC @R0: A=00H; DEC R0: A=00H; DEC @R0: A=00H. Sau khi kết thúc đoạn lệnh, 7FH = 3FH (63 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -20988,22 +21475,28 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 45,
     "title": "Part 12 - Câu 45",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV R1, #3 MOV A, #17 SETB CLOOP: SUBB A, #2 DJNZ R1, LOOPNội dung trong thanh ghi A sau khi thực hiện đoạn chương trình trên:",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV R1, #3",
+      "MOV A, #17",
+      "SETB C",
+      "LOOP: SUBB A, #2",
+      "DJNZ R1, LOOP"
+    ],
     "options": [
-      "10",
-      "12",
-      "17",
-      "11"
+      "1AH",
+      "09H",
+      "0AH",
+      "0BH"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 55H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "explanation": "MOV R1, #3: A=00H; MOV A, #17: A=11H; SETB C: A=11H; SUBB A, #2: 11H - 02H - CY(1) = 14 → A=0EH; DJNZ R1, LOOP: A=0EH; SUBB A, #2: 0EH - 02H - CY(0) = 12 → A=0CH; DJNZ R1, LOOP: A=0CH; SUBB A, #2: 0CH - 02H - CY(0) = 10 → A=0AH. Sau khi kết thúc đoạn lệnh, A = 0AH (10 thập phân).",
+    "methodology": "MOV R1, #3: A=00H; MOV A, #17: A=11H; SETB C: A=11H; SUBB A, #2: 11H - 02H - CY(1) = 14 → A=0EH; DJNZ R1, LOOP: A=0EH; SUBB A, #2: 0EH - 02H - CY(0) = 12 → A=0CH; DJNZ R1, LOOP: A=0CH; SUBB A, #2: 0CH - 02H - CY(0) = 10 → A=0AH. Sau khi kết thúc đoạn lệnh, A = 0AH (10 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21016,20 +21509,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 46,
     "title": "Part 12 - Câu 46",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #22H MOV B, #10H MUL A,BNội dung trong thanh ghi B sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "20",
-    "acceptable_answers": [
-      "20",
-      "20H",
-      "20",
-      "20h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi B có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #22H",
+      "MOV B, #10H",
+      "MUL AB"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 20H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "12H",
+      "01H",
+      "02H",
+      "03H"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MOV A, #22H: A=22H; MOV B, #10H: A=22H; MUL AB: A=20H. Sau khi kết thúc đoạn lệnh, B = 02H (2 thập phân).",
+    "methodology": "MOV A, #22H: A=22H; MOV B, #10H: A=22H; MUL AB: A=20H. Sau khi kết thúc đoạn lệnh, B = 02H (2 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21042,22 +21541,32 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 47,
     "title": "Part 12 - Câu 47",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #18H MOV 30H, #10H JB ACC.7, SKIP ADD A, 30H MOV 30H, A SJMP EXITSKIP: SUBB A, 30H MOV 30H,A EXIT: SJMP \\$Nội dung ô nhớ 30H sau khi thực hiện đoạn chương trình trên:",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, ô nhớ RAM nội 30H có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #18H",
+      "MOV 30H, #10H",
+      "JB ACC.7, SKIP",
+      "ADD A, 30H",
+      "MOV 30H, A",
+      "SJMP EXIT",
+      "SKIP: SUBB A, 30H",
+      "MOV 30H,A",
+      "EXIT: SJMP $"
+    ],
     "options": [
+      "38H",
+      "27H",
       "28H",
-      "30H",
-      "08H",
-      "18H"
+      "29H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 12H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "explanation": "MOV A, #18H: A=18H; MOV 30H, #10H: A=18H; JB ACC.7, SKIP: A=18H; ADD A, 30H: 18H + 10H = 40 → A=28H; MOV 30H, A: A=28H; SJMP EXIT: A=28H. Sau khi kết thúc đoạn lệnh, 30H = 28H (40 thập phân).",
+    "methodology": "MOV A, #18H: A=18H; MOV 30H, #10H: A=18H; JB ACC.7, SKIP: A=18H; ADD A, 30H: 18H + 10H = 40 → A=28H; MOV 30H, A: A=28H; SJMP EXIT: A=28H. Sau khi kết thúc đoạn lệnh, 30H = 28H (40 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21070,20 +21579,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 48,
     "title": "Part 12 - Câu 48",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV R0, #20H MOV A, #36H MOV 20H, #75H XCHD A, @R0Nội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ________H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "34",
-    "acceptable_answers": [
-      "34",
-      "34H",
-      "34",
-      "34h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV R0, #20H",
+      "MOV A, #36H",
+      "MOV 20H, #75H",
+      "XCHD A, @R0"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 34H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "36H",
+      "35H",
+      "34H",
+      "25H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV R0, #20H: A=00H; MOV A, #36H: A=36H; MOV 20H, #75H: A=36H; XCHD A, @R0: A=35H. Sau khi kết thúc đoạn lệnh, A = 35H (53 thập phân).",
+    "methodology": "MOV R0, #20H: A=00H; MOV A, #36H: A=36H; MOV 20H, #75H: A=36H; XCHD A, @R0: A=35H. Sau khi kết thúc đoạn lệnh, A = 35H (53 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21096,20 +21612,28 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 49,
     "title": "Part 12 - Câu 49",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #5AH MOV 5AH, A ORL 5AH, #22H CPL AORL 5AH, ANội dung trong ô nhớ có địa chỉ 5AH sau khi thực hiện đoạn mã trên là: ________H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "56",
-    "acceptable_answers": [
-      "56",
-      "56H",
-      "56",
-      "56h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, ô nhớ RAM nội 5AH có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #5AH",
+      "MOV 5AH, A",
+      "ORL 5AH, #22H",
+      "CPL A",
+      "ORL 5AH, A"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 56H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "EFH",
+      "00H",
+      "FFH",
+      "FEH"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MOV A, #5AH: A=5AH; MOV 5AH, A: A=5AH; ORL 5AH, #22H: A=5AH; CPL A: A=A5H; ORL 5AH, A: A=A5H. Sau khi kết thúc đoạn lệnh, 5AH = FFH (255 thập phân).",
+    "methodology": "MOV A, #5AH: A=5AH; MOV 5AH, A: A=5AH; ORL 5AH, #22H: A=5AH; CPL A: A=A5H; ORL 5AH, A: A=A5H. Sau khi kết thúc đoạn lệnh, 5AH = FFH (255 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21122,22 +21646,30 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 50,
     "title": "Part 12 - Câu 50",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #0FFH ADD A, #1JZ SKIP ADDC A, #03H SJMP EXITSKIP: ADDC, #03H EXIT: SJMP \\$Nội dung thanh ghi A sau khi thực hiện đoạn chương trình trên:",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0FFH",
+      "ADD A, #1",
+      "JZ SKIP",
+      "ADDC A, #03H",
+      "SJMP EXIT",
+      "SKIP: ADDC A, #03H",
+      "EXIT: SJMP $"
+    ],
     "options": [
-      "05H",
       "04H",
-      "02H",
-      "0FFH"
+      "05H",
+      "14H",
+      "03H"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 78H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "explanation": "MOV A, #0FFH: A=FFH; ADD A, #1: FFH + 01H = 256 → A=00H; JZ SKIP: A=00H; ADDC A, #03H: 00H + 03H + CY(1) = 4 → A=04H. Sau khi kết thúc đoạn lệnh, A = 04H (4 thập phân).",
+    "methodology": "MOV A, #0FFH: A=FFH; ADD A, #1: FFH + 01H = 256 → A=00H; JZ SKIP: A=00H; ADDC A, #03H: 00H + 03H + CY(1) = 4 → A=04H. Sau khi kết thúc đoạn lệnh, A = 04H (4 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21150,20 +21682,26 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 51,
     "title": "Part 12 - Câu 51",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV A, #0ABH CLR CADDC A, #0BAHNội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "65",
-    "acceptable_answers": [
-      "65",
-      "65H",
-      "65",
-      "65h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0ABH",
+      "CLR C",
+      "ADDC A, #0BAH"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 65H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "66H",
+      "65H",
+      "64H",
+      "75H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV A, #0ABH: A=ABH; CLR C: A=ABH; ADDC A, #0BAH: ABH + BAH + CY(0) = 357 → A=65H. Sau khi kết thúc đoạn lệnh, A = 65H (101 thập phân).",
+    "methodology": "MOV A, #0ABH: A=ABH; CLR C: A=ABH; ADDC A, #0BAH: ABH + BAH + CY(0) = 357 → A=65H. Sau khi kết thúc đoạn lệnh, A = 65H (101 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21176,22 +21714,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 52,
     "title": "Part 12 - Câu 52",
-    "prompt": "Cho đoạn mã Assembler trên 89C51 sau:MOV 30H, #02H MOV A, 30HMOV DPTR, #TABLE MOVC A, @A+DPTRMOV P1, A TABLE:DB 0C0H, 0F9H, 0A4H, 0B0H, 99H, 92H, 82H, 0F8H, 80H, 90H Nội dung thanh ghi P1 sau khi thực hiện đoạn chương trình trên:",
-    "extra_lines": [],
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi P1 có giá trị nào? Giả sử các chân cổng không bị tải ngoài ép mức logic; hỏi giá trị latch.",
+    "extra_lines": [
+      "MOV 30H, #02H",
+      "MOV A, 30H",
+      "MOV DPTR, #TABLE",
+      "MOVC A, @A+DPTR",
+      "MOV P1, A",
+      "SJMP DONE",
+      "TABLE: DB 0C0H, 0F9H, 0A4H, 0B0H, 99H, 92H, 82H, 0F8H, 80H, 90H",
+      "DONE: SJMP $"
+    ],
     "options": [
-      "02H",
-      "0A4H",
-      "0F9H",
-      "30H"
+      "A4H",
+      "A5H",
+      "B4H",
+      "A3H"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 00H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "explanation": "MOV 30H, #02H: A=00H; MOV A, 30H: A=02H; MOV DPTR, #TABLE: A=02H; MOVC A, @A+DPTR: A=A4H; MOV P1, A: A=A4H; SJMP DONE: A=A4H. Sau khi kết thúc đoạn lệnh, P1 = A4H (164 thập phân).",
+    "methodology": "MOV 30H, #02H: A=00H; MOV A, 30H: A=02H; MOV DPTR, #TABLE: A=02H; MOVC A, @A+DPTR: A=A4H; MOV P1, A: A=A4H; SJMP DONE: A=A4H. Sau khi kết thúc đoạn lệnh, P1 = A4H (164 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21204,20 +21751,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 53,
     "title": "Part 12 - Câu 53",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV R0, #7FH MOV 7EH, #0ADH MOV 7FH, #26HDEC R0 MOV A, 7FH XRL A, @R0 MOV R0, A XRL A, 7FHNội dung trong thanh ghi R0 sau khi thực hiện đoạn mã trên là: ________H. (1 Point) 8B",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "55",
-    "acceptable_answers": [
-      "55",
-      "55H",
-      "55",
-      "55h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi R0 có giá trị nào?",
+    "extra_lines": [
+      "MOV R0, #7FH",
+      "MOV 7EH, #0ADH",
+      "MOV 7FH, #26H",
+      "DEC R0",
+      "MOV A, 7FH",
+      "XRL A, @R0",
+      "MOV R0, A",
+      "XRL A, 7FH"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 55H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "8AH",
+      "9BH",
+      "8CH",
+      "8BH"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "MOV R0, #7FH: A=00H; MOV 7EH, #0ADH: A=00H; MOV 7FH, #26H: A=00H; DEC R0: A=00H; MOV A, 7FH: A=26H; XRL A, @R0: A=8BH; MOV R0, A: A=8BH; XRL A, 7FH: A=ADH. Sau khi kết thúc đoạn lệnh, R0 = 8BH (139 thập phân).",
+    "methodology": "MOV R0, #7FH: A=00H; MOV 7EH, #0ADH: A=00H; MOV 7FH, #26H: A=00H; DEC R0: A=00H; MOV A, 7FH: A=26H; XRL A, @R0: A=8BH; MOV R0, A: A=8BH; XRL A, 7FH: A=ADH. Sau khi kết thúc đoạn lệnh, R0 = 8BH (139 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21230,20 +21788,25 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 54,
     "title": "Part 12 - Câu 54",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau: MOV A, #0FFHADD A, #2HNội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ____________H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "01",
-    "acceptable_answers": [
-      "01",
-      "01H",
-      "01",
-      "01h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0FFH",
+      "ADD A, #2H"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 01H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "02H",
+      "01H",
+      "00H",
+      "11H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "MOV A, #0FFH: A=FFH; ADD A, #2H: FFH + 02H = 257 → A=01H. Sau khi kết thúc đoạn lệnh, A = 01H (1 thập phân).",
+    "methodology": "MOV A, #0FFH: A=FFH; ADD A, #2H: FFH + 02H = 257 → A=01H. Sau khi kết thúc đoạn lệnh, A = 01H (1 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21256,20 +21819,25 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 55,
     "title": "Part 12 - Câu 55",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau: MOV A, #0F0HORL A, #0FHNội dung trong thanh ghi A sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi A có giá trị nào?",
+    "extra_lines": [
+      "MOV A, #0F0H",
+      "ORL A, #0FH"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 00H.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "FFH",
+      "FEH",
+      "EFH",
+      "00H"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "MOV A, #0F0H: A=F0H; ORL A, #0FH: A=FFH. Sau khi kết thúc đoạn lệnh, A = FFH (255 thập phân).",
+    "methodology": "MOV A, #0F0H: A=F0H; ORL A, #0FH: A=FFH. Sau khi kết thúc đoạn lệnh, A = FFH (255 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21282,20 +21850,25 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 56,
     "title": "Part 12 - Câu 56",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV P1, #0FFH CLR P1.0Nội dung trong thanh ghi P1 sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "FE",
-    "acceptable_answers": [
-      "FE",
-      "FEH",
-      "fe",
-      "feh"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi P1 có giá trị nào? Giả sử các chân cổng không bị tải ngoài ép mức logic; hỏi giá trị latch.",
+    "extra_lines": [
+      "MOV P1, #0FFH",
+      "CLR P1.0"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là FEH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "EEH",
+      "FDH",
+      "FEH",
+      "FFH"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MOV P1, #0FFH: A=00H; CLR P1.0: A=00H. Sau khi kết thúc đoạn lệnh, P1 = FEH (254 thập phân).",
+    "methodology": "MOV P1, #0FFH: A=00H; CLR P1.0: A=00H. Sau khi kết thúc đoạn lệnh, P1 = FEH (254 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21308,20 +21881,27 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 12: Theo Dõi Thực Thi Lệnh Hợp Ngữ 8051",
     "num": 57,
     "title": "Part 12 - Câu 57",
-    "prompt": "Cho đoạn mã Assembly trên 89C51 sau:MOV R1, #0F0H MOV @R1, #0FH MOV A, #0F0H ADD A, @R1Nội dung trong thanh ghi R1 sau khi thực hiện đoạn mã trên là: ____________H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "0F",
-    "acceptable_answers": [
-      "0F",
-      "0FH",
-      "0f",
-      "0fh"
+    "prompt": "Trên AT89C51, sau khi thực hiện đoạn lệnh sau, thanh ghi R1 có giá trị nào?",
+    "extra_lines": [
+      "MOV R1, #70H",
+      "MOV @R1, #0FH",
+      "MOV A, #0F0H",
+      "ADD A, @R1"
     ],
-    "explanation": "Theo dõi thực thi từng dòng lệnh trong chương trình: Các thao tác tính toán và ghi đè trên thanh ghi/ô nhớ dẫn đến kết quả cuối cùng là 0FH.",
-    "methodology": "Phương pháp theo dõi luồng Assembly: Lập bảng biến thiên trạng thái thanh ghi A, B, Rn và các cờ sau mỗi dòng lệnh.",
-    "tips_casio": "Casio 580VNX (MENU 3: Base-N): Đổi các giá trị sang hệ HEX để tính toán chính xác tuyệt đối.",
+    "options": [
+      "60H",
+      "6FH",
+      "70H",
+      "71H"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "MOV R1, #70H: A=00H; MOV @R1, #0FH: A=00H; MOV A, #0F0H: A=F0H; ADD A, @R1: F0H + 0FH = 255 → A=FFH. Sau khi kết thúc đoạn lệnh, R1 = 70H (112 thập phân).",
+    "methodology": "MOV R1, #70H: A=00H; MOV @R1, #0FH: A=00H; MOV A, #0F0H: A=F0H; ADD A, @R1: F0H + 0FH = 255 → A=FFH. Sau khi kết thúc đoạn lệnh, R1 = 70H (112 thập phân).",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Theo dõi thực thi mã lệnh Assembly & Xác định giá trị thanh ghi",
@@ -21334,26 +21914,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 4,
     "title": "Part 13 - Câu 4",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới đây có nội dung trong thanh ghi B là 02H, thanh ghi A là 58H:",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "28",
-    "acceptable_answers": [
-      "28",
-      "28H",
-      "28",
-      "28h"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để B=02H, A=58H.",
+    "extra_lines": [
+      "MOV A, #15",
+      "MOV B, #?",
+      "MUL AB",
+      "END"
     ],
-    "explanation": "Sau lệnh `MUL AB`, thanh ghi B chứa byte cao và A chứa byte thấp của tích $16\\,\\text{bit}$. Ở đây $(B)=02\\text{H}$ và $(A)=58\\text{H}$, tức giá trị tích là $0258\\text{H} = 600$. Với thừa số $A = 15$ thập phân ($0\\text{F}\\text{H}$), thừa số còn lại là $B = 600 / 15 = 40 = 28\\text{H}$.",
-    "methodology": "Tích của A và B: $B \\times 256 + A = 2 \\times 256 + 58\\text{H} = 512 + 88 = 600$ (thập phân $0258\\text{H}$). Với $A = 15$ ($0\\text{F}\\text{H}$), giá trị cần nạp là $B = 600 / 15 = 40$ (tương ứng $28\\text{H}$).",
-    "tips_casio": "Casio 580VNX (MENU 3 Base-N): Bấm $(2 \\times 256 + 58\\text{H}) / 15$, đổi sang HEX được 28H. Điền số: 28.",
+    "options": [
+      "28H",
+      "29H",
+      "38H",
+      "27H"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Thay ? bằng 28H: MOV A, #15: A=0FH; MOV B, #28H: A=0FH; MUL AB: A=58H. Kết quả: B=02H, A=58H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 28H: MOV A, #15: A=0FH; MOV B, #28H: A=0FH; MUL AB: A=58H. Kết quả: B=02H, A=58H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Hoàn thiện giá trị phép toán nhân số học MUL AB",
-    "images": [
-      "assets/images/p13_q04.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q05",
@@ -21362,28 +21947,32 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 5,
     "title": "Part 13 - Câu 5",
-    "prompt": "Xác định chức năng của chương trình con dưới đây:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, thạch anh 12 MHz. Tính thời gian thực thi từ lệnh MOV đầu tiên đến hết RET, không gồm thời gian lệnh gọi chương trình con.",
+    "extra_lines": [
+      "MOV R0, #10",
+      "DL: MOV R1, #250",
+      "DL1: DJNZ R1, DL1",
+      "DJNZ R0, DL",
+      "RET"
+    ],
     "options": [
-      "Tạo trễ thời gian 5µs",
-      "Tạo trễ thời gian 5000µs",
-      "Tạo trễ thời gian 500µs",
-      "Tạo trễ thời gian 50µs"
+      "5033 µs",
+      "503 µs",
+      "10066 µs",
+      "6033 µs"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "A",
     "acceptable_answers": [
-      "B"
+      "A"
     ],
-    "explanation": "Chương trình con sử dụng hai vòng lặp lồng nhau: vòng lặp trong với thanh ghi R5 đếm 250 lần tiêu tốn khoảng $500\\,\\mu\\text{s}$, vòng lặp ngoài với thanh ghi R6 lặp 10 lần. Tổng thời gian trễ do chương trình con tạo ra là $10 \\times 500\\,\\mu\\text{s} = 5000\\,\\mu\\text{s}$.",
-    "methodology": "Thời gian trễ $T_{\\text{delay}} = R6 \\times R5 \\times 2\\,\\mu\\text{s} = 10 \\times 250 \\times 2\\,\\mu\\text{s} = 5000\\,\\mu\\text{s}$.",
-    "tips_casio": "Vòng lặp trong 250 x $2\\,\\mu\\text{s}$ = $500\\,\\mu\\text{s}$; lặp lại 10 lần -> $5000\\,\\mu\\text{s}$.",
+    "explanation": "8051 12T, fosc=12 MHz nên mỗi chu kỳ máy là 1 µs. MOV Rn,#data: 1 chu kỳ; DJNZ Rn,rel: 2; RET: 2. 1 + 10 × (1 + 250 × 2 + 2) + 2 = 5033 µs. Rn khởi tạo 0 lặp 256 lần.",
+    "methodology": "8051 12T, fosc=12 MHz nên mỗi chu kỳ máy là 1 µs. MOV Rn,#data: 1 chu kỳ; DJNZ Rn,rel: 2; RET: 2. 1 + 10 × (1 + 250 × 2 + 2) + 2 = 5033 µs. Rn khởi tạo 0 lặp 256 lần.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "VD",
     "topic_name": "Hàm con tạo thời gian trễ 2 vòng lặp lồng nhau",
-    "images": [
-      "assets/images/p13_q05.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q06",
@@ -21392,28 +21981,43 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 6,
     "title": "Part 13 - Câu 6",
-    "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây. Chương trình thực hiện chức năng gì? (Biết tần số dao động thạch anh là 12MHz)",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian thực thi các lệnh ngoài thời gian đếm timer. Chương trình tạo dạng xung nào?",
+    "extra_lines": [
+      "MOV TMOD, #02H",
+      "LOOP: CLR TR0",
+      "SETB P1.6",
+      "MOV TH0, #56",
+      "MOV TL0, #56",
+      "CLR TF0",
+      "SETB TR0",
+      "HIGH_WAIT: JNB TF0, HIGH_WAIT",
+      "CLR TR0",
+      "CLR P1.6",
+      "MOV TH0, #216",
+      "MOV TL0, #216",
+      "CLR TF0",
+      "SETB TR0",
+      "LOW_WAIT: JNB TF0, LOW_WAIT",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Chương trình sử dụng timer 0 tạo sóng vuông có thời gian xung cao 200µs vàxung thấp là 40µs trên chân P1.6.",
-      "Chương trình sử dụng timer 1 tạo sóng vuông có chu kỳ 200µs trên chân P1.6.",
-      "Chương trình sử dụng timer 0 tạo sóng vuông có tần số 50kHz trên chân P1.6.",
-      "Chương trình sử dụng timer 0 tạo sóng vuông có thời gian xung cao 200µs vàxung thấp là 5200µs trên chân P1.6."
+      "P1.6: mức cao 200 µs, mức thấp 40 µs",
+      "P1.6: mức cao 40 µs, mức thấp 200 µs",
+      "P1.6: chu kỳ 200 µs",
+      "P1.6: tần số 50 kHz"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Chương trình cấu hình Timer 0 ở Chế độ 2 (8-bit tự nạp lại). Khi chân P1.6 ở mức cao (SETB P1.6), TH0 được nạp 56, thời gian trễ mức cao là (256 - 56) x 1µs = 200µs. Khi chân P1.6 ở mức thấp (CLR P1.6), TH0 được nạp 216, thời gian trễ mức thấp là (256 - 216) x 1µs = 40µs. Do đó tạo ra sóng vuông có thời gian xung cao 200µs và xung thấp 40µs trên chân P1.6. Chọn đáp án A.",
-    "methodology": "Nạp TH0 tạo mức cao $200\\,\\mu\\text{s}$ và mức thấp $40\\,\\mu\\text{s}$ trên chân cổng P1.6.",
-    "tips_casio": "Thời gian mức cao $200\\,\\mu\\text{s}$ và mức thấp $40\\,\\mu\\text{s}$.",
+    "explanation": "Timer 0 mode 2, tick 1 µs. Mức cao: 256−56=200 tick; mức thấp: 256−216=40 tick. Tổng chu kỳ lý tưởng 240 µs. Đây là dạng xung chữ nhật, không phải sóng vuông 50% duty.",
+    "methodology": "Timer 0 mode 2, tick 1 µs. Mức cao: 256−56=200 tick; mức thấp: 256−216=40 tick. Tổng chu kỳ lý tưởng 240 µs. Đây là dạng xung chữ nhật, không phải sóng vuông 50% duty.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "VD",
     "topic_name": "Timer 0 tạo xung lệch đối xứng (Duty Cycle)",
-    "images": [
-      "assets/images/p13_q25.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q07",
@@ -21422,26 +22026,34 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 7,
     "title": "Part 13 - Câu 7",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi A là 34H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "3B",
-    "acceptable_answers": [
-      "3B",
-      "3BH",
-      "3b",
-      "3bh"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để A=34H.",
+    "extra_lines": [
+      "MOV 40H, #0FH",
+      "MOV 41H, #?",
+      "MOV R1, #40H",
+      "INC R1",
+      "MOV A, 40H",
+      "XRL A, @R1",
+      "END"
     ],
-    "explanation": "Để sau lệnh `XRL A, #0FH` nội dung thanh ghi A có giá trị $34\\text{H}$, do tính chất hai chiều của phép XOR ($X \\oplus Y = Z \\iff X = Z \\oplus Y$), giá trị cần hoàn thiện là $34\\text{H} \\oplus 0\\text{F}\\text{H} = 3\\text{B}\\text{H}$.",
-    "methodology": "Phép toán $A \\oplus 0\\text{F}\\text{H} = 34\\text{H} \\implies A = 34\\text{H} \\oplus 0\\text{F}\\text{H} = 0011\\,0100_2 \\oplus 0000\\,1111_2 = 0011\\,1011_2 = 3\\text{B}\\text{H}$.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 34H XOR 0FH = 3BH. Điền: 3B.",
+    "options": [
+      "3CH",
+      "3BH",
+      "3AH",
+      "2BH"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "Thay ? bằng 3BH: MOV 40H, #0FH: A=00H; MOV 41H, #3BH: A=00H; MOV R1, #40H: A=00H; INC R1: A=00H; MOV A, 40H: A=0FH; XRL A, @R1: A=34H. Kết quả: A=34H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 3BH: MOV 40H, #0FH: A=00H; MOV 41H, #3BH: A=00H; MOV R1, #40H: A=00H; INC R1: A=00H; MOV A, 40H: A=0FH; XRL A, @R1: A=34H. Kết quả: A=34H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Phép toán logic XRL tìm toán hạng ban đầu",
-    "images": [
-      "assets/images/p13_q07.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q08",
@@ -21450,26 +22062,30 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 8,
     "title": "Part 13 - Câu 8",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi A là 19H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "32",
-    "acceptable_answers": [
-      "32",
-      "32H",
-      "32",
-      "32h"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để A=19H.",
+    "extra_lines": [
+      "MOV A, #?",
+      "RR A",
+      "END"
     ],
-    "explanation": "Để thanh ghi A đạt giá trị $19\\text{H}$ ($0001\\,1001_2$) sau khi thực hiện lệnh xoay phải `RR A`, giá trị ban đầu của thanh ghi A trước khi xoay phải là kết quả của phép xoay trái một bit: $0011\\,0010_2 = 32\\text{H}$.",
-    "methodology": "Thao tác xoay phải: bit 0 chuyển sang bit 7. Nghịch đảo của xoay phải là xoay trái (RL). $19\\text{H} = 0001\\,1001_2 \\xrightarrow{\\text{RL}} 0011\\,0010_2 = 32\\text{H}$.",
-    "tips_casio": "Xoay ngược lại (xoay trái 1 bit): 19H x 2 = 32H. Điền: 32.",
+    "options": [
+      "32H",
+      "33H",
+      "22H",
+      "31H"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Thay ? bằng 32H: MOV A, #32H: A=32H; RR A: A=19H. Kết quả: A=19H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 32H: MOV A, #32H: A=32H; RR A: A=19H. Kết quả: A=19H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Phép xoay bit phải RR A tìm giá trị ban đầu",
-    "images": [
-      "assets/images/p13_q08.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q09",
@@ -21479,7 +22095,14 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "num": 9,
     "title": "Part 13 - Câu 9",
     "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây. Nội dung trong thanh ghi A là:",
-    "extra_lines": [],
+    "extra_lines": [
+      "MOV R1, #30H",
+      "CJNE R1, #30, NHAN",
+      "MOV A, #45H",
+      "SJMP KETTHUC",
+      "NHAN: MOV A, #54H",
+      "KETTHUC: END"
+    ],
     "options": [
       "30H",
       "35H",
@@ -21491,15 +22114,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Thanh ghi R1 mang giá trị Hex $30\\text{H}$ (tương ứng 48 thập phân). Lệnh `CJNE R1, #30, NHAN` so sánh R1 với hằng số thập phân 30 ($1\\text{E}\\text{H}$): vì $48 \\neq 30$, nhánh nhảy được thực hiện tới nhãn `NHAN: MOV A, #54H`, kết quả trong A là $54\\text{H}$.",
-    "methodology": "R1 được nạp $30\\text{H}$ ($48$ thập phân). So sánh `CJNE R1, #30, NHAN`: vì $48 \\neq 30$, điều kiện nhảy thỏa mãn, CPU nhảy tới nhãn `NHAN` và gán $A = 54\\text{H}$.",
-    "tips_casio": "#30 không có chữ H là số thập phân (30 = 1EH != 30H) -> Nhảy tới NHAN -> A = 54H.",
+    "explanation": "MOV R1, #30H: A=00H; CJNE R1, #30, NHAN: A=00H; MOV A, #54H: A=54H. Kết quả cuối cùng: A=54H. Số không có H là thập phân.",
+    "methodology": "MOV R1, #30H: A=00H; CJNE R1, #30, NHAN: A=00H; MOV A, #54H: A=54H. Kết quả cuối cùng: A=54H. Số không có H là thập phân.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "VD",
     "topic_name": "Lệnh so sánh rẽ nhánh CJNE với số thập phân",
-    "images": [
-      "assets/images/p13_q09.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q10",
@@ -21509,7 +22130,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "num": 10,
     "title": "Part 13 - Câu 10",
     "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây. Nội dung trong thanh ghi A là:",
-    "extra_lines": [],
+    "extra_lines": [
+      "MOV R1, #8",
+      "MOV A, #3BH",
+      "LAP: RL A",
+      "DJNZ R1, LAP",
+      "END"
+    ],
     "options": [
       "CEH",
       "67H",
@@ -21521,15 +22148,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Đoạn chương trình nạp $A = 3\\text{B}\\text{H}$ và thiết lập vòng lặp xoay trái `RL A` lặp lại đúng 8 lần bằng thanh ghi R1 (`DJNZ R1, LAP`). Sau 8 lần xoay vòng tròn một byte $8\\,\\text{bit}$, toàn bộ các bit trở về vị trí ban đầu, nội dung thanh ghi A vẫn là $3\\text{B}\\text{H}$.",
-    "methodology": "Một byte gồm 8 bit, thực hiện lệnh `RL A` đủ 8 lần trong vòng lặp DJNZ sẽ đưa các bit trở về đúng vị trí xuất phát ban đầu: $A = 3\\text{B}\\text{H}$.",
-    "tips_casio": "Xoay trái đủ 8 lần một byte 8 bit -> Giá trị giữ nguyên không đổi là 3BH.",
+    "explanation": "MOV R1, #8: A=00H; MOV A, #3BH: A=3BH; RL A: A=76H; DJNZ R1, LAP: A=76H; RL A: A=ECH; DJNZ R1, LAP: A=ECH; RL A: A=D9H; DJNZ R1, LAP: A=D9H. Kết quả cuối cùng: A=3BH. Số không có H là thập phân.",
+    "methodology": "MOV R1, #8: A=00H; MOV A, #3BH: A=3BH; RL A: A=76H; DJNZ R1, LAP: A=76H; RL A: A=ECH; DJNZ R1, LAP: A=ECH; RL A: A=D9H; DJNZ R1, LAP: A=D9H. Kết quả cuối cùng: A=3BH. Số không có H là thập phân.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "VD",
     "topic_name": "Vòng lặp xoay trái tròn 8 lần chu kỳ đầy đủ",
-    "images": [
-      "assets/images/p13_q10.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q11",
@@ -21538,8 +22163,18 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 11,
     "title": "Part 13 - Câu 11",
-    "prompt": "Xác định chức năng của chương trình con dưới đây:",
-    "extra_lines": [],
+    "prompt": "Giả sử khối RAM nội từ 40H có một byte FFH kết thúc trước 80H. Chương trình con sau làm gì?",
+    "extra_lines": [
+      "MOV 2FH, #0",
+      "MOV R0, #40H",
+      "LOOP: MOV A, @R0",
+      "CPL A",
+      "JNZ NEXT",
+      "RET",
+      "NEXT: INC 2FH",
+      "INC R0",
+      "SJMP LOOP"
+    ],
     "options": [
       "Đếm độ dài của khối dữ liệu có địa chỉ bắt đầu từ địa chỉ FFH",
       "Đếm độ dài của khối dữ liệu có địa chỉ bắt đầu từ địa chỉ 40H",
@@ -21551,15 +22186,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Chương trình nạp con trỏ địa chỉ gián tiếp $R0 = 40\\text{H}$, duyệt tuần tự từng ô nhớ trong bộ nhớ RAM nội và so sánh với ký tự đánh dấu kết thúc (như $00\\text{H}$ hoặc $\\text{FFH}$), thực hiện chức năng: Đếm độ dài của khối dữ liệu có địa chỉ bắt đầu từ địa chỉ $40\\text{H}$.",
-    "methodology": "Khởi tạo con trỏ $R0 = 40\\text{H}$, đọc và tăng con trỏ, kiểm tra kết thúc khối dữ liệu.",
-    "tips_casio": "Khởi tạo con trỏ R0 tại 40H -> Đếm độ dài khối từ địa chỉ 40H.",
+    "explanation": "R0 bắt đầu tại 40H; CPL A rồi JNZ nghĩa là chỉ dừng khi byte đọc được bằng FFH. Mỗi byte trước dấu kết thúc làm 2FH tăng 1; FFH không tính vào độ dài.",
+    "methodology": "R0 bắt đầu tại 40H; CPL A rồi JNZ nghĩa là chỉ dừng khi byte đọc được bằng FFH. Mỗi byte trước dấu kết thúc làm 2FH tăng 1; FFH không tính vào độ dài.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "VD",
     "topic_name": "Thuật toán đếm độ dài khối dữ liệu kết thúc bằng ký tự đặc biệt",
-    "images": [
-      "assets/images/p13_q11.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q12",
@@ -21568,26 +22201,30 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 12,
     "title": "Part 13 - Câu 12",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi A là 40H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "04",
-    "acceptable_answers": [
-      "04",
-      "04H",
-      "04",
-      "04h"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để A=40H.",
+    "extra_lines": [
+      "MOV A, #?",
+      "SWAP A",
+      "END"
     ],
-    "explanation": "Lệnh `SWAP A` hoán đổi vị trí của 4 bit cao và 4 bit thấp trong thanh ghi tích lũy A. Để thu được kết quả $A = 40\\text{H}$ ($0100\\,0000_2$), giá trị ban đầu trong thanh ghi A phải là $04\\text{H}$ ($0000\\,0100_2$).",
-    "methodology": "Lệnh SWAP tráo đổi 4 bit cao và 4 bit thấp. Kết quả $40\\text{H} \\implies$ ban đầu là $04\\text{H}$.",
-    "tips_casio": "Đảo vị trí 2 chữ số hexa của 40H -> 04H. Điền: 04.",
+    "options": [
+      "04H",
+      "05H",
+      "14H",
+      "03H"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Thay ? bằng 04H: MOV A, #04H: A=04H; SWAP A: A=40H. Kết quả: A=40H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 04H: MOV A, #04H: A=04H; SWAP A: A=40H. Kết quả: A=40H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Lệnh đảo 4-bit nibble SWAP A",
-    "images": [
-      "assets/images/p13_q12.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q13",
@@ -21596,26 +22233,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 13,
     "title": "Part 13 - Câu 13",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới đây có nội dung trong thanh ghi B là 05H, thanh ghi A là 40H:",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "40",
-    "acceptable_answers": [
-      "40",
-      "40H",
-      "40",
-      "40h"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để B=05H, A=40H.",
+    "extra_lines": [
+      "MOV A, #15H",
+      "MOV B, #?",
+      "MUL AB",
+      "END"
     ],
-    "explanation": "Sau khi thực hiện phép nhân `MUL AB`, tích số $16\\,\\text{bit}$ lưu trong cặp thanh ghi BA có giá trị $0540\\text{H} = 1344$. Thừa số thứ nhất trong thanh ghi A là $15\\text{H} = 21$, do đó thừa số thứ hai trong thanh ghi B là $1344 / 21 = 64 = 40\\text{H}$.",
-    "methodology": "Kết quả: $B = 05\\text{H}$, $A = 40\\text{H} \\implies 0540\\text{H} = 1344$ (thập phân). Với $A = 15\\text{H} = 21$, suy ra $B = 1344 / 21 = 64 = 40\\text{H}$.",
-    "tips_casio": "Casio 580VNX: 0540H / 15H = 40H. Điền: 40.",
+    "options": [
+      "41H",
+      "50H",
+      "3FH",
+      "40H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "Thay ? bằng 40H: MOV A, #15H: A=15H; MOV B, #40H: A=15H; MUL AB: A=40H. Kết quả: B=05H, A=40H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 40H: MOV A, #15H: A=15H; MOV B, #40H: A=15H; MUL AB: A=40H. Kết quả: B=05H, A=40H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Hoàn thiện toán hạng nhân số học MUL AB",
-    "images": [
-      "assets/images/p13_q13.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q14",
@@ -21624,26 +22266,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 14,
     "title": "Part 13 - Câu 14",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới đây set bit thứ 1, 2, 5 của P0 lên 1, các bit còn lại giữ nguyên giá trị:",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "26",
-    "acceptable_answers": [
-      "26",
-      "26H",
-      "26",
-      "26h"
+    "prompt": "Chọn mặt nạ OR để đặt các bit 1, 2, 5 của P0 lên 1 và giữ nguyên tất cả bit khác, với mọi giá trị P0 ban đầu.",
+    "extra_lines": [
+      "MOV P0, #0B3H",
+      "MOV 30H, #26H",
+      "ORL P0, #?",
+      "END"
     ],
-    "explanation": "Để bật các bit thứ 1, 2 và 5 của cổng P0 lên mức 1 mà không làm thay đổi các bit khác, ta thực hiện phép logic OR với mặt nạ nhị phân có các bit 1 tại vị trí 1, 2, 5: $0010\\,0110_2 = 26\\text{H}$.",
-    "methodology": "Mặt nạ bật bit 1, 2, 5: $2^1 + 2^2 + 2^5 = 2 + 4 + 32 = 38$ thập phân $= 26\\text{H}$.",
-    "tips_casio": "Casio 580VNX: $2^{1}$ + $2^{2}$ + $2^{5}$ = 38 -> Đổi sang Hex: 26H. Điền: 26.",
+    "options": [
+      "32H",
+      "52H",
+      "26H",
+      "25H"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "Mặt nạ có bit 1, 2, 5 bằng 1: 0010 0110B = 26H. OR với 26H chỉ đặt các bit ấy; không dùng mặt nạ chỉ đúng tình cờ với P0=B3H.",
+    "methodology": "Mặt nạ có bit 1, 2, 5 bằng 1: 0010 0110B = 26H. OR với 26H chỉ đặt các bit ấy; không dùng mặt nạ chỉ đúng tình cờ với P0=B3H.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Bật các bit độc lập của cổng P0 bằng lệnh ORL",
-    "images": [
-      "assets/images/p13_q14.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q15",
@@ -21653,27 +22300,33 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "num": 15,
     "title": "Part 13 - Câu 15",
     "prompt": "Xác định chức năng của chương trình con dưới đây:",
-    "extra_lines": [],
+    "extra_lines": [
+      "MOV DPTR, #1000H",
+      "MOV R2, #51H",
+      "CLR A",
+      "LOOP: MOVX @DPTR, A",
+      "INC DPTR",
+      "DJNZ R2, LOOP",
+      "RET"
+    ],
     "options": [
-      "Xóa nội dung trong ô nhớ từ 1000 đến 1051 về 0",
-      "Đặt nội dung trong ô nhớ từ 1000 đến 1050 lên 1",
-      "Đặt nội dung trong ô nhớ từ 1000 đến 1051 lên 1",
-      "Xóa nội dung trong ô nhớ từ 1000 đến 1050 về 0"
+      "Xóa 82 byte từ 1000H đến 1051H",
+      "Đặt 81 byte từ 1000H đến 1050H lên 01H",
+      "Đặt 82 byte từ 1000H đến 1051H lên 01H",
+      "Xóa 81 byte RAM ngoài từ 1000H đến 1050H về 00H"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Chương trình khởi tạo con trỏ địa chỉ ngoài $\\text{DPTR} = 1000\\text{H}$, sử dụng lệnh `MOVX @DPTR, A` với $A = 0$ và tăng dần DPTR đến địa chỉ $1050\\text{H}$, thực hiện chức năng: Xóa nội dung trong ô nhớ từ $1000\\text{H}$ đến $1050\\text{H}$ về 0.",
-    "methodology": "Con trỏ DPTR chạy từ $1000\\text{H}$ đến $1050\\text{H}$, ghi dữ liệu $00\\text{H}$ vào từng ô nhớ.",
-    "tips_casio": "Ghi 0 vào dải địa chỉ 1000H đến 1050H.",
+    "explanation": "R2=51H=81. Mỗi vòng ghi 00H tại DPTR rồi tăng DPTR. Byte cuối là 1000H+80=1050H; sau vòng cuối DPTR=1051H nhưng địa chỉ 1051H không bị ghi.",
+    "methodology": "R2=51H=81. Mỗi vòng ghi 00H tại DPTR rồi tăng DPTR. Byte cuối là 1000H+80=1050H; sau vòng cuối DPTR=1051H nhưng địa chỉ 1051H không bị ghi.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "VD",
     "topic_name": "Vòng lặp khởi tạo mảng bộ nhớ RAM ngoại",
-    "images": [
-      "assets/images/p13_q15.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q16",
@@ -21682,26 +22335,33 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 16,
     "title": "Part 13 - Câu 16",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới đây có nội dung trong thanh ghi B là 0DH, thanh ghi A là 35H:",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "31",
-    "acceptable_answers": [
-      "31",
-      "31H",
-      "31",
-      "31h"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để B=0DH, A=35H.",
+    "extra_lines": [
+      "MOV 30H, #45H",
+      "MOV 31H, #0C0H",
+      "MOV A, 30H",
+      "MOV B, #?",
+      "MUL AB",
+      "END"
     ],
-    "explanation": "Kết quả phép nhân lưu trong cặp thanh ghi BA là $0\\text{D}35\\text{H} = 3381$. Biết toán hạng trong thanh ghi A trước khi nhân là $45\\text{H} = 69$, giá trị toán hạng trong thanh ghi B là $3381 / 69 = 49 = 31\\text{H}$.",
-    "methodology": "Tích $0\\text{D}35\\text{H} = 3381$. Thừa số ban đầu trong ô nhớ $30\\text{H} = 45\\text{H} = 69$. Suy ra giá trị của B là $3381 / 69 = 49 = 31\\text{H}$.",
-    "tips_casio": "Casio 580VNX: 0D35H / 45H = 31H. Điền: 31.",
+    "options": [
+      "31H",
+      "30H",
+      "21H",
+      "32H"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Thay ? bằng 31H: MOV 30H, #45H: A=00H; MOV 31H, #0C0H: A=00H; MOV A, 30H: A=45H; MOV B, #31H: A=45H; MUL AB: A=35H. Kết quả: B=0DH, A=35H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 31H: MOV 30H, #45H: A=00H; MOV 31H, #0C0H: A=00H; MOV A, 30H: A=45H; MOV B, #31H: A=45H; MUL AB: A=35H. Kết quả: B=0DH, A=35H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Phép nhân MUL AB tìm giá trị nạp vào B",
-    "images": [
-      "assets/images/p13_q16.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q17",
@@ -21710,28 +22370,34 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 17,
     "title": "Part 13 - Câu 17",
-    "prompt": "Xác định chức năng của chương trình con dưới đây:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, thạch anh 12 MHz. Tính thời gian thực thi từ lệnh MOV đầu tiên đến hết RET, không gồm thời gian lệnh gọi chương trình con.",
+    "extra_lines": [
+      "MOV R5, #10",
+      "DL: MOV R6, #200",
+      "DL1: MOV R7, #250",
+      "DL2: DJNZ R7, DL2",
+      "DJNZ R6, DL1",
+      "DJNZ R5, DL",
+      "RET"
+    ],
     "options": [
-      "Tạo trễ thời gian 1ms",
-      "Tạo trễ thời gian 1s",
-      "Tạo trễ thời gian 10ms",
-      "Tạo trễ thời gian 100ms"
+      "1006033 µs",
+      "100603 µs",
+      "2012066 µs",
+      "1007033 µs"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "A",
     "acceptable_answers": [
-      "B"
+      "A"
     ],
-    "explanation": "Chương trình con sử dụng cấu trúc ba vòng lặp lồng nhau tiêu tốn xấp xỉ $1{,}000{,}000\\,\\mu\\text{s}$ (với thạch anh $12\\,\\text{MHz}$), thực hiện chức năng tạo khoảng thời gian trễ chuẩn là $1\\,\\text{s}$ ($1000\\,\\text{ms}$).",
-    "methodology": "Sử dụng 3 vòng lặp lồng nhau với số lần lặp tổng cộng xấp xỉ $500{,}000$ chu kỳ máy $\\implies T = 1\\,\\text{s}$.",
-    "tips_casio": "3 vòng lặp lồng nhau (R7=4, R6=250, R5=250) -> Tạo trễ thời gian 1s.",
+    "explanation": "8051 12T, fosc=12 MHz nên mỗi chu kỳ máy là 1 µs. MOV Rn,#data: 1 chu kỳ; DJNZ Rn,rel: 2; RET: 2. 1 + 10 × [1 + 200 × (1 + 250 × 2 + 2) + 2] + 2 = 1006033 µs. Rn khởi tạo 0 lặp 256 lần.",
+    "methodology": "8051 12T, fosc=12 MHz nên mỗi chu kỳ máy là 1 µs. MOV Rn,#data: 1 chu kỳ; DJNZ Rn,rel: 2; RET: 2. 1 + 10 × [1 + 200 × (1 + 250 × 2 + 2) + 2] + 2 = 1006033 µs. Rn khởi tạo 0 lặp 256 lần.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "VD",
     "topic_name": "Chương trình con tạo trễ 1 giây (1s)",
-    "images": [
-      "assets/images/p13_q17.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q18",
@@ -21740,26 +22406,32 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 18,
     "title": "Part 13 - Câu 18",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới đây có nội dung trong thanh ghi A là 1CH.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "60",
-    "acceptable_answers": [
-      "60",
-      "60H",
-      "60",
-      "60h"
+    "prompt": "Chọn địa chỉ nạp vào R1 để ANL đọc byte đã ghi ở RAM 60H và cho A=1CH.",
+    "extra_lines": [
+      "MOV 60H, #1CH",
+      "MOV R1, #?",
+      "MOV A, #0DFH",
+      "ANL A, @R1",
+      "END"
     ],
-    "explanation": "Để lệnh gián tiếp `ANL A, @R1` đọc đúng byte dữ liệu từ ô nhớ RAM nội tương ứng nhằm cho kết quả $A = 1\\text{C}\\text{H}$, thanh ghi con trỏ R1 cần được nạp giá trị địa chỉ ô nhớ là $60\\text{H}$.",
-    "methodology": "Lệnh `ANL A, @R1` thực hiện phép AND giữa A với ô nhớ do R1 trỏ tới để A đạt $1\\text{C}\\text{H}$. Con trỏ $R1 = 60\\text{H}$.",
-    "tips_casio": "Con trỏ R1 nạp địa chỉ 60H. Điền: 60.",
+    "options": [
+      "70H",
+      "5FH",
+      "60H",
+      "61H"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "Thay ? bằng 60H: MOV 60H, #1CH: A=00H; MOV R1, #60H: A=00H; MOV A, #0DFH: A=DFH; ANL A, @R1: A=1CH. Kết quả: A=1CH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 60H: MOV 60H, #1CH: A=00H; MOV R1, #60H: A=00H; MOV A, #0DFH: A=DFH; ANL A, @R1: A=1CH. Kết quả: A=1CH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Hoàn thiện địa chỉ con trỏ RAM nội R1",
-    "images": [
-      "assets/images/p13_q18.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q19",
@@ -21768,26 +22440,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 19,
     "title": "Part 13 - Câu 19",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi R1 là 4EH.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "4E",
-    "acceptable_answers": [
-      "4E",
-      "4EH",
-      "4e",
-      "4eh"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để R1=4EH.",
+    "extra_lines": [
+      "MOV A, #?",
+      "MOV R1, #20H",
+      "XCH A, R1",
+      "END"
     ],
-    "explanation": "Để thanh ghi R1 có nội dung là $4\\text{E}\\text{H}$, giá trị hằng số tức thời cần hoàn thiện vào sau tiền tố '#' là $4\\text{E}\\text{H}$.",
-    "methodology": "Lệnh `MOV R1, #4EH` trực tiếp nạp giá trị $4\\text{E}\\text{H}$ vào thanh ghi R1.",
-    "tips_casio": "Điền trực tiếp: 4E.",
+    "options": [
+      "4DH",
+      "4EH",
+      "4FH",
+      "5EH"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "Thay ? bằng 4EH: MOV A, #4EH: A=4EH; MOV R1, #20H: A=4EH; XCH A, R1: A=20H. Kết quả: R1=4EH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 4EH: MOV A, #4EH: A=4EH; MOV R1, #20H: A=4EH; XCH A, R1: A=20H. Kết quả: R1=4EH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Nạp giá trị tức thời vào thanh ghi R1",
-    "images": [
-      "assets/images/p13_q19.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q20",
@@ -21796,26 +22473,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 20,
     "title": "Part 13 - Câu 20",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi A là 27H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "40",
-    "acceptable_answers": [
-      "40",
-      "40H",
-      "40",
-      "40h"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để A=27H.",
+    "extra_lines": [
+      "MOV A, #32H",
+      "ADD A, #?",
+      "SWAP A",
+      "END"
     ],
-    "explanation": "Để chương trình truy xuất đúng ô nhớ chứa dữ liệu cần thiết đưa vào thanh ghi tích lũy A đạt giá trị $27\\text{H}$, giá trị địa chỉ nạp vào thanh ghi con trỏ là $40\\text{H}$.",
-    "methodology": "Nạp địa chỉ $40\\text{H}$ vào con trỏ R0 để truy xuất dữ liệu ô nhớ chứa giá trị $27\\text{H}$.",
-    "tips_casio": "Con trỏ nạp địa chỉ 40H. Điền: 40.",
+    "options": [
+      "40H",
+      "41H",
+      "50H",
+      "3FH"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Thay ? bằng 40H: MOV A, #32H: A=32H; ADD A, #40H: 32H + 40H = 114 → A=72H; SWAP A: A=27H. Kết quả: A=27H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 40H: MOV A, #32H: A=32H; ADD A, #40H: 32H + 40H = 114 → A=72H; SWAP A: A=27H. Kết quả: A=27H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Địa chỉ ô nhớ con trỏ R0 cập nhật thanh ghi A",
-    "images": [
-      "assets/images/p13_q20.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q21",
@@ -21824,24 +22506,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 21,
     "title": "Part 13 - Câu 21",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong ô nhớ có địa chỉ 20H là 13H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "13H",
-    "acceptable_answers": [
-      "13",
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để 20H=13H.",
+    "extra_lines": [
+      "MOV A, #?",
+      "MOV 20H, #4BH",
+      "XCH A, 20H",
+      "END"
+    ],
+    "options": [
+      "12H",
+      "03H",
+      "14H",
       "13H"
     ],
-    "explanation": "Lệnh XCH A, 20H hoán đổi nội dung của thanh ghi tích lũy A và ô nhớ 20H. Để sau khi thực hiện, ô nhớ 20H nhận giá trị 13H, giá trị ban đầu cần nạp vào thanh ghi A trong lệnh MOV A, #___ là 13H (hoặc 19 thập phân).",
-    "methodology": "Thực hiện gán giá trị thông qua con trỏ địa chỉ gián tiếp để ô nhớ $20\\text{H}$ nhận giá trị $13\\text{H}$.",
-    "tips_casio": "XCH A, 20H hoán đổi A với RAM nội địa chỉ 20H. Muốn ô nhớ nhận 13H thì A ban đầu phải là 13H.",
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "Thay ? bằng 13H: MOV A, #13H: A=13H; MOV 20H, #4BH: A=13H; XCH A, 20H: A=4BH. Kết quả: 20H=13H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 13H: MOV A, #13H: A=13H; MOV 20H, #4BH: A=13H; XCH A, 20H: A=4BH. Kết quả: 20H=13H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Hoàn thiện giá trị địa chỉ cho ô nhớ 20H",
-    "images": [
-      "assets/images/p13_q21.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q22",
@@ -21850,28 +22539,32 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 22,
     "title": "Part 13 - Câu 22",
-    "prompt": "Xác định chức năng của chương trình con dưới đây:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, thạch anh 12 MHz. Tính thời gian thực thi từ lệnh MOV đầu tiên đến hết RET, không gồm thời gian lệnh gọi chương trình con.",
+    "extra_lines": [
+      "MOV R0, #0",
+      "DL: MOV R1, #179",
+      "DL1: DJNZ R1, DL1",
+      "DJNZ R0, DL",
+      "RET"
+    ],
     "options": [
-      "Tạo trễ thời gian 1s",
-      "Tạo trễ thời gian 10ms",
-      "Tạo trễ thời gian 1ms",
-      "Tạo trễ thời gian 100ms"
+      "92419 µs",
+      "9241 µs",
+      "184838 µs",
+      "93419 µs"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "A",
     "acceptable_answers": [
-      "C"
+      "A"
     ],
-    "explanation": "Chương trình con sử dụng hai vòng lặp với các giá trị thanh ghi đếm được thiết lập để tiêu tốn đúng khoảng thời gian $1000\\,\\mu\\text{s}$ (chu kỳ máy $2\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$), thực hiện chức năng: Tạo trễ thời gian $1\\,\\text{ms}$.",
-    "methodology": "Hai vòng lặp lồng nhau tiêu tốn xấp xỉ 500 chu kỳ máy $\\implies T = 500 \\times 2\\,\\mu\\text{s} = 1000\\,\\mu\\text{s} = 1\\,\\text{ms}$.",
-    "tips_casio": "Tổng chu kỳ tiêu tốn ~ $1000\\,\\mu\\text{s}$ -> Tạo trễ thời gian $1\\,\\text{ms}$.",
+    "explanation": "8051 12T, fosc=12 MHz nên mỗi chu kỳ máy là 1 µs. MOV Rn,#data: 1 chu kỳ; DJNZ Rn,rel: 2; RET: 2. 1 + 256 × (1 + 179 × 2 + 2) + 2 = 92419 µs. Rn khởi tạo 0 lặp 256 lần.",
+    "methodology": "8051 12T, fosc=12 MHz nên mỗi chu kỳ máy là 1 µs. MOV Rn,#data: 1 chu kỳ; DJNZ Rn,rel: 2; RET: 2. 1 + 256 × (1 + 179 × 2 + 2) + 2 = 92419 µs. Rn khởi tạo 0 lặp 256 lần.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "VD",
     "topic_name": "Chương trình con tạo trễ 1 mili-giây (1ms)",
-    "images": [
-      "assets/images/p13_q22.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q23",
@@ -21881,7 +22574,14 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "num": 23,
     "title": "Part 13 - Câu 23",
     "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây. Nội dung trong thanh ghi A là:",
-    "extra_lines": [],
+    "extra_lines": [
+      "MOV R1, #2BH",
+      "CJNE R1, #2BH, NHAN",
+      "MOV A, #4BH",
+      "SJMP KETTHUC",
+      "NHAN: MOV A, #0B4H",
+      "KETTHUC: END"
+    ],
     "options": [
       "2BH",
       "4BH",
@@ -21893,15 +22593,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Thanh ghi R1 mang giá trị $2\\text{B}\\text{H}$. Lệnh `CJNE R1, #2BH, NHAN` so sánh hai giá trị bằng nhau nên không thực hiện bước nhảy sang nhãn `NHAN`, CPU tiếp tục thực hiện câu lệnh kế tiếp là `MOV A, #4BH` rồi kết thúc. Giá trị trong A là $4\\text{B}\\text{H}$.",
-    "methodology": "R1 được nạp $2\\text{B}\\text{H}$. Lệnh `CJNE R1, #2BH, NHAN`: hai toán hạng bằng nhau ($2\\text{B}\\text{H} == 2\\text{B}\\text{H}$), KHÔNG rẽ nhánh, thực hiện lệnh tuần tự `MOV A, #4BH`.",
-    "tips_casio": "CJNE với cùng giá trị 2BH -> Không nhảy -> A = 4BH.",
+    "explanation": "MOV R1, #2BH: A=00H; CJNE R1, #2BH, NHAN: A=00H; MOV A, #4BH: A=4BH; SJMP KETTHUC: A=4BH. Kết quả cuối cùng: A=4BH. Số không có H là thập phân.",
+    "methodology": "MOV R1, #2BH: A=00H; CJNE R1, #2BH, NHAN: A=00H; MOV A, #4BH: A=4BH; SJMP KETTHUC: A=4BH. Kết quả cuối cùng: A=4BH. Số không có H là thập phân.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "VD",
     "topic_name": "Lệnh so sánh rẽ nhánh CJNE bằng nhau không nhảy",
-    "images": [
-      "assets/images/p13_q23.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q24",
@@ -21910,26 +22608,30 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 24,
     "title": "Part 13 - Câu 24",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi A là 80H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "40",
-    "acceptable_answers": [
-      "40",
-      "40H",
-      "40",
-      "40h"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để A=80H.",
+    "extra_lines": [
+      "MOV A, #?",
+      "RL A",
+      "END"
     ],
-    "explanation": "Để thanh ghi tích lũy A đạt giá trị $80\\text{H}$ sau khi thực hiện thao tác xoay trái `RL A`, giá trị ban đầu cần nạp vào thanh ghi A là $80\\text{H} / 2 = 40\\text{H}$.",
-    "methodology": "Hoàn thiện giá trị nạp $40\\text{H}$ ($0100\\,0000_2$), sau lệnh dịch trái hoặc nhân đôi ta được $A = 80\\text{H}$ ($1000\\,0000_2$).",
-    "tips_casio": "80H chia 2 = 40H. Điền: 40.",
+    "options": [
+      "40H",
+      "41H",
+      "50H",
+      "3FH"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Thay ? bằng 40H: MOV A, #40H: A=40H; RL A: A=80H. Kết quả: A=80H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 40H: MOV A, #40H: A=40H; RL A: A=80H. Kết quả: A=80H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO2",
     "level": "TH",
     "topic_name": "Phép toán dịch/xoay bit để A đạt 80H",
-    "images": [
-      "assets/images/p13_q24.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q25",
@@ -21938,28 +22640,43 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 25,
     "title": "Part 13 - Câu 25",
-    "prompt": "Cho chương trình Assembly thực hiện trên vi điều khiển 89C51 dưới đây. Chương trình thực hiện chức năng gì? (Biết tần số dao động thạch anh là 12MHz)",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian thực thi các lệnh ngoài thời gian đếm timer. Chương trình tạo dạng xung nào?",
+    "extra_lines": [
+      "MOV TMOD, #02H",
+      "LOOP: CLR TR0",
+      "SETB P1.6",
+      "MOV TH0, #216",
+      "MOV TL0, #216",
+      "CLR TF0",
+      "SETB TR0",
+      "HIGH_WAIT: JNB TF0, HIGH_WAIT",
+      "CLR TR0",
+      "CLR P1.6",
+      "MOV TH0, #56",
+      "MOV TL0, #56",
+      "CLR TF0",
+      "SETB TR0",
+      "LOW_WAIT: JNB TF0, LOW_WAIT",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Chương trình sử dụng timer 0 tạo sóng vuông có thời gian xung cao 50µs vàxung thấp là 200µs trên chân P1.6.",
-      "Chương trình sử dụng timer 1 tạo sóng vuông có chu kỳ 200µs trên chân P1.6.",
-      "Chương trình sử dụng timer 0 tạo sóng vuông có thời gian xung cao 40µs vàxung thấp là 200µs trên chân P1.6.",
-      "Chương trình sử dụng timer 0 tạo sóng vuông có tần số 50kHz trên chân P1.6."
+      "P1.6: mức cao 40 µs, mức thấp 200 µs",
+      "P1.6: mức cao 200 µs, mức thấp 40 µs",
+      "P1.6: chu kỳ 200 µs",
+      "P1.6: tần số 50 kHz"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "A",
     "acceptable_answers": [
-      "C"
+      "A"
     ],
-    "explanation": "Chương trình cấu hình Timer 0 ở Chế độ 2. Khi chân P1.6 ở mức cao (SETB P1.6), TH0 được nạp 216, thời gian xung cao là (256 - 216) x 1µs = 40µs. Khi chân P1.6 ở mức thấp (CLR P1.6), TH0 được nạp 56, thời gian xung thấp là (256 - 56) x 1µs = 200µs. Do đó tạo ra sóng có thời gian xung cao 40µs và xung thấp 200µs trên chân P1.6. Chọn đáp án C.",
-    "methodology": "Nạp hai giá trị định thời vào Timer 0: khoảng thời gian mức cao là $40\\,\\mu\\text{s}$ và khoảng thời gian mức thấp là $200\\,\\mu\\text{s}$ trên chân P1.6.",
-    "tips_casio": "Xung cao $40\\,\\mu\\text{s}$ và xung thấp $200\\,\\mu\\text{s}$ trên chân P1.6.",
+    "explanation": "Timer 0 mode 2, tick 1 µs. Mức cao: 256−216=40 tick; mức thấp: 256−56=200 tick. Tổng chu kỳ lý tưởng 240 µs. Đây là dạng xung chữ nhật, không phải sóng vuông 50% duty.",
+    "methodology": "Timer 0 mode 2, tick 1 µs. Mức cao: 256−216=40 tick; mức thấp: 256−56=200 tick. Tổng chu kỳ lý tưởng 240 µs. Đây là dạng xung chữ nhật, không phải sóng vuông 50% duty.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Timer 0 tạo xung chu kỳ với xung cao 40µs và xung thấp 200µs",
-    "images": [
-      "assets/images/p13_q06.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q26",
@@ -21968,26 +22685,30 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 26,
     "title": "Part 13 - Câu 26",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi A là 5AH",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "2D",
-    "acceptable_answers": [
-      "2D",
-      "2DH",
-      "2d",
-      "2dh"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để A=5AH.",
+    "extra_lines": [
+      "MOV A, #?",
+      "RL A",
+      "END"
     ],
-    "explanation": "Để sau lệnh xoay trái `RL A` nội dung trong thanh ghi A là $5\\text{A}\\text{H}$ ($0101\\,1010_2$), giá trị ban đầu trước khi xoay trái phải là kết quả của phép xoay phải một bit: $0010\\,1101_2 = 2\\text{D}\\text{H}$.",
-    "methodology": "Sau lệnh xoay trái `RL A`, $A = 5\\text{A}\\text{H} = 0101\\,1010_2$. Nghịch đảo xoay trái là xoay phải: $0010\\,1101_2 = 2\\text{D}\\text{H}$.",
-    "tips_casio": "5AH chia 2 = 2DH. Điền: 2D.",
+    "options": [
+      "3DH",
+      "2EH",
+      "2DH",
+      "2CH"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "Thay ? bằng 2DH: MOV A, #2DH: A=2DH; RL A: A=5AH. Kết quả: A=5AH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 2DH: MOV A, #2DH: A=2DH; RL A: A=5AH. Kết quả: A=5AH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nghịch đảo phép xoay trái RL A để A đạt 5AH",
-    "images": [
-      "assets/images/p13_q26.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q27",
@@ -21996,28 +22717,39 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 27,
     "title": "Part 13 - Câu 27",
-    "prompt": "Xác định chức năng của chương trình con dưới đây:",
-    "extra_lines": [],
+    "prompt": "R1 trỏ vào RAM nội: byte đầu chứa số phần tử n>0, tiếp theo n byte dữ liệu không dấu; cả dãy nằm dưới 80H. Chương trình con trả về gì trong A?",
+    "extra_lines": [
+      "MOV A, @R1",
+      "MOV R2, A",
+      "CLR A",
+      "LOOP: INC R1",
+      "CLR C",
+      "SUBB A, @R1",
+      "JNC KEEP",
+      "MOV A, @R1",
+      "SJMP NEXT",
+      "KEEP: ADD A, @R1",
+      "NEXT: DJNZ R2, LOOP",
+      "RET"
+    ],
     "options": [
-      "Tìm giá trị lớn nhất của một số đặt trong thanh ghi A",
-      "Tìm căn bậc hai của một số",
-      "Tìm giá trị nhỏ nhất của một số đặt trong thanh ghi A",
-      "Tìm bình phương của một số"
+      "Tìm giá trị lớn nhất của dãy số không dấu",
+      "Tính căn bậc hai của số đầu tiên",
+      "Tìm giá trị nhỏ nhất của dãy",
+      "Tính bình phương của số đầu tiên"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "A",
     "acceptable_answers": [
-      "C"
+      "A"
     ],
-    "explanation": "Chương trình thực hiện so sánh nội dung thanh ghi A với từng phần tử trong dãy số bộ nhớ thông qua lệnh trừ có mượn `SUBB`. Khi phát hiện phần tử mới nhỏ hơn giá trị hiện tại của A (cờ nhớ CY xuất hiện), chương trình cập nhật giá trị mới vào A, thực hiện thuật toán tìm giá trị nhỏ nhất.",
-    "methodology": "Khởi tạo A bằng phần tử đầu, duyệt mảng với `SUBB A, @R1`, nếu có mượn (CY=1) tức phần tử mới nhỏ hơn A thì cập nhật lại A.",
-    "tips_casio": "Dùng SUBB kiểm tra cờ mượn để cập nhật giá trị nhỏ hơn -> Tìm giá trị nhỏ nhất.",
+    "explanation": "Byte đầu tại R1 là số phần tử, được chuyển vào R2. A bắt đầu bằng 0. Nếu A−x có mượn thì x lớn hơn A và A được thay bằng x; nếu không mượn, ADD khôi phục A cũ. Vậy A giữ giá trị lớn nhất, không phải nhỏ nhất.",
+    "methodology": "Byte đầu tại R1 là số phần tử, được chuyển vào R2. A bắt đầu bằng 0. Nếu A−x có mượn thì x lớn hơn A và A được thay bằng x; nếu không mượn, ADD khôi phục A cũ. Vậy A giữ giá trị lớn nhất, không phải nhỏ nhất.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Thuật toán tìm giá trị nhỏ nhất (Min) của mảng số",
-    "images": [
-      "assets/images/p13_q27.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q28",
@@ -22026,26 +22758,34 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 28,
     "title": "Part 13 - Câu 28",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới đây có nội dung trong thanh ghi A là 7CH",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "4B",
-    "acceptable_answers": [
-      "4B",
-      "4BH",
-      "4b",
-      "4bh"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để A=7CH.",
+    "extra_lines": [
+      "MOV R0, #30H",
+      "MOV 31H, #?",
+      "MOV A, R0",
+      "INC A",
+      "MOV R0, A",
+      "ADD A, @R0",
+      "END"
     ],
-    "explanation": "Để sau các lệnh cộng và hiệu chỉnh thanh ghi A có kết quả là $7\\text{C}\\text{H}$, giá trị tham số cần hoàn thiện vào câu lệnh nạp tức thời là $4\\text{B}\\text{H}$.",
-    "methodology": "Phép toán cộng số học để tổng trong thanh ghi A đạt giá trị mục tiêu $7\\text{C}\\text{H}$. Giá trị nạp là $4\\text{B}\\text{H}$.",
-    "tips_casio": "Điền: 4B.",
+    "options": [
+      "4BH",
+      "4AH",
+      "5BH",
+      "4CH"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Thay ? bằng 4BH: MOV R0, #30H: A=00H; MOV 31H, #4BH: A=00H; MOV A, R0: A=30H; INC A: A=31H; MOV R0, A: A=31H; ADD A, @R0: 31H + 4BH = 124 → A=7CH. Kết quả: A=7CH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 4BH: MOV R0, #30H: A=00H; MOV 31H, #4BH: A=00H; MOV A, R0: A=30H; INC A: A=31H; MOV R0, A: A=31H; ADD A, @R0: 31H + 4BH = 124 → A=7CH. Kết quả: A=7CH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Hoàn thiện giá trị để thanh ghi A đạt 7CH",
-    "images": [
-      "assets/images/p13_q28.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q29",
@@ -22054,26 +22794,32 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 29,
     "title": "Part 13 - Câu 29",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi A là 2CH",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "3E",
-    "acceptable_answers": [
-      "3E",
-      "3EH",
-      "3e",
-      "3eh"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để A=2CH.",
+    "extra_lines": [
+      "MOV A, #18",
+      "MOV R1, #48",
+      "MOV 30H, #?",
+      "XRL A, @R1",
+      "END"
     ],
-    "explanation": "Giá trị cần nạp vào thanh ghi để sau khi thực thi đoạn mã đạt kết quả mong muốn $A = 2\\text{C}\\text{H}$ là $3\\text{E}\\text{H}$.",
-    "methodology": "Phép toán số học để nội dung thanh ghi A đạt $2\\text{C}\\text{H}$. Giá trị nạp là $3\\text{E}\\text{H}$.",
-    "tips_casio": "Điền: 3E.",
+    "options": [
+      "3FH",
+      "2EH",
+      "3DH",
+      "3EH"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "Thay ? bằng 3EH: MOV A, #18: A=12H; MOV R1, #48: A=12H; MOV 30H, #3EH: A=12H; XRL A, @R1: A=2CH. Kết quả: A=2CH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 3EH: MOV A, #18: A=12H; MOV R1, #48: A=12H; MOV 30H, #3EH: A=12H; XRL A, @R1: A=2CH. Kết quả: A=2CH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Hoàn thiện giá trị để thanh ghi A đạt 2CH",
-    "images": [
-      "assets/images/p13_q29.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q30",
@@ -22082,28 +22828,34 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 30,
     "title": "Part 13 - Câu 30",
-    "prompt": "Xác định chức năng của chương trình con dưới đây:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, thạch anh 12 MHz. Tính thời gian thực thi từ lệnh MOV đầu tiên đến hết RET, không gồm thời gian lệnh gọi chương trình con.",
+    "extra_lines": [
+      "MOV R5, #5",
+      "DL: MOV R6, #200",
+      "DL1: MOV R7, #250",
+      "DL2: DJNZ R7, DL2",
+      "DJNZ R6, DL1",
+      "DJNZ R5, DL",
+      "RET"
+    ],
     "options": [
-      "Tạo trễ thời gian 50ms",
-      "Tạo trễ thời gian 500ms",
-      "Tạo trễ thời gian 5ms",
-      "Tạo trễ thời gian 5s"
+      "503018 µs",
+      "50301 µs",
+      "1006036 µs",
+      "504018 µs"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "A",
     "acceptable_answers": [
-      "B"
+      "A"
     ],
-    "explanation": "Chương trình con sử dụng ba vòng lặp lồng nhau với tích các số đếm $5 \\times 200 \\times 250$ tiêu tốn khoảng $500{,}000$ chu kỳ máy, tương đương khoảng thời gian trễ chuẩn là $500\\,\\text{ms}$.",
-    "methodology": "Ba vòng lặp lồng nhau tiêu tốn xấp xỉ $500{,}000$ chu kỳ máy (với $T_{\\text{cm}} = 1\\,\\mu\\text{s}$) $\\implies T = 500\\,\\text{ms}$.",
-    "tips_casio": "R7=5, R6=200, R5=250 -> 5 x 200 x 250 x 2 = 500,$000\\,\\mu\\text{s}$ = $500\\,\\text{ms}$.",
+    "explanation": "8051 12T, fosc=12 MHz nên mỗi chu kỳ máy là 1 µs. MOV Rn,#data: 1 chu kỳ; DJNZ Rn,rel: 2; RET: 2. 1 + 5 × [1 + 200 × (1 + 250 × 2 + 2) + 2] + 2 = 503018 µs. Rn khởi tạo 0 lặp 256 lần.",
+    "methodology": "8051 12T, fosc=12 MHz nên mỗi chu kỳ máy là 1 µs. MOV Rn,#data: 1 chu kỳ; DJNZ Rn,rel: 2; RET: 2. 1 + 5 × [1 + 200 × (1 + 250 × 2 + 2) + 2] + 2 = 503018 µs. Rn khởi tạo 0 lặp 256 lần.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Hàm con tạo thời gian trễ 500 mili-giây (500ms)",
-    "images": [
-      "assets/images/p13_q30.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q31",
@@ -22112,26 +22864,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 31,
     "title": "Part 13 - Câu 31",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi A là 91H",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "58",
-    "acceptable_answers": [
-      "58",
-      "58H",
-      "58",
-      "58h"
+    "prompt": "Chọn toán hạng bit điền vào ? để A cuối cùng bằng 91H.",
+    "extra_lines": [
+      "MOV A, #15H",
+      "SETB ?",
+      "ANL A, #9BH",
+      "END"
     ],
-    "explanation": "Giá trị số Hex cần hoàn thiện vào chỗ trống của câu lệnh để thanh ghi A đạt kết quả mong muốn $91\\text{H}$ sau các thao tác xử lý logic là $58\\text{H}$.",
-    "methodology": "Hoàn thiện giá trị nạp vào để sau phép AND logic với dữ liệu có sẵn thu được kết quả $A = 91\\text{H}$. Giá trị là $58\\text{H}$.",
-    "tips_casio": "Điền: 58.",
+    "options": [
+      "ACC.4",
+      "ACC.5",
+      "ACC.6",
+      "ACC.7"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "A=15H. SETB ACC.7 tạo A=95H; 95H AND 9BH = 91H. Chỗ trống là địa chỉ bit, không phải số tức thời.",
+    "methodology": "A=15H. SETB ACC.7 tạo A=95H; 95H AND 9BH = 91H. Chỗ trống là địa chỉ bit, không phải số tức thời.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Phép toán logic ANL để thanh ghi A đạt 91H",
-    "images": [
-      "assets/images/p13_q31.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q32",
@@ -22141,7 +22898,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "num": 32,
     "title": "Part 13 - Câu 32",
     "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây. Nội dung trong thanh ghi A là:",
-    "extra_lines": [],
+    "extra_lines": [
+      "MOV R1, #10",
+      "MOV A, #100",
+      "LAP: DEC A",
+      "DJNZ R1, LAP",
+      "END"
+    ],
     "options": [
       "10H",
       "64H",
@@ -22153,15 +22916,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Thanh ghi A được khởi tạo giá trị thập phân 100. Vòng lặp `DEC A` lặp 10 lần qua lệnh `DJNZ R1, LAP` (với R1 nạp bằng 10). Giá trị còn lại trong A là $100 - 10 = 90$ thập phân. Đổi sang hệ thập lục phân ta được $5\\text{A}\\text{H}$.",
-    "methodology": "$A = 100$ (thập phân), lặp 10 lần `DEC A` $\\implies A = 100 - 10 = 90$ (thập phân). Đổi 90 sang Hex: $90 = 5 \\times 16 + 10 = 5\\text{A}\\text{H}$.",
-    "tips_casio": "100 - 10 = 90 (thập phân) -> HEX: 5AH.",
+    "explanation": "MOV R1, #10: A=00H; MOV A, #100: A=64H; DEC A: A=63H; DJNZ R1, LAP: A=63H; DEC A: A=62H; DJNZ R1, LAP: A=62H; DEC A: A=61H; DJNZ R1, LAP: A=61H. Kết quả cuối cùng: A=5AH. Số không có H là thập phân.",
+    "methodology": "MOV R1, #10: A=00H; MOV A, #100: A=64H; DEC A: A=63H; DJNZ R1, LAP: A=63H; DEC A: A=62H; DJNZ R1, LAP: A=62H; DEC A: A=61H; DJNZ R1, LAP: A=61H. Kết quả cuối cùng: A=5AH. Số không có H là thập phân.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Vòng lặp giảm liên tiếp 10 lần từ giá trị 100",
-    "images": [
-      "assets/images/p13_q32.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q33",
@@ -22171,7 +22932,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "num": 33,
     "title": "Part 13 - Câu 33",
     "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây. Nội dung trong thanh ghi A là:",
-    "extra_lines": [],
+    "extra_lines": [
+      "MOV R1, #5",
+      "MOV A, #3BH",
+      "LAP: RL A",
+      "DJNZ R1, LAP",
+      "END"
+    ],
     "options": [
       "B3H",
       "76H",
@@ -22183,15 +22950,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Thanh ghi A ban đầu chứa giá trị $3\\text{B}\\text{H} = 0011\\,1011_2$. Vòng lặp `RL A` thực hiện đúng 5 lần: sau lần 1 được $76\\text{H}$, lần 2 được $\\text{ECH}$, lần 3 được $\\text{D9H}$, lần 4 được $\\text{B3H}$, và lần 5 được $67\\text{H}$ ($0110\\,0111_2$). Nội dung trong A là $67\\text{H}$.",
-    "methodology": "$3\\text{B}\\text{H} = 0011\\,1011_2$. Xoay trái 5 lần: L1: $76\\text{H} \\to$ L2: $\\text{ECH} \\to$ L3: $\\text{D9H} \\to$ L4: $\\text{B3H} \\to$ L5: $67\\text{H}$.",
-    "tips_casio": "Xoay trái 5 lần của 3BH ra 67H.",
+    "explanation": "MOV R1, #5: A=00H; MOV A, #3BH: A=3BH; RL A: A=76H; DJNZ R1, LAP: A=76H; RL A: A=ECH; DJNZ R1, LAP: A=ECH; RL A: A=D9H; DJNZ R1, LAP: A=D9H. Kết quả cuối cùng: A=67H. Số không có H là thập phân.",
+    "methodology": "MOV R1, #5: A=00H; MOV A, #3BH: A=3BH; RL A: A=76H; DJNZ R1, LAP: A=76H; RL A: A=ECH; DJNZ R1, LAP: A=ECH; RL A: A=D9H; DJNZ R1, LAP: A=D9H. Kết quả cuối cùng: A=67H. Số không có H là thập phân.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Vòng lặp xoay trái 5 lần từ giá trị 3BH",
-    "images": [
-      "assets/images/p13_q33.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q34",
@@ -22200,28 +22965,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 34,
     "title": "Part 13 - Câu 34",
-    "prompt": "Xác định chức năng của chương trình con được thực hiện bởi vi điều khiển 89C51 dưới đây:",
-    "extra_lines": [],
+    "prompt": "A ban đầu là số nguyên không dấu từ 0 đến 9. Chương trình con sau trả về gì?",
+    "extra_lines": [
+      "SQR: ADD A, #01H",
+      "MOVC A, @A+PC",
+      "RET",
+      "TABLE: DB 0, 1, 4, 9, 16, 25, 36, 49, 64, 81"
+    ],
     "options": [
-      "Tìm giá trị lớn nhất của một các số trong bảng tra",
-      "Tìm giá trị nhỏ nhất của một các số trong bảng tra",
-      "Tìm giá trị đặt tại bảng tra tương ứng",
-      "Cất giá trị tìm được vào bảng tra"
+      "Tìm số lớn nhất trong bảng",
+      "Tìm số nhỏ nhất trong bảng",
+      "Trả về bình phương của A trong A",
+      "Ghi giá trị A vào bảng"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Đoạn mã sử dụng lệnh đọc bộ nhớ chương trình `MOVC A, @A+PC` kết hợp với nhãn bảng dữ liệu `TAB` chứa các phần tử tính toán sẵn (bảng bình phương các số), thực hiện chức năng: Tìm giá trị đặt tại bảng tra tương ứng.",
-    "methodology": "Sử dụng lệnh `MOVC A, @A+PC` để đọc phần tử thứ A trong bảng hằng số `TAB` khai báo bằng chỉ dẫn `DB`.",
-    "tips_casio": "Dùng MOVC đọc bảng hằng số DB -> Tìm giá trị đặt tại bảng tra tương ứng.",
+    "explanation": "MOVC A,@A+PC dùng PC đã trỏ tới RET. ADD A,#1 bỏ qua byte RET để A=0..9 chọn phần tử tương ứng trong bảng 0²..9².",
+    "methodology": "MOVC A,@A+PC dùng PC đã trỏ tới RET. ADD A,#1 bỏ qua byte RET để A=0..9 chọn phần tử tương ứng trong bảng 0²..9².",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình bảng tra cứu dữ liệu (Lookup Table)",
-    "images": [
-      "assets/images/p13_q34.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q35",
@@ -22230,28 +22998,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 35,
     "title": "Part 13 - Câu 35",
-    "prompt": "Cho chương trình con thực hiện bởi vi điều khiển 89C51, biết tần số thạch anh là 6MHz, hãy xác định chức năng của chương trình:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=6 MHz. Bỏ qua thời gian lệnh ngoài timer. Dạng xung ở P1.5 có chu kỳ và tần số nào?",
+    "extra_lines": [
+      "MOV TMOD, #10H",
+      "LOOP: CLR TR1",
+      "MOV TH1, #0B1H",
+      "MOV TL1, #0E0H",
+      "CLR TF1",
+      "SETB TR1",
+      "WAIT: JNB TF1, WAIT",
+      "CLR TR1",
+      "CPL P1.5",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Tạo trễ thời gian 50Hz, cổng P1.5",
-      "Tạo trễ thời gian 2.5ms từ cổng P1.5",
-      "Tạo xung vuông có tần số 25Hz, xuất từ cổng P1.5",
-      "Tạo trễ thời gian 5ms từ cổng P1.5"
+      "Chu kỳ 5,056 ms, tần số 197,78 Hz",
+      "Chu kỳ 20 ms, tần số 50 Hz",
+      "P1.5: chu kỳ 10,112 ms, tần số xấp xỉ 98,89 Hz",
+      "Chu kỳ 40 ms, tần số 25 Hz"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Chương trình cấu hình Timer tạo khoảng thời gian trễ nửa chu kỳ $20\\,\\text{ms}$, kết hợp lệnh đảo trạng thái chân cổng `CPL P1.5`, tạo ra dạng sóng vuông tuần hoàn có chu kỳ toàn phần $T = 40\\,\\text{ms}$, tương ứng tần số dao động là $f = \\frac{1}{0.04\\,\\text{s}} = 25\\,\\text{Hz}$ tại chân P1.5.",
-    "methodology": "Với $f_{\\text{osc}} = 6\\,\\text{MHz}$ ($T_{\\text{cm}} = 2\\,\\mu\\text{s}$), nửa chu kỳ trễ $20\\,\\text{ms}$, toàn chu kỳ $T = 40\\,\\text{ms} \\implies f = 1 / 0.04 = 25\\,\\text{Hz}$.",
-    "tips_casio": "Tạo xung vuông tần số $25\\,\\text{Hz}$ xuất từ cổng P1.5.",
+    "explanation": "TMOD=10H: Timer 1 mode 0 (13 bit). X=B1H×32+(E0H AND 1FH)=5664. Còn 8192−5664=2528 tick, mỗi tick 2 µs ở 6 MHz. Một lần đảo chân mất 5056 µs; chu kỳ là 10112 µs, f≈98,89 Hz.",
+    "methodology": "TMOD=10H: Timer 1 mode 0 (13 bit). X=B1H×32+(E0H AND 1FH)=5664. Còn 8192−5664=2528 tick, mỗi tick 2 µs ở 6 MHz. Một lần đảo chân mất 5056 µs; chu kỳ là 10112 µs, f≈98,89 Hz.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Timer tạo xung vuông tuần hoàn 25Hz tại P1.5",
-    "images": [
-      "assets/images/p13_q35.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q36",
@@ -22261,27 +23038,34 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "num": 36,
     "title": "Part 13 - Câu 36",
     "prompt": "Xác định chức năng của chương trình con dưới đây:",
-    "extra_lines": [],
+    "extra_lines": [
+      "MOV 21H, #0",
+      "MOV R2, #08H",
+      "MOV A, 20H",
+      "LOOP: RLC A",
+      "JNC NEXT",
+      "INC 21H",
+      "NEXT: DJNZ R2, LOOP",
+      "RET"
+    ],
     "options": [
-      "Tìm số các số 1 trong nội dung trong ô nhớ RAM 21H, nội dung lưu trong ô nhớ20H",
-      "Tìm các số 0 trong nội dung trong ô nhớ RAM 21H, nội dung lưu trong ô nhớ20H",
-      "Tìm số các số 1 trong nội dung trong ô nhớ RAM 20H, nội dung lưu trong ô nhớ21H",
-      "Tìm các số 0 trong nội dung trong ô nhớ RAM 20H, nội dung lưu trong ô nhớ21H"
+      "Đếm bit 1 của RAM 21H, lưu tại 20H",
+      "Đếm bit 0 của RAM 21H, lưu tại 20H",
+      "Đếm số bit 1 của byte RAM 20H, lưu số đếm tại 21H",
+      "Đếm bit 0 của RAM 20H, lưu tại 21H"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Chương trình đọc byte dữ liệu từ ô nhớ $20\\text{H}$, sử dụng vòng lặp 8 lần xoay bit qua cờ nhớ (lệnh `RRC A`), mỗi khi cờ Carry bằng 1 thì tăng giá trị ô nhớ $21\\text{H}$, thực hiện chức năng: Tìm số các số 1 trong nội dung trong ô nhớ RAM $20\\text{H}$, nội dung lưu trong ô nhớ $21\\text{H}$.",
-    "methodology": "Đọc byte từ ô nhớ RAM $20\\text{H}$, xoay bit qua cờ nhớ và cộng dồn số lần xuất hiện bit 1 vào ô nhớ $21\\text{H}$.",
-    "tips_casio": "Duyệt xoay bit kiểm tra cờ C -> Đếm số lượng các bit 1 trong ô nhớ 20H, lưu kết quả tại 21H.",
+    "explanation": "RLC chuyển bit cao của A vào CY. Mỗi lần CY=1 thì tăng 21H. Lặp đúng 8 lần nên đếm toàn bộ 8 bit gốc của RAM 20H.",
+    "methodology": "RLC chuyển bit cao của A vào CY. Mỗi lần CY=1 thì tăng 21H. Lặp đúng 8 lần nên đếm toàn bộ 8 bit gốc của RAM 20H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Thuật toán đếm số lượng bit 1 trong 1 byte dữ liệu",
-    "images": [
-      "assets/images/p13_q36.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q37",
@@ -22290,26 +23074,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 37,
     "title": "Part 13 - Câu 37",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới có nội dung trong thanh ghi R1 là C1H.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "B5",
-    "acceptable_answers": [
-      "B5",
-      "B5H",
-      "b5",
-      "b5h"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để A=C1H.",
+    "extra_lines": [
+      "MOV A, #?",
+      "ADD A, #0CDH",
+      "RRC A",
+      "END"
     ],
-    "explanation": "Giá trị cần điền vào câu lệnh để sau khi thực thi thanh ghi R1 đạt giá trị $\\text{C1H}$ là $\\text{B5H}$.",
-    "methodology": "Thực hiện phép toán số học để giá trị trong thanh ghi R1 đạt kết quả mục tiêu là $\\text{C1H}$. Giá trị nạp là $\\text{B5H}$.",
-    "tips_casio": "Điền: B5.",
+    "options": [
+      "B4H",
+      "A5H",
+      "00H",
+      "B5H"
+    ],
+    "type": "mcq",
+    "answer": "D",
+    "acceptable_answers": [
+      "D"
+    ],
+    "explanation": "Thay ? bằng B5H: MOV A, #B5H: A=B5H; ADD A, #0CDH: B5H + CDH = 386 → A=82H; RRC A: A=C1H. Kết quả: A=C1H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện. Có hai giá trị toàn cục B5H/B6H cho cùng kết quả RRC; B6H được loại khỏi các lựa chọn để đề trắc nghiệm có một đáp án.",
+    "methodology": "Thay ? bằng B5H: MOV A, #B5H: A=B5H; ADD A, #0CDH: B5H + CDH = 386 → A=82H; RRC A: A=C1H. Kết quả: A=C1H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện. Có hai giá trị toàn cục B5H/B6H cho cùng kết quả RRC; B6H được loại khỏi các lựa chọn để đề trắc nghiệm có một đáp án.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Hoàn thiện giá trị cho thanh ghi R1 đạt C1H",
-    "images": [
-      "assets/images/p13_q37.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q38",
@@ -22319,7 +23108,16 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "num": 38,
     "title": "Part 13 - Câu 38",
     "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây. Nội dung ô nhớ có địa chỉ 30H là:",
-    "extra_lines": [],
+    "extra_lines": [
+      "MOV A, #3BH",
+      "MOV R0, #0B3H",
+      "ADD A, R0",
+      "CJNE A, #0EEH, NHAN",
+      "MOV 30H, #23",
+      "SJMP KETTHUC",
+      "NHAN: MOV 30H, #32",
+      "KETTHUC: END"
+    ],
     "options": [
       "23H",
       "EEH",
@@ -22331,15 +23129,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Phép cộng $3\\text{B}\\text{H} + \\text{B}3\\text{H} = \\text{EEH}$. Lệnh so sánh `CJNE A, #EEH, NHAN` nhận thấy hai giá trị bằng nhau nên không rẽ nhánh, thực hiện lệnh tiếp theo là `MOV 30H, #23`. Giá trị hằng số 23 trong hệ thập phân tương ứng với mã Hex là $17\\text{H}$, do đó nội dung ô nhớ $30\\text{H}$ là $17\\text{H}$.",
-    "methodology": "$3\\text{B}\\text{H} + \\text{B}3\\text{H} = \\text{EEH}$. Lệnh `CJNE A, #EEH, NHAN` không nhảy vì bằng nhau. Thực hiện `MOV 30H, #23`. Đổi 23 thập phân ra Hex: $23 = 17\\text{H}$.",
-    "tips_casio": "23 thập phân = 17H. Đáp án là 17H.",
+    "explanation": "MOV A, #3BH: A=3BH; MOV R0, #0B3H: A=3BH; ADD A, R0: 3BH + B3H = 238 → A=EEH; CJNE A, #0EEH, NHAN: A=EEH; MOV 30H, #23: A=EEH; SJMP KETTHUC: A=EEH. Kết quả cuối cùng: 30H=17H. Số không có H là thập phân.",
+    "methodology": "MOV A, #3BH: A=3BH; MOV R0, #0B3H: A=3BH; ADD A, R0: 3BH + B3H = 238 → A=EEH; CJNE A, #0EEH, NHAN: A=EEH; MOV 30H, #23: A=EEH; SJMP KETTHUC: A=EEH. Kết quả cuối cùng: 30H=17H. Số không có H là thập phân.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "So sánh CJNE bằng nhau không rẽ nhánh và đổi số thập phân",
-    "images": [
-      "assets/images/p13_q38.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q39",
@@ -22348,26 +23144,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 39,
     "title": "Part 13 - Câu 39",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới đây có nội dung trong thanh ghi B là 02H, thanh ghi A là 04H:",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "7B",
-    "acceptable_answers": [
-      "7B",
-      "7BH",
-      "7b",
-      "7bh"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để B=02H, A=04H.",
+    "extra_lines": [
+      "MOV A, #30",
+      "MOV B, #?",
+      "DIV AB",
+      "END"
     ],
-    "explanation": "Giá trị hằng số cần hoàn thiện vào chỗ trống để đoạn chương trình cho kết quả thanh ghi B là $02\\text{H}$ và thanh ghi A là $04\\text{H}$ là $7\\text{B}\\text{H}$.",
-    "methodology": "Thực hiện phép chia để thương số trong A là $04\\text{H}$ và phần dư trong B là $02\\text{H}$. Giá trị nạp là $7\\text{B}\\text{H}$.",
-    "tips_casio": "Điền: 7B.",
+    "options": [
+      "08H",
+      "07H",
+      "06H",
+      "17H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "Thay ? bằng 07H: MOV A, #30: A=1EH; MOV B, #07H: A=1EH; DIV AB: A=04H. Kết quả: B=02H, A=04H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 07H: MOV A, #30: A=1EH; MOV B, #07H: A=1EH; DIV AB: A=04H. Kết quả: B=02H, A=04H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Hoàn thiện giá trị phép chia số học DIV AB",
-    "images": [
-      "assets/images/p13_q39.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q40",
@@ -22376,26 +23177,32 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 40,
     "title": "Part 13 - Câu 40",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình thực hiện trên vi điều khiển 89C51 có nội dung trong thanh ghi A là 7CH và ô nhớ địa chỉ 30H là 4BH",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "7B",
-    "acceptable_answers": [
-      "7B",
-      "7BH",
-      "7b",
-      "7bh"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để A=7CH, 30H=4BH.",
+    "extra_lines": [
+      "MOV R0, #30H",
+      "MOV A, #?",
+      "MOV 30H, #4CH",
+      "XCHD A, @R0",
+      "END"
     ],
-    "explanation": "Giá trị tham số cần điền vào chỗ trống để chương trình đạt kết quả thanh ghi A là $7\\text{C}\\text{H}$ và ô nhớ $30\\text{H}$ là $4\\text{B}\\text{H}$ là $7\\text{B}\\text{H}$.",
-    "methodology": "Hoàn thiện giá trị nạp tức thời $7\\text{B}\\text{H}$ vào chương trình.",
-    "tips_casio": "Điền: 7B.",
+    "options": [
+      "7BH",
+      "7AH",
+      "6BH",
+      "7CH"
+    ],
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Thay ? bằng 7BH: MOV R0, #30H: A=00H; MOV A, #7BH: A=7BH; MOV 30H, #4CH: A=7BH; XCHD A, @R0: A=7CH. Kết quả: A=7CH, 30H=4BH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 7BH: MOV R0, #30H: A=00H; MOV A, #7BH: A=7BH; MOV 30H, #4CH: A=7BH; XCHD A, @R0: A=7CH. Kết quả: A=7CH, 30H=4BH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Hoàn thiện giá trị để A là 7CH và ô nhớ 30H là 4BH",
-    "images": [
-      "assets/images/p13_q40.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q41",
@@ -22405,7 +23212,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "num": 41,
     "title": "Part 13 - Câu 41",
     "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây. Nội dung trong thanh ghi A là:",
-    "extra_lines": [],
+    "extra_lines": [
+      "MOV R1, #10",
+      "MOV A, #20",
+      "LAP: ADD A, #2",
+      "DJNZ R1, LAP",
+      "END"
+    ],
     "options": [
       "40H",
       "30H",
@@ -22417,15 +23230,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Thanh ghi A được gán giá trị khởi tạo là 20 (thập phân). Vòng lặp `LAP: ADD A, #2` được thực hiện đúng 10 lần thông qua thanh ghi đếm R1 (`DJNZ R1, LAP`). Sau 10 lần lặp, nội dung thanh ghi A là $20 + (10 \\times 2) = 40$ thập phân. Đổi sang hệ thập lục phân ta được $28\\text{H}$.",
-    "methodology": "$A = 20$ (thập phân), cộng dồn $10 \\times 2 = 20 \\implies A = 20 + 20 = 40$ (thập phân). Đổi 40 sang Hex: $40 = 28\\text{H}$.",
-    "tips_casio": "20 + 10 x 2 = 40 (thập phân) = 28H.",
+    "explanation": "MOV R1, #10: A=00H; MOV A, #20: A=14H; ADD A, #2: 14H + 02H = 22 → A=16H; DJNZ R1, LAP: A=16H; ADD A, #2: 16H + 02H = 24 → A=18H; DJNZ R1, LAP: A=18H; ADD A, #2: 18H + 02H = 26 → A=1AH; DJNZ R1, LAP: A=1AH. Kết quả cuối cùng: A=28H. Số không có H là thập phân.",
+    "methodology": "MOV R1, #10: A=00H; MOV A, #20: A=14H; ADD A, #2: 14H + 02H = 22 → A=16H; DJNZ R1, LAP: A=16H; ADD A, #2: 16H + 02H = 24 → A=18H; DJNZ R1, LAP: A=18H; ADD A, #2: 18H + 02H = 26 → A=1AH; DJNZ R1, LAP: A=1AH. Kết quả cuối cùng: A=28H. Số không có H là thập phân.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Vòng lặp cộng dồn liên tiếp 10 lần số 2",
-    "images": [
-      "assets/images/p13_q41.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q42",
@@ -22434,26 +23245,31 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 42,
     "title": "Part 13 - Câu 42",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới đây có nội dung trong thanh ghi B là 28H, thanh ghi A là 00H:",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "40",
-    "acceptable_answers": [
-      "40",
-      "40H",
-      "40",
-      "40h"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để B=28H, A=00H.",
+    "extra_lines": [
+      "MOV A, #?",
+      "MOV B, #0A0H",
+      "MUL AB",
+      "END"
     ],
-    "explanation": "Giá trị cần hoàn thiện vào chỗ trống để thanh ghi B nhận giá trị $28\\text{H}$ và thanh ghi A nhận giá trị $00\\text{H}$ là $40\\text{H}$.",
-    "methodology": "Giá trị tham số cần nạp vào thanh ghi là $40\\text{H}$.",
-    "tips_casio": "Điền: 40.",
+    "options": [
+      "50H",
+      "3FH",
+      "40H",
+      "41H"
+    ],
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "Thay ? bằng 40H: MOV A, #40H: A=40H; MOV B, #0A0H: A=40H; MUL AB: A=00H. Kết quả: B=28H, A=00H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 40H: MOV A, #40H: A=40H; MOV B, #0A0H: A=40H; MUL AB: A=00H. Kết quả: B=28H, A=00H. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Hoàn thiện giá trị để B là 28H và A là 00H",
-    "images": [
-      "assets/images/p13_q42.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_13_Q43",
@@ -22462,26 +23278,34 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 13: Chương Trình Con & Cấu Trúc Trễ Delay",
     "num": 43,
     "title": "Part 13 - Câu 43",
-    "prompt": "Hoàn thiện giá trị vào chỗ trống để chương trình dưới đây có nội dung trong thanh ghi A là 7BH.",
-    "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "30",
-    "acceptable_answers": [
-      "30",
-      "30H",
-      "30",
-      "30h"
+    "prompt": "Trong bốn phương án, chọn giá trị thay ? để A=7BH.",
+    "extra_lines": [
+      "MOV R0, #31H",
+      "MOV R1, #4BH",
+      "MOV 30H, #?",
+      "DEC R0",
+      "MOV A, R1",
+      "ADD A, @R0",
+      "END"
     ],
-    "explanation": "Giá trị cần hoàn thiện vào câu lệnh để sau khi thực thi nội dung thanh ghi A đạt giá trị $7\\text{B}\\text{H}$ là $30\\text{H}$.",
-    "methodology": "Giá trị tham số cần nạp vào thanh ghi là $30\\text{H}$.",
-    "tips_casio": "Điền: 30.",
+    "options": [
+      "2FH",
+      "30H",
+      "31H",
+      "20H"
+    ],
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "Thay ? bằng 30H: MOV R0, #31H: A=00H; MOV R1, #4BH: A=00H; MOV 30H, #30H: A=00H; DEC R0: A=00H; MOV A, R1: A=4BH; ADD A, @R0: 4BH + 30H = 123 → A=7BH. Kết quả: A=7BH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "methodology": "Thay ? bằng 30H: MOV R0, #31H: A=00H; MOV R1, #4BH: A=00H; MOV 30H, #30H: A=00H; DEC R0: A=00H; MOV A, R1: A=4BH; ADD A, @R0: 4BH + 30H = 123 → A=7BH. Kết quả: A=7BH. Đã thử lại cả bốn lựa chọn, chỉ một lựa chọn thỏa điều kiện.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Hoàn thiện giá trị để thanh ghi A đạt 7BH",
-    "images": [
-      "assets/images/p13_q43.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_14_Q04",
@@ -22503,9 +23327,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Bit TR1 (Timer 1 Run Control) trong thanh ghi TCON có chức năng khởi động (bật) Timer 1 khi TR1=1 và dừng khi TR1=0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TR1 là bit chạy/dừng Timer 1 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE1=1 còn cần chân INT1 ở mức cao.",
+    "methodology": "TR1 là bit chạy/dừng Timer 1 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE1=1 còn cần chân INT1 ở mức cao.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22531,9 +23355,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Để Timer hoạt động ở chế độ Đếm sự kiện (Counter), cần thiết lập bit C/T = 1 trong thanh ghi TMOD.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "C/T=0 chọn định thời bằng xung nội fosc/12; C/T=1 chọn đếm cạnh xuống tại T0/T1. TR và GATE điều khiển cho phép chạy.",
+    "methodology": "C/T=0 chọn định thời bằng xung nội fosc/12; C/T=1 chọn đếm cạnh xuống tại T0/T1. TR và GATE điều khiển cho phép chạy.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22559,9 +23383,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Bit TF0 (Timer 0 Overflow Flag) trong thanh ghi TCON được dùng để kiểm tra trạng thái tràn của Timer 0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TF0 là cờ tràn Timer 0. Xóa TF0 để xác nhận lần tràn trước; việc này không dừng timer (TR0 mới điều khiển chạy/dừng).",
+    "methodology": "TF0 là cờ tràn Timer 0. Xóa TF0 để xác nhận lần tràn trước; việc này không dừng timer (TR0 mới điều khiển chạy/dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22574,7 +23398,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 7,
     "title": "Part 14 - Câu 7",
-    "prompt": "Trên vi điều khiển 89C51, sau khi chọn chế độ hoạt động cho Timer 1 trong thanh ghi TMOD, bước tiếp theo là gì?",
+    "prompt": "Trên vi điều khiển 89C51, sau khi chọn chế độ hoạt động cho Timer 1 trong thanh ghi TMOD, bước tiếp theo là gì? Giả sử TR1=0 và cần chuẩn bị một khoảng định thời mới trước khi chạy.",
     "extra_lines": [],
     "options": [
       "Thiết lập giá trị ban đầu cho Timer",
@@ -22587,9 +23411,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Sau khi chọn chế độ TMOD, bước tiếp theo là nạp giá trị đếm ban đầu vào các thanh ghi TH/TL.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "Trình tự an toàn: dừng timer, chọn chế độ bằng TMOD, nạp giá trị ban đầu, xóa TF, rồi bật TR. Lặp khoảng định thời mode 1 cần nạp lại TH/TL.",
+    "methodology": "Trình tự an toàn: dừng timer, chọn chế độ bằng TMOD, nạp giá trị ban đầu, xóa TF, rồi bật TR. Lặp khoảng định thời mode 1 cần nạp lại TH/TL.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22602,7 +23426,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 8,
     "title": "Part 14 - Câu 8",
-    "prompt": "Trên vi điều khiển 89C51, sau khi thiết lập giá trị ban đầu cho Timer 1, bước tiếp theo là gì?",
+    "prompt": "Trên vi điều khiển 89C51, sau khi thiết lập giá trị ban đầu cho Timer 1, bước tiếp theo là gì? Giả sử chế độ và GATE đã đúng, TF1 đã được xóa, chân INT1 thỏa điều kiện nếu GATE1=1.",
     "extra_lines": [],
     "options": [
       "Thiết lập bit GATE",
@@ -22615,9 +23439,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Sau khi nạp giá trị ban đầu vào TH1/TL1, bước tiếp theo là khởi động Timer 1 bằng lệnh SETB TR1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "Trình tự an toàn: dừng timer, chọn chế độ bằng TMOD, nạp giá trị ban đầu, xóa TF, rồi bật TR. Lặp khoảng định thời mode 1 cần nạp lại TH/TL.",
+    "methodology": "Trình tự an toàn: dừng timer, chọn chế độ bằng TMOD, nạp giá trị ban đầu, xóa TF, rồi bật TR. Lặp khoảng định thời mode 1 cần nạp lại TH/TL.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22643,9 +23467,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Bit TF1 trong thanh ghi TCON là cờ báo tràn của Timer 1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TF1 là cờ tràn Timer 1 trong TCON (khi Timer 0 không ở mode 3).",
+    "methodology": "TF1 là cờ tràn Timer 1 trong TCON (khi Timer 0 không ở mode 3).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22671,9 +23495,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Thanh ghi TCON (Timer Control) dùng để điều khiển hoạt động của các Timer và lưu cờ trạng thái ngắt ngoài.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TCON chứa TR0/TR1, TF0/TF1 cùng các bit điều khiển/cờ ngắt ngoài IT0/IT1, IE0/IE1.",
+    "methodology": "TCON chứa TR0/TR1, TF0/TF1 cùng các bit điều khiển/cờ ngắt ngoài IT0/IT1, IE0/IE1.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22686,7 +23510,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 11,
     "title": "Part 14 - Câu 11",
-    "prompt": "Trên vi điều khiển 89C51, cờ báo tràn của Timer (TF) sẽ được set lên 1 nếu số đếm từ:",
+    "prompt": "Trên vi điều khiển 89C51, cờ báo tràn của Timer (TF) sẽ được set lên 1 nếu số đếm từ: Xét chế độ 1 (16 bit).",
     "extra_lines": [],
     "options": [
       "FFFEH - FFFFH",
@@ -22699,9 +23523,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Cờ tràn TF của Timer sẽ được đặt lên 1 khi thanh ghi đếm nhảy tràn từ giá trị cực đại FFFFH về 0000H.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "Mode 1 tràn khi tăng từ FFFFH sang 0000H, phần cứng đặt TF tương ứng.",
+    "methodology": "Mode 1 tràn khi tăng từ FFFFH sang 0000H, phần cứng đặt TF tương ứng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22727,9 +23551,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Để điều khiển Timer dừng, ta cần xóa bit điều khiển chạy về 0 (TR = 0).",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "Xóa TR tương ứng dừng timer; xóa TF chỉ xóa cờ tràn.",
+    "methodology": "Xóa TR tương ứng dừng timer; xóa TF chỉ xóa cờ tràn.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22742,27 +23566,38 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 13,
     "title": "Part 14 - Câu 13",
-    "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây, sau khi thực hiện xong các câu lệnh dưới dây, chương trình sẽ thực hiện tới đâu?",
-    "extra_lines": [],
+    "prompt": "Sau SJMP MAIN, chương trình thực hiện đến nhãn nào theo thứ tự?",
+    "extra_lines": [
+      "ORG 0000H",
+      "SJMP MAIN",
+      "MOV R0, #30H",
+      "MOV A, 2FH",
+      "DEC A",
+      "MOV R1, A",
+      "CJNE A, #0, THEEND",
+      "MAIN: MOV A, @R0",
+      "LOOP: INC R0",
+      "THEEND: SJMP $",
+      "END"
+    ],
     "options": [
-      "Đưa chương trình tới nhãn LOOP",
-      "Kết thúc chương trình",
-      "Kiểm tra giá trị P1.0"
+      "Thực hiện MAIN rồi đến LOOP",
+      "Chạy MOV R0,#30H trước MAIN",
+      "Nhảy trực tiếp tới THEEND",
+      "Kiểm tra chân P1.0"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Chương trình thực hiện kiểm tra và rẽ nhánh trở lại nhãn LOOP.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "SJMP MAIN bỏ qua toàn bộ các lệnh trước nhãn MAIN. Sau MOV A,@R0 chương trình đi tiếp đến LOOP: INC R0; R0 ban đầu không được xác định nhưng không ảnh hưởng luồng điều khiển này.",
+    "methodology": "SJMP MAIN bỏ qua toàn bộ các lệnh trước nhãn MAIN. Sau MOV A,@R0 chương trình đi tiếp đến LOOP: INC R0; R0 ban đầu không được xác định nhưng không ảnh hưởng luồng điều khiển này.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
-    "images": [
-      "assets/images/p14_q13.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_14_Q14",
@@ -22771,8 +23606,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 14,
     "title": "Part 14 - Câu 14",
-    "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây thực hiện chức năng gì?",
-    "extra_lines": [],
+    "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây thực hiện chức năng gì? DATA1 là địa chỉ RAM ngoài; DATA2 là địa chỉ RAM nội hợp lệ; dãy kết thúc bởi 24H.",
+    "extra_lines": [
+      "MOV DPTR, #DATA1",
+      "MOV R1, #DATA2",
+      "LOOP: MOVX A, @DPTR",
+      "CJNE A, #24H, COPY",
+      "SJMP DONE",
+      "COPY: MOV @R1, A",
+      "INC DPTR",
+      "INC R1",
+      "SJMP LOOP",
+      "DONE: SJMP $"
+    ],
     "options": [
       "So sánh từng giá trị đặt trong RAM nội và RAM ngoại, với địa chỉ bắt đầu tươngứng đặt tại DATA1 và DATA2",
       "Sao chép nội dung trong RAM ngoại tới RAM nội, với địa chỉ bắt đầu tương ứngđặt tại DATA1 và DATA2",
@@ -22784,15 +23630,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Quan sát đoạn mã trong hình: Lệnh MOVX A, @DPTR đọc dữ liệu từ RAM ngoài (địa chỉ DATA1) vào A, sau đó lệnh MOV @R1, A ghi dữ liệu từ A vào RAM nội (địa chỉ DATA2). Vòng lặp tăng cả DPTR và R1 (INC DPTR, INC R1) và tiếp tục cho đến khi gặp ký tự 24H (mã kết thúc chuỗi). Chức năng của đoạn chương trình là: Sao chép nội dung trong RAM ngoại tới RAM nội, với địa chỉ bắt đầu tương ứng đặt tại DATA1 và DATA2. Chọn đáp án B.",
-    "methodology": "Theo dõi nguồn và đích của MOVX A, @DPTR và MOV @R1, A trong vòng lặp.",
-    "tips_casio": "MOVX đọc RAM ngoại; MOV @R1, A ghi RAM nội. Chương trình sao chép từ RAM ngoại sang RAM nội.",
+    "explanation": "MOVX đọc RAM ngoài tại DPTR=DATA1; MOV @R1,A ghi RAM nội từ DATA2. Byte 24H là dấu kết thúc, không được chép. Giả sử dãy đích đủ chỗ dưới 80H.",
+    "methodology": "MOVX đọc RAM ngoài tại DPTR=DATA1; MOV @R1,A ghi RAM nội từ DATA2. Byte 24H là dấu kết thúc, không được chép. Giả sử dãy đích đủ chỗ dưới 80H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Sao chép dữ liệu giữa RAM ngoại và RAM nội",
-    "images": [
-      "assets/images/p14_q14.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_14_Q15",
@@ -22801,28 +23645,36 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 15,
     "title": "Part 14 - Câu 15",
-    "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây, thực hiện chức năng gì? *",
-    "extra_lines": [],
+    "prompt": "Chương trình sau thực hiện phép biến đổi nào? R1:R0 là số 16 bit (R1 byte cao).",
+    "extra_lines": [
+      "MOV A, R0",
+      "CPL A",
+      "ADD A, #01H",
+      "MOV R2, A",
+      "MOV A, R1",
+      "CPL A",
+      "ADDC A, #00H",
+      "MOV R3, A",
+      "END"
+    ],
     "options": [
-      "Tính đảo các số nhị phân 16 bit đặt tại R3, R2 và lưu tại R1, R0",
-      "Tính đảo các số nhị phân 16 bit đặt tại R1, R0 và lưu tại R3, R2",
-      "Tính đảo các số nhị phân 8bit đặt tại R3, R2 và lưu tại R1, R0",
-      "Tính đảo các số nhị phân 8 bit đặt tại R1, R0 và lưu tại R3, R2"
+      "Đảo thứ tự 16 bit của R3:R2, lưu R1:R0",
+      "Tính số đối bù hai 16 bit của R1:R0, lưu ở R3:R2",
+      "Đảo thứ tự hai byte của R1:R0",
+      "Tính số đối bù hai riêng từng byte, không truyền nhớ"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Quan sát đoạn mã trong hình: Đoạn mã đọc 16 bit dữ liệu từ R1 (byte cao) và R0 (byte thấp), sau đó dùng lệnh CPL A và cộng bù để tính số bù 2 (đảo dấu/lấy bù nhị phân 16 bit), lưu kết quả vào cặp thanh ghi R3 (byte cao) và R2 (byte thấp). Chức năng của đoạn mã là: Tính đảo các số nhị phân 16 bit đặt tại R1, R0 và lưu tại R3, R2. Chọn đáp án B.",
-    "methodology": "Theo dõi byte thấp/cao, phép đảo bit CPL và phép cộng có nhớ khi lấy bù 2 của số 16 bit.",
-    "tips_casio": "Lấy bù 2 của R1:R0, lưu kết quả vào R3:R2; kiểm tra nhớ từ byte thấp sang byte cao.",
+    "explanation": "Đảo từng byte rồi cộng 1 vào byte thấp. CY từ ADD được ADDC chuyển lên byte cao. Vì vậy R3:R2 = −(R1:R0) modulo 65536, không phải đảo thứ tự bit.",
+    "methodology": "Đảo từng byte rồi cộng 1 vào byte thấp. CY từ ADD được ADDC chuyển lên byte cao. Vì vậy R3:R2 = −(R1:R0) modulo 65536, không phải đảo thứ tự bit.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Lấy bù 2 của số nhị phân 16 bit",
-    "images": [
-      "assets/images/p14_q15.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_14_Q16",
@@ -22840,13 +23692,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Chọn chế độ đếm hoặc định thời"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Bit TR0 trong thanh ghi TCON có chức năng khởi động hoặc dừng Timer 0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "C/T=0 chọn định thời bằng xung nội fosc/12; C/T=1 chọn đếm cạnh xuống tại T0/T1. TR và GATE điều khiển cho phép chạy.",
+    "methodology": "C/T=0 chọn định thời bằng xung nội fosc/12; C/T=1 chọn đếm cạnh xuống tại T0/T1. TR và GATE điều khiển cho phép chạy.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22862,19 +23714,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trên vi điều khiển 89C51, bit GATE của Timer 1 trong thanh ghi TMOD có chức năng gì?",
     "extra_lines": [],
     "options": [
-      "Điều khiển hoạt động của Timer thông qua tín hiệu nội bộ",
-      "Điều khiển hoạt động của bộ nhớ",
-      "Điều khiển hoạt động của Timer thông qua tín hiệu ngắt ngoài",
-      "Điều khiển hoạt động của các cổng vào/ra"
+      "Điều khiển bộ nhớ",
+      "Chọn tốc độ cổng I/O",
+      "Khi GATE=1, timer chỉ chạy nếu TR=1 và chân INT tương ứng ở mức cao",
+      "Thay thế hoàn toàn bit TR"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Điều kiện rẽ nhánh thỏa mãn đưa chương trình nhảy tới nhãn L1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "GATE không bật ngắt ngoài. GATE=1 yêu cầu đồng thời TR=1 và INTx=1; GATE=0 chỉ cần TR=1.",
+    "methodology": "GATE không bật ngắt ngoài. GATE=1 yêu cầu đồng thời TR=1 và INTx=1; GATE=0 chỉ cần TR=1.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22887,7 +23739,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 18,
     "title": "Part 14 - Câu 18",
-    "prompt": "Trên vi điều khiển 89C51, bước đầu tiên để cấu hình Timer 0 là gì?",
+    "prompt": "Timer 0 đã dừng (TR0=0). Để cấu hình một chế độ định thời mới trước khi nạp giá trị ban đầu, cần thiết lập thanh ghi nào/chế độ nào trước?",
     "extra_lines": [],
     "options": [
       "Xóa cờ tràn TF0",
@@ -22896,13 +23748,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Khởi động Timer bằng cách thiết lập bit TR0"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "B",
     "acceptable_answers": [
-      "D"
+      "B"
     ],
-    "explanation": "Bit TF0 trong thanh ghi TCON là cờ báo tràn của Timer 0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "Trình tự an toàn: dừng timer, chọn chế độ bằng TMOD, nạp giá trị ban đầu, xóa TF, rồi bật TR. Lặp khoảng định thời mode 1 cần nạp lại TH/TL.",
+    "methodology": "Trình tự an toàn: dừng timer, chọn chế độ bằng TMOD, nạp giá trị ban đầu, xóa TF, rồi bật TR. Lặp khoảng định thời mode 1 cần nạp lại TH/TL.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -22916,27 +23768,33 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "num": 19,
     "title": "Part 14 - Câu 19",
     "prompt": "Chương trình Assembly trên vi điều khiển 89C51, sau khi thực hiện xong các câu lệnh dưới dây, chương trình sẽ thực hiện tới đâu?",
-    "extra_lines": [],
+    "extra_lines": [
+      "MOV A, #43H",
+      "JB ACC.2, L1",
+      "JBC ACC.6, L2",
+      "SJMP DONE",
+      "L1: SJMP DONE",
+      "L2: SJMP DONE",
+      "DONE: SJMP $"
+    ],
     "options": [
-      "Đưa chương trình tới nhãn L1",
-      "Thực hiện lệnh tiếp theo JNB AC3, L2",
-      "Đưa chương trình tới nhãn L2 và xóa bit AC6 về 0",
-      "Kết thúc chương trình"
+      "Nhảy L1; A=43H",
+      "Không nhảy L2; A=43H",
+      "Nhảy L2, đồng thời xóa ACC.6; A=03H",
+      "Xóa toàn bộ A rồi dừng"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Lệnh nạp A = 043H = 0100 0011b. Các bit của A: A.0=1, A.1=1, A.2=0, A.6=1. Lệnh JB ACC.2, L1 kiểm tra bit A.2: vì A.2 = 0 nên lệnh không nhảy tới L1. Tiếp tục thực hiện lệnh kế tiếp: JBC ACC.6, L2 kiểm tra bit A.6: vì A.6 = 1 nên lệnh sẽ nhảy tới nhãn L2 đồng thời xóa bit ACC.6 về 0. Do đó kết quả là: Đưa chương trình tới nhãn L2 và xóa bit AC6 về 0. Chọn đáp án C.",
-    "methodology": "Đọc các bit của A theo thứ tự lệnh; JBC chỉ nhảy khi bit bằng 1 và đồng thời xóa bit đó.",
-    "tips_casio": "43H = 01000011B: ACC.2 = 0 nên JB không nhảy; ACC.6 = 1 nên JBC nhảy tới L2 và xóa ACC.6.",
+    "explanation": "43H=0100 0011B: ACC.2=0 nên JB không nhảy; ACC.6=1 nên JBC xóa bit 6 và nhảy L2. A còn 03H.",
+    "methodology": "43H=0100 0011B: ACC.2=0 nên JB không nhảy; ACC.6=1 nên JBC xóa bit 6 và nhảy L2. A còn 03H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Lệnh nhảy theo bit JB và JBC",
-    "images": [
-      "assets/images/p14_q19.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_14_Q20",
@@ -22945,28 +23803,35 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 20,
     "title": "Part 14 - Câu 20",
-    "prompt": "Chương trình Assembly trên vi điều khiển 89C51 dưới đây, biết tần số tạo dao động thạch anh là 12MHz, hãy cho biết chương trình dưới đây thực hiện chức năng gì?",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua các lệnh ngoài vòng DJNZ. Chương trình tạo xung có thông số xấp xỉ nào?",
+    "extra_lines": [
+      "LOOP: SETB P1.0",
+      "ACALL DELAY",
+      "CLR P1.0",
+      "ACALL DELAY",
+      "SJMP LOOP",
+      "DELAY: MOV R6, #250",
+      "WAIT: DJNZ R6, WAIT",
+      "RET"
+    ],
     "options": [
-      "Tạo xung vuông tai chân P1.0 với độ rộng xung cao là 1ms",
-      "Tạo xung vuông tại chân P1.0 với tần số 2Hz",
-      "Tạo xung vuông tại chân P1.0 với tần số 0.5Hz",
-      "Tạo xung vuông tại chân P1.0 với chu kỳ 1ms"
+      "P1.0: chu kỳ 2 ms",
+      "P1.0: tần số 2 Hz",
+      "P1.0: tần số 0,5 Hz",
+      "Sóng vuông P1.0 có chu kỳ xấp xỉ 1 ms"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Timer tạo độ trễ nửa chu kỳ $500\\,\\mu\\text{s}$, kết hợp lệnh CPL tạo sóng vuông chu kỳ toàn phần T = $1\\,\\text{ms}$ tại chân P1.0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "Một đoạn DJNZ R6,WAIT lặp 250 lần × 2 µs = 500 µs. Hai nửa chu kỳ xấp xỉ 1000 µs. Nếu tính cả MOV, RET, ACALL và lệnh điều khiển thì có thêm vài µs; đề này hỏi giá trị xấp xỉ.",
+    "methodology": "Một đoạn DJNZ R6,WAIT lặp 250 lần × 2 µs = 500 µs. Hai nửa chu kỳ xấp xỉ 1000 µs. Nếu tính cả MOV, RET, ACALL và lệnh điều khiển thì có thêm vài µs; đề này hỏi giá trị xấp xỉ.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
-    "images": [
-      "assets/images/p14_q20.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_14_Q21",
@@ -22988,9 +23853,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Bit TF1 trong thanh ghi TCON được dùng để kiểm tra trạng thái tràn của Timer 1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TF1 là cờ tràn Timer 1 trong TCON (khi Timer 0 không ở mode 3).",
+    "methodology": "TF1 là cờ tràn Timer 1 trong TCON (khi Timer 0 không ở mode 3).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23016,9 +23881,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Bit TR0 trong thanh ghi TCON được sử dụng để khởi động Timer 0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TR0 là bit chạy/dừng Timer 0 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE0=1 còn cần chân INT0 ở mức cao.",
+    "methodology": "TR0 là bit chạy/dừng Timer 0 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE0=1 còn cần chân INT0 ở mức cao.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23044,9 +23909,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Bit IE0 trong thanh ghi TCON là cờ báo ngắt ngoài 0 (External Interrupt 0 Flag).",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "IE0 trong TCON là cờ yêu cầu ngắt ngoài 0, khác thanh ghi IE cho phép ngắt.",
+    "methodology": "IE0 trong TCON là cờ yêu cầu ngắt ngoài 0, khác thanh ghi IE cho phép ngắt.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23072,9 +23937,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Bit điều khiển chạy/dừng của Timer 1 là bit TR1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TR1 là bit chạy/dừng Timer 1 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE1=1 còn cần chân INT1 ở mức cao.",
+    "methodology": "TR1 là bit chạy/dừng Timer 1 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE1=1 còn cần chân INT1 ở mức cao.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23100,9 +23965,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Để điều khiển Timer chạy, ta cần thiết lập bit TR = 1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TR=1 cho phép bộ đếm/định thời chạy; điều kiện GATE cũng phải thỏa nếu GATE=1.",
+    "methodology": "TR=1 cho phép bộ đếm/định thời chạy; điều kiện GATE cũng phải thỏa nếu GATE=1.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23128,9 +23993,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Thanh ghi TMOD (Timer Mode) được sử dụng để cấu hình chế độ hoạt động của Timer 0 và Timer 1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TMOD gồm hai nibble cho Timer 1/0, mỗi nibble có GATE, C/T, M1, M0 để chọn điều kiện và chế độ hoạt động.",
+    "methodology": "TMOD gồm hai nibble cho Timer 1/0, mỗi nibble có GATE, C/T, M1, M0 để chọn điều kiện và chế độ hoạt động.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23156,9 +24021,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Bit TF1 trong thanh ghi TCON có chức năng làm cờ báo tràn của Timer 1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TF1 là cờ tràn Timer 1 trong TCON (khi Timer 0 không ở mode 3).",
+    "methodology": "TF1 là cờ tràn Timer 1 trong TCON (khi Timer 0 không ở mode 3).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23184,9 +24049,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Để dừng Timer 1, cần xóa bit TR1 trong thanh ghi TCON bằng lệnh CLR TR1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "Xóa TR tương ứng dừng timer; xóa TF chỉ xóa cờ tràn.",
+    "methodology": "Xóa TR tương ứng dừng timer; xóa TF chỉ xóa cờ tràn.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23212,9 +24077,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Thanh ghi TCON chứa các bit TR0 và TR1 dùng để khởi động Timer 0 và Timer 1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TCON chứa TR0 và TR1, các bit cho phép chạy/dừng Timer 0/1.",
+    "methodology": "TCON chứa TR0 và TR1, các bit cho phép chạy/dừng Timer 0/1.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23240,9 +24105,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Bit IE1 trong thanh ghi TCON là cờ báo ngắt ngoài 1 (External Interrupt 1 Flag).",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "IE1 trong TCON là cờ yêu cầu ngắt ngoài 1, khác thanh ghi IE cho phép ngắt.",
+    "methodology": "IE1 trong TCON là cờ yêu cầu ngắt ngoài 1, khác thanh ghi IE cho phép ngắt.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23268,9 +24133,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Bit TF0 trong thanh ghi TCON có chức năng làm cờ báo tràn của Timer 0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TF0 là cờ tràn Timer 0. Xóa TF0 để xác nhận lần tràn trước; việc này không dừng timer (TR0 mới điều khiển chạy/dừng).",
+    "methodology": "TF0 là cờ tràn Timer 0. Xóa TF0 để xác nhận lần tràn trước; việc này không dừng timer (TR0 mới điều khiển chạy/dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23296,9 +24161,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Timer trên 89C51 được ứng dụng để: Đếm sự kiện, Định thời khoảng thời gian, và Tạo tốc độ Baud cho cổng nối tiếp. Cả 3 đáp án đều đúng.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "Khối timer/counter có thể định thời, đếm sự kiện và Timer 1 còn tạo baud UART mode 1/3.",
+    "methodology": "Khối timer/counter có thể định thời, đếm sự kiện và Timer 1 còn tạo baud UART mode 1/3.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23324,9 +24189,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Để Timer hoạt động ở chế độ định thời (Timer lấy xung nội), cần thiết lập bit C/T = 0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "C/T=0 chọn định thời bằng xung nội fosc/12; C/T=1 chọn đếm cạnh xuống tại T0/T1. TR và GATE điều khiển cho phép chạy.",
+    "methodology": "C/T=0 chọn định thời bằng xung nội fosc/12; C/T=1 chọn đếm cạnh xuống tại T0/T1. TR và GATE điều khiển cho phép chạy.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23352,9 +24217,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Bit TR0 trong thanh ghi TCON có chức năng khởi động Timer 0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TR0 là bit chạy/dừng Timer 0 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE0=1 còn cần chân INT0 ở mức cao.",
+    "methodology": "TR0 là bit chạy/dừng Timer 0 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE0=1 còn cần chân INT0 ở mức cao.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23380,9 +24245,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Bit IT1 trong thanh ghi TCON dùng để chọn chế độ kích hoạt cho ngắt ngoài 1 (kích hoạt theo sườn âm khi IT1=1, hoặc theo mức thấp khi IT1=0).",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "IT1 chọn ngắt ngoài 1: 0 tác động mức thấp, 1 tác động cạnh xuống.",
+    "methodology": "IT1 chọn ngắt ngoài 1: 0 tác động mức thấp, 1 tác động cạnh xuống.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23395,7 +24260,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 36,
     "title": "Part 14 - Câu 36",
-    "prompt": "Trên vi điều khiển 89C51, nguồn xung nhịp cho các Timer là xung vuông có tần số bằng… tần số dao động thạch anh:",
+    "prompt": "Trên vi điều khiển 89C51, nguồn xung nhịp cho các Timer là xung vuông có tần số bằng… tần số dao động thạch anh: Xét chế độ định thời C/T=0, lõi 12T.",
     "extra_lines": [],
     "options": [
       "1/6",
@@ -23408,9 +24273,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Nguồn xung nhịp nội cho các Timer có tần số bằng $\\frac{1}{12}$ tần số dao động của thạch anh.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "8051 chuẩn 12T tăng timer sau mỗi 12 chu kỳ dao động, tức f_timer=fosc/12.",
+    "methodology": "8051 chuẩn 12T tăng timer sau mỗi 12 chu kỳ dao động, tức f_timer=fosc/12.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23436,9 +24301,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Bit TR0 trong thanh ghi TCON có chức năng khởi động Timer 0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TR0 là bit chạy/dừng Timer 0 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE0=1 còn cần chân INT0 ở mức cao.",
+    "methodology": "TR0 là bit chạy/dừng Timer 0 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE0=1 còn cần chân INT0 ở mức cao.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23464,9 +24329,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Để xóa cờ tràn của Timer 0, cần xóa bit TF0 trong thanh ghi TCON (CLR TF0).",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TF0 là cờ tràn Timer 0. Xóa TF0 để xác nhận lần tràn trước; việc này không dừng timer (TR0 mới điều khiển chạy/dừng).",
+    "methodology": "TF0 là cờ tràn Timer 0. Xóa TF0 để xác nhận lần tràn trước; việc này không dừng timer (TR0 mới điều khiển chạy/dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23492,9 +24357,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Bit IT0 trong thanh ghi TCON dùng để chọn kiểu kích hoạt cho ngắt ngoài 0 (theo sườn khi IT0=1 hoặc theo mức khi IT0=0).",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "IT0 chọn ngắt ngoài 0: 0 tác động mức thấp, 1 tác động cạnh xuống.",
+    "methodology": "IT0 chọn ngắt ngoài 0: 0 tác động mức thấp, 1 tác động cạnh xuống.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23520,9 +24385,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Để cấu hình Timer 0 ở chế độ đếm sự kiện ngoài, cần thiết lập bit C/T của Timer 0 lên 1 trong thanh ghi TMOD.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "C/T=0 chọn định thời bằng xung nội fosc/12; C/T=1 chọn đếm cạnh xuống tại T0/T1. TR và GATE điều khiển cho phép chạy.",
+    "methodology": "C/T=0 chọn định thời bằng xung nội fosc/12; C/T=1 chọn đếm cạnh xuống tại T0/T1. TR và GATE điều khiển cho phép chạy.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23548,9 +24413,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Bit TF0 trong thanh ghi TCON là cờ báo tràn của Timer 0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TF0 là cờ tràn Timer 0. Xóa TF0 để xác nhận lần tràn trước; việc này không dừng timer (TR0 mới điều khiển chạy/dừng).",
+    "methodology": "TF0 là cờ tràn Timer 0. Xóa TF0 để xác nhận lần tràn trước; việc này không dừng timer (TR0 mới điều khiển chạy/dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23563,11 +24428,11 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 42,
     "title": "Part 14 - Câu 42",
-    "prompt": "Trên vi điều khiển 89C51, Timer 0 và Timer 1 của 89C51 có bao nhiêu bit?",
+    "prompt": "Hai bộ Timer/Counter 0 và 1 của AT89C51 có độ rộng tối đa bao nhiêu bit?",
     "extra_lines": [],
     "options": [
       "16 bit",
-      "64 bi",
+      "64 bit",
       "8 bit",
       "32 bit"
     ],
@@ -23576,9 +24441,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Các bộ định thời Timer 0 và Timer 1 của 89C51 là các bộ đếm 16-bit (ghép từ thanh ghi 8-bit TH và TL).",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "Mỗi timer gồm THx và TLx 8 bit; mode 1 ghép thành bộ đếm 16 bit. Mode 0/2/3 dùng cấu hình khác.",
+    "methodology": "Mỗi timer gồm THx và TLx 8 bit; mode 1 ghép thành bộ đếm 16 bit. Mode 0/2/3 dùng cấu hình khác.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23604,9 +24469,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Bit TR1 trong thanh ghi TCON được sử dụng để khởi động Timer 1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TR1 là bit chạy/dừng Timer 1 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE1=1 còn cần chân INT1 ở mức cao.",
+    "methodology": "TR1 là bit chạy/dừng Timer 1 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE1=1 còn cần chân INT1 ở mức cao.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23632,9 +24497,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Thanh ghi TH0 (Timer 0 High Byte) chứa giá trị đếm byte cao của Timer 0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TH0 là byte cao của Timer 0; TL0 là byte thấp.",
+    "methodology": "TH0 là byte cao của Timer 0; TL0 là byte thấp.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23650,19 +24515,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trên vi điều khiển 89C51, bit GATE trong thanh ghi TMOD có chức năng gì?",
     "extra_lines": [],
     "options": [
-      "Điều khiển hoạt động của bộ nhớ",
-      "Điều khiển hoạt động của Timer thông qua tín hiệu nội bộ",
-      "Điều khiển hoạt động của các cổng vào/ra",
-      "Điều khiển hoạt động của Timer thông qua tín hiệu ngắt ngoài"
+      "Điều khiển bộ nhớ",
+      "Chọn tốc độ cổng I/O",
+      "Khi GATE=1, timer chỉ chạy nếu TR=1 và chân INT tương ứng ở mức cao",
+      "Thay thế hoàn toàn bit TR"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "C",
     "acceptable_answers": [
-      "D"
+      "C"
     ],
-    "explanation": "Bit GATE trong TMOD dùng để điều khiển hoạt động của Timer thông qua chân ngắt ngoài INT0/INT1 khi GATE = 1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "GATE không bật ngắt ngoài. GATE=1 yêu cầu đồng thời TR=1 và INTx=1; GATE=0 chỉ cần TR=1.",
+    "methodology": "GATE không bật ngắt ngoài. GATE=1 yêu cầu đồng thời TR=1 và INTx=1; GATE=0 chỉ cần TR=1.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23688,9 +24553,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Bit TR1 trong thanh ghi TCON có chức năng khởi động Timer 1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TR1 là bit chạy/dừng Timer 1 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE1=1 còn cần chân INT1 ở mức cao.",
+    "methodology": "TR1 là bit chạy/dừng Timer 1 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE1=1 còn cần chân INT1 ở mức cao.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23703,7 +24568,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 47,
     "title": "Part 14 - Câu 47",
-    "prompt": "Trên vi điều khiển 89C51, số Timer và số Chế độ hoạt động của 89C51 là:",
+    "prompt": "AT89C51 có bao nhiêu bộ Timer/Counter phần cứng?",
     "extra_lines": [],
     "options": [
       "4",
@@ -23716,9 +24581,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Vi điều khiển 89C51 có 2 bộ Timer độc lập (Timer 0 và Timer 1).",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "AT89C51 có hai bộ Timer/Counter 0 và 1; số cấu hình mode là bốn, không phải hai.",
+    "methodology": "AT89C51 có hai bộ Timer/Counter 0 và 1; số cấu hình mode là bốn, không phải hai.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23737,16 +24602,16 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "TH1",
       "TL1",
       "TL0",
-      "TH1"
+      "TH0"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Thanh ghi TL1 (Timer 1 Low Byte) chứa giá trị đếm byte thấp của Timer 1.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TL1 là byte thấp của Timer 1. TH1 là byte cao, TL0/TH0 thuộc Timer 0.",
+    "methodology": "TL1 là byte thấp của Timer 1. TH1 là byte cao, TL0/TH0 thuộc Timer 0.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23759,7 +24624,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 49,
     "title": "Part 14 - Câu 49",
-    "prompt": "Trên vi điều khiển 89C51, sau khi dừng Timer 0, bước tiếp theo là gì nếu muốn khởi động lại Timer?",
+    "prompt": "Timer 0 mode 1 vừa được dừng, TF0 đã xóa. Muốn lặp lại cùng khoảng định thời ban đầu, cần làm gì trước khi bật lại TR0?",
     "extra_lines": [],
     "options": [
       "Thiết lập bit TR0 trong thanh ghi TCON",
@@ -23772,9 +24637,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Sau khi dừng Timer 0, để bắt đầu chu kỳ định thời tiếp theo, cần nạp lại giá trị ban đầu cho các thanh ghi TH0 và TL0 (nếu ở Mode 0 hoặc Mode 1).",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "Trình tự an toàn: dừng timer, chọn chế độ bằng TMOD, nạp giá trị ban đầu, xóa TF, rồi bật TR. Lặp khoảng định thời mode 1 cần nạp lại TH/TL.",
+    "methodology": "Trình tự an toàn: dừng timer, chọn chế độ bằng TMOD, nạp giá trị ban đầu, xóa TF, rồi bật TR. Lặp khoảng định thời mode 1 cần nạp lại TH/TL.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23800,9 +24665,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Bit C/T trong TMOD có chức năng lựa chọn chế độ hoạt động: Đếm sự kiện (Counter khi C/T=1) hoặc Định thời (Timer khi C/T=0).",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "C/T=0 chọn định thời bằng xung nội fosc/12; C/T=1 chọn đếm cạnh xuống tại T0/T1. TR và GATE điều khiển cho phép chạy.",
+    "methodology": "C/T=0 chọn định thời bằng xung nội fosc/12; C/T=1 chọn đếm cạnh xuống tại T0/T1. TR và GATE điều khiển cho phép chạy.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23828,9 +24693,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Để khởi động Timer 0, cần thiết lập bit TR0 trong thanh ghi TCON lên 1 bằng lệnh SETB TR0.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TR0 là bit chạy/dừng Timer 0 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE0=1 còn cần chân INT0 ở mức cao.",
+    "methodology": "TR0 là bit chạy/dừng Timer 0 trong TCON: 1 cho phép chạy, 0 dừng. Với GATE0=1 còn cần chân INT0 ở mức cao.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23856,9 +24721,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Thanh ghi TMOD (Timer Mode) dùng để chọn chế độ hoạt động (Mode 0-3, Timer/Counter, GATE) cho các bộ định thời.",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "TMOD gồm hai nibble cho Timer 1/0, mỗi nibble có GATE, C/T, M1, M0 để chọn điều kiện và chế độ hoạt động.",
+    "methodology": "TMOD gồm hai nibble cho Timer 1/0, mỗi nibble có GATE, C/T, M1, M0 để chọn điều kiện và chế độ hoạt động.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23871,7 +24736,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 14: Nguyên Lý Timer/Counter & TMOD/TCON",
     "num": 53,
     "title": "Part 14 - Câu 53",
-    "prompt": "Trên vi điều khiển 89C51, bước nào sau đây là cần thiết để thiết lập giá trị ban đầu cho Timer 0?",
+    "prompt": "Trên vi điều khiển 89C51, bước nào sau đây là cần thiết để thiết lập giá trị ban đầu cho Timer 0? Xét chế độ 1 (16 bit), timer đã dừng.",
     "extra_lines": [],
     "options": [
       "Ghi giá trị vào thanh ghi TMOD",
@@ -23884,9 +24749,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Để thiết lập giá trị ban đầu cho Timer 0, cần ghi các byte giá trị mong muốn vào thanh ghi TH0 (byte cao) và TL0 (byte thấp).",
-    "methodology": "Nắm vững chức năng thanh ghi TMOD (chọn mode, C/T, GATE) và TCON (bật TR, cờ tràn TF).",
-    "tips_casio": "Timer đếm xung nội fosc/12; Counter đếm xung ngoại qua chân T0 (P3.4) hoặc T1 (P3.5).",
+    "explanation": "Mode 1 nạp giá trị 16 bit qua byte cao TH0 và byte thấp TL0; TMOD chỉ chọn chế độ, TCON điều khiển/cờ.",
+    "methodology": "Mode 1 nạp giá trị 16 bit qua byte cao TH0 và byte thấp TL0; TMOD chỉ chọn chế độ, TCON điều khiển/cờ.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguyên lý hoạt động của bộ đếm / bộ định thời Timer/Counter",
@@ -23912,9 +24777,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -23927,7 +24792,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 5,
     "title": "Part 15 - Câu 5",
-    "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer 0 làm định thời, chế độ 1, không sử dụng ngắt INT0, Timer 1 định thời, chế độ 2 không sử dụng ngắt INT1, ta cần khởi động thanh ghi TMOD:",
+    "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer 0 làm định thời, chế độ 1, không điều khiển bằng chân INT0 (GATE0=0), Timer 1 định thời, chế độ 2 không điều khiển bằng chân INT1 (GATE1=0), ta cần nạp thanh ghi TMOD:",
     "extra_lines": [],
     "options": [
       "MOV TMOD, #12H",
@@ -23936,13 +24801,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "MOV TMOD, #11H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "Timer 1: GATE=0,C/T=0,M1M0=10 → nibble 2. Timer 0: GATE=0,C/T=0,M1M0=01 → nibble 1. TMOD=21H.",
+    "methodology": "Timer 1: GATE=0,C/T=0,M1M0=10 → nibble 2. Timer 0: GATE=0,C/T=0,M1M0=01 → nibble 1. TMOD=21H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -23958,19 +24823,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Cho fosc = 12MHz, TMOD = 21H, TH1 = 35H, TL1 = 35H, TH0 = C5H, TL0 = 35H. Hãy xác định giá trị khởi tạo ban đầu của bộ đếm/định thời 0 của vi điều khiển 89C51?",
     "extra_lines": [],
     "options": [
-      "X = 6318",
-      "X = 12696",
-      "X = 6243",
-      "X = 25368"
+      "X = 25242",
+      "X = 15051",
+      "X = 50485",
+      "X = 50741"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "Mode 1: X=TH0×256+TL0=C535H=50485.",
+    "methodology": "Mode 1: X=TH0×256+TL0=C535H=50485.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -23996,9 +24861,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "Mode 0: X=63H×32+(18H AND 1FH)=3192. Còn 8192−3192=5000 tick; tại 12 MHz mỗi tick 1 µs nên 5 ms.",
+    "methodology": "Mode 0: X=63H×32+(18H AND 1FH)=3192. Còn 8192−3192=5000 tick; tại 12 MHz mỗi tick 1 µs nên 5 ms.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24011,7 +24876,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 8,
     "title": "Part 15 - Câu 8",
-    "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer 0 làm bộ đếm, chế độ 2, không sử dụng ngắt INT0, Timer 1 làm bộ đếm, chế độ 1 sử dụng ngắt INT1, ta cần khởi động thanh ghi TMOD:",
+    "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer 0 làm bộ đếm, chế độ 2, không điều khiển bằng chân INT0 (GATE0=0), Timer 1 làm bộ đếm, chế độ 1 điều khiển bằng chân INT1 (GATE1=1), ta cần nạp thanh ghi TMOD:",
     "extra_lines": [],
     "options": [
       "MOV TMOD, #D1H",
@@ -24020,13 +24885,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "MOV TMOD, #1DH"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "Timer 1: GATE=1,C/T=1,mode 1 → D; Timer 0: GATE=0,C/T=1,mode 2 → 6. TMOD=D6H.",
+    "methodology": "Timer 1: GATE=1,C/T=1,mode 1 → D; Timer 0: GATE=0,C/T=1,mode 2 → 6. TMOD=D6H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24039,11 +24904,11 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 9,
     "title": "Part 15 - Câu 9",
-    "prompt": "Trên vi điều khiển 89C51, khi lập trình định thời với khoảng thời gian lớn hơn 65536µs (giả sử dùng thạch anh là 12Mhz) ta dùng kỹ thuật:",
+    "prompt": "AT89C51 12T, fosc=12 MHz. Muốn dùng timer tạo khoảng trễ lớn hơn 65536 µs, phương pháp nào mở rộng được khoảng đếm qua nhiều lần tràn?",
     "extra_lines": [],
     "options": [
       "Timer 16 bit kết hợp với các vòng lặp",
-      "Điều chỉnh bằng phần mềm",
+      "Chỉ một lần tràn của timer 13 bit",
       "Timer 16 bit",
       "Timer 8 bit tự động nạp lại giá trị đầu"
     ],
@@ -24052,9 +24917,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "Timer 16 bit tại 12 MHz chỉ đếm tối đa 65536 µs mỗi lần tràn; đếm thêm số lần tràn bằng phần mềm để tạo khoảng dài hơn.",
+    "methodology": "Timer 16 bit tại 12 MHz chỉ đếm tối đa 65536 µs mỗi lần tràn; đếm thêm số lần tràn bằng phần mềm để tạo khoảng dài hơn.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24067,20 +24932,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 10,
     "title": "Part 15 - Câu 10",
-    "prompt": "Trên vi điều khiển 89C51, chế độ nào của Timer 0 và Timer 1 cho phép đếm từ 0 đến 255? Chế độ 1 Chế độ 0 Chế độ 3 Chế độ 2",
+    "prompt": "Mode nào của cả Timer 0/1 sử dụng TLx 8 bit, đếm 00H..FFH và tự nạp lại từ THx?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "options": [
+      "Chế độ 0",
+      "Chế độ 1",
+      "Chế độ 2",
+      "Chế độ 3"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24106,9 +24973,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24121,7 +24988,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 12,
     "title": "Part 15 - Câu 12",
-    "prompt": "Trên vi điều khiển 89C51, khi lập trình định thời với khoảng thời gian nhỏ hơn 10µs (giả sử dùng thạch anh là 12Mhz) ta dùng kỹ thuật:",
+    "prompt": "AT89C51 12T, fosc=12 MHz, CPU được phép chờ. Để tạo trễ rất ngắn vài chu kỳ máy (<10 µs), kỹ thuật đơn giản tránh cấu hình timer là gì?",
     "extra_lines": [],
     "options": [
       "Timer 8 bit tự động nạp lại giá trị đầu",
@@ -24130,13 +24997,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Điều chỉnh bằng phần mềm"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = FFH, TL = F6H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "Vài chu kỳ máy có thể tạo khoảng trễ dưới 10 µs bằng NOP/vòng lệnh. Không khẳng định timer không làm được; đây là lựa chọn đơn giản khi CPU được phép chờ.",
+    "methodology": "Vài chu kỳ máy có thể tạo khoảng trễ dưới 10 µs bằng NOP/vòng lệnh. Không khẳng định timer không làm được; đây là lựa chọn đơn giản khi CPU được phép chờ.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24149,7 +25016,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 13,
     "title": "Part 15 - Câu 13",
-    "prompt": "Trên vi điều khiển 89C51, khi lập trình định thời với khoảng thời gian từ 10 _ 256µs (giả sử dùng thạch anh là12Mhz) ta dùng kỹ thuật:",
+    "prompt": "Trên vi điều khiển 89C51, khi lập trình định thời với khoảng thời gian từ 10 ? 256µs (giả sử dùng thạch anh là12Mhz) ta dùng kỹ thuật:",
     "extra_lines": [],
     "options": [
       "Điều chỉnh bằng phần mềm",
@@ -24158,13 +25025,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Timer 16 bit kết hợp với các vòng lặp"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = FFH, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "Mode 2 dùng bộ đếm 8 bit tự nạp lại, một lần tràn đạt 1..256 tick, tương ứng 1..256 µs ở 12 MHz.",
+    "methodology": "Mode 2 dùng bộ đếm 8 bit tự nạp lại, một lần tràn đạt 1..256 tick, tương ứng 1..256 µs ở 12 MHz.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24186,13 +25053,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Thiết lập bit M0 và xóa bit M1"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24205,7 +25072,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 15,
     "title": "Part 15 - Câu 15",
-    "prompt": "Trên vi điều khiển 89C51, chế độ nào của Timer 0 và Timer 1 cho phép sử dụng hai bộ định thời 8 bit độc lập?",
+    "prompt": "Mode nào của Timer 0 tách TL0 và TH0 thành hai bộ đếm/định thời 8 bit độc lập?",
     "extra_lines": [],
     "options": [
       "Chế độ 0",
@@ -24214,13 +25081,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Chế độ 2"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24242,13 +25109,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Thời gian của bộ đếm Timer 0 là 10ms"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "Mode 0: X=3192, còn 5000 tick. 6 MHz cho tick 2 µs, thời gian 10 ms.",
+    "methodology": "Mode 0: X=3192, còn 5000 tick. 6 MHz cho tick 2 µs, thời gian 10 ms.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24261,20 +25128,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 17,
     "title": "Part 15 - Câu 17",
-    "prompt": "Trên vi điều khiển 89C51, chế độ Timer tự động nạp lại là chế độ: Chế độ 1 Chế độ 0 Chế độ 2 Chế độ 3",
+    "prompt": "Mode tự động nạp lại 8 bit của Timer 0/1 là mode nào?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "options": [
+      "Chế độ 0",
+      "Chế độ 1",
+      "Chế độ 2",
+      "Chế độ 3"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24287,20 +25156,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 18,
     "title": "Part 15 - Câu 18",
-    "prompt": "Trên vi điều khiển 89C51, chế độ nào của Timer 0 và Timer 1 cho phép đếm từ 0 đến 65535? Chế độ 1 Chế độ 2 Chế độ 0 Chế độ 3",
+    "prompt": "Mode nào ghép THx và TLx thành bộ đếm 16 bit (0..65535)?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "options": [
+      "Chế độ 0",
+      "Chế độ 1",
+      "Chế độ 2",
+      "Chế độ 3"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24326,9 +25197,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "Mode 0: X=E0H×32+(18H AND 1FH)=224×32+24=7192.",
+    "methodology": "Mode 0: X=E0H×32+(18H AND 1FH)=224×32+24=7192.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24341,20 +25212,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 20,
     "title": "Part 15 - Câu 20",
-    "prompt": "Trên vi điều khiển 89C51, trong chế độ 1 của bộ đếm/định thời, với tần số thạch anh là 12MHz thì thời gian tối đa mà chế độ 0 có thể định thời đến là: (1 Điểm) 256ms 1000ms 65536ms 8192ms",
+    "prompt": "AT89C51 12T, fosc=12 MHz, GATE=0, C/T=0. Ở mode 1, timer bắt đầu từ 0: thời gian tối đa tới một lần tràn là bao nhiêu?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "options": [
+      "256 µs",
+      "8192 µs",
+      "65536 µs",
+      "1000 µs"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 0: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "type": "mcq",
+    "answer": "C",
+    "acceptable_answers": [
+      "C"
+    ],
+    "explanation": "Mode 1 có 16 bit. Từ 0 đến lần tràn mất 65536 tick. fosc=12 MHz, 12T → 1 µs/tick, nên tối đa 65536 µs, không phải ms.",
+    "methodology": "Mode 1 có 16 bit. Từ 0 đến lần tràn mất 65536 tick. fosc=12 MHz, 12T → 1 µs/tick, nên tối đa 65536 µs, không phải ms.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24367,7 +25240,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 21,
     "title": "Part 15 - Câu 21",
-    "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer 0 làm định thời, chế độ 2, có sử dụng ngắt INT0, Timer 1 làm bộ đếm, chế độ 1 sử dụng ngắt INT1, ta cần khởi động thanh ghi TMOD:",
+    "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer 0 làm định thời, chế độ 2, có điều khiển bằng chân INT0 (GATE0=1), Timer 1 làm bộ đếm, chế độ 1 điều khiển bằng chân INT1 (GATE1=1), ta cần nạp thanh ghi TMOD:",
     "extra_lines": [],
     "options": [
       "MOV TMOD, #2AH",
@@ -24376,13 +25249,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "MOV TMOD, #DAH"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "Timer 1: GATE=1,C/T=1,mode 1 → D. Timer 0: GATE=1,C/T=0,mode 2 → A. TMOD=DAH.",
+    "methodology": "Timer 1: GATE=1,C/T=1,mode 1 → D. Timer 0: GATE=1,C/T=0,mode 2 → A. TMOD=DAH.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24408,9 +25281,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24432,13 +25305,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "01"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24460,13 +25333,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Thiết lập bit M0 và xóa bit M1 cho Timer 1"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24488,13 +25361,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "X = 25368"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "Mode 1: X=D8H×256+F0H=216×256+240=55536.",
+    "methodology": "Mode 1: X=D8H×256+F0H=216×256+240=55536.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24516,13 +25389,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Chế độ 1 tại Timer 0"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24535,7 +25408,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 27,
     "title": "Part 15 - Câu 27",
-    "prompt": "Khi sử dụng Timer 1 chế độ 2 trên vi điều khiển 89C51, để định thời, mỗi khi đếm đủ 80 lần thì sẽ phát đi một yêu cầu ngắt tới CPU, vậy TL1, và TH1 có giá trị ban đầu là bao nhiêu?",
+    "prompt": "Timer 1 mode 2 cần tràn sau mỗi 80 tick. Để ngay cả khoảng đầu tiên cũng dài 80 tick, giá trị thập phân ban đầu của cả TH1 và TL1 là bao nhiêu?",
     "extra_lines": [],
     "options": [
       "8092",
@@ -24544,13 +25417,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "176"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "Mode 2: TH1=TL1=256−80=176=B0H. Mỗi lần TL1 tràn, nó tự nạp lại TH1; ngắt cần ET1/EA được bật.",
+    "methodology": "Mode 2: TH1=TL1=256−80=176=B0H. Mỗi lần TL1 tràn, nó tự nạp lại TH1; ngắt cần ET1/EA được bật.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24563,7 +25436,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 28,
     "title": "Part 15 - Câu 28",
-    "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer 0 làm bộ đếm, chế độ 1, có sử dụng ngắt INT0, T1 định thời, chế độ 2 không sử dụng ngắt INT1, ta cần khởi động thanh ghi TMOD:",
+    "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer 0 làm bộ đếm, chế độ 1, có điều khiển bằng chân INT0 (GATE0=1), T1 định thời, chế độ 2 không điều khiển bằng chân INT1 (GATE1=0), ta cần nạp thanh ghi TMOD:",
     "extra_lines": [],
     "options": [
       "MOV TMOD, #21H",
@@ -24572,13 +25445,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "MOV TMOD, #2DH"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "Timer 1: GATE=0,C/T=0,mode 2 → 2. Timer 0: GATE=1,C/T=1,mode 1 → D. TMOD=2DH.",
+    "methodology": "Timer 1: GATE=0,C/T=0,mode 2 → 2. Timer 0: GATE=1,C/T=1,mode 1 → D. TMOD=2DH.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24591,7 +25464,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 29,
     "title": "Part 15 - Câu 29",
-    "prompt": "Trên vi điều khiển 89C51, khi lập trình định thời với khoảng thời gian từ 256 _ 65536 µs (giả sử dùng thạch anh là 12MHz) ta dùng kỹ thuật:",
+    "prompt": "Trên vi điều khiển 89C51, khi lập trình định thời với khoảng thời gian từ 256 ? 65536 µs (giả sử dùng thạch anh là 12MHz) ta dùng kỹ thuật:",
     "extra_lines": [],
     "options": [
       "Timer 8 bit tự động nạp lại giá trị đầu",
@@ -24600,13 +25473,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Điều chỉnh bằng phần mềm"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "Mode 1 là 16 bit: một lần tràn tối đa 65536 tick; tại 12 MHz đạt 65536 µs.",
+    "methodology": "Mode 1 là 16 bit: một lần tràn tối đa 65536 tick; tại 12 MHz đạt 65536 µs.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24619,20 +25492,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 30,
     "title": "Part 15 - Câu 30",
-    "prompt": "Trên vi điều khiển 89C51, chế độ nào của Timer 0 và Timer 1 cho phép sử dụng bộ định thời 13 bit? (1 Điểm) Chế độ 3 Chế độ 2 Chế độ 0 Chế độ 1",
+    "prompt": "Mode nào dùng bộ đếm 13 bit?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "options": [
+      "Chế độ 0",
+      "Chế độ 1",
+      "Chế độ 2",
+      "Chế độ 3"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24654,13 +25529,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Thiết lập bit M1 và xóa bit M0"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24682,13 +25557,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Thời gian của bộ đếm Timer 1 là 100ms"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "TMOD=01H chọn Timer 0 định thời mode 1. X=D8F0H=55536, thời gian (65536−55536)×1 µs=10 ms.",
+    "methodology": "TMOD=01H chọn Timer 0 định thời mode 1. X=D8F0H=55536, thời gian (65536−55536)×1 µs=10 ms.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24704,19 +25579,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Cho fosc = 12MHz, TMOD = 21H, TH1 = 35H, TL1 = 35H, TH0 = C5H, TL0=35H. Hãy xác định thời gian của bộ đếm/định thời 0 của vi điều khiển 89C51?",
     "extra_lines": [],
     "options": [
-      "Thời gian của bộ đếm Timer 0 là 15ms",
-      "Thời gian định thời Timer 1 là 10ms",
-      "Thời gian định thời Timer 0 là 15ms",
-      "Thời gian của bộ đếm Timer 1 là 10ms"
+      "Timer 0 định thời 30,102 ms",
+      "Timer 1 định thời 15,051 ms",
+      "Timer 0 định thời 15,051 ms",
+      "Timer 1 định thời 203 ms"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "Timer 0 mode 1: C535H=50485; còn 65536−50485=15051 tick × 1 µs =15,051 ms. 15 ms chỉ là gần đúng, không phải đúng chính xác.",
+    "methodology": "Timer 0 mode 1: C535H=50485; còn 65536−50485=15051 tick × 1 µs =15,051 ms. 15 ms chỉ là gần đúng, không phải đúng chính xác.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24732,19 +25607,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Cho fosc = 12MHz, TMOD = 01H, TH1 = 60H, TL1 = 18H. Hãy xác định giá trị khởi tạo ban đầu của bộ đếm/định thời timer 1 của vi điều khiển 89C51?",
     "extra_lines": [],
     "options": [
-      "X = 6243",
-      "X = 6318",
-      "X = 12312",
-      "X = 25368"
+      "X = 1548",
+      "X = 62440",
+      "X = 3096",
+      "X = 3352"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "TMOD=01H: Timer 1 vẫn ở mode 0. X=TH1×32+(TL1 AND 1FH)=60H×32+18H=3096.",
+    "methodology": "TMOD=01H: Timer 1 vẫn ở mode 0. X=TH1×32+(TL1 AND 1FH)=60H×32+18H=3096.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24770,9 +25645,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "Mode 0 chỉ dùng 5 bit thấp TL0: X=63H×32+18H=3192.",
+    "methodology": "Mode 0 chỉ dùng 5 bit thấp TL0: X=63H×32+18H=3192.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24794,13 +25669,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "00"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 0: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24813,10 +25688,10 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 37,
     "title": "Part 15 - Câu 37",
-    "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer 0 làm định thời, chế độ 3, có sử dụng ngắt INT0, Timer 1 làm bộ đếm, chế độ 2 không sử dụng ngắt INT1, ta cần khởi động thanh ghi TMOD:",
+    "prompt": "Chỉ xét mã cấu hình TMOD: Timer 0 có GATE0=1, C/T0=0, M1M0=11; Timer 1 có GATE1=0, C/T1=1, M1M0=10. Cần nạp giá trị nào? Không giả định cả hai timer hoạt động độc lập.",
     "extra_lines": [],
     "options": [
-      "MOV TMOD, #3EH",
+      "MOV TMOD, #6BH",
       "MOV TMOD, #3DH",
       "MOV TMOD, #2EH",
       "MOV TMOD, #26H"
@@ -24826,9 +25701,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "Nibble Timer 1 = 0110B (GATE=0,C/T=1,M1M0=10); nibble Timer 0 =1011B (GATE=1,C/T=0,M1M0=11), nên TMOD=6BH. Timer 0 mode 3 chiếm TR1/TF1; không thể suy ra Timer 1 vận hành độc lập như ở mode thông thường.",
+    "methodology": "Nibble Timer 1 = 0110B (GATE=0,C/T=1,M1M0=10); nibble Timer 0 =1011B (GATE=1,C/T=0,M1M0=11), nên TMOD=6BH. Timer 0 mode 3 chiếm TR1/TF1; không thể suy ra Timer 1 vận hành độc lập như ở mode thông thường.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24854,9 +25729,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24878,13 +25753,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Thời gian của bộ đếm Timer 1 là 200µs"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "TMOD=21H chọn Timer 1 định thời mode 2. TH1=TL1=35H=53, một khoảng tràn (256−53)×1 µs=203 µs.",
+    "methodology": "TMOD=21H chọn Timer 1 định thời mode 2. TH1=TL1=35H=53, một khoảng tràn (256−53)×1 µs=203 µs.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24906,13 +25781,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "01"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24928,19 +25803,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Cho fosc = 12MHz, TMOD = 60H, TH0 = D8H, TL0 = F0H. Hãy xác định giá trị khởi tạo ban đầu của của bộ đếm/định thời 0 của vi điều khiển 89C51?",
     "extra_lines": [],
     "options": [
-      "X = 56",
-      "X = 256",
-      "X = 6243",
-      "X = 6318"
+      "X = 7184",
+      "X = 3464",
+      "X = 58608",
+      "X = 6928"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "TMOD=60H: nibble thấp 0 nên Timer 0 là mode 0. X=D8H×32+(F0H AND 1FH)=6928.",
+    "methodology": "TMOD=60H: nibble thấp 0 nên Timer 0 là mode 0. X=D8H×32+(F0H AND 1FH)=6928.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24962,13 +25837,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "Thiết lập cả hai bit M0 và M1"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 0: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -24981,20 +25856,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 43,
     "title": "Part 15 - Câu 43",
-    "prompt": "Trên vi điều khiển 89C51, trong chế độ 2 của bộ đếm/định thời, với tần số thạch anh là 12MHz thì thời gian tối đa mà chế độ 0 có thể định thời đến là: (1 Điểm) 65536ms 8192ms 1000ms 256ms",
+    "prompt": "AT89C51 12T, fosc=12 MHz, GATE=0, C/T=0. Ở mode 2, timer bắt đầu từ 0: thời gian tối đa tới một lần tràn là bao nhiêu?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "options": [
+      "256 µs",
+      "8192 µs",
+      "65536 µs",
+      "1000 µs"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "type": "mcq",
+    "answer": "A",
+    "acceptable_answers": [
+      "A"
+    ],
+    "explanation": "Mode 2 có 8 bit. Từ 0 đến lần tràn mất 256 tick. fosc=12 MHz, 12T → 1 µs/tick, nên tối đa 256 µs, không phải ms.",
+    "methodology": "Mode 2 có 8 bit. Từ 0 đến lần tràn mất 256 tick. fosc=12 MHz, 12T → 1 µs/tick, nên tối đa 256 µs, không phải ms.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -25007,20 +25884,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 44,
     "title": "Part 15 - Câu 44",
-    "prompt": "Trên vi điều khiển 89C51, chế độ nào của Timer 0 và Timer 1 cho phép sử dụng bộ định thời 16 bit? (1 Điểm) Chế độ 2 Chế độ 0 Chế độ 1 Chế độ 3",
+    "prompt": "Mode nào của Timer 0/1 là định thời 16 bit?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "options": [
+      "Chế độ 0",
+      "Chế độ 1",
+      "Chế độ 2",
+      "Chế độ 3"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "methodology": "M1M0: 00→mode 0 (13 bit); 01→mode 1 (16 bit); 10→mode 2 (8 bit tự nạp lại); 11→mode 3 (Timer 0 tách hai bộ 8 bit, Timer 1 dừng).",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -25033,7 +25912,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 45,
     "title": "Part 15 - Câu 45",
-    "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer 0 làm bộ đếm, chế độ 1, có sử dụng ngắt INT0, Timer 1 định thời, chế độ 2 sử dụng ngắt INT1, ta cần khởi động thanh ghi TMOD:",
+    "prompt": "Trên vi điều khiển 89C51, khi sử dụng Timer 0 làm bộ đếm, chế độ 1, có điều khiển bằng chân INT0 (GATE0=1), Timer 1 định thời, chế độ 2 điều khiển bằng chân INT1 (GATE1=1), ta cần nạp thanh ghi TMOD:",
     "extra_lines": [],
     "options": [
       "MOV TMOD, #A3H",
@@ -25042,13 +25921,13 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
       "MOV TMOD, #ADH"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$), Timer ở chế độ 2: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "explanation": "Timer 1: GATE=1,C/T=0,mode 2 → A. Timer 0: GATE=1,C/T=1,mode 1 → D. TMOD=ADH.",
+    "methodology": "Timer 1: GATE=1,C/T=0,mode 2 → A. Timer 0: GATE=1,C/T=1,mode 1 → D. TMOD=ADH.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -25064,19 +25943,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Cho fosc = 12MHz, TMOD = 11H, TH1 = 60H, TL1 = 18H. Hãy xác định giá trị khởi tạo ban đầu của bộ đếm/định thời timer 1 của vi điều khiển 89C51?",
     "extra_lines": [],
     "options": [
-      "X = 3096",
-      "X = 25368",
-      "X = 6318",
-      "X = 6243"
+      "X = 12300",
+      "X = 40936",
+      "X = 24600",
+      "X = 24856"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 1: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 65536 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 65536 - N rồi bấm HEX.",
+    "explanation": "TMOD=11H: Timer 1 mode 1. X=60H×256+18H=6018H=24600.",
+    "methodology": "TMOD=11H: Timer 1 mode 1. X=60H×256+18H=6018H=24600.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -25089,20 +25968,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 15: Chế Độ Hoạt Động & Tính Toán Nạp Timer",
     "num": 47,
     "title": "Part 15 - Câu 47",
-    "prompt": "Trên vi điều khiển 89C51, trong chế độ 0 của bộ đếm/định thời, với tần số thạch anh là 12MHz thì thời gian tối đa mà chế độ 0 có thể định thời đến là: (1 Điểm) 256ms 8192ms 1000ms 65536ms Không bao giờ tiết lộ mật khẩu của bạn. Báo cáo lạm dụng Nội dung này được tạo bởi chủ sở hữu của biểu mẫu. Dữ liệu bạn gửi sẽ được gửi đến chủ sở hữu biểu mẫu. Microsoft không chịu trách nhiệm về quyền riêng tư hoặc thực tiễn bảo mật của khách hàng, bao gồm cả các biện pháp bảo mật của chủ sở hữu biểu mẫu này. Không bao giờ đưa ra mật khẩu của bạn. Microsoft Forms | Các cuộc khảo sát, câu đố và cuộc thăm dò do AI cung cấp Tạo biểu mẫu riêng của tôi Chủ sở hữu của biểu mẫu này chưa cung cấp tuyên bố về quyền riêng tư về cách họ sẽ sử dụng dữ liệu phản hồi của bạn. Không cung cấp thông tin cá nhân hoặc thông tin nhạy cảm. | Quyền riêng tư về Sức khỏe Người tiêu dùng | Điều khoản sử dụng",
+    "prompt": "AT89C51 12T, fosc=12 MHz, GATE=0, C/T=0. Ở mode 0, timer bắt đầu từ 0: thời gian tối đa tới một lần tràn là bao nhiêu?",
     "extra_lines": [],
-    "options": [],
-    "type": "fib",
-    "answer": "00",
-    "acceptable_answers": [
-      "00",
-      "00H",
-      "00",
-      "00h"
+    "options": [
+      "256 µs",
+      "8192 µs",
+      "65536 µs",
+      "1000 µs"
     ],
-    "explanation": "Với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$), Timer ở chế độ 0: Giá trị đếm tương ứng là TH = 00H, TL = 00H.",
-    "methodology": "Công thức nạp: N = $T_{\\text{delay}}$ / $T_{\\text{cm}}$. Nạp 256 - N.",
-    "tips_casio": "Casio 580VNX (MENU 3): Bấm 256 - N rồi bấm HEX.",
+    "type": "mcq",
+    "answer": "B",
+    "acceptable_answers": [
+      "B"
+    ],
+    "explanation": "Mode 0 có 13 bit. Từ 0 đến lần tràn mất 8192 tick. fosc=12 MHz, 12T → 1 µs/tick, nên tối đa 8192 µs, không phải ms.",
+    "methodology": "Mode 0 có 13 bit. Từ 0 đến lần tràn mất 8192 tick. fosc=12 MHz, 12T → 1 µs/tick, nên tối đa 8192 µs, không phải ms.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Tính toán thời gian định thời và giá trị nạp TH/TL",
@@ -25115,22 +25996,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 4,
     "title": "Part 16 - Câu 4",
-    "prompt": "Trên vi điều khiển 89C51, Timer 0 ở chế độ 1 cần tạo độ trễ 500 µs với tần số thạch anh 12 MHz. Giá trị của TH0 và TL0 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 0 định thời mode 1, GATE=0. Cần khoảng 500 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = F0H, TL0 = FFH",
-      "TH0 = FDH, TL0 = A3H",
-      "TH0 = FAH, TL0 = 5CH",
-      "TH0 = FEH, TL0 = 0CH"
+      "TH0 = FEH, TL0 = 0CH",
+      "TH0 = FFH, TL0 = 0CH",
+      "TH0 = FFH, TL0 = 06H",
+      "TH0 = FEH, TL0 = 0DH"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "A",
     "acceptable_answers": [
-      "D"
+      "A"
     ],
-    "explanation": "Thời gian trễ $500.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 500. Giá trị nạp cho Timer Mode 1 là TH = FEH, TL = 0CH.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=500/1=500 tick; X=65536−500=65036. Tách X thành byte cao FEH và byte thấp 0CH.",
+    "methodology": "Tick=12/fosc=1 µs. N=500/1=500 tick; X=65536−500=65036. Tách X thành byte cao FEH và byte thấp 0CH.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25143,28 +26024,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 5,
     "title": "Part 16 - Câu 5",
-    "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau . Chương trình này dùng để:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian lệnh ngoài timer, chương trình tạo dạng sóng nào ở P3.1?",
+    "extra_lines": [
+      "MOV TMOD, #01H",
+      "LOOP: CLR TR0",
+      "MOV TH0, #B2H",
+      "MOV TL0, #A0H",
+      "CLR TF0",
+      "SETB TR0",
+      "WAIT: JNB TF0, WAIT",
+      "CLR TR0",
+      "CPL P3.1",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Tạo dạng sóng vuông có tần số 50Hz trên chân P3.1",
-      "Tạo dạng sóng vuông có tần số 25Hz trên chân P3.1",
-      "Tạo dạng sóng vuông có tần số 10Hz trên chân P3.1",
-      "Tạo dạng sóng vuông có tần số 20Hz trên chân P3.1"
+      "Chu kỳ 39,616 ms (tần số xấp xỉ 25,24 Hz)",
+      "Chu kỳ 19808 µs",
+      "Chu kỳ 79232 µs",
+      "Chu kỳ 39616 ms"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "A",
     "acceptable_answers": [
-      "B"
+      "A"
     ],
-    "explanation": "Chương trình định thời Timer kết hợp lệnh đảo trạng thái chân cổng CPL tạo ra dạng sóng vuông tuần hoàn. Chu kỳ sóng toàn phần T = 2 x $T_{\\text{delay}}$.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Timer 0 mode 1, 12 MHz/12T cho tick 1 µs. X=45728, còn 65536−45728=19808 tick. CPL P3.1 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×19808=39616 µs.",
+    "methodology": "Timer 0 mode 1, 12 MHz/12T cho tick 1 µs. X=45728, còn 65536−45728=19808 tick. CPL P3.1 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×19808=39616 µs.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
-    "images": [
-      "assets/images/p16_q05.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_16_Q06",
@@ -25173,28 +26063,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 6,
     "title": "Part 16 - Câu 6",
-    "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau. Chương trình này dùng để:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian lệnh ngoài timer, chương trình tạo dạng sóng nào ở P1.0?",
+    "extra_lines": [
+      "MOV TMOD, #00H",
+      "LOOP: CLR TR0",
+      "MOV TH0, #E0H",
+      "MOV TL0, #18H",
+      "CLR TF0",
+      "SETB TR0",
+      "WAIT: JNB TF0, WAIT",
+      "CLR TR0",
+      "CPL P1.0",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Tạo dạng sóng vuông có chu kỳ 50µS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 100mS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 1mS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 50mS trên chân P1.0"
+      "Chu kỳ 2000 µs (2 ms)",
+      "Chu kỳ 1000 µs",
+      "Chu kỳ 4000 µs",
+      "Chu kỳ 2000 ms"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "A",
     "acceptable_answers": [
-      "C"
+      "A"
     ],
-    "explanation": "Chương trình định thời Timer kết hợp lệnh đảo trạng thái chân cổng CPL tạo ra dạng sóng vuông tuần hoàn. Chu kỳ sóng toàn phần T = 2 x $T_{\\text{delay}}$.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Timer 0 mode 0, 12 MHz/12T cho tick 1 µs. X=7192, còn 8192−7192=1000 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×1000=2000 µs.",
+    "methodology": "Timer 0 mode 0, 12 MHz/12T cho tick 1 µs. X=7192, còn 8192−7192=1000 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×1000=2000 µs.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
-    "images": [
-      "assets/images/p16_q06.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_16_Q07",
@@ -25203,28 +26102,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 7,
     "title": "Part 16 - Câu 7",
-    "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau. Chương trình này dùng để:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian lệnh ngoài timer, chương trình tạo dạng sóng nào ở P1.0?",
+    "extra_lines": [
+      "MOV TMOD, #01H",
+      "LOOP: CLR TR0",
+      "MOV TH0, #D8H",
+      "MOV TL0, #F0H",
+      "CLR TF0",
+      "SETB TR0",
+      "WAIT: JNB TF0, WAIT",
+      "CLR TR0",
+      "CPL P1.0",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Tạo dạng sóng vuông có tần số 20Hz trên chân P1.0",
-      "Tạo dạng sóng vuông có tần số 100Hz trên chân P1.0",
-      "Tạo dạng sóng vuông có tần số 50Hz trên chân P1.0",
-      "Tạo dạng sóng vuông có tần số 10Hz trên chân P1.0"
+      "Tần số 50 Hz (chu kỳ 20 ms)",
+      "Chu kỳ 10000 µs",
+      "Chu kỳ 40000 µs",
+      "Chu kỳ 20000 ms"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Chương trình định thời Timer kết hợp lệnh đảo trạng thái chân cổng CPL tạo ra dạng sóng vuông tuần hoàn. Chu kỳ sóng toàn phần T = 2 x $T_{\\text{delay}}$.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Timer 0 mode 1, 12 MHz/12T cho tick 1 µs. X=55536, còn 65536−55536=10000 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×10000=20000 µs.",
+    "methodology": "Timer 0 mode 1, 12 MHz/12T cho tick 1 µs. X=55536, còn 65536−55536=10000 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×10000=20000 µs.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
-    "images": [
-      "assets/images/p16_q07.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_16_Q08",
@@ -25233,22 +26141,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 8,
     "title": "Part 16 - Câu 8",
-    "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 0 cần tạo độ trễ 1.2 ms với tần số thạch anh 12 MHz. Giá trị của TH1 và TL1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 1 định thời mode 0, GATE=0. Cần khoảng 1200 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH1 = 15H, TL1 = 50H",
-      "TH1 = 10H, TL1 = 40H",
-      "TH1 = 0FH, TL1 = 0FH",
-      "TH1 = 1BH, TL1 = 00H"
+      "TH1 = DAH, TL1 = 10H",
+      "TH1 = E2H, TL1 = 10H",
+      "TH1 = EDH, TL1 = 08H",
+      "TH1 = DAH, TL1 = 11H"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thời gian trễ $1200.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 1200. Giá trị nạp cho Timer Mode 0 là TH = DAH, TL = 10H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=1200/1=1200 tick; X=8192−1200=6992. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=DAH, 5 bit thấp TL=10H.",
+    "methodology": "Tick=12/fosc=1 µs. N=1200/1=1200 tick; X=8192−1200=6992. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=DAH, 5 bit thấp TL=10H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25261,22 +26169,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 9,
     "title": "Part 16 - Câu 9",
-    "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 1 cần tạo độ trễ 20 ms với tần số thạch anh 12 MHz. Giá trị của TH1 và TL1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 1 định thời mode 1, GATE=0. Cần khoảng 20000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH1 = B2H, TL1 = A0H",
-      "TH1 = D0H, TL1 = 50H",
-      "TH1 = C2H, TL1 = B0H",
-      "TH1 = A0H, TL1 = 30H"
+      "TH1 = B2H, TL1 = E0H",
+      "TH1 = D8H, TL1 = F0H",
+      "TH1 = B1H, TL1 = E1H",
+      "TH1 = B1H, TL1 = E0H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Thời gian trễ $20000.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 20000. Giá trị nạp cho Timer Mode 1 là TH = B1H, TL = E0H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=20000/1=20000 tick; X=65536−20000=45536. Tách X thành byte cao B1H và byte thấp E0H.",
+    "methodology": "Tick=12/fosc=1 µs. N=20000/1=20000 tick; X=65536−20000=45536. Tách X thành byte cao B1H và byte thấp E0H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25289,22 +26197,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 10,
     "title": "Part 16 - Câu 10",
-    "prompt": "Trên vi điều khiển 89C51, TH1 = C0H Timer 1 ở chế độ 1 cần tạo độ trễ 15 ms với tần số thạch anh 12 MHz. Giá trị của TH1 và TL1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 1 định thời mode 1, GATE=0. Cần khoảng 15000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH1 = D2H, TL1 = 80H",
-      "TH1 = A1H, TL1 = 40H",
-      "TH1 = C4H, TL1 = B8H",
-      "TH1 = B0H, TL1 = C4H"
+      "TH1 = E2H, TL1 = B4H",
+      "TH1 = C5H, TL1 = 69H",
+      "TH1 = C5H, TL1 = 68H",
+      "TH1 = C6H, TL1 = 68H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Thời gian trễ $15000.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 15000. Giá trị nạp cho Timer Mode 1 là TH = C5H, TL = 68H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=15000/1=15000 tick; X=65536−15000=50536. Tách X thành byte cao C5H và byte thấp 68H.",
+    "methodology": "Tick=12/fosc=1 µs. N=15000/1=15000 tick; X=65536−15000=50536. Tách X thành byte cao C5H và byte thấp 68H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25317,22 +26225,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 11,
     "title": "Part 16 - Câu 11",
-    "prompt": "Trên vi điều khiển 89C51, hãy tính giá trị khởi tạo của TH0, TL0 khi biết f osc=12MHz, chế độ 1 tại Timer 0, thời gian định thời 50ms?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 0 định thời mode 1, GATE=0. Cần khoảng 50000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = F9H, TL0 = 0CH",
-      "TH0 = 3CH, TL0 = 0B0H",
-      "TH0 = FDH, TL0 = 12H",
-      "TH0 = FA, TL0 = 10H"
+      "TH0 = 3CH, TL0 = B1H",
+      "TH0 = 3CH, TL0 = B0H",
+      "TH0 = 3DH, TL0 = B0H",
+      "TH0 = 9EH, TL0 = 58H"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Thời gian trễ $50000.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 50000. Giá trị nạp cho Timer Mode 1 là TH = 3CH, TL = B0H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=50000/1=50000 tick; X=65536−50000=15536. Tách X thành byte cao 3CH và byte thấp B0H.",
+    "methodology": "Tick=12/fosc=1 µs. N=50000/1=50000 tick; X=65536−50000=15536. Tách X thành byte cao 3CH và byte thấp B0H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25345,22 +26253,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 12,
     "title": "Part 16 - Câu 12",
-    "prompt": "Trên vi điều khiển 89C51, Timer 0 ở chế độ 2 cần tạo độ trễ 900 µs với tần số thạch anh 6 MHz. Giá trị của TH0 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=6 MHz, Timer 0 định thời mode 2, GATE=0. Cần khoảng 900 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Chọn nhận định đúng.",
     "extra_lines": [],
     "options": [
-      "TH0 = B4H",
-      "TH0 = 0AH",
-      "TH0 = 00H",
-      "TH0 = C0H"
+      "TH0=00H tạo đúng khoảng yêu cầu",
+      "Không thể tạo bằng một lần tràn ở mode này",
+      "TH0=12H tạo đúng khoảng yêu cầu",
+      "TH0=24H tạo đúng khoảng yêu cầu"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "B",
     "acceptable_answers": [
-      "C"
+      "B"
     ],
-    "explanation": "Thời gian trễ $900.0\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$): Số xung N = 450. Giá trị nạp cho Timer Mode 2 là TH = 00H, TL = 00H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=2 µs; cần 450 tick nhưng mode 2 chỉ có 256 tick mỗi lần tràn (tối đa 512 µs). Cần đếm nhiều lần tràn hoặc dùng mode 1; không được lấy modulo để nạp TH rồi gọi đó là đúng thời gian.",
+    "methodology": "Tick=2 µs; cần 450 tick nhưng mode 2 chỉ có 256 tick mỗi lần tràn (tối đa 512 µs). Cần đếm nhiều lần tràn hoặc dùng mode 1; không được lấy modulo để nạp TH rồi gọi đó là đúng thời gian.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25373,22 +26281,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 13,
     "title": "Part 16 - Câu 13",
-    "prompt": "Trên vi điều khiển 89C51, Timer 0 ở chế độ 0 cần tạo độ trễ 5 ms với tần số thạch anh 12 MHz. Giá trị của TH0 và TL0 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 0 định thời mode 0, GATE=0. Cần khoảng 5000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = 1AH, TL0 = 50H",
-      "TH0 = 10H, TL0 = 10H",
-      "TH0 = 0CH, TL0 = 90H",
-      "TH0 = 1FH, TL0 = 40H"
+      "TH0 = 6BH, TL0 = 18H",
+      "TH0 = B1H, TL0 = 1CH",
+      "TH0 = 63H, TL0 = 19H",
+      "TH0 = 63H, TL0 = 18H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Thời gian trễ $5000.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 5000. Giá trị nạp cho Timer Mode 0 là TH = 63H, TL = 18H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=5000/1=5000 tick; X=8192−5000=3192. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=63H, 5 bit thấp TL=18H.",
+    "methodology": "Tick=12/fosc=1 µs. N=5000/1=5000 tick; X=8192−5000=3192. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=63H, 5 bit thấp TL=18H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25401,22 +26309,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 14,
     "title": "Part 16 - Câu 14",
-    "prompt": "Trên vi điều khiển 89C51, Timer 0 ở chế độ 2 cần tạo độ trễ 400 µs với tần số thạch anh 6 MHz. Giá trị của TH0 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=6 MHz, Timer 0 định thời mode 2, GATE=0. Cần khoảng 400 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = 38H",
-      "TH0 = 45H",
-      "TH0 = 22H",
-      "TH0 = 99H"
+      "TH0 = TL0 = 9CH",
+      "TH0 = TL0 = 39H",
+      "TH0 = TL0 = 38H",
+      "TH0 = TL0 = 78H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Thời gian trễ $400.0\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$): Số xung N = 200. Giá trị nạp cho Timer Mode 2 là TH = 38H, TL = 38H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=2 µs. N=400/2=200 tick; X=256−200=56. Mode 2 nạp TH=TL=38H để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "methodology": "Tick=12/fosc=2 µs. N=400/2=200 tick; X=256−200=56. Mode 2 nạp TH=TL=38H để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25429,22 +26337,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 15,
     "title": "Part 16 - Câu 15",
-    "prompt": "Trên vi điều khiển 89C51, Timer 0 ở chế độ 1 cần tạo độ trễ 3 ms với tần số thạch anh 6 MHz. Giá trị của TH0 và TL0 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=6 MHz, Timer 0 định thời mode 1, GATE=0. Cần khoảng 3000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = C5H, TL0 = A2H",
-      "TH0 = F8H, TL0 = D4H",
-      "TH0 = F0H, TL0 = FFH",
-      "TH0 = D0H, TL0 = C3H"
+      "TH0 = FAH, TL0 = 25H",
+      "TH0 = FAH, TL0 = 24H",
+      "TH0 = FBH, TL0 = 24H",
+      "TH0 = FDH, TL0 = 12H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Thời gian trễ $3000.0\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$): Số xung N = 1500. Giá trị nạp cho Timer Mode 1 là TH = FAH, TL = 24H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=2 µs. N=3000/2=1500 tick; X=65536−1500=64036. Tách X thành byte cao FAH và byte thấp 24H.",
+    "methodology": "Tick=12/fosc=2 µs. N=3000/2=1500 tick; X=65536−1500=64036. Tách X thành byte cao FAH và byte thấp 24H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25457,22 +26365,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 16,
     "title": "Part 16 - Câu 16",
-    "prompt": "Trên vi điều khiển 89C51, Timer 0 ở chế độ 1 cần tạo độ trễ 6 ms với tần số thạch anh 6 MHz. Giá trị của TH0 và TL0 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=6 MHz, Timer 0 định thời mode 1, GATE=0. Cần khoảng 6000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = F4H, TL0 = E8H",
-      "TH0 = D0H, TL0 = C3H",
-      "TH0 = C7H, TL0 = A2H",
-      "TH0 = FFH, TL0 = FFH"
+      "TH0 = F4H, TL0 = 48H",
+      "TH0 = F5H, TL0 = 48H",
+      "TH0 = FAH, TL0 = 24H",
+      "TH0 = F4H, TL0 = 49H"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thời gian trễ $6000.0\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$): Số xung N = 3000. Giá trị nạp cho Timer Mode 1 là TH = F4H, TL = 48H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=2 µs. N=6000/2=3000 tick; X=65536−3000=62536. Tách X thành byte cao F4H và byte thấp 48H.",
+    "methodology": "Tick=12/fosc=2 µs. N=6000/2=3000 tick; X=65536−3000=62536. Tách X thành byte cao F4H và byte thấp 48H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25485,22 +26393,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 17,
     "title": "Part 16 - Câu 17",
-    "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 2 cần tạo độ trễ 600 µs với tần số thạch anh 12 MHz. Giá trị của TH1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 1 định thời mode 2, GATE=0. Cần khoảng 600 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Chọn nhận định đúng.",
     "extra_lines": [],
     "options": [
-      "TH1 = A8H",
-      "TH1 = F4H",
-      "TH1 = B1H",
-      "TH1 = F0H"
+      "TH1=00H tạo đúng khoảng yêu cầu",
+      "Không thể tạo bằng một lần tràn ở mode này",
+      "TH1=12H tạo đúng khoảng yêu cầu",
+      "TH1=24H tạo đúng khoảng yêu cầu"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Thời gian trễ $600.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 600. Giá trị nạp cho Timer Mode 2 là TH = 00H, TL = 00H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=1 µs; cần 600 tick nhưng mode 2 chỉ có 256 tick mỗi lần tràn (tối đa 256 µs). Cần đếm nhiều lần tràn hoặc dùng mode 1; không được lấy modulo để nạp TH rồi gọi đó là đúng thời gian.",
+    "methodology": "Tick=1 µs; cần 600 tick nhưng mode 2 chỉ có 256 tick mỗi lần tràn (tối đa 256 µs). Cần đếm nhiều lần tràn hoặc dùng mode 1; không được lấy modulo để nạp TH rồi gọi đó là đúng thời gian.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25513,22 +26421,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 18,
     "title": "Part 16 - Câu 18",
-    "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 1 cần tạo độ trễ 7 ms với tần số thạch anh 12 MHz. Giá trị của TH1 và TL1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 1 định thời mode 1, GATE=0. Cần khoảng 7000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH1 = A0H, TL1 = 30H",
-      "TH1 = E3H, TL1 = A8H",
-      "TH1 = C7H, TL1 = B0H",
-      "TH1 = D0H, TL1 = R0H"
+      "TH1 = F2H, TL1 = 54H",
+      "TH1 = E4H, TL1 = A9H",
+      "TH1 = E4H, TL1 = A8H",
+      "TH1 = E5H, TL1 = A8H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Thời gian trễ $7000.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 7000. Giá trị nạp cho Timer Mode 1 là TH = E4H, TL = A8H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=7000/1=7000 tick; X=65536−7000=58536. Tách X thành byte cao E4H và byte thấp A8H.",
+    "methodology": "Tick=12/fosc=1 µs. N=7000/1=7000 tick; X=65536−7000=58536. Tách X thành byte cao E4H và byte thấp A8H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25541,22 +26449,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 19,
     "title": "Part 16 - Câu 19",
-    "prompt": "Trên vi điều khiển 89C51, Timer 0 ở chế độ 2 cần tạo độ trễ 350 µs với tần số thạch anh 6 MHz. Giá trị của TH0 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=6 MHz, Timer 0 định thời mode 2, GATE=0. Cần khoảng 350 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = 51H",
-      "TH0 = 65H",
-      "TH0 = 99H",
-      "TH0 = 78H"
+      "TH0 = TL0 = 52H",
+      "TH0 = TL0 = 51H",
+      "TH0 = TL0 = 91H",
+      "TH0 = TL0 = A9H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Thời gian trễ $350.0\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$): Số xung N = 175. Giá trị nạp cho Timer Mode 2 là TH = 51H, TL = 51H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=2 µs. N=350/2=175 tick; X=256−175=81. Mode 2 nạp TH=TL=51H để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "methodology": "Tick=12/fosc=2 µs. N=350/2=175 tick; X=256−175=81. Mode 2 nạp TH=TL=51H để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25569,28 +26477,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 20,
     "title": "Part 16 - Câu 20",
-    "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau. Chương trình này dùng để:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian lệnh ngoài timer, chương trình tạo dạng sóng nào ở P1.1?",
+    "extra_lines": [
+      "MOV TMOD, #01H",
+      "LOOP: CLR TR0",
+      "MOV TH0, #3CH",
+      "MOV TL0, #B0H",
+      "CLR TF0",
+      "SETB TR0",
+      "WAIT: JNB TF0, WAIT",
+      "CLR TR0",
+      "CPL P1.1",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Tạo dạng sóng vuông có chu kỳ 50mS trên chân P1.1",
-      "Tạo dạng sóng vuông có chu kỳ 50µS trên chân P1.1",
-      "Tạo dạng sóng vuông có chu kỳ 100mS trên chân P1.1",
-      "Tạo dạng sóng vuông có chu kỳ 100µS trên chân P1.1"
+      "Chu kỳ 100 ms",
+      "Chu kỳ 50000 µs",
+      "Chu kỳ 200000 µs",
+      "Chu kỳ 100000 ms"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "A",
     "acceptable_answers": [
-      "C"
+      "A"
     ],
-    "explanation": "Chương trình định thời Timer kết hợp lệnh đảo trạng thái chân cổng CPL tạo ra dạng sóng vuông tuần hoàn. Chu kỳ sóng toàn phần T = 2 x $T_{\\text{delay}}$.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Timer 0 mode 1, 12 MHz/12T cho tick 1 µs. X=15536, còn 65536−15536=50000 tick. CPL P1.1 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×50000=100000 µs.",
+    "methodology": "Timer 0 mode 1, 12 MHz/12T cho tick 1 µs. X=15536, còn 65536−15536=50000 tick. CPL P1.1 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×50000=100000 µs.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
-    "images": [
-      "assets/images/p16_q20.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_16_Q21",
@@ -25599,22 +26516,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 21,
     "title": "Part 16 - Câu 21",
-    "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 0 (13-bit) cần tạo độ trễ 3.5 ms với tần số thạch anh 12 MHz. Giá trị của TH1 và TL1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 1 định thời mode 0, GATE=0. Cần khoảng 3500 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH1 = 20H, TL1 = 50H",
-      "TH1 = 15H, TL1 = 40H",
-      "TH1 = 10H, TL1 = 10H",
-      "TH1 = 12H, TL1 = 34H"
+      "TH1 = 9AH, TL1 = 14H",
+      "TH1 = C9H, TL1 = 0AH",
+      "TH1 = 92H, TL1 = 15H",
+      "TH1 = 92H, TL1 = 14H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "D",
     "acceptable_answers": [
-      "A"
+      "D"
     ],
-    "explanation": "Thời gian trễ $3500.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 3500. Giá trị nạp cho Timer Mode 0 là TH = 92H, TL = 14H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=3500/1=3500 tick; X=8192−3500=4692. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=92H, 5 bit thấp TL=14H.",
+    "methodology": "Tick=12/fosc=1 µs. N=3500/1=3500 tick; X=8192−3500=4692. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=92H, 5 bit thấp TL=14H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25627,22 +26544,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 22,
     "title": "Part 16 - Câu 22",
-    "prompt": "Trên vi điều khiển 89C51, Timer 0 ở chế độ 0 cần tạo độ trễ 1.5 ms với tần số thạch anh 6 MHz. Giá trị của TH0 và TL0 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=6 MHz, Timer 0 định thời mode 0, GATE=0. Cần khoảng 1500 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = 1EH, TL0 = 34H",
-      "TH0 = 3BH, TL0 = 1FH",
-      "TH0 = 2AH, TL0 = 4BH",
-      "TH0 = 1DH, TL0 = 72H"
+      "TH0 = F4H, TL0 = 09H",
+      "TH0 = E8H, TL0 = 13H",
+      "TH0 = E8H, TL0 = 12H",
+      "TH0 = F0H, TL0 = 12H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Thời gian trễ $1500.0\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$): Số xung N = 750. Giá trị nạp cho Timer Mode 0 là TH = E8H, TL = 12H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=2 µs. N=1500/2=750 tick; X=8192−750=7442. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=E8H, 5 bit thấp TL=12H.",
+    "methodology": "Tick=12/fosc=2 µs. N=1500/2=750 tick; X=8192−750=7442. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=E8H, 5 bit thấp TL=12H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25655,22 +26572,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 23,
     "title": "Part 16 - Câu 23",
-    "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 2 cần tạo độ trễ 100 µs với tần số thạch anh 6 MHz. Giá trị của TH1 là bao nhiêu?Nguyên lý hoạt động của bộ đếm/ bộ định thời",
+    "prompt": "AT89C51 12T, fosc=6 MHz, Timer 1 định thời mode 2, GATE=0. Cần khoảng 100 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH1 = B4H",
-      "TH1 = CEH",
-      "TH1 = D0H",
-      "TH1 = C5H"
+      "TH1 = TL1 = CFH",
+      "TH1 = TL1 = CEH",
+      "TH1 = TL1 = 0EH",
+      "TH1 = TL1 = E7H"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Thời gian trễ $100.0\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$): Số xung N = 50. Giá trị nạp cho Timer Mode 2 là TH = CEH, TL = CEH.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=2 µs. N=100/2=50 tick; X=256−50=206. Mode 2 nạp TH=TL=CEH để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "methodology": "Tick=12/fosc=2 µs. N=100/2=50 tick; X=256−50=206. Mode 2 nạp TH=TL=CEH để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25683,28 +26600,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 24,
     "title": "Part 16 - Câu 24",
-    "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 bên. Chương trình này dùng để:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian lệnh ngoài timer, chương trình tạo dạng sóng nào ở P1.0?",
+    "extra_lines": [
+      "MOV TMOD, #02H",
+      "LOOP: CLR TR0",
+      "MOV TH0, #CEH",
+      "MOV TL0, #CEH",
+      "CLR TF0",
+      "SETB TR0",
+      "WAIT: JNB TF0, WAIT",
+      "CLR TR0",
+      "CPL P1.0",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Tạo dạng sóng vuông có chu kỳ 100mS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 100µS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 50µS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 50mS trên chân P1.0"
+      "Chu kỳ 100 µs",
+      "Chu kỳ 50 µs",
+      "Chu kỳ 200 µs",
+      "Chu kỳ 100 ms"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Chương trình định thời Timer kết hợp lệnh đảo trạng thái chân cổng CPL tạo ra dạng sóng vuông tuần hoàn. Chu kỳ sóng toàn phần T = 2 x $T_{\\text{delay}}$.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Timer 0 mode 2, 12 MHz/12T cho tick 1 µs. X=206, còn 256−206=50 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×50=100 µs.",
+    "methodology": "Timer 0 mode 2, 12 MHz/12T cho tick 1 µs. X=206, còn 256−206=50 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×50=100 µs.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
-    "images": [
-      "assets/images/p16_q24.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_16_Q25",
@@ -25713,28 +26639,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 25,
     "title": "Part 16 - Câu 25",
-    "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau. Chương trình này dùng để:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian lệnh ngoài timer, chương trình tạo dạng sóng nào ở P1.1?",
+    "extra_lines": [
+      "MOV TMOD, #02H",
+      "LOOP: CLR TR0",
+      "MOV TH0, #9CH",
+      "MOV TL0, #9CH",
+      "CLR TF0",
+      "SETB TR0",
+      "WAIT: JNB TF0, WAIT",
+      "CLR TR0",
+      "CPL P1.1",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Tạo dạng sóng vuông có chu kỳ 78µS trên chân P1.1",
-      "Tạo dạng sóng vuông có chu kỳ 156µS trên chân P1.1",
-      "Tạo dạng sóng vuông có chu kỳ 100µS trên chân P1.1",
-      "Tạo dạng sóng vuông có chu kỳ 200µS trên chân P1.1"
+      "Chu kỳ 200 µs",
+      "Chu kỳ 100 µs",
+      "Chu kỳ 400 µs",
+      "Chu kỳ 200 ms"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "A",
     "acceptable_answers": [
-      "B"
+      "A"
     ],
-    "explanation": "Chương trình định thời Timer kết hợp lệnh đảo trạng thái chân cổng CPL tạo ra dạng sóng vuông tuần hoàn. Chu kỳ sóng toàn phần T = 2 x $T_{\\text{delay}}$.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Timer 0 mode 2, 12 MHz/12T cho tick 1 µs. X=156, còn 256−156=100 tick. CPL P1.1 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×100=200 µs.",
+    "methodology": "Timer 0 mode 2, 12 MHz/12T cho tick 1 µs. X=156, còn 256−156=100 tick. CPL P1.1 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×100=200 µs.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
-    "images": [
-      "assets/images/p16_q25.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_16_Q26",
@@ -25743,22 +26678,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 26,
     "title": "Part 16 - Câu 26",
-    "prompt": "Trên vi điều khiển 89C51, Timer 0 ở chế độ 2 cần tạo độ trễ 200 µs với tần số thạch anh 6 MHz. Giá trị của TH0 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=6 MHz, Timer 0 định thời mode 2, GATE=0. Cần khoảng 200 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = B1H",
-      "TH0 = C5H",
-      "TH0 = 9CH",
-      "TH0 = A3H"
+      "TH0 = TL0 = CEH",
+      "TH0 = TL0 = 9DH",
+      "TH0 = TL0 = 9CH",
+      "TH0 = TL0 = DCH"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Thời gian trễ $200.0\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$): Số xung N = 100. Giá trị nạp cho Timer Mode 2 là TH = 9CH, TL = 9CH.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=2 µs. N=200/2=100 tick; X=256−100=156. Mode 2 nạp TH=TL=9CH để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "methodology": "Tick=12/fosc=2 µs. N=200/2=100 tick; X=256−100=156. Mode 2 nạp TH=TL=9CH để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25771,22 +26706,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 27,
     "title": "Part 16 - Câu 27",
-    "prompt": "Trên vi điều khiển 89C51, hãy tính giá trị khởi tạo của TH0, TL0 khi biết f osc=6MHz, chế độ 2 tại Timer 1, thời gian định thời 300µs?",
+    "prompt": "AT89C51 12T, fosc=6 MHz, Timer 1 định thời mode 2, GATE=0. Cần khoảng 300 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = FAH, TL0 = 10H",
-      "TH0 = 3CH, TL0 = B0H",
-      "TH0 = FDH, TL0 = 12H",
-      "TH0 = F9H, TL0 = 5CH"
+      "TH1 = TL1 = 6BH",
+      "TH1 = TL1 = 6AH",
+      "TH1 = TL1 = AAH",
+      "TH1 = TL1 = B5H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Thời gian trễ $300.0\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$): Số xung N = 150. Giá trị nạp cho Timer Mode 2 là TH = 6AH, TL = 6AH.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=2 µs. N=300/2=150 tick; X=256−150=106. Mode 2 nạp TH=TL=6AH để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "methodology": "Tick=12/fosc=2 µs. N=300/2=150 tick; X=256−150=106. Mode 2 nạp TH=TL=6AH để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25799,22 +26734,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 28,
     "title": "Part 16 - Câu 28",
-    "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 0 cần tạo độ trễ 2 ms với tần số thạch anh 12 MHz. Giá trị của TH1 và TL1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 1 định thời mode 0, GATE=0. Cần khoảng 2000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH1 = 1AH, TL1 = 40H",
-      "TH1 = 20H, TL1 = 50H",
-      "TH1 = 18H, TL1 = 30H",
-      "TH1 = 15H, TL1 = 10H"
+      "TH1 = C1H, TL1 = 10H",
+      "TH1 = C9H, TL1 = 10H",
+      "TH1 = E0H, TL1 = 18H",
+      "TH1 = C1H, TL1 = 11H"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thời gian trễ $2000.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 2000. Giá trị nạp cho Timer Mode 0 là TH = C1H, TL = 10H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=2000/1=2000 tick; X=8192−2000=6192. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=C1H, 5 bit thấp TL=10H.",
+    "methodology": "Tick=12/fosc=1 µs. N=2000/1=2000 tick; X=8192−2000=6192. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=C1H, 5 bit thấp TL=10H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25827,28 +26762,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 29,
     "title": "Part 16 - Câu 29",
-    "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau. Chương trình này dùng để:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian lệnh ngoài timer, chương trình tạo dạng sóng nào ở P1.0?",
+    "extra_lines": [
+      "MOV TMOD, #01H",
+      "LOOP: CLR TR0",
+      "MOV TH0, #FEH",
+      "MOV TL0, #0CH",
+      "CLR TF0",
+      "SETB TR0",
+      "WAIT: JNB TF0, WAIT",
+      "CLR TR0",
+      "CPL P1.0",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Tạo dạng sóng vuông có chu kỳ 1000µS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 32518µS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 500µS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 65036µS trên chân P1.0"
+      "Chu kỳ 1000 µs",
+      "Chu kỳ 500 µs",
+      "Chu kỳ 2000 µs",
+      "Chu kỳ 1000 ms"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Chương trình định thời Timer kết hợp lệnh đảo trạng thái chân cổng CPL tạo ra dạng sóng vuông tuần hoàn. Chu kỳ sóng toàn phần T = 2 x $T_{\\text{delay}}$.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Timer 0 mode 1, 12 MHz/12T cho tick 1 µs. X=65036, còn 65536−65036=500 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×500=1000 µs.",
+    "methodology": "Timer 0 mode 1, 12 MHz/12T cho tick 1 µs. X=65036, còn 65536−65036=500 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×500=1000 µs.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
-    "images": [
-      "assets/images/p16_q29.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_16_Q30",
@@ -25857,22 +26801,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 30,
     "title": "Part 16 - Câu 30",
-    "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 0 cần tạo độ trễ 1 ms với tần số thạch anh 6 MHz. Giá trị của TH1 và TL1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=6 MHz, Timer 1 định thời mode 0, GATE=0. Cần khoảng 1000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH1 = 18H, TL1 = A4H",
-      "TH1 = 20H, TL1= 50H",
-      "TH1 = 1EH, TL1 = 0CH",
-      "TH1 = 1DH, TL1 = C5H"
+      "TH1 = F8H, TL1 = 06H",
+      "TH1 = F0H, TL1 = 0DH",
+      "TH1 = F0H, TL1 = 0CH",
+      "TH1 = F8H, TL1 = 0CH"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Thời gian trễ $1000.0\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$): Số xung N = 500. Giá trị nạp cho Timer Mode 0 là TH = F0H, TL = 0CH.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=2 µs. N=1000/2=500 tick; X=8192−500=7692. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=F0H, 5 bit thấp TL=0CH.",
+    "methodology": "Tick=12/fosc=2 µs. N=1000/2=500 tick; X=8192−500=7692. Mode 0 ghép TH×32+(TL AND 1FH), nên TH=F0H, 5 bit thấp TL=0CH.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25885,22 +26829,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 31,
     "title": "Part 16 - Câu 31",
-    "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 1 cần tạo độ trễ 10 ms với tần số thạch anh 12 MHz. Giá trị của TH1 và TL1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 1 định thời mode 1, GATE=0. Cần khoảng 10000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = C7H, TL0 = B0H",
-      "TH0 = F1H, TL0 = 60H",
-      "TH0 = D8H, TL0 = F0H",
-      "TH0 = D5H, TL0 = 40H"
+      "TH1 = D8H, TL1 = F1H",
+      "TH1 = D8H, TL1 = F0H",
+      "TH1 = D9H, TL1 = F0H",
+      "TH1 = ECH, TL1 = 78H"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "B",
     "acceptable_answers": [
-      "C"
+      "B"
     ],
-    "explanation": "Thời gian trễ $10000.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 10000. Giá trị nạp cho Timer Mode 1 là TH = D8H, TL = F0H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=10000/1=10000 tick; X=65536−10000=55536. Tách X thành byte cao D8H và byte thấp F0H.",
+    "methodology": "Tick=12/fosc=1 µs. N=10000/1=10000 tick; X=65536−10000=55536. Tách X thành byte cao D8H và byte thấp F0H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25913,28 +26857,48 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 32,
     "title": "Part 16 - Câu 32",
-    "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau . Chương trình này dùng để:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian lệnh ngoài timer. Xung PWM tại P2.4 có tần số và duty mức cao nào?",
+    "extra_lines": [
+      "MOV TMOD, #01H",
+      "CLR TR0",
+      "LOOP: SETB P2.4",
+      "ACALL HIGH_DELAY",
+      "CLR P2.4",
+      "ACALL LOW_DELAY",
+      "SJMP LOOP",
+      "HIGH_DELAY: MOV TH0, #0FCH",
+      "MOV TL0, #66H",
+      "CLR TF0",
+      "SETB TR0",
+      "HIGH_WAIT: JNB TF0, HIGH_WAIT",
+      "CLR TR0",
+      "RET",
+      "LOW_DELAY: MOV TH0, #0F9H",
+      "MOV TL0, #66H",
+      "CLR TF0",
+      "SETB TR0",
+      "LOW_WAIT: JNB TF0, LOW_WAIT",
+      "CLR TR0",
+      "RET"
+    ],
     "options": [
-      "Tạo dạng sóng vuông có tần số 100Hz và tạo PWM độ rộng xung 60% trên chânP2.4",
-      "Tạo dạng sóng vuông có tần số 50Hz và tạo PWM độ rộng xung 60% trên chânP2.4",
-      "Tạo dạng sóng vuông có tần số 100Hz và tạo PWM có độ rộng xung 40% trênchân P2.4",
-      "Tạo dạng sóng vuông có tần số 50Hz và tạo PWM độ rộng xung 40% trên chânP2.4"
+      "Tần số xấp xỉ 382,85 Hz; duty mức cao xấp xỉ 35,30%",
+      "Tần số 100 Hz; duty mức cao 60%",
+      "Tần số xấp xỉ 382,85 Hz; duty mức cao xấp xỉ 64,70%",
+      "Tần số 50 Hz; duty mức cao 40%"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Chương trình định thời Timer kết hợp lệnh đảo trạng thái chân cổng CPL tạo ra dạng sóng vuông tuần hoàn. Chu kỳ sóng toàn phần T = 2 x $T_{\\text{delay}}$.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "FC66H cho 65536−64614=922 µs mức cao; F966H cho 65536−63846=1690 µs mức thấp. T=2612 µs; f=1 000 000/2612≈382,85 Hz; duty=922/2612≈35,30%. Không phải 100 Hz/60%.",
+    "methodology": "FC66H cho 65536−64614=922 µs mức cao; F966H cho 65536−63846=1690 µs mức thấp. T=2612 µs; f=1 000 000/2612≈382,85 Hz; duty=922/2612≈35,30%. Không phải 100 Hz/60%.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
-    "images": [
-      "assets/images/p16_q32.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_16_Q33",
@@ -25943,22 +26907,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 33,
     "title": "Part 16 - Câu 33",
-    "prompt": "Trên vi điều khiển 89C51, Khi Timer 1 ở chế độ 2 cần tạo độ trễ 750 µs với tần số thạch anh 12 MHz, giá trị của TH1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 1 định thời mode 2, GATE=0. Cần khoảng 750 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Chọn nhận định đúng.",
     "extra_lines": [],
     "options": [
-      "TH1 = 24H",
-      "TH1 = 12H",
-      "TH1 = 36H",
-      "TH1 = 48H"
+      "TH1=00H tạo đúng khoảng yêu cầu",
+      "Không thể tạo bằng một lần tràn ở mode này",
+      "TH1=12H tạo đúng khoảng yêu cầu",
+      "TH1=24H tạo đúng khoảng yêu cầu"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "B",
     "acceptable_answers": [
-      "A"
+      "B"
     ],
-    "explanation": "Thời gian trễ $750.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 750. Giá trị nạp cho Timer Mode 2 là TH = 00H, TL = 00H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=1 µs; cần 750 tick nhưng mode 2 chỉ có 256 tick mỗi lần tràn (tối đa 256 µs). Cần đếm nhiều lần tràn hoặc dùng mode 1; không được lấy modulo để nạp TH rồi gọi đó là đúng thời gian.",
+    "methodology": "Tick=1 µs; cần 750 tick nhưng mode 2 chỉ có 256 tick mỗi lần tràn (tối đa 256 µs). Cần đếm nhiều lần tràn hoặc dùng mode 1; không được lấy modulo để nạp TH rồi gọi đó là đúng thời gian.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -25971,28 +26935,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 34,
     "title": "Part 16 - Câu 34",
-    "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau. Chương trình này dùng để:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian lệnh ngoài timer, chương trình tạo dạng sóng nào ở P1.0?",
+    "extra_lines": [
+      "MOV TMOD, #01H",
+      "LOOP: CLR TR0",
+      "MOV TH0, #FEH",
+      "MOV TL0, #0CH",
+      "CLR TF0",
+      "SETB TR0",
+      "WAIT: JNB TF0, WAIT",
+      "CLR TR0",
+      "CPL P1.0",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Tạo dạng sóng vuông có chu kỳ 500mS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 1000µS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 1000mS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 500µS trên chân P1.0"
+      "Chu kỳ 1000 µs",
+      "Chu kỳ 500 µs",
+      "Chu kỳ 2000 µs",
+      "Chu kỳ 1000 ms"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "A",
     "acceptable_answers": [
-      "C"
+      "A"
     ],
-    "explanation": "Chương trình định thời Timer kết hợp lệnh đảo trạng thái chân cổng CPL tạo ra dạng sóng vuông tuần hoàn. Chu kỳ sóng toàn phần T = 2 x $T_{\\text{delay}}$.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Timer 0 mode 1, 12 MHz/12T cho tick 1 µs. X=65036, còn 65536−65036=500 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×500=1000 µs.",
+    "methodology": "Timer 0 mode 1, 12 MHz/12T cho tick 1 µs. X=65036, còn 65536−65036=500 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×500=1000 µs.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
-    "images": [
-      "assets/images/p16_q34.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_16_Q35",
@@ -26001,22 +26974,33 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 35,
     "title": "Part 16 - Câu 35",
-    "prompt": "Cho chương trình thực hiện trên vi điều khiển 89C51 sau. Chương trình này dùng để:",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=12 MHz. Bỏ qua thời gian lệnh ngoài timer, chương trình tạo dạng sóng nào ở P1.0?",
+    "extra_lines": [
+      "MOV TMOD, #02H",
+      "LOOP: CLR TR0",
+      "MOV TH0, #CEH",
+      "MOV TL0, #CEH",
+      "CLR TF0",
+      "SETB TR0",
+      "WAIT: JNB TF0, WAIT",
+      "CLR TR0",
+      "CPL P1.0",
+      "SJMP LOOP"
+    ],
     "options": [
-      "D. Tạo dạng sóng vuông có chu kỳ 103µS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 100µS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 50µS trên chân P1.0",
-      "Tạo dạng sóng vuông có chu kỳ 206µS trên chân P1.0"
+      "Chu kỳ 100 µs",
+      "Chu kỳ 50 µs",
+      "Chu kỳ 200 µs",
+      "Chu kỳ 100 ms"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "A",
     "acceptable_answers": [
-      "D"
+      "A"
     ],
-    "explanation": "Chương trình định thời Timer kết hợp lệnh đảo trạng thái chân cổng CPL tạo ra dạng sóng vuông tuần hoàn. Chu kỳ sóng toàn phần T = 2 x $T_{\\text{delay}}$.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Timer 0 mode 2, 12 MHz/12T cho tick 1 µs. X=206, còn 256−206=50 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×50=100 µs.",
+    "methodology": "Timer 0 mode 2, 12 MHz/12T cho tick 1 µs. X=206, còn 256−206=50 tick. CPL P1.0 mỗi lần tràn: mỗi lần đảo chân là nửa chu kỳ; T=2×50=100 µs.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -26029,22 +27013,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 36,
     "title": "Part 16 - Câu 36",
-    "prompt": "Trên vi điều khiển 89C51, Timer 0 ở chế độ 1 cần tạo độ trễ 5 ms với tần số thạch anh 12 MHz. Giá trị của TH0 và TL0 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 0 định thời mode 1, GATE=0. Cần khoảng 5000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH0 = D4H, TL0 = 50H",
-      "TH0 = F5H, TL0 = 3CH",
-      "TH0 = FFH, TL0 = 20H",
-      "TH0 = ECH, TL0 = 78H"
+      "TH0 = ECH, TL0 = 78H",
+      "TH0 = EDH, TL0 = 78H",
+      "TH0 = F6H, TL0 = 3CH",
+      "TH0 = ECH, TL0 = 79H"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "A",
     "acceptable_answers": [
-      "D"
+      "A"
     ],
-    "explanation": "Thời gian trễ $5000.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 5000. Giá trị nạp cho Timer Mode 1 là TH = ECH, TL = 78H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=5000/1=5000 tick; X=65536−5000=60536. Tách X thành byte cao ECH và byte thấp 78H.",
+    "methodology": "Tick=12/fosc=1 µs. N=5000/1=5000 tick; X=65536−5000=60536. Tách X thành byte cao ECH và byte thấp 78H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -26057,22 +27041,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 37,
     "title": "Part 16 - Câu 37",
-    "prompt": "Trên vi điều khiển 89C51, Timer 1 ở chế độ 2 cần tạo độ trễ 200 µs với tần số thạch anh 12 MHz. Giá trị của TH1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=12 MHz, Timer 1 định thời mode 2, GATE=0. Cần khoảng 200 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH1 = 90H",
-      "TH1 = 38H",
-      "TH1 = 45H",
-      "TH1 = 22H"
+      "TH1 = TL1 = 78H",
+      "TH1 = TL1 = 9CH",
+      "TH1 = TL1 = 39H",
+      "TH1 = TL1 = 38H"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Thời gian trễ $200.0\\,\\mu\\text{s}$ với thạch anh $12\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $1.0\\,\\mu\\text{s}$): Số xung N = 200. Giá trị nạp cho Timer Mode 2 là TH = 38H, TL = 38H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=1 µs. N=200/1=200 tick; X=256−200=56. Mode 2 nạp TH=TL=38H để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "methodology": "Tick=12/fosc=1 µs. N=200/1=200 tick; X=256−200=56. Mode 2 nạp TH=TL=38H để cả khoảng đầu và các khoảng tiếp theo đều đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -26085,22 +27069,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 16: Tạo Sóng Vuông & Ứng Dụng Timer 8051",
     "num": 38,
     "title": "Part 16 - Câu 38",
-    "prompt": "Timer 0 ở chế độ 1 cần tạo độ trễ 4 ms với tần số thạch anh 6 MHz. Giá trị của TH0 và TL0 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=6 MHz, Timer 0 định thời mode 1, GATE=0. Cần khoảng 4000 µs chỉ bằng một lần tràn, bỏ qua thời gian lệnh. Giá trị nạp ban đầu nào đúng?",
     "extra_lines": [],
     "options": [
-      "TH1 = 22H",
-      "TH1 = 00H",
-      "TH1 = 45H",
-      "TH1 = 90H"
+      "TH0 = FCH, TL0 = 18H",
+      "TH0 = F8H, TL0 = 31H",
+      "TH0 = F8H, TL0 = 30H",
+      "TH0 = F9H, TL0 = 30H"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Thời gian trễ $4000.0\\,\\mu\\text{s}$ với thạch anh $6\\,\\text{MHz}$ (chu kỳ máy $T_{\\text{cm}}$ = $2.0\\,\\mu\\text{s}$): Số xung N = 2000. Giá trị nạp cho Timer Mode 1 là TH = F8H, TL = 30H.",
-    "methodology": "Xác định nửa chu kỳ trễ $T_{\\text{half}}$ = N x $T_{\\text{cm}}$, chu kỳ sóng toàn phần T = 2 x $T_{\\text{half}}$.",
-    "tips_casio": "Chu kỳ cả sóng = 2 x thời gian trễ của Timer!",
+    "explanation": "Tick=12/fosc=2 µs. N=4000/2=2000 tick; X=65536−2000=63536. Tách X thành byte cao F8H và byte thấp 30H.",
+    "methodology": "Tick=12/fosc=2 µs. N=4000/2=2000 tick; X=65536−2000=63536. Tách X thành byte cao F8H và byte thấp 30H.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình Timer tạo sóng vuông tuần hoàn & Điều chế xung",
@@ -26113,22 +27097,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 4,
     "title": "Part 17 - Câu 4",
-    "prompt": "Trên vi điều khiển 89C51, bit RI trong thanh ghi SCON biểu thị điều gì?",
+    "prompt": "Trên vi điều khiển 89C51 bit RI trong thanh ghi SCON biểu thị điều gì?",
     "extra_lines": [],
     "options": [
-      "A. Quá trình nhận dữ liệu đang bắt đầu",
-      "B. Quá trình nhận dữ liệu đã hoàn thành",
-      "C. Lỗi trong quá trình nhận dữ liệu",
-      "D. Cần phải truyền thêm dữ liệu"
+      "Quá trình nhận dữ liệu đang bắt đầu",
+      "Quá trình nhận dữ liệu đã hoàn thành",
+      "Lỗi trong quá trình nhận dữ liệu",
+      "Cần phải truyền thêm dữ liệu"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Bit RI (Receive Interrupt Flag) nằm tại bit 0 của thanh ghi điều khiển cổng nối tiếp SCON. Khi một byte dữ liệu được thu nhận hoàn chỉnh vào thanh ghi đệm SBUF (tại điểm giữa của bit Stop), phần cứng vi điều khiển sẽ tự động đặt bit RI lên 1 để báo cho CPU biết quá trình nhận dữ liệu đã hoàn thành.",
-    "methodology": "Bit RI (Receive Interrupt Flag) được phần cứng tự động bật lên mức 1 khi nhận xong bit Stop của khung truyền.",
-    "tips_casio": "RI = Receive Interrupt -> Báo nhận xong byte dữ liệu vào SBUF.",
+    "explanation": "RI báo bộ đệm nhận đã có dữ liệu mới; phần mềm đọc SBUF rồi xóa RI. Trong UART, RI được đặt quanh giữa bit stop khi thỏa điều kiện nhận, không phải luôn sau toàn bộ bit stop.",
+    "methodology": "RI báo bộ đệm nhận đã có dữ liệu mới; phần mềm đọc SBUF rồi xóa RI. Trong UART, RI được đặt quanh giữa bit stop khi thỏa điều kiện nhận, không phải luôn sau toàn bộ bit stop.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Chức năng cờ ngắt nhận dữ liệu RI",
@@ -26141,22 +27125,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 5,
     "title": "Part 17 - Câu 5",
-    "prompt": "Chân TXD trên vi điều khiển 89C51 có chức năng gì?",
+    "prompt": "Chân TXD trên vi điều khiển 89C51 có chức năng gì? Xét UART mode 1/2/3.",
     "extra_lines": [],
     "options": [
-      "A. Nhận dữ liệu",
-      "B. Truyền dữ liệu",
-      "C. Cấp nguồn cho vi điều khiển",
-      "D. Đặt lại vi điều khiển"
+      "Nhận dữ liệu",
+      "Truyền dữ liệu",
+      "Cấp nguồn cho vi điều khiển",
+      "Đặt lại vi điều khiển"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Chân TXD (Transmit Data) là chức năng thứ hai của cổng P3.1 (chân số 11 trên vỏ chip vi điều khiển 89C51), được sử dụng để xuất các bit dữ liệu nối tiếp từ bộ đệm truyền ra ngoài cho thiết bị ngoại vi hoặc máy tính.",
-    "methodology": "TXD (Transmit Data) là chân số 11 (P3.1), dùng xuất dòng bit dữ liệu nối tiếp ra ngoài.",
-    "tips_casio": "TXD = Transmit Data -> Chân truyền dữ liệu.",
+    "explanation": "Ở UART mode 1/2/3, TXD (P3.1) xuất dữ liệu nối tiếp. Ở mode 0, TXD là xung nhịp; dữ liệu đi qua RXD.",
+    "methodology": "Ở UART mode 1/2/3, TXD (P3.1) xuất dữ liệu nối tiếp. Ở mode 0, TXD là xung nhịp; dữ liệu đi qua RXD.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Chức năng chân truyền dữ liệu TXD",
@@ -26169,22 +27153,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 6,
     "title": "Part 17 - Câu 6",
-    "prompt": "Bit SM2 trong thanh ghi SCON trên vi điều khiển 89C51 dùng để làm gì?",
+    "prompt": "Bit SM2 trong thanh ghi SCON Trên vi điều khiển 89C51 dùng để?",
     "extra_lines": [],
     "options": [
-      "A. Bật hoặc tắt bộ Timer",
-      "B. Điều khiển chế độ nghỉ",
-      "C. Kích hoạt chế độ truyền nhận đa nhiệm",
-      "D. Thiết lập tốc độ baud"
+      "Bật hoặc tắt bộ Timer",
+      "Điều khiển chế độ nghỉ",
+      "Hỗ trợ truyền thông đa xử lý",
+      "Thiết lập tốc độ baud"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Bit SM2 (Serial Mode 2 bit) trong thanh ghi SCON được sử dụng để kích hoạt chế độ truyền thông đa xử lý / đa nhiệm (Multiprocessor Communication). Trong Chế độ 2 hoặc Chế độ 3, nếu SM2 = 1 thì cờ RI sẽ không được bật nếu bit thứ 9 (RB8) nhận được bằng 0, giúp các vi điều khiển tớ lọc địa chỉ hiệu quả.",
-    "methodology": "Bit SM2 cho phép truyền thông đa xử lý (Multiprocessor Communication / đa nhiệm hệ thống) trong Chế độ 2 và 3.",
-    "tips_casio": "SM2 dùng cho truyền thông đa xử lý (Multiprocessor).",
+    "explanation": "SM2 hỗ trợ truyền thông đa xử lý, đặc biệt lọc khung 9 bit theo bit thứ 9 trong mode 2/3. Đây không phải tính năng đa nhiệm CPU.",
+    "methodology": "SM2 hỗ trợ truyền thông đa xử lý, đặc biệt lọc khung 9 bit theo bit thứ 9 trong mode 2/3. Đây không phải tính năng đa nhiệm CPU.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Chức năng bit SM2 - Truyền thông đa xử lý",
@@ -26197,22 +27181,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 7,
     "title": "Part 17 - Câu 7",
-    "prompt": "Trên vi điều khiển 89C51, để tăng tốc độ baud trong chế độ 1, ta điều chỉnh thông số nào?",
+    "prompt": "Trên vi điều khiển 89C51, để tăng tốc độ baud trong chế độ 1, ta điều chỉnh thông số nào? Xét Timer 1 làm nguồn baud, SMOD giữ nguyên.",
     "extra_lines": [],
     "options": [
-      "A. Điều chỉnh thanh ghi SCON",
-      "B. Giảm tần số thạch anh",
-      "C. Tăng tần số thạch anh hoặc điều chỉnh Timer 0",
-      "D. Tăng tần số thạch anh hoặc điều chỉnh Timer 1"
+      "Điều chỉnh thanh ghi SCON",
+      "Giảm tần số thạch anh",
+      "Tăng tần số thạch anh hoặc điều chỉnh Timer 0",
+      "Tăng tần số thạch anh hoặc điều chỉnh Timer 1"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Trong Chế độ 1 của cổng nối tiếp 89C51, tốc độ Baud được tạo bởi bộ tràn Timer 1 theo công thức: $\\text{Baud} = \\frac{2^{\\text{SMOD}}}{32} \\times \\frac{f_{\\text{osc}} / 12}{256 - \\text{TH1}}$. Để tăng tốc độ Baud, ta có thể tăng tần số dao động thạch anh $f_{\\text{osc}}$ hoặc điều chỉnh giá trị nạp của Timer 1 (tăng TH1).",
-    "methodology": "Công thức tốc độ Baud: $\\text{Baud} = \\frac{2^{\\text{SMOD}}}{32} \\times \\frac{f_{\\text{osc}} / 12}{256 - \\text{TH1}}$. Tăng tốc độ Baud bằng cách tăng $f_{\\text{osc}}$ hoặc tăng giá trị nạp TH1 của Timer 1.",
-    "tips_casio": "Baud phụ thuộc vào thạch anh và Timer 1.",
+    "explanation": "Ở AT89C51, UART mode 1 lấy baud từ tốc độ tràn Timer 1 và hệ số SMOD. Giảm 256−TH1 hoặc tăng fosc làm tăng baud nếu các yếu tố khác giữ nguyên.",
+    "methodology": "Ở AT89C51, UART mode 1 lấy baud từ tốc độ tràn Timer 1 và hệ số SMOD. Giảm 256−TH1 hoặc tăng fosc làm tăng baud nếu các yếu tố khác giữ nguyên.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Phương pháp điều chỉnh tốc độ Baud Chế độ 1",
@@ -26228,19 +27212,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Chân RXD trên vi điều khiển 89C51 có chức năng gì?",
     "extra_lines": [],
     "options": [
-      "A. Đặt lại vi điều khiển",
-      "B. Nhận dữ liệu",
-      "C. Truyền dữ liệu",
-      "D. Cấp nguồn cho vi điều khiển"
+      "Đặt lại vi điều khiển",
+      "Nhận dữ liệu",
+      "Truyền dữ liệu",
+      "Cấp nguồn cho vi điều khiển"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Chân RXD (Receive Data) là chức năng thứ hai của chân cổng P3.0 (chân số 10 trên chip 89C51), có chức năng tiếp nhận các bit dữ liệu nối tiếp truyền từ bên ngoài vào thanh ghi đệm nhận của vi điều khiển.",
-    "methodology": "RXD (Receive Data) là chân số 10 (P3.0), dùng thu nhận dòng bit nối tiếp từ bên ngoài.",
-    "tips_casio": "RXD = Receive Data -> Chân nhận dữ liệu.",
+    "explanation": "RXD (P3.0) nhận dữ liệu UART. Mode 0 dùng RXD cho dữ liệu hai chiều và TXD cho clock.",
+    "methodology": "RXD (P3.0) nhận dữ liệu UART. Mode 0 dùng RXD cho dữ liệu hai chiều và TXD cho clock.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Chức năng chân nhận dữ liệu RXD",
@@ -26253,22 +27237,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 9,
     "title": "Part 17 - Câu 9",
-    "prompt": "Trên vi điều khiển 89C51, khi cổng nối tiếp hoạt động ở chế độ 1, dữ liệu truyền đi có độ dài bao nhiêu bit?",
+    "prompt": "UART mode 1 của AT89C51 có bao nhiêu bit dữ liệu, không tính start/stop?",
     "extra_lines": [],
     "options": [
-      "A. 11 bit",
-      "B. 10 bit",
-      "C. 8 bit",
-      "D. 9 bit"
+      "11 bit",
+      "10 bit",
+      "8 bit",
+      "9 bit"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Ở Chế độ 1 của cổng nối tiếp 89C51, mỗi khung truyền bao gồm đúng $8\\,\\text{bit}$ dữ liệu (Data bits) lấy từ thanh ghi SBUF, kèm theo $1\\,\\text{bit}$ Start ở đầu và $1\\,\\text{bit}$ Stop ở cuối (tổng độ dài toàn khung truyền trên đường truyền là 10 bit).",
-    "methodology": "Chế độ 1 là chế độ UART chuẩn $8\\,\\text{bit}$ dữ liệu (cùng 1 bit Start và 1 bit Stop).",
-    "tips_casio": "Chế độ 1 truyền 8 bit dữ liệu.",
+    "explanation": "Mode 1 có 8 bit dữ liệu. Một khung đầy đủ có 1 start + 8 data + 1 stop = 10 bit; phải phân biệt dữ liệu và toàn khung.",
+    "methodology": "Mode 1 có 8 bit dữ liệu. Một khung đầy đủ có 1 start + 8 data + 1 stop = 10 bit; phải phân biệt dữ liệu và toàn khung.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Số bit dữ liệu trong khung truyền Chế độ 1",
@@ -26281,22 +27265,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 10,
     "title": "Part 17 - Câu 10",
-    "prompt": "Chân nào trên vi điều khiển 89C51 được sử dụng để truyền dữ liệu nối tiếp đồng bộ?",
+    "prompt": "Trong mode 0 đồng bộ của AT89C51, dữ liệu nối tiếp được xuất qua chân nào (không hỏi chân phát clock)?",
     "extra_lines": [],
     "options": [
-      "A. INT0",
-      "B. RXD",
-      "C. TXD",
-      "D. INT1"
+      "INT0",
+      "RXD",
+      "TXD",
+      "INT1"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "B",
     "acceptable_answers": [
-      "C"
+      "B"
     ],
-    "explanation": "Trong hoạt động truyền thông nối tiếp của 89C51, chân TXD (P3.1) và RXD (P3.0) đảm nhiệm chức năng giao tiếp nối tiếp. Trong chế độ truyền đồng bộ Chế độ 0, chân TXD đóng vai trò phát xung nhịp đồng bộ dịch dữ liệu.",
-    "methodology": "Trong Chế độ 0 (chế độ đồng bộ), TXD xuất xung nhịp đồng bộ (Clock) và RXD truyền/nhận dữ liệu.",
-    "tips_casio": "Cổng nối tiếp sử dụng chân RXD và TXD.",
+    "explanation": "Mode 0 là thanh ghi dịch đồng bộ: dữ liệu vào/ra qua RXD; TXD phát clock. TXD truyền dữ liệu ở các mode UART khác.",
+    "methodology": "Mode 0 là thanh ghi dịch đồng bộ: dữ liệu vào/ra qua RXD; TXD phát clock. TXD truyền dữ liệu ở các mode UART khác.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Chân truyền dữ liệu trong chế độ đồng bộ",
@@ -26312,19 +27296,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Khi bit TI trong thanh ghi SCON được đặt lên mức 1, điều này có nghĩa là gì?",
     "extra_lines": [],
     "options": [
-      "A. Bắt đầu quá trình truyền dữ liệu",
-      "B. Lỗi trong quá trình truyền",
-      "C. Cần thiết lập lại cổng truyền thông",
-      "D. Quá trình truyền dữ liệu đã hoàn thành"
+      "Bắt đầu quá trình truyền dữ liệu",
+      "Lỗi trong quá trình truyền",
+      "Cần thiết lập lại cổng truyền thông",
+      "Bộ phát báo có thể nạp byte tiếp theo"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Bit TI (Transmit Interrupt Flag) trong thanh ghi SCON được phần cứng vi điều khiển tự động bật lên mức logic 1 ngay khi byte dữ liệu trong bộ đệm truyền đã được phát đi hoàn tất (khi bắt đầu truyền bit Stop), báo hiệu cho CPU sẵn sàng nạp byte tiếp theo vào SBUF.",
-    "methodology": "Bit TI (Transmit Interrupt Flag) được phần cứng tự động bật lên 1 khi truyền xong bit Stop của ký tự.",
-    "tips_casio": "TI = Transmit Interrupt -> Quá trình truyền dữ liệu đã hoàn thành.",
+    "explanation": "TI cho biết byte truyền đã tới thời điểm có thể nạp byte tiếp. Trong UART mode 1/2/3, TI được đặt đầu bit stop; không có nghĩa bit stop đã hoàn tất.",
+    "methodology": "TI cho biết byte truyền đã tới thời điểm có thể nạp byte tiếp. Trong UART mode 1/2/3, TI được đặt đầu bit stop; không có nghĩa bit stop đã hoàn tất.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Chức năng cờ ngắt truyền dữ liệu TI",
@@ -26340,19 +27324,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Chế độ 2 của cổng nối tiếp trên 89C51 hoạt động với tốc độ baud cố định hay thay đổi?",
     "extra_lines": [],
     "options": [
-      "A. Tuỳ chọn",
-      "B. Cố định",
-      "C. Thay đổi",
-      "D. Không xác định"
+      "Tuỳ chọn",
+      "Cố định",
+      "Thay đổi",
+      "Không xác định"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Trong Chế độ 2 (truyền nối tiếp $9\\,\\text{bit}$), tốc độ Baud được cố định theo tần số thạch anh dao động của hệ thống: $\\text{Baud} = \\frac{2^{\\text{SMOD}}}{64} \\times f_{\\text{osc}}$, do đó có tốc độ cố định mà không cần sử dụng bộ định thời Timer 1.",
-    "methodology": "Tốc độ Baud Chế độ 2 là cố định: $\\text{Baud} = \\frac{f_{\\text{osc}}}{64}$ (nếu SMOD=0) hoặc $\\frac{f_{\\text{osc}}}{32}$ (nếu SMOD=1).",
-    "tips_casio": "Chế độ 2 có tốc độ Baud cố định (không phụ thuộc Timer 1).",
+    "explanation": "Mode 2 không lấy baud từ Timer 1: baud=fosc/64 khi SMOD=0 hoặc fosc/32 khi SMOD=1. Cố định theo fosc và SMOD.",
+    "methodology": "Mode 2 không lấy baud từ Timer 1: baud=fosc/64 khi SMOD=0 hoặc fosc/32 khi SMOD=1. Cố định theo fosc và SMOD.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Tốc độ Baud trong Chế độ 2",
@@ -26365,22 +27349,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 13,
     "title": "Part 17 - Câu 13",
-    "prompt": "Bit TI được thiết lập bằng cách nào?",
+    "prompt": "Trong UART mode 1, phần cứng đặt cờ TI ở thời điểm nào?",
     "extra_lines": [],
     "options": [
-      "A. Tự động khi kết thúc quá trình truyền dữ liệu",
-      "B. Tự động khi có lỗi trong quá trình truyền",
-      "C. Tự động khi bắt đầu quá trình truyền",
-      "D. Tự động khi có lỗi trong quá trình nhận"
+      "Ở đầu bit stop, sau khi đã phát 8 bit dữ liệu",
+      "Khi có lỗi phát",
+      "Ngay khi ghi byte đầu vào SBUF",
+      "Khi nhận xong một byte"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Cờ TI được phần cứng vi điều khiển tự động thiết lập lên mức 1 khi hoàn tất việc truyền khung dữ liệu ra chân TXD. Lập trình viên phải dùng phần mềm để xóa cờ này về 0 bằng lệnh `CLR TI` trước khi truyền byte tiếp theo.",
-    "methodology": "Phần cứng vi điều khiển tự động bật cờ TI lên 1 khi truyền xong toàn bộ byte dữ liệu.",
-    "tips_casio": "TI được set tự động khi kết thúc quá trình truyền.",
+    "explanation": "Mode 0 đặt TI cuối bit dữ liệu thứ 8. Mode 1/2/3 đặt TI đầu bit stop. Phần mềm xóa TI, không chờ phần cứng tự xóa.",
+    "methodology": "Mode 0 đặt TI cuối bit dữ liệu thứ 8. Mode 1/2/3 đặt TI đầu bit stop. Phần mềm xóa TI, không chờ phần cứng tự xóa.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Cơ chế thiết lập cờ TI bằng phần cứng",
@@ -26396,19 +27380,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Quá trình truyền dữ liệu qua cổng nối tiếp trên vi điều khiển 89C51 diễn ra như thế nào?",
     "extra_lines": [],
     "options": [
-      "A. Từng bit một",
-      "B. Từng khối dữ liệu",
-      "C. Từng gói dữ liệu",
-      "D. Từng byte một"
+      "Từng bit một",
+      "Từng khối dữ liệu",
+      "Từng gói dữ liệu",
+      "Từng byte một"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Khác với truyền dữ liệu song song (truyền đồng thời cả 8 bit trên 8 đường dây bus), cổng truyền thông nối tiếp thực hiện chuyển đổi byte dữ liệu song song từ thanh ghi SBUF thành một chuỗi xung tuần tự từng bit một (Serial bit stream) để truyền trên một dây dẫn duy nhất.",
-    "methodology": "Truyền thông nối tiếp (Serial Communication) chuyển dịch tuần tự từng bit một trên 1 đường dây.",
-    "tips_casio": "Truyền nối tiếp = Từng bit một (tuần tự theo chu kỳ xung nhịp).",
+    "explanation": "Trên đường nối tiếp, bit được phát lần lượt theo thời gian; CPU ghi từng byte vào SBUF.",
+    "methodology": "Trên đường nối tiếp, bit được phát lần lượt theo thời gian; CPU ghi từng byte vào SBUF.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Đặc tính truyền thông nối tiếp Serial",
@@ -26421,22 +27405,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 15,
     "title": "Part 17 - Câu 15",
-    "prompt": "Trên vi điều khiển 89C51, cổng truyền thông nối tiếp dùng thanh ghi nào để lưu dữ liệu cần truyền và nhận?",
+    "prompt": "Trên vi điều khiển 89C51 cổng truyền thông nối tiếp trên 89C51 dùng thanh ghi nào để lưu dữ liệu cần truyền và nhận?",
     "extra_lines": [],
     "options": [
-      "A. SBUF",
-      "B. TMOD",
-      "C. P1",
-      "D. P0"
+      "SBUF",
+      "TMOD",
+      "P1",
+      "P0"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thanh ghi SBUF (Serial Data Buffer, địa chỉ $99\\text{H}$) là thanh ghi chức năng đặc biệt dùng để chứa dữ liệu truyền và nhận. Trên thực tế phần cứng gồm hai thanh ghi vật lý riêng biệt: ghi vào SBUF là ghi vào bộ đệm phát, đọc từ SBUF là đọc từ bộ đệm thu.",
-    "methodology": "SBUF (Serial Data Buffer, địa chỉ 99H) dùng chung tên cho 2 thanh ghi đệm vật lý độc lập (truyền và nhận).",
-    "tips_casio": "SBUF = Serial Buffer -> Chứa dữ liệu truyền/nhận.",
+    "explanation": "SBUF có chung địa chỉ SFR 99H nhưng hai bộ đệm riêng: ghi vào bộ phát, đọc từ bộ nhận.",
+    "methodology": "SBUF có chung địa chỉ SFR 99H nhưng hai bộ đệm riêng: ghi vào bộ phát, đọc từ bộ nhận.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Thanh ghi đệm dữ liệu nối tiếp SBUF",
@@ -26452,19 +27436,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trên vi điều khiển 89C51, cổng nối tiếp có bao nhiêu chế độ hoạt động?",
     "extra_lines": [],
     "options": [
-      "A. 4",
-      "B. 3",
-      "C. 2",
-      "D. 5"
+      "4",
+      "3",
+      "2",
+      "5"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Cổng nối tiếp của họ 8051 có 4 chế độ hoạt động được lựa chọn thông qua 2 bit SM0 và SM1 trong thanh ghi SCON: Chế độ 0 (thanh ghi dịch 8 bit), Chế độ 1 (UART 8 bit tốc độ thay đổi), Chế độ 2 (UART 9 bit tốc độ cố định) và Chế độ 3 (UART 9 bit tốc độ thay đổi).",
-    "methodology": "Cổng nối tiếp 89C51 có đúng 4 chế độ hoạt động: Mode 0, Mode 1, Mode 2, Mode 3.",
-    "tips_casio": "4 chế độ: Chế độ 0 (thanh ghi dịch), Chế độ 1 (8-bit UART), Chế độ 2 & 3 (9-bit UART).",
+    "explanation": "SM0SM1 có bốn tổ hợp 00/01/10/11, chọn mode 0/1/2/3.",
+    "methodology": "SM0SM1 có bốn tổ hợp 00/01/10/11, chọn mode 0/1/2/3.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Số chế độ hoạt động của cổng UART",
@@ -26480,19 +27464,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trên vi điều khiển 89C51, bit SM0 và SM1 trong thanh ghi SCON dùng để làm gì?",
     "extra_lines": [],
     "options": [
-      "A. Bật hoặc tắt truyền thông",
-      "B. Thiết lập chế độ truyền nhận",
-      "C. Điều khiển chế độ nghỉ",
-      "D. Thiết lập tốc độ baud"
+      "Bật hoặc tắt truyền thông",
+      "Thiết lập chế độ truyền nhận",
+      "Điều khiển chế độ nghỉ",
+      "Thiết lập tốc độ baud"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Hai bit SM0 (bit 7) và SM1 (bit 6) trong thanh ghi điều khiển SCON là các bit lựa chọn chế độ hoạt động (Serial Mode Select bits), quyết định số bit dữ liệu trong khung truyền và phương thức định thời tốc độ Baud.",
-    "methodology": "Tổ hợp 2 bit SM0, SM1 xác định 4 chế độ hoạt động của cổng nối tiếp.",
-    "tips_casio": "SM0 và SM1 -> Thiết lập chế độ truyền nhận của cổng nối tiếp.",
+    "explanation": "SM0 và SM1 ở SCON chọn mode 0..3; REN cho phép nhận, TI/RI là cờ trạng thái.",
+    "methodology": "SM0 và SM1 ở SCON chọn mode 0..3; REN cho phép nhận, TI/RI là cờ trạng thái.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Chức năng hai bit chọn chế độ SM0, SM1",
@@ -26505,22 +27489,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 18,
     "title": "Part 17 - Câu 18",
-    "prompt": "Khi cần truyền nhận dữ liệu 9 bit, ta sử dụng chế độ nào của cổng nối tiếp trên 89C51?",
+    "prompt": "Cần truyền nhận UART 9 bit, baud thay đổi nhờ Timer 1. Chọn mode nào?",
     "extra_lines": [],
     "options": [
-      "A. Chế độ 3",
-      "B. Chế độ 1",
-      "C. Chế độ 2",
-      "D. Chế độ 0"
+      "Chế độ 3",
+      "Chế độ 1",
+      "Chế độ 2",
+      "Chế độ 0"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Khi hệ thống yêu cầu truyền nhận dữ liệu $9\\,\\text{bit}$ (thường dùng trong mạng truyền thông đa xử lý hoặc thêm bit kiểm tra chẵn lẻ Parity phần mềm), ta sử dụng Chế độ 3 (tốc độ Baud biến đổi do Timer 1 điều khiển) hoặc Chế độ 2.",
-    "methodology": "Chế độ 2 và Chế độ 3 hỗ trợ truyền khung dữ liệu $9\\,\\text{bit}$ (với bit thứ 9 trong TB8/RB8).",
-    "tips_casio": "Chế độ 3 (hoặc Chế độ 2) là chế độ 9-bit UART.",
+    "explanation": "Mode 2 và mode 3 đều có 9 bit dữ liệu. Khi yêu cầu baud thay đổi theo Timer 1 thì chọn mode 3.",
+    "methodology": "Mode 2 và mode 3 đều có 9 bit dữ liệu. Khi yêu cầu baud thay đổi theo Timer 1 thì chọn mode 3.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Chế độ truyền nhận dữ liệu 9-bit",
@@ -26533,22 +27517,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 19,
     "title": "Part 17 - Câu 19",
-    "prompt": "Làm thế nào để cấu hình tốc độ Baud cho cổng nối tiếp trên vi điều khiển 89C51?",
+    "prompt": "UART mode 1 dùng Timer 1 mode 2. Thanh ghi nào chứa giá trị tự nạp lại để đặt chu kỳ tràn, khi fosc và SMOD giữ nguyên?",
     "extra_lines": [],
     "options": [
-      "A. Sử dụng thanh ghi TCON",
-      "B. Sử dụng thanh ghi PCON",
-      "C. Sử dụng thanh ghi SBUF",
-      "D. Sử dụng thanh ghi TH1"
+      "Sử dụng thanh ghi TCON",
+      "Sử dụng thanh ghi PCON",
+      "Sử dụng thanh ghi SBUF",
+      "Sử dụng thanh ghi TH1"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Để thiết lập tốc độ Baud chuẩn (như 9600, 4800, $2400\\,\\text{bps}$) cho cổng nối tiếp ở Chế độ 1 và Chế độ 3, lập trình viên cấu hình Timer 1 hoạt động ở Chế độ 2 ($8\\,\\text{bit}$ tự nạp lại) và nạp giá trị thích hợp vào thanh ghi byte cao TH1.",
-    "methodology": "Nạp giá trị chu kỳ đếm vào thanh ghi TH1 của Timer 1 hoạt động ở Chế độ 2 ($8\\,\\text{bit}$ tự nạp lại).",
-    "tips_casio": "Nạp giá trị đếm vào thanh ghi TH1 của Timer 1.",
+    "explanation": "Timer 1 mode 2 dùng TH1 làm giá trị nạp lại, quyết định chu kỳ tràn và baud mode 1/3. PCON.SMOD còn là hệ số nhân 2, nhưng không phải giá trị nạp lại.",
+    "methodology": "Timer 1 mode 2 dùng TH1 làm giá trị nạp lại, quyết định chu kỳ tràn và baud mode 1/3. PCON.SMOD còn là hệ số nhân 2, nhưng không phải giá trị nạp lại.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Cấu hình tốc độ Baud bằng Timer 1",
@@ -26561,22 +27545,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 20,
     "title": "Part 17 - Câu 20",
-    "prompt": "Cổng truyền thông nối tiếp của 89C51 sử dụng chân nào để truyền dữ liệu?",
+    "prompt": "Cổng truyền thông nối tiếp của 89C51 sử dụng chân nào để truyền dữ liệu? Xét UART mode 1/2/3.",
     "extra_lines": [],
     "options": [
-      "A. P0.0",
-      "B. P3.0",
-      "C. RXD",
-      "D. TXD"
+      "P0.0",
+      "P3.0",
+      "RXD",
+      "TXD"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Cổng nối tiếp của vi điều khiển 89C51 sử dụng chân TXD (chân P3.1) để xuất các tín hiệu nhị phân truyền nối tiếp ra môi trường bên ngoài.",
-    "methodology": "Chân xuất dữ liệu truyền là chân TXD (Transmit Data - chân P3.1).",
-    "tips_casio": "TXD là chân truyền dữ liệu.",
+    "explanation": "TXD/P3.1 là đầu ra dữ liệu khi UART chạy mode 1/2/3; RXD/P3.0 là đầu vào.",
+    "methodology": "TXD/P3.1 là đầu ra dữ liệu khi UART chạy mode 1/2/3; RXD/P3.0 là đầu vào.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Chân xuất tín hiệu truyền UART",
@@ -26592,19 +27576,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Cổng nối tiếp trên 89C51 có bao nhiêu thanh ghi chính dùng để điều khiển và quản lý việc truyền nhận dữ liệu?",
     "extra_lines": [],
     "options": [
-      "A. 1 (SCON)",
-      "B. 4 (SCON, SBUF, IE)",
-      "C. 2 (SCON và SBUF)",
-      "D. 3 (SCON, SBUF, TCON)"
+      "1 (SCON)",
+      "4(SCON, SBUF, IE)",
+      "2 (SCON và SBUF)",
+      "3 (SCON, SBUF, TCON)"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Cổng nối tiếp của 89C51 được quản lý trực tiếp bởi hai thanh ghi chức năng đặc biệt chính: thanh ghi điều khiển cổng nối tiếp SCON (quản lý chế độ hoạt động, cờ TI/RI) và thanh ghi đệm dữ liệu SBUF (lưu trữ byte dữ liệu phát và thu).",
-    "methodology": "Hai thanh ghi cốt lõi trực tiếp của cổng nối tiếp là SCON (điều khiển) và SBUF (bộ đệm dữ liệu).",
-    "tips_casio": "2 thanh ghi: SCON và SBUF.",
+    "explanation": "Hai thanh ghi trung tâm là SCON (chế độ/cờ) và SBUF (bộ đệm). IE/TCON/PCON còn hỗ trợ ngắt, timer và baud nhưng không thay thế cặp này.",
+    "methodology": "Hai thanh ghi trung tâm là SCON (chế độ/cờ) và SBUF (bộ đệm). IE/TCON/PCON còn hỗ trợ ngắt, timer và baud nhưng không thay thế cặp này.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Các thanh ghi chuyên dụng của cổng nối tiếp",
@@ -26617,22 +27601,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 22,
     "title": "Part 17 - Câu 22",
-    "prompt": "Số bit dữ liệu truyền trong chế độ 1 của cổng nối tiếp 89C51 là bao nhiêu?",
+    "prompt": "Một khung UART mode 1 đầy đủ gồm những bit nào?",
     "extra_lines": [],
     "options": [
-      "A. 8 bit dữ liệu và 1 bit stop",
-      "B. 9 bit dữ liệu và 1 bit stop",
-      "C. 7 bit dữ liệu và 1 bit stop",
-      "D. 10 bit dữ liệu và 2 bit stop"
+      "1 start + 8 bit dữ liệu + 1 stop",
+      "1 start + 9 bit dữ liệu + 1 stop",
+      "1 start + 7 bit dữ liệu + 1 stop",
+      "1 start + 10 bit dữ liệu + 2 stop"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Trong Chế độ 1, định dạng khung truyền gồm 10 bit: 1 bit Start (mức 0), 8 bit dữ liệu (truyền bit LSB trước) và 1 bit Stop (mức 1). Vậy số bit dữ liệu truyền là $8\\,\\text{bit}$ dữ liệu và $1\\,\\text{bit}$ Stop.",
-    "methodology": "Khung Chế độ 1 có 8 bit dữ liệu, 1 bit Start và 1 bit Stop.",
-    "tips_casio": "8 bit dữ liệu và 1 bit stop.",
+    "explanation": "UART mode 1: 1 bit start, 8 bit dữ liệu, 1 bit stop, tổng 10 bit/khung.",
+    "methodology": "UART mode 1: 1 bit start, 8 bit dữ liệu, 1 bit stop, tổng 10 bit/khung.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Định dạng khung truyền Chế độ 1",
@@ -26648,19 +27632,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trên vi điều khiển 89C51, để sử dụng cổng nối tiếp trong chế độ 0, ta cần thiết lập SM0 và SM1 như thế nào?",
     "extra_lines": [],
     "options": [
-      "A. SM0 = 1, SM1 = 0",
-      "B. SM0 = 0, SM1 = 0",
-      "C. SM0 = 0, SM1 = 1",
-      "D. SM0 = 1, SM1 = 1"
+      "SM0 = 1, SM1 = 0",
+      "SM0 = 0, SM1 = 0",
+      "SM0 = 0, SM1 = 1",
+      "SM0 = 1, SM1 = 1"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Theo bảng mã chọn chế độ nối tiếp trong thanh ghi SCON: Chế độ 0 (chế độ thanh ghi dịch $8\\,\\text{bit}$) được kích hoạt khi cả hai bit $\\text{SM0} = 0$ và $\\text{SM1} = 0$.",
-    "methodology": "Bảng mã chế độ: Mode 0: SM0=0, SM1=0; Mode 1: SM0=0, SM1=1; Mode 2: SM0=1, SM1=0; Mode 3: SM0=1, SM1=1.",
-    "tips_casio": "Chế độ 0: SM0 = 0, SM1 = 0.",
+    "explanation": "SM0SM1=00 chọn mode 0 đồng bộ, 8 bit dữ liệu.",
+    "methodology": "SM0SM1=00 chọn mode 0 đồng bộ, 8 bit dữ liệu.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Cấu hình bit SM0, SM1 cho Chế độ 0",
@@ -26673,22 +27657,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 24,
     "title": "Part 17 - Câu 24",
-    "prompt": "Thanh ghi nào chứa các cờ trạng thái của quá trình truyền nhận dữ liệu nối tiếp?",
+    "prompt": "Thanh ghi nào chứa các cờ trạng thái của quá trình truyền nhận dữ liệu?",
     "extra_lines": [],
     "options": [
-      "A. PCON",
-      "B. SCON",
-      "C. TCON",
-      "D. P3"
+      "PCON",
+      "SCON",
+      "TCON",
+      "P3"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Thanh ghi SCON (Serial Port Control Register) lưu trữ các cờ trạng thái phản ánh quá trình truyền nhận dữ liệu: cờ TI (truyền xong) và cờ RI (nhận xong).",
-    "methodology": "SCON chứa cờ ngắt truyền TI (bit 1) và cờ ngắt nhận RI (bit 0).",
-    "tips_casio": "SCON chứa các cờ TI và RI.",
+    "explanation": "SCON chứa TI, RI cùng SM0/SM1/SM2, REN và TB8/RB8.",
+    "methodology": "SCON chứa TI, RI cùng SM0/SM1/SM2, REN và TB8/RB8.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Thanh ghi lưu trữ cờ trạng thái UART SCON",
@@ -26704,19 +27688,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trên vi điều khiển 89C51, chế độ 0 của cổng nối tiếp sử dụng bao nhiêu bit dữ liệu để truyền nhận?",
     "extra_lines": [],
     "options": [
-      "A. 9 bit",
-      "B. 10 bit",
-      "C. 11 bit",
-      "D. 8 bit"
+      "9 bit",
+      "10 bit",
+      "11 bit",
+      "8 bit"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Chế độ 0 là chế độ thanh ghi dịch đồng bộ, truyền hoặc nhận đúng $8\\,\\text{bit}$ dữ liệu qua chân RXD với xung nhịp đồng bộ cấp ra ở chân TXD, không có bit Start hay Stop.",
-    "methodology": "Chế độ 0 hoạt động như thanh ghi dịch 8-bit (Shift Register).",
-    "tips_casio": "Chế độ 0: 8 bit dữ liệu.",
+    "explanation": "Mode 0 truyền/nhận 8 bit bằng thanh ghi dịch đồng bộ, không dùng bit start/stop UART.",
+    "methodology": "Mode 0 truyền/nhận 8 bit bằng thanh ghi dịch đồng bộ, không dùng bit start/stop UART.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Số bit dữ liệu trong Chế độ 0",
@@ -26729,22 +27713,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 26,
     "title": "Part 17 - Câu 26",
-    "prompt": "Khi sử dụng chế độ 3, tốc độ baud được điều chỉnh bởi khối chức năng nào?",
+    "prompt": "Trên AT89C51, khối nào cung cấp nguồn tràn tạo baud UART mode 3 (không hỏi hệ số SMOD)?",
     "extra_lines": [],
     "options": [
-      "A. Thanh ghi PCON",
-      "B. Bộ Timer 0",
-      "C. Bộ Timer 1",
-      "D. Thanh ghi TCON"
+      "Thanh ghi PCON",
+      "Bộ Timer 0",
+      "Bộ Timer 1",
+      "Thanh ghi TCON"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Trong Chế độ 3 của cổng nối tiếp 89C51, tốc độ Baud có thể lập trình thay đổi được và được xác định bởi tốc độ tràn của bộ định thời Timer 1 (khi hoạt động ở Chế độ 2 tự động nạp lại).",
-    "methodology": "Chế độ 3 sử dụng tốc độ tràn của Timer 1 (hoặc Timer 2 trên 8052) để xác định tốc độ Baud.",
-    "tips_casio": "Chế độ 1 và Chế độ 3 dùng Timer 1 để tạo tốc độ Baud.",
+    "explanation": "Nguồn tràn Timer 1 tạo baud UART mode 3 trên AT89C51; SMOD trong PCON nhân đôi tốc độ.",
+    "methodology": "Nguồn tràn Timer 1 tạo baud UART mode 3 trên AT89C51; SMOD trong PCON nhân đôi tốc độ.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Nguồn tạo xung nhịp Baud cho Chế độ 3",
@@ -26757,22 +27741,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 27,
     "title": "Part 17 - Câu 27",
-    "prompt": "Chế độ nào cho phép truyền và nhận dữ liệu không đồng bộ trên cổng nối tiếp của 89C51?",
+    "prompt": "Mode nào truyền và nhận UART không đồng bộ với 8 bit dữ liệu trên AT89C51?",
     "extra_lines": [],
     "options": [
-      "A. Chế độ 0",
-      "B. Chế độ 2",
-      "C. Chế độ 3",
-      "D. Chế độ 1"
+      "Chế độ 0",
+      "Chế độ 2",
+      "Chế độ 3",
+      "Chế độ 1"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Chế độ 1 là chế độ truyền thông không đồng bộ (Asynchronous UART) $8\\,\\text{bit}$ dữ liệu phổ biến nhất trên họ 8051, sử dụng xung nhịp nội độc lập giữa bên truyền và bên nhận mà không cần dây truyền xung Clock đồng bộ.",
-    "methodology": "Chế độ 1 là chế độ truyền thông nối tiếp không đồng bộ tiêu chuẩn (UART Asynchronous) $8\\,\\text{bit}$.",
-    "tips_casio": "Chế độ 1 (và cả Chế độ 2, 3) là chế độ không đồng bộ; Chế độ 0 là đồng bộ.",
+    "explanation": "Mode 1 là UART không đồng bộ 8 bit; mode 2/3 cũng không đồng bộ nhưng 9 bit. Thêm yêu cầu 8 bit để chỉ một mode đúng.",
+    "methodology": "Mode 1 là UART không đồng bộ 8 bit; mode 2/3 cũng không đồng bộ nhưng 9 bit. Thêm yêu cầu 8 bit để chỉ một mode đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Chế độ truyền không đồng bộ phổ biến",
@@ -26788,19 +27772,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Chế độ 3 của cổng nối tiếp trên vi điều khiển 89C51 cho phép truyền dữ liệu bao nhiêu bit?",
     "extra_lines": [],
     "options": [
-      "A. 9 bit",
-      "B. 10 bit",
-      "C. 7 bit",
-      "D. 8 bit"
+      "9 bit",
+      "10 bit",
+      "7 bit",
+      "8 bit"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Chế độ 3 của cổng nối tiếp 89C51 có cấu trúc khung truyền tương tự Chế độ 2 gồm $9\\,\\text{bit}$ dữ liệu (8 bit dữ liệu chuẩn cộng thêm bit thứ 9 TB8/RB8), điểm khác biệt là tốc độ Baud thay đổi được do Timer 1 điều khiển.",
-    "methodology": "Chế độ 3 là chế độ UART $9\\,\\text{bit}$ dữ liệu với tốc độ Baud thay đổi.",
-    "tips_casio": "Chế độ 3 là 9 bit dữ liệu.",
+    "explanation": "Mode 3 có 8 bit trong SBUF cộng bit thứ 9 TB8/RB8; toàn khung thêm start/stop nên dài 11 bit.",
+    "methodology": "Mode 3 có 8 bit trong SBUF cộng bit thứ 9 TB8/RB8; toàn khung thêm start/stop nên dài 11 bit.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Độ dài dữ liệu trong Chế độ 3",
@@ -26816,19 +27800,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Trên vi điều khiển 89C51, khi sử dụng chế độ 1, bit nào được set để biểu thị dữ liệu đã được nhận?",
     "extra_lines": [],
     "options": [
-      "A. RI",
-      "B. SM1",
-      "C. TI",
-      "D. SM2"
+      "RI",
+      "SM1",
+      "TI",
+      "SM2"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Khi cổng nối tiếp ở Chế độ 1 thu nhận hoàn tất khung truyền $8\\,\\text{bit}$ dữ liệu cùng bit Stop hợp lệ, phần cứng sẽ tự động bật cờ RI (Receive Interrupt) trong thanh ghi SCON lên mức 1.",
-    "methodology": "Bit RI (Receive Interrupt) được bật lên 1 khi nhận xong byte dữ liệu vào SBUF.",
-    "tips_casio": "Cờ RI báo nhận dữ liệu xong.",
+    "explanation": "RI là cờ nhận dữ liệu; TI là cờ phát, SM1/SM2 là cấu hình.",
+    "methodology": "RI là cờ nhận dữ liệu; TI là cờ phát, SM1/SM2 là cấu hình.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Cờ nhận dữ liệu RI trong Chế độ 1",
@@ -26841,22 +27825,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 30,
     "title": "Part 17 - Câu 30",
-    "prompt": "Trên vi điều khiển 89C51, tốc độ baud trong chế độ 1 của cổng nối tiếp được tính toán dựa trên các thông số nào?",
+    "prompt": "Trên vi điều khiển 89C51 tốc độ baud trong chế độ 1 của cổng nối tiếp được tính toán dựa trên?",
     "extra_lines": [],
     "options": [
-      "A. Timer 1 và PCON",
-      "B. Tần số thạch anh và Timer 0",
-      "C. Tần số thạch anh và Timer 1",
-      "D. Tần số thạch anh và Timer 2"
+      "fosc, Timer 0 và SMOD",
+      "fosc, SBUF và REN",
+      "fosc, TH1 của Timer 1 mode 2 và SMOD",
+      "fosc, Timer 2 và SMOD"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Tốc độ Baud của cổng nối tiếp ở Chế độ 1 phụ thuộc vào hai yếu tố chính: tần số xung nhịp dao động của thạch anh $f_{\\text{osc}}$ và giá trị nạp vào bộ đếm định thời Timer 1.",
-    "methodology": "Tốc độ Baud tính theo công thức: $\\text{Baud} = \\frac{2^{\\text{SMOD}}}{32} \\times \\frac{f_{\\text{osc}} / 12}{256 - \\text{TH1}}$, phụ thuộc trực tiếp vào tần số thạch anh và chu kỳ tràn của Timer 1.",
-    "tips_casio": "Tần số thạch anh và Timer 1.",
+    "explanation": "Với Timer 1 mode 2 trên lõi 12T: baud=2^SMOD × fosc/[384×(256−TH1)]. Cần cả fosc, TH1 và SMOD.",
+    "methodology": "Với Timer 1 mode 2 trên lõi 12T: baud=2^SMOD × fosc/[384×(256−TH1)]. Cần cả fosc, TH1 và SMOD.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Các đại lượng quyết định tốc độ Baud Chế độ 1",
@@ -26869,22 +27853,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 31,
     "title": "Part 17 - Câu 31",
-    "prompt": "Trên vi điều khiển 89C51 tốc độ baud trong chế độ 1 của cổng nối tiếp phụ thuộc vào bộ định thời nào?",
+    "prompt": "Trên vi điều khiển 89C51 tốc độ baud trong chế độ 1 của cổng nối tiếp phụ thuộc vào?",
     "extra_lines": [],
     "options": [
-      "A. Timer 0",
-      "B. Timer 2",
-      "C. Timer 1",
-      "D. Thanh ghi PCON"
+      "Timer 0",
+      "Timer 2",
+      "Timer 1",
+      "Thanh ghi PCON"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Bộ định thời Timer 1 (khi cấu hình hoạt động ở Chế độ 2 tự động nạp lại $8\\,\\text{bit}$) là bộ đếm chịu trách nhiệm trực tiếp quyết định tốc độ truyền thông Baud của cổng nối tiếp trong Chế độ 1 và Chế độ 3.",
-    "methodology": "Timer 1 được vi điều khiển chuẩn 89C51 phân công chuyên trách làm bộ tạo xung nhịp Baud.",
-    "tips_casio": "Timer 1 tạo Baudrate.",
+    "explanation": "AT89C51 dùng Timer 1 cho baud mode 1/3. Timer 2 là tính năng của 8052/AT89C52, không có trên AT89C51.",
+    "methodology": "AT89C51 dùng Timer 1 cho baud mode 1/3. Timer 2 là tính năng của 8052/AT89C52, không có trên AT89C51.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Bộ định thời tạo tốc độ Baud UART",
@@ -26897,22 +27881,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 32,
     "title": "Part 17 - Câu 32",
-    "prompt": "Trên vi điều khiển 89C51, để biết toàn bộ ký tự đã được nhận hay chưa, ta sử dụng lệnh kiểm tra nào dưới đây?",
+    "prompt": "Trên vi điều khiển 89C51, để biết toàn bộ ký tự đã được nhận chưa cần sử dụng lệnh gì dưới đây?",
     "extra_lines": [],
     "options": [
-      "A. JBC TF1, label",
-      "B. JNB TI, label",
-      "C. JBC TF0, label",
-      "D. JNB RI, label"
+      "JBC TF1, label",
+      "JNB TI, label",
+      "JBC TF0, label",
+      "JNB RI, label"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Để kiểm tra việc nhận dữ liệu nối tiếp bằng phương pháp hỏi vòng (polling), chương trình sử dụng lệnh `JNB RI, label` để lặp lại chờ đợi tại chỗ cho đến khi cờ RI được phần cứng bật lên 1 (báo hiệu toàn bộ ký tự đã nhận xong).",
-    "methodology": "Sử dụng lệnh kiểm tra bit `JNB RI, label` (Jump if Bit Not Set): lặp lại chờ đến khi bit RI được phần cứng bật lên 1.",
-    "tips_casio": "JNB RI, label -> Chờ cờ nhận RI bật lên 1.",
+    "explanation": "JNB RI,label nhảy/chờ khi RI=0; khi RI=1 đi tiếp, đọc SBUF và xóa RI.",
+    "methodology": "JNB RI,label nhảy/chờ khi RI=0; khi RI=1 đi tiếp, đọc SBUF và xóa RI.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Lệnh chờ ký tự nhận xong qua cờ RI",
@@ -26928,19 +27912,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Chế độ 0 của cổng nối tiếp trên 89C51 sử dụng loại truyền dữ liệu nào?",
     "extra_lines": [],
     "options": [
-      "A. Truyền dữ liệu song song",
-      "B. Truyền dữ liệu đồng bộ",
-      "C. Truyền dữ liệu nối tiếp không đồng bộ",
-      "D. Truyền dữ liệu không dây"
+      "Truyền dữ liệu song song",
+      "Truyền dữ liệu đồng bộ",
+      "Truyền dữ liệu nối tiếp không đồng bộ",
+      "Truyền dữ liệu không đồng bộ"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Chế độ 0 của cổng nối tiếp 89C51 là chế độ truyền dữ liệu nối tiếp đồng bộ: chân TXD luôn phát xung nhịp đồng bộ cố định có tần số bằng $\\frac{f_{\\text{osc}}}{12}$, và dữ liệu $8\\,\\text{bit}$ được truyền hoặc nhận đồng bộ qua chân RXD.",
-    "methodology": "Chế độ 0 là truyền dữ liệu nối tiếp đồng bộ (Synchronous Serial), có xung Clock xuất tại chân TXD.",
-    "tips_casio": "Chế độ 0 là truyền đồng bộ (Synchronous).",
+    "explanation": "Mode 0 dùng clock do TXD phát nên là truyền nối tiếp đồng bộ, không phải song song.",
+    "methodology": "Mode 0 dùng clock do TXD phát nên là truyền nối tiếp đồng bộ, không phải song song.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Phương thức truyền của Chế độ 0",
@@ -26953,22 +27937,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 34,
     "title": "Part 17 - Câu 34",
-    "prompt": "Trên vi điều khiển 89C51, để thiết lập chế độ hoạt động của cổng nối tiếp, ta sử dụng thanh ghi nào?",
+    "prompt": "Trên vi điều khiển 89C51 để thiết lập chế độ hoạt động của cổng nối tiếp, ta sử dụng thanh ghi nào?",
     "extra_lines": [],
     "options": [
-      "A. SCON",
-      "B. TMOD",
-      "C. TCON",
-      "D. PCON"
+      "SCON",
+      "TMOD",
+      "TCON",
+      "PCON"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thanh ghi điều khiển cổng nối tiếp SCON (địa chỉ $98\\text{H}$) chứa hai bit cấu hình chế độ SM0 và SM1, bit cho phép nhận REN và các bit điều khiển trạng thái, được sử dụng để thiết lập chế độ hoạt động cho cổng UART.",
-    "methodology": "Thanh ghi SCON (Serial Port Control) chứa các bit SM0, SM1, SM2, REN dùng thiết lập hoạt động cổng nối tiếp.",
-    "tips_casio": "SCON thiết lập chế độ cổng nối tiếp.",
+    "explanation": "SCON chọn mode qua SM0SM1, cho phép nhận bằng REN và chứa các cờ TI/RI.",
+    "methodology": "SCON chọn mode qua SM0SM1, cho phép nhận bằng REN và chứa các cờ TI/RI.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Thanh ghi cấu hình chế độ UART SCON",
@@ -26984,19 +27968,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Sự khác biệt giữa chế độ 1 và chế độ 2 của cổng nối tiếp trên vi điều khiển 89C51 là gì?",
     "extra_lines": [],
     "options": [
-      "A. Chế độ 1 là 8-bit, chế độ 2 là 9-bit",
-      "B. Chế độ 1 là đồng bộ, chế độ 2 là không đồng bộ",
-      "C. Chế độ 1 là 9-bit, chế độ 2 là 8-bit",
-      "D. Chế độ 1 là không đồng bộ, chế độ 2 là đồng bộ"
+      "Chế độ 1 là 8-bit, chế độ 2 là 9-bit",
+      "Chế độ 1 là đồng bộ, chế độ 2 là không đồng bộ",
+      "Chế độ 1 là 9-bit, chế độ 2 là 8-bit",
+      "Chế độ 1 là không đồng bộ, chế độ 2 là đồng bộ"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Điểm khác biệt cốt lõi giữa hai chế độ: Chế độ 1 truyền khung dữ liệu gồm $8\\,\\text{bit}$ dữ liệu với tốc độ Baud thay đổi do Timer 1 quy định, trong khi Chế độ 2 truyền khung dữ liệu gồm $9\\,\\text{bit}$ dữ liệu với tốc độ Baud cố định phụ thuộc trực tiếp vào tần số thạch anh.",
-    "methodology": "Chế độ 1 truyền $8\\,\\text{bit}$ dữ liệu (Baud thay đổi); Chế độ 2 truyền $9\\,\\text{bit}$ dữ liệu (Baud cố định).",
-    "tips_casio": "Chế độ 1 là 8-bit, Chế độ 2 là 9-bit.",
+    "explanation": "Mode 1 có 8 bit dữ liệu và baud biến đổi; mode 2 có 9 bit dữ liệu và baud theo fosc/64 hoặc fosc/32.",
+    "methodology": "Mode 1 có 8 bit dữ liệu và baud biến đổi; mode 2 có 9 bit dữ liệu và baud theo fosc/64 hoặc fosc/32.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "So sánh Chế độ 1 và Chế độ 2",
@@ -27012,19 +27996,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Cổng truyền thông nối tiếp trên vi điều khiển 89C51 là gì?",
     "extra_lines": [],
     "options": [
-      "A. Một phương thức truyền dữ liệu từng byte một",
-      "B. Một phương thức truyền dữ liệu song song",
-      "C. Một phương thức truyền dữ liệu không dây",
-      "D. Một phương thức truyền dữ liệu từng bit một"
+      "Một phương thức truyền dữ liệu từng byte một",
+      "Một phương thức truyền dữ liệu song song",
+      "Một phương thức truyền dữ liệu không dây",
+      "Một phương thức truyền dữ liệu từng bit một"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Cổng truyền thông nối tiếp (Serial Port) là giao diện truyền thông thực hiện phương thức truyền dữ liệu tuần tự từng bit một theo thời gian trên một kênh truyền tín hiệu, giúp tiết kiệm tối đa số lượng đường dây kết nối giữa các hệ thống.",
-    "methodology": "Truyền thông nối tiếp gửi lần lượt từng bit dữ liệu trên một đường truyền duy nhất.",
-    "tips_casio": "Truyền dữ liệu từng bit một.",
+    "explanation": "Nối tiếp truyền từng bit trên đường dây; cách CPU thao tác SBUF theo byte không biến nó thành truyền song song.",
+    "methodology": "Nối tiếp truyền từng bit trên đường dây; cách CPU thao tác SBUF theo byte không biến nó thành truyền song song.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Bản chất truyền thông nối tiếp Serial",
@@ -27037,22 +28021,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 37,
     "title": "Part 17 - Câu 37",
-    "prompt": "Trên vi điều khiển 89C51, thanh ghi nào lưu cấu hình tốc độ baud khi cổng nối tiếp hoạt động ở chế độ 2?",
+    "prompt": "Trên vi điều khiển 89C51 thanh ghi nào lưu tốc độ baud khi cổng nối tiếp hoạt động ở chế độ 2?",
     "extra_lines": [],
     "options": [
-      "A. PCON",
-      "B. SCON",
-      "C. TMOD",
-      "D. TH1"
+      "PCON",
+      "SCON",
+      "TMOD",
+      "SBUF"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Ở Chế độ 2, tốc độ Baud không do Timer 1 điều khiển mà được quyết định bởi tần số dao động thạch anh và bit SMOD (Serial Baud Rate Double bit) nằm tại bit 7 của thanh ghi điều khiển công suất PCON (địa chỉ $87\\text{H}$).",
-    "methodology": "Thanh ghi PCON chứa bit SMOD (bit 7): khi SMOD = 1, tốc độ Baud Chế độ 2 được nhân đôi từ $\\frac{f_{\\text{osc}}}{64}$ lên $\\frac{f_{\\text{osc}}}{32}$.",
-    "tips_casio": "PCON chứa bit SMOD điều chỉnh tốc độ Baud ở Chế độ 2.",
+    "explanation": "PCON chứa SMOD: ở mode 2, SMOD=0 chọn fosc/64, SMOD=1 chọn fosc/32.",
+    "methodology": "PCON chứa SMOD: ở mode 2, SMOD=0 chọn fosc/64, SMOD=1 chọn fosc/32.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Thanh ghi PCON và bit nhân đôi tốc độ Baud SMOD",
@@ -27068,19 +28052,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Chân nào trên vi điều khiển 89C51 được sử dụng để nhận dữ liệu nối tiếp đồng bộ?",
     "extra_lines": [],
     "options": [
-      "A. SBUF",
-      "B. TXD",
-      "C. RXD",
-      "D. INT1"
+      "TXD",
+      "INT0",
+      "INT1",
+      "RXD"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Trong Chế độ 0 (chế độ truyền thông đồng bộ bằng thanh ghi dịch), chân RXD (chân số 10, P3.0) được sử dụng làm đường dẫn vào cho dữ liệu nối tiếp được nhận đồng bộ theo các xung nhịp cấp từ chân TXD.",
-    "methodology": "Ở Chế độ 0 (đồng bộ), chân RXD (P3.0) là đường truyền/nhận dữ liệu hai chiều.",
-    "tips_casio": "RXD là chân nhận dữ liệu.",
+    "explanation": "Trong mode 0, RXD mang dữ liệu vào/ra; TXD mang clock.",
+    "methodology": "Trong mode 0, RXD mang dữ liệu vào/ra; TXD mang clock.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Chân nhận dữ liệu Chế độ 0 RXD",
@@ -27093,22 +28077,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 39,
     "title": "Part 17 - Câu 39",
-    "prompt": "Trên vi điều khiển 89C51, chế độ 2 cho phép truyền dữ liệu với tốc độ baud cố định và độ dài bao nhiêu bit dữ liệu?",
+    "prompt": "Trên vi điều khiển 89C51 chế độ 2 cho phép truyền dữ liệu với tốc độ baud cố định và độ dài bao nhiêu bit?",
     "extra_lines": [],
     "options": [
-      "A. 10 bit",
-      "B. 8 bit",
-      "C. 11 bit",
-      "D. 9 bit"
+      "10 bit",
+      "8 bit",
+      "11 bit",
+      "9 bit"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Chế độ 2 của cổng nối tiếp 89C51 cho phép truyền dữ liệu với tốc độ Baud cố định và độ dài phần dữ liệu là đúng $9\\,\\text{bit}$ (8 bit dữ liệu từ SBUF kết hợp bit thứ 9 được nạp từ bit TB8 trong thanh ghi SCON).",
-    "methodology": "Chế độ 2 truyền khung $9\\,\\text{bit}$ dữ liệu (cùng 1 bit Start và 1 bit Stop).",
-    "tips_casio": "Chế độ 2 truyền 9 bit dữ liệu.",
+    "explanation": "Mode 2 có 9 bit dữ liệu (SBUF + TB8/RB8), baud theo fosc và SMOD.",
+    "methodology": "Mode 2 có 9 bit dữ liệu (SBUF + TB8/RB8), baud theo fosc và SMOD.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Độ dài dữ liệu trong Chế độ 2",
@@ -27124,19 +28108,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Chức năng của thanh ghi SBUF trên vi điều khiển 89C51 là gì?",
     "extra_lines": [],
     "options": [
-      "A. Đếm số bit truyền đi",
-      "B. Cấu hình tốc độ baud",
-      "C. Lưu trữ dữ liệu truyền và nhận",
-      "D. Điều khiển ngắt"
+      "Đếm số bit truyền đi",
+      "Cấu hình tốc độ baud",
+      "Lưu trữ dữ liệu truyền và nhận",
+      "Điều khiển ngắt"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Thanh ghi SBUF đóng vai trò là bộ đệm dữ liệu (Serial Buffer): khi vi điều khiển cần gửi dữ liệu, ta ghi byte cần truyền vào SBUF; khi nhận được dữ liệu từ cổng nối tiếp, dữ liệu thu được sẽ được đọc ra từ SBUF.",
-    "methodology": "SBUF lưu trữ byte dữ liệu đang chờ phát ra hoặc vừa mới thu nhận được.",
-    "tips_casio": "SBUF = Lưu trữ dữ liệu truyền và nhận.",
+    "explanation": "Đọc SBUF lấy bộ đệm nhận, ghi SBUF nạp bộ đệm phát; hai bộ đệm cùng địa chỉ nhưng độc lập.",
+    "methodology": "Đọc SBUF lấy bộ đệm nhận, ghi SBUF nạp bộ đệm phát; hai bộ đệm cùng địa chỉ nhưng độc lập.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Chức năng của bộ đệm dữ liệu UART SBUF",
@@ -27152,19 +28136,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Làm thế nào để thiết lập cổng nối tiếp trên vi điều khiển 89C51 để truyền dữ liệu 8-bit không đồng bộ?",
     "extra_lines": [],
     "options": [
-      "A. Cấu hình bit TI và RI trong thanh ghi SCON",
-      "B. Cấu hình bit TB8 trong thanh ghi SCON",
-      "C. Cấu hình bit REN trong thanh ghi SCON",
-      "D. Cấu hình bit SM0 và SM1 trong thanh ghi SCON"
+      "Cấu hình bit TI và RI trong thanh ghi SCON",
+      "Cấu hình bit TB8 trong thanh ghi SCON",
+      "Cấu hình bit REN trong thanh ghi SCON",
+      "Đặt SM0=0, SM1=1 trong SCON"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Để thiết lập cổng nối tiếp hoạt động ở chế độ truyền nhận $8\\,\\text{bit}$ không đồng bộ (Chế độ 1), ta cần cấu hình hai bit chọn chế độ SM0 và SM1 trong thanh ghi SCON theo giá trị $\\text{SM0} = 0, \\text{SM1} = 1$.",
-    "methodology": "Để chọn Chế độ 1 ($8\\,\\text{bit}$ không đồng bộ), ta cấu hình $\\text{SM0} = 0$ và $\\text{SM1} = 1$ trong thanh ghi SCON.",
-    "tips_casio": "Cấu hình bit SM0 và SM1 trong thanh ghi SCON.",
+    "explanation": "SM0SM1=01 chọn UART mode 1, 8 bit không đồng bộ. REN bật nhận, không chọn độ dài khung.",
+    "methodology": "SM0SM1=01 chọn UART mode 1, 8 bit không đồng bộ. REN bật nhận, không chọn độ dài khung.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Cấu hình cổng UART truyền dữ liệu 8-bit",
@@ -27180,19 +28164,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Chức năng của thanh ghi SCON trên vi điều khiển 89C51 là gì?",
     "extra_lines": [],
     "options": [
-      "A. Lưu trữ dữ liệu nhận được",
-      "B. Cấu hình cổng nối tiếp",
-      "C. Điều khiển tốc độ baud",
-      "D. Đếm số bit truyền đi"
+      "Lưu trữ dữ liệu nhận được",
+      "Cấu hình cổng nối tiếp",
+      "Điều khiển tốc độ baud",
+      "Đếm số bit truyền đi"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Thanh ghi SCON (Serial Control Register) có chức năng chính là cấu hình chế độ làm việc cho cổng nối tiếp (chế độ 0, 1, 2, 3), cho phép hoặc cấm thu nhận dữ liệu (bit REN), lưu trữ bit dữ liệu thứ 9 (TB8/RB8) và quản lý các cờ ngắt truyền nhận TI và RI.",
-    "methodology": "SCON (Serial Control) là thanh ghi chuyên dụng điều khiển và cấu hình toàn bộ hoạt động của cổng nối tiếp.",
-    "tips_casio": "SCON = Cấu hình và điều khiển cổng nối tiếp.",
+    "explanation": "SCON cấu hình mode, cho phép nhận, giữ bit thứ 9 và các cờ TI/RI.",
+    "methodology": "SCON cấu hình mode, cho phép nhận, giữ bit thứ 9 và các cờ TI/RI.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Chức năng tổng quát của thanh ghi SCON",
@@ -27205,22 +28189,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 43,
     "title": "Part 17 - Câu 43",
-    "prompt": "Trên vi điều khiển 89C51, để báo ký tự truyền đã được hoàn tất hay chưa, ta sử dụng lệnh kiểm tra nào dưới đây?",
+    "prompt": "Trên vi điều khiển 89C51, để báo ký tự truyền đã được hoàn tất chưa cần sử dụng lệnh gì dưới đây?",
     "extra_lines": [],
     "options": [
-      "A. JBC TF1, label",
-      "B. JNB RI, label",
-      "C. JBC TF0, label",
-      "D. JNB TI, label"
+      "JBC TF1, label",
+      "JNB RI, label",
+      "JBC TF0, label",
+      "JNB TI, label"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Để kiểm tra xem việc truyền một byte dữ liệu nối tiếp đã hoàn thành hay chưa, vi điều khiển sử dụng lệnh rẽ nhánh `JNB TI, label` (Jump if Not Bit): chương trình sẽ dừng tại vòng lặp chờ cho đến khi cờ TI được phần cứng bật lên 1.",
-    "methodology": "Sử dụng lệnh `JNB TI, label` để lặp lại kiểm tra cờ TI: nếu TI chưa bằng 1 thì tiếp tục nhảy tới label để chờ.",
-    "tips_casio": "JNB TI, label -> Chờ cờ TI bật lên 1 báo truyền xong.",
+    "explanation": "JNB TI,label chờ khi TI=0; khi TI=1 có thể đi tiếp và xóa TI bằng phần mềm.",
+    "methodology": "JNB TI,label chờ khi TI=0; khi TI=1 có thể đi tiếp và xóa TI bằng phần mềm.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Lệnh kiểm tra cờ truyền dữ liệu TI",
@@ -27236,19 +28220,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Dữ liệu truyền và nhận qua cổng nối tiếp của 89C51 được lưu trữ tạm thời ở thanh ghi nào?",
     "extra_lines": [],
     "options": [
-      "A. SBUF",
-      "B. PCON",
-      "C. TMOD",
-      "D. TCON"
+      "TCON",
+      "TMOD",
+      "PCON",
+      "SBUF"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Mọi byte dữ liệu truyền và nhận qua cổng truyền thông nối tiếp của 89C51 đều được lưu trữ tạm thời tại thanh ghi đệm dữ liệu nối tiếp SBUF (địa chỉ $99\\text{H}$).",
-    "methodology": "SBUF là thanh ghi đệm lưu trữ tạm thời byte dữ liệu trong quá trình truyền và nhận.",
-    "tips_casio": "SBUF lưu trữ dữ liệu truyền nhận.",
+    "explanation": "SBUF là bộ đệm dữ liệu phát/nhận ở địa chỉ 99H, không phải PCON/TMOD/TCON.",
+    "methodology": "SBUF là bộ đệm dữ liệu phát/nhận ở địa chỉ 99H, không phải PCON/TMOD/TCON.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "NB",
     "topic_name": "Thanh ghi lưu trữ tạm thời SBUF",
@@ -27264,19 +28248,19 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "prompt": "Làm thế nào để kiểm tra xem dữ liệu đã được nhận qua cổng nối tiếp trên vi điều khiển 89C51?",
     "extra_lines": [],
     "options": [
-      "A. Kiểm tra bit SM0 trong thanh ghi SCON",
-      "B. Kiểm tra bit SM1 trong thanh ghi SCON",
-      "C. Kiểm tra bit RI trong thanh ghi SCON",
-      "D. Kiểm tra bit TI trong thanh ghi SCON"
+      "Kiểm tra bit SM0 trong thanh ghi SCON",
+      "Kiểm tra bit SM1 trong thanh ghi SCON",
+      "Kiểm tra bit RI trong thanh ghi SCON",
+      "Kiểm tra bit TI trong thanh ghi SCON"
     ],
     "type": "mcq",
     "answer": "C",
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Để nhận biết dữ liệu đã được nhận hoàn tất qua cổng nối tiếp, chương trình thực hiện kiểm tra trạng thái của bit cờ ngắt nhận RI (Receive Interrupt) trong thanh ghi SCON: khi $\\text{RI} = 1$ có nghĩa là một byte dữ liệu hợp lệ đã sẵn sàng trong thanh ghi SBUF.",
-    "methodology": "Kiểm tra bit RI trong thanh ghi SCON: khi RI = 1 báo hiệu byte dữ liệu đã được nhận hoàn tất vào SBUF.",
-    "tips_casio": "Kiểm tra bit RI trong thanh ghi SCON.",
+    "explanation": "RI=1 báo dữ liệu mới đã được đưa vào bộ đệm nhận nếu thỏa điều kiện nhận; sau đọc cần xóa RI.",
+    "methodology": "RI=1 báo dữ liệu mới đã được đưa vào bộ đệm nhận nếu thỏa điều kiện nhận; sau đọc cần xóa RI.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Kiểm tra trạng thái nhận qua bit RI",
@@ -27289,22 +28273,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 17: Truyền Thông Nối Tiếp UART & Baudrate 8051",
     "num": 46,
     "title": "Part 17 - Câu 46",
-    "prompt": "Trên vi điều khiển 89C51, chế độ 1 cho phép truyền và nhận dữ liệu không đồng bộ với độ dài dữ liệu là bao nhiêu bit?",
+    "prompt": "Trên vi điều khiển 89C51, chế độ 1 cho phép truyền và nhận dữ liệu không đồng bộ với độ dài dữ liệu là bao nhiêu.",
     "extra_lines": [],
     "options": [
-      "A. 9 bit",
-      "B. 7 bit",
-      "C. 10 bit",
-      "D. 8 bit"
+      "9 bit",
+      "7 bit",
+      "10 bit",
+      "8 bit"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Chế độ 1 của cổng nối tiếp họ 8051 cho phép truyền và nhận dữ liệu không đồng bộ với độ dài trường dữ liệu hữu ích chính xác là $8\\,\\text{bit}$ (1 byte).",
-    "methodology": "Chế độ 1 có độ dài dữ liệu là 8 bit.",
-    "tips_casio": "Chế độ 1 là 8 bit dữ liệu.",
+    "explanation": "Mode 1 có 8 bit dữ liệu, toàn khung 10 bit gồm thêm start và stop.",
+    "methodology": "Mode 1 có 8 bit dữ liệu, toàn khung 10 bit gồm thêm start và stop.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "TH",
     "topic_name": "Độ dài dữ liệu trong Chế độ 1",
@@ -27317,22 +28301,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 4,
     "title": "Part 18 - Câu 4",
-    "prompt": "Nếu tần số thạch anh là 11.0592 MHz và tốc độ truyền là 2400 bps trên vi điều khiển 89C51, giá trị nạp vào thanh ghi TH1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz, UART mode 1, Timer 1 mode 2, SMOD=0. Để baud=2400 bps, nạp TH1 bằng giá trị nào?",
     "extra_lines": [],
     "options": [
-      "-12",
-      "-6",
-      "-2",
-      "-3"
+      "F4H (−12)",
+      "E8H (−24)",
+      "FAH (−6)",
+      "F3H (−13)"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với $f_{\\text{osc}}$ = $11.0592\\,\\text{MHz}$, tốc độ $2400\\,\\text{bps}$ cần nạp TH1 = 256 - (28800 / 2400) = 256 - 12 = -12 (F4H).",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/2400=12; TH1=F4H (biểu diễn 8 bit của −12). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "methodology": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/2400=12; TH1=F4H (biểu diễn 8 bit của −12). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27345,7 +28329,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 5,
     "title": "Part 18 - Câu 5",
-    "prompt": "Nếu tần số thạch anh trên vi điều khiển 89C51 là 11.0592 MHz và giá trị nạp vào thanh ghi TH1 là -6, tốc độ truyền là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz, UART mode 1, Timer 1 mode 2, SMOD=0, TH1=TL1=FAH. Tốc độ baud là bao nhiêu?",
     "extra_lines": [],
     "options": [
       "2400 bps",
@@ -27358,9 +28342,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Với TH1 = -6, tốc độ Baud = 28800 / 6 = $4800\\,\\text{bps}$.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "UART mode 1, Timer 1 mode 2, SMOD=0: baud=28 800/(256−TH1)=28 800/6=4800 bps.",
+    "methodology": "UART mode 1, Timer 1 mode 2, SMOD=0: baud=28 800/(256−TH1)=28 800/6=4800 bps.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27373,7 +28357,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 6,
     "title": "Part 18 - Câu 6",
-    "prompt": "Nếu tần số thạch anh trên vi điều khiển 89C51 là 11.0592 MHz và giá trị nạp vào thanh ghi TH1 là -3, tốc độ truyền là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz, UART mode 1, Timer 1 mode 2, SMOD=0, TH1=TL1=FDH. Tốc độ baud là bao nhiêu?",
     "extra_lines": [],
     "options": [
       "9600 bps",
@@ -27386,9 +28370,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Với TH1 = -3, tốc độ Baud = 28800 / 3 = $9600\\,\\text{bps}$.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "UART mode 1, Timer 1 mode 2, SMOD=0: baud=28 800/(256−TH1)=28 800/3=9600 bps.",
+    "methodology": "UART mode 1, Timer 1 mode 2, SMOD=0: baud=28 800/(256−TH1)=28 800/3=9600 bps.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27401,7 +28385,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 7,
     "title": "Part 18 - Câu 7",
-    "prompt": "Để truyền dữ liệu qua cổng nối tiếp trên vi điều khiển 89C51, giá trị cần nạp vào thanh ghi SBUF là gì nếu dữ liệu nhận được là ký tự k, biết SCON = 50H?",
+    "prompt": "Để truyền ký tự ASCII 'k', CPU cần ghi byte nào vào SBUF?",
     "extra_lines": [],
     "options": [
       "FFH",
@@ -27414,9 +28398,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Ký tự thường 'k' trong bảng mã ASCII có mã Hex là 6BH. Do đó giá trị nạp vào SBUF là 6BH.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Mã ASCII của 'k' là 107 thập phân = 6BH. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "methodology": "Mã ASCII của 'k' là 107 thập phân = 6BH. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27429,7 +28413,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 8,
     "title": "Part 18 - Câu 8",
-    "prompt": "Nếu tần số thạch anh trên vi điều khiển 89C51 là 11.0592MHz và giá trị nạp vào thanh ghi TH1 là FAH, tốc độ truyền là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz, UART mode 1, Timer 1 mode 2, SMOD=0, TH1=TL1=FAH. Tốc độ baud là bao nhiêu?",
     "extra_lines": [],
     "options": [
       "4800 bps",
@@ -27442,9 +28426,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Giá trị FAH = -6 (256 - 6 = 250 = FAH) -> Tốc độ Baud = 28800 / 6 = $4800\\,\\text{bps}$.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "UART mode 1, Timer 1 mode 2, SMOD=0: baud=28 800/(256−TH1)=28 800/6=4800 bps.",
+    "methodology": "UART mode 1, Timer 1 mode 2, SMOD=0: baud=28 800/(256−TH1)=28 800/6=4800 bps.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27457,22 +28441,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 9,
     "title": "Part 18 - Câu 9",
-    "prompt": "Nếu tần số thạch anh là 11.0592 MHz và tốc độ truyền là 4800 bps trên vi điều khiển 89C51, giá trị nạp vào thanh ghi TH1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz, UART mode 1, Timer 1 mode 2, SMOD=0. Để baud=4800 bps, nạp TH1 bằng giá trị nào?",
     "extra_lines": [],
     "options": [
-      "F8H",
-      "FDH",
-      "F4H",
-      "FAH"
+      "F4H (−12)",
+      "FDH (−3)",
+      "F9H (−7)",
+      "FAH (−6)"
     ],
     "type": "mcq",
     "answer": "D",
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Tốc độ $4800\\,\\text{bps}$ tương ứng với TH1 = -6 = FAH.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/4800=6; TH1=FAH (biểu diễn 8 bit của −6). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "methodology": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/4800=6; TH1=FAH (biểu diễn 8 bit của −6). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27485,7 +28469,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 10,
     "title": "Part 18 - Câu 10",
-    "prompt": "Nếu giá trị của các thanh ghi SBUF là 0x3E và thanh ghi SCON là 0x00 trên vi điều khiển 89C51, dữ liệu nhận được qua cổng nối tiếp là gì?",
+    "prompt": "Giả sử phần cứng đã nhận thành công và bộ đệm nhận SBUF đang chứa 3EH. CPU thực hiện MOV A,SBUF sẽ nhận byte nào?",
     "extra_lines": [],
     "options": [
       "00H",
@@ -27498,9 +28482,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Thanh ghi SBUF chứa trực tiếp byte dữ liệu nhận được là 0x3E -> Dữ liệu là 3EH.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Bộ đệm nhận chứa 3EH nên MOV A,SBUF đọc đúng byte 3EH. Ghi SBUF tác động bộ đệm phát riêng, không nạp trực tiếp bộ đệm nhận.",
+    "methodology": "Bộ đệm nhận chứa 3EH nên MOV A,SBUF đọc đúng byte 3EH. Ghi SBUF tác động bộ đệm phát riêng, không nạp trực tiếp bộ đệm nhận.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27513,22 +28497,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 11,
     "title": "Part 18 - Câu 11",
-    "prompt": "Nếu tần số thạch anh là 11.0592 MHz và tốc độ truyền là 1200 bps trên vi điều khiển 89C51, giá trị nạp vào thanh ghi TH1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz, UART mode 1, Timer 1 mode 2, SMOD=0. Để baud=1200 bps, nạp TH1 bằng giá trị nào?",
     "extra_lines": [],
     "options": [
-      "-2",
-      "-24",
-      "-6",
-      "-3"
+      "E7H (−25)",
+      "E8H (−24)",
+      "D0H (−48)",
+      "F4H (−12)"
     ],
     "type": "mcq",
     "answer": "B",
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Tốc độ $1200\\,\\text{bps}$: TH1 = 256 - (28800 / 1200) = 256 - 24 = -24 (E8H).",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/1200=24; TH1=E8H (biểu diễn 8 bit của −24). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "methodology": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/1200=24; TH1=E8H (biểu diễn 8 bit của −24). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27541,7 +28525,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 12,
     "title": "Part 18 - Câu 12",
-    "prompt": "Nếu giá trị của thanh ghi SBUF là tương ứng với ký tự cần truyền là „9‟ và thanh ghi SCON là 0x10 trên vi điều khiển 89C51, dữ liệu nhận được qua cổng nối tiếp là gì?",
+    "prompt": "Để truyền ký tự ASCII '9', CPU cần ghi byte nào vào SBUF?",
     "extra_lines": [],
     "options": [
       "39H",
@@ -27554,9 +28538,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Ký tự số '9' trong bảng mã ASCII có mã Hex là 39H. SBUF nhận được 39H.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Mã ASCII của '9' là 57 thập phân = 39H. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "methodology": "Mã ASCII của '9' là 57 thập phân = 39H. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27569,7 +28553,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 13,
     "title": "Part 18 - Câu 13",
-    "prompt": "Nếu giá trị của các thanh ghi SBUF là 0x6F và thanh ghi SCON là 0x50 trên vi điều khiển 89C51, dữ liệu nhận được qua cổng nối tiếp là gì?",
+    "prompt": "Giả sử phần cứng đã nhận thành công và bộ đệm nhận SBUF đang chứa 6FH. CPU thực hiện MOV A,SBUF sẽ nhận byte nào?",
     "extra_lines": [],
     "options": [
       "6FH",
@@ -27582,9 +28566,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Thanh ghi SBUF chứa trực tiếp byte dữ liệu nhận được là 0x6F -> Dữ liệu là 6FH.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Bộ đệm nhận chứa 6FH nên MOV A,SBUF đọc đúng byte 6FH. Ghi SBUF tác động bộ đệm phát riêng, không nạp trực tiếp bộ đệm nhận.",
+    "methodology": "Bộ đệm nhận chứa 6FH nên MOV A,SBUF đọc đúng byte 6FH. Ghi SBUF tác động bộ đệm phát riêng, không nạp trực tiếp bộ đệm nhận.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27597,28 +28581,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 14,
     "title": "Part 18 - Câu 14",
-    "prompt": "Đọc chương trình truyền thông nối tiếp thực hiện trên 89C51 sau. Hãy cho biết chức năng của chương trình?",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz. Chương trình sau thực hiện chức năng nào?",
+    "extra_lines": [
+      "ANL PCON, #7FH",
+      "MOV TMOD, #20H",
+      "MOV TH1, #FAH",
+      "MOV TL1, #FAH",
+      "MOV SCON, #50H",
+      "SETB TR1",
+      "LOOP: MOV SBUF, #41H",
+      "WAIT: JNB TI, WAIT",
+      "CLR TI",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Truyền ký tự A và nhận ký tự A tại cổng P1",
-      "Truyền ký tự A với tốc độ 4800 baud liên tục",
-      "Truyền các byte ký tự nối tiếp và đưa tới cổng P1",
-      "Truyền ký tự A liên tu với tốc độ 4800"
+      "Nhận ký tự 'A' rồi xuất P1",
+      "Truyền liên tục ký tự 'B' ở 4800 baud",
+      "Truyền liên tục ký tự 'A' ở 4800 baud",
+      "Truyền liên tục ký tự 'A' ở 9600 baud"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "C",
     "acceptable_answers": [
-      "B"
+      "C"
     ],
-    "explanation": "Chương trình khởi tạo Timer 1 Mode 2 với TH1=-6 ($4800\\,\\text{baud}$) và truyền liên tục ký tự 'A'.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Ghi SBUF=41H phát ASCII A. JNB TI chờ bộ phát, CLR TI xác nhận, SJMP LOOP lặp liên tục. TH1=FAH, SMOD=0 cho baud=4800.",
+    "methodology": "Ghi SBUF=41H phát ASCII A. JNB TI chờ bộ phát, CLR TI xác nhận, SJMP LOOP lặp liên tục. TH1=FAH, SMOD=0 cho baud=4800.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
-    "images": [
-      "assets/images/p18_q14.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_18_Q15",
@@ -27627,22 +28620,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 15,
     "title": "Part 18 - Câu 15",
-    "prompt": "Nếu tần số thạch anh là 11.0592 MHz và tốc độ truyền là 4800 bps trên vi điều khiển 89C51, giá trị nạp vào thanh ghi TH1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz, UART mode 1, Timer 1 mode 2, SMOD=0. Để baud=4800 bps, nạp TH1 bằng giá trị nào?",
     "extra_lines": [],
     "options": [
-      "-12",
-      "-3",
-      "-2",
-      "-6"
+      "F9H (−7)",
+      "FAH (−6)",
+      "F4H (−12)",
+      "FDH (−3)"
     ],
     "type": "mcq",
-    "answer": "D",
+    "answer": "B",
     "acceptable_answers": [
-      "D"
+      "B"
     ],
-    "explanation": "Tốc độ truyền $4800\\,\\text{bps}$ cần giá trị nạp TH1 = -6.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/4800=6; TH1=FAH (biểu diễn 8 bit của −6). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "methodology": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/4800=6; TH1=FAH (biểu diễn 8 bit của −6). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27655,7 +28648,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 16,
     "title": "Part 18 - Câu 16",
-    "prompt": "Để nhận dữ liệu qua cổng nối tiếp trên vi điều khiển 89C51, giá trị của thanh ghi SBUF là gì nếu dữ liệu nhận được là ký tự K, biết SCON = 50H?",
+    "prompt": "Để truyền ký tự ASCII 'K', CPU cần ghi byte nào vào SBUF?",
     "extra_lines": [],
     "options": [
       "00H",
@@ -27668,9 +28661,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Ký tự in hoa 'K' trong bảng mã ASCII có mã Hex là 4BH. SBUF nhận được 4BH.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Mã ASCII của 'K' là 75 thập phân = 4BH. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "methodology": "Mã ASCII của 'K' là 75 thập phân = 4BH. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27683,22 +28676,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 17,
     "title": "Part 18 - Câu 17",
-    "prompt": "Nếu tần số thạch anh là 11.0592 MHz và tốc độ truyền là 9600 bps trên vi điều khiển 89C51, giá trị nạp vào thanh ghi TH1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz, UART mode 1, Timer 1 mode 2, SMOD=0. Để baud=9600 bps, nạp TH1 bằng giá trị nào?",
     "extra_lines": [],
     "options": [
-      "-12",
-      "-3",
-      "-2",
-      "-6"
+      "FAH (−6)",
+      "FFH (−1)",
+      "FCH (−4)",
+      "FDH (−3)"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Tốc độ $9600\\,\\text{bps}$ cần giá trị nạp TH1 = -3.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/9600=3; TH1=FDH (biểu diễn 8 bit của −3). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "methodology": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/9600=3; TH1=FDH (biểu diễn 8 bit của −3). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27711,22 +28704,22 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 18,
     "title": "Part 18 - Câu 18",
-    "prompt": "Nếu tần số thạch anh là 11.0592 MHz và tốc độ truyền là 1200bps trên vi điều khiển 89C51, giá trị nạp vào thanh ghi TH1 là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz, UART mode 1, Timer 1 mode 2, SMOD=0. Để baud=1200 bps, nạp TH1 bằng giá trị nào?",
     "extra_lines": [],
     "options": [
-      "F8H",
-      "FAH",
-      "FDH",
-      "F4H"
+      "F4H (−12)",
+      "E7H (−25)",
+      "E8H (−24)",
+      "D0H (−48)"
     ],
     "type": "mcq",
-    "answer": "A",
+    "answer": "C",
     "acceptable_answers": [
-      "A"
+      "C"
     ],
-    "explanation": "Tốc độ $1200\\,\\text{bps}$: TH1 = -24 = E8H.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/1200=24; TH1=E8H (biểu diễn 8 bit của −24). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "methodology": "UART mode 1, Timer 1 mode 2, SMOD=0, lõi 12T: baud=fosc/[384×(256−TH1)]. 11 059 200/384=28 800; 256−TH1=28 800/1200=24; TH1=E8H (biểu diễn 8 bit của −24). Nạp TL1 cùng giá trị để khoảng đầu đúng.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27739,7 +28732,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 19,
     "title": "Part 18 - Câu 19",
-    "prompt": "Trên vi điều khiển 89C51, nếu giá trị của thanh ghi SBUF là 0xA5 và thanh ghi SCON là 0xD0, dữ liệu nhận được qua cổng nối tiếp là gì?",
+    "prompt": "Giả sử phần cứng đã nhận thành công và bộ đệm nhận SBUF đang chứa A5H. CPU thực hiện MOV A,SBUF sẽ nhận byte nào?",
     "extra_lines": [],
     "options": [
       "00H",
@@ -27752,9 +28745,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Dữ liệu nhận được lưu trong SBUF là 0xA5 = A5H.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Bộ đệm nhận chứa A5H nên MOV A,SBUF đọc đúng byte A5H. Ghi SBUF tác động bộ đệm phát riêng, không nạp trực tiếp bộ đệm nhận.",
+    "methodology": "Bộ đệm nhận chứa A5H nên MOV A,SBUF đọc đúng byte A5H. Ghi SBUF tác động bộ đệm phát riêng, không nạp trực tiếp bộ đệm nhận.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27767,7 +28760,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 20,
     "title": "Part 18 - Câu 20",
-    "prompt": "Nếu tần số thạch anh trên vi điều khiển 89C51 là 11.0592 MHz và giá trị nạp vào thanh ghi TH1 là FDH, tốc độ truyền là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz, UART mode 1, Timer 1 mode 2, SMOD=0, TH1=TL1=FDH. Tốc độ baud là bao nhiêu?",
     "extra_lines": [],
     "options": [
       "2400 bps",
@@ -27780,9 +28773,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Giá trị nạp FDH = -3 -> Tốc độ truyền là 28800 / 3 = $9600\\,\\text{bps}$.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "UART mode 1, Timer 1 mode 2, SMOD=0: baud=28 800/(256−TH1)=28 800/3=9600 bps.",
+    "methodology": "UART mode 1, Timer 1 mode 2, SMOD=0: baud=28 800/(256−TH1)=28 800/3=9600 bps.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27795,28 +28788,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 21,
     "title": "Part 18 - Câu 21",
-    "prompt": "Đọc chương trình truyền thông nối tiếp thực hiện trên 89C51 sau. Hãy cho biết chức năng của chương trình?",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz. Chương trình sau thực hiện chức năng nào?",
+    "extra_lines": [
+      "ANL PCON, #7FH",
+      "MOV TMOD, #20H",
+      "MOV TH1, #FDH",
+      "MOV TL1, #FDH",
+      "MOV SCON, #50H",
+      "SETB TR1",
+      "LOOP: MOV SBUF, #77H",
+      "WAIT: JNB TI, WAIT",
+      "CLR TI",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Truyền ký tự a với tốc độ 4800 baud liên tục",
-      "Truyền ký tự w với tốc độ 9600 baud liên tục",
-      "Truyền ký tự b với tốc độ 9600 baud liên tục",
-      "Truyền ký tự z với tốc độ 4800 baud liên tục"
+      "Truyền liên tục ký tự 'w' ở 19200 baud",
+      "Nhận ký tự 'w' rồi xuất P1",
+      "Truyền liên tục ký tự 'Q' ở 9600 baud",
+      "Truyền liên tục ký tự 'w' ở 9600 baud"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Chương trình nạp TH1=-3 ($9600\\,\\text{baud}$) và nạp ký tự 'w' vào SBUF để truyền liên tục.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Ghi SBUF=77H phát ASCII w. JNB TI chờ bộ phát, CLR TI xác nhận, SJMP LOOP lặp liên tục. TH1=FDH, SMOD=0 cho baud=9600.",
+    "methodology": "Ghi SBUF=77H phát ASCII w. JNB TI chờ bộ phát, CLR TI xác nhận, SJMP LOOP lặp liên tục. TH1=FDH, SMOD=0 cho baud=9600.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
-    "images": [
-      "assets/images/p18_q21.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_18_Q22",
@@ -27825,28 +28827,38 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 22,
     "title": "Part 18 - Câu 22",
-    "prompt": "Đọc chương trình sau. Hãy cho biết chức năng của chương trình?",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz. Chương trình sau thực hiện chức năng nào?",
+    "extra_lines": [
+      "ANL PCON, #7FH",
+      "MOV TMOD, #20H",
+      "MOV TH1, #FAH",
+      "MOV TL1, #FAH",
+      "MOV SCON, #50H",
+      "SETB TR1",
+      "LOOP: JNB RI, LOOP",
+      "MOV A, SBUF",
+      "MOV P3, A",
+      "CLR RI",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Truyền ký tự A và nhận ký tự A tại cổng P3",
-      "Nhận các byte dữ liệu nối tiếp và đưa tới cổng P3",
-      "Truyền các byte ký tự nối tiếp và đưa tới cổng P3",
-      "Truyền ký tự A tới cổng P3"
+      "Nhận byte rồi xuất ra P1",
+      "Truyền byte đọc từ P3 qua UART",
+      "Truyền ký tự A ở 4800 baud",
+      "Nhận byte nối tiếp ở 4800 baud và xuất byte ra P3"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Vòng lặp nhận dữ liệu từ SBUF khi RI=1 rồi xuất ra cổng P3: MOV P3, A.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "JNB RI chờ byte nhận; MOV A,SBUF đọc bộ đệm; MOV P3,A xuất byte; CLR RI chuẩn bị nhận tiếp. TH1=FAH, SMOD=0 cho baud=4800.",
+    "methodology": "JNB RI chờ byte nhận; MOV A,SBUF đọc bộ đệm; MOV P3,A xuất byte; CLR RI chuẩn bị nhận tiếp. TH1=FAH, SMOD=0 cho baud=4800.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
-    "images": [
-      "assets/images/p18_q22.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_18_Q23",
@@ -27855,7 +28867,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 23,
     "title": "Part 18 - Câu 23",
-    "prompt": "Để nhận dữ liệu qua cổng nối tiếp trên vi điều khiển 89C51, giá trị của thanh ghi SBUF trên vi điều khiển 89C51 là gì nếu dữ liệu nhận được là ký tự y, biết SCON = 50H?",
+    "prompt": "Để truyền ký tự ASCII 'y', CPU cần ghi byte nào vào SBUF?",
     "extra_lines": [],
     "options": [
       "79H",
@@ -27868,9 +28880,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Ký tự chữ cái thường 'y' trong bảng mã ASCII có mã Hex là 79H.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Mã ASCII của 'y' là 121 thập phân = 79H. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "methodology": "Mã ASCII của 'y' là 121 thập phân = 79H. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27883,11 +28895,11 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 24,
     "title": "Part 18 - Câu 24",
-    "prompt": "Để nhận dữ liệu qua cổng nối tiếp trên vi điều khiển 89C51, giá trị của thanh ghi SBUF là gì nếu dữ liệu nhận được là ký tự B, biết SCON = 50H?",
+    "prompt": "Để truyền ký tự ASCII 'B', CPU cần ghi byte nào vào SBUF?",
     "extra_lines": [],
     "options": [
       "50H",
-      "41H",
+      "42H",
       "5AH",
       "00H"
     ],
@@ -27896,9 +28908,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Ký tự ASCII nhận được tương ứng là mã Hex 41H (chữ 'A') hoặc 42H ('B').",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Mã ASCII của 'B' là 66 thập phân = 42H. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "methodology": "Mã ASCII của 'B' là 66 thập phân = 42H. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27911,7 +28923,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 25,
     "title": "Part 18 - Câu 25",
-    "prompt": "Để cấu hình cổng nối tiếp ở chế độ 3 (9-bit UART không đồng bộ) trên vi điều khiển 89C51, giá trị của thanh ghi SCON cần là gì?",
+    "prompt": "Cấu hình UART mode 3, REN=1 cho phép nhận; SM2, TB8, RB8, TI, RI đều bằng 0. Giá trị SCON cần nạp là bao nhiêu?",
     "extra_lines": [],
     "options": [
       "C0H",
@@ -27924,9 +28936,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Chế độ 3 UART (9-bit tốc độ thay đổi): SM0=1, SM1=1, REN=1 (0001) -> SCON = D0H (1101_0000b).",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "SCON: SM0SM1=11, REN=1, SM2=TB8=RB8=TI=RI=0. Ghép các bit được 11010000B=D0H. Không chỉ mode: các giá trị khác cùng mode có thể khác REN/SM2.",
+    "methodology": "SCON: SM0SM1=11, REN=1, SM2=TB8=RB8=TI=RI=0. Ghép các bit được 11010000B=D0H. Không chỉ mode: các giá trị khác cùng mode có thể khác REN/SM2.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27939,7 +28951,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 26,
     "title": "Part 18 - Câu 26",
-    "prompt": "Nếu giá trị của các thanh ghi SBUF là 0x9A và thanh ghi SCON là 0x50 trên vi điều khiển 89C51, dữ liệu nhận được qua cổng nối tiếp là gì?",
+    "prompt": "Giả sử phần cứng đã nhận thành công và bộ đệm nhận SBUF đang chứa 9AH. CPU thực hiện MOV A,SBUF sẽ nhận byte nào?",
     "extra_lines": [],
     "options": [
       "A9H",
@@ -27952,9 +28964,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Thanh ghi SBUF chứa giá trị 0x9A -> Dữ liệu nhận được là 9AH.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Bộ đệm nhận chứa 9AH nên MOV A,SBUF đọc đúng byte 9AH. Ghi SBUF tác động bộ đệm phát riêng, không nạp trực tiếp bộ đệm nhận.",
+    "methodology": "Bộ đệm nhận chứa 9AH nên MOV A,SBUF đọc đúng byte 9AH. Ghi SBUF tác động bộ đệm phát riêng, không nạp trực tiếp bộ đệm nhận.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -27967,28 +28979,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 27,
     "title": "Part 18 - Câu 27",
-    "prompt": "Đọc chương trình truyền thông nối tiếp thực hiện trên 89C51 sau. Hãy cho biết chức năng của chương trình?",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz. Chương trình sau thực hiện chức năng nào?",
+    "extra_lines": [
+      "ANL PCON, #7FH",
+      "MOV TMOD, #20H",
+      "MOV TH1, #FAH",
+      "MOV TL1, #FAH",
+      "MOV SCON, #50H",
+      "SETB TR1",
+      "LOOP: MOV SBUF, #41H",
+      "WAIT: JNB TI, WAIT",
+      "CLR TI",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Truyền ký tự A với tốc độ 4800 baud liên tục",
-      "Nhân ký tự A tại cổng nối tiếp",
-      "Nhận các byte ký tự nối tiếp và đưa tới cổng ngoại vi",
-      "Truyền ký tự A liên tục với tốc độ 4800"
+      "Truyền liên tục ký tự 'B' ở 4800 baud",
+      "Truyền liên tục ký tự 'A' ở 4800 baud",
+      "Truyền liên tục ký tự 'A' ở 9600 baud",
+      "Nhận ký tự 'A' rồi xuất P1"
     ],
     "type": "mcq",
-    "answer": "C",
+    "answer": "B",
     "acceptable_answers": [
-      "C"
+      "B"
     ],
-    "explanation": "Chương trình chờ cờ RI=1 để nhận từng byte từ cổng nối tiếp và xuất ra cổng ngoại vi.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Ghi SBUF=41H phát ASCII A. JNB TI chờ bộ phát, CLR TI xác nhận, SJMP LOOP lặp liên tục. TH1=FAH, SMOD=0 cho baud=4800.",
+    "methodology": "Ghi SBUF=41H phát ASCII A. JNB TI chờ bộ phát, CLR TI xác nhận, SJMP LOOP lặp liên tục. TH1=FAH, SMOD=0 cho baud=4800.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
-    "images": [
-      "assets/images/p18_q27.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_18_Q28",
@@ -27997,7 +29018,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 28,
     "title": "Part 18 - Câu 28",
-    "prompt": "Để cấu hình cổng nối tiếp ở chế độ 1 (8-bit UART) trên vi điều khiển 89C51, giá trị của thanh ghi SCON cần là gì?",
+    "prompt": "Cấu hình UART mode 1, REN=1 cho phép nhận; SM2, TB8, RB8, TI, RI đều bằng 0. Giá trị SCON cần nạp là bao nhiêu?",
     "extra_lines": [],
     "options": [
       "30H",
@@ -28010,9 +29031,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "C"
     ],
-    "explanation": "Cấu hình chuẩn Chế độ 1 (8-bit UART thay đổi tốc độ, cho phép nhận): SM0=0, SM1=1, REN=1 -> SCON = 50H.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "SCON: SM0SM1=01, REN=1, SM2=TB8=RB8=TI=RI=0. Ghép các bit được 01010000B=50H. Không chỉ mode: các giá trị khác cùng mode có thể khác REN/SM2.",
+    "methodology": "SCON: SM0SM1=01, REN=1, SM2=TB8=RB8=TI=RI=0. Ghép các bit được 01010000B=50H. Không chỉ mode: các giá trị khác cùng mode có thể khác REN/SM2.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -28025,7 +29046,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 29,
     "title": "Part 18 - Câu 29",
-    "prompt": "Để cấu hình cổng nối tiếp ở chế độ 0 (8-bit đồng bộ) trên vi điều khiển 89C51, giá trị của thanh ghi SCON cần là gì?",
+    "prompt": "Cấu hình UART mode 0, REN=1 cho phép nhận; SM2, TB8, RB8, TI, RI đều bằng 0. Giá trị SCON cần nạp là bao nhiêu?",
     "extra_lines": [],
     "options": [
       "10H",
@@ -28038,9 +29059,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Cấu hình Chế độ 0 (Thanh ghi dịch 8-bit đồng bộ, cho phép nhận): SM0=0, SM1=0, REN=1 -> SCON = 10H.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "SCON: SM0SM1=00, REN=1, SM2=TB8=RB8=TI=RI=0. Ghép các bit được 00010000B=10H. Không chỉ mode: các giá trị khác cùng mode có thể khác REN/SM2.",
+    "methodology": "SCON: SM0SM1=00, REN=1, SM2=TB8=RB8=TI=RI=0. Ghép các bit được 00010000B=10H. Không chỉ mode: các giá trị khác cùng mode có thể khác REN/SM2.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -28053,7 +29074,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 30,
     "title": "Part 18 - Câu 30",
-    "prompt": "Nếu giá trị của thanh ghi SBUF là 0x7E và thanh ghi SCON là 0x50 trên vi điều khiển 89C51, dữ liệu nhận được qua cổng nối tiếp là gì?",
+    "prompt": "Giả sử phần cứng đã nhận thành công và bộ đệm nhận SBUF đang chứa 7EH. CPU thực hiện MOV A,SBUF sẽ nhận byte nào?",
     "extra_lines": [],
     "options": [
       "FFH",
@@ -28066,9 +29087,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Giá trị lưu trong SBUF là 0x7E -> Dữ liệu nhận được là 7EH.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Bộ đệm nhận chứa 7EH nên MOV A,SBUF đọc đúng byte 7EH. Ghi SBUF tác động bộ đệm phát riêng, không nạp trực tiếp bộ đệm nhận.",
+    "methodology": "Bộ đệm nhận chứa 7EH nên MOV A,SBUF đọc đúng byte 7EH. Ghi SBUF tác động bộ đệm phát riêng, không nạp trực tiếp bộ đệm nhận.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -28081,7 +29102,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 31,
     "title": "Part 18 - Câu 31",
-    "prompt": "Để cấu hình cổng nối tiếp ở chế độ 2 (9-bit UART) trên vi điều khiển 89C51, giá trị của thanh ghi SCON cần là gì?",
+    "prompt": "Cấu hình UART mode 2, REN=1 cho phép nhận; SM2, TB8, RB8, TI, RI đều bằng 0. Giá trị SCON cần nạp là bao nhiêu?",
     "extra_lines": [],
     "options": [
       "B0H",
@@ -28094,9 +29115,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "B"
     ],
-    "explanation": "Cấu hình Chế độ 2 (9-bit UART tốc độ cố định, cho phép nhận): SM0=1, SM1=0, REN=1 -> SCON = 90H.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "SCON: SM0SM1=10, REN=1, SM2=TB8=RB8=TI=RI=0. Ghép các bit được 10010000B=90H. Không chỉ mode: các giá trị khác cùng mode có thể khác REN/SM2.",
+    "methodology": "SCON: SM0SM1=10, REN=1, SM2=TB8=RB8=TI=RI=0. Ghép các bit được 10010000B=90H. Không chỉ mode: các giá trị khác cùng mode có thể khác REN/SM2.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -28109,28 +29130,37 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 32,
     "title": "Part 18 - Câu 32",
-    "prompt": "Đọc chương trình sau. Hãy cho biết chức năng của chương trình?",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz. Chương trình sau thực hiện chức năng nào?",
+    "extra_lines": [
+      "ANL PCON, #7FH",
+      "MOV TMOD, #20H",
+      "MOV TH1, #F4H",
+      "MOV TL1, #F4H",
+      "MOV SCON, #50H",
+      "SETB TR1",
+      "LOOP: MOV SBUF, #50H",
+      "WAIT: JNB TI, WAIT",
+      "CLR TI",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Truyền ký tự B với tốc độ 9600 baud liên tục",
-      "Truyền ký tự Q với tốc độ 9600 baud liên tục",
-      "Truyền ký tự Z với tốc độ 4800 baud liên tục",
-      "Truyền ký tự P với tốc độ 1200 baud liên tục"
+      "Truyền liên tục ký tự 'P' ở 2400 baud",
+      "Truyền liên tục ký tự 'P' ở 4800 baud",
+      "Nhận ký tự 'P' rồi xuất P1",
+      "Truyền liên tục ký tự 'Q' ở 2400 baud"
     ],
     "type": "mcq",
     "answer": "A",
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Chương trình nạp TH1=-3 ($9600\\,\\text{baud}$) và nạp mã ký tự 'B' vào SBUF để truyền lặp lại.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Ghi SBUF=50H phát ASCII P. JNB TI chờ bộ phát, CLR TI xác nhận, SJMP LOOP lặp liên tục. TH1=F4H, SMOD=0 cho baud=2400.",
+    "methodology": "Ghi SBUF=50H phát ASCII P. JNB TI chờ bộ phát, CLR TI xác nhận, SJMP LOOP lặp liên tục. TH1=F4H, SMOD=0 cho baud=2400.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
-    "images": [
-      "assets/images/p18_q32.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_18_Q33",
@@ -28139,7 +29169,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 33,
     "title": "Part 18 - Câu 33",
-    "prompt": "Nếu tần số thạch anh trên vi điều khiển 89C51 là 11.0592 MHz và giá trị nạp vào thanh ghi TH1 là F4H, tốc độ truyền là bao nhiêu?",
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz, UART mode 1, Timer 1 mode 2, SMOD=0, TH1=TL1=F4H. Tốc độ baud là bao nhiêu?",
     "extra_lines": [],
     "options": [
       "2400 bps",
@@ -28152,9 +29182,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "A"
     ],
-    "explanation": "Giá trị nạp F4H = -12 -> Tốc độ Baud = 28800 / 12 = $2400\\,\\text{bps}$.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "UART mode 1, Timer 1 mode 2, SMOD=0: baud=28 800/(256−TH1)=28 800/12=2400 bps.",
+    "methodology": "UART mode 1, Timer 1 mode 2, SMOD=0: baud=28 800/(256−TH1)=28 800/12=2400 bps.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
@@ -28167,28 +29197,38 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 34,
     "title": "Part 18 - Câu 34",
-    "prompt": "Đọc chương trình truyền thông nối tiếp thực hiện trên 89C51 sau. Hãy cho biết chức năng của chương trình?",
-    "extra_lines": [],
+    "prompt": "AT89C51 12T, fosc=11,0592 MHz. Chương trình sau thực hiện chức năng nào?",
+    "extra_lines": [
+      "ANL PCON, #7FH",
+      "MOV TMOD, #20H",
+      "MOV TH1, #FAH",
+      "MOV TL1, #FAH",
+      "MOV SCON, #50H",
+      "SETB TR1",
+      "LOOP: JNB RI, LOOP",
+      "MOV A, SBUF",
+      "MOV P1, A",
+      "CLR RI",
+      "SJMP LOOP"
+    ],
     "options": [
-      "Truyền ký tự A và nhận ký tự A tại cổng P1",
-      "Nhận các byte dữ liệu nối tiếp và đưa tới cổng P1",
-      "Truyền ký tự A tới cổng P1",
-      "Truyền các byte ký tự nối tiếp và đưa tới cổng P1"
+      "Nhận byte rồi xuất ra P3",
+      "Truyền byte đọc từ P1 qua UART",
+      "Truyền ký tự A ở 4800 baud",
+      "Nhận byte nối tiếp ở 4800 baud và xuất byte ra P1"
     ],
     "type": "mcq",
-    "answer": "B",
+    "answer": "D",
     "acceptable_answers": [
-      "B"
+      "D"
     ],
-    "explanation": "Chương trình đọc byte từ SBUF rồi ghi ra cổng P1: MOV P1, A.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "JNB RI chờ byte nhận; MOV A,SBUF đọc bộ đệm; MOV P1,A xuất byte; CLR RI chuẩn bị nhận tiếp. TH1=FAH, SMOD=0 cho baud=4800.",
+    "methodology": "JNB RI chờ byte nhận; MOV A,SBUF đọc bộ đệm; MOV P1,A xuất byte; CLR RI chuẩn bị nhận tiếp. TH1=FAH, SMOD=0 cho baud=4800.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",
-    "images": [
-      "assets/images/p18_q34.png"
-    ]
+    "images": []
   },
   {
     "id": "PART_18_Q35",
@@ -28197,7 +29237,7 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "exam_title": "Chuyên Đề Part 18: Tốc Độ Baud, SBUF & Lập Trình UART",
     "num": 35,
     "title": "Part 18 - Câu 35",
-    "prompt": "Nếu giá trị của thanh ghi SBUF tương ứng với ký tự cần truyền là „<‟ và thanh ghi SCON là 0x00 trên vi điều khiển 89C51, dữ liệu nhận được qua cổng nối tiếp là gì?",
+    "prompt": "Để truyền ký tự ASCII '<', CPU cần ghi byte nào vào SBUF?",
     "extra_lines": [],
     "options": [
       "FFH",
@@ -28210,9 +29250,9 @@ window.KTVXL_QUESTIONS = window.QUESTIONS_DATABASE = [
     "acceptable_answers": [
       "D"
     ],
-    "explanation": "Ký tự '<' trong bảng mã ASCII có mã Hex là 3CH.",
-    "methodology": "Công thức Baud chuẩn với thạch anh $11.0592\\,\\text{MHz}$: Baud = 28800 / (256 - TH1). Các mốc chuẩn: -3 (9600), -6 (4800), -12 (2400), -24 (1200).",
-    "tips_casio": "Casio 580VNX: Bấm 28800 / Baud để tìm ngay giá trị nạp vào TH1.",
+    "explanation": "Mã ASCII của '<' là 60 thập phân = 3CH. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "methodology": "Mã ASCII của '<' là 60 thập phân = 3CH. SBUF giữ byte 8 bit; SCON chọn chế độ, không biến đổi mã ASCII.",
+    "tips_casio": "",
     "clo": "CLO3",
     "level": "VD",
     "topic_name": "Lập trình UART, Tính tốc độ Baud & Xử lý bộ đệm SBUF",

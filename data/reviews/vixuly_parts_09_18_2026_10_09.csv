@@ -1,0 +1,547 @@
+﻿ID,Nguồn,Trang PDF,Kiểu cũ,Đáp án cũ,Đáp án mới,Giá trị đúng,Nội dung rà soát
+PART_09_BT_Q04,Part 9 (BT),1,mcq,A,A,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q05,Part 9 (BT),2,mcq,B,B,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q06,Part 9 (BT),2,fib,dw,B,DW,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q07,Part 9 (BT),2,mcq,D,D,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q08,Part 9 (BT),3,mcq,C,C,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q09,Part 9 (BT),3,fib,logic,A,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q10,Part 9 (BT),3,fib,điều khiển chương trình,D,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q11,Part 9 (BT),4,fib,truyền dữ liệu,C,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q12,Part 9 (BT),4,mcq,A,D,SWAP A,Sửa khóa đáp án/phân biệt CPL bit và CPL A; bỏ ký hiệu lựa chọn lẫn vào dữ liệu.
+PART_09_BT_Q13,Part 9 (BT),4,mcq,A,D,CPL P1.0,Sửa khóa đáp án/phân biệt CPL bit và CPL A; bỏ ký hiệu lựa chọn lẫn vào dữ liệu.
+PART_09_BT_Q14,Part 9 (BT),5,fib,số học,D,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q15,Part 9 (BT),5,mcq,D,C,B,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q16,Part 9 (BT),5,fib,logic,B,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q17,Part 9 (BT),6,fib,địa chỉ,A,Địa chỉ trực tiếp 8 bit của RAM nội hoặc SFR,Các lựa chọn gốc đều ghi 16 bit và không có đáp án đúng.
+PART_09_BT_Q18,Part 9 (BT),6,mcq,A,D,XCH,Sửa khóa đáp án/phân biệt CPL bit và CPL A; bỏ ký hiệu lựa chọn lẫn vào dữ liệu.
+PART_09_BT_Q19,Part 9 (BT),6,mcq,B,D,"R0, R1",Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q20,Part 9 (BT),7,fib,logic,B,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q21,Part 9 (BT),7,mcq,C,C,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q22,Part 9 (BT),7,fib,số học,D,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q23,Part 9 (BT),8,fib,mã máy,A,Chuyển mã nguồn Assembly thành mã máy,Loại các nhãn A/B/C/D lẫn trong phương án và lựa chọn không đầy đủ.
+PART_09_BT_Q24,Part 9 (BT),8,fib,điều khiển chương trình,D,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q25,Part 9 (BT),8,mcq,B,B,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q26,Part 9 (BT),9,fib,equ,B,DB,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q27,Part 9 (BT),9,mcq,C,C,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q28,Part 9 (BT),9,mcq,B,B,;,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q29,Part 9 (BT),10,mcq,D,D,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q30,Part 9 (BT),10,mcq,A,D,CJNE,Sửa khóa đáp án/phân biệt CPL bit và CPL A; bỏ ký hiệu lựa chọn lẫn vào dữ liệu.
+PART_09_BT_Q31,Part 9 (BT),10,mcq,D,D,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q32,Part 9 (BT),11,fib,logic,A,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q33,Part 9 (BT),11,fib,equ,C,EQU,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q34,Part 9 (BT),11,mcq,B,B,MY_WORD DW 1234H,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q35,Part 9 (BT),12,fib,"nhãn lệnh, mã lệnh, toán hạng và ghi chú",D,"Nhãn lệnh, mã lệnh, toán hạng và ghi chú.",Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q36,Part 9 (BT),12,mcq,A,A,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q37,Part 9 (BT),12,mcq,A,D,"MOV A, 30H",Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q38,Part 9 (BT),13,mcq,B,B,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q39,Part 9 (BT),13,mcq,B,B,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q40,Part 9 (BT),13,mcq,D,D,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q41,Part 9 (BT),14,mcq,D,D,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q42,Part 9 (BT),14,fib,2k,C,Địa chỉ đích 11 bit của AJMP/ACALL,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q43,Part 9 (BT),14,mcq,D,B,D,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q44,Part 9 (BT),15,mcq,A,A,H,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q45,Part 9 (BT),15,mcq,B,B,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q46,Part 9 (BT),15,mcq,B,B,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q47,Part 9 (BT),16,fib,16bit,A,Địa chỉ đích 16 bit trong không gian mã,Loại phương án chồng nghĩa địa chỉ 16 bit/địa chỉ đích 16 bit.
+PART_09_BT_Q48,Part 9 (BT),16,fib,số học,A,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q49,Part 9 (BT),16,fib,truyền dữ liệu,D,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q50,Part 9 (BT),17,fib,số học,C,:,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q51,Part 9 (BT),17,mcq,A,A,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q52,Part 9 (BT),17,mcq,C,C,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q53,Part 9 (BT),18,fib,logic,D,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q54,Part 9 (BT),18,mcq,A,C,Chế độ địa chỉ,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q55,Part 9 (BT),18,mcq,A,A,"MOV A, @R0",Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q56,Part 9 (BT),19,mcq,C,C,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q57,Part 9 (BT),19,mcq,B,B,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q58,Part 9 (BT),19,mcq,A,D,@,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q59,Part 9 (BT),20,fib,điều khiển chương trình,B,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q60,Part 9 (BT),20,fib,equ,C,MY_CONST EQU 0AH,Đối chiếu và giải lại câu hỏi. Sửa tên hằng MY?CONST bị lỗi trích xuất thành MY_CONST.
+PART_09_BT_Q61,Part 9 (BT),20,mcq,A,A,MY_BYTE DB 55H,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q62,Part 9 (BT),21,fib,điều khiển chương trình,D,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q63,Part 9 (BT),21,fib,số học,D,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q64,Part 9 (BT),21,mcq,B,B,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q65,Part 9 (BT),22,fib,logic,A,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q66,Part 9 (BT),22,mcq,C,A,Dấu nháy đơn: 'K',Câu gốc mơ hồ giữa nháy đơn và nháy kép.
+PART_09_BT_Q67,Part 9 (BT),22,fib,số học,A,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q68,Part 9 (BT),23,fib,địa chỉ tương đối,B,"Độ dời có dấu 8 bit, tính từ lệnh kế tiếp",Làm rõ rel và gốc tính địa chỉ.
+PART_09_BT_Q69,Part 9 (BT),23,fib,số học,C,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q70,Part 9 (BT),23,mcq,A,D,INC,Sửa khóa đáp án/phân biệt CPL bit và CPL A; bỏ ký hiệu lựa chọn lẫn vào dữ liệu.
+PART_09_BT_Q71,Part 9 (BT),24,fib,số học,A,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q72,Part 9 (BT),24,mcq,C,C,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_BT_Q73,Part 9 (BT),24,mcq,B,B,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q04,Part 9,1,mcq,B,B,MY_CONST EQU 0AH,Đối chiếu và giải lại câu hỏi. Sửa tên hằng MY?CONST bị lỗi trích xuất thành MY_CONST.
+PART_09_ROOT_Q05,Part 9,1,fib,địa chỉ,A,Địa chỉ trực tiếp 8 bit của RAM nội hoặc SFR,Các lựa chọn gốc đều ghi 16 bit và không có đáp án đúng.
+PART_09_ROOT_Q06,Part 9,2,fib,"nhãn lệnh, mã lệnh, toán hạng và ghi chú",A,"Nhãn lệnh, mã lệnh, toán hạng và ghi chú.",Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q07,Part 9,2,fib,số học,B,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q08,Part 9,2,mcq,C,C,MY_WORD DW 1234H,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q09,Part 9,3,fib,logic,A,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q10,Part 9,3,fib,truyền dữ liệu,B,"MOV A, @R0",Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q11,Part 9,3,fib,số học,C,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q12,Part 9,4,mcq,A,B,INC,Sửa khóa đáp án/phân biệt CPL bit và CPL A; bỏ ký hiệu lựa chọn lẫn vào dữ liệu.
+PART_09_ROOT_Q13,Part 9,4,fib,xử lý bit,B,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q14,Part 9,4,fib,điều khiển chương trình,B,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q15,Part 9,4,fib,',A,Dấu nháy đơn: 'K',Câu gốc mơ hồ giữa nháy đơn và nháy kép.
+PART_09_ROOT_Q16,Part 9,5,fib,equ,D,EQU,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q17,Part 9,5,fib,xử lý bit,B,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q18,Part 9,5,fib,điều khiển chương trình,C,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q19,Part 9,6,mcq,A,A,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q20,Part 9,6,fib,số học,A,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q21,Part 9,6,fib,truyền dữ liệu,B,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q22,Part 9,7,fib,h,A,H,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q23,Part 9,7,fib,logic,A,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q24,Part 9,7,fib,logic,C,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q25,Part 9,8,fib,logic,D,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q26,Part 9,8,fib,địa chỉ tương đối,B,"Độ dời có dấu 8 bit, tính từ lệnh kế tiếp",Làm rõ rel và gốc tính địa chỉ.
+PART_09_ROOT_Q27,Part 9,8,mcq,A,A,XCH,Sửa khóa đáp án/phân biệt CPL bit và CPL A; bỏ ký hiệu lựa chọn lẫn vào dữ liệu.
+PART_09_ROOT_Q28,Part 9,8,mcq,B,B,;,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q29,Part 9,9,fib,truyền dữ liệu,B,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q30,Part 9,9,mcq,C,C,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q31,Part 9,9,fib,logic,A,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q32,Part 9,10,mcq,A,D,SWAP A,Sửa khóa đáp án/phân biệt CPL bit và CPL A; bỏ ký hiệu lựa chọn lẫn vào dữ liệu.
+PART_09_ROOT_Q33,Part 9,10,fib,số học,C,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q34,Part 9,10,fib,điều khiển chương trình,A,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q35,Part 9,11,fib,số học,C,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q36,Part 9,11,fib,logic,A,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q37,Part 9,11,fib,điều khiển chương trình,A,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q38,Part 9,12,fib,số học,C,@,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q39,Part 9,12,mcq,A,B,CJNE,Sửa khóa đáp án/phân biệt CPL bit và CPL A; bỏ ký hiệu lựa chọn lẫn vào dữ liệu.
+PART_09_ROOT_Q40,Part 9,12,fib,d,B,D,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q41,Part 9,12,fib,truyền dữ liệu,C,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q42,Part 9,13,fib,số học,C,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q43,Part 9,13,fib,truyền dữ liệu,C,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q44,Part 9,13,fib,số học,D,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q45,Part 9,14,fib,chế độ định địa chỉ,D,Chế độ địa chỉ,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q46,Part 9,14,fib,truyền dữ liệu,D,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q47,Part 9,14,fib,truyền dữ liệu,A,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q48,Part 9,15,fib,xử lý bit,D,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q49,Part 9,15,mcq,A,A,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q50,Part 9,15,fib,điều khiển chương trình,A,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q51,Part 9,15,fib,điều khiển chương trình,D,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q52,Part 9,16,mcq,A,D,CPL P1.0,Sửa khóa đáp án/phân biệt CPL bit và CPL A; bỏ ký hiệu lựa chọn lẫn vào dữ liệu.
+PART_09_ROOT_Q53,Part 9,16,mcq,B,D,"R0, R1",Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q54,Part 9,16,fib,b,C,B,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q55,Part 9,17,fib,số học,C,:,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q56,Part 9,17,fib,16bit,A,Địa chỉ đích 16 bit trong không gian mã,Loại phương án chồng nghĩa địa chỉ 16 bit/địa chỉ đích 16 bit.
+PART_09_ROOT_Q57,Part 9,17,fib,xử lý bit,B,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q58,Part 9,18,fib,2k,C,Địa chỉ đích 11 bit của AJMP/ACALL,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q59,Part 9,18,fib,equ,C,DB,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q60,Part 9,18,fib,xử lý bit,B,Lệnh xử lý bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q61,Part 9,19,fib,mã máy,A,Chuyển mã nguồn Assembly thành mã máy,Loại các nhãn A/B/C/D lẫn trong phương án và lựa chọn không đầy đủ.
+PART_09_ROOT_Q62,Part 9,19,fib,dw,A,DW,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q63,Part 9,19,fib,logic,C,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q64,Part 9,19,mcq,C,C,MY_BYTE DB 55H,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q65,Part 9,20,fib,số học,D,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q66,Part 9,20,fib,điều khiển chương trình,D,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q67,Part 9,20,fib,logic,A,Lệnh logic và xoay bit,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q68,Part 9,21,fib,điều khiển chương trình,A,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q69,Part 9,21,mcq,A,C,"MOV A, 30H",Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q70,Part 9,21,fib,truyền dữ liệu,C,Lệnh truyền dữ liệu,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q71,Part 9,22,fib,điều khiển chương trình,C,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q72,Part 9,22,fib,số học,C,Lệnh số học,Đối chiếu và giải lại câu hỏi.
+PART_09_ROOT_Q73,Part 9,22,fib,điều khiển chương trình,B,Lệnh điều khiển chương trình,Đối chiếu và giải lại câu hỏi.
+PART_10_Q04,Part 10,1,mcq,A,A,"MOV 7FH, #7FH",Đối chiếu và giải lại câu hỏi.
+PART_10_Q05,Part 10,2,mcq,A,A,"MOV A, R0",Đối chiếu và giải lại câu hỏi.
+PART_10_Q06,Part 10,2,mcq,A,A,"CJNE R0, #00H, rel",Đối chiếu và giải lại câu hỏi.
+PART_10_Q07,Part 10,2,mcq,B,B,"CJNE A, #200, PROM1",Đối chiếu và giải lại câu hỏi.
+PART_10_Q08,Part 10,3,mcq,D,D,DEC DPTR,Đối chiếu và giải lại câu hỏi.
+PART_10_Q09,Part 10,3,mcq,B,B,LJMP,Đối chiếu và giải lại câu hỏi.
+PART_10_Q10,Part 10,3,mcq,D,D,"MOV A, #FF0H",Đối chiếu và giải lại câu hỏi.
+PART_10_Q11,Part 10,4,mcq,A,D,Cả bốn lệnh đều hợp lệ,Câu gốc yêu cầu tìm lệnh sai dù cả bốn đều mã hóa được.
+PART_10_Q12,Part 10,4,mcq,B,B,JZ rel,Đối chiếu và giải lại câu hỏi.
+PART_10_Q13,Part 10,4,mcq,B,B,AJMP,Đối chiếu và giải lại câu hỏi.
+PART_10_Q14,Part 10,5,mcq,D,D,SWAP,Đối chiếu và giải lại câu hỏi.
+PART_10_Q15,Part 10,5,fib,"ANL R0, #7FH",D,"ANL 00H, #7FH","Toàn bộ dạng ANL/ORL R0,#data trong đề gốc không hợp lệ."
+PART_10_Q16,Part 10,5,fib,Nạp giá trị 10H vào thanh ghi DPH và 00H vào thanh ghi DPL,A,Nạp giá trị 10H vào thanh ghi DPH và 00H vào thanh ghi DPL,Đối chiếu và giải lại câu hỏi.
+PART_10_Q17,Part 10,6,mcq,D,D,JNZ rel,Đối chiếu và giải lại câu hỏi.
+PART_10_Q18,Part 10,6,mcq,A,A,"XRL A, #data",Đối chiếu và giải lại câu hỏi.
+PART_10_Q19,Part 10,6,fib,Thanh ghi tích luỹ A,B,Thanh ghi tích luỹ A,Đối chiếu và giải lại câu hỏi.
+PART_10_Q20,Part 10,7,mcq,B,D,RET,Đối chiếu và giải lại câu hỏi.
+PART_10_Q21,Part 10,7,fib,Giảm nội dung trong R0 đi 1,A,Giảm nội dung trong R0 đi 1,Đối chiếu và giải lại câu hỏi.
+PART_10_Q22,Part 10,7,mcq,C,C,"MOV #0B0H, A",Đối chiếu và giải lại câu hỏi.
+PART_10_Q23,Part 10,8,mcq,B,B,JNC PROM1,Đối chiếu và giải lại câu hỏi.
+PART_10_Q24,Part 10,8,mcq,D,D,JNC rel,Đối chiếu và giải lại câu hỏi.
+PART_10_Q25,Part 10,8,fib,SETB 90H,B,SETB 90H,Đối chiếu và giải lại câu hỏi.
+PART_10_Q26,Part 10,9,mcq,C,C,JNZ rel,Đối chiếu và giải lại câu hỏi.
+PART_10_Q27,Part 10,9,mcq,D,D,"MOV A, 35H",Đối chiếu và giải lại câu hỏi.
+PART_10_Q28,Part 10,9,mcq,D,D,"CJNE R0, #00H, rel",Đối chiếu và giải lại câu hỏi.
+PART_10_Q29,Part 10,10,mcq,B,B,LCALL,Đối chiếu và giải lại câu hỏi.
+PART_10_Q30,Part 10,10,mcq,C,C,LCALL 1000H,Đối chiếu và giải lại câu hỏi.
+PART_10_Q31,Part 10,11,fib,Sao chép nội dung trong thanh ghi B vào thanh ghi A,D,Sao chép nội dung trong thanh ghi B vào thanh ghi A,Đối chiếu và giải lại câu hỏi.
+PART_10_Q32,Part 10,11,fib,"MOVX A, @DPTR",C,"MOVX A, @DPTR",Đối chiếu và giải lại câu hỏi.
+PART_10_Q33,Part 10,11,mcq,D,D,POP #30H,POP R0 và POP R1 đều không có dạng mã lệnh; thay phương án để chỉ còn một đáp án sai.
+PART_10_Q34,Part 10,12,mcq,B,B,SJMP,Đối chiếu và giải lại câu hỏi.
+PART_10_Q35,Part 10,12,mcq,D,D,"MOVX @DPTR, A",Đối chiếu và giải lại câu hỏi.
+PART_10_Q36,Part 10,12,mcq,A,A,"DJNZ R0, rel",Đối chiếu và giải lại câu hỏi.
+PART_10_Q37,Part 10,13,mcq,C,C,"MOV #255, A",Đối chiếu và giải lại câu hỏi.
+PART_10_Q38,Part 10,13,mcq,D,D,PUSH,Đối chiếu và giải lại câu hỏi.
+PART_10_Q39,Part 10,13,mcq,D,D,"JBC 30H, PROM1",Sửa nhầm địa chỉ byte/bit và bổ sung toán hạng còn thiếu.
+PART_10_Q40,Part 10,14,mcq,D,D,"MOV A, @R0",Đối chiếu và giải lại câu hỏi.
+PART_10_Q41,Part 10,14,mcq,D,D,JZ rel,Đối chiếu và giải lại câu hỏi.
+PART_10_Q42,Part 10,14,mcq,B,B,"DJNZ 40H, PROM1",Đối chiếu và giải lại câu hỏi.
+PART_10_Q43,Part 10,15,mcq,A,A,JC rel,Đối chiếu và giải lại câu hỏi.
+PART_10_Q44,Part 10,15,mcq,C,C,POP,Đối chiếu và giải lại câu hỏi.
+PART_10_Q45,Part 10,15,mcq,A,A,"CJNE A,3FH, rel",Đối chiếu và giải lại câu hỏi.
+PART_11_Q04,Part 11,1,mcq,B,C,"CY=1, AC=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q05,Part 11,2,mcq,D,B,"AC=0, OV=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q06,Part 11,2,mcq,B,D,"AC=1, OV=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q07,Part 11,2,mcq,C,C,"CY=1, OV=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q08,Part 11,3,mcq,C,C,"CY=1, AC=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q09,Part 11,3,fib,80,B,1FH,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q10,Part 11,3,fib,04,B,80H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q11,Part 11,3,fib,41,B,41H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q12,Part 11,4,fib,20,B,20H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q13,Part 11,4,fib,80,C,1EH,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q14,Part 11,4,mcq,B,C,"CY=1, AC=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q15,Part 11,4,mcq,A,A,"AC=0, OV=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q16,Part 11,5,mcq,A,C,"AC=1, OV=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q17,Part 11,5,mcq,D,C,"CY=1, AC=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q18,Part 11,5,mcq,B,B,"OV=0, CY=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q19,Part 11,6,fib,05,C,0001B,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q20,Part 11,6,fib,00,A,"OV=0, CY=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q21,Part 11,6,mcq,A,A,"CY=0, AC=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q22,Part 11,7,fib,80,D,CBH,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q23,Part 11,7,mcq,B,C,"OV=1, CY=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q24,Part 11,7,fib,00,D,1011B,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q25,Part 11,7,fib,85,C,A8H,XCHD chỉ chấp nhận @R0/@R1; R1 đã bằng 50H.
+PART_11_Q26,Part 11,8,fib,05,B,60H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q27,Part 11,8,mcq,C,C,"AC=1, OV=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q28,Part 11,8,mcq,C,D,"CY=1, OV=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q29,Part 11,9,mcq,A,B,"OV=0, AC=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q30,Part 11,9,mcq,A,B,"OV=0, CY=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q31,Part 11,9,mcq,B,D,"CY=1, P=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q32,Part 11,10,fib,00,C,C4H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q33,Part 11,10,fib,C4,D,72H,"Đổi con trỏ RAM 81H không tồn tại trên AT89C51 thành 61H; 81H trực tiếp là SP, không phải RAM gián tiếp."
+PART_11_Q34,Part 11,10,mcq,D,D,"CY=1, AC=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q35,Part 11,10,mcq,C,B,"AC=0, OV=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q36,Part 11,11,mcq,C,B,"AC=0, P=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q37,Part 11,11,mcq,C,C,"CY=1, OV=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q38,Part 11,11,mcq,A,B,"AC=0, OV=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q39,Part 11,12,fib,85,D,85H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q40,Part 11,12,mcq,D,D,"AC=1, P=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q41,Part 11,12,mcq,B,C,"AC=1, OV=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q42,Part 11,13,mcq,C,B,"CY=0, AC=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q43,Part 11,13,mcq,B,D,"P=1, CY=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q44,Part 11,13,mcq,A,C,"AC=1, P=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q45,Part 11,14,mcq,D,B,"CY=0, AC=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q46,Part 11,14,mcq,D,C,"CY=1, AC=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q47,Part 11,14,fib,1100,C,1100B,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q48,Part 11,15,mcq,A,A,"AC=0, OV=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q49,Part 11,15,mcq,D,C,"P=1, OV=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q50,Part 11,15,mcq,D,B,"CY=0, P=1",Bổ sung CY ban đầu = 0 để ADDC không có hai kết quả.
+PART_11_Q51,Part 11,16,mcq,A,A,"OV=0, P=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q52,Part 11,16,mcq,A,B,"P=0, CY=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q53,Part 11,16,fib,C1,D,D1H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q54,Part 11,17,mcq,D,A,"CY=0, P=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q55,Part 11,17,mcq,B,A,"CY=0, AC=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q56,Part 11,17,fib,C4,A,C4H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q57,Part 11,17,mcq,B,D,"CY=1, AC=1","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q58,Part 11,18,fib,5B,C,5BH,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q59,Part 11,18,fib,85,B,85H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q60,Part 11,18,mcq,B,A,"CY=0, AC=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q61,Part 11,19,mcq,D,A,"AC=0, P=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q62,Part 11,19,mcq,C,D,"AC=1, OV=1",Bổ sung CY ban đầu = 0 để ADDC không có hai kết quả.
+PART_11_Q63,Part 11,19,fib,80,D,80H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q64,Part 11,20,mcq,A,A,"OV=0, CY=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_11_Q65,Part 11,20,fib,40,C,40H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q66,Part 11,20,fib,4F,B,4FH,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q67,Part 11,20,fib,72,C,72H,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q68,Part 11,21,fib,1011,B,1011B,"Tính lại kết quả, chuyển câu điền thành 4 lựa chọn."
+PART_11_Q69,Part 11,21,mcq,C,A,"P=0, AC=0","Tính lại từng lệnh và các cờ, khôi phục lựa chọn, tách mã bị dính chữ."
+PART_12_Q04,Part 12,1,fib,30,B,30H,Đổi địa chỉ RAM gián tiếp F0H không tồn tại trên AT89C51 thành 70H.
+PART_12_Q05,Part 12,2,fib,41,D,41H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q06,Part 12,2,fib,77,D,77H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q07,Part 12,2,fib,74,A,74H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q08,Part 12,2,mcq,D,D,00H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q09,Part 12,3,fib,FF,B,FFH,Bổ sung CY ban đầu = 0 cho SUBB.
+PART_12_Q10,Part 12,3,fib,00,B,F4H,Sửa nhầm ô nhớ địa chỉ A thành thanh ghi A.
+PART_12_Q11,Part 12,3,fib,51,C,51H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q12,Part 12,3,mcq,C,C,FFH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q13,Part 12,4,fib,FF,A,FFH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q14,Part 12,4,fib,5D,A,5DH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q15,Part 12,4,fib,8E,D,8EH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q16,Part 12,4,fib,7F,A,7FH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q17,Part 12,4,mcq,A,B,04H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q18,Part 12,5,mcq,A,D,04H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q19,Part 12,5,fib,7E,C,AAH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q20,Part 12,5,fib,3A,D,05H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q21,Part 12,5,fib,7C,C,5FH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q22,Part 12,6,fib,03,D,0FH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q23,Part 12,6,fib,15,D,F0H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q24,Part 12,6,fib,00,D,00H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q25,Part 12,6,fib,45,D,24H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q26,Part 12,7,fib,5C,B,5CH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q27,Part 12,7,fib,00,A,83H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q28,Part 12,7,fib,6D,A,6DH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q29,Part 12,7,mcq,A,B,08H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q30,Part 12,8,fib,0A,D,C4H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q31,Part 12,8,fib,FF,B,55H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q32,Part 12,8,fib,5B,D,00H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q33,Part 12,8,fib,F2,B,F2H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q34,Part 12,8,fib,00,B,B2H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q35,Part 12,9,fib,00,B,8BH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q36,Part 12,9,fib,41,D,55H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q37,Part 12,9,fib,11,D,11H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q38,Part 12,9,fib,00,D,BBH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q39,Part 12,9,fib,55,C,DAH,Mã ghi P2 nhưng đề hỏi P3 chưa khởi tạo; sửa đối tượng hỏi thành P2.
+PART_12_Q40,Part 12,10,fib,00,B,AAH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q41,Part 12,10,fib,30,D,9AH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q42,Part 12,10,fib,08,B,00H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q43,Part 12,10,fib,30,C,70H,Đổi địa chỉ RAM gián tiếp F0H không tồn tại trên AT89C51 thành 70H.
+PART_12_Q44,Part 12,10,fib,00,D,3FH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q45,Part 12,11,mcq,A,C,0AH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q46,Part 12,11,fib,20,C,02H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q47,Part 12,11,mcq,A,C,28H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q48,Part 12,12,fib,34,B,35H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q49,Part 12,12,fib,56,C,FFH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q50,Part 12,12,mcq,A,A,04H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q51,Part 12,12,fib,65,B,65H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q52,Part 12,13,mcq,A,A,A4H,Bổ sung nhảy qua bảng dữ liệu để không chạy DB như mã lệnh.
+PART_12_Q53,Part 12,13,fib,55,D,8BH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q54,Part 12,13,fib,01,B,01H,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q55,Part 12,13,fib,00,A,FFH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q56,Part 12,14,fib,FE,C,FEH,"Tách từng lệnh, sửa cú pháp thiếu A và giải lại; chuyển thành 4 phương án."
+PART_12_Q57,Part 12,14,fib,0F,C,70H,Đổi địa chỉ RAM gián tiếp F0H không tồn tại trên AT89C51 thành 70H.
+PART_13_Q04,Part 13,2,fib,28,A,28H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q05,Part 13,2,mcq,B,A,5033 µs,"Sửa số vượt 8 bit, thanh ghi vòng lặp không khởi tạo; bổ sung fosc và tính đủ thời gian từng lệnh."
+PART_13_Q06,Part 13,3,mcq,A,A,"P1.6: mức cao 200 µs, mức thấp 40 µs","Ảnh Q06/Q25 bị gán chéo, nhãn HERE thiếu và thứ tự nạp gây sai chu kỳ đầu; viết lại chương trình đúng ý định hai mức xung."
+PART_13_Q07,Part 13,4,fib,3B,B,3BH,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q08,Part 13,4,fib,32,A,32H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q09,Part 13,5,mcq,C,C,54H,Đối chiếu và giải lại câu hỏi.
+PART_13_Q10,Part 13,5,mcq,D,D,3BH,Đối chiếu và giải lại câu hỏi.
+PART_13_Q11,Part 13,6,mcq,B,B,Đếm độ dài của khối dữ liệu có địa chỉ bắt đầu từ địa chỉ 40H,Đối chiếu và giải lại câu hỏi.
+PART_13_Q12,Part 13,7,fib,04,A,04H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q13,Part 13,7,fib,40,D,40H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q14,Part 13,8,fib,26,C,26H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q15,Part 13,8,mcq,D,D,Xóa 81 byte RAM ngoài từ 1000H đến 1050H về 00H,"Làm rõ hệ hex, số byte và sai lệch một địa chỉ ở cuối dải."
+PART_13_Q16,Part 13,9,fib,31,A,31H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q17,Part 13,9,mcq,B,A,1006033 µs,"Sửa số vượt 8 bit, thanh ghi vòng lặp không khởi tạo; bổ sung fosc và tính đủ thời gian từng lệnh."
+PART_13_Q18,Part 13,10,fib,60,C,60H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q19,Part 13,10,fib,4E,B,4EH,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q20,Part 13,11,fib,40,A,40H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q21,Part 13,11,fib,13H,D,13H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q22,Part 13,12,mcq,C,A,92419 µs,"Sửa số vượt 8 bit, thanh ghi vòng lặp không khởi tạo; bổ sung fosc và tính đủ thời gian từng lệnh."
+PART_13_Q23,Part 13,12,mcq,B,B,4BH,Đối chiếu và giải lại câu hỏi.
+PART_13_Q24,Part 13,13,fib,40,A,40H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q25,Part 13,14,mcq,C,A,"P1.6: mức cao 40 µs, mức thấp 200 µs","Ảnh Q06/Q25 bị gán chéo, nhãn HERE thiếu và thứ tự nạp gây sai chu kỳ đầu; viết lại chương trình đúng ý định hai mức xung."
+PART_13_Q26,Part 13,15,fib,2D,C,2DH,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q27,Part 13,15,mcq,C,A,Tìm giá trị lớn nhất của dãy số không dấu,Đáp án cũ min sai chiều cờ mượn; bổ sung định dạng dãy và số phần tử khác 0.
+PART_13_Q28,Part 13,16,fib,4B,A,4BH,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q29,Part 13,16,fib,3E,D,3EH,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q30,Part 13,17,mcq,B,A,503018 µs,"Sửa số vượt 8 bit, thanh ghi vòng lặp không khởi tạo; bổ sung fosc và tính đủ thời gian từng lệnh."
+PART_13_Q31,Part 13,17,fib,58,D,ACC.7,Sửa khóa 58H không liên quan: chỗ trống trong ảnh là toán hạng SETB ACC.7.
+PART_13_Q32,Part 13,18,mcq,D,D,5AH,Đối chiếu và giải lại câu hỏi.
+PART_13_Q33,Part 13,19,mcq,D,D,67H,Đối chiếu và giải lại câu hỏi.
+PART_13_Q34,Part 13,19,mcq,C,C,Trả về bình phương của A trong A,Làm rõ chỉ số hợp lệ và phép tra bảng bình phương.
+PART_13_Q35,Part 13,20,mcq,C,C,"P1.5: chu kỳ 10,112 ms, tần số xấp xỉ 98,89 Hz","Ảnh dùng mode 0, không phải mode 1; cả bốn lựa chọn gốc đều sai."
+PART_13_Q36,Part 13,20,mcq,C,C,"Đếm số bit 1 của byte RAM 20H, lưu số đếm tại 21H",Đối chiếu và giải lại câu hỏi.
+PART_13_Q37,Part 13,21,fib,B5,D,B5H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q38,Part 13,22,mcq,D,D,17H,Đối chiếu và giải lại câu hỏi.
+PART_13_Q39,Part 13,22,fib,7B,B,07H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q40,Part 13,23,fib,7B,A,7BH,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q41,Part 13,23,mcq,D,D,28H,Đối chiếu và giải lại câu hỏi.
+PART_13_Q42,Part 13,24,fib,40,C,40H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_13_Q43,Part 13,24,fib,30,B,30H,"Đọc và chép lại ảnh mã, kiểm tra mọi lựa chọn; sửa toán hạng/đối tượng hỏi không hợp lệ nếu có."
+PART_14_Q04,Part 14,2,mcq,B,B,Khởi động Timer 1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q05,Part 14,2,mcq,C,C,C/T=1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q06,Part 14,2,mcq,D,D,TF0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q07,Part 14,3,mcq,A,A,Thiết lập giá trị ban đầu cho Timer,Đối chiếu và giải lại câu hỏi.
+PART_14_Q08,Part 14,3,mcq,C,C,Khởi động Timer1 bằng cách thiết lập bit TR1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q09,Part 14,4,mcq,C,C,Cờ tràn của Timer 1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q10,Part 14,4,mcq,C,C,Điều khiển các bộ định thời và ngắt,Đối chiếu và giải lại câu hỏi.
+PART_14_Q11,Part 14,4,mcq,D,D,FFFFH - 0000H,Đối chiếu và giải lại câu hỏi.
+PART_14_Q12,Part 14,5,mcq,C,C,TR=0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q13,Part 14,5,mcq,A,A,Thực hiện MAIN rồi đến LOOP,"Nguồn chỉ có ba lựa chọn, lệnh @2FH và nhãn kết thúc không hợp lệ/thiếu; bổ sung để chương trình hợp dịch được."
+PART_14_Q14,Part 14,6,mcq,B,B,"Sao chép nội dung trong RAM ngoại tới RAM nội, với địa chỉ bắt đầu tương ứngđặt tại DATA1 và DATA2",Đối chiếu và giải lại câu hỏi.
+PART_14_Q15,Part 14,7,mcq,B,B,"Tính số đối bù hai 16 bit của R1:R0, lưu ở R3:R2","Ảnh dùng MOVX A,R0, ADD A,01H và ADD byte cao sai; sửa thành chương trình bù hai hợp lệ có truyền nhớ."
+PART_14_Q16,Part 14,7,mcq,B,D,Chọn chế độ đếm hoặc định thời,Đối chiếu và giải lại câu hỏi.
+PART_14_Q17,Part 14,8,mcq,A,C,"Khi GATE=1, timer chỉ chạy nếu TR=1 và chân INT tương ứng ở mức cao",Đối chiếu và giải lại câu hỏi.
+PART_14_Q18,Part 14,8,mcq,D,B,Chọn chế độ hoạt động trong thanh ghi TMOD,Đối chiếu và giải lại câu hỏi.
+PART_14_Q19,Part 14,9,mcq,C,C,"Nhảy L2, đồng thời xóa ACC.6; A=03H",Sửa tên bit AC2/AC6 không chuẩn thành ACC.2/ACC.6 và làm rõ kết quả.
+PART_14_Q20,Part 14,9,mcq,D,D,Sóng vuông P1.0 có chu kỳ xấp xỉ 1 ms,"Ảnh chỉ tạo một xung, R7 không được dùng; sửa thành vòng tạo xung liên tục đúng ý định và ghi rõ gần đúng."
+PART_14_Q21,Part 14,10,mcq,D,D,TF1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q22,Part 14,10,mcq,A,A,TR0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q23,Part 14,11,mcq,C,C,Cờ ngắt ngoài 0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q24,Part 14,11,mcq,D,D,TR1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q25,Part 14,11,mcq,B,B,TR=1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q26,Part 14,12,mcq,D,D,TMOD,Đối chiếu và giải lại câu hỏi.
+PART_14_Q27,Part 14,12,mcq,A,A,Cờ tràn của Timer 1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q28,Part 14,13,mcq,C,C,Xóa bit TR1 trong thanh ghi TCON,Đối chiếu và giải lại câu hỏi.
+PART_14_Q29,Part 14,13,mcq,D,D,TCON,Đối chiếu và giải lại câu hỏi.
+PART_14_Q30,Part 14,13,mcq,C,C,Cờ ngắt ngoài 1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q31,Part 14,14,mcq,A,A,Cờ tràn của Timer 0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q32,Part 14,14,mcq,B,B,Cả 3 đáp án đều đúng,Đối chiếu và giải lại câu hỏi.
+PART_14_Q33,Part 14,15,mcq,B,B,C/T=0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q34,Part 14,15,mcq,A,A,Khởi động Timer 0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q35,Part 14,15,mcq,D,D,Chọn chế độ ngắt ngoài 1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q36,Part 14,16,mcq,B,B,1/12,Đối chiếu và giải lại câu hỏi.
+PART_14_Q37,Part 14,16,mcq,D,D,Khởi động Timer 0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q38,Part 14,17,mcq,D,D,Xóa bit TF0 trong thanh ghi TCON,Đối chiếu và giải lại câu hỏi.
+PART_14_Q39,Part 14,17,mcq,D,D,Chọn chế độ ngắt ngoài 0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q40,Part 14,17,mcq,D,D,Thiết lập bit C/T cho Timer 0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q41,Part 14,18,mcq,D,D,Cờ tràn của Timer 0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q42,Part 14,18,mcq,A,A,16 bit,Đối chiếu và giải lại câu hỏi.
+PART_14_Q43,Part 14,19,mcq,B,B,TR1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q44,Part 14,19,mcq,C,C,TH0,Đối chiếu và giải lại câu hỏi.
+PART_14_Q45,Part 14,19,mcq,D,C,"Khi GATE=1, timer chỉ chạy nếu TR=1 và chân INT tương ứng ở mức cao",Đối chiếu và giải lại câu hỏi.
+PART_14_Q46,Part 14,20,mcq,D,D,Khởi động Timer 1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q47,Part 14,20,mcq,C,C,2,Đối chiếu và giải lại câu hỏi.
+PART_14_Q48,Part 14,21,mcq,B,B,TL1,Đối chiếu và giải lại câu hỏi.
+PART_14_Q49,Part 14,21,mcq,D,D,Thiết lập lại giá trị ban đầu cho Timer,Đối chiếu và giải lại câu hỏi.
+PART_14_Q50,Part 14,21,mcq,C,C,Chọn chế độ đếm hoặc định thời,Đối chiếu và giải lại câu hỏi.
+PART_14_Q51,Part 14,22,mcq,D,D,Thiết lập bit TR0 trong thanh ghi TCON,Đối chiếu và giải lại câu hỏi.
+PART_14_Q52,Part 14,22,mcq,C,C,Chọn chế độ hoạt động của các bộ định thời,Đối chiếu và giải lại câu hỏi.
+PART_14_Q53,Part 14,23,mcq,C,C,Ghi giá trị vào thanh ghi TH0 và TL0,Đối chiếu và giải lại câu hỏi.
+PART_15_Q04,Part 15,1,mcq,A,A,10,Đối chiếu và giải lại câu hỏi.
+PART_15_Q05,Part 15,2,mcq,A,B,"MOV TMOD, #21H",Đối chiếu và giải lại câu hỏi.
+PART_15_Q06,Part 15,2,mcq,A,C,X = 50485,Tính lại giá trị nạp; nguồn không có đáp án đúng hoặc lấy sai độ rộng mode.
+PART_15_Q07,Part 15,2,mcq,A,A,Thời gian định thời Timer 0 là 5ms,Đối chiếu và giải lại câu hỏi.
+PART_15_Q08,Part 15,3,mcq,A,C,"MOV TMOD, #D6H",Đối chiếu và giải lại câu hỏi.
+PART_15_Q09,Part 15,3,mcq,A,A,Timer 16 bit kết hợp với các vòng lặp,Đối chiếu và giải lại câu hỏi.
+PART_15_Q10,Part 15,3,fib,00,C,Chế độ 2,Đối chiếu và giải lại câu hỏi.
+PART_15_Q11,Part 15,3,mcq,A,A,Thiết lập bit M0 và xóa bit M1,Đối chiếu và giải lại câu hỏi.
+PART_15_Q12,Part 15,4,mcq,A,D,Điều chỉnh bằng phần mềm,Đối chiếu và giải lại câu hỏi.
+PART_15_Q13,Part 15,4,mcq,A,B,Timer 8 bit tự động nạp lại giá trị đầu,Đối chiếu và giải lại câu hỏi.
+PART_15_Q14,Part 15,4,mcq,A,C,Thiết lập bit M1 và xóa bit M0,Đối chiếu và giải lại câu hỏi.
+PART_15_Q15,Part 15,5,mcq,A,B,Chế độ 3,Đối chiếu và giải lại câu hỏi.
+PART_15_Q16,Part 15,5,mcq,A,C,Thời gian định thời Timer 0 là 10ms,Đối chiếu và giải lại câu hỏi.
+PART_15_Q17,Part 15,5,fib,00,C,Chế độ 2,Đối chiếu và giải lại câu hỏi.
+PART_15_Q18,Part 15,6,fib,00,B,Chế độ 1,Đối chiếu và giải lại câu hỏi.
+PART_15_Q19,Part 15,6,mcq,A,A,X = 7192,Đối chiếu và giải lại câu hỏi.
+PART_15_Q20,Part 15,6,fib,00,C,65536 µs,"Sửa nhầm mode trong đề, đơn vị ms sai 1000 lần và đáp án mặc định 00."
+PART_15_Q21,Part 15,7,mcq,A,D,"MOV TMOD, #DAH",Đối chiếu và giải lại câu hỏi.
+PART_15_Q22,Part 15,7,mcq,A,A,Thiết lập bit M0 và xóa bit M1,Đối chiếu và giải lại câu hỏi.
+PART_15_Q23,Part 15,7,mcq,A,D,01,Đối chiếu và giải lại câu hỏi.
+PART_15_Q24,Part 15,8,mcq,A,B,Thiết lập bit M1 và xóa bit M0 cho Timer 1,Đối chiếu và giải lại câu hỏi.
+PART_15_Q25,Part 15,8,mcq,A,B,X = 55536,Đối chiếu và giải lại câu hỏi.
+PART_15_Q26,Part 15,8,mcq,A,B,Chế độ 0 tại Timer 0,Đối chiếu và giải lại câu hỏi.
+PART_15_Q27,Part 15,9,mcq,A,D,176,Đối chiếu và giải lại câu hỏi.
+PART_15_Q28,Part 15,9,mcq,A,D,"MOV TMOD, #2DH",Đối chiếu và giải lại câu hỏi.
+PART_15_Q29,Part 15,9,mcq,A,B,Timer 16 bit,Đối chiếu và giải lại câu hỏi.
+PART_15_Q30,Part 15,10,fib,00,A,Chế độ 0,Đối chiếu và giải lại câu hỏi.
+PART_15_Q31,Part 15,10,mcq,A,C,Thiết lập cả hai bit M0 và M1,Đối chiếu và giải lại câu hỏi.
+PART_15_Q32,Part 15,10,mcq,A,B,Thời gian định thời Timer 0 là 10ms,Đối chiếu và giải lại câu hỏi.
+PART_15_Q33,Part 15,11,mcq,A,C,"Timer 0 định thời 15,051 ms","Sửa giá trị 15 ms thành đúng 15,051 ms."
+PART_15_Q34,Part 15,11,mcq,A,C,X = 3096,Tính lại giá trị nạp; nguồn không có đáp án đúng hoặc lấy sai độ rộng mode.
+PART_15_Q35,Part 15,11,mcq,A,A,X = 3192,Đối chiếu và giải lại câu hỏi.
+PART_15_Q36,Part 15,12,mcq,A,D,00,Đối chiếu và giải lại câu hỏi.
+PART_15_Q37,Part 15,12,mcq,A,A,"MOV TMOD, #6BH",Không phương án gốc nào đúng; làm rõ hạn chế Timer 0 mode 3.
+PART_15_Q38,Part 15,12,mcq,A,A,Thiết lập bit M1 và xóa bit M0,Đối chiếu và giải lại câu hỏi.
+PART_15_Q39,Part 15,13,mcq,A,B,Thời gian định thời Timer 1 là 203µs,Đối chiếu và giải lại câu hỏi.
+PART_15_Q40,Part 15,13,mcq,A,C,11,Đối chiếu và giải lại câu hỏi.
+PART_15_Q41,Part 15,13,mcq,A,D,X = 6928,Tính lại giá trị nạp; nguồn không có đáp án đúng hoặc lấy sai độ rộng mode.
+PART_15_Q42,Part 15,14,mcq,A,C,Xóa cả hai bit M0 và M1,Đối chiếu và giải lại câu hỏi.
+PART_15_Q43,Part 15,14,fib,00,A,256 µs,"Sửa nhầm mode trong đề, đơn vị ms sai 1000 lần và đáp án mặc định 00."
+PART_15_Q44,Part 15,14,fib,00,B,Chế độ 1,Đối chiếu và giải lại câu hỏi.
+PART_15_Q45,Part 15,15,mcq,A,D,"MOV TMOD, #ADH",Đối chiếu và giải lại câu hỏi.
+PART_15_Q46,Part 15,15,mcq,A,C,X = 24600,Tính lại giá trị nạp; nguồn không có đáp án đúng hoặc lấy sai độ rộng mode.
+PART_15_Q47,Part 15,15,fib,00,B,8192 µs,"Sửa nhầm mode trong đề, đơn vị ms sai 1000 lần và đáp án mặc định 00."
+PART_16_Q04,Part 16,1,mcq,D,A,"TH0 = FEH, TL0 = 0CH","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q05,Part 16,2,mcq,B,A,"Chu kỳ 39,616 ms (tần số xấp xỉ 25,24 Hz)","Bổ sung RET bị thiếu, xác định tần số chính xác theo B2A0H."
+PART_16_Q06,Part 16,2,mcq,C,A,Chu kỳ 2000 µs (2 ms),Ảnh CLR/SETB liên tiếp chỉ tạo xung nhọn; sửa thành CPL để tạo sóng vuông và tính đúng mode 0.
+PART_16_Q07,Part 16,2,mcq,A,A,Tần số 50 Hz (chu kỳ 20 ms),Sửa nhãn nhảy không tồn tại và khóa tần số 20 Hz sai.
+PART_16_Q08,Part 16,3,mcq,A,A,"TH1 = DAH, TL1 = 10H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q09,Part 16,3,mcq,A,D,"TH1 = B1H, TL1 = E0H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q10,Part 16,4,mcq,A,C,"TH1 = C5H, TL1 = 68H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q11,Part 16,4,mcq,B,B,"TH0 = 3CH, TL0 = B0H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q12,Part 16,4,mcq,C,B,Không thể tạo bằng một lần tràn ở mode này,Thời gian yêu cầu vượt dung lượng 8 bit; không phương án số gốc nào đúng.
+PART_16_Q13,Part 16,5,mcq,A,D,"TH0 = 63H, TL0 = 18H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q14,Part 16,5,mcq,A,C,TH0 = TL0 = 38H,"Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q15,Part 16,6,mcq,A,B,"TH0 = FAH, TL0 = 24H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q16,Part 16,6,mcq,A,A,"TH0 = F4H, TL0 = 48H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q17,Part 16,6,mcq,A,B,Không thể tạo bằng một lần tràn ở mode này,Thời gian yêu cầu vượt dung lượng 8 bit; không phương án số gốc nào đúng.
+PART_16_Q18,Part 16,7,mcq,A,C,"TH1 = E4H, TL1 = A8H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q19,Part 16,7,mcq,A,B,TH0 = TL0 = 51H,"Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q20,Part 16,8,mcq,C,A,Chu kỳ 100 ms,"Chép lại mã, làm rõ fosc/12T, sửa chu kỳ và đơn vị nếu cần."
+PART_16_Q21,Part 16,8,mcq,A,D,"TH1 = 92H, TL1 = 14H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q22,Part 16,8,mcq,A,C,"TH0 = E8H, TL0 = 12H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q23,Part 16,9,mcq,B,B,TH1 = TL1 = CEH,"Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q24,Part 16,9,mcq,A,A,Chu kỳ 100 µs,"Sửa đơn vị ms thành µs, nạp TL0 để khoảng đầu tiên đúng."
+PART_16_Q25,Part 16,9,mcq,B,A,Chu kỳ 200 µs,"Ảnh TMOD=04H là counter mode 0, không có nguồn xung; sửa thành timer mode 2 cho bài tự nạp lại và tính đúng 200 µs."
+PART_16_Q26,Part 16,10,mcq,C,C,TH0 = TL0 = 9CH,"Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q27,Part 16,10,mcq,A,B,TH1 = TL1 = 6AH,"Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q28,Part 16,11,mcq,A,A,"TH1 = C1H, TL1 = 10H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q29,Part 16,11,mcq,A,A,Chu kỳ 1000 µs,"Chép lại mã, làm rõ fosc/12T, sửa chu kỳ và đơn vị nếu cần."
+PART_16_Q30,Part 16,11,mcq,A,C,"TH1 = F0H, TL1 = 0CH","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q31,Part 16,12,mcq,C,B,"TH1 = D8H, TL1 = F0H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q32,Part 16,12,mcq,A,A,"Tần số xấp xỉ 382,85 Hz; duty mức cao xấp xỉ 35,30%",Sửa nhãn chương trình con bị trùng và tính lại hai preload; không lựa chọn gốc nào đúng.
+PART_16_Q33,Part 16,12,mcq,A,B,Không thể tạo bằng một lần tràn ở mode này,Thời gian yêu cầu vượt dung lượng 8 bit; không phương án số gốc nào đúng.
+PART_16_Q34,Part 16,13,mcq,C,A,Chu kỳ 1000 µs,Sửa 1000 ms thành 1000 µs.
+PART_16_Q35,Part 16,13,mcq,D,A,Chu kỳ 100 µs,PDF gốc hoàn toàn thiếu chương trình; biên soạn chương trình mode 2 50 tick để câu có đủ dữ kiện.
+PART_16_Q36,Part 16,14,mcq,D,A,"TH0 = ECH, TL0 = 78H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q37,Part 16,14,mcq,B,D,TH1 = TL1 = 38H,"Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_16_Q38,Part 16,14,mcq,A,C,"TH0 = F8H, TL0 = 30H","Tính lại preload theo đúng mode 13/16/8 bit; sửa tên timer, dữ kiện mâu thuẫn và phương án không đúng."
+PART_17_Q04,Part 17,1,mcq,B,B,Quá trình nhận dữ liệu đã hoàn thành,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q05,Part 17,1,mcq,B,B,Truyền dữ liệu,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q06,Part 17,2,mcq,C,C,Hỗ trợ truyền thông đa xử lý,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q07,Part 17,2,mcq,D,D,Tăng tần số thạch anh hoặc điều chỉnh Timer 1,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q08,Part 17,2,mcq,B,B,Nhận dữ liệu,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q09,Part 17,3,mcq,C,C,8 bit,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q10,Part 17,3,mcq,C,B,RXD,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q11,Part 17,3,mcq,D,D,Bộ phát báo có thể nạp byte tiếp theo,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q12,Part 17,4,mcq,B,B,Cố định,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q13,Part 17,4,mcq,A,A,"Ở đầu bit stop, sau khi đã phát 8 bit dữ liệu","Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q14,Part 17,4,mcq,A,A,Từng bit một,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q15,Part 17,5,mcq,A,A,SBUF,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q16,Part 17,5,mcq,A,A,4,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q17,Part 17,5,mcq,B,B,Thiết lập chế độ truyền nhận,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q18,Part 17,5,mcq,A,A,Chế độ 3,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q19,Part 17,6,mcq,D,D,Sử dụng thanh ghi TH1,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q20,Part 17,6,mcq,D,D,TXD,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q21,Part 17,6,mcq,C,C,2 (SCON và SBUF),"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q22,Part 17,7,mcq,A,A,1 start + 8 bit dữ liệu + 1 stop,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q23,Part 17,7,mcq,B,B,"SM0 = 0, SM1 = 0","Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q24,Part 17,7,mcq,B,B,SCON,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q25,Part 17,8,mcq,D,D,8 bit,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q26,Part 17,8,mcq,C,C,Bộ Timer 1,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q27,Part 17,8,mcq,D,D,Chế độ 1,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q28,Part 17,9,mcq,A,A,9 bit,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q29,Part 17,9,mcq,A,A,RI,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q30,Part 17,9,mcq,C,C,"fosc, TH1 của Timer 1 mode 2 và SMOD","Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q31,Part 17,9,mcq,C,C,Timer 1,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q32,Part 17,10,mcq,D,D,"JNB RI, label","Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q33,Part 17,10,mcq,B,B,Truyền dữ liệu đồng bộ,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q34,Part 17,10,mcq,A,A,SCON,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q35,Part 17,11,mcq,A,A,"Chế độ 1 là 8-bit, chế độ 2 là 9-bit","Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q36,Part 17,11,mcq,D,D,Một phương thức truyền dữ liệu từng bit một,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q37,Part 17,11,mcq,A,A,PCON,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q38,Part 17,12,mcq,C,C,INT1,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q39,Part 17,12,mcq,D,D,9 bit,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q40,Part 17,12,mcq,C,C,Lưu trữ dữ liệu truyền và nhận,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q41,Part 17,13,mcq,D,D,"Đặt SM0=0, SM1=1 trong SCON","Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q42,Part 17,13,mcq,B,B,Cấu hình cổng nối tiếp,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q43,Part 17,13,mcq,D,D,"JNB TI, label","Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q44,Part 17,13,mcq,A,A,TCON,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q45,Part 17,14,mcq,C,C,Kiểm tra bit RI trong thanh ghi SCON,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_17_Q46,Part 17,14,mcq,D,D,8 bit,"Đối chiếu UART; sửa câu có nhiều mode đúng, nhầm RXD/TXD, thiếu start bit hoặc diễn đạt thời điểm TI/RI."
+PART_18_Q04,Part 18,1,mcq,A,A,F4H (−12),"Bổ sung cấu hình quyết định baud; sửa 1200 baud phải E8H (−24), không phải F8H/F4H."
+PART_18_Q05,Part 18,2,mcq,D,D,4800 bps,Đối chiếu và giải lại câu hỏi.
+PART_18_Q06,Part 18,2,mcq,A,A,9600 bps,Đối chiếu và giải lại câu hỏi.
+PART_18_Q07,Part 18,3,mcq,B,B,6BH,Làm rõ ASCII và chiều ghi SBUF để phát; sửa mã B từ 41H (A) thành 42H.
+PART_18_Q08,Part 18,3,mcq,A,A,4800 bps,Đối chiếu và giải lại câu hỏi.
+PART_18_Q09,Part 18,3,mcq,D,D,FAH (−6),"Bổ sung cấu hình quyết định baud; sửa 1200 baud phải E8H (−24), không phải F8H/F4H."
+PART_18_Q10,Part 18,4,mcq,B,B,3EH,Sửa suy luận nhận dữ liệu từ SCON/SBUF ghi; nêu rõ bộ đệm nhận thực sự đã có dữ liệu.
+PART_18_Q11,Part 18,4,mcq,B,B,E8H (−24),"Bổ sung cấu hình quyết định baud; sửa 1200 baud phải E8H (−24), không phải F8H/F4H."
+PART_18_Q12,Part 18,5,mcq,A,A,39H,Làm rõ ASCII và chiều ghi SBUF để phát; sửa mã B từ 41H (A) thành 42H.
+PART_18_Q13,Part 18,5,mcq,A,A,6FH,Sửa suy luận nhận dữ liệu từ SCON/SBUF ghi; nêu rõ bộ đệm nhận thực sự đã có dữ liệu.
+PART_18_Q14,Part 18,5,mcq,B,C,Truyền liên tục ký tự 'A' ở 4800 baud,"Chép lại ảnh, sửa JNB R1 thành RI, nạp TL1/SMOD rõ ràng, loại phương án trùng; Q27 là phát chứ không nhận, Q32 phát P ở 2400 baud."
+PART_18_Q15,Part 18,6,mcq,D,B,FAH (−6),"Bổ sung cấu hình quyết định baud; sửa 1200 baud phải E8H (−24), không phải F8H/F4H."
+PART_18_Q16,Part 18,6,mcq,D,D,4BH,Làm rõ ASCII và chiều ghi SBUF để phát; sửa mã B từ 41H (A) thành 42H.
+PART_18_Q17,Part 18,7,mcq,B,D,FDH (−3),"Bổ sung cấu hình quyết định baud; sửa 1200 baud phải E8H (−24), không phải F8H/F4H."
+PART_18_Q18,Part 18,7,mcq,A,C,E8H (−24),"Bổ sung cấu hình quyết định baud; sửa 1200 baud phải E8H (−24), không phải F8H/F4H."
+PART_18_Q19,Part 18,7,mcq,B,B,A5H,Sửa suy luận nhận dữ liệu từ SCON/SBUF ghi; nêu rõ bộ đệm nhận thực sự đã có dữ liệu.
+PART_18_Q20,Part 18,8,mcq,D,D,9600 bps,Đối chiếu và giải lại câu hỏi.
+PART_18_Q21,Part 18,8,mcq,B,D,Truyền liên tục ký tự 'w' ở 9600 baud,"Chép lại ảnh, sửa JNB R1 thành RI, nạp TL1/SMOD rõ ràng, loại phương án trùng; Q27 là phát chứ không nhận, Q32 phát P ở 2400 baud."
+PART_18_Q22,Part 18,9,mcq,B,D,Nhận byte nối tiếp ở 4800 baud và xuất byte ra P3,"Chép lại ảnh, sửa JNB R1 thành RI, nạp TL1/SMOD rõ ràng, loại phương án trùng; Q27 là phát chứ không nhận, Q32 phát P ở 2400 baud."
+PART_18_Q23,Part 18,9,mcq,A,A,79H,Làm rõ ASCII và chiều ghi SBUF để phát; sửa mã B từ 41H (A) thành 42H.
+PART_18_Q24,Part 18,9,mcq,B,B,42H,Làm rõ ASCII và chiều ghi SBUF để phát; sửa mã B từ 41H (A) thành 42H.
+PART_18_Q25,Part 18,10,mcq,B,B,D0H,Các lựa chọn gốc có nhiều giá trị cùng mode; bổ sung trạng thái các bit để có một đáp án.
+PART_18_Q26,Part 18,10,mcq,C,C,9AH,Sửa suy luận nhận dữ liệu từ SCON/SBUF ghi; nêu rõ bộ đệm nhận thực sự đã có dữ liệu.
+PART_18_Q27,Part 18,10,mcq,C,B,Truyền liên tục ký tự 'A' ở 4800 baud,"Chép lại ảnh, sửa JNB R1 thành RI, nạp TL1/SMOD rõ ràng, loại phương án trùng; Q27 là phát chứ không nhận, Q32 phát P ở 2400 baud."
+PART_18_Q28,Part 18,11,mcq,C,C,50H,Các lựa chọn gốc có nhiều giá trị cùng mode; bổ sung trạng thái các bit để có một đáp án.
+PART_18_Q29,Part 18,11,mcq,A,A,10H,Các lựa chọn gốc có nhiều giá trị cùng mode; bổ sung trạng thái các bit để có một đáp án.
+PART_18_Q30,Part 18,12,mcq,B,B,7EH,Sửa suy luận nhận dữ liệu từ SCON/SBUF ghi; nêu rõ bộ đệm nhận thực sự đã có dữ liệu.
+PART_18_Q31,Part 18,12,mcq,B,B,90H,Các lựa chọn gốc có nhiều giá trị cùng mode; bổ sung trạng thái các bit để có một đáp án.
+PART_18_Q32,Part 18,12,mcq,A,A,Truyền liên tục ký tự 'P' ở 2400 baud,"Chép lại ảnh, sửa JNB R1 thành RI, nạp TL1/SMOD rõ ràng, loại phương án trùng; Q27 là phát chứ không nhận, Q32 phát P ở 2400 baud."
+PART_18_Q33,Part 18,13,mcq,A,A,2400 bps,Đối chiếu và giải lại câu hỏi.
+PART_18_Q34,Part 18,13,mcq,B,D,Nhận byte nối tiếp ở 4800 baud và xuất byte ra P1,"Chép lại ảnh, sửa JNB R1 thành RI, nạp TL1/SMOD rõ ràng, loại phương án trùng; Q27 là phát chứ không nhận, Q32 phát P ở 2400 baud."
+PART_18_Q35,Part 18,14,mcq,D,D,3CH,Làm rõ ASCII và chiều ghi SBUF để phát; sửa mã B từ 41H (A) thành 42H.

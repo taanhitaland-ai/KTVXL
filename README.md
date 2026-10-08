@@ -23,6 +23,10 @@ python -m http.server 8765 --bind 127.0.0.1
 
 Mở [bản nguồn](http://127.0.0.1:8765/web/index.html) hoặc [bản GitHub Pages cục bộ](http://127.0.0.1:8765/docs/index.html).
 
+## Rà soát ngân hàng Vi xử lý Part 9–18
+
+546 câu trong Part 9–18 (gồm hai bộ Part 9) đã được giải và rà soát lại; toàn bộ dùng 4 phương án, một đáp án đúng. 191 câu dạng điền đã chuyển sang chọn đáp án. 438 câu ngoài phạm vi này và cơ cấu 5 đề chính thức giữ nguyên. [Nhật ký từng câu và nguồn đối chiếu](data/reviews/README.md) ghi các sửa đổi, giả định và giới hạn; PDF cũ chưa cập nhật. Kiểm tra đáp án bằng `python scripts/verify_vixuly_review.py`.
+
 ## Cách chọn đề
 
 - Đề có nguồn cụ thể giữ thứ tự câu hỏi và chỉ dùng nguồn đã chọn. Mỗi thẻ hiển thị số câu thực tế; nút bắt đầu ghi tên đề đang chọn.
