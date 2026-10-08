@@ -1,6 +1,47 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const M = require("../web/cloud_sync_model.js");
+const fs = require("node:fs");
+const vm = require("node:vm");
+const path = require("node:path");
+
+test("production cloud stays disabled on local previews and unrelated hosts or paths", () => {
+  const configSource = fs.readFileSync(path.join(__dirname, "../web/cloud_config.js"), "utf8");
+  const accountSource = fs.readFileSync(path.join(__dirname, "../web/cloud_account.js"), "utf8");
+  for (const url of [
+    "http://127.0.0.1:8766/KTVXL/web/index.html?cloud=production",
+    "http://localhost:8765/web/index.html",
+    "http://[::1]:8765/web/index.html",
+    "file:///C:/KTVXL/web/index.html",
+    "https://preview.example/KTVXL/",
+    "https://taanhitaland-ai.github.io/another-project/",
+    "https://taanhitaland-ai.github.io/KTVXL-preview/",
+    "https://taanhitaland-ai.github.io.example/KTVXL/",
+    "http://taanhitaland-ai.github.io/KTVXL/",
+  ]) {
+    let connections = 0;
+    const context = { location: new URL(url), window: {
+      KMA_SYNC_MODEL: M,
+      supabase: { createClient() { connections++; throw Error("Live connection attempted"); } },
+    } };
+    vm.runInNewContext(configSource, context);
+    assert.equal(context.window.KMA_CLOUD_CONFIG, null, url);
+    vm.runInNewContext(accountSource, context);
+    assert.equal(connections, 0, url);
+    assert.equal(context.window.KMA_ACCOUNT, undefined, url);
+  }
+  for (const url of [
+    "https://taanhitaland-ai.github.io/KTVXL/",
+    "https://taanhitaland-ai.github.io/KTVXL/index.html?panel=leaderboard",
+    "https://taanhitaland-ai.github.io/KTVXL",
+  ]) {
+    const context = { location: new URL(url), window: {} };
+    vm.runInNewContext(configSource, context);
+    assert.equal(context.window.KMA_CLOUD_CONFIG.url, "https://htcnflcncbihhlqoeqsy.supabase.co");
+    assert.ok(Object.isFrozen(context.window.KMA_CLOUD_CONFIG));
+  }
+});
+
 const key = "kma_question_notes_v1";
 const note = (text) => ({
   subject: "ktvxl",

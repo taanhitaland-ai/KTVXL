@@ -16,12 +16,31 @@ async (page) => {
   const assert = (value, message) => {
     if (!value) throw Error(message);
   };
+  const openPlanner = async () => {
+    if (!await tab.locator("#side-planner-drawer").evaluate(e => e.classList.contains("open")))
+      await tab.locator("#btn-floating-planner").click();
+  };
+  const closePlanner = async () => {
+    if (await tab.locator("#side-planner-drawer").evaluate(e => e.classList.contains("open")))
+      await tab.locator("#btn-close-side-drawer").click();
+  };
   try {
+    // Keep this one-day scenario away from midnight in Vietnam.
+    await context.addInitScript(() => {
+      const noon = Date.parse(new Date().toISOString().slice(0, 10) + "T05:00:00Z");
+      Date.now = () => noon;
+    });
     const fixture = await context.request.get(
       "http://127.0.0.1:8765/scripts/fixtures/focus_cloud.js",
     );
     assert(fixture.ok(), "Missing focus fixture");
     const fixtureBody = await fixture.text();
+    await context.route("**/cloud_config.js*", (route) =>
+      route.fulfill({
+        contentType: "text/javascript",
+        body: 'window.KMA_CLOUD_CONFIG={url:"https://fixture.invalid",publishableKey:"fixture-only"};',
+      }),
+    );
     await context.route("**/vendor/supabase/supabase.js*", (route) =>
       route.fulfill({ contentType: "text/javascript", body: fixtureBody }),
     );
@@ -48,10 +67,11 @@ async (page) => {
     await tab
       .getByRole("button", { name: "Đóng tài khoản", exact: true })
       .click();
-    await tab.locator("#btn-tab-schedule").click();
-    await tab.locator("#input-custom-pomodoro").fill("60");
-    await tab.locator("#btn-apply-custom-pomodoro").click();
-    await tab.locator("#btn-pomodoro-start").click();
+    await openPlanner();
+    await openPlanner();
+    await tab.locator("#drawer-input-custom-pomodoro").fill("60");
+    await tab.locator("#drawer-btn-apply-custom-pomodoro").click();
+    await tab.locator("#drawer-btn-pomo-start").click();
     await tab.waitForFunction(() =>
       KMA_FOCUS_DEMO.snapshot().sessions.some((s) => s.state === "running"),
     );
@@ -61,7 +81,7 @@ async (page) => {
     await tab.waitForFunction(
       () =>
         +document
-          .querySelector("#pomodoro-time-display")
+          .querySelector("#drawer-pomo-digits")
           .textContent.split(":")[0] < 60,
     );
     await tab.evaluate(() => KMA_ACCOUNT.sync());
@@ -71,14 +91,14 @@ async (page) => {
     await tab.reload();
     await tab.waitForFunction(() =>
       document
-        .querySelector("#btn-pomodoro-start")
+        .querySelector("#drawer-btn-pomo-start")
         ?.textContent.includes("TẠM DỪNG"),
     );
     assert(
-      (await tab.locator("#pomodoro-time-display").innerText()).startsWith(
+      (await tab.locator("#drawer-pomo-digits").innerText()).startsWith(
         "57:",
       ) ||
-        (await tab.locator("#pomodoro-time-display").innerText()).startsWith(
+        (await tab.locator("#drawer-pomo-digits").innerText()).startsWith(
           "58:",
         ),
       "Timer reset after reload",
@@ -90,7 +110,7 @@ async (page) => {
       JSON.stringify(before) === JSON.stringify(after),
       "Reload duplicated personal minutes",
     );
-    await tab.locator("#btn-tab-schedule").click();
+    await openPlanner();
     await tab
       .getByRole("button", { name: "Mô phỏng 60 phút", exact: true })
       .click();
@@ -99,6 +119,7 @@ async (page) => {
     );
     const streak = tab.locator("#study-streak-trigger");
     assert(await streak.innerText() === "1 ngày", "Header does not show current streak");
+    await closePlanner();
     await streak.click();
     assert(await tab.locator("#study-streak-dialog").isVisible(), "Streak does not open directly");
     assert(await tab.locator("#sync-account-dialog").isHidden(), "Account opens with streak");
@@ -106,6 +127,7 @@ async (page) => {
     assert(await tab.locator("#study-streak-dialog .streak-back").count() === 0, "Streak still links back to account");
     await tab.keyboard.press("Escape");
     assert(await streak.evaluate(e => document.activeElement === e), "Streak close does not return focus");
+    await closePlanner();
     await tab.locator("#leaderboard-trigger").click();
     await tab.waitForFunction(
       () =>
@@ -121,27 +143,28 @@ async (page) => {
     await tab
       .getByRole("button", { name: "Đóng bảng xếp hạng", exact: true })
       .click();
-    await tab.locator("#input-custom-pomodoro").fill("60");
-    await tab.locator("#btn-apply-custom-pomodoro").click();
-    await tab.locator("#btn-pomodoro-start").click();
+    await openPlanner();
+    await tab.locator("#drawer-input-custom-pomodoro").fill("60");
+    await tab.locator("#drawer-btn-apply-custom-pomodoro").click();
+    await tab.locator("#drawer-btn-pomo-start").click();
     await tab
       .getByRole("button", { name: "Mô phỏng 2 phút", exact: true })
       .click();
     await tab.waitForFunction(
       () =>
         document
-          .querySelector("#pomodoro-time-display")
+          .querySelector("#drawer-pomo-digits")
           ?.textContent.startsWith("57:") ||
         document
-          .querySelector("#pomodoro-time-display")
+          .querySelector("#drawer-pomo-digits")
           ?.textContent.startsWith("58:"),
     );
-    await tab.locator("#btn-pomodoro-start").click();
+    await tab.locator("#drawer-btn-pomo-start").click();
     await tab.waitForFunction(
       () => KMA_FOCUS_DEMO.snapshot().sessions[1]?.state === "paused",
     );
     await tab.evaluate(() => KMA_FOCUS_DEMO.loseNextFinish());
-    await tab.locator("#btn-pomodoro-skip").click();
+    await tab.locator("#drawer-btn-pomo-skip").click();
     await tab.waitForFunction(
       () =>
         JSON.parse(
@@ -174,6 +197,7 @@ async (page) => {
         sessions.reduce((sum, s) => sum + s.credited_minutes, 0) === 62,
       "Lost response/reload changed the ledger",
     );
+    await closePlanner();
     await tab.locator("#leaderboard-trigger").click();
     await tab.waitForFunction(
       () =>
@@ -192,14 +216,15 @@ async (page) => {
     await tab
       .getByRole("button", { name: "Đóng bảng xếp hạng", exact: true })
       .click();
-    await tab.locator("#btn-tab-schedule").click();
-    await tab.locator("#input-custom-pomodoro").fill("60");
-    await tab.locator("#btn-apply-custom-pomodoro").click();
+    await openPlanner();
+    await openPlanner();
+    await tab.locator("#drawer-input-custom-pomodoro").fill("60");
+    await tab.locator("#drawer-btn-apply-custom-pomodoro").click();
     await tab.evaluate(() => KMA_FOCUS_DEMO.loseNextStart());
-    await tab.locator("#btn-pomodoro-start").click();
+    await tab.locator("#drawer-btn-pomo-start").click();
     await tab.waitForFunction(() =>
       document
-        .querySelector("#btn-pomodoro-start")
+        .querySelector("#drawer-btn-pomo-start")
         ?.textContent.includes("TẠM DỪNG"),
     );
     await tab
@@ -208,18 +233,18 @@ async (page) => {
     await tab.waitForFunction(
       () =>
         document
-          .querySelector("#pomodoro-time-display")
+          .querySelector("#drawer-pomo-digits")
           ?.textContent.startsWith("57:") ||
         document
-          .querySelector("#pomodoro-time-display")
+          .querySelector("#drawer-pomo-digits")
           ?.textContent.startsWith("58:"),
     );
-    await tab.locator("#btn-pomodoro-start").click();
+    await tab.locator("#drawer-btn-pomo-start").click();
     await tab.waitForFunction(
       () => KMA_FOCUS_DEMO.snapshot().sessions[2]?.state === "paused",
     );
     await tab.evaluate(() => KMA_FOCUS_DEMO.advance(120));
-    await tab.locator("#btn-pomodoro-skip").click();
+    await tab.locator("#drawer-btn-pomo-skip").click();
     await tab.waitForFunction(
       () => KMA_FOCUS_DEMO.snapshot().sessions[2]?.credited_minutes === 2,
     );
@@ -230,20 +255,23 @@ async (page) => {
       ) === 64,
       "Lost start response or pause corrupted minutes",
     );
+    await closePlanner();
     await tab.locator("#leaderboard-trigger").click();
     await tab.waitForFunction(
       () =>
         document.querySelector(".lb-personal-time")?.textContent === "1h 04p",
     );
     await tab.getByRole("button", {name:"Đóng bảng xếp hạng",exact:true}).click();
-    await tab.locator("#input-custom-pomodoro").fill("60");
-    await tab.locator("#btn-apply-custom-pomodoro").click();
+    await openPlanner();
+    await tab.locator("#drawer-input-custom-pomodoro").fill("60");
+    await tab.locator("#drawer-btn-apply-custom-pomodoro").click();
     await tab.evaluate(() => KMA_FOCUS_DEMO.loseNextStart());
-    await tab.locator("#btn-pomodoro-start").click();
+    await tab.locator("#drawer-btn-pomo-start").click();
     await tab.getByRole("button", {name:"Mô phỏng 2 phút",exact:true}).click();
-    await tab.waitForFunction(() => document.querySelector("#pomodoro-time-display")?.textContent.startsWith("57:") || document.querySelector("#pomodoro-time-display")?.textContent.startsWith("58:"));
-    await tab.locator("#btn-pomodoro-skip").click();
+    await tab.waitForFunction(() => document.querySelector("#drawer-pomo-digits")?.textContent.startsWith("57:") || document.querySelector("#drawer-pomo-digits")?.textContent.startsWith("58:"));
+    await tab.locator("#drawer-btn-pomo-skip").click();
     await tab.waitForFunction(() => KMA_FOCUS_DEMO.snapshot().sessions[3]?.credited_minutes === 2);
+    await closePlanner();
     await tab.locator("#leaderboard-trigger").click();
     await tab.waitForFunction(() => document.querySelector(".lb-personal-time")?.textContent === "1h 06p");
     for (const width of [390, 320]) {

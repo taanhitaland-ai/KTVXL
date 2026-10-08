@@ -37,7 +37,15 @@
     if (fn) n.addEventListener("click", fn);
     return n;
   };
-  const api = () => window.KMA_ACCOUNT || window.KMA_SYNC_PREVIEW;
+  const localPreview = {
+    isDemo: false,
+    getState: () => ({ user: null, authenticated: false }),
+    getRankingSnapshot: () => ({
+      remote: true, localOnly: true, rows: [], me: null,
+    }),
+    openAccount: () => location.assign("https://taanhitaland-ai.github.io/KTVXL/"),
+  };
+  const api = () => window.KMA_ACCOUNT || window.KMA_SYNC_PREVIEW || localPreview;
   function current() {
     return L.build(
       api().getRankingSnapshot(period, subject),
@@ -161,53 +169,39 @@
       podium.append(card);
     }
     const bestMinutes = data.rows[0]?.minutes || 60;
-    const listRows = [...data.rows.slice(3, 10)];
-    if (data.rows.length > 0 && listRows.length < 7) {
-      const sampleRunnerUps = [
-        { id: "sample-slot-4", nickname: "KMA Chăm Chỉ", minutes: Math.min(25, Math.max(1, Math.round(bestMinutes * 0.4))), sessions: 1 },
-        { id: "sample-slot-5", nickname: "Coder Mật Mã", minutes: Math.min(20, Math.max(1, Math.round(bestMinutes * 0.35))), sessions: 1 },
-        { id: "sample-slot-6", nickname: "Thần Đồng Vi Xử Lý", minutes: Math.min(18, Math.max(1, Math.round(bestMinutes * 0.3))), sessions: 1 },
-        { id: "sample-slot-7", nickname: "Học Bá KMA", minutes: Math.min(15, Math.max(1, Math.round(bestMinutes * 0.25))), sessions: 1 },
-        { id: "sample-slot-8", nickname: "Chiến Thần Ôn Thi", minutes: Math.min(12, Math.max(1, Math.round(bestMinutes * 0.2))), sessions: 1 },
-        { id: "sample-slot-9", nickname: "Cú Đêm KMA", minutes: Math.min(10, Math.max(1, Math.round(bestMinutes * 0.15))), sessions: 1 },
-        { id: "sample-slot-10", nickname: "Tân Binh Chăm Học", minutes: Math.min(5, Math.max(1, Math.round(bestMinutes * 0.1))), sessions: 1 },
-      ];
-      let nextRank = 4 + listRows.length;
-      for (const p of sampleRunnerUps) {
-        if (listRows.length >= 7) break;
-        listRows.push({
-          ...p,
-          rank: nextRank++,
-          sample: true,
-        });
-      }
-    }
+    const listRows = data.rows.slice(3, 10);
     listRows.forEach((member) => list.append(row(member, bestMinutes)));
-    if (listTitle) listTitle.hidden = !data.rows.length;
-    list.hidden = !data.rows.length;
+    if (listTitle) listTitle.hidden = !listRows.length;
+    list.hidden = data.rows.length > 0 && !listRows.length;
     if (!data.rows.length) {
       if (listTitle) listTitle.hidden = true;
       list.append(
         el(
           "li",
           "lb-empty",
-          data.loading
-            ? "Đang tải bảng xếp hạng…"
-            : data.failed
-              ? "Chưa tải được dữ liệu. Hãy bấm làm mới."
-              : "Chưa có phiên học trong khoảng thời gian này.",
+          data.localOnly
+            ? "Bảng xếp hạng thật chỉ hiển thị trên trang chính."
+            : data.loading
+              ? "Đang tải bảng xếp hạng…"
+              : data.failed
+                ? "Chưa tải được dữ liệu. Hãy bấm làm mới."
+                : "Chưa có phiên học trong khoảng thời gian này.",
         ),
       );
     }
     if (!data.me) {
       const copy = el("div", "lb-personal-copy");
       copy.append(
-        el("strong", "", "Đăng nhập để có tên trên bảng"),
-        el("p", "", "Hạng của bạn sẽ hiện ở đây."),
+        el("strong", "", data.localOnly
+          ? "Bản thử trên máy" : "Đăng nhập để có tên trên bảng"),
+        el("p", "", data.localOnly
+          ? "Tiến trình học thử chỉ lưu trong trình duyệt này."
+          : "Hạng của bạn sẽ hiện ở đây."),
       );
       personal.append(
         copy,
-        button("Đăng nhập Google", "sync-btn sync-primary", signIn),
+        button(data.localOnly ? "Mở trang chính" : "Đăng nhập Google",
+          "sync-btn sync-primary", signIn),
       );
     } else {
       const rank = el(

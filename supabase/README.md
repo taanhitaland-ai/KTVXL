@@ -5,10 +5,10 @@ Trang tĩnh vẫn triển khai bằng GitHub Pages (`master/docs`). Database và
 ## Khởi tạo dự án mới
 
 1. Tạo Supabase project thuộc tài khoản chủ dự án. Chạy `migrations/202610080001_study_sync.sql` một lần trong SQL Editor, sau đó `migrations/202610080002_focus_reliability.sql`. Migration 001 tạo bảng, RLS và RPC; không chạy lại trên schema đã có. Với project hiện tại, chỉ cần migration 002 trước khi triển khai frontend mới.
-2. Trong Google Auth Platform tạo Web OAuth client. Authorized origins là origin của Pages và các máy chủ thử. Redirect URI là `https://PROJECT_REF.supabase.co/auth/v1/callback`.
+2. Trong Google Auth Platform tạo Web OAuth client. Authorized origins chỉ chứa origin của Pages. Redirect URI là `https://PROJECT_REF.supabase.co/auth/v1/callback`.
 3. Trong Supabase Auth → Google bật provider, nhập Client ID và Client Secret trực tiếp trong dashboard. Không đưa Client Secret, mật khẩu database, `service_role` hoặc secret API key vào mã nguồn.
-4. Auth → URL Configuration: Site URL là URL Pages; Redirect URLs chứa chính xác URL index của Pages và từng bản HTTP cục bộ cần thử. Đổi cổng hoặc đường dẫn thì cập nhật danh sách.
-5. `web/cloud_config.js` chỉ chứa project URL và **publishable key**. Khóa này công khai được vì quyền dữ liệu do JWT, RLS và RPC quyết định. Chạy `python scripts/sync_site.py`.
+4. Auth → URL Configuration: Site URL và Redirect URLs chỉ chứa trang chính `https://taanhitaland-ai.github.io/KTVXL/` và `/KTVXL/index.html`. Không đưa URL localhost vào project production.
+5. `web/cloud_config.js` chỉ bật project URL và **publishable key** tại HTTPS host `taanhitaland-ai.github.io`, đường dẫn `/KTVXL/`. Localhost, file HTML và host khác chỉ lưu tại trình duyệt; không tạo Supabase client. Khóa công khai và điều kiện hostname giúp tránh kết nối nhầm môi trường, còn quyền dữ liệu vẫn do JWT, RLS và RPC quyết định. Chạy `python scripts/sync_site.py`.
 6. Google Audience ở Testing chỉ cho phép test users. Muốn các thành viên khác đăng nhập, hoàn thiện Branding/home page/privacy policy, rồi chủ dự án chuyển sang Production trong Audience. Không yêu cầu Gmail, Drive hay scopes nhạy cảm.
 
 ## Schema và quyền
@@ -34,8 +34,10 @@ Ghi chú xung đột chặn các thao tác tiếp của chính ghi chú đó đ�
 
 `npm ci && npm test` bao gồm kiểm tra chuẩn hóa/phép chiếu dữ liệu và chạy migration trên PostgreSQL WASM (PGlite) với hai tài khoản để kiểm tra phân quyền, idempotency, xung đột, timer, thời gian thực, ghi nhận phiên sớm và tham gia tự động. `scripts/browser_cloud_sync_checks.js` chạy trên một context thử độc lập, mock RPC, để kiểm tra hàng đợi khi đang gửi, mất kết nối, xung đột, nhiều tab và bảo toàn bài thi. Không dùng context Google thật cho script này.
 
+Các script thử đồng bộ/Pomodoro thay riêng `cloud_config.js` bằng cấu hình fixture trỏ tới `fixture.invalid`, cùng SDK/RPC giả lập. Không thêm công tắc query để bật database production trên localhost. Nếu cần thử Google và database ngoài trang chính, tạo một Supabase project thử riêng cùng OAuth/redirect riêng. BXH chỉ hiển thị người do nguồn dữ liệu trả về, không tự chèn người mẫu để đủ top 10.
+
 Migration cần được kiểm tra trên PostgreSQL/Supabase riêng với ít nhất hai users: anon không đọc bảng/RPC riêng; A không đọc/ghi dữ liệu B; retry không cộng đôi; sửa ghi chú lỗi version giữ hai bản; timer chỉ cộng phút thực tế máy chủ đo được; phút thủ công không vào bảng; tài khoản có phút tự động có hạng.
 
-Kiểm tra tích hợp thực tế: đăng nhập cùng Google ở hai origin có vùng lưu riêng, sửa note/answer/star ở hai chiều, chạy đủ một phiên Pomodoro và đối chiếu bảng. Không thay đồng hồ browser để giả lập thời gian máy chủ.
+Kiểm tra tích hợp thực tế: đăng nhập cùng Google trên hai thiết bị hoặc hai context riêng của trang chính, sửa note/answer/star ở hai chiều, chạy đủ một phiên Pomodoro và đối chiếu bảng. Không thay đồng hồ browser để giả lập thời gian máy chủ.
 
 Tài liệu chính thức: [Google Auth](https://supabase.com/docs/guides/auth/social-login/auth-google), [RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [Functions](https://supabase.com/docs/guides/database/functions), [API keys](https://supabase.com/docs/guides/getting-started/api-keys).

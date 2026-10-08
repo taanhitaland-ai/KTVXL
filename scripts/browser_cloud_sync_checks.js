@@ -118,6 +118,12 @@ async (page) => {
         };
       throw new Error("Unexpected RPC: " + name);
     });
+    await context.route("**/cloud_config.js*", (route) =>
+      route.fulfill({
+        contentType: "text/javascript",
+        body: 'window.KMA_CLOUD_CONFIG={url:"https://fixture.invalid",publishableKey:"fixture-only"};',
+      }),
+    );
     await context.route("**/vendor/supabase/supabase.js*", (route) =>
       route.fulfill({
         contentType: "text/javascript",
