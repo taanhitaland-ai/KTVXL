@@ -1758,6 +1758,22 @@
   // Expose switchSubject for external tabs/modules
   window.switchSubject = switchSubject;
 
+  // A cloud refresh must not switch subjects, clear filters or reset an active exam.
+  let savedProgressRefreshPending = false;
+  function repaintSavedProgress() {
+    if (!savedProgressRefreshPending || document.querySelector('.note-editor, input:focus, textarea:focus')) return;
+    savedProgressRefreshPending = false;
+    renderPracticeQuestions();
+  }
+  window.refreshSavedProgress = () => {
+    loadSavedState();
+    updateStatsBar();
+    savedProgressRefreshPending = true;
+    repaintSavedProgress();
+  };
+  window.addEventListener('kma:cloud-updated', repaintSavedProgress);
+  document.addEventListener('focusout', () => setTimeout(repaintSavedProgress, 0));
+
   // Start app on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

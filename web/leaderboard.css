@@ -1,0 +1,704 @@
+/* Focus ranking: pinned controls and personal row, scrollable results. */
+.lb-dialog {
+  --lb-surface: #fffefa;
+  --lb-card: #fff;
+  --lb-header: #ffe600;
+  --lb-raised: #efeadc;
+  --lb-muted: #59535f;
+  --lb-accent: #ffd400;
+  --lb-text: #111;
+  --lb-progress: #dedede;
+  --lb-personal: #fff1a8;
+  --sync-accent: #ffd400;
+  --sync-ink: #111;
+  --sync-raised: var(--lb-card);
+  width: min(680px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  background: var(--lb-surface);
+  color: var(--lb-text);
+  border: 3px solid #000;
+  border-radius: 18px;
+  box-shadow: 8px 8px 0 #000;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+body.dark-mode .lb-dialog {
+  --lb-surface: #201835;
+  --lb-card: #2b2045;
+  --lb-header: #382b59;
+  --lb-raised: #2b2045;
+  --lb-muted: #c4bbdf;
+  --lb-text: #f4f0ff;
+  --lb-progress: #4b4162;
+  --lb-personal: #3a3214;
+}
+.lb-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+.lb-dialog [hidden] {
+  display: none !important;
+}
+.lb-dialog::backdrop {
+  background: #0906139c;
+  backdrop-filter: blur(3px);
+}
+.lb-top {
+  flex: none;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--lb-surface);
+}
+.lb-hero {
+  height: 72px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: space-between;
+  background: var(--lb-header);
+  border-bottom: 3px solid #000;
+}
+.lb-hero-copy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+.lb-hero h2 {
+  font-size: 21px;
+  line-height: 1.35;
+  font-weight: 800;
+  margin: 0;
+}
+.lb-eyebrow {
+  background: var(--lb-card);
+  color: #111;
+  border: 2px solid #000;
+  border-radius: 20px;
+  font:
+    800 10px/1.4 "Be Vietnam Pro",
+    sans-serif;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+body.dark-mode .lb-eyebrow {
+  background: #ffd400;
+}
+.lb-close {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  background: var(--lb-card);
+  color: var(--lb-text);
+  border: 3px solid #000;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 #000;
+  font-size: 20px;
+  cursor: pointer;
+}
+.lb-filter-bar {
+  padding: 14px 20px;
+  border-bottom: 3px solid #000;
+}
+.lb-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.lb-periods {
+  display: flex;
+  gap: 10px;
+}
+.lb-period {
+  font:
+    800 12px/1.4 "Be Vietnam Pro",
+    sans-serif;
+  border: 3px solid #000;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 #000;
+  padding: 11px 13px;
+  background: var(--lb-card);
+  color: var(--lb-text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.lb-period[aria-pressed="true"] {
+  background: #ffd400;
+  color: #111;
+}
+.lb-subject-label {
+  display: block;
+  min-width: 0;
+}
+.lb-select-wrap {
+  display: block;
+  position: relative;
+}
+.lb-subject {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 160px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 11px 32px 11px 12px;
+  border: 3px solid #000;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 #000;
+  background: var(--lb-card);
+  color: var(--lb-text);
+  font:
+    700 12px/1.4 "Be Vietnam Pro",
+    sans-serif;
+  cursor: pointer;
+}
+.lb-select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-60%);
+  font-size: 22px;
+  line-height: 1;
+  pointer-events: none;
+}
+.lb-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.lb-body {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 18px 20px 20px;
+}
+.lb-caption {
+  color: var(--lb-muted);
+  text-align: right;
+  font:
+    400 12px/1.5 "Be Vietnam Pro",
+    sans-serif;
+  margin: 0 0 36px;
+}
+.lb-podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: 14px;
+  margin: 0 0 24px;
+}
+.lb-podium-card {
+  --metal: #d98b4a;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  min-width: 0;
+  height: 186px;
+  box-sizing: border-box;
+  padding: 18px 10px 14px;
+  background: var(--lb-card);
+  border: 3px solid #000;
+  border-radius: 15px;
+  box-shadow: 5px 5px 0 #000;
+}
+.lb-podium-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--metal);
+  border-bottom: 2px solid #000;
+  border-radius: 11px 11px 0 0;
+}
+.lb-podium-card[data-place="1"] {
+  --metal: #ffd400;
+  height: 234px;
+  border-color: #ffd400;
+  box-shadow:
+    0 0 0 2px #000,
+    5px 5px 0 2px #000;
+}
+.lb-podium-card[data-place="2"] {
+  --metal: #c9d1e0;
+  height: 202px;
+}
+.lb-podium-card[data-place="3"] {
+  --metal: #d98b4a;
+}
+.lb-crown {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lb-podium-rank {
+  font-size: 14px;
+  font-weight: 800;
+}
+.lb-podium-avatar {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  box-sizing: border-box;
+  flex: none;
+  border: 4px solid var(--metal);
+  border-radius: 50%;
+  background: var(--avatar-color);
+  color: #111;
+  font-size: 23px;
+  font-weight: 800;
+}
+.lb-podium-name {
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.lb-podium-time {
+  font-size: 19px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+.lb-podium-card[data-place="1"] .lb-podium-time {
+  font-size: 26px;
+}
+.lb-podium-empty {
+  border: 3px dashed var(--lb-muted) !important;
+  box-shadow: none !important;
+  font:
+    600 12px/1.6 "Be Vietnam Pro",
+    sans-serif;
+  color: var(--lb-muted);
+}
+.lb-podium-empty::before {
+  display: none;
+}
+.lb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 3px solid #000;
+  border-radius: 13px;
+  overflow: hidden;
+  background: var(--lb-card);
+}
+.lb-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 66px;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  border-bottom: 1px solid #000;
+}
+.lb-row:last-child {
+  border-bottom: 0;
+}
+.lb-is-me {
+  box-shadow: inset 4px 0 0 #ffd400;
+}
+.lb-rank {
+  width: 22px;
+  flex: none;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+}
+.lb-avatar {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  box-sizing: border-box;
+  flex: none;
+  background: var(--avatar-color);
+  color: #111;
+  border: 2px solid #000;
+  border-radius: 9px;
+  font-size: 18px;
+  font-weight: 800;
+}
+.lb-identity {
+  min-width: 0;
+  flex: 1;
+  position: relative;
+}
+.lb-identity strong {
+  display: block;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.lb-you {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #ffd400;
+  color: #111;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-size: 9px;
+  font-weight: 800;
+}
+.lb-score {
+  display: grid;
+  gap: 3px;
+  flex: none;
+  text-align: right;
+}
+.lb-score strong {
+  font-size: 15px;
+  line-height: 1.4;
+}
+.lb-score span {
+  font:
+    400 13px/1.4 "Be Vietnam Pro",
+    sans-serif;
+  color: var(--lb-muted);
+}
+.lb-progress {
+  height: 6px;
+  margin-top: 5px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--lb-progress);
+}
+.lb-progress span {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+}
+.lb-personal {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  padding: 14px 20px;
+  min-height: 72px;
+  box-sizing: border-box;
+  background: var(--lb-raised);
+  border-top: 3px solid #000;
+}
+.lb-personal-signed-in {
+  background: var(--lb-personal);
+  border-top-color: #ffd400;
+}
+.lb-personal-copy {
+  min-width: 0;
+  flex: 1;
+}
+.lb-personal-copy strong {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.lb-personal-copy p {
+  font:
+    400 12px/1.5 "Be Vietnam Pro",
+    sans-serif;
+  color: var(--lb-muted);
+  margin: 2px 0 0;
+}
+.lb-personal-rank {
+  font-size: 20px;
+}
+.lb-personal-time {
+  font-size: 16px;
+  white-space: nowrap;
+}
+.lb-personal .sync-btn {
+  font-size: 12px;
+  white-space: nowrap;
+  flex: none;
+  padding: 10px 13px;
+}
+.lb-rules {
+  margin: 16px 0 0;
+  color: var(--lb-muted);
+  font:
+    400 12px/1.7 "Be Vietnam Pro",
+    sans-serif;
+}
+.lb-rules summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+.lb-rules p {
+  margin: 8px 0 0;
+}
+.lb-demo-controls {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font:
+    400 11px/1.6 "Be Vietnam Pro",
+    sans-serif;
+  color: var(--lb-muted);
+}
+.lb-demo-button {
+  font:
+    700 11px/1.5 "Be Vietnam Pro",
+    sans-serif;
+  padding: 8px;
+  border: 2px solid #000;
+  border-radius: 7px;
+  background: var(--lb-card);
+  color: var(--lb-text);
+  cursor: pointer;
+}
+.lb-demo-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.lb-empty {
+  padding: 32px 16px;
+  text-align: center;
+  font:
+    400 13px/1.8 "Be Vietnam Pro",
+    sans-serif;
+  color: var(--lb-muted);
+}
+.lb-trigger {
+  border: 3px solid #000;
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  box-shadow: 3px 3px 0 #000;
+  font:
+    800 12px "Be Vietnam Pro",
+    sans-serif;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.lb-promo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 19px 21px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 3px solid #000;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 #000;
+  margin: 0 0 24px;
+}
+.lb-promo-copy strong {
+  font:
+    800 14px "Be Vietnam Pro",
+    sans-serif;
+}
+.lb-promo-copy p {
+  font:
+    400 12px/1.75 "Be Vietnam Pro",
+    sans-serif;
+  margin: 6px 0 0;
+}
+.lb-dialog :is(button, select, summary):focus-visible {
+  outline: 3px solid #8b5cf6;
+  outline-offset: 3px;
+}
+body.dark-mode .lb-dialog :is(button, select, summary):focus-visible {
+  outline-color: #ffd400;
+}
+@media (max-width: 600px) {
+  .lb-dialog {
+    width: calc(100vw - 24px);
+    max-height: calc(100dvh - 24px);
+    border-radius: 14px;
+  }
+  .lb-hero {
+    padding: 10px 13px;
+  }
+  .lb-hero h2 {
+    font-size: 17px;
+  }
+  .lb-hero-copy {
+    gap: 5px;
+  }
+  .lb-eyebrow {
+    font-size: 8px;
+  }
+  .lb-close {
+    width: 35px;
+    height: 35px;
+  }
+  .lb-filter-bar {
+    padding: 12px 13px;
+  }
+  .lb-filters {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .lb-periods {
+    width: 100%;
+    gap: 8px;
+  }
+  .lb-period {
+    flex: 1;
+    min-width: 0;
+    white-space: normal;
+    padding: 9px 5px;
+    font-size: 11px;
+  }
+  .lb-subject-label {
+    width: 100%;
+  }
+  .lb-subject {
+    width: 100%;
+  }
+  .lb-body {
+    padding: 15px 13px;
+  }
+  .lb-caption {
+    font-size: 11px;
+    margin-bottom: 30px;
+  }
+  .lb-podium {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .lb-podium-card {
+    padding: 16px 5px 10px;
+    gap: 7px;
+    box-shadow: 3px 3px 0 #000;
+  }
+  .lb-podium-name {
+    font-size: 10px;
+  }
+  .lb-podium-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+  .lb-podium-rank {
+    font-size: 12px;
+  }
+  .lb-podium-time {
+    font-size: 14px;
+  }
+  .lb-podium-card[data-place="1"] .lb-podium-time {
+    font-size: 19px;
+  }
+  .lb-row {
+    gap: 8px;
+    padding: 10px 8px;
+  }
+  .lb-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+  .lb-rank {
+    width: 16px;
+    font-size: 12px;
+  }
+  .lb-identity strong {
+    font-size: 11px;
+  }
+  .lb-score strong {
+    font-size: 12px;
+  }
+  .lb-score span {
+    font-size: 13px;
+  }
+  .lb-personal {
+    padding: 12px 13px;
+    gap: 8px;
+  }
+  .lb-personal-copy strong {
+    font-size: 12px;
+  }
+  .lb-personal-copy p {
+    font-size: 11px;
+  }
+  .lb-personal .sync-btn {
+    font-size: 10px;
+    padding: 9px 8px;
+  }
+  .lb-personal-rank {
+    font-size: 16px;
+  }
+  .lb-personal-time {
+    font-size: 13px;
+  }
+  .lb-demo-controls {
+    flex-wrap: wrap;
+  }
+  .lb-demo-button {
+    width: 100%;
+  }
+  .lb-promo {
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+  .lb-promo .sync-btn {
+    width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .lb-body {
+    padding: 15px 9px;
+  }
+  .lb-podium {
+    gap: 6px;
+  }
+  .lb-podium-name {
+    font-size: 9px;
+  }
+  .lb-podium-time {
+    font-size: 12px;
+  }
+  .lb-podium-card[data-place="1"] .lb-podium-time {
+    font-size: 16px;
+  }
+  .lb-score strong {
+    font-size: 11px;
+  }
+  .lb-row {
+    gap: 6px;
+  }
+  .lb-avatar {
+    width: 28px;
+    height: 28px;
+  }
+  .lb-personal {
+    flex-wrap: wrap;
+  }
+  .lb-personal .sync-btn {
+    margin-left: auto;
+  }
+  .lb-you {
+    position: static;
+    display: inline-block;
+  }
+}

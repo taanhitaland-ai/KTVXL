@@ -15,4 +15,5 @@ jobs:
           python-version: '3.12'
       - run: python scripts/sync_site.py --check
       - run: python scripts/audit_site_content.py
+      - run: npm ci
       - run: npm test

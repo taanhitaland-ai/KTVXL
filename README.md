@@ -38,9 +38,21 @@ Lịch sử luyện tập và câu đánh dấu được lưu theo từng môn t
 
 Ở **Luyện tập**, nhấn **✎** cạnh nút gắn sao của câu hỏi để viết ghi chú. Thẻ ghi chú nằm ngay dưới câu hỏi trên máy tính và điện thoại. Bấm vào thẻ hoặc nút bút để chuyển chính thẻ đó thành ô nhập; cột phải chỉ hiển thị phương pháp và mẹo nhớ. Chọn một trong sáu màu, nhấn **Lưu ghi chú** hoặc **Ctrl/⌘ + Enter**. Nội dung đã lưu hiện thành một thẻ màu dưới đáp án, thu gọn sau ba dòng với nút **Xem thêm**. Câu chưa có note chỉ hiện nút bút; màu giấy nhớ thay đổi theo giao diện sáng/tối. Thông báo **✓ Đã lưu** tự ẩn sau hai giây. Nút Lưu chỉ bật khi có thay đổi. Xóa yêu cầu xác nhận và có thể hoàn tác; thao tác **Làm lại từ đầu** chỉ xóa lịch sử trả lời, giữ ghi chú.
 
-Ghi chú lưu theo môn và ID câu hỏi trong trình duyệt hiện tại (`kma_question_notes_v1`), không gửi tới máy chủ. Không tự khôi phục bản nháp chưa lưu sau khi đóng trang. Chỉ hiển thị văn bản thuần, giới hạn 2.000 ký tự; màu, ID và dữ liệu lưu được kiểm tra trước khi sử dụng. Khi không lưu được, ô nhập giữ nguyên nội dung và báo lỗi.
+Ghi chú dùng nguyên schema theo môn và ID câu hỏi (`kma_question_notes_v1`). Khi chưa đăng nhập, dữ liệu chỉ lưu trong trình duyệt; khi đăng nhập Google, dữ liệu lưu theo tài khoản và tự đồng bộ với Supabase. Không tự khôi phục bản nháp chưa lưu sau khi đóng trang. Chỉ hiển thị văn bản thuần, giới hạn 2.000 ký tự; màu, ID và dữ liệu lưu được kiểm tra trước khi sử dụng. Khi không lưu được, ô nhập giữ nguyên nội dung và báo lỗi.
 
 Nút chuông **Cập nhật** mở lịch sử tính năng mới và sửa lỗi. Trạng thái đã đọc lưu riêng trên trình duyệt. Để thêm một bản cập nhật, thêm mục mới vào đầu `web/site_updates_data.js` với `id` mới, ngày, tiêu đề và các danh sách `added` / `fixed`; giữ nguyên ID các bản cũ rồi chạy bước đồng bộ bên dưới.
+
+## Đăng nhập, đồng bộ và bảng xếp hạng
+
+**Đăng nhập → Tiếp tục với Google** dùng Supabase Auth (PKCE). Google xác thực danh tính; database Supabase lưu dữ liệu học. Cùng tài khoản ở điện thoại và máy tính sẽ nhận câu đã trả lời, dấu sao, ghi chú và lịch sử học sau khi đồng bộ. Bài thi đang làm, theme, nhạc và trạng thái đã đọc cập nhật không đồng bộ.
+
+Lần đầu đăng nhập, ứng dụng hỏi có mang dữ liệu khách vào tài khoản hay không. Chỉ nhập những bản ghi chưa có trên tài khoản, giữ bản khách tại máy và tôn trọng ghi chú đã xóa. Mỗi tài khoản có vùng nhớ đệm và hàng đợi riêng. Khi chưa gửi được, thay đổi được giữ tại máy để thử lại; trạng thái **Đã đồng bộ** xác nhận lượt trao đổi đã thành công. Hai bản sửa khác nhau của cùng ghi chú được giữ để người dùng chọn hoặc gộp, không tự ghi đè.
+
+Trong **Tài khoản**, đặt biệt danh và chọn có hiện trên bảng xếp hạng hay không. Bảng lọc Hôm nay/Tuần này/Tháng này theo giờ Việt Nam; tuần bắt đầu thứ Hai. Chỉ cộng phút của phiên tập trung đã đủ thời gian và hoàn tất trên máy chủ. Giờ nghỉ, phiên bỏ dở và phút cộng thủ công không cộng hạng. Cùng số phút có cùng hạng. Bảng thật không có dữ liệu mẫu; demo độc lập mới hiện chip **DỮ LIỆU MẪU**.
+
+Máy chủ kiểm tra thời gian, giới hạn một phiên đang chạy cho mỗi tài khoản và chống cộng lại khi gửi lại yêu cầu. Cơ chế này không chứng minh người dùng thực sự chú ý học và không thay thế hệ thống chống gian lận chuyên biệt. Đóng/tải lại trang hủy phiên chưa hoàn tất khi ứng dụng mở lại; thời gian đã ghi trong nhật ký cá nhân vẫn được giữ.
+
+Đăng nhập cần trang HTTP/HTTPS và URL được cho phép, không dùng `file://`. Chi tiết cấu hình, migration và kiểm tra phân quyền nằm trong [supabase/README.md](supabase/README.md). [Quyền riêng tư](https://taanhitaland-ai.github.io/KTVXL/privacy.html) mô tả dữ liệu lưu và phạm vi công khai.
 
 ## Sơ đồ Vi xử lý
 
@@ -112,9 +124,10 @@ Không dùng thứ tự mã câu hỏi để suy ra chương: mã cũ được g
 
 ## Kiểm tra
 
-Cần Node.js 22 trở lên và Python 3.10 trở lên. Bộ kiểm tra cơ bản không cần cài gói npm:
+Cần Node.js 22 trở lên và Python 3.10 trở lên. PGlite là phụ thuộc chỉ dành cho kiểm thử, để kiểm tra migration PostgreSQL và RLS:
 
 ```sh
+npm ci
 npm test
 python scripts/sync_site.py --check
 python scripts/audit_site_content.py

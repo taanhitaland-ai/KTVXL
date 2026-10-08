@@ -26,6 +26,12 @@ __pycache__/
 .playwright-cli/
 output/playwright/
 
+# Private configuration kept outside published source
+/SECRET/
+.env
+.env.*
+!.env.example
+
 # Office lock files
 ~$*
 

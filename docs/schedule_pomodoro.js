@@ -435,7 +435,7 @@
         btn.addEventListener('click', () => {
           containers.forEach(c => c && c.querySelectorAll('.pomo-subj-btn').forEach(b => b.classList.remove('active')));
           const sKey = btn.getAttribute('data-subj');
-          pomodoroState.selectedSubject = sKey;
+          selectPomodoroSubject(sKey);
           // Mark active on all
           containers.forEach(c => {
             const match = c ? c.querySelector(`.pomo-subj-btn[data-subj="${sKey}"]`) : null;
@@ -516,7 +516,7 @@
     container.querySelectorAll('.btn-jump-subject-pomo').forEach(btn => {
       btn.addEventListener('click', () => {
         const sKey = btn.getAttribute('data-subject');
-        pomodoroState.selectedSubject = sKey;
+        selectPomodoroSubject(sKey);
         renderSubjectSelector();
         // Switch drawer tab to pomodoro
         switchDrawerTab('side-tab-pomo');
@@ -525,12 +525,32 @@
     });
   }
 
-  function startPomodoro() {
+  let startingPomodoro = false, pomodoroGeneration = 0;
+  function selectPomodoroSubject(subject) {
+    if (subject === pomodoroState.selectedSubject) return;
+    if (pomodoroState.isRunning || pomodoroState.elapsedSecondsInSession > 0 || startingPomodoro) resetPomodoro();
+    pomodoroState.selectedSubject = subject;
+  }
+  async function startPomodoro() {
+    if (startingPomodoro) return;
     if (pomodoroState.isRunning) {
       pausePomodoro();
       return;
     }
 
+    if (pomodoroState.mode === 'focus' && window.KMA_ACCOUNT) {
+      const generation = pomodoroGeneration;
+      startingPomodoro = true;
+      try {
+        await window.KMA_ACCOUNT.focusStart(pomodoroState.selectedSubject, Math.ceil(pomodoroState.totalSeconds / 60));
+      } catch (_) {
+        showToastNotification('Phiên này vẫn lưu vào lịch sử học tại máy. Chưa ghi nhận được vào bảng xếp hạng; hãy kiểm tra tài khoản.');
+      } finally { startingPomodoro = false; }
+      if (generation !== pomodoroGeneration) {
+        window.KMA_ACCOUNT.focusCancel().catch(() => {});
+        return;
+      }
+    }
     pomodoroState.isRunning = true;
     renderPomodoroDisplay();
 
@@ -553,6 +573,7 @@
   }
 
   function pausePomodoro() {
+    if (pomodoroState.isRunning && pomodoroState.mode === 'focus') window.KMA_ACCOUNT?.focusPause().catch(() => {});
     pomodoroState.isRunning = false;
     if (pomodoroState.intervalId) {
       clearInterval(pomodoroState.intervalId);
@@ -563,14 +584,18 @@
   }
 
   function resetPomodoro() {
+    pomodoroGeneration++;
     pausePomodoro();
+    window.KMA_ACCOUNT?.focusCancel().catch(() => {});
     pomodoroState.remainingSeconds = pomodoroState.totalSeconds;
     pomodoroState.elapsedSecondsInSession = 0;
     renderPomodoroDisplay();
   }
 
   function setPomodoroDuration(minutes, mode = 'focus') {
+    pomodoroGeneration++;
     pausePomodoro();
+    window.KMA_ACCOUNT?.focusCancel().catch(() => {});
     pomodoroState.mode = mode;
     pomodoroState.durationMinutes = minutes;
     pomodoroState.totalSeconds = minutes * 60;
@@ -584,6 +609,9 @@
     playCompletionChime();
 
     if (pomodoroState.mode === 'focus') {
+      window.KMA_ACCOUNT?.focusFinish().catch(() => {
+        showToastNotification('Phiên kết thúc sớm hoặc chưa đồng bộ, nên chưa được cộng vào bảng xếp hạng.');
+      });
       pomodoroState.completedSessions++;
       const subj = STUDY_SUBJECTS.find(s => s.key === pomodoroState.selectedSubject);
       const subjName = subj ? subj.name : 'Môn học';
@@ -945,7 +973,7 @@
     document.querySelectorAll('.btn-jump-subject-pomo').forEach(btn => {
       btn.addEventListener('click', () => {
         const subj = btn.getAttribute('data-subject');
-        pomodoroState.selectedSubject = subj;
+        selectPomodoroSubject(subj);
         renderSubjectSelector();
         // Also open side drawer to Pomodoro tab!
         toggleSideDrawer(true);
@@ -996,6 +1024,7 @@
 
   window.KMA_SCHEDULE_POMODORO = {
     recordStudyTime,
+    renderStudyStats,
     getTodayStats,
     setPomodoroDuration,
     startPomodoro,

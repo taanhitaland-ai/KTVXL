@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Quyền riêng tư · KTVXL</title>
+    <link rel="stylesheet" href="vendor/fonts/be-vietnam-pro.css" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --paper: #fffdf7;
+        --page: #f4f0e5;
+        --ink: #171117;
+        --accent: #ffd400;
+        --muted: #514b55;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--page);
+        color: var(--ink);
+        font-family: "Be Vietnam Pro", sans-serif;
+        line-height: 1.75;
+      }
+      main {
+        max-width: 780px;
+        margin: 36px auto;
+        padding: 30px;
+        border: 3px solid #000;
+        border-radius: 16px;
+        background: var(--paper);
+        box-shadow: 7px 7px 0 #000;
+      }
+      h1 {
+        font-size: clamp(24px, 5vw, 32px);
+        line-height: 1.35;
+      }
+      h2 {
+        font-size: 20px;
+        margin-top: 30px;
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 3px;
+      }
+      .back {
+        display: inline-block;
+        padding: 5px 12px;
+        background: var(--accent);
+        color: #111;
+        border: 2px solid #000;
+        border-radius: 6px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+      .date {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      li {
+        margin: 8px 0;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #2b2045;
+          --page: #160e25;
+          --ink: #f4f0ff;
+          --muted: #cec4df;
+        }
+      }
+      @media (max-width: 600px) {
+        main {
+          margin: 16px 12px;
+          padding: 20px;
+          box-shadow: 4px 4px 0 #000;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="back" href="index.html">← Về góc học</a>
+      <h1>Quyền riêng tư và dữ liệu học tập</h1>
+      <p class="date">KTVXL · Cập nhật ngày 08/10/2026</p>
+      <p>
+        Bạn có thể ôn tập mà không đăng nhập. Đăng nhập Google là tùy chọn để
+        mang tiến trình giữa các thiết bị và tham gia bảng xếp hạng Pomodoro.
+      </p>
+      <h2>Dữ liệu được lưu</h2>
+      <ul>
+        <li>
+          Khi chưa đăng nhập: câu đã trả lời, câu gắn sao, ghi chú và nhật ký
+          học lưu trong trình duyệt hiện tại.
+        </li>
+        <li>
+          Khi đăng nhập: Google cung cấp thông tin tài khoản cơ bản cho Supabase
+          để xác thực, gồm định danh, tên, email và ảnh hồ sơ nếu có. KTVXL
+          không nhận mật khẩu Google, không yêu cầu đọc Gmail, Drive hay danh
+          bạ.
+        </li>
+        <li>
+          Supabase lưu tiến trình, ghi chú, nhật ký học, biệt danh, lựa chọn
+          tham gia xếp hạng và các mốc thời gian phiên Pomodoro theo định danh
+          tài khoản.
+        </li>
+        <li>
+          Trình duyệt vẫn giữ bản nhớ đệm và các thay đổi chờ đồng bộ. Theme,
+          nhạc cá nhân và trạng thái đã đọc cập nhật lưu riêng tại thiết bị.
+        </li>
+      </ul>
+      <h2>Dữ liệu nào xuất hiện công khai?</h2>
+      <p>
+        Chỉ khi bạn bật tham gia xếp hạng, biệt danh, định danh xếp hạng, số
+        phút tập trung, số phiên và thứ hạng mới xuất hiện trên bảng. Email, đáp
+        án, ghi chú và nhật ký học riêng không xuất hiện ở đó. Tắt tham gia
+        trong phần Tài khoản sẽ ẩn bạn khỏi bảng.
+      </p>
+      <h2>Đồng bộ và quyền truy cập</h2>
+      <p>
+        Google dùng để xác thực; dữ liệu học được lưu tại database Supabase của
+        dự án. Quy tắc tại database giới hạn mỗi tài khoản truy cập dữ liệu
+        riêng của mình. Chủ dự án và các nhà cung cấp dịch vụ có quyền quản trị
+        cần thiết để vận hành hệ thống.
+      </p>
+      <p>
+        Lần đăng nhập đầu, bạn được chọn mang dữ liệu khách vào tài khoản hoặc
+        dùng dữ liệu tài khoản. Bản khách vẫn được giữ tại máy. Khi một ghi chú
+        thay đổi ở hai nơi, ứng dụng cho chọn bản muốn giữ hoặc gộp nội dung.
+      </p>
+      <h2>Quản lý và xóa dữ liệu</h2>
+      <p>
+        Bạn có thể sửa hoặc xóa ghi chú, làm lại tiến trình và tắt tham gia xếp
+        hạng ngay trên trang. Đăng xuất không xóa dữ liệu trên Supabase hoặc bản
+        nhớ đệm. Trên máy dùng chung, hãy đăng xuất rồi xóa dữ liệu trang trong
+        cài đặt trình duyệt.
+      </p>
+      <p>
+        Ứng dụng hiện chưa có nút xuất toàn bộ tài khoản hoặc xóa tài khoản. Nếu
+        cần xuất hoặc xóa dữ liệu trên máy chủ, liên hệ người quản trị qua địa
+        chỉ hỗ trợ trên màn hình Google đăng nhập. Đừng đăng mật khẩu, mã đăng
+        nhập hoặc ghi chú riêng vào issue công khai.
+      </p>
+      <h2>Nhà cung cấp dịch vụ</h2>
+      <p>
+        Trang tĩnh được phục vụ qua GitHub Pages; xác thực qua Google và
+        Supabase; database qua Supabase. Các dịch vụ này xử lý yêu cầu mạng theo
+        chính sách của họ:
+        <a href="https://policies.google.com/privacy">Google</a>,
+        <a href="https://supabase.com/privacy">Supabase</a> và
+        <a
+          href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+          >GitHub</a
+        >.
+      </p>
+    </main>
+  </body>
+</html>
