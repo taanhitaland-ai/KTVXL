@@ -161,6 +161,11 @@
       countBadge.textContent = `${filtered.length} ghi chú`;
     }
 
+    const miniCount = document.getElementById("floating-notes-count-mini");
+    if (miniCount) {
+      miniCount.textContent = notes.length > 0 ? `${notes.length} note` : "Sổ tay";
+    }
+
     if (filtered.length === 0) {
       container.innerHTML = `
         <div class="notes-empty-state">

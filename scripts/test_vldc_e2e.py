@@ -23,18 +23,18 @@ def run_tests():
         page.wait_for_timeout(1000)
 
         print("\n--- 1. Testing Default Subject (KTVXL) ---")
-        brand_title = page.inner_text("#app-brand-title")
-        print(f"Brand Title: {brand_title}")
-        assert "VI XỬ LÝ" in brand_title or "TƯ TƯỞNG" in brand_title or "VẬT LÝ" in brand_title
+        brand_badge = page.inner_text("#app-brand-badge")
+        print(f"Brand Badge: {brand_badge}")
+        assert "KTVXL" in brand_badge or "VLDC" in brand_badge
 
         print("\n--- 2. Switching to Subject: VLDC ---")
         btn_vldc = page.locator("#btn-subj-vldc")
         btn_vldc.click()
         page.wait_for_timeout(500)
 
-        brand_title = page.inner_text("#app-brand-title")
-        print(f"New Brand Title: {brand_title}")
-        assert "VẬT LÝ ĐẠI CƯƠNG" in brand_title
+        brand_badge = page.inner_text("#app-brand-badge")
+        print(f"New Brand Badge: {brand_badge}")
+        assert "VLDC" in brand_badge
 
         total_count = page.inner_text("#stat-total-count")
         print(f"VLDC Total Questions: {total_count}")

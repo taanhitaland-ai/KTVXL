@@ -2363,30 +2363,45 @@ code, pre, .mono {
   #ticker-btn-view {
     align-self: flex-start;
   }
+  .neo-floating-planner-trigger,
+  .neo-floating-leaderboard-trigger,
+  .neo-floating-notes-trigger,
+  #leaderboard-trigger,
+  #btn-floating-notes {
+    right: 0 !important;
+    padding: 4px 8px !important;
+    height: 42px !important;
+    min-width: 86px !important;
+    gap: 6px !important;
+  }
   .neo-floating-planner-trigger {
     top: auto !important;
-    bottom: 120px !important;
-    right: 0 !important;
-    padding: 4px 8px !important;
-    font-size: 0.75rem !important;
+    bottom: 124px !important;
   }
   .neo-floating-leaderboard-trigger,
-  #leaderboard-trigger.neo-floating-leaderboard-trigger,
   #leaderboard-trigger {
     top: auto !important;
-    bottom: 72px !important;
-    right: 0 !important;
-    padding: 4px 8px !important;
-    font-size: 0.75rem !important;
+    bottom: 74px !important;
   }
   .neo-floating-notes-trigger,
-  #btn-floating-notes.neo-floating-notes-trigger,
   #btn-floating-notes {
     top: auto !important;
     bottom: 24px !important;
-    right: 0 !important;
-    padding: 4px 8px !important;
-    font-size: 0.75rem !important;
+  }
+  .planner-trigger-icon,
+  .leaderboard-trigger-icon,
+  .notes-trigger-icon {
+    font-size: 1.15rem !important;
+  }
+  .planner-trigger-text strong,
+  .leaderboard-trigger-text strong,
+  .notes-trigger-text strong {
+    font-size: 0.78rem !important;
+  }
+  .planner-trigger-text small,
+  .leaderboard-trigger-text small,
+  .notes-trigger-text small {
+    font-size: 0.65rem !important;
   }
 }
 @media (max-width: 600px) {
@@ -2455,131 +2470,105 @@ code, pre, .mono {
    FIXED RIGHT SIDE DRAWER & FLOATING TRIGGER (PERSISTENT WIDGET)
    ============================================================ */
 
-/* Floating Trigger Button (When Drawer is collapsed) */
-.neo-floating-planner-trigger {
-  position: fixed;
-  right: 0;
-  top: 230px;
-  z-index: 990;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--neo-yellow);
-  color: #000;
-  border: var(--border-width) solid #000;
-  border-right: none;
-  border-radius: var(--radius-md) 0 0 var(--radius-md);
-  box-shadow: -3px 3px 0px #000;
-  padding: 6px 10px;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  font-family: inherit;
-  user-select: none;
-}
-
-.neo-floating-planner-trigger:hover {
-  transform: translateX(-4px);
-  box-shadow: -5px 5px 0px #000;
-}
-
-/* Floating Trigger Button for Leaderboard (Persistent Right Docked Tab) */
+/* Base styling for all 3 persistent right-docked floating triggers */
+.neo-floating-planner-trigger,
 .neo-floating-leaderboard-trigger,
-#leaderboard-trigger.neo-floating-leaderboard-trigger,
-#leaderboard-trigger {
-  position: fixed;
-  right: 0;
-  top: 295px;
-  z-index: 990;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--neo-green);
-  color: #000;
-  border: var(--border-width) solid #000;
-  border-right: none;
-  border-radius: var(--radius-md) 0 0 var(--radius-md);
-  box-shadow: -3px 3px 0px #000;
-  padding: 6px 10px;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  font-family: inherit;
-  font-weight: 800;
-  font-size: 0.82rem;
-  user-select: none;
-  box-sizing: border-box;
-}
-
-.neo-floating-leaderboard-trigger:hover,
-#leaderboard-trigger.neo-floating-leaderboard-trigger:hover,
-#leaderboard-trigger:hover {
-  transform: translateX(-4px);
-  box-shadow: -5px 5px 0px #000;
-}
-
-.leaderboard-trigger-icon {
-  font-size: 1.15rem;
-}
-
-/* Floating Trigger Button for Quick Knowledge Notes (Persistent Right Docked Tab) */
 .neo-floating-notes-trigger,
-#btn-floating-notes.neo-floating-notes-trigger,
+#leaderboard-trigger,
 #btn-floating-notes {
   position: fixed;
   right: 0;
-  top: 360px;
   z-index: 990;
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: #A78BFA;
+  justify-content: flex-start;
+  gap: 8px;
   color: #000;
   border: var(--border-width) solid #000;
   border-right: none;
   border-radius: var(--radius-md) 0 0 var(--radius-md);
   box-shadow: -3px 3px 0px #000;
-  padding: 6px 10px;
+  padding: 6px 12px 6px 10px;
+  min-width: 104px;
+  height: 48px;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   font-family: inherit;
-  font-weight: 800;
-  font-size: 0.82rem;
   user-select: none;
   box-sizing: border-box;
 }
 
+.neo-floating-planner-trigger {
+  top: 225px;
+  background: var(--neo-yellow);
+}
+
+.neo-floating-leaderboard-trigger,
+#leaderboard-trigger {
+  top: 285px;
+  background: var(--neo-green);
+}
+
+.neo-floating-notes-trigger,
+#btn-floating-notes {
+  top: 345px;
+  background: #A78BFA;
+}
+
+.neo-floating-planner-trigger:hover,
+.neo-floating-leaderboard-trigger:hover,
 .neo-floating-notes-trigger:hover,
-#btn-floating-notes.neo-floating-notes-trigger:hover,
+#leaderboard-trigger:hover,
 #btn-floating-notes:hover {
   transform: translateX(-4px);
   box-shadow: -5px 5px 0px #000;
 }
 
+.planner-trigger-icon,
+.leaderboard-trigger-icon,
 .notes-trigger-icon {
-  font-size: 1.15rem;
+  font-size: 1.35rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .planner-trigger-icon {
-  font-size: 1.4rem;
   animation: pulse-urgent 2s infinite ease-in-out;
 }
 
-.planner-trigger-text {
+.planner-trigger-text,
+.leaderboard-trigger-text,
+.notes-trigger-text {
   display: flex;
   flex-direction: column;
   text-align: left;
   line-height: 1.15;
 }
 
-.planner-trigger-text strong {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.95rem;
+.planner-trigger-text strong,
+.leaderboard-trigger-text strong,
+.notes-trigger-text strong {
+  font-family: inherit;
+  font-size: 0.88rem;
   font-weight: 900;
+  color: #000;
+  white-space: nowrap;
 }
 
-.planner-trigger-text small {
-  font-size: 0.72rem;
+.planner-trigger-text strong {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.planner-trigger-text small,
+.leaderboard-trigger-text small,
+.notes-trigger-text small {
+  font-size: 0.70rem;
   font-weight: 800;
-  color: #4B5563;
+  color: #374151;
+  white-space: nowrap;
 }
 
 /* Fixed Right Side Drawer */

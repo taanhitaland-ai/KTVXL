@@ -135,27 +135,27 @@
     // Update Header Brand
     const brandBadge = document.getElementById('app-brand-badge');
     const brandTitle = document.getElementById('app-brand-title');
-    if (brandBadge && brandTitle) {
+    if (brandBadge) {
       if (subject === 'xstk') {
         brandBadge.textContent = '🎲 XSTK';
         brandBadge.style.background = '#059669';
         brandBadge.style.color = '#FFF';
-        brandTitle.textContent = 'XÁC SUẤT THỐNG KÊ';
+        if (brandTitle) brandTitle.textContent = 'XÁC SUẤT THỐNG KÊ';
       } else if (subject === 'vldc') {
         brandBadge.textContent = '⚛️ VLDC';
         brandBadge.style.background = '#2563EB';
         brandBadge.style.color = '#FFF';
-        brandTitle.textContent = 'VẬT LÝ ĐẠI CƯƠNG';
+        if (brandTitle) brandTitle.textContent = 'VẬT LÝ ĐẠI CƯƠNG';
       } else if (subject === 'tthcm') {
         brandBadge.textContent = '📕 TTHCM';
         brandBadge.style.background = '#EF4444';
         brandBadge.style.color = '#FFF';
-        brandTitle.textContent = 'TƯ TƯỞNG HCM';
+        if (brandTitle) brandTitle.textContent = 'TƯ TƯỞNG HCM';
       } else {
         brandBadge.textContent = '⚡ KTVXL';
         brandBadge.style.background = '#000';
         brandBadge.style.color = 'var(--neo-yellow)';
-        brandTitle.textContent = 'VI XỬ LÝ';
+        if (brandTitle) brandTitle.textContent = 'VI XỬ LÝ';
       }
     }
 
