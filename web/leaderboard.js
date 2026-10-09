@@ -355,7 +355,7 @@
     dialog.append(top, main, personal);
     document.body.append(dialog);
     dialog.addEventListener("close", () =>
-      lastTrigger?.focus({ preventScroll: true }),
+      (lastTrigger?.getClientRects().length && !lastTrigger.closest('[inert]') ? lastTrigger : document.getElementById('study-tools-toggle'))?.focus({ preventScroll: true }),
     );
     dialog.addEventListener("click", (event) => {
       if (event.target !== dialog) return;

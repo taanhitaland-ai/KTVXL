@@ -1,5 +1,8 @@
 /* Add a new stable ID for each release; never reuse IDs already marked as read. */
 window.KMA_SITE_UPDATES = [
+  { id: '2026-10-09-responsive-study-tools', date: '09/10/2026', title: 'Thanh công cụ gọn hơn trên máy tính và điện thoại',
+    added: ['Máy tính: ba công cụ Pomodoro, Xếp hạng và Ghi chú nằm trong thanh dọc nhỏ; bấm tay cầm = để thu/mở, kéo để đổi vị trí.', 'Điện thoại: khay công cụ ở đáy màn hình, vuốt lên để mở và vuốt xuống để thu; có thể chạm tay cầm để mở/đóng.'],
+    fixed: ['Khay điện thoại mặc định thu gọn; mở một chức năng sẽ tự thu khay. Pomodoro vẫn chạy khi công cụ được thu gọn.', 'Màu riêng cho giao diện sáng/tối, giữ công cụ trong màn hình khi đổi kích thước và nhớ trạng thái riêng của từng giao diện.'] },
   { id: '2026-10-09-vixuly-practice-review', date: '09/10/2026', title: 'Rà soát Vi xử lý Part 9–18',
     added: ['Chuyển 191 câu dạng điền trong Part 9–18 sang trắc nghiệm 4 phương án, một đáp án đúng; giữ nguyên ID câu hỏi.'],
     fixed: ['Rà soát 546 câu: sửa đề, lựa chọn và lời giải về lệnh 8051, cờ trạng thái, RAM, timer và UART; bổ sung dữ kiện và mã chương trình ở các câu lỗi.', 'Giữ ghi chú, dấu sao và lịch sử cũ. Những câu đã thay đổi đề hoặc phương án nên làm lại; các tệp PDF cũ chưa được cập nhật.'] },

@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="cloud_account.css?v=863383cdf754">
   <link rel="stylesheet" href="study_streak.css?v=62796319bae2">
   <link rel="stylesheet" href="leaderboard.css?v=e63c65fc8d65">
+  <link rel="stylesheet" href="study_tools.css?v=ef1e4a9987a1">
   <script src="vendor/supabase/supabase.js?v=d6a5c4414a5d"></script>
   <script src="cloud_config.js?v=ae6d75b48a2d"></script>
   <script src="cloud_sync_model.js?v=9c1b456db713"></script>
@@ -30,7 +31,7 @@
   <script src="study_streak.js?v=76683caffd3a"></script>
   <script src="cloud_account.js?v=9756f83414c7"></script>
   <script src="leaderboard_model.js?v=575a9a2e8b35"></script>
-  <script src="leaderboard.js?v=f77d485a2da7"></script>
+  <script src="leaderboard.js?v=4a6a5364d958"></script>
 </head>
 <body>
 
@@ -1794,10 +1795,17 @@
     </div>
   </div>
 
+  <!-- Draggable frame retains the original three tool buttons. -->
+  <section id="study-tools" class="study-tools-frame" aria-label="Công cụ học tập có thể di chuyển">
+    <button type="button" id="study-tools-toggle" class="study-tools-grip" aria-expanded="true" aria-controls="study-tools-body" aria-label="Tay cầm công cụ: bấm để thu gọn, kéo để di chuyển" title="Bấm để thu gọn hoặc mở lại. Kéo để di chuyển; phím mũi tên cũng dùng được.">
+      <svg viewBox="0 0 28 20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" aria-hidden="true"><path class="grip-top" d="M5 6h18"/><path class="grip-bottom" d="M5 14h18"/></svg>
+    </button>
+    <div id="study-tools-body" class="study-tools-body">
   <!-- Persistent Floating Trigger Button for Pomodoro & Schedule -->
   <button id="btn-floating-planner" class="neo-floating-planner-trigger" title="Mở thanh Pomodoro & Lịch thi bên phải">
     <span class="planner-trigger-icon">🍅</span>
     <span class="planner-trigger-text">
+      <span class="tool-mobile-title">Pomodoro &amp; Lịch thi</span>
       <strong id="floating-pomo-digits">25:00</strong>
       <small id="floating-exam-mini">⚡ 5d 16h</small>
     </span>
@@ -1807,7 +1815,7 @@
   <button id="leaderboard-trigger" class="neo-floating-leaderboard-trigger" title="Xem Bảng Xếp Hạng">
     <span class="leaderboard-trigger-icon">🏆</span>
     <span class="leaderboard-trigger-text">
-      <strong>Xếp Hạng</strong>
+      <strong>Xếp<br> hạng</strong>
       <small>Top 10</small>
     </span>
   </button>
@@ -1816,10 +1824,13 @@
   <button id="btn-floating-notes" class="neo-floating-notes-trigger" title="Mở Sổ Tay Ghi Chú Kiến Thức">
     <span class="notes-trigger-icon">📝</span>
     <span class="notes-trigger-text">
-      <strong>Ghi Chú</strong>
+      <strong>Ghi chú</strong>
       <small id="floating-notes-count-mini">Sổ tay</small>
     </span>
   </button>
+
+    </div>
+  </section>
 
   <!-- Persistent Fixed Right Side Drawer -->
   <aside id="side-planner-drawer" class="side-planner-drawer" aria-label="Thanh công cụ Pomodoro và Lịch thi">
@@ -2075,7 +2086,7 @@
   <script src="question_notes.js?v=f89ffb09ba14"></script>
   <script src="text_highlights_store.js?v=f396ef55b61e"></script>
   <script src="text_highlights.js?v=b46a8faf0527"></script>
-  <script src="site_updates_data.js?v=6aadfb348a3b"></script>
+  <script src="site_updates_data.js?v=4a26216f00d0"></script>
   <script src="site_updates.js?v=b3d947d39cac"></script>
   <script src="app.js?v=29cf18a32ca7"></script>
   <script src="schedule_pomodoro.js?v=7edb7b8a92d5"></script>
@@ -2083,5 +2094,6 @@
   <script src="music_library.js?v=4fa249c951de"></script>
   <script src="study_music.js?v=7e38c5e1bb49"></script>
   <script src="stress_dice.js?v=2b1a9037735d"></script>
+  <script src="study_tools.js?v=c5139a650706"></script>
 </body>
 </html>
