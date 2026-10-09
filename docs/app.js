@@ -1064,9 +1064,21 @@
     }
   }
 
+  function canRecordAnswer() {
+    if (window.KMA_ACCOUNT?.requireLearningAccount)
+      return window.KMA_ACCOUNT.requireLearningAccount();
+    // Authoring previews stay local. The public site fails closed if auth cannot load.
+    const publicSite = location.protocol === 'https:' && location.hostname === 'taanhitaland-ai.github.io' &&
+      (location.pathname === '/KTVXL' || location.pathname.startsWith('/KTVXL/'));
+    if (!publicSite && !window.KMA_CLOUD_CONFIG) return true;
+    alert('Chưa tải được đăng nhập. Hãy tải lại trang để đăng nhập và bảo vệ tiến trình.');
+    return false;
+  }
+
   // Handle MCQ selection
   function handleSelectMCQ(q, letter, card, optsGrid, isExamMode) {
     if (isExamMode && !examActive) return;
+    if (!canRecordAnswer()) return;
     const isCorrect = (letter.toUpperCase() === String(q.answer).toUpperCase());
 
     if (isExamMode) {
@@ -1112,6 +1124,7 @@
   // Handle FIB input
   function handleCheckFIB(q, val, feedbackEl, card, isExamMode) {
     if (isExamMode && !examActive) return;
+    if (!canRecordAnswer()) return;
     const norm = val.trim().toUpperCase().replace(/H$/, '');
     let isCorrect = false;
 
@@ -1555,6 +1568,7 @@
   }
 
   function startExam() {
+    if (!canRecordAnswer()) return;
     if (examActive) return;
     const selected = examConfig.select(currentSubject, questions, currentExamCode);
     if (!selected.length) { alert('Đề đã chọn chưa có câu hỏi. Vui lòng chọn đề khác.'); return; }

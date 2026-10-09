@@ -22,6 +22,12 @@ RLS bật ở cả bốn bảng. Người đăng nhập chỉ đọc dữ liệu
 
 Giới hạn: ghi chú 2.000 ký tự, biệt danh 32 ký tự, 25.000 bản ghi/tài khoản, 200 thao tác/request, phiên xếp hạng 1–300 phút (migration 002). Chỉ một phiên active/tài khoản. Phiên active quá 24 giờ được hủy trước khi mở phiên mới.
 
+## Đăng nhập và biệt danh
+
+Trang chính yêu cầu phiên đăng nhập Google đã được xác nhận và biệt danh hợp lệ trước khi ghi nhận đáp án hoặc bắt đầu bài thi. ID tài khoản lưu tại máy không thay thế việc xác nhận phiên; phiên Supabase anonymous không được dùng để vượt bước đăng nhập. Khi hồ sơ chưa tải được, giao diện cho thử lại thay vì xem tài khoản là khách hoặc ghi đè tên có sẵn.
+
+Biệt danh sử dụng cột `study_profiles.nickname` và RPC `study_set_profile` hiện có, không cần migration mới. Tên mặc định trống/Người học/Anonymous yêu cầu chọn lại sau đăng nhập; tên riêng hợp lệ được giữ. Tên là biệt danh hiển thị (2–32 ký tự), không phải định danh đăng nhập duy nhất; dữ liệu tiếp tục gắn với UUID Google/Supabase. Giao diện dùng văn bản thuần, chuẩn hóa NFC, kiểm tra ký tự và không chèn tên qua HTML. Lưu tên chỉ cập nhật hồ sơ, không xóa lịch sử hoặc sửa phút Pomodoro. Local preview vẫn tách biệt khỏi database production; thử auth bằng fixture độc lập.
+
 ## Lưu tại máy
 
 Giữ nguyên các khóa/schema khách. Adapter chỉ chuyển các khóa dữ liệu học vào namespace `kma_cloud_v1:USER_ID:data:` khi có tài khoản, giữ phiên/outbox và version riêng. Mỗi thao tác có UUID độc lập và bất biến sau khi xếp hàng. Bản mới phát sinh trong lúc gửi được giữ để gửi tiếp. Không dùng cả snapshot của một môn để ghi đè database.

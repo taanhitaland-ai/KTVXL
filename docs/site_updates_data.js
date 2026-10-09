@@ -1,5 +1,8 @@
 /* Add a new stable ID for each release; never reuse IDs already marked as read. */
 window.KMA_SITE_UPDATES = [
+  { id: '2026-10-09-learning-account-name', date: '09/10/2026', title: 'Đăng nhập và chọn tên khi ôn tập',
+    added: ['Đăng nhập Google trước khi chọn đáp án hoặc bắt đầu thi thử để lưu tiến trình theo tài khoản.', 'Tài khoản chưa có biệt danh hoặc đang dùng tên mặc định Người học/Anonymous cần chọn tên riêng để mọi người nhận ra bạn trên bảng xếp hạng.'],
+    fixed: ['Giữ nguyên câu đã làm, ghi chú và phút Pomodoro khi đổi tên; bảng xếp hạng cập nhật biệt danh đã lưu.', 'Kiểm tra tên, chuẩn hóa dấu tiếng Việt và giữ nội dung dưới dạng văn bản an toàn.'] },
   { id: '2026-10-09-responsive-study-tools', date: '09/10/2026', title: 'Thanh công cụ gọn hơn trên máy tính và điện thoại',
     added: ['Máy tính: ba công cụ Pomodoro, Xếp hạng và Ghi chú nằm trong thanh dọc nhỏ; bấm tay cầm = để thu/mở, kéo để đổi vị trí.', 'Điện thoại: khay công cụ ở đáy màn hình, vuốt lên để mở và vuốt xuống để thu; có thể chạm tay cầm để mở/đóng.'],
     fixed: ['Khay điện thoại mặc định thu gọn; mở một chức năng sẽ tự thu khay. Pomodoro vẫn chạy khi công cụ được thu gọn.', 'Màu riêng cho giao diện sáng/tối, giữ công cụ trong màn hình khi đổi kích thước và nhớ trạng thái riêng của từng giao diện.'] },

@@ -104,6 +104,28 @@ body {
   background: #13091eb8;
   backdrop-filter: blur(4px);
 }
+.sync-account-dialog[data-view="username"] > .sync-dialog-close {
+  display: none;
+}
+.sync-form-error {
+  color: #a21c36;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.sync-form-error:empty {
+  display: none;
+}
+body.dark-mode .sync-form-error {
+  color: #ff9caf;
+}
+.sync-username-form .sync-btn {
+  width: 100%;
+}
+.sync-input[aria-invalid="true"] {
+  border-color: #b81e3d;
+}
 body.dark-mode .sync-account-dialog {
   --sync-surface: #291b3b;
   --sync-raised: #362448;
