@@ -311,3 +311,76 @@ body.dark-mode .notes-empty-state {
 body.dark-mode .notes-empty-state p {
   color: #94A3B8;
 }
+
+body.dark-mode .notes-editor-tabs .notes-tab-toggle {
+  background: var(--night-raised);
+  border-color: var(--border-color);
+  color: var(--text-muted);
+}
+body.dark-mode .notes-editor-tabs .notes-tab-toggle.active {
+  background: var(--night-accent);
+  color: #000;
+}
+body.dark-mode .notes-preview-pane {
+  background: var(--night-card);
+  border-color: var(--border-color);
+  color: var(--text-main);
+  box-shadow: 1.5px 1.5px 0 #10091B;
+}
+body.dark-mode .notes-preview-empty {
+  color: var(--text-muted);
+}
+body.dark-mode .note-item-content,
+body.dark-mode .notes-preview-pane {
+  color: var(--text-main);
+}
+body.dark-mode .note-item-content :is(h1, h2, h3, h4, h5, h6),
+body.dark-mode .notes-preview-pane :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--night-accent);
+}
+body.dark-mode .note-item-content h1,
+body.dark-mode .notes-preview-pane h1 {
+  border-bottom-color: var(--border-color);
+}
+body.dark-mode .note-item-content blockquote,
+body.dark-mode .notes-preview-pane blockquote {
+  background: var(--night-raised);
+  border-left-color: var(--night-accent);
+  color: var(--text-main);
+}
+body.dark-mode .note-inline-code {
+  background: var(--night-raised);
+  border-color: var(--border-color);
+  color: #F472B6;
+}
+body.dark-mode .note-code-block {
+  background: #0D0814;
+  border-color: var(--border-color);
+  color: #E2E8F0;
+}
+body.dark-mode .note-raw-source {
+  background: var(--night-raised);
+  border-color: var(--border-color);
+  color: #E2E8F0;
+}
+body.dark-mode .note-md-table th,
+body.dark-mode .note-md-table td {
+  border-color: var(--border-color);
+}
+body.dark-mode .note-md-table th {
+  background: var(--night-raised);
+  color: var(--night-accent);
+}
+body.dark-mode .note-md-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.03);
+}
+body.dark-mode .note-highlight {
+  background: #854D0E;
+  color: #FEF08A;
+  border-color: #CA8A04;
+}
+body.dark-mode .note-mini-btn.active-view {
+  background: #14532D;
+  color: #86EFAC;
+}
+

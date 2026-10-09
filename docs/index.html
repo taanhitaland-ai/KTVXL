@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KTVXL by ashv4ni &amp; henise</title>
   <link rel="stylesheet" href="vendor/fonts/be-vietnam-pro.css?v=64620ee3a752">
-  <link rel="stylesheet" href="styles.css?v=c95314a9fdb8">
+  <link rel="stylesheet" href="styles.css?v=dc47e2071f97">
   <link rel="stylesheet" href="chapter_diagrams.css?v=b00efd3cfd30">
-  <link rel="stylesheet" href="dark_theme.css?v=99ff5c49fba1">
+  <link rel="stylesheet" href="dark_theme.css?v=0b24f49656eb">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23FFE600' stroke='%23000' stroke-width='8'/><text x='50%' y='60%' font-size='42' font-weight='900' text-anchor='middle' fill='%23000'>8051</text></svg>">
   
   <link rel="stylesheet" href="study_music.css?v=2f9e07c2fda1">
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="cloud_account.css?v=863383cdf754">
   <link rel="stylesheet" href="study_streak.css?v=62796319bae2">
   <link rel="stylesheet" href="leaderboard.css?v=e63c65fc8d65">
-  <link rel="stylesheet" href="study_tools.css?v=ef1e4a9987a1">
+  <link rel="stylesheet" href="study_tools.css?v=a53bc3f68add">
   <script src="vendor/supabase/supabase.js?v=d6a5c4414a5d"></script>
   <script src="cloud_config.js?v=ae6d75b48a2d"></script>
   <script src="cloud_sync_model.js?v=9c1b456db713"></script>
@@ -31,7 +31,7 @@
   <script src="study_streak.js?v=76683caffd3a"></script>
   <script src="cloud_account.js?v=9756f83414c7"></script>
   <script src="leaderboard_model.js?v=575a9a2e8b35"></script>
-  <script src="leaderboard.js?v=4a6a5364d958"></script>
+  <script src="leaderboard.js?v=0eb4f0015ad7"></script>
 </head>
 <body>
 
@@ -1812,11 +1812,10 @@
   </button>
 
   <!-- Persistent Floating Trigger Button for Leaderboard -->
-  <button id="leaderboard-trigger" class="neo-floating-leaderboard-trigger" title="Xem Bảng Xếp Hạng">
+  <button id="leaderboard-trigger" class="neo-floating-leaderboard-trigger" title="Xem Bảng Xếp Hạng Top 10">
     <span class="leaderboard-trigger-icon">🏆</span>
     <span class="leaderboard-trigger-text">
-      <strong>Xếp<br> hạng</strong>
-      <small>Top 10</small>
+      <strong>Top 10</strong>
     </span>
   </button>
 
@@ -2022,7 +2021,16 @@
           </select>
         </div>
         <input type="text" id="quick-note-title-input" class="notes-input" placeholder="Tiêu đề (ví dụ: Công thức chu kỳ T, Mẹo Casio...)" maxlength="120">
-        <textarea id="quick-note-content-input" class="notes-textarea" placeholder="Nội dung kiến thức cần ghi nhớ, công thức, cách giải nhanh..." rows="3" maxlength="2000"></textarea>
+        <div class="notes-editor-tabs" role="tablist" aria-label="Chế độ soạn thảo ghi chú">
+          <button type="button" class="notes-tab-toggle active" id="btn-note-write-tab" data-tab="write">
+            ✏️ Soạn thảo (Markdown)
+          </button>
+          <button type="button" class="notes-tab-toggle" id="btn-note-preview-tab" data-tab="preview">
+            👁️ Xem trước (Preview)
+          </button>
+        </div>
+        <textarea id="quick-note-content-input" class="notes-textarea" placeholder="Nội dung ghi nhớ, hỗ trợ Markdown (**in đậm**, *nghiêng*, `code`, - danh sách, $công thức toán$...)" rows="3" maxlength="2000"></textarea>
+        <div id="quick-note-preview-pane" class="notes-preview-pane" style="display: none;" aria-live="polite"></div>
         <div class="notes-create-footer">
           <div class="notes-color-picker" title="Chọn màu thẻ ghi chú">
             <button type="button" class="notes-color-dot color-yellow active" data-color="yellow" title="Vàng chanh"></button>
@@ -2090,7 +2098,7 @@
   <script src="site_updates.js?v=b3d947d39cac"></script>
   <script src="app.js?v=29cf18a32ca7"></script>
   <script src="schedule_pomodoro.js?v=7edb7b8a92d5"></script>
-  <script src="quick_notes.js?v=40108740b666"></script>
+  <script src="quick_notes.js?v=bb120e2ab576"></script>
   <script src="music_library.js?v=4fa249c951de"></script>
   <script src="study_music.js?v=7e38c5e1bb49"></script>
   <script src="stress_dice.js?v=2b1a9037735d"></script>

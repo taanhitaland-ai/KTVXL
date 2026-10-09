@@ -3044,6 +3044,59 @@ body.notes-pinned .side-notes-drawer {
   white-space: nowrap;
 }
 
+/* Quick Notes Editor Tabs */
+.notes-editor-tabs {
+  display: flex;
+  gap: 6px;
+  margin: 6px 0 4px;
+}
+
+.notes-tab-toggle {
+  background: #F1F5F9;
+  color: #334155;
+  border: 1.5px solid #000;
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 1px 1px 0 #000;
+  transition: all 0.1s ease;
+}
+
+.notes-tab-toggle:hover {
+  background: #E2E8F0;
+  transform: translateY(-1px);
+}
+
+.notes-tab-toggle.active {
+  background: var(--neo-yellow);
+  color: #000;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.notes-preview-pane {
+  background: #FFF;
+  border: var(--border-width) solid #000;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  min-height: 92px;
+  max-height: 220px;
+  overflow-y: auto;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #1E293B;
+  box-shadow: 1.5px 1.5px 0 #000;
+  word-break: break-word;
+}
+
+.notes-preview-empty {
+  color: #94A3B8;
+  font-size: 0.78rem;
+  font-style: italic;
+  margin: 0;
+}
+
 /* Notes List & Cards */
 .quick-notes-container {
   display: flex;
@@ -3134,6 +3187,11 @@ body.notes-pinned .side-notes-drawer {
   transform: scale(1.05);
 }
 
+.note-mini-btn.active-view {
+  background: #C6F4D6;
+  font-weight: 800;
+}
+
 .note-item-title {
   font-weight: 900;
   font-size: 0.92rem;
@@ -3143,10 +3201,148 @@ body.notes-pinned .side-notes-drawer {
 
 .note-item-content {
   font-size: 0.82rem;
-  line-height: 1.45;
+  line-height: 1.5;
   color: #1E293B;
-  white-space: pre-wrap;
   word-break: break-word;
+}
+
+.note-raw-source {
+  font-family: 'JetBrains Mono', monospace, Consolas;
+  font-size: 0.76rem;
+  background: #F8FAFC;
+  border: 1px dashed #64748B;
+  border-radius: 4px;
+  padding: 8px;
+  white-space: pre-wrap;
+  margin: 0;
+  color: #334155;
+}
+
+/* Markdown typography inside notes */
+.note-item-content p,
+.notes-preview-pane p {
+  margin: 0 0 6px 0;
+}
+
+.note-item-content p:last-child,
+.notes-preview-pane p:last-child {
+  margin-bottom: 0;
+}
+
+.note-item-content :is(h1, h2, h3, h4, h5, h6),
+.notes-preview-pane :is(h1, h2, h3, h4, h5, h6) {
+  margin: 8px 0 4px 0;
+  font-weight: 900;
+  line-height: 1.25;
+  color: #0F172A;
+}
+
+.note-item-content h1, .notes-preview-pane h1 { font-size: 0.98rem; border-bottom: 1.5px solid #000; padding-bottom: 2px; }
+.note-item-content h2, .notes-preview-pane h2 { font-size: 0.92rem; }
+.note-item-content h3, .notes-preview-pane h3 { font-size: 0.86rem; }
+.note-item-content h4, .notes-preview-pane h4 { font-size: 0.82rem; }
+
+.note-item-content :is(ul, ol),
+.notes-preview-pane :is(ul, ol) {
+  margin: 4px 0 6px 0;
+  padding-left: 20px;
+}
+
+.note-item-content li,
+.notes-preview-pane li {
+  margin-bottom: 2px;
+}
+
+.note-item-content blockquote,
+.notes-preview-pane blockquote {
+  margin: 6px 0;
+  padding: 4px 8px;
+  background: #F8FAFC;
+  border-left: 3px solid #8B5CF6;
+  border-radius: 2px;
+  font-style: italic;
+  color: #334155;
+}
+
+.note-item-content blockquote p,
+.notes-preview-pane blockquote p {
+  margin: 0;
+}
+
+.note-inline-code {
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-family: 'JetBrains Mono', monospace, Consolas;
+  font-size: 0.78rem;
+  color: #9333EA;
+  font-weight: 700;
+}
+
+.note-code-block {
+  background: #0F172A;
+  color: #F8FAFC;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace, Consolas;
+  font-size: 0.76rem;
+  overflow-x: auto;
+  margin: 6px 0;
+  border: 1px solid #000;
+}
+
+.note-code-block code {
+  color: inherit;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.note-table-wrapper {
+  overflow-x: auto;
+  margin: 6px 0;
+}
+
+.note-md-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.note-md-table th,
+.note-md-table td {
+  border: 1px solid #000;
+  padding: 4px 6px;
+  text-align: left;
+}
+
+.note-md-table th {
+  background: #FEF08A;
+  font-weight: 800;
+}
+
+.note-md-table tr:nth-child(even) td {
+  background: #F8FAFC;
+}
+
+.note-hr {
+  border: none;
+  border-top: 1.5px dashed #64748B;
+  margin: 8px 0;
+}
+
+.note-highlight {
+  background: #FEF08A;
+  padding: 1px 4px;
+  border-radius: 2px;
+  border: 1px solid #EAB308;
+}
+
+.note-todo-checkbox {
+  vertical-align: middle;
+  margin-right: 4px;
+  accent-color: var(--neo-green);
 }
 
 /* Edit Mode Box */

@@ -370,7 +370,7 @@
     });
     let trigger = document.getElementById("leaderboard-trigger");
     if (!trigger) {
-      trigger = button("🏆 Xếp hạng", "lb-trigger neo-floating-leaderboard-trigger", (event) =>
+      trigger = button("🏆 Top 10", "lb-trigger neo-floating-leaderboard-trigger", (event) =>
         open(event.currentTarget),
       );
       trigger.id = "leaderboard-trigger";
