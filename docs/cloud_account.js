@@ -16,7 +16,12 @@
       },
     },
   );
-  const ns = "kma_cloud_v1:",
+  // Separate simulated accounts so opening another demo cannot reload this page.
+  // Real accounts keep their existing storage namespace.
+  const previewNamespace = config.url === "https://fixture.invalid" &&
+    ["localhost", "127.0.0.1"].includes(location.hostname) &&
+    /^kma_preview_[a-z_-]+:$/.test(config.storageNamespace || "");
+  const ns = previewNamespace ? config.storageNamespace : "kma_cloud_v1:",
     ownerKey = ns + "owner";
   const nativeGet = Storage.prototype.getItem,
     nativeSet = Storage.prototype.setItem,
@@ -26,6 +31,7 @@
     remove = (key) => nativeRemove.call(localStorage, key);
   let user = /^[0-9a-f-]{36}$/.test(get(ownerKey) || "") ? get(ownerKey) : null;
   let authenticated = false,
+    activityToken = null,
     authResolved = false,
     profileReady = false,
     profileRevision = 0,
@@ -381,7 +387,7 @@
     for (const text of [
       "Câu đã làm và câu gắn sao theo tài khoản",
       "Ghi chú đủ màu, giữ nguyên trên thiết bị khác",
-      "Lịch sử học và bảng xếp hạng Pomodoro",
+      "Lịch sử học, chuỗi học và bảng xếp hạng",
     ])
       list.append(el("li", "", "✓ " + text));
     modalBody.append(list);
@@ -407,21 +413,19 @@
       },
     );
     login.prepend(googleIcon());
-    modalBody.append(
-      login,
-      button("Để sau", "sync-text-button", () =>
-        dialog.close(),
-      ),
-    );
+    modalBody.append(login);
+    const footer = el("div", "sync-welcome-footer");
+    footer.append(button("Để sau", "sync-text-button", () => dialog.close()));
     const privacy = el(
       "a",
-      "sync-text-button",
+      "sync-text-button sync-privacy-link",
       "Quyền riêng tư và dữ liệu học tập",
     );
     privacy.href = "privacy.html";
     privacy.target = "_blank";
     privacy.rel = "noopener";
-    modalBody.append(privacy);
+    footer.append(privacy);
+    modalBody.append(footer);
   }
   async function saveNickname(value) {
     const validation = P.nicknameError(value);
@@ -441,6 +445,8 @@
     window.dispatchEvent(new CustomEvent("kma:cloud-updated"));
   }
   function signOut() {
+    const activity = window.KMA_STUDY_ACTIVITY?.getState();
+    if (activity?.started) window.KMA_STUDY_ACTIVITY.stop();
     return client.auth.signOut({ scope: "local" });
   }
   function showUsername() {
@@ -497,7 +503,7 @@
         save.disabled = !!P.nicknameError(input.value);
       }
     });
-    form.append(label, input, hint, feedback, el("p", "sync-info", "Có phút Pomodoro là bạn tự động có tên trên bảng. Tiến trình và ghi chú vẫn riêng tư."), save);
+    form.append(label, input, hint, feedback, el("p", "sync-info", "Có phút học tự động là bạn tự động có tên trên bảng. Tiến trình và ghi chú vẫn riêng tư."), save);
     const logout = button("Đăng xuất", "sync-text-button sync-sign-out", async () => {
       if (saving) return;
       logout.disabled = true;
@@ -583,7 +589,7 @@
       el(
         "p",
         "sync-info",
-        "Có thời gian Pomodoro là bạn tự động có tên trên bảng xếp hạng. Chỉ biệt danh và thời gian học được công khai; tiến trình và ghi chú vẫn riêng tư.",
+        (window.KMA_GARDEN_PREVIEW || config.gardenEnabled) ? "Có thời gian học là bạn có tên trên BXH. Biệt danh, thời gian học, bộ sưu tập và giá trị được công khai; tiến trình và ghi chú vẫn riêng tư." : "Có thời gian học tự động là bạn tự động có tên trên bảng xếp hạng. Chỉ biệt danh và thời gian học được công khai; tiến trình và ghi chú vẫn riêng tư.",
       ),
       save,
     );
@@ -608,6 +614,7 @@
       }),
     );
     modalBody.append(actions);
+    window.dispatchEvent(new CustomEvent("kma:profile-rendered", {detail:{container:modalBody}}));
   }
   function showStreak() {
     if (!streakDialog || !window.KMA_STREAK) return;
@@ -852,7 +859,7 @@
             });
           rankingTimes.set(key, Date.now());
           window.dispatchEvent(new CustomEvent("kma:ranking-updated"));
-          notify("Chưa tải được bảng xếp hạng. Bấm làm mới để thử lại.");
+          notify("Chưa tải được bảng xếp hạng. Thử mở lại khi kết nối ổn định.");
         })
         .finally(() => {
           rankingRequests.delete(key);
@@ -1079,11 +1086,38 @@
   function timerStorageKey() {
     return ns + (user || "guest") + ":timer";
   }
+  let activitySequence = 0;
+  async function activityPulse({ clientId, subject, idleSeconds, claim, stop }) {
+    if (accessState() !== "ready") throw new Error("Learning account required");
+    const data = await rpc("study_activity_pulse", {
+      p_client: clientId,
+      p_subject: subject,
+      p_idle_seconds: idleSeconds,
+      p_sequence: ++activitySequence,
+      p_claim: claim,
+      p_stop: stop,
+    });
+    if (data?.credited) {
+      scheduleSync();
+      refreshRanking();
+    }
+    return data;
+  }
+  function activityLeave(clientId, subject) {
+    if (!activityToken || accessState() !== "ready") return;
+    // Keep the final stop request alive when navigating away. Credentials stay in memory.
+    fetch(config.url + "/rest/v1/rpc/study_activity_pulse", {
+      method: "POST", keepalive: true,
+      headers: { apikey: config.publishableKey, Authorization: "Bearer " + activityToken, "Content-Type": "application/json" },
+      body: JSON.stringify({ p_client: clientId, p_subject: subject, p_idle_seconds: 900, p_sequence: ++activitySequence, p_claim: false, p_stop: true }),
+    }).catch(() => {});
+  }
   async function resumeAuth(session) {
     // Supabase anonymous sessions do not satisfy the Google account requirement.
     const next = session?.user?.is_anonymous ? null : session?.user?.id || null;
     authResolved = true;
     authenticated = !!next;
+    activityToken = authenticated ? session.access_token || null : null;
     if (next !== user) {
       if (next) set(ownerKey, next);
       else remove(ownerKey);
@@ -1201,6 +1235,7 @@
       renderStatus();
     } else await resumeAuth(data.session);
     client.auth.onAuthStateChange((event, session) => {
+      activityToken = session?.user?.is_anonymous ? null : session?.access_token || null;
       if (event === "SIGNED_OUT" || event === "SIGNED_IN")
         setTimeout(() => resumeAuth(session), 0);
     });
@@ -1244,9 +1279,18 @@
   window.KMA_ACCOUNT = {
     isDemo: false,
     timerStorageKey,
+    activityPulse,
+    activityLeave,
     refreshRanking,
+    gardenRequest: (action, args = {}) => {
+      const names = {snapshot:"study_garden_snapshot",plant:"study_garden_plant",harvest:"study_garden_harvest",layout:"study_garden_layout",public:"study_garden_public"};
+      if (!names[action]) return Promise.reject(new Error("Thao tác vườn không hợp lệ."));
+      return rpc(names[action], args);
+    },
     openAccount,
     requireLearningAccount,
+    getLearningAccess: accessState, // Hot path: no scan of the sync outbox.
+    getLearningIdentity: () => ({ user, access: accessState() }),
     openStreak: showStreak,
     sync,
     getRankingSnapshot,

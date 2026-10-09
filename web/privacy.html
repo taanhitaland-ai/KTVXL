@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Quyền riêng tư · KTVXL</title>
     <link rel="stylesheet" href="vendor/fonts/be-vietnam-pro.css" />
+    <script>
+      try { const mode = localStorage.getItem('kma_theme_mode_v1'); if (mode === 'light' || mode === 'dark') document.documentElement.dataset.theme = mode; } catch (_) {}
+    </script>
     <style>
       :root {
         color-scheme: light dark;
@@ -63,12 +66,15 @@
         margin: 8px 0;
       }
       @media (prefers-color-scheme: dark) {
-        :root {
+        :root:not([data-theme="light"]) {
           --paper: #2b2045;
           --page: #160e25;
           --ink: #f4f0ff;
           --muted: #cec4df;
         }
+      }
+      :root[data-theme="dark"] {
+        --paper: #2b2045; --page: #160e25; --ink: #f4f0ff; --muted: #cec4df;
       }
       @media (max-width: 600px) {
         main {
@@ -83,77 +89,20 @@
     <main>
       <a class="back" href="index.html">← Về góc học</a>
       <h1>Quyền riêng tư và dữ liệu học tập</h1>
-      <p class="date">KTVXL · Cập nhật ngày 09/10/2026</p>
-      <p>
-        Bạn cần đăng nhập Google và chọn biệt danh để chọn đáp án hoặc bắt đầu
-        thi thử trên trang chính. Tiến trình được lưu theo tài khoản để tiếp tục
-        học giữa các thiết bị và tham gia bảng xếp hạng Pomodoro.
-      </p>
-      <h2>Dữ liệu được lưu</h2>
+      <p class="date">KTVXL · Cập nhật ngày 10/10/2026</p>
+      <p>Đăng nhập Google và chọn biệt danh để lưu tiến trình, tiếp tục ôn tập trên máy tính hoặc điện thoại. Google xác thực tài khoản; dữ liệu học được lưu trên Supabase.</p>
+      <h2>Dữ liệu học của bạn</h2>
       <ul>
-        <li>
-          Khi chưa đăng nhập: dữ liệu khách cũ, câu gắn sao, ghi chú và nhật ký
-          học lưu trong trình duyệt hiện tại. Chọn đáp án mới yêu cầu đăng nhập.
-        </li>
-        <li>
-          Khi đăng nhập: Google cung cấp thông tin tài khoản cơ bản cho Supabase
-          để xác thực, gồm định danh, tên, email và ảnh hồ sơ nếu có. KTVXL
-          không nhận mật khẩu Google, không yêu cầu đọc Gmail, Drive hay danh
-          bạ.
-        </li>
-        <li>
-          Supabase lưu tiến trình, ghi chú, nhật ký học, biệt danh và các mốc thời gian phiên Pomodoro theo định danh
-          tài khoản.
-        </li>
-        <li>
-          Trình duyệt vẫn giữ bản nhớ đệm và các thay đổi chờ đồng bộ. Theme,
-          nhạc cá nhân và trạng thái đã đọc cập nhật lưu riêng tại thiết bị.
-        </li>
+        <li><strong>Riêng theo tài khoản:</strong> câu đã làm, câu gắn sao, ghi chú và lịch sử học.</li>
+        <li><strong>Công khai:</strong> biệt danh, phút học, thứ hạng, bộ sưu tập, trưng bày và tổng giá trị vật phẩm. Email, đáp án và ghi chú vẫn riêng tư.</li>
+        <li><strong>Tại thiết bị:</strong> bản lưu chờ đồng bộ, giao diện, nhạc và đánh dấu đã đọc cập nhật.</li>
       </ul>
-      <h2>Dữ liệu nào xuất hiện công khai?</h2>
-      <p>
-        Khi có phút Pomodoro được máy chủ ghi nhận, bạn tự động xuất hiện trên
-        bảng xếp hạng với biệt danh, định danh xếp hạng, số phút, số phiên và
-        thứ hạng. Email, đáp án, ghi chú và nhật ký học riêng không xuất hiện
-        trên bảng. Thời gian nhập thủ công không được cộng hạng.
-      </p>
-      <h2>Đồng bộ và quyền truy cập</h2>
-      <p>
-        Google dùng để xác thực; dữ liệu học được lưu tại database Supabase của
-        dự án. Quy tắc tại database giới hạn mỗi tài khoản truy cập dữ liệu
-        riêng của mình. Chủ dự án và các nhà cung cấp dịch vụ có quyền quản trị
-        cần thiết để vận hành hệ thống.
-      </p>
-      <p>
-        Lần đăng nhập đầu, bạn được chọn mang dữ liệu khách vào tài khoản hoặc
-        dùng dữ liệu tài khoản. Bản khách vẫn được giữ tại máy. Khi một ghi chú
-        thay đổi ở hai nơi, ứng dụng cho chọn bản muốn giữ hoặc gộp nội dung.
-      </p>
-      <h2>Quản lý và xóa dữ liệu</h2>
-      <p>
-        Bạn có thể sửa hoặc xóa ghi chú, làm lại tiến trình và đổi biệt danh
-        ngay trên trang. Đăng xuất không xóa dữ liệu trên Supabase hoặc bản
-        nhớ đệm. Trên máy dùng chung, hãy đăng xuất rồi xóa dữ liệu trang trong
-        cài đặt trình duyệt.
-      </p>
-      <p>
-        Ứng dụng hiện chưa có nút xuất toàn bộ tài khoản hoặc xóa tài khoản. Nếu
-        cần xuất hoặc xóa dữ liệu trên máy chủ, liên hệ người quản trị qua địa
-        chỉ hỗ trợ trên màn hình Google đăng nhập. Đừng đăng mật khẩu, mã đăng
-        nhập hoặc ghi chú riêng vào issue công khai.
-      </p>
-      <h2>Nhà cung cấp dịch vụ</h2>
-      <p>
-        Trang tĩnh được phục vụ qua GitHub Pages; xác thực qua Google và
-        Supabase; database qua Supabase. Các dịch vụ này xử lý yêu cầu mạng theo
-        chính sách của họ:
-        <a href="https://policies.google.com/privacy">Google</a>,
-        <a href="https://supabase.com/privacy">Supabase</a> và
-        <a
-          href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
-          >GitHub</a
-        >.
-      </p>
+      <h2>Thời gian và bảng xếp hạng</h2>
+      <p>Thời gian tự tính khi bạn làm bài hoặc đọc kiến thức. Sau 15 phút không thao tác, bộ đếm tạm dừng. Mỗi tài khoản chỉ tính ở một tab hoặc thiết bị; thời gian cộng thủ công chỉ vào lịch sử cá nhân.</p>
+      <h2>Quản lý dữ liệu</h2>
+      <p>Vườn được lưu theo tài khoản: học đủ thời gian nhận hạt, cây lớn nhờ phút học mới ở cả 4 môn. Điểm vật phẩm chỉ dùng để sưu tầm và trưng bày, không có giá trị tiền tệ.</p>
+      <p>Bạn có thể đổi biệt danh, sửa/xóa ghi chú và làm lại tiến trình. Đăng xuất vẫn giữ dữ liệu để học tiếp. Nếu cần xuất hoặc xóa dữ liệu tài khoản trên máy chủ, liên hệ quản trị viên qua địa chỉ hỗ trợ ở màn hình đăng nhập Google.</p>
+      <p class="date">Dịch vụ sử dụng: <a href="https://policies.google.com/privacy">Google</a>, <a href="https://supabase.com/privacy">Supabase</a>, <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Pages</a>.</p>
     </main>
   </body>
 </html>

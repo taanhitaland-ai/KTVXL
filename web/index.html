@@ -18,21 +18,24 @@
   <link rel="stylesheet" href="vendor/katex/katex.min.css?v=505d5f829022">
   <script defer src="vendor/katex/katex.min.js?v=dc84b296ec3e"></script>
   <script defer src="vendor/katex/auto-render.min.js?v=9cb8dacfc086"></script>
-  <link rel="stylesheet" href="cloud_account.css?v=b7bec8389d5d">
+  <link rel="stylesheet" href="cloud_account.css?v=387064649c5e">
   <link rel="stylesheet" href="study_streak.css?v=62796319bae2">
   <link rel="stylesheet" href="leaderboard.css?v=e63c65fc8d65">
   <link rel="stylesheet" href="study_tools.css?v=a53bc3f68add">
   <script src="vendor/supabase/supabase.js?v=d6a5c4414a5d"></script>
-  <script src="cloud_config.js?v=ae6d75b48a2d"></script>
+  <script src="cloud_config.js?v=5c467e5c9449"></script>
   <script src="cloud_sync_model.js?v=9c1b456db713"></script>
   <script src="study_schedule_data.js?v=6741218a23eb"></script>
-  <script src="pomodoro_clock.js?v=dd29bde3d585"></script>
+  <script src="study_activity_model.js?v=0a4105268194"></script>
+  <script src="study_garden_model.js?v=141526cb90ad"></script>
   <script src="study_streak_model.js?v=a45846b6e12a"></script>
   <script src="study_streak.js?v=76683caffd3a"></script>
   <script src="account_policy.js?v=5aab8608f629"></script>
-  <script src="cloud_account.js?v=962d8cb7ff5b"></script>
+  <script src="cloud_account.js?v=59c12a8a6af2"></script>
   <script src="leaderboard_model.js?v=575a9a2e8b35"></script>
-  <script src="leaderboard.js?v=0eb4f0015ad7"></script>
+  <script src="leaderboard.js?v=1025b32bf2e8"></script>
+<link rel="stylesheet" href="study_activity.css?v=db1d87ca1281">
+  <link rel="stylesheet" href="study_garden.css?v=5e35082d76b6">
 </head>
 <body>
 
@@ -1235,14 +1238,14 @@
           <span class="neo-badge badge-exam" style="background: #000; color: #FFE600; font-size: 0.85rem; margin-bottom: 8px;">
             🎓 HỌC VIỆN KỸ THUẬT MẬT MÃ • HỌC KỲ I (2026)
           </span>
-          <h1>LỊCH THI CÁC MÔN & ĐỒNG HỒ POMODORO ÔN TẬP</h1>
+          <h1>LỊCH THI CÁC MÔN & THỜI GIAN HỌC</h1>
           <p>
-            Đếm ngược thời gian thực từng giây đến ngày thi chính thức. Tích hợp đồng hồ bấm giờ Pomodoro tùy chỉnh thời gian và hệ thống theo dõi chi tiết số phút đã học của từng môn mỗi ngày!
+            Đếm ngược thời gian thực từng giây đến ngày thi chính thức. Thời gian tự ghi nhận khi học bài; xem phân bổ từng môn, lịch thi và nhạc chill tại đây.
           </p>
         </div>
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
           <a href="#pomodoro-main-box" class="neo-btn neo-btn-green" onclick="document.getElementById('pomodoro-main-box').scrollIntoView({behavior: 'smooth', block: 'center'});">
-            🍅 Bấm Giờ Pomodoro Ngay
+            ⏱️ Xem Thời Gian Học
           </a>
           <a href="#study-tracker-box" class="neo-btn neo-btn-white" onclick="document.getElementById('study-tracker-box').scrollIntoView({behavior: 'smooth', block: 'center'});">
             📊 Xem Thời Gian Đã Học
@@ -1509,92 +1512,10 @@
 
         <!-- CỘT TRÁI: ĐỒNG HỒ BẤM GIỜ POMODORO (FOCUS TIMER) -->
         <div class="pomodoro-card" id="pomodoro-main-box">
-          <div class="pomo-header">
-            <h2><span>🍅</span> ĐỒNG HỒ POMODORO TẬP TRUNG</h2>
-            <button id="btn-toggle-pomo-sound" class="neo-btn neo-btn-sm neo-btn-white active" title="Bật/Tắt chuông báo">
-              🔔 Chuông: Bật
-            </button>
-          </div>
-
-          <!-- Chế độ Focus / Break -->
-          <div class="pomo-modes">
-            <button class="pomo-mode-btn active pomo-preset-btn" data-minutes="25" data-mode="focus">
-              🍅 Tập Trung (25p)
-            </button>
-            <button class="pomo-mode-btn pomo-preset-btn" data-minutes="5" data-mode="shortBreak">
-              ☕ Nghỉ Ngắn (5p)
-            </button>
-            <button class="pomo-mode-btn pomo-preset-btn" data-minutes="15" data-mode="longBreak">
-              🏖️ Nghỉ Dài (15p)
-            </button>
-          </div>
-
-          <!-- Màn hình số to -->
-          <div class="pomo-display-box">
-            <div style="margin-bottom: 8px;">
-              <span class="neo-badge" id="pomodoro-mode-badge" style="background: #EF4444; color: #FFF; font-weight: 900; font-size: 0.82rem;">
-                🍅 TẬP TRUNG CAO ĐỘ
-              </span>
-            </div>
-            <div class="pomo-timer-digits" id="pomodoro-time-display">25:00</div>
-
-            <div class="pomo-progress-track">
-              <div class="pomo-progress-fill" id="pomodoro-progress-bar"></div>
-            </div>
-
-            <div class="pomo-status-meta">
-              <span id="pomodoro-current-subject-label">Đang học môn: <strong>⚡ Kỹ thuật vi xử lý</strong></span>
-              <span>Phiên hôm nay: <strong id="pomodoro-session-count" style="color: #EF4444;">0 phiên</strong></span>
-            </div>
-          </div>
-
-          <!-- Presets thời gian nhanh -->
-          <div style="margin-bottom: 12px;">
-            <div style="font-weight: 800; font-size: 0.85rem; color: #4B5563; margin-bottom: 6px;">
-              ⚡ Chọn thời lượng học nhanh:
-            </div>
-            <div class="pomo-preset-group">
-              <button class="pomo-preset-btn" data-minutes="15" data-mode="focus">15 phút</button>
-              <button class="pomo-preset-btn active" data-minutes="25" data-mode="focus">25 phút (Chuẩn)</button>
-              <button class="pomo-preset-btn" data-minutes="30" data-mode="focus">30 phút</button>
-              <button class="pomo-preset-btn" data-minutes="45" data-mode="focus">45 phút (1 tiết)</button>
-              <button class="pomo-preset-btn" data-minutes="50" data-mode="focus">50 phút (Deep Work)</button>
-              <button class="pomo-preset-btn" data-minutes="60" data-mode="focus">60 phút (1 ca thi)</button>
-              <button class="pomo-preset-btn" data-minutes="90" data-mode="focus">90 phút</button>
-            </div>
-          </div>
-
-          <!-- Tùy chỉnh số phút (Custom Input) -->
-          <div class="pomo-custom-row">
-            <span style="font-weight: 800; font-size: 0.85rem; color: #374151;">⚙️ Hoặc tự đặt thời gian:</span>
-            <input type="number" id="input-custom-pomodoro" class="pomo-custom-input" min="1" max="300" value="25" />
-            <span style="font-weight: 800; font-size: 0.85rem;">phút</span>
-            <button id="btn-apply-custom-pomodoro" class="neo-btn neo-btn-sm neo-btn-yellow">
-              Áp Dụng
-            </button>
-          </div>
-
-          <!-- Chọn môn học đang tập trung -->
-          <div style="margin-bottom: 16px;">
-            <div style="font-weight: 800; font-size: 0.85rem; color: #4B5563; margin-bottom: 6px;">
-              📚 Chọn môn học để tính thời gian:
-            </div>
-            <div class="pomo-subj-chips" id="pomodoro-subject-chips">
-              <!-- Rendered by JS -->
-            </div>
-          </div>
-
-          <!-- Bộ nút điều khiển chính -->
-          <div class="pomo-main-controls">
-            <button id="btn-pomodoro-start" class="neo-btn neo-btn-green">
-              ▶️ BẮT ĐẦU
-            </button>
-            <button id="btn-pomodoro-reset" class="neo-btn neo-btn-white">
-              🔄 ĐẶT LẠI
-            </button>
-            <button id="btn-pomodoro-skip" class="neo-btn neo-btn-yellow" title="Hoàn thành sớm và tích lũy thời gian">
-              ⏭️ HOÀN THÀNH
-            </button>
+          <div class="pomo-display-box auto-study-display">
+            <span class="auto-study-status" data-study-activity-status data-active="false" tabindex="0">Nghỉ ngơi</span>
+            <div class="pomo-timer-digits" id="pomodoro-time-display" aria-label="Thời gian lượt học">00:00</div>
+            <div class="auto-study-subject" id="pomodoro-current-subject-label"></div>
           </div>
         </div>
 
@@ -1615,7 +1536,7 @@
             </div>
 
             <div class="metric-pill-card" style="background: #FEF2F2; border-color: #EF4444;">
-              <div class="metric-pill-label">🍅 Phiên Pomodoro</div>
+              <div class="metric-pill-label">⏱️ Ghi nhận thời gian</div>
               <div class="metric-pill-value" id="stat-today-sessions" style="color: #DC2626;">0 phiên</div>
             </div>
 
@@ -1803,11 +1724,11 @@
     </button>
     <div id="study-tools-body" class="study-tools-body">
   <!-- Persistent Floating Trigger Button for Pomodoro & Schedule -->
-  <button id="btn-floating-planner" class="neo-floating-planner-trigger" title="Mở thanh Pomodoro & Lịch thi bên phải">
+  <button id="btn-floating-planner" class="neo-floating-planner-trigger" title="Mở thanh thời gian học & Lịch thi bên phải">
     <span class="planner-trigger-icon">🍅</span>
     <span class="planner-trigger-text">
-      <span class="tool-mobile-title">Pomodoro &amp; Lịch thi</span>
-      <strong id="floating-pomo-digits">25:00</strong>
+      <span class="tool-mobile-title">Giờ học &amp; Lịch thi</span>
+      <strong id="floating-pomo-digits">00:00</strong>
       <small id="floating-exam-mini">⚡ 5d 16h</small>
     </span>
   </button>
@@ -1833,11 +1754,11 @@
   </section>
 
   <!-- Persistent Fixed Right Side Drawer -->
-  <aside id="side-planner-drawer" class="side-planner-drawer" aria-label="Thanh công cụ Pomodoro và Lịch thi">
+  <aside id="side-planner-drawer" class="side-planner-drawer" aria-label="Thanh công cụ thời gian học và Lịch thi">
     <!-- Header -->
     <div class="side-drawer-header">
       <div class="side-drawer-title">
-        <span>🍅</span> <strong>POMODORO & LỊCH THI</strong>
+        <span>⏱️</span> <strong>GIỜ HỌC & LỊCH THI</strong>
       </div>
       <div class="side-drawer-actions">
         <button id="btn-pin-side-drawer" class="neo-btn neo-btn-sm neo-btn-white" title="Ghim cố định bên phải (chia đôi màn hình)">
@@ -1851,7 +1772,7 @@
 
     <!-- Segment Switcher -->
     <div class="side-drawer-nav">
-      <button class="side-nav-btn active" data-drawer-tab="side-tab-pomo">🍅 Pomodoro</button>
+      <button class="side-nav-btn active" data-drawer-tab="side-tab-pomo">⏱️ Đang học</button>
       <button class="side-nav-btn" data-drawer-tab="side-tab-schedule">📅 Lịch Thi</button>
       <button class="side-nav-btn" data-drawer-tab="side-tab-tracker">📊 Đã Học</button>
       <button class="side-nav-btn" data-drawer-tab="side-tab-music">🎧 Nhạc chill</button>
@@ -1861,57 +1782,10 @@
     <div class="side-drawer-body">
       <!-- 1. Pomodoro Section -->
       <div id="side-tab-pomo" class="side-tab-content active">
-        <!-- Big Timer in Drawer -->
-        <div class="pomo-display-box" style="padding: 16px 12px; margin-bottom: 12px;">
-          <div class="pomo-timer-digits" id="drawer-pomo-digits" style="font-size: 3.5rem; margin-bottom: 8px;">25:00</div>
-          <div class="pomo-progress-track" style="margin-bottom: 8px;">
-            <div class="pomo-progress-fill" id="drawer-pomo-progress-bar"></div>
-          </div>
-          <div style="font-size: 0.8rem; font-weight: 800; text-align: center;" id="drawer-pomodoro-current-subject-label">
-            Đang học môn: <strong>⚡ Kỹ thuật vi xử lý</strong>
-          </div>
-        </div>
-
-        <!-- Presets in Drawer -->
-        <div style="margin-bottom: 10px;">
-          <div style="font-size: 0.78rem; font-weight: 800; color: #64748B; margin-bottom: 4px;">⚡ Chọn thời gian nhanh:</div>
-          <div class="pomo-preset-group">
-            <button class="pomo-preset-btn" data-minutes="15" data-mode="focus">15p</button>
-            <button class="pomo-preset-btn active" data-minutes="25" data-mode="focus">25p (Chuẩn)</button>
-            <button class="pomo-preset-btn" data-minutes="45" data-mode="focus">45p</button>
-            <button class="pomo-preset-btn" data-minutes="60" data-mode="focus">60p</button>
-            <button class="pomo-preset-btn" data-minutes="5" data-mode="shortBreak">☕ 5p</button>
-          </div>
-        </div>
-
-        <!-- Custom time in Drawer -->
-        <div class="pomo-custom-row" style="margin-bottom: 12px;">
-          <span style="font-weight: 800; font-size: 0.8rem;">⚙️ Đặt phút:</span>
-          <input type="number" id="drawer-input-custom-pomodoro" class="pomo-custom-input" min="1" max="300" value="25" style="width: 60px; padding: 4px 6px; font-size: 0.85rem;" />
-          <button id="drawer-btn-apply-custom-pomodoro" class="neo-btn neo-btn-sm neo-btn-yellow" style="padding: 4px 10px; font-size: 0.8rem;">
-            Áp Dụng
-          </button>
-        </div>
-
-        <!-- Subject Select in Drawer -->
-        <div style="margin-bottom: 14px;">
-          <div style="font-size: 0.78rem; font-weight: 800; color: #64748B; margin-bottom: 4px;">📚 Môn học:</div>
-          <div class="pomo-subj-chips" id="drawer-pomodoro-subject-chips">
-            <!-- Populated by JS -->
-          </div>
-        </div>
-
-        <!-- Main Controls in Drawer -->
-        <div class="pomo-main-controls">
-          <button id="drawer-btn-pomo-start" class="neo-btn neo-btn-green" style="padding: 10px 14px; font-size: 0.95rem;">
-            ▶️ BẮT ĐẦU
-          </button>
-          <button id="drawer-btn-pomo-reset" class="neo-btn neo-btn-white" style="padding: 10px 12px; font-size: 0.95rem;">
-            🔄 ĐẶT LẠI
-          </button>
-          <button id="drawer-btn-pomo-skip" class="neo-btn neo-btn-yellow" style="padding: 10px 12px; font-size: 0.95rem;" title="Hoàn thành sớm">
-            ⏭️ XONG
-          </button>
+        <div class="pomo-display-box auto-study-display">
+          <span class="auto-study-status" data-study-activity-status data-active="false" tabindex="0">Nghỉ ngơi</span>
+          <div class="pomo-timer-digits" id="drawer-pomo-digits" aria-label="Thời gian lượt học">00:00</div>
+          <div class="auto-study-subject" id="drawer-pomodoro-current-subject-label"></div>
         </div>
       </div>
 
@@ -2095,14 +1969,16 @@
   <script src="question_notes.js?v=f89ffb09ba14"></script>
   <script src="text_highlights_store.js?v=f396ef55b61e"></script>
   <script src="text_highlights.js?v=b46a8faf0527"></script>
-  <script src="site_updates_data.js?v=a2e636bd6bcf"></script>
+  <script src="site_updates_data.js?v=73f0d9fee147"></script>
   <script src="site_updates.js?v=b3d947d39cac"></script>
-  <script src="app.js?v=201893daf197"></script>
-  <script src="schedule_pomodoro.js?v=7edb7b8a92d5"></script>
+  <script src="app.js?v=f1081f8c922d"></script>
+  <script src="schedule_pomodoro.js?v=27ab78513475"></script>
+  <script src="study_activity.js?v=1ec169132784"></script>
   <script src="quick_notes.js?v=bb120e2ab576"></script>
   <script src="music_library.js?v=4fa249c951de"></script>
-  <script src="study_music.js?v=7e38c5e1bb49"></script>
+  <script src="study_music.js?v=1d7ffc3e45c4"></script>
   <script src="stress_dice.js?v=2b1a9037735d"></script>
   <script src="study_tools.js?v=c5139a650706"></script>
+  <script src="study_garden.js?v=f033986657b4"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Static multi-subject KMA practice and mock exams",
   "scripts": {
-    "test": "node --test scripts/regression.test.cjs scripts/diagram.test.cjs scripts/subject_diagram.test.cjs scripts/music.test.cjs scripts/notes_updates.test.cjs scripts/text_highlights.test.cjs scripts/account_policy.test.cjs scripts/cloud_sync.test.cjs scripts/database.test.cjs scripts/focus_reliability.test.cjs scripts/streak.test.cjs scripts/pomodoro_clock.test.cjs && node scripts/check_math.cjs",
+    "test": "node --test scripts/regression.test.cjs scripts/diagram.test.cjs scripts/subject_diagram.test.cjs scripts/music.test.cjs scripts/notes_updates.test.cjs scripts/text_highlights.test.cjs scripts/account_policy.test.cjs scripts/cloud_sync.test.cjs scripts/database.test.cjs scripts/focus_reliability.test.cjs scripts/streak.test.cjs scripts/pomodoro_clock.test.cjs scripts/study_activity.test.cjs scripts/automatic_study_database.test.cjs scripts/garden_model.test.cjs scripts/garden_database.test.cjs && node scripts/check_math.cjs",
     "sync": "python scripts/sync_site.py",
     "audit": "python scripts/audit_site_content.py"
   },

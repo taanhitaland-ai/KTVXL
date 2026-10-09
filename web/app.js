@@ -85,6 +85,7 @@
   function loadSubjectData(subject) {
     currentSubject = subject;
     writeLocal('kma_active_subject', subject);
+    window.dispatchEvent(new CustomEvent('kma:study-subject'));
 
     if (subject === 'xstk') {
       questions = (window.XSTK_QUESTIONS_DATA || []).map((q, idx) => ({

@@ -38,6 +38,7 @@ async (page) => {
         return {data:clone(profile)};
       }
       if (name === 'study_focus_current') return {data:null};
+      if (name === 'study_activity_pulse') return {data:{owned:true,active:!args.p_stop,subject:args.p_subject,elapsed_seconds:0,credited:false}};
       if (name === 'study_leaderboard') return {data:{remote:true,rows:[{id:uid,nickname:profile.nickname,minutes:60,sessions:2,rank:1}],me:logged ? {id:uid,nickname:profile.nickname,minutes:60,sessions:2,rank:1,joined:true} : null}};
       if (name === 'study_sync') {
         for (const op of args.p_operations) records[op.rid]={kind:op.kind,subject:op.subject,id:op.id,value:op.kind==='study' ? (records[op.rid]?.value || 0)+op.delta : op.value,version:(records[op.rid]?.version || 0)+1};

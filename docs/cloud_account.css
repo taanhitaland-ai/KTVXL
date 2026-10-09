@@ -392,6 +392,21 @@ body.dark-mode .sync-guest-copy p {
   line-height: 1.75;
   margin: 18px 0 12px;
 }
+.sync-welcome-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 18px;
+}
+.sync-welcome-footer .sync-text-button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 0;
+}
+.sync-welcome-footer .sync-privacy-link { font-size: 13px; line-height: 1.6; }
 .sync-text-button {
   font:
     700 12px "Be Vietnam Pro",
