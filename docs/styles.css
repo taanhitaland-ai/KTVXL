@@ -1186,6 +1186,24 @@ code, pre, .mono {
   color: #000;
 }
 
+.palette-btn.status-wrong {
+  background: var(--neo-red) !important;
+  color: #fff !important;
+  border-color: #000 !important;
+}
+
+.palette-btn.status-correct {
+  background: var(--neo-green) !important;
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+.palette-btn.status-unanswered {
+  background: #E2E8F0 !important;
+  color: #475569 !important;
+  border-color: #94A3B8 !important;
+}
+
 .palette-btn.current {
   border-color: #000;
   background: var(--neo-yellow);
@@ -1278,6 +1296,163 @@ code, pre, .mono {
   background: var(--neo-green);
   border-right: 2px solid #000;
   transition: width 0.4s ease;
+}
+/* Question Card Status Borders in Exam Review */
+.question-card.exam-card-wrong {
+  border-left: 8px solid var(--neo-red) !important;
+  background: #FFF5F5;
+}
+
+.question-card.exam-card-correct {
+  border-left: 8px solid var(--neo-green) !important;
+}
+
+.question-card.exam-card-unanswered {
+  border-left: 8px solid #F59E0B !important;
+  background: #FFFBEB;
+}
+
+/* Exam Review Enhancements */
+.exam-review-row {
+  margin-top: 14px;
+  padding: 14px;
+  background: #FFFDF9;
+  border: 2px solid #000;
+  border-radius: 6px;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.exam-review-filter-bar {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 6px;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.exam-review-filter-btn.active {
+  box-shadow: 2px 2px 0 #000;
+  transform: translate(-1px, -1px);
+}
+
+/* Exam History Section */
+.exam-history-section {
+  margin-top: 32px;
+  text-align: left;
+}
+
+.exam-history-divider {
+  margin: 32px 0 24px;
+  border: none;
+  border-top: 3px dashed #000;
+}
+
+.exam-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.exam-history-filter-tabs .neo-btn.is-active {
+  background: var(--neo-yellow) !important;
+  color: #000 !important;
+  box-shadow: 2px 2px 0 #000 !important;
+}
+
+.exam-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exam-history-item {
+  background: #fff;
+  border: 2.5px solid #000;
+  border-radius: var(--radius-md);
+  box-shadow: 3px 3px 0 #000;
+  padding: 14px 18px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exam-history-item:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #000;
+}
+
+.exam-history-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.exam-history-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.exam-history-date {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.exam-history-score {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: #0F172A;
+  background: var(--neo-yellow);
+  padding: 2px 10px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.exam-history-score .score-max {
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 700;
+}
+
+.exam-history-item-stats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.stat-pill {
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1.5px solid #000;
+}
+
+.stat-pill.stat-correct { background: #DCFCE7; color: #166534; }
+.stat-pill.stat-wrong { background: #FEE2E2; color: #991B1B; }
+.stat-pill.stat-unanswered { background: #FEF3C7; color: #92400E; }
+.stat-pill.stat-time { background: #F1F5F9; color: #334155; }
+
+.exam-history-item-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.exam-history-empty {
+  text-align: center;
+  padding: 24px 16px;
+  background: #F8FAFC;
+  border: 2px dashed #CBD5E1;
+  border-radius: var(--radius-md);
 }
 
 /* Download Hub Cards */

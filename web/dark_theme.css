@@ -384,3 +384,114 @@ body.dark-mode .note-mini-btn.active-view {
   color: #86EFAC;
 }
 
+/* Exam Review & Exam History Dark Theme */
+body.dark-mode .palette-btn.status-wrong {
+  background: #EF4444 !important;
+  color: #FFFFFF !important;
+  border-color: #000 !important;
+}
+
+body.dark-mode .palette-btn.status-correct {
+  background: #10B981 !important;
+  color: #000000 !important;
+  border-color: #000 !important;
+}
+
+body.dark-mode .palette-btn.status-unanswered {
+  background: #334155 !important;
+  color: #94A3B8 !important;
+  border-color: #475569 !important;
+}
+
+body.dark-mode .question-card.exam-card-wrong {
+  border-left: 8px solid #EF4444 !important;
+  background: rgba(239, 68, 68, 0.12) !important;
+}
+
+body.dark-mode .question-card.exam-card-correct {
+  border-left: 8px solid #10B981 !important;
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+body.dark-mode .question-card.exam-card-unanswered {
+  border-left: 8px solid #F59E0B !important;
+  background: rgba(245, 158, 11, 0.1) !important;
+}
+
+body.dark-mode .exam-history-item {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: 3px 3px 0 var(--border-color);
+}
+
+body.dark-mode .exam-history-item:hover {
+  box-shadow: 4px 4px 0 var(--border-color);
+}
+
+body.dark-mode .exam-history-score {
+  background: var(--night-accent);
+  color: #000;
+  border-color: var(--border-color);
+  box-shadow: 2px 2px 0 var(--border-color);
+}
+
+body.dark-mode .exam-history-score .score-max {
+  color: #333;
+}
+
+body.dark-mode .exam-history-date {
+  color: var(--text-muted);
+}
+
+body.dark-mode .exam-history-divider {
+  border-top-color: var(--border-color);
+}
+
+body.dark-mode .exam-history-empty {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-muted);
+}
+
+body.dark-mode .exam-review-row {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: 2px 2px 0 var(--border-color);
+  color: var(--text-main);
+}
+
+body.dark-mode .exam-review-filter-bar {
+  background: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+body.dark-mode .stat-pill.stat-correct {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  border-color: var(--border-color);
+}
+
+body.dark-mode .stat-pill.stat-wrong {
+  background: rgba(239, 68, 68, 0.2);
+  color: #F87171;
+  border-color: var(--border-color);
+}
+
+body.dark-mode .stat-pill.stat-unanswered {
+  background: rgba(245, 158, 11, 0.2);
+  color: #FBBF24;
+  border-color: var(--border-color);
+}
+
+body.dark-mode .stat-pill.stat-time {
+  background: rgba(148, 163, 184, 0.2);
+  color: #CBD5E1;
+  border-color: var(--border-color);
+}
+
+body.dark-mode #modal-save-notice {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #34D399 !important;
+  border-color: #059669 !important;
+}
+
