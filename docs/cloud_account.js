@@ -63,7 +63,7 @@
     rankingTimes = new Map(),
     rankingRevision = 0;
   const appKey = (key) => M.keys.includes(key);
-  let historySource = null, historyJSON = "{}";
+  let historySource = null, historyJSON = "{}", appliedHistory = null;
   function confirmedHistory() {
     if (historySource !== remote) {
       historySource = remote;
@@ -154,9 +154,12 @@
     const payload = M.project(data, queue()),
       changed = [];
     for (const [key, value] of Object.entries(payload)) {
-      const before = get(bucket() + key);
+      // The view starts without trusted history on every page load. Comparing
+      // only the persisted cache would skip its first server-backed render.
+      const before = key === "kma_study_logs_v1" ? appliedHistory : get(bucket() + key);
       if (M.samePayload(key, before, value)) continue;
       set(bucket() + key, value);
+      if (key === "kma_study_logs_v1") appliedHistory = value;
       changed.push([key, before, value]);
     }
     for (const [key, oldValue, newValue] of changed)
@@ -1307,6 +1310,7 @@
     getLearningAccess: accessState, // Hot path: no scan of the sync outbox.
     getLearningIdentity: () => ({ user, access: accessState() }),
     getConfirmedStudyLogs: () => M.parse(confirmedHistory(), {}),
+    getStudyHistoryStatus: () => !user ? "guest" : appliedHistory === null ? (error ? "error" : "loading") : "ready",
     openStreak: showStreak,
     sync,
     getRankingSnapshot,

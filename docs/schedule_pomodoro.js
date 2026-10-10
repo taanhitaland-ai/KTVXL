@@ -297,8 +297,12 @@
   }
 
   // 11. BẢNG THỐNG KÊ THỜI GIAN ĐÃ HỌC / MÔN / NGÀY
+  let renderedStudyDay = null;
   function renderStudyStats() {
     const stats = getTodayStats();
+    renderedStudyDay = stats.today;
+    const historyStatus = window.KMA_ACCOUNT?.getStudyHistoryStatus?.();
+    const historyPending = historyStatus === 'loading' || historyStatus === 'error';
 
     // Main page elements
     const totalEl = document.getElementById('stat-today-total-time');
@@ -310,10 +314,10 @@
     const drawerTotalEl = document.getElementById('drawer-stat-today-total');
     const drawerBreakdown = document.getElementById('drawer-study-breakdown-list');
 
-    const totalText = formatMinutes(stats.totalMinutes);
+    const totalText = historyPending ? (historyStatus === 'error' ? 'Chưa tải được lịch sử' : 'Đang tải…') : formatMinutes(stats.totalMinutes);
     if (totalEl) totalEl.textContent = totalText;
     if (drawerTotalEl) drawerTotalEl.textContent = totalText;
-    if (sessionsEl) sessionsEl.textContent = 'Tự động';
+    if (sessionsEl) sessionsEl.textContent = historyPending ? '—' : 'Tự động';
 
     let topSubjKey = null;
     let maxMins = 0;
@@ -325,7 +329,9 @@
     });
 
     if (topSubjEl) {
-      if (topSubjKey && maxMins > 0) {
+      if (historyPending) {
+        topSubjEl.textContent = totalText;
+      } else if (topSubjKey && maxMins > 0) {
         const topSubj = STUDY_SUBJECTS.find(s => s.key === topSubjKey);
         topSubjEl.innerHTML = `${topSubj ? topSubj.icon + ' ' + topSubj.name : 'Chưa có'} (${formatMinutes(maxMins)})`;
       } else {
@@ -334,6 +340,7 @@
     }
 
     const renderBreakdownHtml = (isCompact = false) => {
+      if (historyPending) return '<p class="study-history-status" role="status">' + (historyStatus === 'error' ? 'Chưa tải được lịch sử học. Dữ liệu đã lưu vẫn được giữ nguyên.' : 'Đang tải lịch sử học của bạn…') + '</p>';
       return STUDY_SUBJECTS.map(subj => {
         const mins = stats.breakdown[subj.key] || 0;
         const pct = stats.totalMinutes > 0 ? Math.round((mins / stats.totalMinutes) * 100) : 0;
@@ -368,6 +375,12 @@
   function renderRecentHistoryTable() {
     const tableBody = document.getElementById('study-history-tbody');
     if (!tableBody) return;
+
+    const status = window.KMA_ACCOUNT?.getStudyHistoryStatus?.();
+    if (status === 'loading' || status === 'error') {
+      tableBody.innerHTML = '<tr><td colspan="3" role="status">' + (status === 'error' ? 'Chưa tải được lịch sử học.' : 'Đang tải lịch sử học của bạn…') + '</td></tr>';
+      return;
+    }
 
     const logs = getStudyLogs();
     const dates = Object.keys(logs).sort().reverse().slice(0, 7);
@@ -432,6 +445,7 @@
       pane.classList.toggle('active', pane.id === tabId);
     });
     updateExamCountdowns();
+    if (tabId === 'side-tab-tracker') renderStudyStats();
   }
 
   // 13. DARK MODE TOGGLE & PERSISTENCE
@@ -551,6 +565,13 @@
     document.getElementById('btn-tab-schedule')?.addEventListener('click', updateExamCountdowns);
     initPomodoroUI();
     setupEventListeners();
+    // Also cover initial account failures and a Vietnam midnight rollover.
+    window.addEventListener('kma:cloud-updated', () => {
+      if (window.KMA_ACCOUNT?.getStudyHistoryStatus?.() === 'error' || renderedStudyDay !== getTodayKey()) renderStudyStats();
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') renderStudyStats();
+    });
   }
 
   if (document.readyState === 'loading') {

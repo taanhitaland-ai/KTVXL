@@ -39,3 +39,37 @@ test('server history ignores forged minute edits and restores snapshots without 
   await db.exec('reset role;set role anon');await db.query("select set_config('request.jwt.claim.sub','',false)");
   await assert.rejects(()=>rpc('study_sync',[[forged]]));
 });
+
+test('audited legacy button repair preserves server time, prior history and an owner-only backup; reruns do not subtract twice',async t=>{
+  const db=new PGlite();t.after(()=>db.close());
+  const uid=randomUUID(),other=randomUUID(),rid='study|ktvxl|2026-10-10';
+  await db.exec(`create role anon;create role authenticated;create schema auth;create table auth.users(id uuid primary key);
+    create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;
+    create function auth.jwt() returns jsonb language sql stable as $$select '{}'::jsonb$$;
+    grant usage on schema auth to anon,authenticated;`);
+  for(const id of [uid,other])await db.query('insert into auth.users values($1)',[id]);
+  for(const file of ['202610080001_study_sync.sql','202610080002_focus_reliability.sql','202610090001_automatic_study_time.sql','202610100001_study_garden.sql','202610100002_readonly_study_history.sql'])await db.exec(fs.readFileSync(path.join(__dirname,'../supabase/migrations',file),'utf8'));
+  await db.query("insert into public.study_profiles(user_id,nickname) values($1,'henise'),($2,'Bạn khác')",[uid,other]);
+  await db.query("insert into public.study_records(user_id,record_key,kind,subject,record_id,value) values($1,$3,'study','ktvxl','2026-10-10','6071'),($2,$3,'study','ktvxl','2026-10-10','90'),($1,'study|ktvxl|2026-10-09','study','ktvxl','2026-10-09','53'),($1,'note|ktvxl|1','note','ktvxl','1','{\"text\":\"ghi chú\"}')",[uid,other,rid]);
+  for(const [delta,count] of [[15,8],[30,3],[60,94]])for(let n=0;n<count;n++)await db.query("insert into public.study_sync_receipts(user_id,operation_id,request,created_at) values($1,$2,$3,'2026-10-10 05:00+00')",[uid,randomUUID(),JSON.stringify({kind:'study',subject:'ktvxl',id:'2026-10-10',delta})]);
+  await db.query("insert into public.study_activity_credit values($1,$2,'2026-10-10','ktvxl',13260)",[uid,randomUUID()]);
+  const repair=fs.readFileSync(path.join(__dirname,'../supabase/admin/remove_legacy_manual_minutes.sql'),'utf8');
+  for(const [key,value] of Object.entries({user:uid,day:'2026-10-10',subject:'ktvxl',cutoff:'2026-10-10 06:34:41+00',edits:'105',minutes:'5850'}))await db.query('select set_config($1,$2,false)',['ktvxl.repair_'+key,value]);
+  await db.exec(repair);
+  const value=async(user,key)=> (await db.query('select value from public.study_records where user_id=$1 and record_key=$2',[user,key])).rows[0].value;
+  assert.equal(await value(uid,rid),221);
+  assert.equal(await value(uid,'study|ktvxl|2026-10-09'),53);
+  assert.equal(await value(other,rid),90);
+  assert.equal((await value(uid,'note|ktvxl|1')).text,'ghi chú');
+  assert.equal(Number((await db.query('select sum(seconds) seconds from public.study_activity_credit')).rows[0].seconds),13260);
+  assert.equal((await db.query('select count(*) n from public.study_sync_receipts')).rows[0].n,105);
+  const backup=(await db.query('select * from public.study_history_repairs')).rows[0];
+  assert.equal(backup.before_value,6071);assert.equal(backup.after_value,221);assert.equal(Number(backup.removed_minutes),5850);
+  await db.query("update public.study_records set value=to_jsonb((value#>>'{}')::integer+1) where user_id=$1 and record_key=$2",[uid,rid]);
+  await db.exec(repair);assert.equal(await value(uid,rid),222,'rerun removed new server credit');
+  for(const role of ['anon','authenticated']){
+    await db.exec('set role '+role);
+    await assert.rejects(()=>db.query('select * from public.study_history_repairs'));
+    await db.exec('reset role');
+  }
+});
