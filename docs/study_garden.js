@@ -33,6 +33,14 @@
     img.src = 'garden_assets/' + baseName + '.svg';
     img.alt = alt; img.width = 128; img.height = 128; img.draggable = false; return img;
   }
+  function mysteryArt(alt = 'Vật phẩm phát sáng chưa nhận') {
+    const box = el('div', 'garden-mystery-art');
+    box.setAttribute('role', 'img');
+    box.setAttribute('aria-label', alt);
+    const sparkle = el('span', 'garden-mystery-sparkle', '✨');
+    box.append(sparkle);
+    return box;
+  }
   function say(text) { if (message.textContent !== text) message.textContent = text; }
   function read(key = storeKey) {
     const raw = localStorage.getItem(key);
@@ -289,17 +297,26 @@
     });
     for(const item of filteredItems) {
       const owned=(state.items[item.id] || 0)>0,tier=M.tiers.find(t=>t.id===item.tier);
-      const cell=button('','garden-collect-item'+(owned?'':' garden-unknown') + (item.glowing ? ' is-glowing-item' : ''),()=>selectItem(item.id));
+      const isUnownedGlowing = item.glowing && !owned;
+      const cell=button('','garden-collect-item'+(owned?'':' garden-unknown') + (item.glowing ? ' is-glowing-item' : '') + (isUnownedGlowing ? ' is-glowing-unowned' : ''),()=>selectItem(item.id));
       cell.dataset.item=item.id;cell.dataset.tier=item.tier;
       if (item.glowing) cell.dataset.glowing = 'true';
       cell.disabled=!owned||!available(item.id);
       cell.setAttribute('aria-pressed',String(selectedItem===item.id));
       cell.title=owned?`${item.name} · ${tier.name} (${item.points}đ) · có ${state.items[item.id]}, còn ${available(item.id)} trong kho`:(item.glowing?'Chưa khám phá ✨ · ':'Chưa khám phá · ')+tier.name;
-      cell.append(
-        art('ore-'+item.id,owned?item.name:'Vật phẩm chưa khám phá', item.glowing ? 'garden-art-glowing' : ''),
-        el('strong','',owned?item.name:(item.glowing?'??? ✨':'???')),
-        el('span','',tier.name+(owned?' · ×'+state.items[item.id]:'') + (item.glowing ? ' (2.5×)' : ''))
-      );
+      if (isUnownedGlowing) {
+        cell.append(
+          mysteryArt('Vật phẩm phát sáng chưa nhận'),
+          el('strong','','??? ✨'),
+          el('span','',tier.name+' (2.5×)')
+        );
+      } else {
+        cell.append(
+          art('ore-'+item.id,owned?item.name:'Vật phẩm chưa khám phá', item.glowing ? 'garden-art-glowing' : ''),
+          el('strong','',owned?item.name:(item.glowing?'??? ✨':'???')),
+          el('span','',tier.name+(owned?' · ×'+state.items[item.id]:'') + (item.glowing ? ' (2.5×)' : ''))
+        );
+      }
       cell.draggable=owned&&available(item.id)>0;
       cell.addEventListener('dragstart',event=>{if(!owned||!available(item.id)){event.preventDefault();return;}selectedItem=item.id;selectedSource=-1;event.dataTransfer.setData('text/plain',item.id);event.dataTransfer.effectAllowed='copy';collectionDialog.classList.add('garden-dragging');});
       inventory.append(cell);
@@ -308,9 +325,13 @@
     const defaultTarget=draft.findIndex(id=>!id);
     draft.forEach((id,index)=>{
       const it=id?M.itemById(id):null;
-      const cell=button('','garden-showcase-slot' + (it?.glowing ? ' is-glowing-slot' : ''),()=>place(index));cell.dataset.gardenSlot=String(index);
+      const isUnownedGlowing = it?.glowing && !(state.items[it.id] > 0);
+      const cell=button('','garden-showcase-slot' + (it?.glowing ? ' is-glowing-slot' : '') + (isUnownedGlowing ? ' is-glowing-unowned' : ''),()=>place(index));cell.dataset.gardenSlot=String(index);
       cell.setAttribute('aria-label',`Ô ${index+1}: ${it?it.name:'trống'}`);
-      if(id)cell.append(art('ore-'+id,it.name,it?.glowing?'garden-art-glowing':''));
+      if(id){
+        if(isUnownedGlowing) cell.append(mysteryArt('Vật phẩm phát sáng chưa nhận'));
+        else cell.append(art('ore-'+id,it.name,it?.glowing?'garden-art-glowing':''));
+      }
       else cell.append(el('span','garden-slot-placeholder',selectedItem?'+':''));
       cell.classList.toggle('is-target',!!selectedItem&&index===defaultTarget);
       cell.classList.toggle('is-source',selectedSource===index);
@@ -366,8 +387,14 @@
     const grid=el('div','garden-showcase garden-readonly-showcase');grid.setAttribute('aria-label','Trưng bày 5 cột, 3 hàng');
     for(const id of view.layout){
       const it=id?M.itemById(id):null;
-      const slot=el('div','garden-showcase-slot' + (it?.glowing ? ' is-glowing-slot' : ''));
-      if(id){slot.title=it.name;slot.append(art('ore-'+id,it.name,it?.glowing?'garden-art-glowing':''));}
+      const count=it?(view.items[it.id] || 0):0;
+      const isUnownedGlowing = it?.glowing && !count;
+      const slot=el('div','garden-showcase-slot' + (it?.glowing ? ' is-glowing-slot' : '') + (isUnownedGlowing ? ' is-glowing-unowned' : ''));
+      if(id){
+        slot.title=it.name;
+        if(isUnownedGlowing) slot.append(mysteryArt('Vật phẩm phát sáng chưa nhận'));
+        else slot.append(art('ore-'+id,it.name,it?.glowing?'garden-art-glowing':''));
+      }
       else slot.setAttribute('aria-label','Ô trống');
       grid.append(slot);
     }
@@ -377,14 +404,24 @@
     const items=el('div','garden-inventory-grid');
     const allCollectionItems = M.allItems || M.items.flatMap(i => [M.itemById(i.id), M.itemById(i.id + '_glowing')]);
     for(const item of allCollectionItems){
-      const count=view.items[item.id] || 0,cell=el('div','garden-collect-item'+(count?'':' garden-unknown') + (item.glowing ? ' is-glowing-item' : ''));
+      const count=view.items[item.id] || 0;
+      const isUnownedGlowing = item.glowing && !count;
+      const cell=el('div','garden-collect-item'+(count?'':' garden-unknown') + (item.glowing ? ' is-glowing-item' : '') + (isUnownedGlowing ? ' is-glowing-unowned' : ''));
       cell.dataset.tier=item.tier;
       if (item.glowing) cell.dataset.glowing = 'true';
-      cell.append(
-        art('ore-'+item.id,count?item.name:'Vật phẩm chưa khám phá', item.glowing ? 'garden-art-glowing' : ''),
-        el('strong','',count?item.name:(item.glowing?'??? ✨':'???')),
-        el('span','',M.tiers.find(t=>t.id===item.tier).name+(count?' · ×'+count:'') + (item.glowing ? ' (2.5×)' : ''))
-      );
+      if (isUnownedGlowing) {
+        cell.append(
+          mysteryArt('Vật phẩm phát sáng chưa nhận'),
+          el('strong','','??? ✨'),
+          el('span','',M.tiers.find(t=>t.id===item.tier).name+' (2.5×)')
+        );
+      } else {
+        cell.append(
+          art('ore-'+item.id,count?item.name:'Vật phẩm chưa khám phá', item.glowing ? 'garden-art-glowing' : ''),
+          el('strong','',count?item.name:(item.glowing?'??? ✨':'???')),
+          el('span','',M.tiers.find(t=>t.id===item.tier).name+(count?' · ×'+count:'') + (item.glowing ? ' (2.5×)' : ''))
+        );
+      }
       items.append(cell);
     }
     section.append(items);host.append(section,el('p','garden-points-note garden-muted','Giá trị tính tất cả vật phẩm trong kho, kể cả vật phẩm chưa trưng bày. Bản phát sáng x2.5 điểm. Rác 10 · Thường 30 · Hiếm 80 · Sử thi 180 · Huyền thoại 400.'));
