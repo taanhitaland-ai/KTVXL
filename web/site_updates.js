@@ -19,10 +19,9 @@
       const meta = el('div', 'update-meta'), date = el('span', '', item.date); meta.appendChild(date);
       if (!seen.has(item.id)) meta.appendChild(el('span', 'update-new', 'Mới'));
       entry.append(meta, el('h3', '', item.title));
-      for (const [field, label] of [['added', 'Tính năng mới'], ['fixed', 'Sửa lỗi & cải thiện']]) {
-        if (!Array.isArray(item[field]) || !item[field].length) continue;
-        entry.appendChild(el('h4', '', label)); const bullets = document.createElement('ul');
-        for (const text of item[field]) bullets.appendChild(el('li', '', text));
+      if (Array.isArray(item.added) && item.added.length) {
+        const bullets = document.createElement('ul');
+        for (const text of item.added) bullets.appendChild(el('li', '', text));
         entry.appendChild(bullets);
       }
       list.appendChild(entry);

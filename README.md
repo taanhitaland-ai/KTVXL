@@ -44,7 +44,7 @@ Lịch sử luyện tập và câu đánh dấu được lưu theo từng môn t
 
 Ghi chú dùng nguyên schema theo môn và ID câu hỏi (`kma_question_notes_v1`). Khi chưa đăng nhập, dữ liệu chỉ lưu trong trình duyệt; khi đăng nhập Google, dữ liệu lưu theo tài khoản và tự đồng bộ với Supabase. Không tự khôi phục bản nháp chưa lưu sau khi đóng trang. Chỉ hiển thị văn bản thuần, giới hạn 2.000 ký tự; màu, ID và dữ liệu lưu được kiểm tra trước khi sử dụng. Khi không lưu được, ô nhập giữ nguyên nội dung và báo lỗi.
 
-Nút chuông **Cập nhật** mở lịch sử tính năng mới và sửa lỗi. Trạng thái đã đọc lưu riêng trên trình duyệt. Để thêm một bản cập nhật, thêm mục mới vào đầu `web/site_updates_data.js` với `id` mới, ngày, tiêu đề và các danh sách `added` / `fixed`; giữ nguyên ID các bản cũ rồi chạy bước đồng bộ bên dưới.
+Nút chuông **Cập nhật** giới thiệu các tính năng mới bằng nội dung ngắn gọn, dễ hiểu; không đưa nhật ký sửa lỗi hoặc chi tiết triển khai vào thông báo. Trạng thái đã đọc lưu riêng trên trình duyệt. Để thêm thông báo, thêm mục mới vào đầu `web/site_updates_data.js` với `id` mới, ngày, tiêu đề và danh sách `added`; giữ nguyên ID các bản cũ rồi chạy bước đồng bộ bên dưới.
 
 ## Đăng nhập, đồng bộ và bảng xếp hạng
 
