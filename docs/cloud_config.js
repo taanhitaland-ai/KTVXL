@@ -9,6 +9,7 @@
     ? Object.freeze({
         url: "https://htcnflcncbihhlqoeqsy.supabase.co",
         publishableKey: "sb_publishable_3RKXr_GVH5rEWsxSPPcbzg_ve4C8TVb",
+        gardenEnabled: true,
       })
     : null;
 })();

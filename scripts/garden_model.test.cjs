@@ -1,0 +1,73 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),M=require('../web/study_garden_model.js');
+const id=n=>`00000000-0000-4000-8000-${String(n).padStart(12,'0')}`;
+const event=(session,seconds,endMs,subject='ktvxl')=>({sessionId:id(session),seconds,endMs,subject,day:'2026-10-10'});
+test('garden credits all four subjects once, adds regular/bonus seeds, idle resets bonuses',()=>{
+  let s=M.empty();const t=1800000000000;
+  for(let i=0;i<4;i++)s=M.credit(s,event(i+1,1800,t+(i+1)*1800000,['ktvxl','tthcm','vldc','xstk'][i])).state;
+  assert.equal(s.totalSeconds,7200);assert.equal(s.seeds.oak+s.seeds.maple,4);assert.equal(s.seeds.cherry+s.seeds.bamboo,1);assert.equal(s.seeds.galaxy,1);
+  assert.deepEqual(M.credit(s,event(4,720,t+7200000)).state,s,'old/out-of-order observation mutated state');
+  assert.equal(M.credit(s,event(4,1800,t+7200000)).delta,0,'duplicate earned credit');
+  const next=M.credit(s,event(5,3600,t+7200000+900000+3600000));s=next.state;
+  assert.equal(s.continuous.seconds,3600);assert.equal(s.seeds.cherry+s.seeds.bamboo,2);assert.equal(s.seeds.galaxy,1);
+  assert.equal(M.credit(s,event(6,7200,t,'other')).delta,0);
+  assert.equal(M.credit(s,{...event(7,900,t),sessionId:'__proto__'}).delta,0);
+  assert.equal(M.credit(s,event(7,1e12,t)).delta,0,'unbounded malformed window was processed');
+});
+test('plant spends a seed, all planted trees grow only by confirmed seconds, mature harvest consumes one tree',()=>{
+  let s=M.empty();s.seeds.oak=2;s.seeds.cherry=1;
+  s=M.plant(s,0,'oak');s=M.plant(s,1,'cherry');
+  assert.equal(s.seeds.oak,1);assert.equal(s.plots[0].seconds,0);
+  assert.throws(()=>M.harvest(s,0,()=>0));assert.throws(()=>M.plant(s,0,'oak'));assert.throws(()=>M.plant(s,5,'oak',6));
+  s=M.credit(s,event(1,3600,1800003600000)).state;
+  assert.equal(s.plots[0].seconds,3600);assert.equal(s.plots[1].seconds,3600);
+  const reward=M.harvest(s,0,()=>0);s=reward.state;
+  assert.equal(s.plots[0],null);assert.equal(s.items.coal,1);assert.throws(()=>M.harvest(s,0,()=>0));
+  s=M.plant(s,5,'oak',7);assert.equal(s.unlocked,true);assert.equal(s.plots[5].seed,'oak');
+  const late=M.empty();late.seeds.oak=1;
+  const planted=M.plant(late,0,'oak',0,1800000020000);
+  const confirmed=M.credit(planted,event(2,30,1800000030000)).state;
+  assert.equal(confirmed.plots[0].seconds,10,'time before planting grew new tree');
+});
+test('drop tables sum to 100, pity guarantees on tenth miss and resets after epic/legendary',()=>{
+  for(const rate of Object.values(M.rates))assert.equal(rate.reduce((a,b)=>a+b,0),100);
+  for(const seed of M.seeds){
+    let s=M.empty();
+    for(let i=0;i<10;i++){
+      s.plots[0]={seed:seed.id,seconds:seed.minutes*60};
+      const result=M.harvest(s,0,()=>0);s=result.state;
+      assert.equal(result.reward.guaranteed,i===9);
+      assert.equal(M.itemById(result.reward.item).tier,i===9?'epic':'scrap');
+    }
+    assert.equal(s.misses,0);
+    s.plots[0]={seed:seed.id,seconds:seed.minutes*60};
+    s=M.harvest(s,0,()=>.999999).state;assert.equal(s.misses,0);assert.equal(s.items.cosmos,1);
+  }
+});
+test('collection validates slots/counts, malicious data is discarded, preview has 9/10 types',()=>{
+  let s=M.demo('2026-10-10');assert.equal(M.items.filter(i=>s.items[i.id]).length,9);
+  assert.equal(M.assetValue(s),1410);assert.equal(M.assetValue({...s,layout:Array(15).fill(null)}),1410,'unplaced assets disappeared from total value');
+  assert.ok(M.score(s.layout)>0);
+  const invalid=Array(15).fill('frost');assert.throws(()=>M.saveLayout(s,invalid));
+  assert.throws(()=>M.saveLayout(s,Array(15).fill('<script>')));assert.throws(()=>M.saveLayout(s,[]));
+  const normalized=M.normalize({...s,seeds:{oak:-5,galaxy:Infinity},plots:[{seed:'<img>',seconds:Infinity}],items:{coal:1},layout:Array(15).fill('coal'),cursors:{constructor:{seconds:9999}}});
+  assert.equal(normalized.seeds.oak,0);assert.equal(normalized.seeds.galaxy,0);assert.equal(normalized.plots[0],null);
+  assert.equal(normalized.layout.filter(Boolean).length,1);assert.equal(Object.keys(normalized.cursors).length,0);
+  assert.throws(()=>M.harvest(s,0,()=>NaN));assert.equal(s.plots[0].seed,'oak','failed draw mutated original');
+});
+
+test('garden initialization isolates production from local and unrelated hosts',()=>{
+  const vm=require('node:vm'),fs=require('node:fs'),path=require('node:path');
+  const code=fs.readFileSync(path.join(__dirname,'../web/study_garden.js'),'utf8');
+  function enabled(host,protocol,pathname,config,preview=false){
+    let initialized=false;
+    vm.runInNewContext(code,{window:{KMA_CLOUD_CONFIG:config,KMA_GARDEN_PREVIEW:preview,KMA_GARDEN_MODEL:{}},location:{hostname:host,protocol,pathname},document:{readyState:'loading',addEventListener:()=>{initialized=true;}}});
+    return initialized;
+  }
+  const production={url:'https://htcnflcncbihhlqoeqsy.supabase.co',gardenEnabled:true};
+  assert.equal(enabled('taanhitaland-ai.github.io','https:','/KTVXL/',production),true);
+  for(const host of ['localhost','127.0.0.1','evil.example'])assert.equal(enabled(host,'https:','/KTVXL/',production),false);
+  assert.equal(enabled('taanhitaland-ai.github.io','http:','/KTVXL/',production),false);
+  assert.equal(enabled('taanhitaland-ai.github.io','https:','/other/',production),false);
+  assert.equal(enabled('127.0.0.1','http:','/demo.html',{url:'https://fixture.invalid'},true),true);
+  assert.equal(enabled('taanhitaland-ai.github.io','https:','/KTVXL/',{url:'https://fixture.invalid'},true),false);
+});

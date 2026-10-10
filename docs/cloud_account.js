@@ -1,8 +1,9 @@
 (function () {
   "use strict";
   const M = window.KMA_SYNC_MODEL,
+    P = window.KMA_ACCOUNT_POLICY,
     config = window.KMA_CLOUD_CONFIG;
-  if (!M || !config || !window.supabase) return;
+  if (!M || !P || !config || !window.supabase) return;
   const client = window.supabase.createClient(
     config.url,
     config.publishableKey,
@@ -15,7 +16,12 @@
       },
     },
   );
-  const ns = "kma_cloud_v1:",
+  // Separate simulated accounts so opening another demo cannot reload this page.
+  // Real accounts keep their existing storage namespace.
+  const previewNamespace = config.url === "https://fixture.invalid" &&
+    ["localhost", "127.0.0.1"].includes(location.hostname) &&
+    /^kma_preview_[a-z_-]+:$/.test(config.storageNamespace || "");
+  const ns = previewNamespace ? config.storageNamespace : "kma_cloud_v1:",
     ownerKey = ns + "owner";
   const nativeGet = Storage.prototype.getItem,
     nativeSet = Storage.prototype.setItem,
@@ -25,6 +31,11 @@
     remove = (key) => nativeRemove.call(localStorage, key);
   let user = /^[0-9a-f-]{36}$/.test(get(ownerKey) || "") ? get(ownerKey) : null;
   let authenticated = false,
+    activityToken = null,
+    authResolved = false,
+    profileReady = false,
+    profileRevision = 0,
+    answerRequested = false,
     busy = false,
     ready = false,
     remote = {},
@@ -154,6 +165,7 @@
     busy = true;
     renderStatus();
     const syncingUser = user;
+    const syncingProfileRevision = profileRevision;
     try {
       // At most one operation per record per request. A conflict blocks later edits to
       // that note until the user resolves it; queued operations never change after send.
@@ -172,7 +184,10 @@
       if (user !== syncingUser) return;
       for (const id of result.accepted || []) remove(outboxPrefix() + id);
       remote = result.records || {};
-      profile = result.profile || profile;
+      if (result.profile && syncingProfileRevision === profileRevision) {
+        profile = result.profile;
+        profileReady = true;
+      }
       for (const [key, value] of Object.entries(remote))
         versions[key] = value.version;
       set(ns + user + ":versions", JSON.stringify(versions));
@@ -190,6 +205,7 @@
     } finally {
       busy = false;
       renderStatus();
+      reconcileAccess();
       window.dispatchEvent(new CustomEvent("kma:cloud-updated"));
       if (
         queue().some((op) => !conflicts.some((c) => c.op.rid === op.rid)) &&
@@ -309,23 +325,69 @@
     lead.querySelector("h2").id = "sync-modal-title";
     modalBody.append(lead);
   }
+  function accessState() {
+    return P.accessState({ authResolved, authenticated, user, profileReady, nickname: profile.nickname });
+  }
+  function requireLearningAccount() {
+    if (accessState() === "ready") return true;
+    answerRequested = true;
+    if (ready) openAccount();
+    return false;
+  }
+  function reconcileAccess() {
+    if (!ready) return;
+    if (accessState() === "username") {
+      // Never rebuild an in-progress name form during a background sync.
+      if (dialog.dataset.view !== "username") showUsername();
+      if (!dialog.open) dialog.showModal();
+    } else if (dialog.open && dialog.dataset.view === "checking") {
+      if (accessState() === "guest") showWelcome();
+      else if (accessState() === "ready") dialog.close();
+    } else if (dialog.open && dialog.dataset.view === "username" && accessState() === "ready" &&
+               !modalBody.querySelector('[aria-busy="true"]')) {
+      // Another device may have supplied the missing name while this form was open.
+      dialog.close();
+      offerImport();
+    }
+  }
+  function showCheckingAccount() {
+    dialog.dataset.view = "checking";
+    heading("TÀI KHOẢN CỦA BẠN", "Đang kiểm tra tài khoản", "Vui lòng chờ xác nhận đăng nhập và tên của bạn trước khi chọn đáp án.");
+    const status = el("p", "sync-info", error ? "Chưa tải được tài khoản. Tiến trình đã lưu vẫn được giữ nguyên." : "Đang tải thông tin tài khoản…");
+    status.setAttribute("role", "status");
+    const retry = button("Thử lại", "sync-btn", async () => {
+      retry.disabled = true;
+      try {
+        const { data, error: failure } = await client.auth.getSession();
+        if (failure) throw failure;
+        await resumeAuth(data.session);
+        if (accessState() === "checking") throw new Error();
+      } catch (_) {
+        status.textContent = "Chưa tải được tài khoản. Hãy thử lại khi kết nối ổn định.";
+      } finally { retry.disabled = false; }
+    });
+    modalBody.append(status, retry);
+  }
   function openAccount() {
-    if (conflicts.length) showConflicts();
+    if (accessState() === "checking") showCheckingAccount();
+    else if (accessState() === "username") showUsername();
+    else if (conflicts.length) showConflicts();
     else if (user) showProfile();
     else showWelcome();
     if (!dialog.open) dialog.showModal();
   }
   function showWelcome() {
+    dialog.dataset.view = "welcome";
     heading(
       "MỘT TÀI KHOẢN · MỌI THIẾT BỊ",
-      "Góc học đi cùng bạn",
-      "Đăng nhập để tiếp tục tiến trình và ghi chú trên máy tính hoặc điện thoại.",
+      answerRequested ? "Đăng nhập để bảo vệ tiến trình" : "Góc học đi cùng bạn",
+      "Đăng nhập Google để chọn đáp án và lưu tiến trình theo tài khoản trên máy tính hoặc điện thoại.",
     );
     const list = el("ul", "sync-benefits");
     for (const text of [
       "Câu đã làm và câu gắn sao theo tài khoản",
       "Ghi chú đủ màu, giữ nguyên trên thiết bị khác",
-      "Lịch sử học và bảng xếp hạng Pomodoro",
+      "Lịch sử học, chuỗi học và bảng xếp hạng",
     ])
       list.append(el("li", "", "✓ " + text));
     modalBody.append(list);
@@ -351,21 +413,106 @@
       },
     );
     login.prepend(googleIcon());
-    modalBody.append(
-      login,
-      button("Tiếp tục học trên máy này", "sync-text-button", () =>
-        dialog.close(),
-      ),
-    );
+    modalBody.append(login);
+    const footer = el("div", "sync-welcome-footer");
+    footer.append(button("Để sau", "sync-text-button", () => dialog.close()));
     const privacy = el(
       "a",
-      "sync-text-button",
+      "sync-text-button sync-privacy-link",
       "Quyền riêng tư và dữ liệu học tập",
     );
     privacy.href = "privacy.html";
     privacy.target = "_blank";
     privacy.rel = "noopener";
-    modalBody.append(privacy);
+    footer.append(privacy);
+    modalBody.append(footer);
+  }
+  async function saveNickname(value) {
+    const validation = P.nicknameError(value);
+    if (validation) throw new Error(validation);
+    const savingUser = user;
+    const saved = await rpc("study_set_profile", {
+      p_nickname: P.normalizeNickname(value), p_joined: true,
+    });
+    if (savingUser !== user || !authenticated) throw new Error("Tài khoản đã thay đổi. Hãy đăng nhập lại.");
+    if (P.nicknameError(saved?.nickname)) throw new Error("Chưa xác nhận được tên đã lưu. Hãy thử lại.");
+    profileRevision++;
+    profile = saved;
+    profileReady = true;
+    rankingCache.clear();
+    refreshRanking();
+    renderStatus();
+    window.dispatchEvent(new CustomEvent("kma:cloud-updated"));
+  }
+  function signOut() {
+    const activity = window.KMA_STUDY_ACTIVITY?.getState();
+    if (activity?.started) window.KMA_STUDY_ACTIVITY.stop();
+    return client.auth.signOut({ scope: "local" });
+  }
+  function showUsername() {
+    dialog.dataset.view = "username";
+    heading("MỘT TÊN RIÊNG · CÙNG NHAU HỌC", "Chọn tên của bạn", "Chọn một biệt danh để mọi người nhận ra bạn trên bảng xếp hạng.");
+    const form = el("form", "sync-profile-form sync-username-form");
+    form.noValidate = true;
+    const label = el("label", "", "Tên trên bảng xếp hạng");
+    label.htmlFor = "sync-username";
+    const input = el("input", "sync-input");
+    input.id = "sync-username";
+    input.name = "nickname";
+    input.autocomplete = "nickname";
+    input.maxLength = 32;
+    input.required = true;
+    input.placeholder = "Ví dụ: Linh chăm học";
+    input.setAttribute("aria-describedby", "sync-username-hint sync-username-error");
+    const hint = el("p", "sync-info", "2–32 ký tự. Dùng chữ, số, dấu cách, dấu chấm, gạch ngang hoặc gạch dưới.");
+    hint.id = "sync-username-hint";
+    const feedback = el("p", "sync-form-error");
+    feedback.id = "sync-username-error";
+    feedback.setAttribute("role", "alert");
+    const save = button("Lưu tên và tiếp tục", "sync-btn sync-primary");
+    save.type = "submit";
+    save.disabled = true;
+    let saving = false;
+    const validate = () => {
+      const problem = P.nicknameError(input.value);
+      save.disabled = saving || !!problem;
+      feedback.textContent = input.value ? problem : "";
+      input.setAttribute("aria-invalid", String(!!input.value && !!problem));
+    };
+    input.addEventListener("input", validate);
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+      if (saving) return;
+      validate();
+      if (save.disabled) { input.focus(); return; }
+      saving = true;
+      save.disabled = true;
+      input.readOnly = true;
+      form.setAttribute("aria-busy", "true");
+      try {
+        await saveNickname(input.value);
+        dialog.close();
+        notify("Đã lưu tên của bạn");
+        await offerImport();
+      } catch (failure) {
+        feedback.textContent = failure?.message || "Chưa lưu được tên. Hãy thử lại.";
+      } finally {
+        saving = false;
+        input.readOnly = false;
+        form.removeAttribute("aria-busy");
+        save.disabled = !!P.nicknameError(input.value);
+      }
+    });
+    form.append(label, input, hint, feedback, el("p", "sync-info", "Có phút học tự động là bạn tự động có tên trên bảng. Tiến trình và ghi chú vẫn riêng tư."), save);
+    const logout = button("Đăng xuất", "sync-text-button sync-sign-out", async () => {
+      if (saving) return;
+      logout.disabled = true;
+      const { error: failure } = await signOut();
+      if (failure) { logout.disabled = false; feedback.textContent = "Chưa đăng xuất được. Hãy thử lại."; }
+    });
+    modalBody.append(form, logout);
+    // showModal must run before focusing an element inside the dialog.
+    requestAnimationFrame(() => { if (dialog.open && dialog.dataset.view === "username") input.focus(); });
   }
   function summary(counts) {
     const grid = el("div", "sync-summary");
@@ -382,6 +529,7 @@
     return grid;
   }
   function showProfile() {
+    dialog.dataset.view = "profile";
     heading(
       "TÀI KHOẢN CỦA BẠN",
       "Chào " + profile.nickname + " ☾",
@@ -403,36 +551,45 @@
     input.id = "sync-nickname";
     input.maxLength = 32;
     input.value = profile.nickname;
+    input.setAttribute("aria-describedby", "sync-profile-error");
+    const feedback = el("p", "sync-form-error");
+    feedback.id = "sync-profile-error";
+    feedback.setAttribute("role", "alert");
     const save = button("Lưu hồ sơ", "sync-btn sync-secondary");
     save.type = "submit";
     save.disabled = true;
-    const changed = () =>
-      (save.disabled =
-        !input.value.trim() || input.value.trim() === profile.nickname);
+    const changed = () => {
+      const problem = P.nicknameError(input.value);
+      save.disabled = !!problem || P.normalizeNickname(input.value) === profile.nickname;
+      feedback.textContent = problem;
+      input.setAttribute("aria-invalid", String(!!problem));
+    };
     input.addEventListener("input", changed);
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      changed();
+      if (save.disabled) return;
       save.disabled = true;
+      input.readOnly = true;
       try {
-        profile = await rpc("study_set_profile", {
-          p_nickname: input.value.trim().normalize("NFC"),
-          p_joined: true,
-        });
-        rankingCache.clear();
+        await saveNickname(input.value);
+        input.value = profile.nickname;
         notify("Đã lưu hồ sơ");
-        window.dispatchEvent(new CustomEvent("kma:cloud-updated"));
       } catch (_) {
-        notify("Chưa lưu được hồ sơ. Hãy thử lại.");
-        changed();
+        feedback.textContent = "Chưa lưu được hồ sơ. Hãy thử lại.";
+      } finally {
+        input.readOnly = false;
+        save.disabled = !!P.nicknameError(input.value) || P.normalizeNickname(input.value) === profile.nickname;
       }
     });
     form.append(
       label,
       input,
+      feedback,
       el(
         "p",
         "sync-info",
-        "Có thời gian Pomodoro là bạn tự động có tên trên bảng xếp hạng. Chỉ biệt danh và thời gian học được công khai; tiến trình và ghi chú vẫn riêng tư.",
+        (window.KMA_GARDEN_PREVIEW || config.gardenEnabled) ? "Có thời gian học là bạn có tên trên BXH. Biệt danh, thời gian học, bộ sưu tập và giá trị được công khai; tiến trình và ghi chú vẫn riêng tư." : "Có thời gian học tự động là bạn tự động có tên trên bảng xếp hạng. Chỉ biệt danh và thời gian học được công khai; tiến trình và ghi chú vẫn riêng tư.",
       ),
       save,
     );
@@ -452,13 +609,12 @@
           )
         )
           return;
-        const { error: failure } = await client.auth.signOut({
-          scope: "local",
-        });
+        const { error: failure } = await signOut();
         if (failure) notify("Chưa đăng xuất được. Hãy thử lại.");
       }),
     );
     modalBody.append(actions);
+    window.dispatchEvent(new CustomEvent("kma:profile-rendered", {detail:{container:modalBody}}));
   }
   function showStreak() {
     if (!streakDialog || !window.KMA_STREAK) return;
@@ -538,13 +694,14 @@
     });
   }
   async function offerImport() {
-    if (!user || get(ns + user + ":guest-decision")) return;
+    if (accessState() !== "ready" || get(ns + user + ":guest-decision")) return;
     const guest = records(""),
       counts = M.counts(guest);
     if (!Object.values(counts).some(Boolean)) {
       set(ns + user + ":guest-decision", "skip");
       return;
     }
+    dialog.dataset.view = "import";
     heading(
       "TIẾN TRÌNH TRƯỚC KHI ĐĂNG NHẬP",
       "Mang theo dữ liệu đang có?",
@@ -591,6 +748,7 @@
     if (!dialog.open) dialog.showModal();
   }
   function showConflicts() {
+    dialog.dataset.view = "conflicts";
     const c = conflicts[0];
     if (!c) {
       showProfile();
@@ -701,7 +859,7 @@
             });
           rankingTimes.set(key, Date.now());
           window.dispatchEvent(new CustomEvent("kma:ranking-updated"));
-          notify("Chưa tải được bảng xếp hạng. Bấm làm mới để thử lại.");
+          notify("Chưa tải được bảng xếp hạng. Thử mở lại khi kết nối ổn định.");
         })
         .finally(() => {
           rankingRequests.delete(key);
@@ -928,9 +1086,38 @@
   function timerStorageKey() {
     return ns + (user || "guest") + ":timer";
   }
+  let activitySequence = 0;
+  async function activityPulse({ clientId, subject, idleSeconds, claim, stop }) {
+    if (accessState() !== "ready") throw new Error("Learning account required");
+    const data = await rpc("study_activity_pulse", {
+      p_client: clientId,
+      p_subject: subject,
+      p_idle_seconds: idleSeconds,
+      p_sequence: ++activitySequence,
+      p_claim: claim,
+      p_stop: stop,
+    });
+    if (data?.credited) {
+      scheduleSync();
+      refreshRanking();
+    }
+    return data;
+  }
+  function activityLeave(clientId, subject) {
+    if (!activityToken || accessState() !== "ready") return;
+    // Keep the final stop request alive when navigating away. Credentials stay in memory.
+    fetch(config.url + "/rest/v1/rpc/study_activity_pulse", {
+      method: "POST", keepalive: true,
+      headers: { apikey: config.publishableKey, Authorization: "Bearer " + activityToken, "Content-Type": "application/json" },
+      body: JSON.stringify({ p_client: clientId, p_subject: subject, p_idle_seconds: 900, p_sequence: ++activitySequence, p_claim: false, p_stop: true }),
+    }).catch(() => {});
+  }
   async function resumeAuth(session) {
-    const next = session?.user?.id || null;
+    // Supabase anonymous sessions do not satisfy the Google account requirement.
+    const next = session?.user?.is_anonymous ? null : session?.user?.id || null;
+    authResolved = true;
     authenticated = !!next;
+    activityToken = authenticated ? session.access_token || null : null;
     if (next !== user) {
       if (next) set(ownerKey, next);
       else remove(ownerKey);
@@ -938,10 +1125,13 @@
       return;
     }
     if (!next) {
+      profileReady = false;
       renderStatus();
+      reconcileAccess();
       return;
     }
     await sync();
+    if (!profileReady) return;
     if (initializedAccount === next) return;
     initializedAccount = next;
     try {
@@ -976,8 +1166,12 @@
     dialog.addEventListener("close", () =>
       authButton.focus({ preventScroll: true }),
     );
+    dialog.addEventListener("cancel", event => {
+      if (accessState() === "username") event.preventDefault();
+    });
     dialog.addEventListener("click", (e) => {
       if (e.target !== dialog) return;
+      if (accessState() === "username") return;
       const r = dialog.getBoundingClientRect();
       if (
         e.clientX < r.left ||
@@ -995,8 +1189,8 @@
     guestNotice.id = "sync-guest-notice";
     const copy = el("div", "sync-guest-copy");
     copy.append(
-      el("strong", "", "Mang tiến trình của bạn sang điện thoại"),
-      el("p", "", "Đăng nhập để đồng bộ câu đã làm, ghi chú và lịch sử học."),
+      el("strong", "", "Đăng nhập để bảo vệ tiến trình"),
+      el("p", "", "Chọn đáp án sau khi đăng nhập. Tiến trình được lưu theo tài khoản trên mọi thiết bị."),
     );
     const login = button(
       "Đăng nhập Google",
@@ -1018,6 +1212,7 @@
     document.querySelector(".main-content").prepend(guestNotice);
     ready = true;
     renderStatus();
+    if (answerRequested) openAccount();
     new MutationObserver((mutations) => {
       if (
         mutations.some((m) =>
@@ -1040,6 +1235,7 @@
       renderStatus();
     } else await resumeAuth(data.session);
     client.auth.onAuthStateChange((event, session) => {
+      activityToken = session?.user?.is_anonymous ? null : session?.access_token || null;
       if (event === "SIGNED_OUT" || event === "SIGNED_IN")
         setTimeout(() => resumeAuth(session), 0);
     });
@@ -1083,8 +1279,18 @@
   window.KMA_ACCOUNT = {
     isDemo: false,
     timerStorageKey,
+    activityPulse,
+    activityLeave,
     refreshRanking,
+    gardenRequest: (action, args = {}) => {
+      const names = {snapshot:"study_garden_snapshot",plant:"study_garden_plant",harvest:"study_garden_harvest",layout:"study_garden_layout",public:"study_garden_public"};
+      if (!names[action]) return Promise.reject(new Error("Thao tác vườn không hợp lệ."));
+      return rpc(names[action], args);
+    },
     openAccount,
+    requireLearningAccount,
+    getLearningAccess: accessState, // Hot path: no scan of the sync outbox.
+    getLearningIdentity: () => ({ user, access: accessState() }),
     openStreak: showStreak,
     sync,
     getRankingSnapshot,
@@ -1092,6 +1298,8 @@
     getState: () => ({
       user,
       authenticated,
+      access: accessState(),
+      nickname: profile.nickname,
       queue: queue().length,
       conflicts: conflicts.length,
     }),

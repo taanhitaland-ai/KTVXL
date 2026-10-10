@@ -1,10 +1,10 @@
-# Supabase: tiến trình, ghi chú và Pomodoro
+# Supabase: tiến trình, ghi chú và thời gian học
 
 Trang tĩnh vẫn triển khai bằng GitHub Pages (`master/docs`). Database và Google OAuth cấu hình riêng; push Git không tự chạy SQL hoặc đổi cấu hình Google.
 
 ## Khởi tạo dự án mới
 
-1. Tạo Supabase project thuộc tài khoản chủ dự án. Chạy `migrations/202610080001_study_sync.sql` một lần trong SQL Editor, sau đó `migrations/202610080002_focus_reliability.sql`. Migration 001 tạo bảng, RLS và RPC; không chạy lại trên schema đã có. Với project hiện tại, chỉ cần migration 002 trước khi triển khai frontend mới.
+1. Tạo Supabase project thuộc tài khoản chủ dự án. Chạy `migrations/202610080001_study_sync.sql` một lần, tiếp đến `202610080002_focus_reliability.sql` và `202610090001_automatic_study_time.sql` trong SQL Editor. Migration 001 tạo bảng, RLS và RPC; không chạy lại các migration đã áp dụng. Với project hiện tại đã có 001/002, chỉ chạy bản thời gian học tự động mới trước khi publish frontend.
 2. Trong Google Auth Platform tạo Web OAuth client. Authorized origins chỉ chứa origin của Pages. Redirect URI là `https://PROJECT_REF.supabase.co/auth/v1/callback`.
 3. Trong Supabase Auth → Google bật provider, nhập Client ID và Client Secret trực tiếp trong dashboard. Không đưa Client Secret, mật khẩu database, `service_role` hoặc secret API key vào mã nguồn.
 4. Auth → URL Configuration: Site URL và Redirect URLs chỉ chứa trang chính `https://taanhitaland-ai.github.io/KTVXL/` và `/KTVXL/index.html`. Không đưa URL localhost vào project production.
@@ -18,9 +18,29 @@ Trang tĩnh vẫn triển khai bằng GitHub Pages (`master/docs`). Database và
 - `study_sync_receipts`: ID thao tác và nội dung yêu cầu, để gửi lại không gây cộng/lưu trùng. Dùng lại cùng ID với nội dung khác bị từ chối.
 - `focus_sessions`: phiên tập trung với thời điểm, trạng thái và số phút được máy chủ ghi nhận.
 
-RLS bật ở cả bốn bảng. Người đăng nhập chỉ đọc dữ liệu của mình; client không có quyền ghi bảng trực tiếp. Các RPC riêng kiểm tra `auth.uid()`, nội dung, giới hạn và quyền sở hữu; dùng search path cố định. `study_leaderboard` là RPC công khai, chỉ trả dữ liệu xếp hạng của người có phút Pomodoro và dòng riêng khi có phiên đăng nhập. Không trả email, đáp án hay nội dung ghi chú.
+Các bảng dữ liệu bật RLS. Người đăng nhập chỉ đọc dữ liệu riêng được cho phép; client không có quyền ghi bảng trực tiếp. Các RPC riêng kiểm tra `auth.uid()`, nội dung, giới hạn và quyền sở hữu; dùng search path cố định. `study_leaderboard` là RPC công khai, chỉ trả dữ liệu xếp hạng của người có phút học và dòng riêng khi có phiên đăng nhập. Không trả email, đáp án hay nội dung ghi chú.
 
 Giới hạn: ghi chú 2.000 ký tự, biệt danh 32 ký tự, 25.000 bản ghi/tài khoản, 200 thao tác/request, phiên xếp hạng 1–300 phút (migration 002). Chỉ một phiên active/tài khoản. Phiên active quá 24 giờ được hủy trước khi mở phiên mới.
+
+## Đăng nhập và biệt danh
+
+Trang chính yêu cầu phiên đăng nhập Google đã được xác nhận và biệt danh hợp lệ trước khi ghi nhận đáp án hoặc bắt đầu bài thi. ID tài khoản lưu tại máy không thay thế việc xác nhận phiên; phiên Supabase anonymous không được dùng để vượt bước đăng nhập. Khi hồ sơ chưa tải được, giao diện cho thử lại thay vì xem tài khoản là khách hoặc ghi đè tên có sẵn.
+
+Biệt danh sử dụng cột `study_profiles.nickname` và RPC `study_set_profile` hiện có, không cần migration mới. Tên mặc định trống/Người học/Anonymous yêu cầu chọn lại sau đăng nhập; tên riêng hợp lệ được giữ. Tên là biệt danh hiển thị (2–32 ký tự), không phải định danh đăng nhập duy nhất; dữ liệu tiếp tục gắn với UUID Google/Supabase. Giao diện dùng văn bản thuần, chuẩn hóa NFC, kiểm tra ký tự và không chèn tên qua HTML. Lưu tên chỉ cập nhật hồ sơ, không xóa lịch sử hoặc sửa phút Pomodoro. Local preview vẫn tách biệt khỏi database production; thử auth bằng fixture độc lập.
+
+## Thời gian học tự động (migration 202610090001)
+
+Chạy migration `202610090001_automatic_study_time.sql` sau 001/002 trước khi publish giao diện mới. Không đổi schema dữ liệu học đã lưu; phút Pomodoro cũ vẫn tính trong BXH. `study_focus_start` ngừng tạo countdown mới, RPC kết thúc cũ vẫn xử lý yêu cầu còn chờ.
+
+- `study_activity_windows`: một lượt đang tính cho mỗi tài khoản, chủ tab/thiết bị và hạn hoạt động 15 phút.
+- `study_activity_credit`: sổ thời gian do máy chủ đo, chia theo ngày Việt Nam và môn.
+- `study_activity_clients`: số thứ tự yêu cầu từng trang, chặn retry/yêu cầu cũ mở lại lượt đã dừng.
+- `study_activity_pulse`: xác nhận hoạt động (mỗi 30 giây), đổi chủ từ tương tác mới hơn, dừng và cộng phút mới vào `study_records` hiện có. Không nhận số phút từ client.
+- `study_rank_daily`: view riêng kết hợp thời gian tự động đang chạy và Pomodoro cũ; chỉ RPC `study_leaderboard` xuất thông tin xếp hạng.
+
+RLS bật cho các bảng mới, client không có quyền ghi trực tiếp. Pulse yêu cầu tài khoản không anonymous có biệt danh đã chọn. Khi kết nối đứt, máy chủ chỉ tính đến mốc hoạt động cuối +15 phút; không bù toàn bộ thời gian client tự khai. Chủ tài khoản truy xuất snapshot sẽ quyết toán phút còn chưa gửi, kể cả sau đóng trang. Phút cá nhân nhập thủ công vẫn không vào BXH.
+
+Kiểm tra SQL bằng `npm test`; kiểm tra trình duyệt với backend loopback riêng `node scripts/fixtures/automatic_study_server.cjs` và Playwright CLI `run-code --filename scripts/browser_automatic_study_checks.js`. Dịch chuyển đồng hồ trong fixture chỉ dùng cho DB thử biệt lập, không thực hiện trên tài khoản thật.
 
 ## Lưu tại máy
 
@@ -41,3 +61,10 @@ Migration cần được kiểm tra trên PostgreSQL/Supabase riêng với ít n
 Kiểm tra tích hợp thực tế: đăng nhập cùng Google trên hai thiết bị hoặc hai context riêng của trang chính, sửa note/answer/star ở hai chiều, chạy đủ một phiên Pomodoro và đối chiếu bảng. Không thay đồng hồ browser để giả lập thời gian máy chủ.
 
 Tài liệu chính thức: [Google Auth](https://supabase.com/docs/guides/auth/social-login/auth-google), [RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [Functions](https://supabase.com/docs/guides/database/functions), [API keys](https://supabase.com/docs/guides/getting-started/api-keys).
+## Vườn và bộ sưu tập theo tài khoản
+
+Migration `202610100001_study_garden.sql` chạy sau automatic study `202610090001_automatic_study_time.sql`. Áp dụng hai migration này trước khi publish frontend. Trang chính nạp vườn với cấu hình production; bản preview vẫn dùng database riêng. `study_gardens` lưu kho/cây/bố cục theo UUID, RLS chỉ cho chủ sở hữu đọc; không cấp quyền insert/update trực tiếp cho client. Sổ `study_garden_credit` chỉ được server ghi từ đồng hồ đã xác nhận, không nhận số phút từ client và không cộng lại giờ học trước khi bật vườn.
+
+RPC `study_garden_snapshot`, `study_garden_plant`, `study_garden_harvest`, `study_garden_layout` xác thực tài khoản có tên, khóa giao dịch theo user, kiểm tra hạt/cây/số lượng và bố cục cũ. Thu hoạch kiểm tra dấu thời gian cây để yêu cầu cũ không thu một cây mới; RNG và bảo hiểm chạy trên server. `study_garden_public` chỉ công khai UUID, biệt danh, kho vật phẩm, bố cục, tổng giá trị. Tiến trình học, ghi chú, email, số hạt và lịch thưởng không có trong RPC này. BXH giữ nguyên bộ lọc và thứ tự phút, thêm `asset_value` suốt đời.
+
+Lưu và đồng bộ garden tách khỏi schema ghi chú/tiến trình cũ. Client chỉ gửi hành động hoặc bố cục 15 ô; không có RPC upload state hay số dư. Trang chính nạp component garden; mô tả quyền riêng tư và thông báo cập nhật bao gồm bộ sưu tập công khai. Database preview ở loopback dùng tài khoản mô phỏng và dữ liệu trong bộ nhớ; tuyệt đối không đưa mẫu vào production. Kiểm tra bằng `node --test scripts/garden_database.test.cjs`.

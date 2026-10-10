@@ -104,6 +104,28 @@ body {
   background: #13091eb8;
   backdrop-filter: blur(4px);
 }
+.sync-account-dialog[data-view="username"] > .sync-dialog-close {
+  display: none;
+}
+.sync-form-error {
+  color: #a21c36;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.sync-form-error:empty {
+  display: none;
+}
+body.dark-mode .sync-form-error {
+  color: #ff9caf;
+}
+.sync-username-form .sync-btn {
+  width: 100%;
+}
+.sync-input[aria-invalid="true"] {
+  border-color: #b81e3d;
+}
 body.dark-mode .sync-account-dialog {
   --sync-surface: #291b3b;
   --sync-raised: #362448;
@@ -370,6 +392,21 @@ body.dark-mode .sync-guest-copy p {
   line-height: 1.75;
   margin: 18px 0 12px;
 }
+.sync-welcome-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 18px;
+}
+.sync-welcome-footer .sync-text-button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 0;
+}
+.sync-welcome-footer .sync-privacy-link { font-size: 13px; line-height: 1.6; }
 .sync-text-button {
   font:
     700 12px "Be Vietnam Pro",

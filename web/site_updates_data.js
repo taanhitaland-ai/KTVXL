@@ -1,5 +1,14 @@
 /* Add a new stable ID for each release; never reuse IDs already marked as read. */
 window.KMA_SITE_UPDATES = [
+  { id: '2026-10-10-account-study-garden', date: '10/10/2026', title: 'Vườn học tập, bộ sưu tập và trưng bày',
+    added: ['Học cả 4 môn để nhận hạt mỗi 25 phút; học liên tục đủ 60/120 phút nhận thêm hạt hiếm/sử thi.', 'Gieo cây, thu hoạch 10 loại vật phẩm với tỉ lệ rõ ràng và bảo hiểm; vườn được lưu theo tài khoản.', 'Hồ sơ có hai tab Tiến trình/Trưng bày; bấm tên trên BXH để xem bộ sưu tập của nhau và tổng giá trị tài sản.'],
+    fixed: ['Căn giữa hộp sưu tập, hỗ trợ kéo thả trên máy tính và chọn/chạm trên điện thoại.', 'Giữ thứ hạng theo thời gian học; dữ liệu mẫu chỉ có trong preview, vườn thật bắt đầu trống.'] },
+  { id: '2026-10-09-automatic-study-time', date: '09/10/2026', title: 'Tự động tính thời gian học và lên bảng xếp hạng',
+    added: ['Thời gian tự chạy khi bạn làm bài, đọc lời giải hoặc kiến thức; không cần chọn số phút hay bấm bắt đầu.', 'Sau 15 phút không bấm, cuộn hoặc gõ, bộ đếm tạm dừng; thao tác tiếp sẽ bắt đầu lượt học mới.', 'Phút tự động ghi nhận vào lịch sử theo môn, chuỗi học và bảng xếp hạng.'],
+    fixed: ['Đồng hồ gọn hơn ở giao diện sáng/tối: thời gian, môn học và trạng thái Đang học/Nghỉ ngơi.', 'Giảm cập nhật giao diện thừa khi cuộn, không dựng lại lịch thi mỗi giây khi đang đóng.', 'Mỗi tài khoản chỉ tính thời gian ở một tab hoặc thiết bị, tránh cộng trùng.', 'Giữ nguyên lịch sử và các phút Pomodoro đã có.', 'Tách liên kết Để sau và quyền riêng tư ở màn hình đăng nhập; rút gọn thông tin về dữ liệu học.'] },
+  { id: '2026-10-09-learning-account-name', date: '09/10/2026', title: 'Đăng nhập và chọn tên khi ôn tập',
+    added: ['Đăng nhập Google trước khi chọn đáp án hoặc bắt đầu thi thử để lưu tiến trình theo tài khoản.', 'Tài khoản chưa có biệt danh hoặc đang dùng tên mặc định Người học/Anonymous cần chọn tên riêng để mọi người nhận ra bạn trên bảng xếp hạng.'],
+    fixed: ['Giữ nguyên câu đã làm, ghi chú và phút Pomodoro khi đổi tên; bảng xếp hạng cập nhật biệt danh đã lưu.', 'Kiểm tra tên, chuẩn hóa dấu tiếng Việt và giữ nội dung dưới dạng văn bản an toàn.'] },
   { id: '2026-10-09-responsive-study-tools', date: '09/10/2026', title: 'Thanh công cụ gọn hơn trên máy tính và điện thoại',
     added: ['Máy tính: ba công cụ Pomodoro, Xếp hạng và Ghi chú nằm trong thanh dọc nhỏ; bấm tay cầm = để thu/mở, kéo để đổi vị trí.', 'Điện thoại: khay công cụ ở đáy màn hình, vuốt lên để mở và vuốt xuống để thu; có thể chạm tay cầm để mở/đóng.'],
     fixed: ['Khay điện thoại mặc định thu gọn; mở một chức năng sẽ tự thu khay. Pomodoro vẫn chạy khi công cụ được thu gọn.', 'Màu riêng cho giao diện sáng/tối, giữ công cụ trong màn hình khi đổi kích thước và nhớ trạng thái riêng của từng giao diện.'] },

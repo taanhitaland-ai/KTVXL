@@ -96,6 +96,16 @@
     svg.append(path);
     return svg;
   }
+  function memberName(member,cls='') {
+    if(!window.KMA_STUDY_GARDEN)return el('strong',cls,member.nickname);
+    const name=button(member.nickname,'lb-member-link '+cls,()=>window.KMA_STUDY_GARDEN.openPublic(member.id));
+    name.setAttribute('aria-label','Xem bộ sưu tập của '+member.nickname);return name;
+  }
+  function assets(member) {
+    const points=Math.max(0,Math.floor(Number(member.asset_value)||0));
+    const chip=el('span','lb-asset-value','◆ '+points.toLocaleString('vi-VN')+' điểm');
+    chip.title='Tổng giá trị tất cả vật phẩm đang sở hữu';return chip;
+  }
   function row(member, bestMinutes) {
     const item = el("li", "lb-row");
     item.dataset.member = member.id;
@@ -106,7 +116,7 @@
     avatar.setAttribute("aria-hidden", "true");
     avatar.style.setProperty("--avatar-color", avatarColor(member.nickname));
     const identity = el("div", "lb-identity");
-    identity.append(el("strong", "", member.nickname));
+    identity.append(memberName(member));
     if (member.id === api().getState().user)
       identity.append(el("span", "lb-you", "Bạn"));
     const score = el("div", "lb-score");
@@ -114,6 +124,7 @@
       el("strong", "", L.formatMinutes(member.minutes)),
       el("span", "", member.sessions + " phiên"),
     );
+    if(member.asset_value!==undefined)score.append(assets(member));
     const progress = el("div", "lb-progress");
     progress.setAttribute("aria-hidden", "true");
     const fill = el("span", "");
@@ -163,9 +174,10 @@
       card.append(
         el("span", "lb-podium-rank", "#" + member.rank),
         avatar,
-        el("strong", "lb-podium-name", member.nickname),
+        memberName(member,"lb-podium-name"),
         el("span", "lb-podium-time", L.formatMinutes(member.minutes)),
       );
+      if(member.asset_value!==undefined)card.append(assets(member));
       podium.append(card);
     }
     const bestMinutes = data.rows[0]?.minutes || 60;
@@ -218,9 +230,10 @@
       avatar.style.setProperty("--avatar-color", avatarColor(data.me.nickname));
       const copy = el("div", "lb-personal-copy");
       copy.append(
-        el("strong", "", "Bạn"),
+        memberName({...data.me,nickname:'Bạn'}),
         el("p", "", "DÒNG CỦA BẠN · " + data.me.sessions + " phiên"),
       );
+      if(data.me.asset_value!==undefined)copy.append(assets(data.me));
       personal.append(
         rank,
         avatar,
@@ -334,7 +347,7 @@
       el(
         "p",
         "",
-        "Tự động tính số phút tập trung thực tế khi bạn kết thúc hoặc dừng phiên Pomodoro, kể cả kết thúc sớm. Không tính giờ nghỉ và phút cộng thủ công. Người có cùng số phút giữ cùng thứ hạng.",
+        "Tự động tính phút khi bạn làm bài hoặc đọc kiến thức. Không thao tác trong 15 phút sẽ tạm dừng. Mỗi tài khoản chỉ tính thời gian ở một tab hoặc thiết bị; phút cộng thủ công không lên hạng. Các phút Pomodoro đã có vẫn giữ nguyên. Người có cùng số phút giữ cùng thứ hạng.",
       ),
     );
     const demo = el("div", "lb-demo-controls");
@@ -382,7 +395,7 @@
     trigger.setAttribute("aria-haspopup", "dialog");
     trigger.setAttribute("aria-controls", "leaderboard-dialog");
     const promo = el("section", "lb-promo");
-    promo.setAttribute("aria-label", "Bảng xếp hạng Pomodoro");
+    promo.setAttribute("aria-label", "Bảng xếp hạng thời gian học");
     const copy = el("div", "lb-promo-copy");
     copy.append(el("strong", "", "🏆 Cùng nhau giữ nhịp học"));
     teaser = el("p", "");

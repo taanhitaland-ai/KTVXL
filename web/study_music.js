@@ -184,11 +184,15 @@
     try { return { elapsed: youtube?.getCurrentTime() || 0, duration: youtube?.getDuration() || 0 }; } catch { return { elapsed: 0, duration: 0 }; }
   }
   function updateProgress() {
+    if (document.visibilityState !== 'visible') return;
     const { elapsed, duration } = position();
-    $('music-elapsed').textContent = L.time(elapsed); $('music-duration').textContent = duration ? L.time(duration) : current()?.kind === 'youtube' && loadedId ? 'Trực tiếp' : '0:00';
+    const elapsedText = L.time(elapsed), durationText = duration ? L.time(duration) : current()?.kind === 'youtube' && loadedId ? 'Trực tiếp' : '0:00';
+    if ($('music-elapsed').textContent !== elapsedText) $('music-elapsed').textContent = elapsedText;
+    if ($('music-duration').textContent !== durationText) $('music-duration').textContent = durationText;
     $('music-seek').disabled = duration <= 0;
     if (document.activeElement !== $('music-seek')) $('music-seek').value = duration ? Math.round(elapsed / duration * 1000) : 0;
-    $('music-seek').setAttribute('aria-valuetext', L.time(elapsed) + ' / ' + L.time(duration));
+    const label = elapsedText + ' / ' + L.time(duration);
+    if ($('music-seek').getAttribute('aria-valuetext') !== label) $('music-seek').setAttribute('aria-valuetext', label);
   }
   function seek(seconds) {
     const { duration } = position();
@@ -282,13 +286,6 @@
   audio.addEventListener('pause', () => { if (current()?.kind === 'audio' && !pending) { playing = false; render(); } });
   audio.addEventListener('playing', () => { if (current()?.kind === 'audio') { playing = true; pending = false; render(); } });
   audio.addEventListener('timeupdate', updateProgress); audio.addEventListener('loadedmetadata', updateProgress);
-  for (const id of ['side-tab-pomo', 'pomodoro-main-box']) {
-    const shortcut = document.createElement('button'); shortcut.type = 'button'; shortcut.className = 'neo-btn neo-btn-white neo-btn-sm music-pomo-shortcut'; shortcut.textContent = '🎧 Mở nhạc chill';
-    shortcut.addEventListener('click', () => {
-      window.KMA_SCHEDULE_POMODORO?.toggleSideDrawer(true);
-      document.querySelector('[data-drawer-tab="side-tab-music"]').click();
-    }); $(id)?.appendChild(shortcut);
-  }
   audio.volume = state.volume / 100; render();
   const demoButton = document.createElement('button'); demoButton.type = 'button'; demoButton.id = 'music-add-3107';
   demoButton.className = 'neo-btn neo-btn-white neo-btn-sm music-pomo-shortcut'; demoButton.textContent = '＋ Thêm 3 bài W/n · 3107';
