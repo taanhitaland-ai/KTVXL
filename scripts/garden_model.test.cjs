@@ -71,3 +71,57 @@ test('garden initialization isolates production from local and unrelated hosts',
   assert.equal(enabled('127.0.0.1','http:','/demo.html',{url:'https://fixture.invalid'},true),true);
   assert.equal(enabled('taanhitaland-ai.github.io','https:','/KTVXL/',{url:'https://fixture.invalid'},true),false);
 });
+
+test('glowing tree planting rate, glowing drop tables, glowing item drop chance, and 2.5x point multipliers',()=>{
+  for(const rate of Object.values(M.glowingRates))assert.equal(rate.reduce((a,b)=>a+b,0),100);
+  let s=M.empty();s.seeds.oak=10;
+  // Planting with roll < 0.20 produces glowing tree
+  s=M.plant(s,0,'oak',0,0,()=>0.15);
+  assert.equal(s.plots[0].glowing,true);
+  // Planting with roll >= 0.20 produces normal tree
+  s=M.plant(s,1,'oak',0,0,()=>0.50);
+  assert.equal(s.plots[1].glowing,false);
+  // Default without roll is normal
+  s=M.plant(s,2,'oak',0,0);
+  assert.equal(s.plots[2].glowing,false);
+
+  // Mature plot 0 (glowing tree)
+  s.plots[0].seconds=3600;
+  // Harvest glowing tree with glowRoll < 0.50 yields glowing item
+  // RNG sequence: 1) tier roll = 0.999 (legendary in glowing rates), 2) candidate pick = 0 (frost), 3) glowRoll = 0.25 (<0.50 -> glowing)
+  const seq=[0.999, 0, 0.25]; let idx=0;
+  const harvestGlowing=M.harvest(s,0,()=>seq[idx++]);
+  assert.equal(harvestGlowing.reward.glowing,true);
+  assert.equal(harvestGlowing.reward.treeGlowing,true);
+  assert.equal(harvestGlowing.reward.item,'frost_glowing');
+  assert.equal(harvestGlowing.state.items.frost_glowing,1);
+
+  // Mature plot 1 (normal tree) - cannot yield glowing item even if random is 0
+  s.plots[1].seconds=3600;
+  const harvestNormal=M.harvest(s,1,()=>0);
+  assert.equal(harvestNormal.reward.glowing,false);
+  assert.equal(harvestNormal.reward.treeGlowing,false);
+  assert.equal(harvestNormal.reward.item,'coal');
+
+  // Verify itemById and 2.5x point multipliers
+  const baseAzure=M.itemById('azure');
+  const glowAzure=M.itemById('azure_glowing');
+  assert.equal(baseAzure.points,80);
+  assert.equal(glowAzure.points,200);
+  assert.equal(glowAzure.glowing,true);
+  assert.ok(glowAzure.name.includes('✨'));
+
+  assert.equal(M.itemById('coal_glowing').points,25);
+  assert.equal(M.itemById('copper_glowing').points,75);
+  assert.equal(M.itemById('sun_glowing').points,450);
+  assert.equal(M.itemById('frost_glowing').points,1000);
+
+  // Verify showcase score and total asset value
+  const testLayout=Array(15).fill(null);
+  testLayout[0]='frost_glowing';
+  testLayout[1]='azure';
+  assert.equal(M.score(testLayout),1000+80);
+
+  const customState={v:1,items:{frost_glowing:1,azure:2,coal_glowing:3}};
+  assert.equal(M.assetValue(customState),1000*1 + 80*2 + 25*3);
+});

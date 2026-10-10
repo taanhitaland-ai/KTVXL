@@ -26,7 +26,11 @@
     if (click) node.addEventListener('click', click); return node;
   }
   function art(name, alt, cls = '') {
-    const img = el('img', 'garden-art ' + cls); img.src = 'garden_assets/' + name + '.svg';
+    const isGlowing = name.endsWith('_glowing');
+    const baseName = name.replace(/_glowing$/, '');
+    const glowingCls = isGlowing ? ' garden-art-glowing' : '';
+    const img = el('img', 'garden-art ' + cls + glowingCls);
+    img.src = 'garden_assets/' + baseName + '.svg';
     img.alt = alt; img.width = 128; img.height = 128; img.draggable = false; return img;
   }
   function say(text) { if (message.textContent !== text) message.textContent = text; }
@@ -128,11 +132,13 @@
         grid.append(cell); continue;
       }
       const seed = M.seedById(plot.seed), fraction = plot.seconds / (seed.minutes * 60), mature = fraction >= 1;
-      const cell = el('article', 'garden-plot' + (mature ? ' garden-ripe' : '')); cell.dataset.plot = String(i);
-      cell.append(art(`tree-${seed.id}-${mature ? 3 : Math.min(2, Math.floor(fraction * 3))}`, seed.tree), el('h5', '', seed.tree));
-      cell.append(el('span', mature ? 'garden-ripe-label' : 'garden-muted', mature ? 'Chín rồi!' : `Cần thêm ${Math.ceil((seed.minutes * 60 - plot.seconds) / 60)} phút`), meter(fraction * 100, 'Độ lớn của ' + seed.tree, seed.color));
+      const isGlowing = plot.glowing === true;
+      const cell = el('article', 'garden-plot' + (mature ? ' garden-ripe' : '') + (isGlowing ? ' garden-plot-glowing' : '')); cell.dataset.plot = String(i);
+      if (isGlowing) cell.append(el('span', 'garden-glowing-badge', '✨ Cây phát sáng'));
+      cell.append(art(`tree-${seed.id}-${mature ? 3 : Math.min(2, Math.floor(fraction * 3))}`, seed.tree, isGlowing ? 'garden-tree-glowing' : ''), el('h5', '', seed.tree + (isGlowing ? ' ✨' : '')));
+      cell.append(el('span', mature ? (isGlowing ? 'garden-ripe-label garden-ripe-glowing' : 'garden-ripe-label') : 'garden-muted', mature ? (isGlowing ? '✨ Chín rồi (Phát sáng)!' : 'Chín rồi!') : `Cần thêm ${Math.ceil((seed.minutes * 60 - plot.seconds) / 60)} phút`), meter(fraction * 100, 'Độ lớn của ' + seed.tree, isGlowing ? '#ffd700' : seed.color));
       if (mature) {
-        const harvest = button('Thu hoạch', 'garden-button garden-primary', act(async () => {
+        const harvest = button(isGlowing ? '✨ Thu hoạch' : 'Thu hoạch', 'garden-button garden-primary' + (isGlowing ? ' garden-button-glowing' : ''), act(async () => {
           harvest.disabled = true;
           try {
             const result = await transaction('harvest',{p_plot:i,p_created_at:plot.createdAt||0});
@@ -150,8 +156,14 @@
     const rules = el('details', 'garden-rules'), summary = el('summary', '', 'Luật vườn & tỉ lệ'); rules.open = !!rulesOpen; rules.append(summary);
     rules.append(el('p', '', 'Mỗi 25 phút học: 1 hạt thường. Trong mỗi lượt liên tục, mốc 60 phút thêm 1 hạt hiếm; mốc 120 phút thêm 1 hạt sử thi. Đổi môn không ngắt lượt; nghỉ từ 15 phút sẽ bắt đầu lượt thưởng mới.'));
     rules.append(el('p', '', 'Tất cả cây đã gieo cùng lớn theo số phút học được xác nhận. Chờ ngoài bài học và bấm gieo/thu hoạch không làm cây lớn. Ô thứ 6 mở ở chuỗi 7 ngày và được giữ mở.'));
+    rules.append(el('p', 'garden-glowing-note', '✨ Cây phát sáng (20% khi gieo): Tăng tỉ lệ ra vật phẩm Hiếm/Sử thi/Huyền thoại và có 50% cơ hội rơi vật phẩm phát sáng (giá trị gấp 2.5 lần)!'));
     rules.append(el('p', '', 'Sau 9 lần liên tiếp không có Sử thi/Huyền thoại, lần thứ 10 bảo đảm Sử thi trở lên. Gặp Sử thi/Huyền thoại sẽ reset bảo hiểm.'));
-    for (const tier of ['common','rare','epic']) rules.append(el('p', '', `Hạt ${M.tiers.find(t => t.id === tier).name}: ` + M.rates[tier].map((n,i)=>`${M.tiers[i].name} ${n}%`).join(' · ')));
+    for (const tier of ['common','rare','epic']) {
+      const norm = M.rates[tier].map((n,i)=>`${M.tiers[i].name} ${n}%`).join(' · ');
+      const glow = M.glowingRates[tier].map((n,i)=>`${M.tiers[i].name} ${n}%`).join(' · ');
+      rules.append(el('p', '', `Hạt ${M.tiers.find(t => t.id === tier).name}: ${norm}`));
+      rules.append(el('p', 'garden-glowing-subrule', `✨ Cây ${M.tiers.find(t => t.id === tier).name} phát sáng: ${glow}`));
+    }
     main.append(rules);
     if (preview) {
     const demo = el('details', 'garden-simulator'), demoTitle = el('summary', '', 'Thử giao diện bằng dữ liệu mẫu'); demo.open = !!simulatorOpen; demo.append(demoTitle);
@@ -210,18 +222,34 @@
   function openHarvest(reward) {
     const item = M.itemById(reward.item), seed = M.seedById(reward.seed), tier = M.tiers.find(t => t.id === item.tier);
     harvestBody.replaceChildren();
-    harvestBody.append(el('span','garden-harvest-caption',`${seed.tree} · thu hoạch lần ${reward.harvest}`));
-    const spotlight = el('div','garden-spotlight'), rays = el('div','garden-rays'); rays.setAttribute('aria-hidden','true');
-    spotlight.append(rays, art('ore-' + item.id, item.name)); harvestBody.append(spotlight);
-    const ribbon = el('span','garden-rarity-ribbon',tier.name.toUpperCase()); ribbon.style.backgroundColor = tier.color;
-    harvestBody.append(ribbon,el('h3','garden-reward-name',item.name),el('p','garden-muted',`${reward.isNew?'Vật phẩm mới!':'Đã thêm vào bộ sưu tập'} · Đang có ×${state.items[item.id]}`));
-    const odds = el('section','garden-drop-rates'); odds.append(el('h4','',`Tỉ lệ hạt ${seed.name.replace(/^Hạt /,'')} (${M.tiers.find(t => t.id === seed.tier).name})`));
+    const captionText = reward.treeGlowing ? `✨ ${seed.tree} phát sáng · thu hoạch lần ${reward.harvest}` : `${seed.tree} · thu hoạch lần ${reward.harvest}`;
+    harvestBody.append(el('span','garden-harvest-caption' + (reward.treeGlowing ? ' garden-caption-glowing' : ''), captionText));
+    const spotlight = el('div','garden-spotlight' + (item.glowing ? ' is-glowing-spotlight' : '')), rays = el('div','garden-rays' + (item.glowing ? ' garden-rays-glowing' : ''));
+    rays.setAttribute('aria-hidden','true');
+    spotlight.append(rays, art('ore-' + item.id, item.name, item.glowing ? 'garden-art-glowing' : ''));
+    harvestBody.append(spotlight);
+    const ribbonText = item.glowing ? `✨ ${tier.name.toUpperCase()} PHÁT SÁNG ✨` : tier.name.toUpperCase();
+    const ribbon = el('span','garden-rarity-ribbon' + (item.glowing ? ' garden-ribbon-glowing' : ''), ribbonText);
+    ribbon.style.backgroundColor = item.glowing ? '#ffd700' : tier.color;
+    harvestBody.append(ribbon, el('h3','garden-reward-name' + (item.glowing ? ' garden-reward-glowing' : ''), item.name));
+    let subText = `${reward.isNew ? 'Vật phẩm mới!' : 'Đã thêm vào bộ sưu tập'} · Đang có ×${state.items[item.id]}`;
+    if (item.glowing) subText += ` · ✨ Giá trị gấp 2.5 lần (${item.points}đ)!`;
+    harvestBody.append(el('p','garden-muted', subText));
+    const odds = el('section','garden-drop-rates');
+    const oddsTitle = reward.treeGlowing
+      ? `Tỉ lệ cây phát sáng (${seed.name.replace(/^Hạt /,'')} · ${M.tiers.find(t => t.id === seed.tier).name}) ✨`
+      : `Tỉ lệ hạt ${seed.name.replace(/^Hạt /,'')} (${M.tiers.find(t => t.id === seed.tier).name})`;
+    odds.append(el('h4','', oddsTitle));
+    const rateTable = reward.treeGlowing ? M.glowingRates[seed.tier] : M.rates[seed.tier];
     const bar = el('div','garden-drop-bar'), labels = el('div','garden-drop-labels');
-    M.rates[seed.tier].forEach((n,i)=>{
+    rateTable.forEach((n,i)=>{
       const part=el('span'); part.style.width=n+'%'; part.style.backgroundColor=M.tiers[i].color; if(M.tiers[i].id===item.tier)part.classList.add('is-result'); bar.append(part);
       const label=el('span','',`${M.tiers[i].name} ${n}%`); const dot=el('i');dot.style.backgroundColor=M.tiers[i].color;label.prepend(dot);labels.append(label);
     });
     odds.append(bar,labels);
+    if (reward.treeGlowing) {
+      odds.append(el('p','garden-glowing-note','✨ Cây phát sáng: tăng mạnh tỉ lệ đồ Hiếm / Sử thi / Huyền thoại + 50% cơ hội rơi vật phẩm phát sáng!'));
+    }
     if(reward.guaranteed)odds.append(el('p','garden-guarantee','Lượt này kích hoạt bảo hiểm: chỉ Sử thi/Huyền thoại, theo tỉ lệ tương đối của hai hạng này.'));
     harvestBody.append(odds,el('p','garden-pity',`Bảo hiểm: còn ${10-state.misses} lần nữa chắc chắn Sử thi trở lên.`));
     const actions=el('div','garden-modal-actions');
@@ -246,18 +274,32 @@
   }
   function renderCollection() {
     if(!draft)return;
-    collectionCount.textContent=`${M.items.filter(i=>state.items[i.id]).length}/10 loại`;
+    const baseCount = M.items.filter(i=>state.items[i.id]).length;
+    const glowCount = M.items.filter(i=>state.items[i.id + '_glowing']).length;
+    collectionCount.textContent = `${baseCount}/10 thường` + (glowCount ? ` · ${glowCount}/10 ✨` : '');
     score.textContent=M.score(draft).toLocaleString('vi-VN')+' điểm bày';
     collectionDialog.querySelector('.garden-total-value').textContent='Tổng giá trị bộ sưu tập: '+M.assetValue(state).toLocaleString('vi-VN')+' điểm';
     for(const btn of collectionDialog.querySelectorAll('[data-garden-filter]')) { const active=filter===btn.dataset.gardenFilter;btn.setAttribute('aria-pressed',String(active)); }
     inventory.replaceChildren();
-    for(const item of M.items.filter(i=>filter==='all'||i.tier===filter)) {
-      const owned=state.items[item.id]>0,tier=M.tiers.find(t=>t.id===item.tier);
-      const cell=button('','garden-collect-item'+(owned?'':' garden-unknown'),()=>selectItem(item.id));
-      cell.dataset.item=item.id;cell.dataset.tier=item.tier;cell.disabled=!owned||!available(item.id);
+    const allCollectionItems = M.allItems || M.items.flatMap(i => [M.itemById(i.id), M.itemById(i.id + '_glowing')]);
+    const filteredItems = allCollectionItems.filter(item => {
+      if (filter === 'all') return true;
+      if (filter === 'glowing') return item.glowing;
+      return item.tier === filter;
+    });
+    for(const item of filteredItems) {
+      const owned=(state.items[item.id] || 0)>0,tier=M.tiers.find(t=>t.id===item.tier);
+      const cell=button('','garden-collect-item'+(owned?'':' garden-unknown') + (item.glowing ? ' is-glowing-item' : ''),()=>selectItem(item.id));
+      cell.dataset.item=item.id;cell.dataset.tier=item.tier;
+      if (item.glowing) cell.dataset.glowing = 'true';
+      cell.disabled=!owned||!available(item.id);
       cell.setAttribute('aria-pressed',String(selectedItem===item.id));
-      cell.title=owned?`${item.name} · ${tier.name} · có ${state.items[item.id]}, còn ${available(item.id)} trong kho`:'Chưa khám phá · '+tier.name;
-      cell.append(art('ore-'+item.id,owned?item.name:'Vật phẩm chưa khám phá'),el('strong','',owned?item.name:'???'),el('span','',tier.name+(owned?' · ×'+state.items[item.id]:'')));
+      cell.title=owned?`${item.name} · ${tier.name} (${item.points}đ) · có ${state.items[item.id]}, còn ${available(item.id)} trong kho`:(item.glowing?'Chưa khám phá ✨ · ':'Chưa khám phá · ')+tier.name;
+      cell.append(
+        art('ore-'+item.id,owned?item.name:'Vật phẩm chưa khám phá', item.glowing ? 'garden-art-glowing' : ''),
+        el('strong','',owned?item.name:(item.glowing?'??? ✨':'???')),
+        el('span','',tier.name+(owned?' · ×'+state.items[item.id]:'') + (item.glowing ? ' (2.5×)' : ''))
+      );
       cell.draggable=owned&&available(item.id)>0;
       cell.addEventListener('dragstart',event=>{if(!owned||!available(item.id)){event.preventDefault();return;}selectedItem=item.id;selectedSource=-1;event.dataTransfer.setData('text/plain',item.id);event.dataTransfer.effectAllowed='copy';collectionDialog.classList.add('garden-dragging');});
       inventory.append(cell);
@@ -265,9 +307,10 @@
     showcase.replaceChildren();
     const defaultTarget=draft.findIndex(id=>!id);
     draft.forEach((id,index)=>{
-      const cell=button('','garden-showcase-slot',()=>place(index));cell.dataset.gardenSlot=String(index);
-      cell.setAttribute('aria-label',`Ô ${index+1}: ${id?M.itemById(id).name:'trống'}`);
-      if(id)cell.append(art('ore-'+id,M.itemById(id).name));
+      const it=id?M.itemById(id):null;
+      const cell=button('','garden-showcase-slot' + (it?.glowing ? ' is-glowing-slot' : ''),()=>place(index));cell.dataset.gardenSlot=String(index);
+      cell.setAttribute('aria-label',`Ô ${index+1}: ${it?it.name:'trống'}`);
+      if(id)cell.append(art('ore-'+id,it.name,it?.glowing?'garden-art-glowing':''));
       else cell.append(el('span','garden-slot-placeholder',selectedItem?'+':''));
       cell.classList.toggle('is-target',!!selectedItem&&index===defaultTarget);
       cell.classList.toggle('is-source',selectedSource===index);
@@ -294,7 +337,7 @@
     const columns=el('div','garden-collection-columns'),left=el('section','garden-inventory'),right=el('section','garden-display');
     const leftHead=el('div','garden-between');collectionCount=el('span','garden-muted');leftHead.append(el('h3','','Bộ sưu tập'),collectionCount);left.append(leftHead,el('p','garden-total-value'));
     const filters=el('div','garden-filters');
-    for(const tier of [{id:'all',name:'Tất cả'},...M.tiers]) {const btn=button(tier.name,'garden-filter',()=>{filter=tier.id;renderCollection();});btn.dataset.gardenFilter=tier.id;btn.dataset.tier=tier.id;filters.append(btn);}left.append(filters);
+    for(const tier of [{id:'all',name:'Tất cả'},...M.tiers,{id:'glowing',name:'✨ Phát sáng'}]) {const btn=button(tier.name,'garden-filter',()=>{filter=tier.id;renderCollection();});btn.dataset.gardenFilter=tier.id;btn.dataset.tier=tier.id;filters.append(btn);}left.append(filters);
     inventory=el('div','garden-inventory-grid');left.append(inventory);
     const rightHead=el('div','garden-between');score=el('strong','garden-score');rightHead.append(el('h3','','Hộp trưng bày'),score);right.append(rightHead,el('p','garden-display-hint'));
     showcase=el('div','garden-showcase');showcase.setAttribute('aria-label','Hộp trưng bày 5 cột, 3 hàng');right.append(showcase);
@@ -303,7 +346,7 @@
     saveButton=button('Lưu bố cục','garden-button garden-primary',act(async()=>{saveButton.disabled=true;try{await transaction('layout',{p_layout:draft,p_previous:draftBase});draftBase=state.layout.slice();say('Đã lưu bố cục vào hồ sơ.');}finally{renderCollection();}}));
     actions.append(stashButton,saveButton);right.append(actions);
     right.append(button('Dọn hộp trưng bày','garden-text-button',()=>{if(confirm('Cất tất cả vật phẩm về kho trong bố cục đang sửa?')){draft=Array(15).fill(null);selectedItem=null;selectedSource=-1;renderCollection();}}));
-    right.append(el('p','garden-muted garden-points-note','Điểm mỗi ô: Rác 10 · Thường 30 · Hiếm 80 · Sử thi 180 · Huyền thoại 400.'));
+    right.append(el('p','garden-muted garden-points-note','Điểm mỗi ô: Rác 10 · Thường 30 · Hiếm 80 · Sử thi 180 · Huyền thoại 400. Bản phát sáng x2.5 điểm.'));
     columns.append(left,right);collectionDialog.append(columns);
     collectionDialog.addEventListener('dragend',()=>{collectionDialog.classList.remove('garden-dragging');collectionDialog.querySelectorAll('.is-over').forEach(n=>n.classList.remove('is-over'));});
     publicDialog=makeDialog('garden-public-dialog','Trưng bày của người học','garden-public-dialog');
@@ -313,19 +356,38 @@
     const view=M.normalize(raw),value=M.assetValue(view);
     host.replaceChildren();
     const metrics=el('div','garden-profile-metrics');
-    for(const [n,label] of [[value,'Tổng giá trị'],[M.items.filter(i=>view.items[i.id]).length+'/10','Đã khám phá'],[M.score(view.layout),'Điểm trưng bày']]){
+    const baseDiscovered = M.items.filter(i=>view.items[i.id]).length;
+    const glowDiscovered = M.items.filter(i=>view.items[i.id + '_glowing']).length;
+    const discLabel = `${baseDiscovered}/10` + (glowDiscovered ? ` (+${glowDiscovered}✨)` : '');
+    for(const [n,label] of [[value,'Tổng giá trị'],[discLabel,'Đã khám phá'],[M.score(view.layout),'Điểm trưng bày']]){
       const item=el('div');item.append(el('strong','',typeof n==='number'?n.toLocaleString('vi-VN'):n),el('span','',label));metrics.append(item);
     }
     host.append(metrics,el('h3','garden-profile-heading','Hộp trưng bày'));
     const grid=el('div','garden-showcase garden-readonly-showcase');grid.setAttribute('aria-label','Trưng bày 5 cột, 3 hàng');
-    for(const id of view.layout){const slot=el('div','garden-showcase-slot');if(id){slot.title=M.itemById(id).name;slot.append(art('ore-'+id,M.itemById(id).name));}else slot.setAttribute('aria-label','Ô trống');grid.append(slot);}
+    for(const id of view.layout){
+      const it=id?M.itemById(id):null;
+      const slot=el('div','garden-showcase-slot' + (it?.glowing ? ' is-glowing-slot' : ''));
+      if(id){slot.title=it.name;slot.append(art('ore-'+id,it.name,it?.glowing?'garden-art-glowing':''));}
+      else slot.setAttribute('aria-label','Ô trống');
+      grid.append(slot);
+    }
     host.append(grid);
     if(owned)host.append(button('Sắp xếp trưng bày','garden-button garden-primary garden-profile-edit',()=>openCollection()));
     const section=el('section','garden-profile-inventory');section.append(el('h3','garden-profile-heading','Bộ sưu tập'));
     const items=el('div','garden-inventory-grid');
-    for(const item of M.items){const count=view.items[item.id],cell=el('div','garden-collect-item'+(count?'':' garden-unknown'));cell.dataset.tier=item.tier;
-      cell.append(art('ore-'+item.id,count?item.name:'Vật phẩm chưa khám phá'),el('strong','',count?item.name:'???'),el('span','',M.tiers.find(t=>t.id===item.tier).name+(count?' · ×'+count:'')));items.append(cell);}
-    section.append(items);host.append(section,el('p','garden-points-note garden-muted','Giá trị tính tất cả vật phẩm trong kho, kể cả vật phẩm chưa trưng bày. Rác 10 · Thường 30 · Hiếm 80 · Sử thi 180 · Huyền thoại 400.'));
+    const allCollectionItems = M.allItems || M.items.flatMap(i => [M.itemById(i.id), M.itemById(i.id + '_glowing')]);
+    for(const item of allCollectionItems){
+      const count=view.items[item.id] || 0,cell=el('div','garden-collect-item'+(count?'':' garden-unknown') + (item.glowing ? ' is-glowing-item' : ''));
+      cell.dataset.tier=item.tier;
+      if (item.glowing) cell.dataset.glowing = 'true';
+      cell.append(
+        art('ore-'+item.id,count?item.name:'Vật phẩm chưa khám phá', item.glowing ? 'garden-art-glowing' : ''),
+        el('strong','',count?item.name:(item.glowing?'??? ✨':'???')),
+        el('span','',M.tiers.find(t=>t.id===item.tier).name+(count?' · ×'+count:'') + (item.glowing ? ' (2.5×)' : ''))
+      );
+      items.append(cell);
+    }
+    section.append(items);host.append(section,el('p','garden-points-note garden-muted','Giá trị tính tất cả vật phẩm trong kho, kể cả vật phẩm chưa trưng bày. Bản phát sáng x2.5 điểm. Rác 10 · Thường 30 · Hiếm 80 · Sử thi 180 · Huyền thoại 400.'));
   }
   function renderOwnProfile() {
     if(!ownProfileHost?.isConnected||!document.getElementById('sync-account-dialog')?.open||ownProfileHost.hidden)return;

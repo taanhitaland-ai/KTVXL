@@ -71,6 +71,28 @@ body.dark-mode :is(.study-garden, .garden-dialog) {
 .garden-ripe { border: 3px solid var(--garden-accent); }
 .garden-ripe-label { color: #876c00; }
 body.dark-mode .garden-ripe-label { color: var(--garden-accent); }
+.garden-plot-glowing {
+  border-color: #ffd700 !important;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 215, 0, 0.16) 0%, var(--garden-card) 75%) !important;
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.45), 3px 3px 0 var(--garden-shadow) !important;
+  animation: garden-plot-glow 2.8s ease-in-out infinite alternate;
+}
+.garden-glowing-badge {
+  background: linear-gradient(135deg, #fff38a 0%, #ffd700 50%, #ffae00 100%);
+  color: #1a1528; border: 2px solid #201b2c; border-radius: 999px;
+  font-weight: 900; font-size: .63rem; padding: 2px 8px; box-shadow: 1px 1px 0 var(--garden-shadow);
+  letter-spacing: .02em; animation: garden-badge-sparkle 2.2s ease-in-out infinite alternate;
+}
+.garden-tree-glowing {
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.85)) drop-shadow(0 0 16px rgba(255, 230, 90, 0.5));
+  animation: garden-tree-sparkle 2.4s ease-in-out infinite;
+}
+.garden-ripe-glowing { color: #a87200 !important; font-weight: 900; text-shadow: 0 0 6px rgba(255, 215, 0, 0.5); }
+body.dark-mode .garden-ripe-glowing { color: #ffd700 !important; text-shadow: 0 0 8px rgba(255, 215, 0, 0.8); }
+.garden-button-glowing {
+  background: linear-gradient(135deg, #fff38a, #ffd700) !important;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.55), 3px 3px 0 var(--garden-shadow) !important;
+}
 .garden-empty { border-style: dashed; justify-content: center; cursor: pointer; min-height: 168px; box-shadow: none; background: transparent; }
 .garden-empty-symbol { font-size: 2.1rem; line-height: 1; color: var(--garden-muted); }
 .garden-empty .garden-lock-icon { width: 37px; height: 37px; }
@@ -116,13 +138,38 @@ body.dark-mode .garden-ripe-label { color: var(--garden-accent); }
 .garden-plant-dialog .garden-modal-body > .garden-primary { width: 100%; }
 .garden-harvest-body { text-align: center; }
 .garden-harvest-caption { display: inline-block; color: var(--garden-muted); background: var(--garden-card); padding: 6px 13px; border-radius: 999px; font-size: .75rem; font-weight: 800; }
+.garden-caption-glowing {
+  background: linear-gradient(135deg, #fff7b3, #ffe066) !important; color: #201b2c !important;
+  border: 1px solid #d49a00; font-weight: 850; box-shadow: 0 0 8px rgba(255, 215, 0, 0.45);
+}
 .garden-spotlight { position: relative; isolation: isolate; width: 240px; height: 230px; margin: 12px auto 8px; display: grid; place-items: center; }
+.garden-spotlight.is-glowing-spotlight {
+  background: radial-gradient(circle at center, rgba(255, 225, 50, 0.4) 0%, rgba(255, 200, 0, 0.15) 50%, transparent 72%);
+  border-radius: 50%;
+}
 .garden-spotlight > .garden-art { width: 161px; height: 161px; image-rendering: pixelated; z-index: 1; filter: drop-shadow(4px 6px 0 #100b1d); }
 .garden-rays { position: absolute; inset: 0; background: repeating-conic-gradient(from 12deg,#f4b73c88 0deg 9deg,transparent 9deg 24deg); mask-image: radial-gradient(closest-side,#000 30%,transparent 99%); transform-origin: center; }
+.garden-rays-glowing {
+  background: repeating-conic-gradient(from 12deg, #ffe066dd 0deg 9deg, transparent 9deg 24deg) !important;
+}
 .garden-dialog[open] .garden-rays { animation: garden-ray-spin 24s linear infinite; }
 @keyframes garden-ray-spin { to { transform: rotate(360deg); } }
 .garden-rarity-ribbon { display: inline-block; border: 2px solid #201b2c; border-radius: 10px; box-shadow: 3px 3px 0 var(--garden-shadow); padding: 8px 20px; color: #211b29; font-size: .85rem; font-weight: 900; letter-spacing: .08em; }
+.garden-ribbon-glowing {
+  background: linear-gradient(135deg, #fff6a6 0%, #ffd700 50%, #ffaa00 100%) !important;
+  color: #1a1528 !important;
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.65), 3px 3px 0 var(--garden-shadow) !important;
+  animation: garden-badge-sparkle 2s ease-in-out infinite alternate;
+}
 .garden-reward-name { font-size: 1.7rem; font-weight: 900; margin: 14px 0 8px !important; }
+.garden-reward-glowing {
+  color: #a86e00 !important;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.55);
+}
+body.dark-mode .garden-reward-glowing {
+  color: #ffe666 !important;
+  text-shadow: 0 0 14px rgba(255, 220, 80, 0.7);
+}
 .garden-harvest-body > p { font-size: .78rem; line-height: 1.8; }
 .garden-drop-rates { margin-top: 23px; text-align: left; }
 .garden-drop-rates h4 { text-transform: uppercase; color: var(--garden-muted); font-size: .75rem; letter-spacing: .02em; margin-bottom: 12px; line-height: 1.7; }
@@ -132,6 +179,14 @@ body.dark-mode .garden-ripe-label { color: var(--garden-accent); }
 .garden-drop-labels { display: flex; flex-wrap: wrap; gap: 8px 12px; margin-top: 11px; font-size: .67rem; color: var(--garden-muted); font-weight: 800; }
 .garden-drop-labels span { display: inline-flex; align-items: center; gap: 5px; }
 .garden-drop-labels i { width: 9px; height: 9px; border-radius: 2px; }
+.garden-glowing-note {
+  color: #a86e00; font-size: .74rem; font-weight: 850; line-height: 1.6; margin: 10px 0 !important;
+}
+body.dark-mode .garden-glowing-note { color: #ffe066; }
+.garden-glowing-subrule {
+  color: #a86e00; font-size: .7rem; font-weight: 800; margin: 4px 0 10px !important;
+}
+body.dark-mode .garden-glowing-subrule { color: #ffe066; }
 .garden-guarantee { font-size: .72rem; color: var(--garden-muted); margin: 10px 0 !important; line-height: 1.7; }
 .garden-pity { margin-top: 20px !important; color: var(--garden-muted); font-weight: 750; }
 .garden-modal-actions { display: flex; gap: 12px; margin-top: 20px; }
@@ -146,6 +201,10 @@ body.dark-mode .garden-ripe-label { color: var(--garden-accent); }
 .garden-filters { display: flex; gap: 7px; flex-wrap: wrap; margin: 17px 0; }
 .garden-filter { padding: 6px 10px; border: 2px solid var(--garden-line); border-radius: 999px; color: var(--garden-ink); background: var(--garden-card); cursor: pointer; font: inherit; font-size: .72rem; font-weight: 800; }
 .garden-filter[aria-pressed="true"] { color: #211b29; background: var(--garden-accent); border-color: #201b2c; }
+[data-garden-filter="glowing"] { border-color: #ffd700; color: #876200; }
+[data-garden-filter="glowing"][aria-pressed="true"] { background: #ffd700; color: #211b29; border-color: #201b2c; }
+body.dark-mode [data-garden-filter="glowing"] { color: #ffd700; }
+body.dark-mode [data-garden-filter="glowing"][aria-pressed="true"] { color: #211b29; }
 .garden-filter:not([data-tier="all"])::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 5px; background: var(--rarity); }
 [data-tier="scrap"] { --rarity: #9ca3af; --rarity-text: #59616c; }
 [data-tier="common"] { --rarity: #73ce68; --rarity-text: #247332; }
@@ -165,9 +224,31 @@ body.dark-mode .garden-dialog [data-tier] { --rarity-text: var(--rarity); }
 .garden-collect-item:disabled { cursor: default; }
 .garden-collect-item[aria-pressed="true"] { border-color: var(--garden-accent); background: var(--garden-card); }
 .garden-unknown .garden-art { filter: brightness(0); opacity: .55; }
+.garden-art-glowing {
+  filter: drop-shadow(0 0 6px #ffd700) drop-shadow(0 0 12px rgba(255, 220, 60, 0.7));
+  animation: garden-item-shimmer 2.2s ease-in-out infinite alternate;
+}
+.garden-collect-item.is-glowing-item:not(.garden-unknown) {
+  background: radial-gradient(circle at center, rgba(255, 220, 0, 0.16) 0%, transparent 72%);
+  border-radius: 12px;
+}
+.garden-collect-item.is-glowing-item strong {
+  color: #b87a00 !important;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+body.dark-mode .garden-collect-item.is-glowing-item strong {
+  color: #ffe566 !important;
+  text-shadow: 0 0 10px rgba(255, 230, 90, 0.6);
+}
 .garden-display-hint { min-height: 44px; margin: 12px 0 15px !important; font-size: .77rem; color: var(--garden-muted); line-height: 1.8; }
 .garden-showcase { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 9px; padding: 12px; background: var(--garden-frame); border: 3px solid var(--garden-line); border-radius: 16px; }
 .garden-showcase-slot { display: grid; place-items: center; width: 100%; aspect-ratio: 1; padding: 3px; border: 3px solid var(--garden-line); border-radius: 10px; background: var(--garden-card); box-shadow: inset 0 0 0 2px var(--garden-shadow); cursor: pointer; min-width: 0; }
+.garden-showcase-slot.is-glowing-slot {
+  border-color: #ffd700 !important;
+  background: radial-gradient(circle at center, rgba(255, 225, 60, 0.24) 0%, var(--garden-card) 75%);
+  box-shadow: inset 0 0 0 2px #d49a00, 0 0 10px rgba(255, 215, 0, 0.45);
+  animation: garden-slot-sparkle 2.6s ease-in-out infinite alternate;
+}
 .garden-showcase-slot .garden-art { width: 100%; height: 100%; image-rendering: pixelated; }
 .garden-showcase-slot.is-target, .garden-showcase-slot.is-over { border-color: var(--garden-accent); border-style: dashed; }
 .garden-showcase-slot.is-source { border-color: var(--garden-accent); }
@@ -193,9 +274,56 @@ body.dark-mode .garden-dialog [data-tier] { --rarity-text: var(--rarity); }
   .garden-showcase-slot { padding: 2px; border-width: 2px; }
   .garden-spotlight { width: 210px; height: 198px; }
 }
+@keyframes garden-plot-glow {
+  0% {
+    border-color: #ffd700;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.35), 3px 3px 0 var(--garden-shadow);
+  }
+  100% {
+    border-color: #fff176;
+    box-shadow: 0 0 18px rgba(255, 220, 50, 0.65), 3px 3px 0 var(--garden-shadow);
+  }
+}
+@keyframes garden-tree-sparkle {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.7)) drop-shadow(0 0 12px rgba(255, 230, 80, 0.35));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255, 220, 0, 0.95)) drop-shadow(0 0 22px rgba(255, 240, 110, 0.65));
+    transform: scale(1.03);
+  }
+}
+@keyframes garden-item-shimmer {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.7)) drop-shadow(0 0 10px rgba(255, 225, 70, 0.4));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255, 220, 0, 0.95)) drop-shadow(0 0 20px rgba(255, 235, 100, 0.7));
+    transform: scale(1.05);
+  }
+}
+@keyframes garden-badge-sparkle {
+  0% { transform: scale(1); filter: brightness(1); }
+  100% { transform: scale(1.03); filter: brightness(1.12); }
+}
+@keyframes garden-slot-sparkle {
+  0% { box-shadow: inset 0 0 0 2px #d49a00, 0 0 6px rgba(255, 215, 0, 0.35); }
+  100% { box-shadow: inset 0 0 0 2px #ffe066, 0 0 14px rgba(255, 215, 0, 0.65); }
+}
 @media (prefers-reduced-motion: reduce) {
   .garden-dialog[open] .garden-rays { animation: none; }
   .garden-seed { transform: none !important; }
+  .garden-art-glowing,
+  .garden-tree-glowing,
+  .garden-plot-glowing,
+  .garden-showcase-slot.is-glowing-slot,
+  .garden-ribbon-glowing,
+  .garden-glowing-badge {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 .garden-total-value { color: var(--garden-muted); font-size: .78rem; font-weight: 800; line-height: 1.7; margin-top: 10px !important; }
 .garden-profile-toolbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin:20px 0 24px; }

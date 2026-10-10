@@ -20,7 +20,14 @@ create policy garden_owner_read on public.study_gardens for select to authentica
 
 create function public.study_garden_item_value(p_id text) returns integer
 language sql immutable set search_path='' as $$
-  select case p_id when 'coal' then 10 when 'stone' then 10 when 'copper' then 30 when 'tin' then 30 when 'azure' then 80 when 'rose' then 80 when 'sun' then 180 when 'moss' then 180 when 'frost' then 400 when 'cosmos' then 400 else 0 end
+  select case p_id
+    when 'coal' then 10 when 'stone' then 10 when 'copper' then 30 when 'tin' then 30
+    when 'azure' then 80 when 'rose' then 80 when 'sun' then 180 when 'moss' then 180
+    when 'frost' then 400 when 'cosmos' then 400
+    when 'coal_glowing' then 25 when 'stone_glowing' then 25 when 'copper_glowing' then 75 when 'tin_glowing' then 75
+    when 'azure_glowing' then 200 when 'rose_glowing' then 200 when 'sun_glowing' then 450 when 'moss_glowing' then 450
+    when 'frost_glowing' then 1000 when 'cosmos_glowing' then 1000
+    else 0 end
 $$;
 create function public.study_garden_value(p_items jsonb) returns bigint
 language sql immutable set search_path='' as $$
@@ -117,7 +124,7 @@ begin
   if p_plot is null or p_plot not between 0 and 5 or public.study_garden_duration(p_seed)=0 or
     (p_plot=5 and not (s->>'unlocked')::boolean) or s#>array['plots',p_plot::text]<>'null'::jsonb or (s#>>array['seeds',p_seed])::integer<1 then raise exception 'Chọn ô trống và một hạt đang có.';end if;
   s:=jsonb_set(s,array['seeds',p_seed],to_jsonb((s#>>array['seeds',p_seed])::integer-1));
-  s:=jsonb_set(s,array['plots',p_plot::text],jsonb_build_object('seed',p_seed,'seconds',0,'createdAt',floor(extract(epoch from clock_timestamp())*1000)::bigint));
+  s:=jsonb_set(s,array['plots',p_plot::text],jsonb_build_object('seed',p_seed,'seconds',0,'createdAt',floor(extract(epoch from clock_timestamp())*1000)::bigint,'glowing',random()<0.2));
   update public.study_gardens set state=s,revision=revision+1,updated_at=clock_timestamp() where user_id=uid;return public.study_garden_payload(uid);
 end $$;
 
@@ -125,19 +132,27 @@ create function public.study_garden_harvest(p_plot integer,p_created_at bigint) 
 language plpgsql security definer set search_path='' as $$
 declare uid uuid:=public.study_garden_require_user();s jsonb;plot jsonb;seed text;weights integer[];target double precision;picked_rank integer:=4;item text;guaranteed boolean;reward jsonb;
   catalog text[]:=array['coal','stone','copper','tin','azure','rose','sun','moss','frost','cosmos'];
+  is_glowing boolean;item_is_glowing boolean;
 begin
   perform public.study_garden_snapshot();select state into s from public.study_gardens where user_id=uid for update;
   if p_plot is null or p_plot not between 0 and 5 then raise exception 'Invalid plot';end if;
   plot:=s#>array['plots',p_plot::text];seed:=plot->>'seed';
   if plot is null or plot='null'::jsonb or p_created_at is null or coalesce((plot->>'createdAt')::bigint,0)<>p_created_at or (plot->>'seconds')::bigint<public.study_garden_duration(seed) then raise exception 'Cây chưa chín hoặc đã được thu hoạch.';end if;
-  weights:=case when seed in ('oak','maple') then array[45,35,16,3,1] when seed in ('cherry','bamboo') then array[20,35,28,12,5] else array[5,20,35,28,12] end;
+  is_glowing:=coalesce((plot->>'glowing')::boolean,false);
+  if is_glowing then
+    weights:=case when seed in ('oak','maple') then array[15,25,35,18,7] when seed in ('cherry','bamboo') then array[5,15,35,30,15] else array[0,10,25,40,25] end;
+  else
+    weights:=case when seed in ('oak','maple') then array[45,35,16,3,1] when seed in ('cherry','bamboo') then array[20,35,28,12,5] else array[5,20,35,28,12] end;
+  end if;
   guaranteed:=(s->>'misses')::integer>=9;if guaranteed then weights[1]:=0;weights[2]:=0;weights[3]:=0;end if;
   target:=random()*(select sum(n) from unnest(weights)n);
   for rank in 0..4 loop if target<weights[rank+1] then picked_rank:=rank;exit;end if;target:=target-weights[rank+1];end loop;
   item:=catalog[picked_rank*2+1+floor(random()*2)::integer];
-  reward:=jsonb_build_object('item',item,'seed',seed,'guaranteed',guaranteed,'harvest',(s->>'harvests')::bigint+1,'isNew',(s#>>array['items',item])::integer=0);
-  if (s#>>array['items',item])::integer>=9999 then raise exception 'Kho vật phẩm đã đầy.';end if;
-  s:=jsonb_set(s,array['items',item],to_jsonb((s#>>array['items',item])::integer+1));s:=jsonb_set(s,array['plots',p_plot::text],'null');
+  item_is_glowing:=is_glowing and (random()<0.5);
+  if item_is_glowing then item:=item||'_glowing';end if;
+  reward:=jsonb_build_object('item',item,'seed',seed,'guaranteed',guaranteed,'harvest',(s->>'harvests')::bigint+1,'isNew',coalesce((s#>>array['items',item])::integer,0)=0,'glowing',item_is_glowing,'treeGlowing',is_glowing);
+  if coalesce((s#>>array['items',item])::integer,0)>=9999 then raise exception 'Kho vật phẩm đã đầy.';end if;
+  s:=jsonb_set(s,array['items',item],to_jsonb(coalesce((s#>>array['items',item])::integer,0)+1));s:=jsonb_set(s,array['plots',p_plot::text],'null');
   s:=jsonb_set(s,'{misses}',to_jsonb(case when picked_rank>=3 then 0 else (s->>'misses')::integer+1 end));
   s:=jsonb_set(s,'{harvests}',reward->'harvest');s:=jsonb_set(s,'{lastReward}',reward);
   update public.study_gardens set state=s,revision=revision+1,updated_at=clock_timestamp() where user_id=uid;

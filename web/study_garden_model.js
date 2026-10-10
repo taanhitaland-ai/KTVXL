@@ -31,13 +31,32 @@
     { id: 'cosmos', name: 'Lõi thiên hà', tier: 'legendary', color: '#bf8dff' }
   ];
   const rates = { common: [45, 35, 16, 3, 1], rare: [20, 35, 28, 12, 5], epic: [5, 20, 35, 28, 12] };
+  const glowingRates = { common: [15, 25, 35, 18, 7], rare: [5, 15, 35, 30, 15], epic: [0, 10, 25, 40, 25] };
   const sessionPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   const number = (n, max = 1e9) => Number.isFinite(n) ? Math.min(max, Math.max(0, Math.floor(n))) : 0;
   const seedById = id => seeds.find(s => s.id === id);
-  const itemById = id => items.find(s => s.id === id);
+  function itemById(id) {
+    if (typeof id !== 'string') return null;
+    const isGlowing = id.endsWith('_glowing');
+    const baseId = isGlowing ? id.slice(0, -8) : id;
+    const base = items.find(s => s.id === baseId);
+    if (!base) return null;
+    const tierObj = tiers.find(t => t.id === base.tier);
+    const basePoints = tierObj ? tierObj.points : 0;
+    return {
+      ...base,
+      id,
+      baseId: base.id,
+      name: isGlowing ? base.name + ' ✨' : base.name,
+      rawName: base.name,
+      glowing: isGlowing,
+      points: isGlowing ? Math.round(basePoints * 2.5) : basePoints
+    };
+  }
+  const allItems = items.flatMap(i => [itemById(i.id), itemById(i.id + '_glowing')]);
   const empty = () => ({ v: 1, totalSeconds: 0, continuous: { seconds: 0, endMs: 0, rare: false, epic: false },
     seeds: Object.fromEntries(seeds.map(s => [s.id, 0])), plots: Array(6).fill(null),
-    items: Object.fromEntries(items.map(i => [i.id, 0])), layout: Array(15).fill(null),
+    items: Object.fromEntries(items.flatMap(i => [[i.id, 0], [i.id + '_glowing', 0]])), layout: Array(15).fill(null),
     misses: 0, harvests: 0, rareAwards: 0, unlocked: false, daily: {}, cursors: {}, lastReward: null });
   function normalize(raw) {
     const out = empty();
@@ -46,17 +65,30 @@
     const c = raw.continuous || {};
     out.continuous = { seconds: number(c.seconds), endMs: number(c.endMs, 1e14), rare: c.rare === true, epic: c.epic === true };
     for (const seed of seeds) out.seeds[seed.id] = number(raw.seeds?.[seed.id], 9999);
-    for (const item of items) out.items[item.id] = number(raw.items?.[item.id], 9999);
+    for (const item of items) {
+      out.items[item.id] = number(raw.items?.[item.id], 9999);
+      out.items[item.id + '_glowing'] = number(raw.items?.[item.id + '_glowing'], 9999);
+    }
+    if (raw.items && typeof raw.items === 'object') {
+      for (const [k, v] of Object.entries(raw.items)) {
+        if (itemById(k) && out.items[k] === undefined) out.items[k] = number(v, 9999);
+      }
+    }
     out.unlocked = raw.unlocked === true;
     out.plots = out.plots.map((_, i) => {
       const plot = raw.plots?.[i], seed = seedById(plot?.seed);
-      return seed && (i < 5 || out.unlocked) ? { seed: seed.id, seconds: number(plot.seconds, seed.minutes * 60), createdAt: number(plot.createdAt, 1e14) } : null;
+      return seed && (i < 5 || out.unlocked) ? {
+        seed: seed.id,
+        seconds: number(plot.seconds, seed.minutes * 60),
+        createdAt: number(plot.createdAt, 1e14),
+        glowing: plot.glowing === true
+      } : null;
     });
     out.misses = number(raw.misses, 9); out.harvests = number(raw.harvests); out.rareAwards = number(raw.rareAwards);
     const placed = {};
     out.layout = out.layout.map((_, i) => {
       const id = raw.layout?.[i];
-      if (!itemById(id) || (placed[id] || 0) >= out.items[id]) return null;
+      if (!itemById(id) || (placed[id] || 0) >= (out.items[id] || 0)) return null;
       placed[id] = (placed[id] || 0) + 1; return id;
     });
     for (const [day, count] of Object.entries(raw.daily || {}).slice(-64)) {
@@ -67,7 +99,8 @@
     }
     if (itemById(raw.lastReward?.item) && seedById(raw.lastReward?.seed)) out.lastReward = {
       item: raw.lastReward.item, seed: raw.lastReward.seed, guaranteed: raw.lastReward.guaranteed === true,
-      harvest: number(raw.lastReward.harvest), isNew: raw.lastReward.isNew === true
+      harvest: number(raw.lastReward.harvest), isNew: raw.lastReward.isNew === true,
+      glowing: raw.lastReward.glowing === true, treeGlowing: raw.lastReward.treeGlowing === true
     };
     return out;
   }
@@ -106,17 +139,23 @@
     }
     return { state: out, delta, awards };
   }
-  function plant(raw, index, seedId, streak = 0, createdAt = 0) {
+  function plant(raw, index, seedId, streak = 0, createdAt = 0, random = null) {
     const out = normalize(raw), seed = seedById(seedId);
     if (streak >= 7) out.unlocked = true;
     if (!Number.isInteger(index) || index < 0 || index > 5 || (index === 5 && !out.unlocked) || out.plots[index] || !seed || !out.seeds[seed.id]) throw new Error('Chọn ô trống và một hạt đang có.');
-    out.seeds[seed.id]--; out.plots[index] = { seed: seed.id, seconds: 0, createdAt: number(createdAt, 1e14) }; return out;
+    out.seeds[seed.id]--;
+    const roll = typeof random === 'function' ? Number(random()) : (typeof random === 'number' ? random : null);
+    const glowing = roll !== null ? (Number.isFinite(roll) && roll < 0.20) : false;
+    out.plots[index] = { seed: seed.id, seconds: 0, createdAt: number(createdAt, 1e14), glowing };
+    return out;
   }
   function harvest(raw, index, random) {
     const out = normalize(raw), plot = out.plots[index], seed = seedById(plot?.seed);
     if (!Number.isInteger(index) || !seed || plot.seconds < seed.minutes * 60) throw new Error('Cây chưa chín. Học thêm để cây lớn.');
+    const isGlowingTree = plot.glowing === true;
     const guaranteed = out.misses >= 9;
-    const weights = rates[seed.tier].map((n, i) => guaranteed && i < 3 ? 0 : n);
+    const rateTable = isGlowingTree ? glowingRates[seed.tier] : rates[seed.tier];
+    const weights = rateTable.map((n, i) => guaranteed && i < 3 ? 0 : n);
     const total = weights.reduce((a, b) => a + b, 0);
     const roll = Number(random());
     if (!Number.isFinite(roll) || roll < 0 || roll >= 1) throw new Error('Không tạo được lượt thu hoạch. Hãy thử lại.');
@@ -125,11 +164,27 @@
     const candidates = items.filter(i => i.tier === tiers[rank].id);
     const pick = Number(random());
     if (!Number.isFinite(pick) || pick < 0 || pick >= 1) throw new Error('Không tạo được vật phẩm. Hãy thử lại.');
-    const item = candidates[Math.floor(pick * candidates.length)];
-    const isNew = !out.items[item.id]; out.items[item.id]++;
+    const baseItem = candidates[Math.floor(pick * candidates.length)];
+    let isGlowingItem = false;
+    if (isGlowingTree) {
+      const glowRoll = Number(random());
+      if (Number.isFinite(glowRoll) && glowRoll < 0.50) isGlowingItem = true;
+    }
+    const itemId = isGlowingItem ? baseItem.id + '_glowing' : baseItem.id;
+    const isNew = !out.items[itemId];
+    out.items[itemId] = (out.items[itemId] || 0) + 1;
     out.misses = rank >= 3 ? 0 : out.misses + 1;
-    out.harvests++; out.plots[index] = null;
-    out.lastReward = { item: item.id, seed: seed.id, guaranteed, harvest: out.harvests, isNew };
+    out.harvests++;
+    out.plots[index] = null;
+    out.lastReward = {
+      item: itemId,
+      seed: seed.id,
+      guaranteed,
+      harvest: out.harvests,
+      isNew,
+      glowing: isGlowingItem,
+      treeGlowing: isGlowingTree
+    };
     return { state: out, reward: out.lastReward };
   }
   function saveLayout(raw, layout) {
@@ -139,22 +194,28 @@
       if (id === null) continue;
       if (!itemById(id)) throw new Error('Vật phẩm không hợp lệ.');
       counts[id] = (counts[id] || 0) + 1;
-      if (counts[id] > out.items[id]) throw new Error('Không đủ vật phẩm trong kho.');
+      if (counts[id] > (out.items[id] || 0)) throw new Error('Không đủ vật phẩm trong kho.');
     }
     out.layout = layout.slice(); return out;
   }
-  function score(layout) { return (layout || []).reduce((sum, id) => sum + (tiers.find(t => t.id === itemById(id)?.tier)?.points || 0), 0); }
-  function assetValue(raw) { const state=normalize(raw);return items.reduce((sum,item)=>sum+state.items[item.id]*tiers.find(t=>t.id===item.tier).points,0); }
+  function score(layout) { return (layout || []).reduce((sum, id) => sum + (itemById(id)?.points || 0), 0); }
+  function assetValue(raw) {
+    const state = normalize(raw);
+    return Object.entries(state.items || {}).reduce((sum, [key, count]) => {
+      const it = itemById(key);
+      return sum + (it && count > 0 ? count * it.points : 0);
+    }, 0);
+  }
   function demo(day) {
     const out = empty();
     out.totalSeconds = 7 * 1500 + 1122;
     out.continuous = { seconds: 1122, endMs: 0, rare: false, epic: false };
     out.seeds = { oak: 3, maple: 2, cherry: 1, bamboo: 0, galaxy: 0 };
-    out.plots = [{ seed: 'oak', seconds: 3600 }, { seed: 'cherry', seconds: 2040 }, { seed: 'bamboo', seconds: 3240 }, { seed: 'maple', seconds: 1320 }, null, null];
+    out.plots = [{ seed: 'oak', seconds: 3600, glowing: true }, { seed: 'cherry', seconds: 2040 }, { seed: 'bamboo', seconds: 3240 }, { seed: 'maple', seconds: 1320 }, null, null];
     out.items = { coal: 7, stone: 5, copper: 4, tin: 3, azure: 2, rose: 2, sun: 1, moss: 1, frost: 1, cosmos: 0 };
     out.layout = ['coal', 'copper', 'sun', null, 'azure', 'stone', null, 'frost', 'tin', 'rose', null, null, 'moss', 'coal', 'copper'];
     out.misses = 4; out.rareAwards = 1; if (/^\d{4}-\d{2}-\d{2}$/.test(day)) out.daily[day] = 2;
     return out;
   }
-  return Object.freeze({ tiers, seeds, items, rates, seedById, itemById, empty, normalize, credit, plant, harvest, saveLayout, score, assetValue, demo });
+  return Object.freeze({ tiers, seeds, items, allItems, rates, glowingRates, seedById, itemById, empty, normalize, credit, plant, harvest, saveLayout, score, assetValue, demo });
 });
