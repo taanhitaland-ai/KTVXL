@@ -212,12 +212,12 @@ body.dark-mode .lb-eyebrow {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   text-align: center;
   min-width: 0;
-  height: 186px;
+  height: 210px;
   box-sizing: border-box;
-  padding: 18px 10px 14px;
+  padding: 20px 8px 12px;
   background: var(--lb-card);
   border: 3px solid #000;
   border-radius: 15px;
@@ -236,7 +236,7 @@ body.dark-mode .lb-eyebrow {
 }
 .lb-podium-card[data-place="1"] {
   --metal: #ffd400;
-  height: 234px;
+  height: 260px;
   border-color: #ffd400;
   box-shadow:
     0 0 0 2px #000,
@@ -244,10 +244,11 @@ body.dark-mode .lb-eyebrow {
 }
 .lb-podium-card[data-place="2"] {
   --metal: #c9d1e0;
-  height: 202px;
+  height: 230px;
 }
 .lb-podium-card[data-place="3"] {
   --metal: #d98b4a;
+  height: 210px;
 }
 .lb-crown {
   position: absolute;
@@ -258,35 +259,44 @@ body.dark-mode .lb-eyebrow {
   transform: translateX(-50%);
 }
 .lb-podium-rank {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
+  line-height: 1.1;
+  flex: none;
 }
 .lb-podium-avatar {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   box-sizing: border-box;
   flex: none;
   border: 4px solid var(--metal);
   border-radius: 50%;
   background: var(--avatar-color);
   color: #111;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 800;
 }
 .lb-podium-name {
-  font-size: 13px;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  max-width: 100%;
 }
 .lb-podium-time {
-  font-size: 19px;
-  line-height: 1.3;
+  font-size: 18px;
+  line-height: 1.2;
   font-weight: 800;
+  flex: none;
 }
 .lb-podium-card[data-place="1"] .lb-podium-time {
-  font-size: 26px;
+  font-size: 24px;
 }
 .lb-podium-empty {
   border: 3px dashed var(--lb-muted) !important;
@@ -603,26 +613,40 @@ body.dark-mode .lb-dialog :is(button, select, summary):focus-visible {
     margin-bottom: 20px;
   }
   .lb-podium-card {
-    padding: 16px 5px 10px;
-    gap: 7px;
+    height: 200px;
+    padding: 18px 4px 10px;
+    gap: 5px;
     box-shadow: 3px 3px 0 #000;
+  }
+  .lb-podium-card[data-place="1"] {
+    height: 242px;
+  }
+  .lb-podium-card[data-place="2"] {
+    height: 218px;
+  }
+  .lb-podium-card[data-place="3"] {
+    height: 200px;
   }
   .lb-podium-name {
     font-size: 10px;
+    line-height: 1.25;
   }
   .lb-podium-avatar {
-    width: 38px;
-    height: 38px;
-    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    border-width: 3px;
   }
   .lb-podium-rank {
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 1.1;
   }
   .lb-podium-time {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.2;
   }
   .lb-podium-card[data-place="1"] .lb-podium-time {
-    font-size: 19px;
+    font-size: 17px;
   }
   .lb-row {
     gap: 8px;

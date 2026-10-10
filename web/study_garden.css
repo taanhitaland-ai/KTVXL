@@ -226,7 +226,7 @@ body.dark-mode .garden-profile-exhibition [data-tier] { --rarity-text:var(--rari
 .lb-member-link:focus-visible { outline:3px solid #ffd400; outline-offset:4px; border-radius:3px; }
 .lb-asset-value { display:block; color:#805400; background:#fff1a8; border:1px solid #111; border-radius:999px; padding:3px 8px; font-size:.7rem; line-height:1.5; font-weight:850; width:max-content; max-width:100%; }
 body.dark-mode .lb-asset-value { background:#3a3214; color:#ffe473; border-color:#806c25; }
-.lb-podium-card .lb-asset-value { margin-top:8px; }
+.lb-podium-card .lb-asset-value { margin-top:2px; font-size:.68rem; padding:2px 7px; max-width:calc(100% - 6px); flex:none; }
 .lb-score .lb-asset-value { margin-top:4px; margin-left:auto; }
 .lb-personal-copy .lb-asset-value { margin-top:4px; }
 @media(max-width:600px) {
@@ -236,4 +236,5 @@ body.dark-mode .lb-asset-value { background:#3a3214; color:#ffe473; border-color
   .garden-profile-metrics { gap:7px; }
   .garden-profile-metrics strong { font-size:1.1rem; }
   .lb-asset-value { font-size:.63rem; padding:3px 6px; }
+  .lb-podium-card .lb-asset-value { font-size:.6rem; padding:2px 4px; }
 }
