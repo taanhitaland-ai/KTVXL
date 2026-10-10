@@ -1,5 +1,8 @@
 /* Add a new stable ID for each release; never reuse IDs already marked as read. */
 window.KMA_SITE_UPDATES = [
+  { id: '2026-10-10-readonly-study-history', date: '10/10/2026', title: 'Giờ học khớp dữ liệu đã xác nhận',
+    added: [],
+    fixed: ['Gỡ các nút +15p, +30p, +1h và xóa lịch sử ở tab Đã học.', 'Chỉ máy chủ ghi nhận phút học; sửa dữ liệu trên trình duyệt hoặc yêu cầu cộng phút cũ không tăng lịch sử, chuỗi, BXH hay vườn.', 'Giữ lịch sử đã có và đồng bộ lại thống kê từ tài khoản; không ảnh hưởng câu trả lời và ghi chú.'] },
   { id: '2026-10-10-account-study-garden', date: '10/10/2026', title: 'Vườn học tập, bộ sưu tập và trưng bày',
     added: ['Học cả 4 môn để nhận hạt mỗi 25 phút; học liên tục đủ 60/120 phút nhận thêm hạt hiếm/sử thi.', 'Gieo cây, thu hoạch 10 loại vật phẩm với tỉ lệ rõ ràng và bảo hiểm; vườn được lưu theo tài khoản.', 'Hồ sơ có hai tab Tiến trình/Trưng bày; bấm tên trên BXH để xem bộ sưu tập của nhau và tổng giá trị tài sản.'],
     fixed: ['Căn giữa hộp sưu tập, hỗ trợ kéo thả trên máy tính và chọn/chạm trên điện thoại.', 'Giữ thứ hạng theo thời gian học; dữ liệu mẫu chỉ có trong preview, vườn thật bắt đầu trống.'] },

@@ -46,9 +46,12 @@
 
   // 6. QUẢN LÝ NHẬT KÝ THỜI GIAN HỌC (STUDY LOGS)
   function getStudyLogs() {
+    // Account history comes only from the last server snapshot, never a local edit.
+    if (window.KMA_ACCOUNT) return window.KMA_ACCOUNT.getConfirmedStudyLogs();
     try {
       const raw = localStorage.getItem(STORAGE_KEY_STUDY_LOGS);
-      return raw ? JSON.parse(raw) : {};
+      const M = window.KMA_SYNC_MODEL;
+      return M ? JSON.parse(M.project(M.flatten(STORAGE_KEY_STUDY_LOGS, raw), []).kma_study_logs_v1) : {};
     } catch (e) {
       console.warn('Lỗi đọc study logs:', e);
       return {};
@@ -64,7 +67,10 @@
   }
 
   function recordStudyTime(subjectKey, minutesToAdd, dateKey = getTodayKey()) {
-    if (!subjectKey || minutesToAdd <= 0) return;
+    // Only the isolated local clock uses this legacy API. Real accounts use RPC credit.
+    if (window.KMA_CLOUD_CONFIG || window.KMA_ACCOUNT || !STUDY_SUBJECTS.some(s => s.key === subjectKey) ||
+        !Number.isSafeInteger(minutesToAdd) || minutesToAdd <= 0 || minutesToAdd > 15 ||
+        dateKey !== getTodayKey()) return false;
     const logs = getStudyLogs();
     const today = dateKey;
     if (!logs[today]) {
@@ -74,6 +80,7 @@
     logs[today][subjectKey] = cur + minutesToAdd;
     saveStudyLogs(logs);
     renderStudyStats();
+    return true;
   }
 
   function getTodayStats() {
@@ -343,11 +350,6 @@
             <div class="stat-bar-track">
               <div class="stat-bar-fill" style="width: ${pct}%; background: ${subj.color};"></div>
             </div>
-            <div class="stat-quick-btns">
-              <button class="stat-add-btn" data-subj="${subj.key}" data-add="15">+15p</button>
-              <button class="stat-add-btn" data-subj="${subj.key}" data-add="30">+30p</button>
-              <button class="stat-add-btn" data-subj="${subj.key}" data-add="60">+1h</button>
-            </div>
           </div>
         `;
       }).join('');
@@ -355,25 +357,12 @@
 
     if (breakdownContainer) {
       breakdownContainer.innerHTML = renderBreakdownHtml(false);
-      bindStatAddButtons(breakdownContainer);
     }
     if (drawerBreakdown) {
       drawerBreakdown.innerHTML = renderBreakdownHtml(true);
-      bindStatAddButtons(drawerBreakdown);
     }
 
     renderRecentHistoryTable();
-  }
-
-  function bindStatAddButtons(container) {
-    container.querySelectorAll('.stat-add-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const sKey = btn.getAttribute('data-subj');
-        const addM = parseInt(btn.getAttribute('data-add'), 10);
-        recordStudyTime(sKey, addM);
-        showToastNotification(`Đã ghi nhận +${addM} phút học môn "${STUDY_SUBJECTS.find(s => s.key === sKey)?.name}"!`);
-      });
-    });
   }
 
   function renderRecentHistoryTable() {
@@ -384,7 +373,7 @@
     const dates = Object.keys(logs).sort().reverse().slice(0, 7);
 
     if (dates.length === 0) {
-      tableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; padding: 20px; color: #666;">Chưa có dữ liệu học tập. Làm bài hoặc đọc kiến thức để tự động ghi nhận thời gian học.</td></tr>`;
+      tableBody.innerHTML = `<tr><td colspan="3" style="text-align: center; padding: 20px; color: var(--text-muted, #555);">Chưa có dữ liệu học tập. Làm bài hoặc đọc kiến thức để tự động ghi nhận thời gian học.</td></tr>`;
       return;
     }
 
@@ -403,28 +392,12 @@
       return `
         <tr>
           <td style="font-weight: 800; font-family: monospace;">${dt === getTodayKey() ? '⭐ Hôm nay (' + dt + ')' : dt}</td>
-          <td style="font-weight: 900; color: #166534;">${formatMinutes(totalM)}</td>
+          <td style="font-weight: 900; color: var(--text-main, #111);">${formatMinutes(totalM)}</td>
           <td style="font-size: 0.88rem; line-height: 1.4;">${details.length > 0 ? details.join(' • ') : 'Không học'}</td>
-          <td>
-            <button class="neo-btn neo-btn-sm neo-btn-white btn-clear-day" data-date="${dt}" style="padding: 3px 8px; font-size: 0.75rem;">
-              ✕ Xóa
-            </button>
-          </td>
         </tr>
       `;
     }).join('');
 
-    tableBody.querySelectorAll('.btn-clear-day').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const d = btn.getAttribute('data-date');
-        if (confirm(`Bạn có chắc muốn xóa lịch sử học tập ngày ${d}?`)) {
-          const l = getStudyLogs();
-          delete l[d];
-          saveStudyLogs(l);
-          renderStudyStats();
-        }
-      });
-    });
   }
 
   // 12. SIDE DRAWER CONTROLS & PINNING
@@ -524,18 +497,6 @@
         switchDrawerTab(target);
       });
     });
-
-    // Reset All Study Stats
-    const btnResetAllStats = document.getElementById('btn-reset-all-study-stats');
-    if (btnResetAllStats) {
-      btnResetAllStats.addEventListener('click', () => {
-        if (confirm('Bạn có chắc muốn xóa sạch toàn bộ lịch sử thời gian đã học trên máy này?')) {
-          localStorage.removeItem(STORAGE_KEY_STUDY_LOGS);
-          renderStudyStats();
-          showToastNotification('Đã làm mới dữ liệu thống kê học tập.');
-        }
-      });
-    }
 
     // Quick Jumps from Main Page Cards
     document.querySelectorAll('.btn-jump-subject-practice').forEach(btn => {

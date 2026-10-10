@@ -2399,27 +2399,6 @@ code, pre, .mono {
   transition: width 0.3s ease;
 }
 
-.stat-quick-btns {
-  display: flex;
-  gap: 6px;
-  justify-content: flex-end;
-}
-
-.stat-add-btn {
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 2px 8px;
-  border: 1.5px solid #000;
-  border-radius: 4px;
-  background: #F8FAFC;
-  cursor: pointer;
-  box-shadow: 1px 1px 0 #000;
-}
-
-.stat-add-btn:hover {
-  background: var(--neo-green);
-}
-
 /* History Log Table */
 .study-history-section {
   border-top: 2px solid #000;

@@ -37,6 +37,7 @@ async (page) => {
     await context.exposeFunction("__kmaTestRpc", async (name, args) => {
       calls.push(name);
       if (name === "study_snapshot") return { data: snapshot() };
+      if (name === "study_activity_pulse") return { data: {owned: true, active: true, elapsed_seconds: 0} };
       if (name === "study_leaderboard")
         return {
           data: {
@@ -59,6 +60,10 @@ async (page) => {
         const accepted = [],
           conflicts = [];
         for (const op of args.p_operations) {
+          if (op.kind === "study") {
+            accepted.push(op.opId);
+            continue;
+          }
           if (receipts.has(op.opId)) {
             assert(
               receipts.get(op.opId) === JSON.stringify(op),
@@ -83,10 +88,7 @@ async (page) => {
             kind: op.kind,
             subject: op.subject,
             id: op.id,
-            value:
-              op.kind === "study"
-                ? (previous?.value || 0) + op.delta
-                : op.value,
+            value: op.value,
             version: (previous?.version || 0) + 1,
           };
           receipts.set(op.opId, JSON.stringify(op));
@@ -217,9 +219,9 @@ async (page) => {
     );
 
     failAfterWrite = true;
-    await tab.evaluate(() =>
-      localStorage.setItem("kma_study_logs_v1", '{"2026-10-08":{"ktvxl":1}}'),
-    );
+    await tab.evaluate(({key, raw}) => localStorage.setItem(key, raw), {
+      key, raw: encoded("Ghi chú khi mất phản hồi"),
+    });
     await tab.evaluate(() => KMA_ACCOUNT.sync());
     assert(
       (await tab.evaluate(() => KMA_ACCOUNT.getState().queue)) === 1,
@@ -227,8 +229,8 @@ async (page) => {
     );
     await tab.evaluate(() => KMA_ACCOUNT.sync());
     assert(
-      records["study|ktvxl|2026-10-08"].value === 1,
-      "Lost response retry doubled study minutes",
+      records[rid].value.text === "Ghi chú khi mất phản hồi" && records[rid].version === 3,
+      "Lost response retry duplicated the note update",
     );
     await tab.evaluate(() => {
       localStorage.setItem(
@@ -270,7 +272,7 @@ async (page) => {
     records[rid] = {
       ...records[rid],
       value: note("Bản ở thiết bị khác"),
-      version: 3,
+      version: 4,
     };
     await tab.evaluate(({ key, raw }) => localStorage.setItem(key, raw), {
       key,

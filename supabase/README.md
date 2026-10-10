@@ -68,3 +68,7 @@ Migration `202610100001_study_garden.sql` chạy sau automatic study `2026100900
 RPC `study_garden_snapshot`, `study_garden_plant`, `study_garden_harvest`, `study_garden_layout` xác thực tài khoản có tên, khóa giao dịch theo user, kiểm tra hạt/cây/số lượng và bố cục cũ. Thu hoạch kiểm tra dấu thời gian cây để yêu cầu cũ không thu một cây mới; RNG và bảo hiểm chạy trên server. `study_garden_public` chỉ công khai UUID, biệt danh, kho vật phẩm, bố cục, tổng giá trị. Tiến trình học, ghi chú, email, số hạt và lịch thưởng không có trong RPC này. BXH giữ nguyên bộ lọc và thứ tự phút, thêm `asset_value` suốt đời.
 
 Lưu và đồng bộ garden tách khỏi schema ghi chú/tiến trình cũ. Client chỉ gửi hành động hoặc bố cục 15 ô; không có RPC upload state hay số dư. Trang chính nạp component garden; mô tả quyền riêng tư và thông báo cập nhật bao gồm bộ sưu tập công khai. Database preview ở loopback dùng tài khoản mô phỏng và dữ liệu trong bộ nhớ; tuyệt đối không đưa mẫu vào production. Kiểm tra bằng `node --test scripts/garden_database.test.cjs`.
+
+## Lịch sử thời gian chỉ đọc
+
+`202610100002_readonly_study_history.sql` chạy sau hai migration thời gian/vườn. RPC `study_sync` bỏ qua và xác nhận các thao tác phút học của client cũ để không chặn câu trả lời/ghi chú; helper cũ bị thu quyền gọi. Không thay đổi lịch sử có trước migration hay thao tác chỉnh lịch sử của quản trị viên. Frontend không nhập phút từ dữ liệu khách, không cho sửa/xóa cache giờ học, dùng snapshot máy chủ cho thống kê và chuỗi. Kiểm tra bằng `scripts/readonly_study_history.test.cjs`.

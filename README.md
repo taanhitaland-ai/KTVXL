@@ -56,7 +56,7 @@ Lần đầu đăng nhập, ứng dụng hỏi có mang dữ liệu khách vào 
 
 Thời gian học tự động bắt đầu từ thao tác thật trong luyện tập, thi thử đang chạy hoặc kiến thức (bấm, gõ, cuộn). Mở trang, đăng nhập và thao tác tổng hợp không tự bắt đầu. Sau 15 phút không tương tác thì dừng, thao tác tiếp tạo lượt mới. Đổi môn dừng lượt cũ và dùng môn của trang đang học. Rời phần học hoặc đóng trang gửi yêu cầu dừng; nếu mất yêu cầu, máy chủ vẫn giới hạn ở mốc không hoạt động 15 phút. Tải lại cần thao tác học mới.
 
-Phút được đo trên máy chủ và hiện lên BXH trong lúc học, không cần đặt giờ/kết thúc phiên. Bảng lọc Hôm nay/Tuần này/Tháng này theo giờ Việt Nam; tuần bắt đầu thứ Hai. Phút thủ công chỉ vào lịch sử riêng. Cùng số phút có cùng hạng. Phút Pomodoro đã ghi nhận trước đây vẫn giữ nguyên. Bảng thật không chèn dữ liệu mẫu.
+Phút được đo trên máy chủ và hiện lên BXH trong lúc học, không cần đặt giờ/kết thúc phiên. Bảng lọc Hôm nay/Tuần này/Tháng này theo giờ Việt Nam; tuần bắt đầu thứ Hai. Lịch sử học lấy từ máy chủ; trình duyệt không được cộng hoặc xóa phút thủ công. Cùng số phút có cùng hạng. Phút Pomodoro và lịch sử đã ghi nhận trước đây vẫn giữ nguyên. Bảng thật không chèn dữ liệu mẫu.
 
 Nút ngọn lửa trên thanh trạng thái hiện số ngày của chuỗi học hiện tại, ẩn khi chưa có chuỗi. Bấm nút để mở riêng bản đồ nhiệt của tháng hiện tại. Mỗi môn có màu riêng; bấm ngày để xem số phút từng môn và giờ thi đã có trong lịch. Năm cấp chuỗi đạt ở 1, 2, 3, 5 và 7 ngày học liên tiếp. Ngày thi không tự tạo phút học hay tăng chuỗi.
 

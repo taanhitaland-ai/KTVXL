@@ -40,8 +40,8 @@ body.dark-mode :is(.filter-label, .panel-text, .section-content, .exam-desc-choi
 /* Neutral controls; warm yellow indicates the current action. */
 body.dark-mode :is(.neo-btn, .neo-select, .neo-input, .search-input, .pomo-custom-input) { border-color: var(--border-color); }
 body.dark-mode .neo-btn { background: var(--night-accent); color: var(--night-ink); }
-body.dark-mode :is(.neo-btn-white, .neo-btn-blue, .neo-btn-purple, .neo-select, .neo-input, .search-input, .pomo-custom-input, .nav-tab-btn, .neo-filter-btn, .subject-toggle-btn, .sim-nav-btn, .side-nav-btn, .pomo-mode-btn, .pomo-preset-btn, .pomo-subj-btn, .stat-add-btn) { background: var(--night-raised); color: var(--text-muted); border-color: var(--border-color); }
-body.dark-mode :is(.neo-btn-white, .nav-tab-btn, .neo-filter-btn, .subject-toggle-btn, .sim-nav-btn, .side-nav-btn, .pomo-preset-btn, .pomo-subj-btn, .stat-add-btn):hover { background: var(--night-hover); color: var(--text-main); }
+body.dark-mode :is(.neo-btn-white, .neo-btn-blue, .neo-btn-purple, .neo-select, .neo-input, .search-input, .pomo-custom-input, .nav-tab-btn, .neo-filter-btn, .subject-toggle-btn, .sim-nav-btn, .side-nav-btn, .pomo-mode-btn, .pomo-preset-btn, .pomo-subj-btn) { background: var(--night-raised); color: var(--text-muted); border-color: var(--border-color); }
+body.dark-mode :is(.neo-btn-white, .nav-tab-btn, .neo-filter-btn, .subject-toggle-btn, .sim-nav-btn, .side-nav-btn, .pomo-preset-btn, .pomo-subj-btn):hover { background: var(--night-hover); color: var(--text-main); }
 body.dark-mode #btn-tab-schedule { background: var(--night-raised) !important; color: var(--text-muted) !important; }
 body.dark-mode :is(.nav-tab-btn.active, .neo-filter-btn.active, .sim-nav-btn.active, .side-nav-btn.active, .pomo-mode-btn.active, .pomo-preset-btn.active, .pomo-subj-btn.active), body.dark-mode .subject-toggle-btn.active[data-subject], body.dark-mode #btn-tab-schedule.active { background: var(--night-accent) !important; color: var(--night-ink) !important; border-color: var(--night-accent); }
 body.dark-mode .neo-btn-green { background: #B8D29D; color: #20311D; }

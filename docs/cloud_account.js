@@ -63,6 +63,14 @@
     rankingTimes = new Map(),
     rankingRevision = 0;
   const appKey = (key) => M.keys.includes(key);
+  let historySource = null, historyJSON = "{}";
+  function confirmedHistory() {
+    if (historySource !== remote) {
+      historySource = remote;
+      historyJSON = M.project(remote, []).kma_study_logs_v1;
+    }
+    return historyJSON;
+  }
   function queue() {
     if (!user) return [];
     const result = [];
@@ -70,7 +78,7 @@
       const key = localStorage.key(i);
       if (!key.startsWith(outboxPrefix())) continue;
       const op = M.parse(get(key), null);
-      if (op && op.opId && op.rid) result.push(op);
+      if (op && op.opId && op.rid && op.kind !== "study") result.push(op);
     }
     return result.sort(
       (a, b) => a.createdAt - b.createdAt || a.opId.localeCompare(b.opId),
@@ -78,11 +86,15 @@
   }
   function records(prefix = bucket()) {
     const all = {};
-    for (const key of M.keys)
+    for (const key of M.keys) {
+      if (key === "kma_study_logs_v1") continue;
       Object.assign(all, M.flatten(key, get(prefix + key)));
+    }
+    if (user && prefix === bucket()) Object.assign(all, M.flatten("kma_study_logs_v1", confirmedHistory()));
     return all;
   }
   function addOperations(operations) {
+    operations = operations.filter(op => op.kind !== "study");
     if (!operations.length) return;
     const pending = queue();
     let sequence = Math.max(
@@ -100,12 +112,13 @@
     renderStatus();
   }
   function capture(key, before, after) {
-    if (user && appKey(key))
+    if (user && appKey(key) && key !== "kma_study_logs_v1")
       addOperations(M.diff(key, before, after, versions));
   }
   // Preserve the existing app's storage schemas. Only synced keys become account-scoped;
   // guest data keeps its original keys, and theme/music/preferences remain on this device.
   Storage.prototype.getItem = function (key) {
+    if (this === localStorage && key === "kma_study_logs_v1") return confirmedHistory();
     return this === localStorage && appKey(key)
       ? get(bucket() + key)
       : nativeGet.call(this, key);
@@ -113,6 +126,7 @@
   Storage.prototype.setItem = function (key, value) {
     if (this !== localStorage || !appKey(key))
       return nativeSet.call(this, key, value);
+    if (key === "kma_study_logs_v1") return;
     const previous = get(bucket() + key);
     set(bucket() + key, value);
     capture(key, previous, String(value));
@@ -121,6 +135,7 @@
   Storage.prototype.removeItem = function (key) {
     if (this !== localStorage || !appKey(key))
       return nativeRemove.call(this, key);
+    if (key === "kma_study_logs_v1") return;
     const previous = get(bucket() + key);
     remove(bucket() + key);
     capture(key, previous, null);
@@ -1291,6 +1306,7 @@
     requireLearningAccount,
     getLearningAccess: accessState, // Hot path: no scan of the sync outbox.
     getLearningIdentity: () => ({ user, access: accessState() }),
+    getConfirmedStudyLogs: () => M.parse(confirmedHistory(), {}),
     openStreak: showStreak,
     sync,
     getRankingSnapshot,

@@ -14,6 +14,7 @@ async function reset(){
   await db.exec('reset role;drop schema if exists public cascade;create schema public;grant usage on schema public to anon,authenticated;');
   for(const name of ['202610080001_study_sync.sql','202610080002_focus_reliability.sql','202610090001_automatic_study_time.sql']) await db.exec(fs.readFileSync(path.join(__dirname,'../../supabase/migrations',name),'utf8'));
   if(garden)await db.exec(fs.readFileSync(path.join(__dirname,'../../supabase/migrations/202610100001_study_garden.sql'),'utf8'));
+  await db.exec(fs.readFileSync(path.join(__dirname,'../../supabase/migrations/202610100002_readonly_study_history.sql'),'utf8'));
   await db.exec('set role authenticated');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[uid]);
   await db.query("select public.study_set_profile('Bạn thử',true)");
   if(garden){
